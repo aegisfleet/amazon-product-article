@@ -20,11 +20,11 @@
 
         <div class="header-actions">
             <button type="button" id="search-modal-trigger" class="header-search-btn" aria-label="商品を検索する" title="商品を検索 (Ctrl+K)">
-                <span class="header-search-icon" aria-hidden="true">🔍</span>
+                <span class="material-symbols-outlined header-search-icon" aria-hidden="true">search</span>
             </button>
             <a href="{{ `favorites/` | relURL }}" class="favorites-nav-btn" id="favorites-nav-btn"
                 aria-label="お気に入りリスト">
-                <span class="fav-nav-icon" aria-hidden="true">🤍</span>
+                <span class="material-symbols-outlined fav-nav-icon" aria-hidden="true">favorite</span>
                 <span class="favorites-badge" id="favorites-badge" style="display:none;" aria-live="polite"></span>
             </a>
             <button id="theme-toggle" class="theme-toggle header-theme-toggle" aria-label="Toggle Dark Mode">
@@ -70,63 +70,65 @@
 <aside id="site-nav-drawer" class="nav-drawer" aria-label="サイドナビゲーション" aria-hidden="true">
     <div class="nav-drawer-header">
         <h2 class="nav-drawer-title">メニュー</h2>
-        <button id="nav-menu-close" class="nav-drawer-close" aria-label="メニューを閉じる">✕</button>
+        <button id="nav-menu-close" class="nav-drawer-close" aria-label="メニューを閉じる">
+            <span class="material-symbols-outlined" aria-hidden="true">close</span>
+        </button>
     </div>
     <nav class="nav-drawer-body" aria-label="メニューナビゲーション">
         <ul class="nav-drawer-list">
             <li>
                 <button type="button" class="nav-drawer-item nav-drawer-search-btn" id="drawer-search-btn" aria-label="商品を検索する">
-                    <span class="nav-drawer-icon" aria-hidden="true">🔍</span>
+                    <span class="material-symbols-outlined nav-drawer-icon" aria-hidden="true">search</span>
                     <span class="nav-drawer-label">商品・スペック検索</span>
                 </button>
             </li>
             <li>
                 <a href="{{ `` | relURL }}" class="nav-drawer-item">
-                    <span class="nav-drawer-icon" aria-hidden="true">🏠</span>
+                    <span class="material-symbols-outlined nav-drawer-icon" aria-hidden="true">home</span>
                     <span class="nav-drawer-label">ホーム</span>
                 </a>
             </li>
             <li>
                 <a href="{{ `recommendations/` | relURL }}" class="nav-drawer-item">
-                    <span class="nav-drawer-icon" aria-hidden="true">🎯</span>
+                    <span class="material-symbols-outlined nav-drawer-icon" aria-hidden="true">ads_click</span>
                     <span class="nav-drawer-label">本日の注目商品</span>
                 </a>
             </li>
             <li>
                 <a href="{{ `bargain/` | relURL }}" class="nav-drawer-item">
-                    <span class="nav-drawer-icon" aria-hidden="true">🎁</span>
+                    <span class="material-symbols-outlined nav-drawer-icon" aria-hidden="true">redeem</span>
                     <span class="nav-drawer-label">あともう一品</span>
                 </a>
             </li>
             <li>
                 <a href="{{ `deals/` | relURL }}" class="nav-drawer-item">
-                    <span class="nav-drawer-icon" aria-hidden="true">🔥</span>
+                    <span class="material-symbols-outlined nav-drawer-icon" aria-hidden="true">local_fire_department</span>
                     <span class="nav-drawer-label">セール対象商品一覧</span>
                 </a>
             </li>
             <li>
                 <a href="{{ `brand/` | relURL }}" class="nav-drawer-item">
-                    <span class="nav-drawer-icon" aria-hidden="true">🏢</span>
+                    <span class="material-symbols-outlined nav-drawer-icon" aria-hidden="true">storefront</span>
                     <span class="nav-drawer-label">ブランド一覧</span>
                 </a>
             </li>
             {{- with .Site.Params.productRequestFormUrl -}}
             <li>
                 <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="nav-drawer-item" aria-label="商品調査リクエスト（新しいタブで開く）">
-                    <span class="nav-drawer-icon" aria-hidden="true">📝</span>
+                    <span class="material-symbols-outlined nav-drawer-icon" aria-hidden="true">edit_note</span>
                     <span class="nav-drawer-label">商品調査リクエスト</span>
                 </a>
             </li>
             {{- end -}}
             <li>
                 <a href="{{ `low-scores/` | relURL }}" class="nav-drawer-item">
-                    <span class="nav-drawer-icon" aria-hidden="true">📉</span>
+                    <span class="material-symbols-outlined nav-drawer-icon" aria-hidden="true">trending_down</span>
                     <span class="nav-drawer-label">低スコア迷品館</span>
                 </a>
             </li>
             <li>
                 <a href="{{ `favorites/` | relURL }}" class="nav-drawer-item">
-                    <span class="nav-drawer-icon" aria-hidden="true">🤍</span>
+                    <span class="material-symbols-outlined nav-drawer-icon" aria-hidden="true">favorite</span>
                     <span class="nav-drawer-label">お気に入り</span>
                     <span class="favorites-badge nav-drawer-badge" id="drawer-favorites-badge" style="display:none;" aria-live="polite"></span>
                 </a>
