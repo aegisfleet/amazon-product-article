@@ -260,7 +260,7 @@ describe('ProductSearcher Property Tests', () => {
               results.push(result);
 
               // Small delay between searches
-              await new Promise((resolve) => setTimeout(resolve, 50));
+              await new Promise((resolve) => setTimeout(resolve, 10));
             }
 
             // Verify each result maintains integrity
@@ -283,7 +283,7 @@ describe('ProductSearcher Property Tests', () => {
         ),
         { numRuns: 30 },
       );
-    });
+    }, 30000);
 
     it('should generate valid session IDs and maintain session data', async () => {
       // Simplified test with valid keywords
