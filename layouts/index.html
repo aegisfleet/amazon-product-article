@@ -274,7 +274,7 @@
 
     <div class="card-grid" id="product-grid">
         {{- $articles := where .Site.RegularPages "Section" "articles" -}}
-        {{- $sorted := first 60 (sort $articles ".Params.last_investigated" "desc") -}}
+        {{- $sorted := first 100 (sort $articles ".Params.last_investigated" "desc") -}}
         {{- $inStockSorted := slice -}}
         {{- $outOfStockSorted := slice -}}
         {{- range $sorted -}}
@@ -284,7 +284,8 @@
             {{- $outOfStockSorted = $outOfStockSorted | append . -}}
           {{- end -}}
         {{- end -}}
-        {{- $displayArticles := first 30 (union $inStockSorted $outOfStockSorted) -}}
+        {{- $targetSorted := cond (ge (len $inStockSorted) 30) $inStockSorted (union $inStockSorted $outOfStockSorted) -}}
+        {{- $displayArticles := first 30 $targetSorted -}}
         {{- range $index, $element := $displayArticles -}}
         <div class="card-wrapper{{ if ge $index 15 }} card-hidden{{ end }}">
             {{- partial "product-card.html" . -}}

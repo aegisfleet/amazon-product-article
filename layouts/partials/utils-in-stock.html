@@ -6,17 +6,23 @@
 {{- $availability := "" -}}
 {{- $explicitInStock := true -}}
 
-{{- if reflect.IsMap . -}}
-  {{- with .Params -}}
-    {{- with .availability -}}{{- $availability = . -}}{{- end -}}
-    {{- if isset . "in_stock" -}}{{- $explicitInStock = .in_stock -}}{{- end -}}
-  {{- else -}}
+{{- if (printf "%T" .) | eq "string" -}}
+  {{- $availability = . -}}
+{{- else if reflect.IsMap . -}}
+  {{- with index . "availability" -}}{{- $availability = . -}}{{- end -}}
+  {{- if isset . "in_stock" -}}{{- $explicitInStock = index . "in_stock" -}}{{- end -}}
+  {{- if isset . "inStock" -}}{{- $explicitInStock = index . "inStock" -}}{{- end -}}
+  {{- with index . "Params" -}}
     {{- with index . "availability" -}}{{- $availability = . -}}{{- end -}}
     {{- if isset . "in_stock" -}}{{- $explicitInStock = index . "in_stock" -}}{{- end -}}
     {{- if isset . "inStock" -}}{{- $explicitInStock = index . "inStock" -}}{{- end -}}
   {{- end -}}
-{{- else if (printf "%T" .) | eq "string" -}}
-  {{- $availability = . -}}
+{{- else -}}
+  {{- /* Hugo Pageオブジェクト */ -}}
+  {{- with .Params -}}
+    {{- with .availability -}}{{- $availability = . -}}{{- end -}}
+    {{- if isset . "in_stock" -}}{{- $explicitInStock = .in_stock -}}{{- end -}}
+  {{- end -}}
 {{- end -}}
 
 {{- if eq $explicitInStock false -}}

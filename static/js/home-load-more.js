@@ -125,7 +125,14 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!sortedRemainingArticles) {
             const allArticles = await fetchIndexData();
             sortedRemainingArticles = allArticles.filter(function (item) {
-                return item.asin && !renderedAsins.has(item.asin);
+                if (!item.asin || renderedAsins.has(item.asin)) return false;
+                if (item.in_stock === false) return false;
+                if (typeof isAvailableInStock === 'function') {
+                    if (!isAvailableInStock(item.availability, item.in_stock)) return false;
+                } else if (item.availability && (item.availability.includes('在庫切れ') || item.availability.includes('Currently unavailable') || item.availability.includes('Out of Stock'))) {
+                    return false;
+                }
+                return true;
             });
             nextDynamicIndex = 0;
         }
