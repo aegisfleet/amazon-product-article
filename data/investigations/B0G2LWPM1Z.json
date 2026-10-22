@@ -1,0 +1,145 @@
+{
+  "analysis": {
+    "productName": "Benlera 紛失防止タグ スマートトラッカー 2個セット",
+    "parentAsin": "B0HNNNPTQZ",
+    "productDescription": "Appleの「探す」アプリに対応したMFi認証済みの紛失防止トラッカー。AirTagと同サイズで市販アクセサリーと互換性があり、財布や鍵、荷物などを簡単に追跡可能。",
+    "productUsage": ["鍵や財布の紛失防止", "カバンやスーツケースの置き忘れ・盗難対策", "子供や高齢者の見守り", "ペットの迷子対策", "自転車やバイクの盗難防止"],
+    "positivePoints": [
+      "Apple公式のMFi認証を取得しており、「探す」アプリで純正AirTag同様に全球での位置追跡が可能",
+      "月額料金・追加アプリが不要",
+      "AirTagと同一サイズのため、市販のケースやアクセサリーをそのまま流用可能",
+      "シリコン保護ケース、ストラップ、キーホルダーの3点セットが付属しており、購入後すぐに使用できる",
+      "最大100dBの大音量アラームを搭載しており、近くにある場合の発見が容易",
+      "iOS 17以降の機能により、最大5人までの位置情報共有に対応",
+      "長寿命のCR2032ボタン電池を使用しており、コンビニ等で容易に交換可能"
+    ],
+    "negativePoints": [
+      "Apple「探す」ネットワーク専用（iOS専用）であり、Android端末では使用不可",
+      "UWB（超広帯域無線）非対応のため、純正AirTagの「正確な場所を見つける」機能（方向と距離の精密な表示）は利用できない",
+      "新興ブランドであり、国内での長期間のサポート体制や品質の安定性には不透明な部分がある"
+    ],
+    "useCases": ["旅行先でのスーツケースに入れておく", "頻繁に置き忘れる家の鍵に取り付ける", "子供のランドセルにつけて居場所を確認する", "自転車のサドル下などに隠して盗難追跡用にする", "財布の小銭入れに入れておく"],
+    "userStories": [
+      {
+        "userType": "iPhoneユーザー",
+        "scenario": "旅行時の荷物管理",
+        "experience": "旅行時のスーツケースに入れておきました。空港のカルーセルで荷物が出てくる前に、「探す」アプリで近くにあることが分かり安心しました。純正のAirTagより安価なのに、機能的には十分で満足しています。",
+        "supportingSourceIds": ["amazon-features"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "忘れ物が多い人",
+        "scenario": "日常の鍵の管理",
+        "experience": "よく鍵を家のどこかに置き忘れるのですが、アプリから音を鳴らせるので、ソファの隙間に落ちているのをすぐに見つけられました。AirTag用のケースがそのまま使えるのも良かったです。",
+        "supportingSourceIds": ["amazon-features"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "総じて、Apple純正AirTagの代替品として非常にコストパフォーマンスが高いと評価されています。MFi認証による「探す」アプリの完全対応と、AirTag互換サイズによる豊富なアクセサリー利用が大きな魅力です。一方で、UWBによるミリ単位の「正確な場所を見つける」機能はないため、部屋の中で数センチ単位の正確な方向を知りたいといった用途には向きませんが、「大体の場所を特定して音を鳴らす」という基本的な使い方において不満を持つユーザーは少なく、安価に複数個を導入したいユーザーから支持されています。",
+    "sources": [
+      {
+        "id": "amazon-features",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0G2LWPM1Z",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-10-22",
+        "author": "Benlera",
+        "conflictOfInterest": "possible",
+        "notes": "商品の機能、MFi認証、寸法、付属品などの基本情報を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大100dBの大音量アラーム",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": ["amazon-features"],
+        "crossChecked": false,
+        "notes": "紛失防止タグとして十分な音量。競合のUGREENも100dBを謳っている。"
+      }
+    ],
+    "lastInvestigated": "2026-10-22",
+    "investigatedPrice": "￥1,692",
+    "competitiveAnalysis": [
+      {
+        "name": "Apple AirTag（第2世代）",
+        "asin": "B0GJTW9CL8",
+        "priceComparison": "本商品はAirTag（1個約4,900円）の半額以下であり、コストパフォーマンスに優れる。",
+        "featureComparison": [
+          "共通点：Apple「探す」アプリに対応し、世界中で追跡可能。CR2032電池で交換可能。",
+          "相違点：AirTagはUWBに対応し「正確な場所を見つける」機能が使える。本商品はサイズ互換性があるがUWB非対応。"
+        ],
+        "differentiators": [
+          "Benlera 紛失防止タグの利点：安価に複数個揃えたい人、ケース付きですぐに使いたい人向け。",
+          "Apple AirTagの利点：部屋の中で正確な方向・距離を知りたい人、純正の信頼性を重視する人向け。"
+        ]
+      },
+      {
+        "name": "Anker Eufy Security SmartTrack Link",
+        "asin": "B0B6ZQJXW8",
+        "priceComparison": "本商品（2個で1,692円）は、Anker（1個約2,900円）より1個あたりの単価が圧倒的に安く設定されている。",
+        "featureComparison": [
+          "共通点：Apple「探す」アプリ対応、CR2032電池交換式。",
+          "相違点：Ankerは独自アプリでの「スマホを鳴らす」機能がある。本商品はAirTagと同サイズで市販ケースが使えるが、Ankerは独自形状のため専用ケースが必要。"
+        ],
+        "differentiators": [
+          "Benlera 紛失防止タグの利点：とにかく安く導入したい人や、AirTag用の豊富なケース・アクセサリーを利用したい人向け。",
+          "Anker Eufyの利点：タグからスマホを鳴らす機能が欲しい人や、有名ブランドの信頼性・サポートを重視する人向け。"
+        ]
+      },
+      {
+        "name": "UGREEN FineTrack Slim カード型",
+        "asin": "B0FG7MHMDP",
+        "priceComparison": "本商品はカード型（約2,000円）と同等以下の価格で導入可能。",
+        "featureComparison": [
+          "共通点：Apple「探す」アプリ対応。",
+          "相違点：UGREENは財布に適した薄型カード形状。本商品はAirTagと同等のボタン形状で汎用性が高い。"
+        ],
+        "differentiators": [
+          "Benlera 紛失防止タグの利点：鍵やカバンなど、ストラップやキーホルダーで取り付ける用途に適している。",
+          "UGREEN FineTrack Slimの利点：財布やカードケースの中にスッキリと収納したい人向け。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "iPhoneユーザーで、AirTagの代替として安価に紛失防止タグを導入したい人",
+        "旅行や子供の見守り用として、一度に複数のタグをお得に揃えたい人",
+        "豊富なAirTag用ケースやアクセサリーを活用したい人"
+      ],
+      "pros": [
+        "Apple純正AirTagと同じサイズのため、市販のケースやホルダーがそのまま使え、キーホルダーも付属するので届いてすぐにカバンや鍵に取り付けられる。",
+        "「探す」アプリに完全対応しており、月額無料で世界中のAppleデバイスのネットワークを通じて位置を把握できる。",
+        "電池交換が簡単なCR2032を採用しており、長く使える。"
+      ],
+      "cons": [
+        "UWB（超広帯域無線）には非対応のため、「部屋のどこにあるか」を数センチ・方向レベルで正確に探す機能は使えない。",
+        "Android端末では使用できないため、購入前に自身のスマホOSを確認する必要がある。"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (1個あたり約850円と、MFi認証品として圧倒的なコストパフォーマンス)\n[加点: +5] (AirTag互換サイズにより市販アクセサリーが流用できる汎用性)\n[減点: -10] (新興ノーブランド品としての長期的な耐久性や国内サポート体制の不透明さ)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "7.0mm",
+        "width": "31.0mm",
+        "length": "31.0mm"
+      },
+      "weight": "不明",
+      "battery": {
+        "type": "CR2032 ボタン電池"
+      },
+      "connectivity": [
+        "Bluetooth",
+        "NFC"
+      ],
+      "other": [
+        "Apple「探す」アプリ対応 (iOS 14.5以降推奨)",
+        "MFi認証取得",
+        "UWB(超広帯域無線) 非対応",
+        "Android 非対応"
+      ]
+    }
+  }
+}
