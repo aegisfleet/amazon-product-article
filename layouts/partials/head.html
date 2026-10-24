@@ -17,7 +17,17 @@
 <meta name="robots" content="noindex, follow">
 {{- end -}}
 
-{{- $metaDescription := .Description | default .Summary | default .Site.Params.description -}}
+{{- $metaDescription := .Description -}}
+{{- if not $metaDescription -}}
+{{- if eq .Kind "term" -}}
+{{- /* カテゴリページは Description 未設定のため、カテゴリ名と件数から生成して重複を防ぐ */ -}}
+{{- $metaDescription = printf "%sの商品%d件を徹底調査。スコア・価格・スペックを比較して、用途や予算に合う一品が見つかります。" .Title (len .Pages) -}}
+{{- else -}}
+{{- $metaDescription = .Summary | default .Site.Params.description -}}
+{{- end -}}
+{{- end -}}
+{{- /* .Summary は HTML を含み得るため、属性値として安全なプレーンテキストに整形する */ -}}
+{{- $metaDescription = $metaDescription | plainify | chomp -}}
 <meta name="description" content="{{ $metaDescription }}">
 <link rel="canonical" href="{{ .Permalink }}">
 <link rel="alternate" type="text/markdown" href="{{ "llms.txt" | absURL }}" title="LLMs.txt">

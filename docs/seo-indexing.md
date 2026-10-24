@@ -40,8 +40,12 @@ HTML 内に JSON 埋め込みしていた。これを Hugo の JSON 出力へ分
 - `content/{bargain,deals,low-scores}/_index.md` に `outputs: [HTML, JSON]` を追加
 - データ構築は `layouts/partials/product-dataset.html` に共通化し、
   `layouts/{bargain,deals,low-scores}/list.json` から出力（`/bargain/index.json` 等）
-- 各 `*-filter.js` は、埋め込みが無い場合に `data-src` の JSON を fetch するよう変更
-  （埋め込みが存在する場合は従来通り即時パースする後方互換付き）
+- データ取得は `static/js/filter-common.js` の共通ヘルパー `loadProductDataset` に集約
+  （各 `*-filter.js` の重複実装を排除。埋め込みが存在する場合は即時パースする後方互換付き）
+- 取得失敗時は「結果なし」要素に読み込みエラーの文案を表示するフォールバックを実装
+- `product-dataset.html` のフィールドは全てカード描画・検索・比較機能で使用中のため削減対象なし
+  （2026-10-24 に使用状況を監査済み）。bargain の対象範囲もスライダー仕様
+  （最低スコア 0〜100、上限価格 〜¥200,000 まで可変）と競合するため絞り込んでいない
 
 HTML 本体は通常のページサイズに戻り、データ側はブラウザキャッシュや
 AI エージェントからの直接取得（llms.txt にもエンドポイントを追記）が可能になる。
