@@ -384,6 +384,7 @@ export class CreatorsAPIClient {
         resources,
       };
 
+      // eslint-disable-next-line no-await-in-loop
       const response = await this.makeRequest(request);
       const items = response.variationsResult?.items || [];
       for (const item of items) {
@@ -399,6 +400,7 @@ export class CreatorsAPIClient {
 
       page++;
       if (page <= totalPages) {
+        // eslint-disable-next-line no-await-in-loop
         await this.sleep(1100);
       }
     } while (page <= totalPages);
@@ -487,6 +489,7 @@ export class CreatorsAPIClient {
     for (const asin of validAsins) {
       try {
         this.logger.debug(`Fetching individual ASIN: ${asin}`);
+        // eslint-disable-next-line no-await-in-loop
         const detail = await this.getProductDetails(asin);
         result.set(asin, detail);
         this.logger.debug(`Successfully fetched ${asin}`);
@@ -508,6 +511,7 @@ export class CreatorsAPIClient {
           this.logger.warn(`ASIN ${asin} temporary failure: ${errorMessage}`);
         }
       }
+      // eslint-disable-next-line no-await-in-loop
       await this.sleep(1200);
     }
   }
@@ -685,6 +689,7 @@ export class CreatorsAPIClient {
     this.isProcessingQueue = true;
     while (this.requestQueue.length > 0) {
       const req = this.requestQueue.shift();
+      // eslint-disable-next-line no-await-in-loop
       if (req) await req();
     }
     this.isProcessingQueue = false;
