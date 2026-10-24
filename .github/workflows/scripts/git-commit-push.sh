@@ -61,17 +61,16 @@ for i in 1 2 3; do
   else
     echo "Push failed on attempt $i, pulling and merging..."
     
-    # Check if shallow
-    if [ "$(git rev-parse --is-shallow-repository)" = "true" ]; then
-      echo "Repository is shallow, fetching more history..."
-      git fetch --unshallow || git fetch --prune
-    fi
-    
     # Clean index.lock before merge operations
     rm -f .git/index.lock
 
-    # Fetch latest remote changes
-    git fetch origin "$CURRENT_BRANCH"
+    # Fetch latest remote changes. For shallow repo, fetch with depth first (fast)
+    if [ "$(git rev-parse --is-shallow-repository)" = "true" ]; then
+      echo "Fetching recent remote changes for shallow repository (depth=50)..."
+      git fetch --depth=50 origin "$CURRENT_BRANCH" || git fetch origin "$CURRENT_BRANCH"
+    else
+      git fetch origin "$CURRENT_BRANCH"
+    fi
 
     # Reset cache files in working directory to HEAD to avoid "Your local changes..." error on merge
     git checkout HEAD -- data/cache/paapi/*.json 2>/dev/null || true
@@ -79,9 +78,20 @@ for i in 1 2 3; do
 
     # Try to merge remote branch
     # Note: --no-edit to avoid prompting for commit message
+    MERGE_SUCCESS=false
     if git merge origin/"$CURRENT_BRANCH" -m "Merge remote-tracking branch 'origin/$CURRENT_BRANCH' [skip ci]" --no-edit; then
+      MERGE_SUCCESS=true
       echo "Merge successful, retrying push..."
-    else
+    elif [ "$(git rev-parse --is-shallow-repository)" = "true" ] && git status --porcelain | grep -q "^fatal: refusing to merge unrelated histories"; then
+      echo "Shallow merge failed due to depth limit, unshallowing repository..."
+      git fetch --unshallow origin "$CURRENT_BRANCH" || true
+      if git merge origin/"$CURRENT_BRANCH" -m "Merge remote-tracking branch 'origin/$CURRENT_BRANCH' [skip ci]" --no-edit; then
+        MERGE_SUCCESS=true
+        echo "Merge successful after unshallow, retrying push..."
+      fi
+    fi
+
+    if [ "$MERGE_SUCCESS" = "false" ]; then
       echo "Merge conflict or error detected. Checking if conflicts are only in cache files..."
       
       # Clean index.lock if merge crash left it
@@ -106,28 +116,18 @@ for i in 1 2 3; do
         exit 1
       fi
 
-      echo "Conflicts detected only in cache files. Attempting automatic merge..."
-      MERGE_ALL_SUCCESS=true
+      echo "Conflicts detected only in cache files. Attempting batch automatic merge..."
+      
+      # Determine fastest runner: compiled JS if available (~0.05s) or fallback to ts-node
+      MERGE_CMD=""
+      if [ -f "dist/scripts/maintenance/merge-product-cache.js" ]; then
+        MERGE_CMD="node dist/scripts/maintenance/merge-product-cache.js"
+      else
+        MERGE_CMD="pnpm exec ts-node src/scripts/maintenance/merge-product-cache.ts"
+      fi
 
-      for file in $CONFLICTS; do
-        echo "Auto-merging conflict in $file..."
-        OURS_FILE="${file}.ours.json"
-        THEIRS_FILE="${file}.theirs.json"
-        git show :2:"$file" > "$OURS_FILE" 2>/dev/null || true
-        git show :3:"$file" > "$THEIRS_FILE" 2>/dev/null || true
-
-        if pnpm exec ts-node src/scripts/maintenance/merge-product-cache.ts "$OURS_FILE" "$THEIRS_FILE" "$file"; then
-          rm -f "$OURS_FILE" "$THEIRS_FILE"
-          git add "$file"
-        else
-          echo "Failed to merge $file"
-          rm -f "$OURS_FILE" "$THEIRS_FILE"
-          MERGE_ALL_SUCCESS=false
-          break
-        fi
-      done
-
-      if [ "$MERGE_ALL_SUCCESS" = "true" ]; then
+      # shellcheck disable=SC2086
+      if $MERGE_CMD --batch $CONFLICTS; then
         echo "Completing merge..."
         rm -f .git/index.lock
         if GIT_EDITOR=true git commit --no-edit; then

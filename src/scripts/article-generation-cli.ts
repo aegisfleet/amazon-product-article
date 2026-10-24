@@ -369,15 +369,26 @@ function collectAsinsFromInvestigations(investigations: InvestigationData[]): Se
 /**
  * キャッシュの状態に基づいて ASIN をカテゴリ分けする
  */
-function categorizeAsins(
+export function categorizeAsins(
   asins: Set<string>,
   cache: CreatorsAPICache,
+  maxFetchLimitOverride?: number,
 ): {
   missingAsins: string[];
-  stats: { total: number; cacheHit: number; invalid: number; validMissing: number; retryPerm: number };
+  stats: {
+    total: number;
+    cacheHit: number;
+    invalid: number;
+    validMissing: number;
+    brandNewMissing: number;
+    expiredMissing: number;
+    retryPerm: number;
+    deferred: number;
+  };
 } {
   const asinsArray = Array.from(asins);
-  const validMissing: string[] = [];
+  const brandNewMissing: string[] = [];
+  const expiredMissing: string[] = [];
   const expiredPerm: string[] = [];
   const ignored: string[] = [];
 
@@ -388,8 +399,12 @@ function categorizeAsins(
       expiredPerm.push(asin);
     } else if (cache.isInvalid(asin)) {
       ignored.push(asin);
+    } else if (cache.get(asin, { ignoreExpiration: true, allowInvalid: true })) {
+      // 既存キャッシュが存在するが有効期限切れ
+      expiredMissing.push(asin);
     } else {
-      validMissing.push(asin);
+      // キャッシュに一切データが存在しない完全新規
+      brandNewMissing.push(asin);
     }
   }
 
@@ -401,7 +416,22 @@ function categorizeAsins(
   // リトライされなかった期限切れ permanent_invalid は ignored に戻して統計の整合性を保つ
   ignored.push(...unretriedPerm);
 
-  const missingAsins = [...validMissing, ...retries];
+  // 完全新規（brandNewMissing）を最優先で取得し、その後に期限切れ（expiredMissing）を取得する
+  const allMissing = [...brandNewMissing, ...expiredMissing, ...retries];
+
+  // 上限件数の決定: 引数指定 > 環境変数 MAX_FETCH_ASINS > デフォルト 1000
+  let maxFetchLimit = 1000;
+  if (maxFetchLimitOverride !== undefined) {
+    maxFetchLimit = maxFetchLimitOverride;
+  } else if (process.env.MAX_FETCH_ASINS === 'unlimited') {
+    maxFetchLimit = Number.POSITIVE_INFINITY;
+  } else if (process.env.MAX_FETCH_ASINS !== undefined && !Number.isNaN(Number(process.env.MAX_FETCH_ASINS))) {
+    maxFetchLimit = Math.max(0, Number(process.env.MAX_FETCH_ASINS));
+  }
+
+  const missingAsins = allMissing.slice(0, maxFetchLimit);
+  const deferred = allMissing.length - missingAsins.length;
+
   // ignored に unretriedPerm が含まれるため、cache.isInvalid(asin) もしくは cache.isExpiredPermanentInvalid(asin) のどちらかであれば無効と判定する
   const invalidCount = ignored.filter((asin) => cache.isInvalid(asin) || cache.isExpiredPermanentInvalid(asin)).length;
 
@@ -411,8 +441,11 @@ function categorizeAsins(
       total: asinsArray.length,
       cacheHit: ignored.length - invalidCount,
       invalid: invalidCount,
-      validMissing: validMissing.length,
+      validMissing: brandNewMissing.length + expiredMissing.length,
+      brandNewMissing: brandNewMissing.length,
+      expiredMissing: expiredMissing.length,
       retryPerm: retries.length,
+      deferred,
     },
   };
 }
@@ -484,12 +517,121 @@ async function performBatchFetching(
   const { missingAsins, stats } = categorizeAsins(asins, cache);
 
   logger.info(
-    `ASINs stats: Total: ${stats.total}, Cache Hit: ${stats.cacheHit}, Known Invalid (Skipped): ${stats.invalid}, To Fetch: ${missingAsins.length} (New/Expired: ${stats.validMissing}, Retry Perm: ${stats.retryPerm})`,
+    `ASINs stats: Total: ${stats.total}, Cache Hit: ${stats.cacheHit}, Known Invalid (Skipped): ${stats.invalid}, To Fetch: ${missingAsins.length} (New: ${stats.brandNewMissing}, Expired: ${stats.expiredMissing}, Retry Perm: ${stats.retryPerm}, Deferred: ${stats.deferred})`,
   );
 
   if (missingAsins.length > 0) {
     await fetchAsinsInBatches(client, cache, missingAsins);
   }
+}
+/**
+ * 単一記事の生成と保存を行う
+ */
+async function generateSingleArticle(
+  data: InvestigationData,
+  generator: ArticleGenerator,
+  cache: CreatorsAPICache,
+  options: CLIOptions,
+  skipApi: boolean,
+  useApi: boolean,
+): Promise<{ data: InvestigationData; article: GeneratedArticle; articlePath: string } | null> {
+  try {
+    const cachedProduct = cache.get(data.product.asin, { ignoreExpiration: true, allowInvalid: true });
+    if (cachedProduct) {
+      data.product = { ...data.product, ...cachedProduct };
+      data.investigation.product = data.product;
+      logger.debug(`Used cached product data for ${data.product.asin}`);
+    } else if (skipApi) {
+      logger.debug(`Using dummy data for ${data.product.asin} (skip-creators-api mode)`);
+      data.product = {
+        ...data.product,
+        title: `商品調査中 (${data.product.asin})`,
+        category: 'その他／全般',
+        price: { amount: 9999, currency: 'JPY', formatted: '¥9,999' },
+        images: { primary: 'https://via.placeholder.com/500x500.png?text=No+Image', thumbnails: [] },
+        specifications: {},
+        rating: { average: 4, count: 100 },
+      };
+      data.investigation.product = data.product;
+    } else if (useApi) {
+      logger.warn(`Product data not found for ${data.product.asin}, proceeding with basic info`);
+    }
+
+    const competitorDetails = new Map<string, ProductDetail>();
+    const competitorAsins = data.investigation.analysis.competitiveAnalysis.filter((c) => c.asin).map((c) => c.asin!);
+
+    if (competitorAsins.length > 0) {
+      const cachedCompetitors = cache.getMultiple(competitorAsins, {
+        ignoreExpiration: true,
+        allowInvalid: true,
+      });
+      for (const [asin, detail] of cachedCompetitors.entries()) {
+        competitorDetails.set(asin, detail);
+      }
+    }
+
+    // 既存記事が存在する場合はその初回公開日（date）を維持して保護する
+    const existingPublishDate = await getExistingArticlePublishDate(data.product.asin);
+    if (existingPublishDate) {
+      data.investigation.generatedAt = existingPublishDate;
+    }
+
+    logger.debug(`Generating article for: ${data.product.title}`);
+    const article = await generator.generateArticle(
+      data.product,
+      data.investigation,
+      undefined,
+      undefined,
+      options.partnerTag,
+      competitorDetails,
+    );
+
+    const articlePath = await saveArticle(article, data.product.asin);
+    return { data, article, articlePath };
+  } catch (error) {
+    logger.error(`Failed to generate article for ${data.product.asin}:`, error);
+    return null;
+  }
+}
+
+/**
+ * チャンク単位で記事を並行生成し、順次コミットする
+ */
+async function processArticleChunk(
+  chunk: InvestigationData[],
+  generator: ArticleGenerator,
+  cache: CreatorsAPICache,
+  publisher: GitHubPublisher | undefined,
+  options: CLIOptions,
+  skipApi: boolean,
+  useApi: boolean,
+): Promise<{ count: number; paths: string[] }> {
+  let count = 0;
+  const paths: string[] = [];
+
+  // Step 1: チャンク内の記事を並行生成
+  const chunkResults = await Promise.all(
+    chunk.map((data) => generateSingleArticle(data, generator, cache, options, skipApi, useApi)),
+  );
+
+  // Step 2: Gitレースコンディションを防ぐためコミットは順次実行
+  for (const result of chunkResults) {
+    if (!result) continue;
+    const { data, article, articlePath } = result;
+    try {
+      paths.push(articlePath);
+      if (publisher) {
+        await publisher.commitArticle(article.content, article.metadata);
+        logger.debug(`Article committed for ${data.product.asin}`);
+      }
+      count++;
+      logger.debug(`Article generated for ${data.product.asin}`);
+    } catch (error) {
+      logger.error(`Failed to commit article for ${data.product.asin}:`, error);
+    }
+  }
+
+  return { count, paths };
 }
 
 /**
@@ -521,87 +663,12 @@ async function processArticles(
         `Processing batch ${batchNum}/${totalBatches} (Articles ${i + 1}-${currentEnd} of ${investigations.length})...`,
       );
 
-      // Step 1: Generate articles in parallel
-      const chunkResults = await Promise.all(
-        chunk.map(async (data) => {
-          try {
-            const cachedProduct = cache.get(data.product.asin, { ignoreExpiration: true, allowInvalid: true });
-            if (cachedProduct) {
-              data.product = { ...data.product, ...cachedProduct };
-              data.investigation.product = data.product;
-              logger.debug(`Used cached product data for ${data.product.asin}`);
-            } else if (skipApi) {
-              logger.debug(`Using dummy data for ${data.product.asin} (skip-creators-api mode)`);
-              data.product = {
-                ...data.product,
-                title: `商品調査中 (${data.product.asin})`,
-                category: 'その他／全般',
-                price: { amount: 9999, currency: 'JPY', formatted: '¥9,999' },
-                images: { primary: 'https://via.placeholder.com/500x500.png?text=No+Image', thumbnails: [] },
-                specifications: {},
-                rating: { average: 4, count: 100 },
-              };
-              data.investigation.product = data.product;
-            } else if (useApi) {
-              logger.warn(`Product data not found for ${data.product.asin}, proceeding with basic info`);
-            }
+      // 意図的なバッチスロットリング: 数千件の一括並列はリソース枯渇(EMFILE/OOM)を招くためチャンク単位で順次処理する
+      // eslint-disable-next-line no-await-in-loop
+      const { count, paths } = await processArticleChunk(chunk, generator, cache, publisher, options, skipApi, useApi);
 
-            const competitorDetails = new Map<string, ProductDetail>();
-            const competitorAsins = data.investigation.analysis.competitiveAnalysis
-              .filter((c) => c.asin)
-              .map((c) => c.asin!);
-
-            if (competitorAsins.length > 0) {
-              const cachedCompetitors = cache.getMultiple(competitorAsins, {
-                ignoreExpiration: true,
-                allowInvalid: true,
-              });
-              for (const [asin, detail] of cachedCompetitors.entries()) {
-                competitorDetails.set(asin, detail);
-              }
-            }
-
-            // 既存記事が存在する場合はその初回公開日（date）を維持して保護する
-            const existingPublishDate = await getExistingArticlePublishDate(data.product.asin);
-            if (existingPublishDate) {
-              data.investigation.generatedAt = existingPublishDate;
-            }
-
-            logger.debug(`Generating article for: ${data.product.title}`);
-            const article = await generator.generateArticle(
-              data.product,
-              data.investigation,
-              undefined,
-              undefined,
-              options.partnerTag,
-              competitorDetails,
-            );
-
-            const articlePath = await saveArticle(article, data.product.asin);
-            return { data, article, articlePath };
-          } catch (error) {
-            logger.error(`Failed to generate article for ${data.product.asin}:`, error);
-            return null;
-          }
-        }),
-      );
-
-      // Step 2: Commit sequentially to avoid race conditions
-      for (const result of chunkResults) {
-        if (!result) continue;
-        const { data, article, articlePath } = result;
-        try {
-          generatedArticles.push(articlePath);
-          if (publisher) {
-            await publisher.commitArticle(article.content, article.metadata);
-            logger.debug(`Article committed for ${data.product.asin}`);
-          }
-          generatedCount++;
-          logger.debug(`Article generated for ${data.product.asin}`);
-        } catch (error) {
-          logger.error(`Failed to commit article for ${data.product.asin}:`, error);
-        }
-      }
+      generatedCount += count;
+      generatedArticles.push(...paths);
     }
   } finally {
     logger.endGroup();
