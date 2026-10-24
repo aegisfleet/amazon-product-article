@@ -20,6 +20,7 @@ export interface ProductSummaryItem {
   score: number;
   url: string;
   affiliate_url: string;
+  image: string;
 }
 
 export interface GenerateSummaryOptions {
@@ -36,6 +37,25 @@ const CATEGORIES_REGEX = /categories:\s*\[\s*["']?([^"'\]]+)/;
 const PRICE_REGEX = /price:\s*["']?(.*?)["']?(?:\r?\n|$)/;
 const SCORE_REGEX = /score:\s*(\d+)/;
 const AFFILIATE_URL_REGEX = /affiliate_url:\s*["']?(.*?)["']?(?:\r?\n|$)/;
+const IMAGES_INLINE_REGEX = /images:\s*\[\s*["']([^"']+)["']/;
+const IMAGES_BLOCK_REGEX = /images:\s*(?:\r?\n)+\s*-\s*["']?([^"'\r\n]+)["']?/;
+const IMAGE_SINGLE_REGEX = /image:\s*["']?([^"'\r\n]+)["']?/;
+
+export function extractFirstImage(fm: string): string {
+  const inlineMatch = IMAGES_INLINE_REGEX.exec(fm);
+  if (inlineMatch?.[1]) {
+    return inlineMatch[1].trim();
+  }
+  const blockMatch = IMAGES_BLOCK_REGEX.exec(fm);
+  if (blockMatch?.[1]) {
+    return blockMatch[1].trim();
+  }
+  const singleMatch = IMAGE_SINGLE_REGEX.exec(fm);
+  if (singleMatch?.[1]) {
+    return singleMatch[1].trim();
+  }
+  return '';
+}
 
 export function parsePrice(priceText: string): number {
   if (!priceText) return 0;
@@ -69,6 +89,7 @@ export function parseProductSummary(content: string, baseUrl: string): ProductSu
   const price = parsePrice(priceRaw);
   const score = Number.parseInt(SCORE_REGEX.exec(fm)?.[1] ?? '0', 10) || 0;
   const affiliateUrl = AFFILIATE_URL_REGEX.exec(fm)?.[1]?.trim() ?? '';
+  const image = extractFirstImage(fm);
 
   const cleanBaseUrl = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
 
@@ -81,6 +102,7 @@ export function parseProductSummary(content: string, baseUrl: string): ProductSu
     score,
     url: `${cleanBaseUrl}${asin.toLowerCase()}/`,
     affiliate_url: affiliateUrl,
+    image,
   };
 }
 

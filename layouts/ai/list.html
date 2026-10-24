@@ -179,10 +179,10 @@
             <div class="ai-tool-card">
                 <div class="ai-tool-header">
                     <h3 class="ai-tool-name">Claude (Anthropic)</h3>
-                    <span class="ai-tool-badge">Projects活用</span>
+                    <span class="ai-tool-badge">Artifacts活用で画像表示</span>
                 </div>
                 <p class="ai-tool-desc">
-                    Claudeの「Projects」機能をご利用の場合、プロジェクトの知識（Project Knowledge）に当サイトのデータURLやllms.txtを登録しておくことで、いつでも即座にAmazon商品比較アシスタントとして呼び出すことができます。
+                    Claudeの通常チャット本文では画像の自動展開が無効化されていますが、プロンプトに<strong>「HTML（Artifacts）形式で商品カードUIを出力して」</strong>と付け加えることで、写真付きの綺麗な商品カードが画面右側にプレビュー表示されます。
                 </p>
             </div>
 
@@ -233,8 +233,8 @@
                     </tr>
                     <tr>
                         <td><a href="{{ `products-summary.json` | relURL }}" target="_blank" rel="noopener noreferrer"><code>/products-summary.json</code></a></td>
-                        <td>全商品のASIN・商品名・ブランド・カテゴリ・価格・スコア・購入リンクを収録した超軽量JSON</td>
-                        <td>約1.8 MB (gzip約380KB)</td>
+                        <td>全商品のASIN・商品名・ブランド・カテゴリ・価格・スコア・商品画像・購入リンクを収録した超軽量JSON</td>
+                        <td>約2.1 MB (gzip約420KB)</td>
                     </tr>
                     <tr>
                         <td><a href="{{ `bargain/index.json` | relURL }}" target="_blank" rel="noopener noreferrer"><code>/bargain/index.json</code></a></td>

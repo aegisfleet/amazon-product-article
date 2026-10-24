@@ -34,6 +34,7 @@ asin: "B09BFPNW2J"
 price: "￥11,800"
 score: 88
 affiliate_url: "https://www.amazon.co.jp/dp/B09BFPNW2J?tag=test-22"
+images: ["https://m.media-amazon.com/images/I/51test.jpg", "https://m.media-amazon.com/images/I/52test.jpg"]
 ---
 
 ## 本文
@@ -52,7 +53,31 @@ affiliate_url: "https://www.amazon.co.jp/dp/B09BFPNW2J?tag=test-22"
         score: 88,
         url: 'https://www.amazon-hikaku.com/b09bfpnw2j/',
         affiliate_url: 'https://www.amazon.co.jp/dp/B09BFPNW2J?tag=test-22',
+        image: 'https://m.media-amazon.com/images/I/51test.jpg',
       });
+    });
+
+    it('ブロックスタイルの画像リストから先頭画像を抽出できること', () => {
+      const content = `---
+title: "ブロック画像商品"
+asin: "B000000003"
+images:
+  - "https://m.media-amazon.com/images/I/first.jpg"
+  - "https://m.media-amazon.com/images/I/second.jpg"
+---
+`;
+      const item = parseProductSummary(content, 'https://www.amazon-hikaku.com/');
+      expect(item?.image).toBe('https://m.media-amazon.com/images/I/first.jpg');
+    });
+
+    it('画像が存在しない場合は空文字になること', () => {
+      const content = `---
+title: "画像なし商品"
+asin: "B000000004"
+---
+`;
+      const item = parseProductSummary(content, 'https://www.amazon-hikaku.com/');
+      expect(item?.image).toBe('');
     });
 
     it('ASINが存在しない場合はnullを返すこと', () => {
