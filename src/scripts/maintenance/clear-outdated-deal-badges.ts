@@ -21,6 +21,10 @@ const investigationsDir = path.resolve(__dirname, '../../../data/investigations'
 
 const isExecute = process.argv.includes('--execute');
 const includeAllEvents = process.argv.includes('--include-all-events');
+const isForce = process.argv.includes('--force');
+
+// セール開催中の誤削除を防ぐため、デフォルトで取得から48時間以上経過した古いキャッシュのみを対象とする
+const MIN_AGE_MS = isForce ? 0 : 48 * 60 * 60 * 1000;
 
 // 対象とするセールバッジの判定ロジック
 function isTargetBadge(badge: string): boolean {
@@ -44,9 +48,13 @@ try {
   let articlesResetCount = 0;
   let nonArticlesCleanedCount = 0;
   let updatedShards = 0;
+  let skippedFreshCount = 0;
 
   console.log(`Mode: ${isExecute ? 'EXECUTE (Modifying files)' : 'DRY RUN (Preview only)'}`);
-  console.log(`Target: ${includeAllEvents ? 'Thanksgiving & Prime Day' : 'Thanksgiving only'}\n`);
+  console.log(`Target: ${includeAllEvents ? 'Thanksgiving & Prime Day' : 'Thanksgiving only'}`);
+  console.log(`Safety: ${isForce ? 'Force all (no age check)' : 'Targeting entries older than 48 hours'}\n`);
+
+  const now = Date.now();
 
   for (const shardFile of shardFiles) {
     const filePath = path.join(shardsDir, shardFile);
@@ -57,6 +65,13 @@ try {
     for (const [asin, entry] of Object.entries<any>(cache)) {
       const dealBadge = entry.data?.dealBadge;
       if (typeof dealBadge === 'string' && isTargetBadge(dealBadge)) {
+        // セール開催中の最新キャッシュを保護するセーフティガード
+        const ageMs = now - (entry.timestamp || 0);
+        if (ageMs < MIN_AGE_MS) {
+          skippedFreshCount++;
+          continue;
+        }
+
         totalProcessed++;
         const invPath = path.join(investigationsDir, `${asin}.json`);
         const hasInvestigation = fs.existsSync(invPath);
@@ -105,6 +120,9 @@ try {
   console.log(`Total target entries found: ${totalProcessed}`);
   console.log(`Article-linked entries (reset to valid, ts=0): ${articlesResetCount}`);
   console.log(`Cache-only entries (badges cleared): ${nonArticlesCleanedCount}`);
+  if (skippedFreshCount > 0) {
+    console.log(`Skipped fresh entries (< 48h): ${skippedFreshCount}`);
+  }
   if (isExecute) {
     console.log(`Updated shards: ${updatedShards} files.`);
     console.log('\nComplete. Run "pnpm run prebuild:hugo" to reflect changes locally if needed.');
