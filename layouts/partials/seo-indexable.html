@@ -1,0 +1,28 @@
+{{- /*
+  seo-indexable.html
+
+  ページを検索エンジンのインデックス対象とするかを返す（bool）。
+  head.html の robots メタと sitemap.xml の両方から使う単一の判定ロジック。
+
+  対象外（noindex, follow / sitemap 除外）:
+  - 商品数が Site.Params.seo.minCategoryProducts（既定5）未満のカテゴリページ（Kind = "term"）。
+    商品1〜2点だけの薄い分類ページが大量にあると、サイト全体の品質評価を下げるため。
+  - カテゴリ一覧ページ（Kind = "taxonomy"、/categories/）。
+    全タームをカード形式で描画すると巨大ページ化し、固有の検索意図も持たないため。
+  - 全商品セクション一覧（Section = "articles" の Kind = "section"、/articles/）。
+    全商品カードの描画で数十MB級になり、検索・絞り込み導線と重複するため。
+
+  それ以外（トップ、商品ページ、親カテゴリ、ブランド、特集ページ等）は対象とする。
+*/ -}}
+{{- $indexable := true -}}
+{{- $minCategoryProducts := .Site.Params.seo.minCategoryProducts | default 5 -}}
+{{- if eq .Kind "term" -}}
+  {{- if lt (len .Pages) $minCategoryProducts -}}
+    {{- $indexable = false -}}
+  {{- end -}}
+{{- else if eq .Kind "taxonomy" -}}
+  {{- $indexable = false -}}
+{{- else if and (eq .Kind "section") (eq .Section "articles") -}}
+  {{- $indexable = false -}}
+{{- end -}}
+{{- return $indexable -}}

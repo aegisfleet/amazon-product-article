@@ -1,0 +1,67 @@
+{{- /*
+  product-dataset.html
+
+  特集ページ（bargain / deals / low-scores）のクライアントサイド絞り込み用に、
+  商品データの配列（dict の slice）を構築して返す。
+
+  以前は各 list.html がこのデータを HTML 内へ JSON 埋め込みしており、
+  全商品分で約11MB級の巨大ページになっていた。現在は各セクションの
+  JSON 出力（list.json）からのみ本パーシャルを使い、HTML には含めない。
+
+  引数: dict "pages" (対象ページの slice)
+*/ -}}
+{{- $data := slice -}}
+{{- range .pages -}}
+{{- $score := .Params.score | default 0 -}}
+{{- $priceRaw := 0 -}}
+{{- if .Params.price -}}
+{{- $priceRaw = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | default 0 -}}
+{{- end -}}
+{{- $pointsRate := 0 -}}
+{{- if and .Params.price .Params.loyalty_points -}}
+{{- if gt (int $priceRaw) 0 -}}
+{{- $pointsRate = mul (div (float .Params.loyalty_points) (float $priceRaw)) 100 -}}
+{{- end -}}
+{{- end -}}
+{{- $category := "" -}}
+{{- if .Params.categories -}}{{- $category = index .Params.categories 0 -}}{{- else if .Params.category -}}{{- $category = .Params.category -}}{{- end -}}
+{{- $categoryUrl := "" -}}
+{{- $categoriesTerms := .GetTerms "categories" -}}
+{{- if $categoriesTerms -}}
+  {{- $categoryUrl = (index $categoriesTerms 0).RelPermalink -}}
+{{- else if .Params.category -}}
+  {{- with .Site.GetPage (printf "/categories/%s" (.Params.category | urlize)) -}}
+    {{- $categoryUrl = .RelPermalink -}}
+  {{- end -}}
+{{- end -}}
+{{- $lastInvestigated := "" -}}
+{{- with .Params.last_investigated -}}{{- $lastInvestigated = . -}}{{- end -}}
+{{- $data = $data | append (dict
+  "title" .Title
+  "url" .RelPermalink
+  "score" $score
+  "price" (.Params.price | default "")
+  "priceRaw" $priceRaw
+  "asin" (.Params.asin | default "")
+  "category" $category
+  "categoryUrl" $categoryUrl
+  "subcategory" (.Params.subcategory | default "")
+  "brand" (.Params.brand | default "")
+  "description" (.Description | default (.Summary | truncate 100))
+  "image" (cond (and .Params.images (gt (len .Params.images) 0)) (index .Params.images 0) "")
+  "affiliateUrl" (.Params.affiliate_url | default "")
+  "lastInvestigated" $lastInvestigated
+  "isAmazonDirect" (.Params.is_amazon_direct | default false)
+  "isAmazonHaul" (.Params.is_amazon_haul | default false)
+  "loyaltyPoints" (.Params.loyalty_points | default 0)
+  "pointsRate" $pointsRate
+  "savingsPercentage" (.Params.savings_percentage | default 0)
+  "availability" (.Params.availability | default "")
+  "inStock" (partial "utils-in-stock.html" .)
+  "dealBadge" (.Params.deal_badge | default "")
+  "dealAccessType" (.Params.deal_access_type | default "")
+  "specsHtml" (cond (not (not .Params.specs)) (partial "product-spec-tags.html" (dict "specs" .Params.specs "tagClass" "card-spec-tag")) "")
+  "specsJson" (cond (not (not .Params.specs)) (partial "product-specs-json.html" .Params.specs) "")
+) -}}
+{{- end -}}
+{{- return $data -}}
