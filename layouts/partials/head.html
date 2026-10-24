@@ -11,9 +11,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
+{{- if partial "seo-indexable.html" . -}}
 <meta name="robots" content="index, follow">
+{{- else -}}
+<meta name="robots" content="noindex, follow">
+{{- end -}}
 
 {{- $metaDescription := .Description | default .Summary | default .Site.Params.description -}}
+<meta name="description" content="{{ $metaDescription }}">
 <link rel="canonical" href="{{ .Permalink }}">
 <link rel="alternate" type="text/markdown" href="{{ "llms.txt" | absURL }}" title="LLMs.txt">
 

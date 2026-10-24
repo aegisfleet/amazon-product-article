@@ -1,5 +1,7 @@
 {{- define "main" -}}
-{{- if and (eq .Section "brand") (not .Params.brand_name) -}}
+{{- if or (eq .Kind "taxonomy") (and (eq .Kind "section") (eq .Section "articles")) -}}
+{{- partial "simple-index.html" . -}}
+{{- else if and (eq .Section "brand") (not .Params.brand_name) -}}
 {{- partial "brand-index-content.html" . -}}
 {{- else -}}
 <div class="container" style="padding-top: var(--spacing-xl);">
