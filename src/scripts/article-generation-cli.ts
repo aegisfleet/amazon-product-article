@@ -210,6 +210,14 @@ async function loadAndValidateInvestigation(filePath: string): Promise<Investiga
 }
 
 /**
+ * チャンク単位で調査結果ファイルを並行ロード・検証する
+ */
+async function loadInvestigationChunk(chunk: string[]): Promise<InvestigationData[]> {
+  const chunkResults = await Promise.all(chunk.map((filePath) => loadAndValidateInvestigation(filePath)));
+  return chunkResults.filter((result): result is InvestigationData => result !== null);
+}
+
+/**
  * ファイル名からASINを抽出し、JSON構造を変換してInvestigationDataを構築
  */
 export async function loadInvestigationResults(targetFiles?: string[]): Promise<InvestigationData[]> {
@@ -235,9 +243,10 @@ export async function loadInvestigationResults(targetFiles?: string[]): Promise<
 
   for (let i = 0; i < filesToProcess.length; i += chunkSize) {
     const chunk = filesToProcess.slice(i, i + chunkSize);
-    const chunkResults = await Promise.all(chunk.map((filePath) => loadAndValidateInvestigation(filePath)));
-
-    results.push(...chunkResults.filter((result): result is InvestigationData => result !== null));
+    // 意図的なバッチスロットリング: 7000件超の同時オープンによるEMFILE(Too many open files)エラーを防ぐ
+    // eslint-disable-next-line no-await-in-loop
+    const chunkResults = await loadInvestigationChunk(chunk);
+    results.push(...chunkResults);
   }
 
   return results;
@@ -265,10 +274,7 @@ async function getExistingArticlePublishDate(asin: string): Promise<Date | null>
 
 async function ensureOutputDirectories(): Promise<void> {
   const dirs = [path.join(process.cwd(), 'content', 'articles')];
-
-  for (const dir of dirs) {
-    await fs.mkdir(dir, { recursive: true });
-  }
+  await Promise.all(dirs.map((dir) => fs.mkdir(dir, { recursive: true })));
 }
 
 export async function saveArticle(article: GeneratedArticle, asin: string): Promise<string> {
@@ -492,11 +498,15 @@ async function fetchAsinsInBatches(
       logger.info(
         `Fetching batch ${Math.floor(i / chunkSize) + 1}/${Math.ceil(missingAsins.length / chunkSize)} (${chunk.length} items)...`,
       );
+      // 意図的な直列待機: Creators API のレートリミット（スロットリング）に抵触しないようバッチごとに順次リクエストする
+      // eslint-disable-next-line no-await-in-loop
       const { results, permanentFailures } = await client.getMultipleProductDetails(chunk);
 
+      // eslint-disable-next-line no-await-in-loop
       await handleBatchResults(cache, chunk, results, permanentFailures);
 
       if (i + chunkSize < missingAsins.length) {
+        // eslint-disable-next-line no-await-in-loop
         await new Promise((resolve) => setTimeout(resolve, 2000));
       }
     } catch (error) {
@@ -621,6 +631,8 @@ async function processArticleChunk(
     try {
       paths.push(articlePath);
       if (publisher) {
+        // 意図的な直列実行: GitHub APIのコミット競合（Git Fast-Forward Reject）を防ぐため順次コミットする
+        // eslint-disable-next-line no-await-in-loop
         await publisher.commitArticle(article.content, article.metadata);
         logger.debug(`Article committed for ${data.product.asin}`);
       }
