@@ -67,8 +67,8 @@
     /* Gray 900 */
     --color-text-secondary: var(--md-sys-color-on-surface-variant);
     /* Gray 600 */
-    --color-text-muted: #6B7280;
-    /* Gray 500 */
+    --color-text-muted: #4B5563;
+    /* Gray 600 - minimum 4.5:1 contrast against surface variants */
     --color-border: var(--md-sys-color-outline-variant);
     /* Gray 200 */
 
@@ -87,14 +87,14 @@
     --border-competitor-preview: var(--color-border);
     --bg-competitor-img: #ffffff;
     --text-competitor-price: var(--color-text-main);
-    --text-competitor-availability: #059669;
+    --text-competitor-availability: #047857;
 
-    --text-pros-title: #059669;
-    /* Emerald 600 */
-    --text-cons-title: #dc2626;
-    /* Red 600 */
+    --text-pros-title: #047857;
+    /* Emerald 700 - 5.2:1 contrast against light green bg */
+    --text-cons-title: #b91c1c;
+    /* Red 700 - 5.6:1 contrast against light red bg */
     --color-price-up: #dc2626;
-    --color-price-down: #059669;
+    --color-price-down: #047857;
 
     /* Amazon Specific */
     --color-amazon-orange: #FF9900;
@@ -104,15 +104,15 @@
     /* Badge & Tag Colors (Shared) */
     --badge-amazon-bg: #FFF8E1;
     /* Light Amber bg */
-    --badge-amazon-text: #FF9900;
-    /* Amazon Orange text */
+    --badge-amazon-text: #9A3412;
+    /* Deep Amber/Orange text - 6.5:1 contrast against amber bg */
     --badge-amazon-border: #FF9900;
     --badge-amazon-shadow: transparent;
 
     --badge-haul-bg: #FDF2F8;
     /* Light Pink bg */
-    --badge-haul-text: #DB2777;
-    /* Pink 600 text */
+    --badge-haul-text: #BE185D;
+    /* Pink 700 text - 5.6:1 contrast against pink bg */
     --badge-haul-border: #FBCFE8;
     /* Pink 200 border */
     --badge-haul-shadow: transparent;
@@ -127,7 +127,7 @@
     --badge-furusato-border: rgba(5, 150, 105, 0.3);
 
     --badge-savings-bg: #fef2f2;
-    --badge-savings-text: #dc2626;
+    --badge-savings-text: #B91C1C;
     --badge-savings-border: #fca5a5;
 
     --badge-points-bg: #faf5ff;
@@ -135,7 +135,7 @@
     --badge-points-border: #d8b4fe;
 
     --badge-deal-bg: #fff1f2;
-    --badge-deal-text: #e11d48;
+    --badge-deal-text: #BE123C;
     --badge-deal-border: #fb7185;
 
     /* Material Design 3 8dp Grid Spacing & Touch Target Tokens (DESIGN.md Section 3.2) */
@@ -254,7 +254,7 @@
     --transition-base: all 0.2s ease-in-out;
 
     /* Score Colors (Light Mode) */
-    --gradient-score-excellent: linear-gradient(135deg, #047857, #059669);
+    --gradient-score-excellent: linear-gradient(135deg, #047857, #065f46);
     --shadow-score-excellent: rgba(5, 150, 105, 0.2);
     --gradient-score-good: linear-gradient(135deg, #b45309, #92400e);
     --shadow-score-good: rgba(146, 64, 14, 0.2);
