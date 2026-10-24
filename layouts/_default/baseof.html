@@ -11,6 +11,8 @@
   {{- $pageTitle = printf "本日の注目商品！AI厳選＆値下がり目玉 | %s" .Site.Title -}}
   {{- else if eq .Section "bargain" -}}
   {{- $pageTitle = printf "あともう一品！高評価お手頃商品 | %s" .Site.Title -}}
+  {{- else if eq .Section "ai" -}}
+  {{- $pageTitle = printf "AIで商品を探す・徹底比較ガイド (ChatGPT/Grok連携) | %s" .Site.Title -}}
   {{- else if eq .Type "categories" -}}
   {{- $pageTitle = printf "Amazon %s おすすめ比較ランキング | AI徹底調査 | %s" .Title .Site.Title -}}
   {{- else if eq .Type "favorites" -}}

@@ -12,6 +12,7 @@
                 <li><a href="{{ `bargain/` | relURL }}" class="header-nav-link">あともう一品</a></li>
                 <li><a href="{{ `deals/` | relURL }}" class="header-nav-link">セール対象</a></li>
                 <li><a href="{{ `brand/` | relURL }}" class="header-nav-link">ブランド一覧</a></li>
+                <li><a href="{{ `ai/` | relURL }}" class="header-nav-link">AIで探す</a></li>
                 {{- with .Site.Params.productRequestFormUrl -}}
                 <li><a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="header-nav-link" aria-label="調査リクエスト（新しいタブで開く）">調査リクエスト</a></li>
                 {{- end -}}
@@ -110,6 +111,12 @@
                 <a href="{{ `brand/` | relURL }}" class="nav-drawer-item">
                     <span class="material-symbols-outlined nav-drawer-icon" aria-hidden="true">storefront</span>
                     <span class="nav-drawer-label">ブランド一覧</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ `ai/` | relURL }}" class="nav-drawer-item">
+                    <span class="material-symbols-outlined nav-drawer-icon" aria-hidden="true">smart_toy</span>
+                    <span class="nav-drawer-label">AIで探す・活用ガイド</span>
                 </a>
             </li>
             {{- with .Site.Params.productRequestFormUrl -}}

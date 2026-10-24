@@ -1,0 +1,283 @@
+{{- define "main" -}}
+<div class="container ai-guide-container">
+    {{- partial "breadcrumb.html" . -}}
+
+    <!-- Hero Header -->
+    <header class="ai-guide-hero">
+        <div class="ai-guide-badge">
+            <span class="material-symbols-outlined ai-badge-icon" aria-hidden="true">smart_toy</span>
+            <span>AIリサーチ連携</span>
+        </div>
+        <h1 class="ai-guide-title">ChatGPTやGrokを、あなたの「専属Amazon商品リサーチャー」にする方法</h1>
+        <p class="ai-guide-subtitle">
+            面倒なAPIキーの登録やリモートMCPサーバーの設定は<strong>一切不要</strong>。<br>
+            以下のプロンプトをお使いのAIツールにコピー＆ペーストするだけで、当サイトに蓄積された数千点の独自調査データベースから、あなたに最適な商品を瞬時に調査・比較・抽出します。
+        </p>
+    </header>
+
+    <!-- 3つのメリット / 特徴 -->
+    <section class="ai-features-grid" aria-label="AIリサーチの3大メリット">
+        <div class="ai-feature-card">
+            <div class="ai-feature-icon-wrapper icon-bolt">
+                <span class="material-symbols-outlined" aria-hidden="true">bolt</span>
+            </div>
+            <h2 class="ai-feature-title">インストール不要・即座に実行</h2>
+            <p class="ai-feature-desc">お使いのChatGPT (Plus/Team/Free)、Grok、Claude、Geminiのチャット欄にプロンプトを貼るだけ。AIが自律的にサイト内データを解析します。</p>
+        </div>
+        <div class="ai-feature-card">
+            <div class="ai-feature-icon-wrapper icon-check">
+                <span class="material-symbols-outlined" aria-hidden="true">fact_check</span>
+            </div>
+            <h2 class="ai-feature-title">客観的スコア＆スペック比較</h2>
+            <p class="ai-feature-desc">当サイト独自調査による客観スコア（0〜100点）、詳細スペック、長所・短所、Keepa価格推移などを元に、AIが偏りのない比較表を作成します。</p>
+        </div>
+        <div class="ai-feature-card">
+            <div class="ai-feature-icon-wrapper icon-cart">
+                <span class="material-symbols-outlined" aria-hidden="true">shopping_cart_checkout</span>
+            </div>
+            <h2 class="ai-feature-title">Amazon直行リンクを自動提示</h2>
+            <p class="ai-feature-desc">AIが推薦した各商品にはAmazon公式への購入リンク（アフィリエイトURL）が添付されるため、最新の価格や在庫をワンタップで確認できます。</p>
+        </div>
+    </section>
+
+    <!-- コピペで使えるプロンプト集 -->
+    <section class="ai-prompts-section" aria-label="目的別プロンプト集">
+        <div class="ai-section-header">
+            <h2 class="ai-section-title">
+                <span class="material-symbols-outlined ai-section-icon" aria-hidden="true">content_paste</span>
+                コピペで即使える！目的別プロンプト集
+            </h2>
+            <p class="ai-section-desc">複雑な指示は不要です。プロンプト右上の「コピー」ボタンを押し、お使いのAIツールの入力欄にそのまま貼り付けるだけで、AIが<code>llms.txt</code>を読み込み、<strong>本サイトの詳細レポートとAmazon公式リンクが付いた比較表</strong>を自律的に作成します。「タブレット」などのキーワードはお好みの商品ジャンルに自由に書き換えてご利用いただけます。</p>
+        </div>
+
+        <div class="ai-prompts-list">
+            <!-- Prompt 1: カテゴリ高評価徹底調査 -->
+            <article class="ai-prompt-card">
+                <div class="ai-prompt-card-header">
+                    <div class="ai-prompt-meta">
+                        <span class="ai-prompt-tag tag-primary">王道・定番</span>
+                        <h3 class="ai-prompt-name">1. カテゴリ別の高評価商品を徹底調査・比較</h3>
+                    </div>
+                    <button type="button" class="ai-copy-btn" data-target="prompt-code-1" aria-label="プロンプト1をコピー">
+                        <span class="material-symbols-outlined ai-copy-icon" aria-hidden="true">content_copy</span>
+                        <span class="ai-copy-text">コピー</span>
+                    </button>
+                </div>
+                <p class="ai-prompt-explanation">指定したジャンル（タブレット、ワイヤレスイヤホン等）でスコア80点以上の高評価商品を抽出し、長所短所や比較表を生成させます。</p>
+                <div class="ai-prompt-code-container">
+                    <pre><code id="prompt-code-1">https://www.amazon-hikaku.com/llms.txt を参照して、評価の高いおすすめの「タブレット」を調査・比較して（各商品の詳細レポートとAmazonリンク付きで）。</code></pre>
+                </div>
+            </article>
+
+            <!-- Prompt 2: 予算指定・コスパ重視 -->
+            <article class="ai-prompt-card">
+                <div class="ai-prompt-card-header">
+                    <div class="ai-prompt-meta">
+                        <span class="ai-prompt-tag tag-success">コスパ重視</span>
+                        <h3 class="ai-prompt-name">2. 予算上限つき！高コスパ商品の発掘</h3>
+                    </div>
+                    <button type="button" class="ai-copy-btn" data-target="prompt-code-2" aria-label="プロンプト2をコピー">
+                        <span class="material-symbols-outlined ai-copy-icon" aria-hidden="true">content_copy</span>
+                        <span class="ai-copy-text">コピー</span>
+                    </button>
+                </div>
+                <p class="ai-prompt-explanation">予算（例: 5,000円以内、10,000円以内など）を厳守しながら、スコア85点以上の高評価アイテムを厳選させます。</p>
+                <div class="ai-prompt-code-container">
+                    <pre><code id="prompt-code-2">https://www.amazon-hikaku.com/llms.txt を参照して、「予算5,000円以内」で買える高コスパ商品を調査して（各商品の詳細レポートとAmazonリンク付きで）。</code></pre>
+                </div>
+            </article>
+
+            <!-- Prompt 3: あともう一品（送料無料ライン調整） -->
+            <article class="ai-prompt-card">
+                <div class="ai-prompt-card-header">
+                    <div class="ai-prompt-meta">
+                        <span class="ai-prompt-tag tag-warning">買い合わせ</span>
+                        <h3 class="ai-prompt-name">3. 「あともう一品」送料無料ライン調整アイテムの調査</h3>
+                    </div>
+                    <button type="button" class="ai-copy-btn" data-target="prompt-code-3" aria-label="プロンプト3をコピー">
+                        <span class="material-symbols-outlined ai-copy-icon" aria-hidden="true">content_copy</span>
+                        <span class="ai-copy-text">コピー</span>
+                    </button>
+                </div>
+                <p class="ai-prompt-explanation">Amazonの送料無料ライン（2,000円や3,500円）まであと少しのときに役立つ、手頃で高評価な日用品・文具を提案させます。</p>
+                <div class="ai-prompt-code-container">
+                    <pre><code id="prompt-code-3">https://www.amazon-hikaku.com/llms.txt を参照して、送料無料ラインに届く「2,000円以下」の手頃で高評価な日用品・文具を提案して（詳細レポートとAmazonリンク付きで）。</code></pre>
+                </div>
+            </article>
+
+            <!-- Prompt 4: セール対象・割引商品ピックアップ -->
+            <article class="ai-prompt-card">
+                <div class="ai-prompt-card-header">
+                    <div class="ai-prompt-meta">
+                        <span class="ai-prompt-tag tag-danger">セール特売</span>
+                        <h3 class="ai-prompt-name">4. セール対象品からの掘り出し物ピックアップ</h3>
+                    </div>
+                    <button type="button" class="ai-copy-btn" data-target="prompt-code-4" aria-label="プロンプト4をコピー">
+                        <span class="material-symbols-outlined ai-copy-icon" aria-hidden="true">content_copy</span>
+                        <span class="ai-copy-text">コピー</span>
+                    </button>
+                </div>
+                <p class="ai-prompt-explanation">セール・割引中の商品データから、スコアが高い本当のお買い得品をAIに選ばせます。</p>
+                <div class="ai-prompt-code-container">
+                    <pre><code id="prompt-code-4">https://www.amazon-hikaku.com/llms.txt を参照して、現在セール対象となっている注目の高評価商品をピックアップして（詳細レポートとAmazonリンク付きで）。</code></pre>
+                </div>
+            </article>
+
+            <!-- Prompt 5: 2製品のガチンコ比較 -->
+            <article class="ai-prompt-card">
+                <div class="ai-prompt-card-header">
+                    <div class="ai-prompt-meta">
+                        <span class="ai-prompt-tag tag-info">スペック対決</span>
+                        <h3 class="ai-prompt-name">5. 迷っている2製品のガチンコ徹底比較</h3>
+                    </div>
+                    <button type="button" class="ai-copy-btn" data-target="prompt-code-5" aria-label="プロンプト5をコピー">
+                        <span class="material-symbols-outlined ai-copy-icon" aria-hidden="true">content_copy</span>
+                        <span class="ai-copy-text">コピー</span>
+                    </button>
+                </div>
+                <p class="ai-prompt-explanation">購入を迷っている2つの製品（ASINや製品名）を指定し、詳細なスペック対比や長所短所をAIに白黒つけさせます。</p>
+                <div class="ai-prompt-code-container">
+                    <pre><code id="prompt-code-5">https://www.amazon-hikaku.com/llms.txt を参照して、「[商品A]」と「[商品B]」のスペック、独自スコア、長所短所を徹底比較して（両方の詳細レポートとAmazonリンク付きで）。</code></pre>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 各AIツール別のワンポイント・動作メカニズム -->
+    <section class="ai-tools-guide-section" aria-label="各AIツール別の特徴とおすすめ設定">
+        <div class="ai-section-header">
+            <h2 class="ai-section-title">
+                <span class="material-symbols-outlined ai-section-icon" aria-hidden="true">psychology</span>
+                各AIツールでの使い分け・おすすめ機能
+            </h2>
+            <p class="ai-section-desc">本サイトのデータは標準的なJSONおよびllms.txt形式で公開されているため、主要なAIツールすべてでご利用いただけます。</p>
+        </div>
+
+        <div class="ai-tools-grid">
+            <div class="ai-tool-card">
+                <div class="ai-tool-header">
+                    <h3 class="ai-tool-name">ChatGPT (OpenAI)</h3>
+                    <span class="ai-tool-badge">最も高速・おすすめ</span>
+                </div>
+                <p class="ai-tool-desc">
+                    ChatGPT（Plus/Team/Pro/Enterprise）では、プロンプトを貼ると自動的に<strong>Pythonデータ解析（Advanced Data Analysis）</strong>が作動します。
+                    1.8MBの全商品データを数秒でメモリ解析するため、スコア順ソートや価格絞り込み、比較表の生成が最も正確に行われます。
+                </p>
+            </div>
+
+            <div class="ai-tool-card">
+                <div class="ai-tool-header">
+                    <h3 class="ai-tool-name">Grok (xAI)</h3>
+                    <span class="ai-tool-badge">リアルタイム探索</span>
+                </div>
+                <p class="ai-tool-desc">
+                    GrokのリアルタイムWebアクセス機能により、llms.txtや各商品ページを直接巡回して情報を整理します。
+                    最新のトレンドや実用的な視点を交えた回答が得られます。
+                </p>
+            </div>
+
+            <div class="ai-tool-card">
+                <div class="ai-tool-header">
+                    <h3 class="ai-tool-name">Claude (Anthropic)</h3>
+                    <span class="ai-tool-badge">Projects活用</span>
+                </div>
+                <p class="ai-tool-desc">
+                    Claudeの「Projects」機能をご利用の場合、プロジェクトの知識（Project Knowledge）に当サイトのデータURLやllms.txtを登録しておくことで、いつでも即座にAmazon商品比較アシスタントとして呼び出すことができます。
+                </p>
+            </div>
+
+            <div class="ai-tool-card">
+                <div class="ai-tool-header">
+                    <h3 class="ai-tool-name">Gemini (Google)</h3>
+                    <span class="ai-tool-badge">長文コンテキスト</span>
+                </div>
+                <p class="ai-tool-desc">
+                    Geminiの巨大なコンテキストウィンドウにより、多数の商品の詳細スペックを一度に比較検討するタスクに適しています。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 開発者・AIエージェント向け案内 -->
+    <section class="ai-endpoints-section" aria-label="開発者・AIエージェント向け仕様">
+        <div class="ai-section-header">
+            <h2 class="ai-section-title">
+                <span class="material-symbols-outlined ai-section-icon" aria-hidden="true">terminal</span>
+                データエンドポイント・AIエージェント向け仕様
+            </h2>
+            <p class="ai-section-desc">自律型AIエージェントや開発者の方は、以下のエンドポイントを直接参照・クエリしていただけます。</p>
+        </div>
+
+        <div class="ai-endpoints-table-wrapper">
+            <table class="ai-endpoints-table">
+                <thead>
+                    <tr>
+                        <th scope="col">ファイル / エンドポイント</th>
+                        <th scope="col">説明・用途</th>
+                        <th scope="col">ファイルサイズ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="{{ `llms.txt` | relURL }}" target="_blank" rel="noopener noreferrer"><code>/llms.txt</code></a></td>
+                        <td>LLM・AIエージェント向けの標準案内ファイル（llmstxt.org準拠）</td>
+                        <td>約6 KB</td>
+                    </tr>
+                    <tr>
+                        <td><a href="{{ `products-summary.json` | relURL }}" target="_blank" rel="noopener noreferrer"><code>/products-summary.json</code></a></td>
+                        <td>全商品のASIN・商品名・ブランド・カテゴリ・価格・スコア・購入リンクを収録した超軽量JSON</td>
+                        <td>約1.8 MB (gzip約380KB)</td>
+                    </tr>
+                    <tr>
+                        <td><a href="{{ `bargain/index.json` | relURL }}" target="_blank" rel="noopener noreferrer"><code>/bargain/index.json</code></a></td>
+                        <td>「あともう一品（2,000円以下・高スコア）」特集専用の軽量データセット</td>
+                        <td>約200 KB</td>
+                    </tr>
+                    <tr>
+                        <td><a href="{{ `deals/index.json` | relURL }}" target="_blank" rel="noopener noreferrer"><code>/deals/index.json</code></a></td>
+                        <td>「セール対象商品」特集専用の軽量データセット</td>
+                        <td>約250 KB</td>
+                    </tr>
+                    <tr>
+                        <td><a href="{{ `llms-full.txt` | relURL }}" target="_blank" rel="noopener noreferrer"><code>/llms-full.txt</code></a></td>
+                        <td>全カテゴリ・全ブランドの多言語対訳を含む詳細版AIガイド</td>
+                        <td>約14 KB</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
+
+<script>
+(function() {
+    function initPromptCopyButtons() {
+        var copyButtons = document.querySelectorAll('.ai-copy-btn');
+        copyButtons.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var targetId = btn.getAttribute('data-target');
+                var codeEl = document.getElementById(targetId);
+                if (!codeEl) return;
+                var text = codeEl.innerText || codeEl.textContent;
+                navigator.clipboard.writeText(text).then(function() {
+                    var originalHtml = btn.innerHTML;
+                    btn.classList.add('copied');
+                    btn.innerHTML = '<span class="material-symbols-outlined ai-copy-icon" aria-hidden="true">check</span><span class="ai-copy-text">コピー完了!</span>';
+                    setTimeout(function() {
+                        btn.innerHTML = originalHtml;
+                        btn.classList.remove('copied');
+                    }, 2500);
+                }).catch(function(err) {
+                    console.error('クリップボードのコピーに失敗しました:', err);
+                });
+            });
+        });
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPromptCopyButtons);
+    } else {
+        initPromptCopyButtons();
+    }
+})();
+</script>
+{{- end -}}
