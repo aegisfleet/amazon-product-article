@@ -80,6 +80,12 @@ try {
           `[${hasInvestigation ? 'ARTICLE' : 'CACHE-ONLY'}] ASIN: ${asin} | Shard: ${shardFile} | Badge: "${dealBadge}" | Status: ${entry.status} -> ${hasInvestigation ? 'Reset to valid(ts=0)' : 'Badge cleared'}`,
         );
 
+        if (hasInvestigation) {
+          articlesResetCount++;
+        } else {
+          nonArticlesCleanedCount++;
+        }
+
         if (isExecute) {
           // セール関連フィールドのクリア
           delete entry.data.dealBadge;
@@ -91,18 +97,9 @@ try {
             // statusをvalidにし、timestampを0にリセットする
             entry.status = 'valid';
             entry.timestamp = 0;
-            articlesResetCount++;
-          } else {
-            nonArticlesCleanedCount++;
           }
 
           shardDirty = true;
-        } else {
-          if (hasInvestigation) {
-            articlesResetCount++;
-          } else {
-            nonArticlesCleanedCount++;
-          }
         }
       }
     }
