@@ -132,6 +132,45 @@ describe('CreatorsAPICache', () => {
     expect(cache.get('B008', { allowInvalid: true })).toEqual(mockProduct);
   });
 
+  test('markInvalid and markPermanentInvalid should sanitize deal badges and savings from preserved data', () => {
+    const now = Date.now();
+    const expiredTime = now - 25 * 60 * 60 * 1000;
+    const productWithDeal: ProductDetail = {
+      ...mockProduct,
+      dealBadge: 'プライム感謝祭先行セール',
+      savingsPercentage: 40,
+      dealAccessType: 'PRIME_EXCLUSIVE',
+    };
+
+    (cache as any).cache.B008_INV = {
+      data: productWithDeal,
+      timestamp: expiredTime,
+      status: 'valid',
+    };
+    (cache as any).loadedShards.add('NV');
+
+    cache.markInvalid('B008_INV');
+    const invData = (cache as any).cache.B008_INV.data;
+    expect(invData.title).toBe(mockProduct.title);
+    expect(invData.dealBadge).toBeUndefined();
+    expect(invData.savingsPercentage).toBeUndefined();
+    expect(invData.dealAccessType).toBeUndefined();
+
+    (cache as any).cache.B008_PERM = {
+      data: productWithDeal,
+      timestamp: expiredTime,
+      status: 'valid',
+    };
+    (cache as any).loadedShards.add('RM');
+
+    cache.markPermanentInvalid('B008_PERM');
+    const permData = (cache as any).cache.B008_PERM.data;
+    expect(permData.title).toBe(mockProduct.title);
+    expect(permData.dealBadge).toBeUndefined();
+    expect(permData.savingsPercentage).toBeUndefined();
+    expect(permData.dealAccessType).toBeUndefined();
+  });
+
   test('isExpiredPermanentInvalid should return true only after permanentInvalidTtl', () => {
     const now = Date.now();
     const twoDaysAgo = now - 2 * 24 * 60 * 60 * 1000;

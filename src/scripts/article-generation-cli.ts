@@ -414,10 +414,17 @@ export function categorizeAsins(
     }
   }
 
-  // 自動再試行上限数を 0 にして無駄な API アクセスを防ぐ
-  const PERMANENT_INVALID_RETRY_LIMIT = 0;
-  const retries = expiredPerm.slice(0, PERMANENT_INVALID_RETRY_LIMIT);
-  const unretriedPerm = expiredPerm.slice(PERMANENT_INVALID_RETRY_LIMIT);
+  // 恒久無効（permanent_invalid）のうちTTL期限切れの再試行上限数:
+  // 環境変数指定があればそれを優先、なければデフォルト 20（過度なAPI負荷を防ぎつつ段階的に回復）
+  let permanentInvalidRetryLimit = 20;
+  if (
+    process.env.PERMANENT_INVALID_RETRY_LIMIT !== undefined &&
+    !Number.isNaN(Number(process.env.PERMANENT_INVALID_RETRY_LIMIT))
+  ) {
+    permanentInvalidRetryLimit = Math.max(0, Number(process.env.PERMANENT_INVALID_RETRY_LIMIT));
+  }
+  const retries = expiredPerm.slice(0, permanentInvalidRetryLimit);
+  const unretriedPerm = expiredPerm.slice(permanentInvalidRetryLimit);
 
   // リトライされなかった期限切れ permanent_invalid は ignored に戻して統計の整合性を保つ
   ignored.push(...unretriedPerm);
@@ -548,6 +555,13 @@ async function generateSingleArticle(
   try {
     const cachedProduct = cache.get(data.product.asin, { ignoreExpiration: true, allowInvalid: true });
     if (cachedProduct) {
+      // 最新の有効キャッシュでない場合（期限切れやinvalid/permanent_invalid）は、古いセールバッジや割引率が残存して記事に出力されるのを防ぐためクリアする
+      const isFreshValid = cache.get(data.product.asin) !== null;
+      if (!isFreshValid) {
+        cachedProduct.dealBadge = undefined;
+        cachedProduct.savingsPercentage = undefined;
+        cachedProduct.dealAccessType = undefined;
+      }
       data.product = { ...data.product, ...cachedProduct };
       data.investigation.product = data.product;
       logger.debug(`Used cached product data for ${data.product.asin}`);

@@ -230,6 +230,7 @@ SonarQube / SonarLint による Code Smell を防止し、高い保守性を維�
 |---|---|---|
 | `src/scripts/maintenance/reset-cache-timestamp.ts` | ASIN単位のリセット | `pnpm ts-node src/scripts/maintenance/reset-cache-timestamp.ts B003AZZS4A` |
 | `src/scripts/maintenance/reset-category-cache.ts` | カテゴリ単位のリセット | `pnpm ts-node src/scripts/maintenance/reset-category-cache.ts "カテゴリー名"` |
+| `src/scripts/maintenance/clear-outdated-deal-badges.ts` | 期限切れセールバッジの一括削除・記事リフレッシュ | `pnpm run clean:outdated-deal-badges` |
 
 > [!NOTE]
 > 使用例の詳細はスクリプトのヘルプ、またはソースコードを参照すること。

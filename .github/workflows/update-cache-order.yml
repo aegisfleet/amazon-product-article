@@ -28,10 +28,13 @@ jobs:
     - name: Install dependencies
       run: pnpm install --frozen-lockfile --ignore-scripts
     
+    - name: Clean outdated deal badges
+      run: pnpm run clean:outdated-deal-badges
+
     - name: Sort cache by status
       run: pnpm exec ts-node src/scripts/maintenance/sort-cache-by-status.ts
       
     - name: Commit sorted cache
       run: |
         chmod +x .github/workflows/scripts/git-commit-push.sh
-        ./.github/workflows/scripts/git-commit-push.sh "chore: Sort product cache by status [skip ci]" "data/cache/paapi"
+        ./.github/workflows/scripts/git-commit-push.sh "chore: Clean outdated deal badges and sort cache [skip ci]" "data/cache/paapi"

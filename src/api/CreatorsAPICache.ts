@@ -450,6 +450,18 @@ export class CreatorsAPICache {
   }
 
   /**
+   * Remove deal badges and temporary sale data when marking as invalid
+   */
+  private sanitizePreservedData(data: ProductDetail | null | undefined): ProductDetail | null {
+    if (!data) return null;
+    const sanitized = { ...data };
+    delete sanitized.dealBadge;
+    delete sanitized.savingsPercentage;
+    delete sanitized.dealAccessType;
+    return sanitized;
+  }
+
+  /**
    * Mark item as invalid (e.g. not found in Creators API)
    */
   public markInvalid(asin: string): void {
@@ -463,7 +475,7 @@ export class CreatorsAPICache {
     }
 
     this.cache[asin] = {
-      data: existing?.data || null,
+      data: this.sanitizePreservedData(existing?.data),
       timestamp: Date.now(),
       status: 'invalid',
     };
@@ -487,7 +499,7 @@ export class CreatorsAPICache {
     }
 
     this.cache[asin] = {
-      data: existing?.data || null,
+      data: this.sanitizePreservedData(existing?.data),
       timestamp: Date.now(),
       status: 'permanent_invalid',
     };

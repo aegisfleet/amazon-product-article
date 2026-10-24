@@ -81,4 +81,27 @@ describe('categorizeAsins', () => {
       process.env.MAX_FETCH_ASINS = originalEnv;
     }
   });
+
+  it('should retry expired permanent_invalid ASINs up to the limit', () => {
+    const originalEnv = process.env.PERMANENT_INVALID_RETRY_LIMIT;
+    try {
+      process.env.PERMANENT_INVALID_RETRY_LIMIT = '2';
+
+      const cache = {
+        get: jest.fn(() => null),
+        isInvalid: jest.fn(() => false),
+        isExpiredPermanentInvalid: jest.fn((asin: string) => asin.startsWith('PERM')),
+        has: jest.fn(() => false),
+      } as unknown as CreatorsAPICache;
+
+      const asins = new Set(['PERM1', 'PERM2', 'PERM3']);
+      const { missingAsins, stats } = categorizeAsins(asins, cache);
+
+      expect(stats.retryPerm).toBe(2);
+      expect(missingAsins).toEqual(['PERM1', 'PERM2']);
+      expect(stats.invalid).toBe(1); // 1 unretried
+    } finally {
+      process.env.PERMANENT_INVALID_RETRY_LIMIT = originalEnv;
+    }
+  });
 });

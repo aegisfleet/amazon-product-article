@@ -38,6 +38,7 @@
     "reset:cache-timestamp": "ts-node src/scripts/maintenance/reset-cache-timestamp.ts",
     "reset:category-cache": "ts-node src/scripts/maintenance/reset-category-cache.ts",
     "sync:variations": "ts-node src/scripts/maintenance/sync-variations.ts",
+    "clean:outdated-deal-badges": "ts-node src/scripts/maintenance/clear-outdated-deal-badges.ts --execute --include-all-events",
     "biome:check": "biome check .",
     "biome:fix": "biome check --write ."
   },
