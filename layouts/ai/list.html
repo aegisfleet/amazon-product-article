@@ -251,28 +251,38 @@
 
 <script>
 (function() {
+    function resetButtonState(btn, originalHtml) {
+        btn.innerHTML = originalHtml;
+        btn.classList.remove('copied');
+    }
+
+    async function handleCopyButtonClick(event) {
+        var btn = event.currentTarget;
+        var targetId = btn.dataset.target;
+        var codeEl = document.getElementById(targetId);
+        if (!codeEl) return;
+
+        var text = codeEl.innerText || codeEl.textContent;
+        try {
+            await navigator.clipboard.writeText(text);
+            var originalHtml = btn.innerHTML;
+            btn.classList.add('copied');
+            btn.innerHTML = '<span class="material-symbols-outlined ai-copy-icon" aria-hidden="true">check</span><span class="ai-copy-text">コピー完了!</span>';
+            setTimeout(function() {
+                resetButtonState(btn, originalHtml);
+            }, 2500);
+        } catch (err) {
+            console.error('クリップボードのコピーに失敗しました:', err);
+        }
+    }
+
     function initPromptCopyButtons() {
         var copyButtons = document.querySelectorAll('.ai-copy-btn');
         copyButtons.forEach(function(btn) {
-            btn.addEventListener('click', function() {
-                var targetId = btn.getAttribute('data-target');
-                var codeEl = document.getElementById(targetId);
-                if (!codeEl) return;
-                var text = codeEl.innerText || codeEl.textContent;
-                navigator.clipboard.writeText(text).then(function() {
-                    var originalHtml = btn.innerHTML;
-                    btn.classList.add('copied');
-                    btn.innerHTML = '<span class="material-symbols-outlined ai-copy-icon" aria-hidden="true">check</span><span class="ai-copy-text">コピー完了!</span>';
-                    setTimeout(function() {
-                        btn.innerHTML = originalHtml;
-                        btn.classList.remove('copied');
-                    }, 2500);
-                }).catch(function(err) {
-                    console.error('クリップボードのコピーに失敗しました:', err);
-                });
-            });
+            btn.addEventListener('click', handleCopyButtonClick);
         });
     }
+
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initPromptCopyButtons);
     } else {
