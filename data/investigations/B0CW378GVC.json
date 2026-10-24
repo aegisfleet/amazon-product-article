@@ -1,182 +1,152 @@
 {
   "analysis": {
-    "productName": "HiBy FC1 USB DAC ヘッドホンアンプ",
+    "productName": "HiBy FC1 USB DAC",
     "parentAsin": "B0CW378GVC",
-    "productDescription": "ES9270チップを搭載し、ハイレゾオーディオ再生に対応したケーブル着脱式の小型USB DACヘッドホンアンプ。",
+    "productDescription": "HiByの小型・高音質なUSB Type-C DAC搭載ポータブルヘッドホンアンプ",
     "productUsage": [
-      "スマートフォンでの高音質音楽再生",
-      "PCでの高音質音楽再生",
-      "タブレットでのオーディオ強化"
-    ],
-    "positivePoints": [
-      "ES9270チップ搭載でDSD128、PCM 384kHz/32Bitをサポート",
-      "70+70mW@32Ωの高出力",
-      "ハードウェアのボリュームボタンとRGBインジケーターを搭載し操作性が良い",
-      "ケーブル着脱式でデバイスに合わせてケーブルを変更可能",
-      "アルミ合金製で質感が高く丈夫"
-    ],
-    "negativePoints": [
-      "OTG機能がないケーブルを使用すると正常に動作しない場合がある",
-      "Lightningケーブルは別売りである"
-    ],
-    "useCases": [
-      "通勤・通学中のスマートフォンでの音楽鑑賞",
-      "自宅のPCでの動画視聴や音楽鑑賞",
+      "スマートフォンやPCの音質向上",
       "ハイレゾ音源の再生"
     ],
-    "userStories": [],
-    "userImpression": "製品仕様に基づく客観的な評価として、低価格ながらハードウェアボリュームボタンと十分な出力（70mW+70mW）を備え、スマートフォンやPCの音質を手軽に向上させるコストパフォーマンスに優れたポータブルDACとして期待できる。",
+    "positivePoints": [
+      "ES9270 DACチップを搭載し、DSD128およびPCM 384kHz/32Bitの高音質オーディオに対応",
+      "70mW+70mW(@32Ω)の高出力を実現し、様々なHiFiイヤホンを駆動可能",
+      "ケーブル着脱式のUSB-C接続で、Android/iOS/Windows/Mac/Linuxなど幅広いデバイスにドライバー不要で接続可能",
+      "ハードウェアのボリュームボタンとRGBインジケーターライトを搭載し、直感的な操作が可能",
+      "アルミ合金製で小型・軽量なデザイン"
+    ],
+    "negativePoints": [
+      "OTG機能がない一般的なUSBケーブルを使用すると正常に動作しない場合がある（OTGケーブル必須）",
+      "iOSデバイス用（Lightning to USB-C）のOTGケーブルは別売りとなっている",
+      "エントリークラスのためバランス出力（4.4mm等）には非対応（3.5mmシングルエンドのみ）"
+    ],
+    "useCases": [
+      "通勤・通学時にスマホで高音質な音楽を楽しむ",
+      "PC作業中にイヤホン・ヘッドホンでノイズの少ないクリアな音を聴く"
+    ],
+    "userStories": [
+      {
+        "userType": "スマホで音楽を聴く人",
+        "scenario": "普段のイヤホンの音質に物足りなさを感じ、手軽な音質向上を目指す",
+        "experience": "スマホに直挿しするだけで音の解像度が上がり、クリアなHIFI音楽を手軽に楽しめた。コンパクトで邪魔にならない点も良いが、iOSで使うには別売りのOTGケーブルが必要だった。",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "エントリークラスながらES9270チップと十分な出力を備え、スマホやPCの音質を手軽にアップグレードできる入門機として評価できる。ただし、iOSユーザーは別売りのケーブルが必要な点や、3.5mmシングルエンドのみという仕様には注意が必要。手頃な価格で手堅い音質向上を求めるユーザーに適している。",
     "sources": [
       {
         "id": "src-amazon",
-        "name": "Amazon.co.jp 商品ページ",
+        "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0CW378GVC",
         "tier": "high",
         "evidenceType": "primary",
-        "publishedAt": "2026-04-05",
+        "publishedAt": "2026-10-25",
         "author": "HiBy",
-        "conflictOfInterest": "none",
-        "notes": "製品仕様、価格、機能説明を確認"
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様、対応スペック、注意点（OTGケーブルの仕様）を確認"
       }
     ],
     "claims": [
       {
-        "claim": "ES9270チップ搭載でDSD128およびPCM 384kHz/32Bitをサポート",
+        "claim": "70mW+70mW(@32Ω)の高出力で様々なHiFiイヤフォンを駆動",
         "category": "quality",
         "confidence": "high",
         "supportingSourceIds": [
           "src-amazon"
         ],
         "crossChecked": false,
-        "notes": "メーカー公式のスペックシートに記載"
-      },
-      {
-        "claim": "70+70mW@32Ωの高出力",
-        "category": "quality",
-        "confidence": "high",
-        "supportingSourceIds": [
-          "src-amazon"
-        ],
-        "crossChecked": false,
-        "notes": "メーカー公式のスペックシートに記載"
+        "notes": "公式のスペックシートに記載"
       }
     ],
-    "lastInvestigated": "2026-04-05",
+    "lastInvestigated": "2026-10-25",
+    "investigatedPrice": "価格情報なし",
     "competitiveAnalysis": [
+      {
+        "name": "NICEHCK NK1 MAX",
+        "asin": "B0FCXQKDFY",
+        "priceComparison": "対象商品と同等の価格帯（約2,870円）のエントリー機",
+        "featureComparison": [
+          "共通点：Type-C接続の小型USB DAC、32Bit/384kHzハイレゾ対応、3.5mm出力対応",
+          "相違点：NK1 MAXはCX31993+MAX97220チップを搭載、単結晶銅メッキ銀導体ケーブルを採用。HiBy FC1はES9270チップとハードウェアボリュームボタンを搭載しケーブル着脱式。"
+        ],
+        "differentiators": [
+          "HiBy FC1 USB DACの利点：ケーブルが着脱式で断線時の交換が容易。またハードウェアボリュームボタンがあるため手元で細かい音量調整がしたいなら迷わずこちら。",
+          "NICEHCK NK1 MAXの利点：ケーブル一体型で手軽に持ち運びたい、あるいはCX31993等の異なるチップの音色を試したいケースに適している。"
+        ]
+      },
+      {
+        "name": "HiBy FC4",
+        "asin": "B0B8S9N6R2",
+        "priceComparison": "対象商品（エントリー機）よりも高価な上位モデル（約9,990円）",
+        "featureComparison": [
+          "共通点：同じHiByブランドのUSB Type-CポータブルDAC、ハードウェアボリュームボタン搭載",
+          "相違点：FC4は上位チップを搭載し4.4mmバランス出力に対応、DSD256やMQAデコードにも対応するなど本格的な仕様。"
+        ],
+        "differentiators": [
+          "HiBy FC1 USB DACの利点：機能がシンプルで価格が抑えられており、3.5mmイヤホンのみを使うライトユーザーなら迷わずこちら。",
+          "HiBy FC4の利点：バランス接続(4.4mm)をしたい、MQA再生やより高いオーディオスペックを求めるならこちら。"
+        ]
+      },
       {
         "name": "EarFun UA100",
         "asin": "B0CZ8P2233",
-        "priceComparison": "対象商品より高価だが、より上位のDACチップと4.4mmバランス出力を備える",
+        "priceComparison": "対象商品より高価（約9,980円）な多機能機",
         "featureComparison": [
-          "共通点：USB-C接続のポータブルDAC、ハイレゾ対応",
-          "相違点：EarFun UA100は4.4mmバランス出力を持ち、32bit/768kHzに対応するが、対象商品は3.5mmのみで384kHzまで"
+          "共通点：Type-C接続の小型ポータブルDAC、32bit/768kHz対応のハイレゾ対応、ケーブル着脱式",
+          "相違点：EarFun UA100は4.4mmバランス出力と3.5mm出力の両方を搭載。HiBy FC1は3.5mm出力のみ。"
         ],
         "differentiators": [
-          "HiBy FC1 USB DACの利点：価格が安く、ハードウェアボリュームボタンを搭載している点",
-          "EarFun UA100の利点：4.4mmバランス出力を備え、より高性能なスペックを求める場合に適している"
-        ]
-      },
-      {
-        "name": "iBasso Jr. Macaron",
-        "asin": "B0DMDWDYQ7",
-        "priceComparison": "対象商品より高価だが、デュアルDAC構成と4.4mmバランス出力を備える",
-        "featureComparison": [
-          "共通点：ポータブルDACアンプ、ケーブル着脱式",
-          "相違点：iBassoはCS43131を2基搭載し4.4mmバランス出力に対応するが、対象商品はシングルDACで3.5mm出力のみ"
-        ],
-        "differentiators": [
-          "HiBy FC1 USB DACの利点：価格が半額近く安く、手軽に導入できるエントリーモデルである点",
-          "iBasso Jr. Macaronの利点：デュアルDACによる高音質とバランス出力対応による本格的なオーディオ体験"
-        ]
-      },
-      {
-        "name": "FEYUCOC MAX",
-        "asin": "B0G2LFLKCC",
-        "priceComparison": "対象商品より安価で、より手軽な変換アダプタータイプ",
-        "featureComparison": [
-          "共通点：Type-C接続で3.5mm出力を持つポータブルDAC",
-          "相違点：対象商品はケーブル着脱式でボリュームボタンがあるが、FEYUCOCはケーブル一体型のアダプター形状"
-        ],
-        "differentiators": [
-          "HiBy FC1 USB DACの利点：ケーブル交換が可能で断線リスクを抑えられ、本体で音量調節が可能な点",
-          "FEYUCOC MAXの利点：より小型で安価、持ち運びが容易な点"
-        ]
-      },
-      {
-        "name": "NICEHCK NK1 MAX",
-        "asin": "B0FCXY2PZB",
-        "priceComparison": "対象商品より安価で、コンパクトな変換アダプタータイプ",
-        "featureComparison": [
-          "共通点：Type-C接続でハイレゾ対応のポータブルDAC",
-          "相違点：対象商品はケーブル着脱式でボリュームボタンを備えるが、NICEHCKはケーブル一体型"
-        ],
-        "differentiators": [
-          "HiBy FC1 USB DACの利点：ハードウェアボリュームボタンを搭載し、細かな音量調整が可能な点",
-          "NICEHCK NK1 MAXの利点：価格が安く、内部構造が見える独自のデザインを持つ点"
-        ]
-      },
-      {
-        "name": "ラディウス Type-C DAC",
-        "asin": "B09GTWRTS7",
-        "priceComparison": "価格帯が近く、同等の変換機能を提供する競合製品",
-        "featureComparison": [
-          "共通点：Type-Cから3.5mmへのオーディオ変換機能",
-          "相違点：対象商品はケーブル着脱式でボリュームボタンを備える独立したアンプ形状だが、ラディウスはケーブル一体型"
-        ],
-        "differentiators": [
-          "HiBy FC1 USB DACの利点：ケーブルの交換が可能で、音量調整ボタンによりスマートフォン本体の操作を減らせる点",
-          "ラディウス Type-C DACの利点：国内メーカー製品としてのサポート体制や入手性の良さ"
-        ]
-      },
-      {
-        "name": "eppfun Type-C DAC",
-        "asin": "B0DSVZDC5Y",
-        "priceComparison": "類似の価格帯で、手軽に導入できる競合製品",
-        "featureComparison": [
-          "共通点：Type-C接続のポータブルDAC",
-          "相違点：対象商品はケーブル着脱式でアルミ合金ボディを採用しているが、eppfunの詳細は仕様により異なる"
-        ],
-        "differentiators": [
-          "HiBy FC1 USB DACの利点：アルミ合金ボディやRGBインジケーターなど、質感を高める工夫がある点",
-          "eppfun Type-C DACの利点：よりコンパクトでシンプルな構成を求める場合に適している"
+          "HiBy FC1 USB DACの利点：3.5mm接続のみに特化し、エントリー向けとしてより手軽に扱える。",
+          "EarFun UA100の利点：VGP金賞受賞の実績があり、将来的に4.4mmバランス接続へのステップアップを視野に入れているならこちら。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "スマートフォンの音質を手軽に向上させたい人",
-        "ハードウェアのボリュームボタンを重視する人",
-        "ケーブルが断線しても交換できるDACを求める人"
+        "初めてUSB DACを試す入門者で、手持ちの3.5mmイヤホンの音質を手軽にスマホやPCで向上させたい人（上位機種のような4.4mmバランス接続は不要な人）"
       ],
       "pros": [
-        "4000円台という手頃な価格帯",
-        "ハードウェアボリュームボタン搭載で操作性が良い",
-        "ケーブル着脱式で断線時の交換が可能"
+        "ES9270チップと70mWの高出力により、直挿しでは得られないクリアな音質とドライブ力を実感できる",
+        "本体のボリュームボタンで手元でサッと音量調整ができ、スマホを取り出す手間が省ける",
+        "ケーブル着脱式のため、万が一断線してもケーブル交換だけで長く使える"
       ],
       "cons": [
-        "3.5mmシングルエンド出力のみ（4.4mmバランス出力は非対応）",
-        "iPhoneで使用する場合、Lightning - Type-CのOTGケーブルを別途用意する必要がある"
+        "iPhone（Lightning端子）ユーザーは、別売りのOTG対応ケーブルを追加購入する必要があるため注意が必要",
+        "OTG機能非対応の一般的なUSB-Cケーブルでは動作不良の可能性があるため、ケーブル選びには注意が必要"
       ],
-      "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] (ES9270チップ搭載し、この価格帯でハードウェアボリュームボタンを備えているなど基本性能と使い勝手が良い)\n[加点: +8] (4950円という価格で十分な出力とアルミ合金ボディを備えており、コストパフォーマンスが非常に高い)\n[加点: +2] (アルミ合金外装やRGBインジケーターなど、ビルドクオリティへの配慮が見られる)\n[合計: 85]"
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (ES9270チップ搭載・ハードウェアボリューム付きの手堅い基本性能)\n[加点: +3] (ケーブル着脱式による保守性と利便性)\n[減点: -3] (iOS用ケーブル別売り・OTG非対応ケーブルでの動作懸念)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "45mm",
-        "width": "13mm",
-        "depth": "9mm"
+      "display": {
+        "type": "RGBインジケーターライト搭載 (ディスプレイなし)"
       },
-      "chip": "ES9270",
-      "outputPower": "70mW + 70mW @ 32Ω",
-      "supportedFormats": "PCM 384kHz/32Bit, DSD128",
-      "input": "USB Type-C",
-      "output": "3.5mmステレオミニプラグ",
-      "material": "アルミ合金",
+      "audio": {
+        "dacChip": "ES9270",
+        "output": "70mW+70mW (@32Ω)",
+        "resolution": "PCM 384kHz/32Bit, DSD128",
+        "interface": "3.5mmシングルエンド出力"
+      },
+      "dimensions": {
+        "height": "サイズ情報なし",
+        "width": "サイズ情報なし",
+        "depth": "サイズ情報なし",
+        "weight": "重量情報なし"
+      },
       "color": "ブラック",
+      "material": "アルミ合金外装",
+      "connectivity": [
+        "USB Type-C (入力)",
+        "3.5mmステレオミニ (出力)"
+      ],
       "other": [
         "ハードウェアボリュームボタン搭載",
-        "RGBインジケーターライト搭載",
-        "プラグアンドプレイ（ドライバー不要）"
+        "プラグアンドプレイ (ドライバー不要)",
+        "Android/iOS/Windows/MAC/Linux対応",
+        "※iOS接続用Lightning OTGケーブルは別売り",
+        "※OTG非対応ケーブルでは動作しない可能性あり"
       ]
     }
   }
