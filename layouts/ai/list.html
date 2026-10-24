@@ -257,15 +257,15 @@
     }
 
     async function handleCopyButtonClick(event) {
-        var btn = event.currentTarget;
-        var targetId = btn.dataset.target;
-        var codeEl = document.getElementById(targetId);
+        const btn = event.currentTarget;
+        const targetId = btn.dataset.target;
+        const codeEl = document.getElementById(targetId);
         if (!codeEl) return;
 
-        var text = codeEl.innerText || codeEl.textContent;
+        const text = codeEl.textContent?.trim() || '';
         try {
             await navigator.clipboard.writeText(text);
-            var originalHtml = btn.innerHTML;
+            const originalHtml = btn.innerHTML;
             btn.classList.add('copied');
             btn.innerHTML = '<span class="material-symbols-outlined ai-copy-icon" aria-hidden="true">check</span><span class="ai-copy-text">コピー完了!</span>';
             setTimeout(function() {
@@ -277,7 +277,7 @@
     }
 
     function initPromptCopyButtons() {
-        var copyButtons = document.querySelectorAll('.ai-copy-btn');
+        const copyButtons = document.querySelectorAll('.ai-copy-btn');
         copyButtons.forEach(function(btn) {
             btn.addEventListener('click', handleCopyButtonClick);
         });

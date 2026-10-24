@@ -823,6 +823,16 @@ a.hero-tag-brand:hover {
   transform: translateY(-1px);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  a.hero-tag-brand {
+    transition: none;
+  }
+
+  a.hero-tag-brand:hover {
+    transform: none;
+  }
+}
+
 /* リンクなし：非インタラクティブなブランドタグ */
 .hero-tag.card-tag-brand-text {
   background: var(--color-bg-body, #f9fafb);
@@ -1696,6 +1706,27 @@ a.hero-tag-brand:hover {
 .dot.active {
   background: var(--color-primary);
   transform: scale(1.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-image,
+  .carousel-zoom-hint,
+  .carousel-button,
+  .dot {
+    transition: none;
+  }
+
+  .product-image-carousel:hover .carousel-zoom-hint {
+    transform: none;
+  }
+
+  .carousel-button:hover {
+    transform: translateY(-50%);
+  }
+
+  .dot.active {
+    transform: none;
+  }
 }
 
 /* Image Modal (Lightbox) */
@@ -10288,9 +10319,9 @@ legend.font-size-label {
 }
 
 [data-theme="dark"] .ai-guide-badge {
-  background: rgba(167, 139, 250, 0.15);
-  color: #c4b5fd;
-  border-color: rgba(167, 139, 250, 0.3);
+  background: #2e1065;
+  color: #ddd6fe;
+  border-color: #4c1d95;
 }
 
 .ai-badge-icon {
@@ -10353,6 +10384,16 @@ legend.font-size-label {
   box-shadow: var(--shadow-md);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .ai-feature-card {
+    transition: none;
+  }
+
+  .ai-feature-card:hover {
+    transform: none;
+  }
+}
+
 .ai-feature-icon-wrapper {
   width: 44px;
   height: 44px;
@@ -10379,15 +10420,18 @@ legend.font-size-label {
 }
 
 [data-theme="dark"] .ai-feature-icon-wrapper.icon-bolt {
-  color: #818cf8;
+  background: #1e1b4b;
+  color: #c7d2fe;
 }
 
 [data-theme="dark"] .ai-feature-icon-wrapper.icon-check {
-  color: #34d399;
+  background: #064e3b;
+  color: #a7f3d0;
 }
 
 [data-theme="dark"] .ai-feature-icon-wrapper.icon-cart {
-  color: #fbbf24;
+  background: #451a03;
+  color: #fde68a;
 }
 
 .ai-feature-title {
@@ -10515,28 +10559,28 @@ legend.font-size-label {
 }
 
 [data-theme="dark"] .ai-prompt-tag.tag-primary {
-  background: rgba(167, 139, 250, 0.2);
-  color: #c4b5fd;
+  background: #2e1065;
+  color: #ddd6fe;
 }
 
 [data-theme="dark"] .ai-prompt-tag.tag-success {
-  background: rgba(52, 211, 153, 0.2);
-  color: #6ee7b7;
+  background: #064e3b;
+  color: #a7f3d0;
 }
 
 [data-theme="dark"] .ai-prompt-tag.tag-warning {
-  background: rgba(251, 191, 36, 0.2);
-  color: #fcd34d;
+  background: #451a03;
+  color: #fde68a;
 }
 
 [data-theme="dark"] .ai-prompt-tag.tag-danger {
-  background: rgba(248, 113, 113, 0.2);
-  color: #fca5a5;
+  background: #450a0a;
+  color: #fecaca;
 }
 
 [data-theme="dark"] .ai-prompt-tag.tag-info {
-  background: rgba(129, 140, 248, 0.2);
-  color: #a5b4fc;
+  background: #1e1b4b;
+  color: #c7d2fe;
 }
 
 /* Copy Button */
@@ -10554,6 +10598,12 @@ legend.font-size-label {
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-copy-btn {
+    transition: none;
+  }
 }
 
 .ai-copy-btn:hover {
@@ -10666,8 +10716,8 @@ legend.font-size-label {
 }
 
 [data-theme="dark"] .ai-tool-badge {
-  background: rgba(167, 139, 250, 0.15);
-  color: #c4b5fd;
+  background: #2e1065;
+  color: #ddd6fe;
 }
 
 .ai-tool-desc {
@@ -10728,6 +10778,7 @@ legend.font-size-label {
 }
 
 [data-theme="dark"] .ai-endpoints-table code {
-  background: rgba(167, 139, 250, 0.15);
-  color: #c4b5fd;
-}
+  background: #261b40;
+  color: #ddd6fe;
+}
+
