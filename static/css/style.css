@@ -843,7 +843,7 @@ a.hero-tag-brand:hover {
 
 .card-spec-tag {
   background: var(--bg-tag);
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
   display: inline-flex;
 }
 
@@ -999,7 +999,7 @@ a.hero-tag-brand:hover {
   background-color: transparent;
   border: none;
   box-shadow: none;
-  color: #059669;
+  color: #047857;
   font-weight: 600;
   padding: 0.15rem 0.25rem;
 }
@@ -1008,7 +1008,7 @@ a.hero-tag-brand:hover {
 .m3-badge.badge-availability:not(.badge-out-of-stock)::before {
   content: "●";
   font-size: 0.55em;
-  color: #10b981;
+  color: #047857;
   line-height: 1;
   margin-right: 0.25rem;
   vertical-align: 1px;
@@ -1128,45 +1128,53 @@ a.hero-tag-brand:hover {
 
 /* Dynamic Score Colors */
 .card-score.score-excellent {
+  background-color: #047857;
   background: var(--gradient-score-excellent);
   color: white;
   box-shadow: 0 1px 2px var(--shadow-score-excellent);
 }
 
 [data-theme="dark"] .card-score.score-excellent {
+  background-color: #047857;
   background: var(--gradient-score-excellent);
   border: 1px solid var(--border-score-excellent);
 }
 
 .card-score.score-good {
+  background-color: #b45309;
   background: var(--gradient-score-good);
   color: white;
   box-shadow: 0 1px 2px var(--shadow-score-good);
 }
 
 [data-theme="dark"] .card-score.score-good {
+  background-color: #b45309;
   background: var(--gradient-score-good);
   border: 1px solid var(--border-score-good);
 }
 
 .card-score.score-fair {
+  background-color: #4b5563;
   background: var(--gradient-score-fair);
   color: white;
   box-shadow: 0 1px 2px var(--shadow-score-fair);
 }
 
 [data-theme="dark"] .card-score.score-fair {
+  background-color: #4b5563;
   background: var(--gradient-score-fair);
   border: 1px solid var(--border-score-fair);
 }
 
 .card-score.score-caution {
+  background-color: #b91c1c;
   background: var(--gradient-score-caution);
   color: white;
   box-shadow: 0 1px 2px var(--shadow-score-caution);
 }
 
 [data-theme="dark"] .card-score.score-caution {
+  background-color: #b91c1c;
   background: var(--gradient-score-caution);
   border: 1px solid var(--border-score-caution);
 }
@@ -1945,6 +1953,7 @@ a.hero-tag-brand:hover {
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-sm);
+  background-color: #047857;
   background: var(--gradient-score-excellent);
   color: white;
   padding: var(--spacing-sm) var(--spacing-lg);
@@ -1956,6 +1965,7 @@ a.hero-tag-brand:hover {
 }
 
 [data-theme="dark"] .product-score-badge {
+  background-color: #064e3b;
   background: linear-gradient(135deg, #064e3b, #022c22);
   /* Emerald 900 to 950 */
   border: 1px solid #059669;
@@ -1987,6 +1997,7 @@ a.hero-tag-brand:hover {
   align-items: center;
   justify-content: center;
   gap: var(--spacing-sm);
+  background-color: #f0c14b;
   background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
   color: #111;
   border: 1px solid #a88734;
@@ -2014,6 +2025,7 @@ a.hero-tag-brand:hover {
 .btn-amazon-hero:hover,
 .btn-amazon-large:hover,
 .btn-amazon-small:hover {
+  background-color: #eeb933;
   background: linear-gradient(to bottom, #f5d78e, #eeb933);
   color: #111;
   transform: translateY(-2px);
@@ -2032,6 +2044,7 @@ a.hero-tag-brand:hover {
 [data-theme="dark"] .btn-amazon-hero,
 [data-theme="dark"] .btn-amazon-large,
 [data-theme="dark"] .btn-amazon-small {
+  background-color: #ff9900;
   background: linear-gradient(to bottom, #ffad33, #ff9900);
   border-color: #c47900;
   color: #232f3e;
@@ -3806,7 +3819,7 @@ a.category-view-all,
 .table-of-contents #TableOfContents a.is-active,
 .toc-sidebar-body #TableOfContents a.is-active,
 .toc-modal-body #TableOfContents a.is-active {
-  color: var(--color-primary);
+  color: var(--text-tag);
   font-weight: 700;
   background: var(--bg-tag);
   border-left: 3px solid var(--color-primary);
@@ -3954,6 +3967,11 @@ a.category-view-all,
 
 .toc-fab:active {
   transform: translateY(0);
+}
+
+[data-theme="dark"] .toc-fab {
+  background: var(--md-sys-color-primary, #818cf8);
+  color: var(--md-sys-color-on-primary, #1e1b4b);
 }
 
 /* 下スクロール中は読書を妨げないよう半透明化（個別クラス対応用フォールバック） */
@@ -4343,7 +4361,7 @@ body.toc-modal-open {
 .pickup-card-category-label {
   font-size: 0.625rem;
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--text-tag);
   background: var(--bg-tag);
   padding: 0.1rem 0.4rem;
   border-radius: var(--radius-sm);
@@ -4871,11 +4889,13 @@ body.toc-modal-open {
 }
 
 .hero-score-bar.score-excellent {
+  background-color: #047857;
   background: var(--gradient-score-excellent);
   color: white;
 }
 
 [data-theme="dark"] .hero-score-bar.score-excellent {
+  background-color: #047857;
   background: var(--gradient-score-excellent);
   color: white;
   border: 1px solid var(--border-score-excellent);
@@ -4883,11 +4903,13 @@ body.toc-modal-open {
 }
 
 .hero-score-bar.score-good {
+  background-color: #b45309;
   background: var(--gradient-score-good);
   color: white;
 }
 
 [data-theme="dark"] .hero-score-bar.score-good {
+  background-color: #b45309;
   background: var(--gradient-score-good);
   color: white;
   border: 1px solid var(--border-score-good);
@@ -4895,11 +4917,13 @@ body.toc-modal-open {
 }
 
 .hero-score-bar.score-fair {
+  background-color: #4b5563;
   background: var(--gradient-score-fair);
   color: white;
 }
 
 [data-theme="dark"] .hero-score-bar.score-fair {
+  background-color: #4b5563;
   background: var(--gradient-score-fair);
   color: white;
   border: 1px solid var(--border-score-fair);
@@ -4907,11 +4931,13 @@ body.toc-modal-open {
 }
 
 .hero-score-bar.score-caution {
+  background-color: #b91c1c;
   background: var(--gradient-score-caution);
   color: white;
 }
 
 [data-theme="dark"] .hero-score-bar.score-caution {
+  background-color: #b91c1c;
   background: var(--gradient-score-caution);
   color: white;
   border: 1px solid var(--border-score-caution);
