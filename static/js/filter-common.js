@@ -3,6 +3,50 @@
  * 特設ページのフィルタリング処理における共通ヘルパー関数およびDOM描画ロジック。
  */
 
+// --- Product Dataset Loader ---
+/**
+ * 特集ページ（bargain / deals / low-scores）用データセットの読み込み。
+ * インライン JSON（script 要素の本文）があればそれをパースし（後方互換）、
+ * 無ければ data-src が指す外部 JSON（Hugo の JSON 出力）を fetch する。
+ * 取得に失敗した場合は null を返し、noResultsId の要素へエラー表示を出す。
+ *
+ * @param {HTMLElement} dataEl - id が "<section>-data" の script 要素
+ * @param {string} [noResultsId] - 失敗時に表示する「結果なし」要素の id
+ * @returns {Promise<Array|null>} 商品データ配列。失敗時は null。
+ */
+async function loadProductDataset(dataEl, noResultsId) {
+  try {
+    const inlineData = dataEl.textContent.trim();
+    if (inlineData) return JSON.parse(inlineData);
+    if (dataEl.dataset.src) {
+      const response = await fetch(dataEl.dataset.src);
+      if (response.ok) return await response.json();
+    }
+  } catch {
+    // 取得失敗時はフォールバック表示に進む
+  }
+  showDatasetLoadError(noResultsId);
+  return null;
+}
+
+/**
+ * データセット取得失敗時のフォールバック表示。
+ * 「結果なし」要素の文案を読み込みエラー用に差し替えて表示する。
+ *
+ * @param {string} [noResultsId] - 「結果なし」要素の id
+ */
+function showDatasetLoadError(noResultsId) {
+  if (!noResultsId) return;
+  const el = document.getElementById(noResultsId);
+  if (!el) return;
+  const textEl = el.querySelector('.bargain-no-results-text');
+  if (textEl) {
+    textEl.textContent =
+      '商品データを読み込めませんでした。通信環境をご確認のうえ、ページを再読み込みしてください。';
+  }
+  el.style.display = 'flex';
+}
+
 // --- Price Slider Mapping Helpers ---
 function valueToPrice(v) {
   if (v <= 250) {

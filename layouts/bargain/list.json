@@ -1,0 +1,9 @@
+{{- /* 「あともう一品」絞り込み用データセット（従来は HTML 埋め込みだったものを外部 JSON 化） */ -}}
+{{- $articles := where .Site.RegularPages "Section" "articles" -}}
+{{- $targets := slice -}}
+{{- range $articles -}}
+  {{- if ge (.Params.score | default 0) 1 -}}
+    {{- $targets = $targets | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- partial "product-dataset.html" (dict "pages" $targets) | jsonify -}}

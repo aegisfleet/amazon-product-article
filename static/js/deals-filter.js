@@ -34,17 +34,13 @@ function sortFilteredProducts(filtered, sortType) {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   const dataEl = document.getElementById('deals-data');
   if (!dataEl) return;
 
   /** @type {Array<{title:string, url:string, score:number, price:string, priceRaw:number, asin:string, category:string, image:string, affiliateUrl:string, lastInvestigated:string, isAmazonDirect:boolean, isAmazonHaul:boolean, loyaltyPoints:number, savingsPercentage:number, dealBadge:string, dealAccessType:string}>} */
-  let allProducts;
-  try {
-    allProducts = JSON.parse(dataEl.textContent);
-  } catch {
-    return;
-  }
+  const allProducts = await loadProductDataset(dataEl, 'deals-no-results');
+  if (!allProducts) return;
 
   // DOM refs
   const scoreSlider = document.getElementById('deals-score-slider');

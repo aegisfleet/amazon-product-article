@@ -27,17 +27,13 @@ function sortProducts(products, sortValue) {
   });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   const dataEl = document.getElementById('bargain-data');
   if (!dataEl) return;
 
   /** @type {Array<{title:string, url:string, score:number, price:string, priceRaw:number, asin:string, category:string, image:string, affiliateUrl:string, lastInvestigated:string, isAmazonDirect:boolean, isAmazonHaul:boolean, loyaltyPoints:number}>} */
-  let allProducts;
-  try {
-    allProducts = JSON.parse(dataEl.textContent);
-  } catch {
-    return;
-  }
+  const allProducts = await loadProductDataset(dataEl, 'bargain-no-results');
+  if (!allProducts) return;
 
   // DOM refs
   const scoreSlider = document.getElementById('bargain-score-slider');

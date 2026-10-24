@@ -1,0 +1,31 @@
+{{- /*
+  simple-index.html
+
+  カードグリッドで描画すると巨大化する一覧ページ向けの軽量インデックス。
+  - カテゴリ一覧（Kind = "taxonomy"、/categories/）: 全カテゴリへのリンク集
+  - 全商品セクション一覧（Section = "articles"、/articles/）: カテゴリ導線へのリンク集
+
+  対象ページは seo-indexable.html で noindex とし、sitemap からも除外する。
+  内部リンク経路としては残し、カテゴリ／商品ページの発見可能性は維持する。
+*/ -}}
+{{- $terms := slice -}}
+{{- if eq .Kind "taxonomy" -}}
+  {{- $terms = .Pages -}}
+{{- else -}}
+  {{- with site.GetPage "/categories" -}}
+    {{- $terms = .Pages -}}
+  {{- end -}}
+{{- end -}}
+<div class="container" style="padding-top: var(--spacing-xl);">
+    {{- partial "breadcrumb.html" . -}}
+    <div class="article-header">
+        <h1>{{ .Title }}</h1>
+        {{- with .Description -}}<p class="article-meta">{{ . }}</p>{{- end -}}
+        <p class="article-meta">全{{ len $terms }}カテゴリから探せます。各カテゴリページでスコア・価格帯による絞り込みと比較ができます。</p>
+    </div>
+    <ul class="simple-index-list">
+        {{- range sort $terms "LinkTitle" -}}
+        <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> <span class="article-meta">({{ len .Pages }}件)</span></li>
+        {{- end -}}
+    </ul>
+</div>

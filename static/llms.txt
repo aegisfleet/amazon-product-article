@@ -17,6 +17,7 @@ AIアシスタントや自律型エージェントがユーザーの商品選び
   - **KO**: AI 에이전트 및 브라우징 도구를 위한 초경량 인덱스(약 1.8MB, gzip 시 약 380KB). 전 상품의 ASIN, 상품명, 브랜드, 카테고리, 가격, 점수, 아마존 구매 링크 포함.
 - [全商品インデックス (JSON) / Full Index JSON](https://www.amazon-hikaku.com/index.json): 詳細スペックテキストおよび構造化JSONを含む網羅的データ（約9.3MB）。Detailed specs and structured JSON.
 - [サイトマップ (XML) / Sitemap](https://www.amazon-hikaku.com/sitemap.xml): サイト全体のURL構造および最新更新日を示すサイトマップ。Sitemap XML.
+- 特集ページ用データセット (JSON): [あともう一品](https://www.amazon-hikaku.com/bargain/index.json) / [セール対象](https://www.amazon-hikaku.com/deals/index.json) / [低スコア](https://www.amazon-hikaku.com/low-scores/index.json): 各特集ページの絞り込み用商品データ（価格・スコア・スペック等）。Section datasets for the bargain / deals / low-scores pages.
 - [詳細版案内 (LLMs Full Index)](https://www.amazon-hikaku.com/llms-full.txt): 全主要カテゴリおよびブランドを含む詳細版ガイド（多言語対訳付き）。Comprehensive guide with multi-language categories and brands.
 
 ## URL構造規則 (URL Structure)
