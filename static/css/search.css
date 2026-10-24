@@ -1345,6 +1345,15 @@
     color: inherit;
 }
 
+[data-theme="dark"] .floating-search-fab {
+    background: var(--md-sys-color-primary, #818cf8);
+    color: var(--md-sys-color-on-primary, #1e1b4b);
+}
+
+[data-theme="dark"] .floating-search-fab .floating-search-icon {
+    color: var(--md-sys-color-on-primary, #1e1b4b);
+}
+
 /* ドロワーメニュー展開時はボタンを退避非表示 */
 body.menu-open .floating-search-fab {
     opacity: 0;
