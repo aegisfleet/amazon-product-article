@@ -2131,9 +2131,9 @@ a.hero-tag-brand:hover {
 }
 
 [data-theme="dark"] .btn-internal-small:hover {
-  background: var(--md-sys-color-primary, #818CF8);
-  color: var(--md-sys-color-on-primary, #1E1B4B);
-  border-color: var(--md-sys-color-primary, #818CF8);
+  background: #4f46e5;
+  color: #ffffff;
+  border-color: #4f46e5;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
@@ -2300,9 +2300,9 @@ a.competitor-preview:hover {
 
 [data-theme="dark"] .competitor-links .btn-internal-small:hover,
 [data-theme="dark"] .competitor-links .btn-internal--full:hover {
-  background: var(--md-sys-color-primary, #818CF8);
-  color: var(--md-sys-color-on-primary, #1E1B4B);
-  border-color: var(--md-sys-color-primary, #818CF8);
+  background: #4f46e5;
+  color: #ffffff;
+  border-color: #4f46e5;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
@@ -3975,8 +3975,14 @@ a.category-view-all,
 }
 
 [data-theme="dark"] .toc-fab {
-  background: var(--md-sys-color-primary, #818cf8);
-  color: var(--md-sys-color-on-primary, #1e1b4b);
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .toc-fab:hover,
+[data-theme="dark"] .toc-fab:active {
+  background: #4338ca;
+  color: #ffffff;
 }
 
 /* 下スクロール中は読書を妨げないよう半透明化（個別クラス対応用フォールバック） */
@@ -5429,6 +5435,21 @@ body.toc-modal-open {
 .scroll-to-top .material-symbols-outlined {
   font-size: 24px;
   line-height: 1;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .scroll-to-top {
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .scroll-to-top:hover,
+[data-theme="dark"] .scroll-to-top:active {
+  background: #4338ca;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .scroll-to-top .material-symbols-outlined {
   color: #ffffff;
 }
 
@@ -7915,18 +7936,18 @@ body.menu-open {
 }
 
 [data-theme="dark"] .nav-menu-floating-toggle {
-  background: var(--md-sys-color-primary, #818cf8);
-  color: var(--md-sys-color-on-primary, #1e1b4b);
+  background: #4f46e5;
+  color: #ffffff;
 }
 
 [data-theme="dark"] .nav-menu-floating-toggle:hover,
 [data-theme="dark"] .nav-menu-floating-toggle:active {
-  background: var(--md-sys-color-primary-dark, #a5b4fc);
-  color: var(--md-sys-color-on-primary, #1e1b4b);
+  background: #4338ca;
+  color: #ffffff;
 }
 
 [data-theme="dark"] .nav-menu-floating-toggle .nav-toggle-icon span {
-  background-color: var(--md-sys-color-on-primary, #1e1b4b);
+  background-color: #ffffff;
 }
 
 /* ドロワー展開時はフローティングボタンを退避非表示 */
@@ -8974,8 +8995,8 @@ body.compare-modal-open {
 
 [data-theme="dark"] .compare-tray-count,
 [data-theme="dark"] .compare-tray-badge-count {
-  background-color: var(--md-sys-color-primary, #818cf8);
-  color: var(--md-sys-color-on-primary, #1e1b4b);
+  background-color: #4f46e5;
+  color: #ffffff;
 }
 
 [data-theme="dark"] .compare-tray-item {
@@ -9098,9 +9119,9 @@ body.compare-modal-open {
 }
 
 [data-theme="dark"] .compare-btn-review:hover {
-  background: var(--md-sys-color-primary, #818CF8);
-  color: var(--md-sys-color-on-primary, #1E1B4B);
-  border-color: var(--md-sys-color-primary, #818CF8);
+  background: #4f46e5;
+  color: #ffffff;
+  border-color: #4f46e5;
 }
 
 [data-theme="dark"] .compare-btn-amazon {
@@ -9494,8 +9515,8 @@ legend.font-size-label {
 }
 
 [data-theme="dark"] .font-size-btn.is-active {
-  background-color: var(--md-sys-color-primary, #818cf8);
-  color: var(--md-sys-color-on-primary, #1e1b4b);
+  background-color: #4f46e5;
+  color: #ffffff;
 }
 
 /* Article Content Font Size Modifiers & Global Scaling */
