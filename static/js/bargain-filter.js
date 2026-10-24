@@ -32,22 +32,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (!dataEl) return;
 
   /** @type {Array<{title:string, url:string, score:number, price:string, priceRaw:number, asin:string, category:string, image:string, affiliateUrl:string, lastInvestigated:string, isAmazonDirect:boolean, isAmazonHaul:boolean, loyaltyPoints:number}>} */
-  let allProducts;
-  try {
-    const inlineData = dataEl.textContent.trim();
-    if (inlineData) {
-      allProducts = JSON.parse(inlineData);
-    } else if (dataEl.dataset.src) {
-      // データは外部 JSON（Hugo の JSON 出力）から取得する。HTML への埋め込みは肥大化するため廃止した。
-      const response = await fetch(dataEl.dataset.src);
-      if (!response.ok) return;
-      allProducts = await response.json();
-    } else {
-      return;
-    }
-  } catch {
-    return;
-  }
+  const allProducts = await loadProductDataset(dataEl, 'bargain-no-results');
+  if (!allProducts) return;
 
   // DOM refs
   const scoreSlider = document.getElementById('bargain-score-slider');
