@@ -28,12 +28,12 @@ describe('generateProductsSummary', () => {
     it('正常なフロントマターから商品サマリー情報を正しく抽出できること', () => {
       const content = `---
 title: "Audio-Technica AT2040 ダイナミックマイク"
+description: "ポッドキャストや配信に最適なハイパーカーディオイドダイナミックマイク。"
 brand: "Audio-Technica"
 categories: ["マイク"]
 asin: "B09BFPNW2J"
 price: "￥11,800"
 score: 88
-affiliate_url: "https://www.amazon.co.jp/dp/B09BFPNW2J?tag=test-22"
 images: ["https://m.media-amazon.com/images/I/51test.jpg", "https://m.media-amazon.com/images/I/52test.jpg"]
 ---
 
@@ -47,12 +47,12 @@ images: ["https://m.media-amazon.com/images/I/51test.jpg", "https://m.media-amaz
       expect(item).toEqual({
         asin: 'B09BFPNW2J',
         title: 'Audio-Technica AT2040 ダイナミックマイク',
+        description: 'ポッドキャストや配信に最適なハイパーカーディオイドダイナミックマイク。',
         brand: 'Audio-Technica',
         category: 'マイク',
         price: 11800,
         score: 88,
         url: 'https://www.amazon-hikaku.com/b09bfpnw2j/',
-        affiliate_url: 'https://www.amazon.co.jp/dp/B09BFPNW2J?tag=test-22',
         image: 'https://m.media-amazon.com/images/I/51test.jpg',
       });
     });
@@ -96,7 +96,6 @@ asin: "B000000001"
 price: "1.5万円"
 score: 95
 categories: ["家電"]
-affiliate_url: "https://example.com"
 ---
 `;
       const item = parseProductSummary(content, 'https://www.amazon-hikaku.com/');
@@ -107,7 +106,6 @@ affiliate_url: "https://example.com"
       const content = `---
 title: "スコアなし商品"
 asin: "B000000002"
-affiliate_url: "https://example.com"
 ---
 `;
       const item = parseProductSummary(content, 'https://www.amazon-hikaku.com/');
@@ -116,25 +114,25 @@ affiliate_url: "https://example.com"
   });
 
   describe('generateProductsSummary 全体フロー', () => {
-    it('複数記事から products-summary.json を正常に生成できること', async () => {
+    it('複数記事から products-summary.json を独自スコア降順で正常に生成できること', async () => {
       const article1 = `---
 title: "商品A"
+description: "商品Aの説明"
 brand: "ブランドA"
 categories: ["カテゴリA"]
 asin: "B00000000A"
 price: "￥1,000"
 score: 80
-affiliate_url: "https://www.amazon.co.jp/dp/B00000000A?tag=test-22"
 ---
 `;
       const article2 = `---
 title: "商品B"
+description: "商品Bの説明"
 brand: "ブランドB"
 categories: ["カテゴリB"]
 asin: "B00000000B"
 price: "￥2,500"
 score: 90
-affiliate_url: "https://www.amazon.co.jp/dp/B00000000B?tag=test-22"
 ---
 `;
 
@@ -156,8 +154,12 @@ affiliate_url: "https://www.amazon.co.jp/dp/B00000000B?tag=test-22"
       const writtenJson = JSON.parse(await fs.promises.readFile(outputPath, 'utf-8')) as ProductSummaryItem[];
       expect(writtenJson).toHaveLength(2);
 
-      const asins = writtenJson.map((i) => i.asin).sort();
-      expect(asins).toEqual(['B00000000A', 'B00000000B']);
+      // スコア降順（90点の商品Bが先頭、80点の商品Aが2番目）に並んでいることを検証
+      expect(writtenJson[0]?.asin).toBe('B00000000B');
+      expect(writtenJson[0]?.score).toBe(90);
+      expect(writtenJson[0]?.description).toBe('商品Bの説明');
+      expect(writtenJson[1]?.asin).toBe('B00000000A');
+      expect(writtenJson[1]?.score).toBe(80);
     });
 
     it('ディレクトリが存在しない場合は空配列を返しファイルを作成しないこと', async () => {

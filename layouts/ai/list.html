@@ -35,8 +35,8 @@
             <div class="ai-feature-icon-wrapper icon-cart">
                 <span class="material-symbols-outlined" aria-hidden="true">shopping_cart_checkout</span>
             </div>
-            <h2 class="ai-feature-title">Amazon直行リンクを自動提示</h2>
-            <p class="ai-feature-desc">AIが推薦した各商品にはAmazon公式への購入リンク（アフィリエイトURL）が添付されるため、最新の価格や在庫をワンタップで確認できます。</p>
+            <h2 class="ai-feature-title">詳細レポートへ直行</h2>
+            <p class="ai-feature-desc">AIが推薦した各商品には当サイトの詳細レポートURLが付くため、客観スコアや長所短所、最新価格・在庫・購入リンクをワンタップで確認できます。</p>
         </div>
     </section>
 
@@ -47,7 +47,7 @@
                 <span class="material-symbols-outlined ai-section-icon" aria-hidden="true">content_paste</span>
                 コピペで即使える！目的別プロンプト集
             </h2>
-            <p class="ai-section-desc">複雑な指示は不要です。プロンプト右上の「コピー」ボタンを押し、お使いのAIツールの入力欄にそのまま貼り付けるだけで、AIが<code>llms.txt</code>を読み込み、<strong>本サイトの詳細レポートとAmazon公式リンクが付いた比較表</strong>を自律的に作成します。「タブレット」などのキーワードはお好みの商品ジャンルに自由に書き換えてご利用いただけます。</p>
+            <p class="ai-section-desc">複雑な指示は不要です。プロンプト右上の「コピー」ボタンを押し、お使いのAIツールの入力欄にそのまま貼り付けるだけで、AIが<code>llms.txt</code>を読み込み、<strong>本サイトの詳細レポートリンクが付いた比較表</strong>を自律的に作成します。「タブレット」などのキーワードはお好みの商品ジャンルに自由に書き換えてご利用いただけます。</p>
         </div>
 
         <div class="ai-prompts-list">
@@ -65,7 +65,7 @@
                 </div>
                 <p class="ai-prompt-explanation">指定したジャンル（タブレット、ワイヤレスイヤホン等）でスコア80点以上の高評価商品を抽出し、長所短所や比較表を生成させます。</p>
                 <div class="ai-prompt-code-container">
-                    <pre><code id="prompt-code-1">https://www.amazon-hikaku.com/llms.txt を参照して、評価の高いおすすめの「タブレット」を調査・比較して（各商品の詳細レポートとAmazonリンク付きで）。</code></pre>
+                    <pre><code id="prompt-code-1">https://www.amazon-hikaku.com/llms.txt を参照して、評価の高いおすすめの「タブレット」を調査・比較して（各商品の詳細レポートリンク付きで）。</code></pre>
                 </div>
             </article>
 
@@ -83,7 +83,7 @@
                 </div>
                 <p class="ai-prompt-explanation">予算（例: 5,000円以内、10,000円以内など）を厳守しながら、スコア85点以上の高評価アイテムを厳選させます。</p>
                 <div class="ai-prompt-code-container">
-                    <pre><code id="prompt-code-2">https://www.amazon-hikaku.com/llms.txt を参照して、「予算5,000円以内」で買える高コスパ商品を調査して（各商品の詳細レポートとAmazonリンク付きで）。</code></pre>
+                    <pre><code id="prompt-code-2">https://www.amazon-hikaku.com/llms.txt を参照して、「予算5,000円以内」で買える高コスパ商品を調査して（各商品の詳細レポートリンク付きで）。</code></pre>
                 </div>
             </article>
 
@@ -101,7 +101,7 @@
                 </div>
                 <p class="ai-prompt-explanation">Amazonの送料無料ライン（2,000円や3,500円）まであと少しのときに役立つ、手頃で高評価な日用品・文具を提案させます。</p>
                 <div class="ai-prompt-code-container">
-                    <pre><code id="prompt-code-3">https://www.amazon-hikaku.com/llms.txt を参照して、送料無料ラインに届く「2,000円以下」の手頃で高評価な日用品・文具を提案して（詳細レポートとAmazonリンク付きで）。</code></pre>
+                    <pre><code id="prompt-code-3">https://www.amazon-hikaku.com/llms.txt を参照して、送料無料ラインに届く「2,000円以下」の手頃で高評価な日用品・文具を提案して（詳細レポートリンク付きで）。</code></pre>
                 </div>
             </article>
 
@@ -119,7 +119,7 @@
                 </div>
                 <p class="ai-prompt-explanation">セール・割引中の商品データから、スコアが高い本当のお買い得品をAIに選ばせます。</p>
                 <div class="ai-prompt-code-container">
-                    <pre><code id="prompt-code-4">https://www.amazon-hikaku.com/llms.txt を参照して、現在セール対象となっている注目の高評価商品をピックアップして（詳細レポートとAmazonリンク付きで）。</code></pre>
+                    <pre><code id="prompt-code-4">https://www.amazon-hikaku.com/llms.txt を参照して、現在セール対象となっている注目の高評価商品をピックアップして（詳細レポートリンク付きで）。</code></pre>
                 </div>
             </article>
 
@@ -137,7 +137,7 @@
                 </div>
                 <p class="ai-prompt-explanation">購入を迷っている2つの製品（ASINや製品名）を指定し、詳細なスペック対比や長所短所をAIに白黒つけさせます。</p>
                 <div class="ai-prompt-code-container">
-                    <pre><code id="prompt-code-5">https://www.amazon-hikaku.com/llms.txt を参照して、「[商品A]」と「[商品B]」のスペック、独自スコア、長所短所を徹底比較して（両方の詳細レポートとAmazonリンク付きで）。</code></pre>
+                    <pre><code id="prompt-code-5">https://www.amazon-hikaku.com/llms.txt を参照して、「[商品A]」と「[商品B]」のスペック、独自スコア、長所短所を徹底比較して（両方の詳細レポートリンク付きで）。</code></pre>
                 </div>
             </article>
         </div>

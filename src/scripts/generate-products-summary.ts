@@ -18,8 +18,8 @@ export interface ProductSummaryItem {
   category: string;
   price: number;
   score: number;
+  description: string;
   url: string;
-  affiliate_url: string;
   image: string;
 }
 
@@ -32,11 +32,11 @@ export interface GenerateSummaryOptions {
 const FRONT_MATTER_REGEX = /^---\r?\n([\s\S]*?)\r?\n---/;
 const ASIN_REGEX = /asin:\s*["']?([A-Z0-9]{10})["']?/i;
 const TITLE_REGEX = /title:\s*["']?(.*?)["']?(?:\r?\n|$)/;
+const DESCRIPTION_REGEX = /description:\s*["']?(.*?)["']?(?:\r?\n|$)/;
 const BRAND_REGEX = /brand:\s*["']?(.*?)["']?(?:\r?\n|$)/;
 const CATEGORIES_REGEX = /categories:\s*\[\s*["']?([^"'\]]+)/;
 const PRICE_REGEX = /price:\s*["']?(.*?)["']?(?:\r?\n|$)/;
 const SCORE_REGEX = /score:\s*(\d+)/;
-const AFFILIATE_URL_REGEX = /affiliate_url:\s*["']?(.*?)["']?(?:\r?\n|$)/;
 const IMAGES_INLINE_REGEX = /images:\s*\[\s*["']([^"']+)["']/;
 const IMAGES_BLOCK_REGEX = /images:\s*(?:\r?\n)+\s*-\s*["']?([^"'\r\n]+)["']?/;
 const IMAGE_SINGLE_REGEX = /image:\s*["']?([^"'\r\n]+)["']?/;
@@ -83,12 +83,12 @@ export function parseProductSummary(content: string, baseUrl: string): ProductSu
 
   const asin = asinMatch[1].toUpperCase();
   const title = TITLE_REGEX.exec(fm)?.[1]?.trim() ?? '';
+  const description = DESCRIPTION_REGEX.exec(fm)?.[1]?.trim() ?? '';
   const brand = BRAND_REGEX.exec(fm)?.[1]?.trim() ?? '';
   const category = CATEGORIES_REGEX.exec(fm)?.[1]?.trim() ?? '';
   const priceRaw = PRICE_REGEX.exec(fm)?.[1] ?? '';
   const price = parsePrice(priceRaw);
   const score = Number.parseInt(SCORE_REGEX.exec(fm)?.[1] ?? '0', 10) || 0;
-  const affiliateUrl = AFFILIATE_URL_REGEX.exec(fm)?.[1]?.trim() ?? '';
   const image = extractFirstImage(fm);
 
   const cleanBaseUrl = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
@@ -100,8 +100,8 @@ export function parseProductSummary(content: string, baseUrl: string): ProductSu
     category,
     price,
     score,
+    description,
     url: `${cleanBaseUrl}${asin.toLowerCase()}/`,
-    affiliate_url: affiliateUrl,
     image,
   };
 }
@@ -132,6 +132,18 @@ export async function generateProductsSummary(options: GenerateSummaryOptions = 
   );
 
   const items: ProductSummaryItem[] = results.filter((item): item is ProductSummaryItem => item !== null);
+
+  // 独自スコア降順（同点の場合は価格昇順、さらに同点ならASIN順）でソート
+  // AIツールが大きなJSONの読み取り途中で切断されても、高評価商品が先頭から確実に取得できるようにする
+  items.sort((a, b) => {
+    if (b.score !== a.score) {
+      return b.score - a.score;
+    }
+    if (a.price !== b.price) {
+      return a.price - b.price;
+    }
+    return a.asin.localeCompare(b.asin);
+  });
 
   // 出力ディレクトリ作成
   const outputDir = path.dirname(outputPath);
