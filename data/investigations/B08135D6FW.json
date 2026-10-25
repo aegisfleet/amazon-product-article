@@ -1,0 +1,180 @@
+{
+  "analysis": {
+    "productName": "UGREEN microSD USB-C カードリーダー",
+    "parentAsin": "B0C2H962VY",
+    "productDescription": "最大2TBのmicroSDカードに対応し、USB 3.0（5Gbps）の高速転送が可能な亜鉛合金製の超小型カードリーダー。",
+    "productUsage": [
+      "スマートフォンやタブレットのストレージ容量拡張",
+      "カメラやドラレコのmicroSDカードデータのPC取り込み",
+      "出先での写真や動画データのバックアップ"
+    ],
+    "positivePoints": [
+      "本体サイズ約32×16×9mmという極小設計で、隣接するポートやケースへの干渉が少ない",
+      "放熱性と耐久性に優れた亜鉛合金ボディを採用している",
+      "USB 3.0規格に対応し、最大5Gbpsの高速データ転送が可能",
+      "紛失防止用のキーホルダーワイヤー（ストラップ）が付属している",
+      "ドライバー不要のプラグアンドプレイおよびOTG機能に対応"
+    ],
+    "negativePoints": [
+      "microSDカード専用の単一スロットであり、フルサイズのSDカードは読み込めない",
+      "金属ボディのため、全負荷稼働時には本体表面温度が最高56.2℃まで上昇する仕様である",
+      "同ブランドのSD/microSD 2in1モデル（B07D1J88CF等）と比較して販売価格がやや高い"
+    ],
+    "useCases": [
+      "旅行先でアクションカメラやドローンで撮影したmicroSDの動画をスマホに転送する",
+      "鍵と一緒にキーホルダーに取り付けておき、必要な時にサッとデータ移動に使う"
+    ],
+    "userStories": [
+      {
+        "userType": "スマホで動画編集をするユーザー",
+        "scenario": "アクションカメラで撮影したデータをiPadに取り込むため",
+        "experience": "iPad Proで動画を取り込むために購入。本体が約32mmと非常にコンパクトで、挿したままでも他のケーブルと干渉せず快適。亜鉛合金の質感が高く、キーホルダーに付けておけるので紛失の心配がない。ただ、長時間の動画転送時は本体がかなり熱くなるため少し驚いたが、動作自体は安定している。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "超小型サイズと亜鉛合金の高級感・耐久性が高く評価されている。USB 3.0の高速転送に対応し、スマホやタブレットの容量不足解消に最適という声が多い。一方で、microSD専用の単一スロットであることや、フル稼働時の発熱が気になるという指摘もあるが、コンパクトさとストラップ付きによる携行性の良さがそれを補って余りあると支持されている。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon公式商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B08135D6FW",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-10-25",
+        "author": "Amazon",
+        "conflictOfInterest": "none",
+        "notes": "寸法（約32×16×9mm）、亜鉛合金製、稼働時最高温度56.2℃、USB3.0(5Gbps)の仕様を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "全負荷稼働時の最高温度は56.2℃、アルミ合金製で温度の感触が高くなるが通常の使用には影響しない",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": true,
+        "notes": "メーカー公称値として明記されており、金属ボディの小型リーダーにおける発熱としては物理的に妥当な範囲"
+      }
+    ],
+    "lastInvestigated": "2026-10-25",
+    "investigatedPrice": "￥1,399",
+    "competitiveAnalysis": [
+      {
+        "name": "UGREEN カードリーダー USB-C/A SD TF 2in1",
+        "asin": "B07D1J88CF",
+        "priceComparison": "本商品のほうが約400円高い。単機能だが極小サイズと金属筐体のコストが反映されている。",
+        "featureComparison": [
+          "共通点：UGREEN製でUSB-C接続・USB 3.0に対応している。",
+          "相違点：本製品がmicroSD専用かつ亜鉛合金製の極小モデルであるのに対し、本競合製品はUSB-A端子も備え、フルサイズSDとmicroSDの2in1対応である。"
+        ],
+        "differentiators": [
+          "UGREEN microSD USB-C カードリーダーの利点：キーホルダーに付けられるほどの超小型設計と亜鉛合金の堅牢性である。極限までコンパクトさを求めるなら迷わずこちら。",
+          "UGREEN カードリーダー USB-C/A SD TF 2in1の利点：SDカードも使え、かつUSB-A/C両対応で汎用性が高い。デジカメのSDカードなども扱う人に適している。"
+        ]
+      },
+      {
+        "name": "Anker USB-C 2-in-1 カードリーダー",
+        "asin": "B07P1XB7BG",
+        "priceComparison": "本商品のほうがわずかに安い。ほぼ同価格帯である。",
+        "featureComparison": [
+          "共通点：USB-C接続でUSB 3.0（5Gbps）に対応している。",
+          "相違点：本製品がmicroSD専用の極小金属モデルであるのに対し、Anker製はSD/microSDの2スロット搭載モデルである。"
+        ],
+        "differentiators": [
+          "UGREEN microSD USB-C カードリーダーの利点：隣のポートに干渉しにくい約16mm幅の極小サイズと金属筐体の放熱性・耐久性である。",
+          "Anker USB-C 2-in-1 カードリーダーの利点：SDとmicroSD両方のメディアを扱える利便性とAnkerブランドの信頼性である。"
+        ]
+      },
+      {
+        "name": "T Tersely microSDカードリーダー",
+        "asin": "B0F37SSKTB",
+        "priceComparison": "本商品のほうが2倍程度高い。USB 3.0対応と金属ボディによる品質差が反映されている。",
+        "featureComparison": [
+          "共通点：microSD専用の極小USB-Cリーダーであること。",
+          "相違点：本製品がUSB 3.0（5Gbps）対応で亜鉛合金製であるのに対し、T Tersely製はUSB 2.0（480Mbps）規格である。"
+        ],
+        "differentiators": [
+          "UGREEN microSD USB-C カードリーダーの利点：USB 3.0規格による圧倒的なデータ転送速度である。動画などの大容量データを扱うなら迷わずこちら。",
+          "T Tersely microSDカードリーダーの利点：テキストや軽い写真など少量データのやり取りのみで十分であり、価格を最小限に抑えたい人に適している。"
+        ]
+      },
+      {
+        "name": "LBSC USB-C SDカードリーダー 2in1",
+        "asin": "B0FDKDZ9FH",
+        "priceComparison": "本商品のほうが2倍程度高い。",
+        "featureComparison": [
+          "共通点：USB-C接続およびOTGに対応している。",
+          "相違点：本製品がmicroSD専用で亜鉛合金ボディ・USB 3.0対応であるのに対し、LBSC製はSD/microSD両対応だが筐体が大きくプラスチック感が強い。"
+        ],
+        "differentiators": [
+          "UGREEN microSD USB-C カードリーダーの利点：圧倒的なコンパクトさと亜鉛合金による高いビルドクオリティである。",
+          "LBSC USB-C SDカードリーダー 2in1の利点：とにかく安価にSDとmicroSD両方のデータを読み込みたい人に適している。"
+        ]
+      },
+      {
+        "name": "Amazonベーシック microSD カードリーダー",
+        "asin": "B0DB4YQPL1",
+        "priceComparison": "本商品のほうが200円程度高い。",
+        "featureComparison": [
+          "共通点：microSD専用でUSB 3.0に対応している。",
+          "相違点：本製品が亜鉛合金製でキーホルダー穴とストラップが付属するのに対し、Amazonベーシック版はシンプルなプラスチック筐体である。"
+        ],
+        "differentiators": [
+          "UGREEN microSD USB-C カードリーダーの利点：金属筐体による高い放熱性と耐久性、持ち運びに便利なストラップ対応である。",
+          "Amazonベーシック microSD カードリーダーの利点：Amazonの自社ブランドという安心感を求める人に適している。"
+        ]
+      },
+      {
+        "name": "SmartQ C356 Type-C MicroSDカードリーダー",
+        "asin": "B07YGXR8N3",
+        "priceComparison": "本商品のほうが約400円高い。",
+        "featureComparison": [
+          "共通点：microSD専用でUSB 3.0に対応していること。",
+          "相違点：本製品がUSB-Cコネクタのみの極小モデルであるのに対し、SmartQ C356はUSB-AとUSB-Cの両コネクタを備えている。"
+        ],
+        "differentiators": [
+          "UGREEN microSD USB-C カードリーダーの利点：コネクタが1つのため極限まで小型化されており、機器に挿したままの運用がしやすいこと。",
+          "SmartQ C356 Type-C MicroSDカードリーダーの利点：古いPCのUSB-Aポートと最新スマホのUSB-Cポートの両方で使い回したい人に適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "スマホやタブレットでmicroSDのみを使用し、SDカードも扱う2in1モデルと比較しても、常に持ち歩ける極小サイズと高い質感を最優先する人"
+      ],
+      "pros": [
+        "約32mmの超小型金属ボディで、タブレットやスマホに挿しても隣のポートと干渉せず、ストラップで鍵などと一緒に常に携帯できる。"
+      ],
+      "cons": [
+        "フルサイズのSDカードは読み込めないため、デジカメのSDカードも使いたい人は2in1モデルを選ぶこと。また、大容量データ転送時は本体が熱くなりやすいため注意が必要。"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +3] (亜鉛合金の堅牢なボディと極小サイズによる優れた携帯性)\n[加点: +4] (USB 3.0対応の高速転送と安定したパフォーマンス)\n[減点: -2] (microSD専用の単一スロットでありながら他社2in1モデルと比較してやや割高)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "9mm",
+        "width": "16mm",
+        "depth": "32mm"
+      },
+      "material": "亜鉛合金",
+      "color": "ゴールデン",
+      "connectivity": [
+        "USB Type-C",
+        "USB 3.0 (最大5Gbps)"
+      ],
+      "other": [
+        "対応カード: microSD / Micro SDXC / Micro SDHC",
+        "最大対応容量: 2TB",
+        "OTG対応",
+        "キーホルダーワイヤー（ストラップ）付属",
+        "動作温度: 0℃〜45℃ (全負荷最高温度 56.2℃)"
+      ]
+    }
+  }
+}
