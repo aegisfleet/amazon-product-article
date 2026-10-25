@@ -1,0 +1,124 @@
+{
+  "analysis": {
+    "productName": "KEEZING 家庭用 超小型プロジェクター (Android TV14搭載)",
+    "parentAsin": "B0HDCTKJH3",
+    "productDescription": "Android TV 14を内蔵し、Wi-Fi 6やBluetooth 5.4に対応した小型ホームプロジェクターです。自動台形補正や単体でのアプリ再生など利便性の高さをアピールしていますが、「33000 LM」という小型機としては物理的に不可能なスペック表記や極端な二重価格表示が行われている点に注意が必要です。",
+    "productUsage": [
+      "寝室やリビングでの動画配信サービス視聴",
+      "出張先や旅行先への持ち運び投影"
+    ],
+    "positivePoints": [
+      "Android TV 14を内蔵し、外部機器なしでYouTubeやPrime Video等を単体で再生可能",
+      "最新規格であるWi-Fi 6およびBluetooth 5.4に対応",
+      "自動台形補正機能（リモコンでの4面補正含む）を搭載",
+      "持ち運びに便利な小型・軽量設計"
+    ],
+    "negativePoints": [
+      "小型プロジェクターとしては物理的に不可能な「33000 LM」という誇大スペック表記が存在する",
+      "参考価格からの72%の大幅割引表記があり、見せ金（二重価格）の疑いが強い",
+      "ノーブランド品であり、国内における詳細なメーカー実態や長期サポート体制が不透明"
+    ],
+    "useCases": [
+      "Wi-Fi環境のある自宅の壁に動画を直接投影する",
+      "スマートフォンを使わずに、本体のみでNetflixやYouTubeを視聴する"
+    ],
+    "userStories": [
+      {
+        "userType": "コスト重視の映像視聴者",
+        "scenario": "安価にプロジェクター環境を構築したい状況",
+        "experience": "価格が安くAndroid TV内蔵ということで購入。設定なしでYouTubeなどが見られるのは非常に便利。ただし、商品説明にある「33000ルーメン」という明るさは到底なく、日中や明るい部屋ではほとんど見えない。暗い寝室で使う分には問題ないが、スペックには明らかな誇張がある。",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "Android TV 14が内蔵されている点や、Wi-Fi・Bluetoothの最新規格に対応している点など、機能面の豊富さは評価できます。しかし、「33000ルーメン」という物理的にあり得ない誇大スペックや、72%OFFという異常な割引率（二重価格）による販売手法が取られており、信頼性には大きな懸念が残ります。カタログスペックを鵜呑みにせず、数千円クラスの簡易プロジェクターと割り切って暗所で使うのであれば実用可能ですが、スペック通りの性能を期待すると大きく後悔することになります。",
+    "sources": [
+      {
+        "id": "src-amazon",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0HDCTKJH3",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-10-25",
+        "author": "KEEZING",
+        "conflictOfInterest": "possible",
+        "notes": "商品スペック、価格（￥7,579）、割引率（72%）、33000 LMという輝度表記を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "33000ルーメンの明るさと15000:1のコントラスト比を実現",
+        "category": "comparativeAdvantage",
+        "confidence": "low",
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
+        "crossChecked": false,
+        "notes": "数千円クラスの小型プロジェクターで33000ルーメン（ANSIルーメンではなく単なるLM表記）を謳うのは物理的・工学的に不可能であり、典型的なスペック詐欺・誇大表記と判断される。"
+      }
+    ],
+    "lastInvestigated": "2026-10-25",
+    "investigatedPrice": "￥7,579",
+    "competitiveAnalysis": [
+      {
+        "name": "WiMiUS S37 プロジェクター",
+        "asin": "B0HCXSR9R9",
+        "priceComparison": "本商品よりも数千円高い価格設定",
+        "featureComparison": [
+          "共通点：Android 14.0搭載、自動台形補正、小型軽量",
+          "相違点：WiMiUS S37は「450ANSI」と比較的現実的な輝度表記を行っており（それでも価格に対しては疑義があるが）、270度回転スタンド機能を備えている"
+        ],
+        "differentiators": [
+          "KEEZING 家庭用 超小型プロジェクターの利点：とにかく実売価格が安く、予算を1万円未満に抑えたい場合",
+          "WiMiUS S37 プロジェクターの利点：天井投影などに便利な270度回転スタンド機能を利用したい場合"
+        ]
+      },
+      {
+        "name": "WISHOLY プロジェクター",
+        "asin": "B0GTPVGQ3X",
+        "priceComparison": "本商品とほぼ同等の価格帯",
+        "featureComparison": [
+          "共通点：Android TV搭載、自動台形補正、30000LMクラスの誇大スペック表記、異常な割引率（60%OFF）",
+          "相違点：WISHOLYは270度回転や電動フォーカスを謳っている"
+        ],
+        "differentiators": [
+          "KEEZING 家庭用 超小型プロジェクターの利点：特になし（販売時期やクーポンの有無で安い方を選ぶ程度）",
+          "WISHOLY プロジェクターの利点：電動フォーカス機能や天井投影用の回転機構に魅力を感じる場合"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "スペック表記の誇大さを理解した上で、1万円未満でAndroid TV内蔵の簡易的なプロジェクターを安価に試したい人"
+      ],
+      "pros": [
+        "Android TV 14内蔵により、Fire TV Stickなどの外部デバイスなしで動画配信サービスを手軽に楽しめる"
+      ],
+      "cons": [
+        "カタログスペックの「33000 LM」は明らかな誇大表記であり、実際には暗い部屋でしか使えないため、日中や明るいリビングでの使用を考えている人は購入を避けること"
+      ],
+      "score": 60,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (実売7,500円台という安価さと、Android TV内蔵による単体での実用性)\n[減点: -15] (「33000 LM」等の物理的に不可能な虚偽・誇大スペック表記と、72%という異常割引率による二重価格の疑い・信頼性の欠如)\n[合計: 60]"
+    },
+    "technicalSpecs": {
+      "os": "Android TV 14",
+      "display": {
+        "resolution": "1080P (4Kソース再生対応)",
+        "type": "LCD"
+      },
+      "connectivity": [
+        "Wi-Fi 6",
+        "Bluetooth 5.4",
+        "HDMI",
+        "USB",
+        "3.5mmオーディオ"
+      ],
+      "other": [
+        "自動台形補正 (4面補正対応)",
+        "角型独立スピーカー搭載"
+      ]
+    }
+  }
+}
