@@ -10136,13 +10136,12 @@ legend.font-size-label {
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset, 0 3px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* 楽天市場・Yahoo!ショッピング ボタン（Amazonを主役CTAとする上品なトナル/アウトラインスタイル） */
+/* 楽天市場・Yahoo!ショッピング ボタン（Amazonを主役CTAとしつつ、背景から明瞭に浮き上がるトナル/エレベーテッドスタイル） */
 .btn-shop-rakuten,
 .btn-shop-yahoo {
-  background: var(--md-sys-color-surface-container-low, #f8fafc);
-  color: var(--color-text-main);
-  border: 1px solid var(--md-sys-color-outline-variant, #e2e8f0);
-  box-shadow: var(--shadow-sm);
+  background: #ffffff;
+  color: #1e293b;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
   font-weight: 600;
   transition:
     background-color 0.2s cubic-bezier(0.2, 0, 0, 1),
@@ -10152,30 +10151,40 @@ legend.font-size-label {
     box-shadow 0.2s cubic-bezier(0.2, 0, 0, 1);
 }
 
+.btn-shop-rakuten {
+  border: 1px solid rgba(191, 0, 0, 0.28);
+}
+
+.btn-shop-yahoo {
+  border: 1px solid rgba(0, 117, 194, 0.28);
+}
+
 .btn-shop-rakuten .btn-shop-badge-icon {
   background: #bf0000;
   color: #ffffff;
+  box-shadow: 0 1px 2px rgba(191, 0, 0, 0.2);
 }
 
 .btn-shop-yahoo .btn-shop-badge-icon {
   background: #0075c2;
   color: #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 117, 194, 0.2);
 }
 
 .btn-shop-rakuten:hover {
-  background: #fdf2f2;
+  background: #fff5f5;
   border-color: #bf0000;
   color: #bf0000;
   transform: translateY(-2px);
-  box-shadow: 0 3px 8px rgba(191, 0, 0, 0.14);
+  box-shadow: 0 4px 10px rgba(191, 0, 0, 0.16);
 }
 
 .btn-shop-yahoo:hover {
-  background: #f0f7fb;
-  border-color: #005fa3;
-  color: #005fa3;
+  background: #f0f7ff;
+  border-color: #0075c2;
+  color: #0075c2;
   transform: translateY(-2px);
-  box-shadow: 0 3px 8px rgba(0, 95, 163, 0.14);
+  box-shadow: 0 4px 10px rgba(0, 117, 194, 0.16);
 }
 
 .btn-shop:active {
@@ -10219,34 +10228,43 @@ legend.font-size-label {
 
 [data-theme="dark"] .btn-shop-rakuten,
 [data-theme="dark"] .btn-shop-yahoo {
-  background: rgba(15, 23, 42, 0.6);
-  color: var(--color-text-main);
-  border-color: rgba(148, 163, 184, 0.24);
-  box-shadow: var(--shadow-sm);
+  background: #1e293b;
+  color: #f8fafc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .btn-shop-rakuten {
+  border: 1px solid rgba(248, 113, 113, 0.45);
+}
+
+[data-theme="dark"] .btn-shop-yahoo {
+  border: 1px solid rgba(56, 189, 248, 0.45);
 }
 
 [data-theme="dark"] .btn-shop-rakuten .btn-shop-badge-icon {
-  background: #3f191f;
-  color: #fee2e2;
+  background: #dc2626;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 [data-theme="dark"] .btn-shop-yahoo .btn-shop-badge-icon {
-  background: #0c2b45;
-  color: #e0f2fe;
+  background: #0284c7;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 [data-theme="dark"] .btn-shop-rakuten:hover {
-  background: #3b1c20;
-  border-color: rgba(248, 113, 113, 0.5);
-  color: #fee2e2;
-  box-shadow: 0 3px 8px rgba(248, 113, 113, 0.2);
+  background: #2a1f28;
+  border-color: #f87171;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35);
 }
 
 [data-theme="dark"] .btn-shop-yahoo:hover {
-  background: #15344f;
-  border-color: rgba(56, 189, 248, 0.5);
-  color: #e0f2fe;
-  box-shadow: 0 3px 8px rgba(56, 189, 248, 0.2);
+  background: #15293d;
+  border-color: #38bdf8;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.35);
 }
 
 /* モバイル表示最適化（幅480px以下） */

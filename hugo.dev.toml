@@ -18,6 +18,13 @@ ignoreFiles = [
 [params]
   isDev = true
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.parser]
+      autoHeadingID = true
+
 # 開発用モジュールマウント設定
 [module]
   [[module.mounts]]
