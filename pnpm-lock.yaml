@@ -77,8 +77,8 @@ importers:
         specifier: ^17.13.0
         version: 17.13.0
       hugo-extended:
-        specifier: ^0.167.0
-        version: 0.167.0
+        specifier: ^0.168.0
+        version: 0.168.0
       jest:
         specifier: ^30.5.2
         version: 30.5.2(@types/node@26.6.3)(ts-node@10.9.2(@types/node@26.6.3)(typescript@6.0.3))
@@ -1507,8 +1507,8 @@ packages:
     resolution: {integrity: sha512-dFcAjpTQFgoLMzC2VwU+C/CbS7uRL0lWmxDITmqm7C+7F0Odmj6s9l6alZc6AELXhrnggM2CeWSXHGOdX2YtwA==}
     engines: {node: '>= 6'}
 
-  hugo-extended@0.167.0:
-    resolution: {integrity: sha512-XEtjQwhAT4IJqGSGaP7Tm3tUfkaeUk1J8fWo1E7wBAYTywyjNSvBz8bu8czc3axskQ8WycewIuOz89vEZGWlig==}
+  hugo-extended@0.168.0:
+    resolution: {integrity: sha512-KhWR1CWYrpIcM3aL+s0ii/rVKQDpTDVqWXKH4o2iRbcbj1O/0dHyKmk29zIcsHsjLHpfS+7Z228fBycDgv9gkw==}
     engines: {node: '>=18.17'}
     hasBin: true
 
@@ -3828,7 +3828,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  hugo-extended@0.167.0:
+  hugo-extended@0.168.0:
     dependencies:
       adm-zip: 0.6.1
       tar: 7.5.22
