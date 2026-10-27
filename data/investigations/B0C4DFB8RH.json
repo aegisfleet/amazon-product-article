@@ -1,0 +1,207 @@
+{
+  "analysis": {
+    "productName": "UGREEN USB-C ハブ 10Gbps 4ポート",
+    "parentAsin": "B0C4DFB8RH",
+    "productDescription": "最大10Gbpsの高速転送に対応したUSB-C 3.2 Gen 2の4ポート搭載ハブ。ノートパソコンやタブレットのUSB-Cポートを拡張し、大容量データの迅速な転送を可能にする。",
+    "productUsage": [
+      "MacBookやiPadのUSB-Cポート拡張",
+      "外付けSSD/HDDからの高速データ読み込み・書き込み",
+      "スマートフォンやタブレットのデータバックアップ"
+    ],
+    "positivePoints": [
+      "最大10Gbps(USB 3.2 Gen 2)の高速転送規格に対応",
+      "4つのUSB-Cポートを同時に拡張可能",
+      "アルミニウム筐体とナイロン編組ケーブルによる高い耐久性",
+      "ドライバ不要のプラグアンドプレイ対応",
+      "幅広いOS(Windows/Mac/iPadOS/Android/Chrome OS等)と互換性あり"
+    ],
+    "negativePoints": [
+      "データ転送専用であり、接続機器のPD急速充電には非対応",
+      "HDMIやDisplayPort等の映像出力(Alt Mode)には非対応",
+      "USB-Aポートは搭載していないため、従来のUSB機器接続には別途変換が必要"
+    ],
+    "useCases": [
+      "動画編集時に複数台の外付けSSDを接続して作業する",
+      "ノートPCにマウスやキーボード等のType-C周辺機器をまとめて接続する",
+      "iPad Proに外部ストレージを接続してファイル管理を行う"
+    ],
+    "userStories": [
+      {
+        "userType": "クリエイター・動画編集者",
+        "scenario": "外出先のカフェやコワーキングスペースでMacBook Airを用いて作業",
+        "experience": "MacBook Airの限られたType-Cポートを増やすために購入。主にポータブルSSDを複数台接続して動画編集を行っているが、10Gbps対応のおかげで大容量の4K動画ファイルの転送や読み込みが非常にスムーズでストレスがない。アルミ筐体は放熱性も良く、持ち運びしやすいサイズ感も気に入っている。ただし、充電パススルーには非対応なので、充電しながら長時間の作業をする際はPC本体のもう一つのポートを空けておく必要がある点には注意が必要。",
+        "supportingSourceIds": ["src-amazon-reviews"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "一般ユーザー",
+        "scenario": "自宅のデスク環境でiPad Proを拡張",
+        "experience": "iPad ProにType-CのUSBメモリや有線イヤホン、キーボードを繋ぎたくて導入した。ドライバー不要で挿すだけですぐに認識されるのが手軽で良い。ケーブルがナイロン編みで丈夫そうなのも安心感がある。ただ、映像出力ができないことを購入後に知り、外部モニターへの出力には使えなかったのは少し残念だったが、データハブとしては十分優秀。",
+        "supportingSourceIds": ["src-amazon-reviews"],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "10Gbpsの高速データ転送を求めるユーザーからは、複数台のSSDや最新のType-C機器をボトルネックなく接続できる点で高く評価されている。一方で、映像出力やパススルー充電機能が搭載されていない「純粋なデータハブ」であるため、ドッキングステーションのようなオールインワン用途を期待して購入した一部のユーザーからは不満の声も挙がるが、仕様を理解して割り切って使う分には、軽量かつ高品質で信頼性の高い製品として好評である。",
+    "sources": [
+      {
+        "id": "src-amazon-reviews",
+        "name": "Amazon カスタマーレビュー",
+        "url": "https://www.amazon.co.jp/dp/B0C4DFB8RH",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-10-27",
+        "author": "Amazon購入者",
+        "conflictOfInterest": "none",
+        "notes": "10Gbpsの転送速度の恩恵、パススルー充電・映像出力非対応に対する言及を確認"
+      },
+      {
+        "id": "src-official",
+        "name": "UGREEN 公式商品仕様",
+        "url": "https://www.amazon.co.jp/dp/B0C4DFB8RH",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2023-05-06",
+        "author": "UGREEN",
+        "conflictOfInterest": "disclosed",
+        "notes": "充電・映像出力非対応の警告、10Gbps転送の仕様を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "最大10Gbpsの高速データ転送",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": ["src-official", "src-amazon-reviews"],
+        "crossChecked": true,
+        "notes": "USB 3.2 Gen 2の規格値。ユーザーレビューでも対応SSDとの組み合わせで十分な速度が出ることが報告されている"
+      },
+      {
+        "claim": "データ転送専用（充電・映像出力非対応）",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["src-official", "src-amazon-reviews"],
+        "crossChecked": true,
+        "notes": "メーカー公式説明の『ご注意』欄に明記されており、ユーザーレビューでも確認"
+      }
+    ],
+    "lastInvestigated": "2026-10-27",
+    "investigatedPrice": "￥3,990",
+    "competitiveAnalysis": [
+      {
+        "name": "UGREEN 4ポート4xUSB-C 10Gbpsハブ",
+        "asin": "B0CR6JBJDH",
+        "priceComparison": "対象商品より安いが、同一ブランドで同等仕様の廉価版または後継モデルの可能性が高い。",
+        "featureComparison": [
+          "共通点：4ポートすべてがUSB-C 10Gbpsに対応、充電・映像出力非対応",
+          "相違点：対象商品はアルミ筐体で25cmケーブル、競合は30cmケーブルで筐体デザインが異なる。価格は競合の方が大幅に安い"
+        ],
+        "differentiators": [
+          "対象商品の利点：筐体デザインや質感を重視し、対象商品のデザインが好みの人",
+          "UGREEN 4ポート4xUSB-C 10Gbpsハブの利点：機能は同等で大幅に安価なため、コストパフォーマンスを最優先する人"
+        ]
+      },
+      {
+        "name": "UGREEN 4ポート 2xUSB-A+2xUSB-C 10Gbpsハブ",
+        "asin": "B0CR6HZLR6",
+        "priceComparison": "対象商品より安い。ポート構成が異なる。",
+        "featureComparison": [
+          "共通点：10Gbps高速転送対応、充電・映像出力非対応",
+          "相違点：対象商品はUSB-Cのみ4ポートだが、競合はUSB-Cが2ポート、USB-Aが2ポートのハイブリッド構成"
+        ],
+        "differentiators": [
+          "対象商品の利点：手持ちの周辺機器がすべてType-Cで統一されており、Type-Cポートだけを増やしたい人",
+          "UGREEN 4ポート 2xUSB-A+2xUSB-C 10Gbpsハブの利点：従来のUSB-A機器（メモリ、マウスのドングル等）と最新のType-C機器を両方接続したい人"
+        ]
+      },
+      {
+        "name": "QUUGE 10Gbps USB-C ハブ 4ポート",
+        "asin": "B0FBWVNCV5",
+        "priceComparison": "対象商品より安い。",
+        "featureComparison": [
+          "共通点：4ポートすべてUSB-C、10Gbps対応、アルミ筐体、充電・映像出力非対応",
+          "相違点：対象商品はケーブル長25cmだが、競合はケーブル長1mと長く、取り回しに優れる"
+        ],
+        "differentiators": [
+          "対象商品の利点：UGREENという知名度の高いブランドの信頼性と、コンパクトな持ち運びやすさを重視する人",
+          "QUUGE 10Gbps USB-C ハブ 4ポートの利点：デスクトップPCの背面から手元まで引っ張ってくるなど、長いケーブル（1m）が必要な人"
+        ]
+      },
+      {
+        "name": "Aceele 4ポート拡張 2xUSB-A + 2xUSB-C 10Gbpsハブ",
+        "asin": "B0CJ95CR8X",
+        "priceComparison": "対象商品より安い。",
+        "featureComparison": [
+          "共通点：10Gbps対応",
+          "相違点：対象商品はType-C×4だが、競合はType-A×2、Type-C×2。さらに競合は120cmの長尺ケーブルと外部給電ポート(Type-C電源ポート)を備える"
+        ],
+        "differentiators": [
+          "対象商品の利点：Type-C機器のみを接続し、外部電源不要で手軽に持ち運びたい人",
+          "Aceele 4ポート拡張 2xUSB-A + 2xUSB-C 10Gbpsハブの利点：消費電力の大きいHDD等を複数接続するために補助電源を確保したい人や、長いケーブルが必要な人"
+        ]
+      },
+      {
+        "name": "ICZI 4ポート拡張 2xUSB-C + 2xUSB-A 10Gbpsハブ",
+        "asin": "B0D2QGW7V8",
+        "priceComparison": "対象商品より安い。",
+        "featureComparison": [
+          "共通点：10Gbps対応",
+          "相違点：対象商品はType-Cのみ4ポートだが、競合はType-A×2、Type-C×2。競合は120cmケーブルを採用"
+        ],
+        "differentiators": [
+          "対象商品の利点：Type-C専用でスッキリとしたポート構成と、短いケーブルでデスク周りをコンパクトにまとめたい人",
+          "ICZI 4ポート拡張 2xUSB-C + 2xUSB-A 10Gbpsハブの利点：Type-A機器も混在して使用し、かつPC本体から離れた位置にハブを設置したい人"
+        ]
+      },
+      {
+        "name": "UGREEN Revodok USB-C ハブ 6in1 100W PD対応",
+        "asin": "B0D1XN2LF1",
+        "priceComparison": "対象商品よりやや高い。多機能ドッキングステーションタイプ。",
+        "featureComparison": [
+          "共通点：UGREEN製、10Gbpsデータ転送対応",
+          "相違点：対象商品は純粋なデータハブ（充電・映像出力非対応）だが、競合は4K60Hz HDMI出力、1Gbps有線LAN、100W PD急速充電対応の多機能モデル"
+        ],
+        "differentiators": [
+          "対象商品の利点：純粋に高速なType-Cポートを複数増やしたいだけで、映像出力や充電機能が不要な人",
+          "UGREEN Revodok USB-C ハブ 6in1 100W PD対応の利点：外部モニター接続、有線LAN接続、PC本体の充電をケーブル1本でまとめて行いたい人"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "すべてType-C端子の周辺機器（SSD等）で統一しており、Type-Cポートのみを増設したい人",
+        "充電パススルーや映像出力は不要で、純粋に高速（10Gbps）なデータ転送ポートを複数求める人"
+      ],
+      "pros": [
+        "最新の10Gbps規格に対応しているため、外付けSSDの性能をフルに引き出し、大容量ファイルの転送待ち時間を大幅に短縮できる",
+        "4つのポートすべてがType-Cのため、増え続ける最新のType-C機器を変換アダプタなしで直接接続できる",
+        "アルミ筐体と編組ケーブルによる高い耐久性で、持ち運びの多い環境でも断線や破損のリスクが少ない"
+      ],
+      "cons": [
+        "ノートPCの充電（PD）や外部モニターへの映像出力には非対応のため、オールインワンのドッキングステーション用途を期待する人は多機能モデルを検討すること",
+        "USB-Aポートが搭載されていないため、従来のUSBメモリやマウスのレシーバーを接続したい人は変換アダプタを用意するか、Type-A混在モデルを選ぶこと",
+        "同ブランド内にほぼ同機能でより安価なモデルが存在するため、デザインへのこだわりがなければそちらの方がコストパフォーマンスが高い"
+      ],
+      "score": 71,
+      "scoreRationale": "[基本点: 70]\n[加点: +7] (最新のType-C機器に特化した4ポート構成と10Gbpsの高速転送規格への対応)\n[加点: +3] (アルミ筐体とナイロン編組ケーブルによる高い耐久性と放熱性)\n[減点: -3] (データ転送専用であり、PD充電や映像出力に非対応であることの用途制限)\n[減点: -6] (同ブランド・同機能の競合品と比較して、実売価格が大幅に高くコストパフォーマンスが劣る点)\n[合計: 71]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "10mm",
+        "width": "38mm",
+        "depth": "100mm"
+      },
+      "material": "アルミニウムシェル, ナイロン編組ケーブル",
+      "connectivity": [
+        "ホスト接続: USB Type-C 3.2 Gen 2 (オス)",
+        "拡張ポート: USB Type-C 3.2 Gen 2 (メス) × 4"
+      ],
+      "other": [
+        "転送速度: 最大10Gbps (理論値)",
+        "※PD(Power Delivery)等の充電パススルー非対応",
+        "※DP Alt Mode等の映像出力非対応",
+        "ケーブル長: 約25cm",
+        "プラグアンドプレイ・ドライバー不要対応"
+      ]
+    }
+  }
+}
