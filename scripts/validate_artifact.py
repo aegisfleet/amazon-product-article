@@ -81,6 +81,57 @@ def _validate_metrics(data: Any, errors: List[str]):
     if "technicalSpecs" in analysis:
         _recursive_check_metric(analysis["technicalSpecs"], "technicalSpecs", errors)
 
+def _validate_water_filter_safety(analysis: Dict[str, Any], errors: List[str]):
+    """浄水カートリッジ・水栓フィルターの安全性・模倣品リスクチェック（消費者庁・Amazon注意喚起準拠）"""
+    product_name = str(analysis.get("productName", "")).lower()
+    product_desc = str(analysis.get("productDescription", "")).lower()
+    combined_text = f"{product_name} {product_desc}"
+
+    # 浄水カートリッジ・水栓フィルター関連かチェック
+    is_water_cartridge = (
+        ("浄水" in combined_text or "カートリッジ" in combined_text or "水栓" in combined_text)
+        and any(brand in combined_text for brand in [
+            "タカギ", "takagi", "lixil", "inax", "toto", "クリンスイ", "cleansui",
+            "トレビーノ", "toray", "ブリタ", "brita", "jc003", "jf-2", "th658", "mdc01"
+        ])
+    )
+
+    if not is_water_cartridge:
+        return
+
+    # 非純正・互換品の明示的キーワード判定
+    # ※「交換用」「取替用」は正規メーカーも使うため含めない。「互換」「汎用」「代替品」「交換性」「互換品」等を対象とする
+    has_compatible_keyword = any(kw in product_name for kw in [
+        "互換", "汎用", "代替品", "交換性", "互換品"
+    ]) or ("対応カートリッジ" in product_name and not any(official in product_name for official in ["公式", "純正"]))
+
+    # タカギ製品の特別判定: タカギはEC卸を行っていないため、ブランドがタカギでないタカギ用カートリッジは確実に非純正
+    brand = str(analysis.get("brand", "")).lower()
+    is_takagi_unauthorized = (
+        ("タカギ" in product_name or "jc003" in product_name)
+        and "タカギ" not in brand and "takagi" not in brand
+    )
+
+    is_suspicious_cartridge = has_compatible_keyword or is_takagi_unauthorized
+
+    rec = analysis.get("recommendation", {})
+    score = rec.get("score", 0)
+    rationale = str(rec.get("scoreRationale", ""))
+
+    # 非純正・互換品の高スコア禁止チェック
+    if is_suspicious_cartridge and score >= 60:
+        errors.append(
+            f"【消費者庁注意喚起違反】浄水カートリッジの非純正互換品・模倣品疑い商品 '{analysis.get('productName')}' が高スコア({score}点)で評価されています。"
+            "飲用水の安全性・本体破損リスク・メーカー保証対象外の観点から、非純正互換品を高スコア推奨することは禁止されています (50点以下に設定してください)。"
+        )
+
+    # コスパ加点禁止チェック
+    if is_suspicious_cartridge and re.search(r'\[加点:\s*\+\d+\][^\n]*(?:コスパ|安|価格|経済的|低コスト)', rationale):
+        errors.append(
+            f"【消費者庁注意喚起違反】浄水カートリッジの非純正互換品 '{analysis.get('productName')}' に対して安価さを理由としたコスパ加点が行われています。"
+            "消費者庁の注意喚起において「販売価格が安価であることは模倣品の最大の特徴」と警告されており、安価さをコスパ加点することは禁止されています。"
+        )
+
 def _validate_recommendation(analysis: Dict[str, Any], errors: List[str]):
     """購買推奨度の根拠をチェックする"""
     rec = analysis.get("recommendation", {})
@@ -88,6 +139,7 @@ def _validate_recommendation(analysis: Dict[str, Any], errors: List[str]):
         rationale = rec.get("scoreRationale", "")
         if not re.search(r'\[基本点:\s*\d+\]', rationale):
             errors.append("'scoreRationale' に計算根拠が記載されていない可能性があります。")
+    _validate_water_filter_safety(analysis, errors)
 
 def _validate_recommendations_list(data: Any, errors: List[str]):
     """推薦商品リスト (today.json) の形式チェック"""

@@ -65,4 +65,13 @@ describe('InvestigationPromptBuilder', () => {
     expect(prompt).toContain('仕様の未記載・推測による非対応・非搭載判定の禁止（推測ネガティブ判定の防止）');
     expect(prompt).toContain('独自の推測で「非対応」と断定して減点・批判することは厳禁である');
   });
+
+  it('should include water filter counterfeit and non-genuine cartridge evaluation instructions in prompt', () => {
+    const builder = new InvestigationPromptBuilder(baseProduct);
+    const prompt = builder.build();
+
+    expect(prompt).toContain('浄水カートリッジ・水栓交換フィルターの模倣品・非純正互換品に関する厳格な判定と排除基準');
+    expect(prompt).toContain('「安価であること」のコスパ加点の厳禁');
+    expect(prompt).toContain('消費者庁注意喚起準拠');
+  });
 });
