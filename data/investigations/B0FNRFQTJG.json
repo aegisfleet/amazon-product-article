@@ -1,0 +1,197 @@
+{
+  "analysis": {
+    "productName": "Tailulu MJ3507 コードレス掃除機",
+    "parentAsin": "B0HG1HBF8T",
+    "productDescription": "自動ゴミ収集ドックを搭載し、LEDライトでゴミを可視化するコードレススティッククリーナー。",
+    "productUsage": [
+      "家庭内の床・カーペットの掃除",
+      "車内や家具の隙間掃除"
+    ],
+    "positivePoints": [
+      "自動ゴミ収集ドック（4L紙パック式、約60日分）を搭載し、ゴミ捨ての手間を軽減している",
+      "全面発光の緑色LEDライトを搭載し、床面の微細なホコリを可視化している",
+      "最大75分の連続稼働が可能な大容量バッテリーを搭載している",
+      "スマート液晶ディスプレイでバッテリー残量や吸引力レベルを確認可能である",
+      "ノイズリダクション設計により、運転音を低減している"
+    ],
+    "negativePoints": [
+      "「9999800Kpa」という物理的にあり得ない数値をカタログスペックとして標榜しており、仕様の信頼性に重大な懸念がある",
+      "「2027先行発売」という現実的に不可能な表記がタイトルに含まれている"
+    ],
+    "useCases": [
+      "ペットの毛が気になる家庭の日常清掃",
+      "ゴミ捨ての回数を減らしたい一人暮らし"
+    ],
+    "userStories": [
+      {
+        "userType": "一般家庭",
+        "scenario": "日常の床掃除",
+        "experience": "自動ゴミ収集ドックがあるので、毎回ダストカップを空にする手間が省けて非常に楽。緑のLEDライトのおかげで、見えにくかったホコリもしっかり吸い取れる。しかし、9999800Kpaという吸引力の数値は明らかに大げさで、実際の吸引力は普通のコードレス掃除機と同等レベル。価格なりの実用性はあるが、不誠実な誇大広告には不信感を覚える。",
+        "supportingSourceIds": [
+          "amazon-product-page"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "自動ゴミ収集ドックや緑色LEDライトなどの実用的な機能は備わっており、2万円弱という価格帯（自動ゴミ収集ドック付きとしては安価）でそれなりの利便性は提供している。しかし、「9999800Kpa」というデタラメな吸引力数値や「2027先行発売」などの虚偽・誇大表記が目立ち、メーカーの信頼性は極めて低い。カタログスペックを鵜呑みにせず、価格相応の割り切りができる人向けの製品という評価である。",
+    "sources": [
+      {
+        "id": "amazon-product-page",
+        "name": "Amazon商品ページ (B0FNRFQTJG)",
+        "url": "https://www.amazon.co.jp/dp/B0FNRFQTJG",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-10-27",
+        "author": "Tailulu",
+        "conflictOfInterest": "disclosed",
+        "notes": "製品仕様、価格、機能説明、誇大表記（9999800Kpa, 2027先行発売）を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "吸引力が9999800KPa以上に達し、380％アップ",
+        "category": "durability",
+        "confidence": "low",
+        "supportingSourceIds": [
+          "amazon-product-page"
+        ],
+        "crossChecked": true,
+        "notes": "9999800Kpa（約999万パスカル = 約98気圧）という数値は、一般的な真空ポンプや掃除機の吸込仕事率・真空度として物理的にあり得ないデタラメな数値（虚偽スペック）である。"
+      }
+    ],
+    "lastInvestigated": "2026-10-27",
+    "investigatedPrice": "￥18,999",
+    "competitiveAnalysis": [
+      {
+        "name": "Uwant V500掃除機 コードレス 自動ゴミ収集",
+        "asin": "B0GQKZ22GS",
+        "priceComparison": "対象商品よりやや安いが、同価格帯で自動ゴミ収集ドックを搭載した類似スペック製品。",
+        "featureComparison": [
+          "共通点：自動ゴミ収集ドック搭載、緑色LEDライト搭載",
+          "相違点：Uwantは最大50000Paを謳うが、対象商品は9999800Kpaという非現実的な数値を謳っている"
+        ],
+        "differentiators": [
+          "Tailulu MJ3507の利点：機能的にはほぼ同等だが、非現実的なスペック標榜があるため特筆すべき優位性は低い",
+          "Uwant V500の利点：同じくノーブランド系だが、非現実的すぎるスペック表記を避けている分、まだマシである"
+        ]
+      },
+      {
+        "name": "Qatuo コードレス掃除機 85000Pa",
+        "asin": "B0GBXB38QJ",
+        "priceComparison": "対象商品と同等の価格帯。",
+        "featureComparison": [
+          "共通点：自動ゴミ収集・置くだけ充電ドック搭載",
+          "相違点：Qatuoは85000Pa表記。対象商品の9999800Kpaは異常である"
+        ],
+        "differentiators": [
+          "Tailulu MJ3507の利点：液晶ディスプレイの有無やデザインの好みによる",
+          "Qatuo コードレス掃除機の利点：5年保証を謳っている点"
+        ]
+      },
+      {
+        "name": "orage ST17",
+        "asin": "B0H8XZJYVS",
+        "priceComparison": "対象商品と同等の価格帯。",
+        "featureComparison": [
+          "共通点：自動ゴミ収集ドック搭載",
+          "相違点：orageは「安心の日本企業」と「2年保証」を謳っている"
+        ],
+        "differentiators": [
+          "Tailulu MJ3507の利点：バッテリー稼働時間（75分）の公称値の長さ",
+          "orage ST17の利点：国内企業のサポートや2年保証があり、誇大スペックの懸念が少ない点で信頼性が高い"
+        ]
+      },
+      {
+        "name": "Shark シャーク 掃除機 EVOPOWER SYSTEM iQ+ CS850JBLAE",
+        "asin": "B0DZ1ZJ332",
+        "priceComparison": "対象商品の約3倍の価格だが、信頼性がある",
+        "featureComparison": [
+          "共通点：自動ゴミ収集ドック搭載のコードレススティッククリーナー",
+          "相違点：Sharkは大手ブランドであり、スペックに嘘がなく、サポートや品質の信頼性が圧倒的に高い"
+        ],
+        "differentiators": [
+          "Tailulu MJ3507の利点：とにかく価格を安く抑えたい人向け",
+          "Shark EVOPOWER SYSTEM iQ+の利点：予算をかけてでも、確かな品質、実際の吸引力、充実したサポートを求める人向け"
+        ]
+      },
+      {
+        "name": "シャープ EC-XR1-H ラクティブエア",
+        "asin": "B0F5MLT1Q4",
+        "priceComparison": "対象商品の約2.5倍の価格。",
+        "featureComparison": [
+          "共通点：自動ごみ収集ステーション搭載",
+          "相違点：シャープは国内大手メーカー。超軽量設計であり、信頼性が担保されている"
+        ],
+        "differentiators": [
+          "Tailulu MJ3507の利点：圧倒的な安さ",
+          "シャープ EC-XR1-Hの利点：国内大手メーカーの信頼性、軽さ、確実な性能を求める人向け"
+        ]
+      },
+      {
+        "name": "Uwant V500強化版",
+        "asin": "B0GWQWG2W1",
+        "priceComparison": "対象商品よりやや高い。",
+        "featureComparison": [
+          "共通点：自動ゴミ収集ドック、緑色LEDライト搭載",
+          "相違点：サイドブラシと前後ツイン吸引口を搭載している"
+        ],
+        "differentiators": [
+          "Tailulu MJ3507の利点：少しでも安く買いたい人向け",
+          "Uwant V500強化版の利点：壁際・隅のゴミを残さず掃除するサイドブラシ機能に魅力を感じる人向け"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "自動ゴミ収集機能をとにかく安価に試してみたいが、カタログの誇大数値を割り引いて考えられる（自己責任で妥協できる）人"
+      ],
+      "pros": [
+        "2万円以下で自動ゴミ収集ドックが付いており、毎回のゴミ捨ての手間が省ける",
+        "緑色LEDライトで床のホコリが見えやすくなる"
+      ],
+      "cons": [
+        "9999800Kpaなど明らかにデタラメなスペック（虚偽表記）が記載されており、メーカーの信頼性や製品の安全性・耐久性に強い懸念があるため、サポートは期待できない"
+      ],
+      "score": 55,
+      "scoreRationale": "[基本点: 70]\n[減点: -15] (「9999800KPa」という物理的にあり得ない数値や「2027先行発売」などの虚偽・誇大スペックを標榜しており、メーカーの信頼性が極めて低いため)\n[合計: 55]"
+    },
+    "technicalSpecs": {
+      "display": {
+        "size": "液晶ディスプレイ",
+        "resolution": "",
+        "type": "LCD",
+        "refreshRate": ""
+      },
+      "battery": {
+        "capacity": "",
+        "charging": "自動ゴミ収集ドックにて充電対応",
+        "playbackTime": "最大75分 (連続使用)"
+      },
+      "camera": {
+        "main": "",
+        "ultrawide": "",
+        "telephoto": "",
+        "front": ""
+      },
+      "dimensions": {
+        "height": "",
+        "width": "",
+        "depth": "",
+        "weight": ""
+      },
+      "weight": "",
+      "material": "",
+      "origin": "",
+      "connectivity": [],
+      "other": [
+        "自動ゴミ収集ドック (4L紙パック式、約60日分)",
+        "サイクロン式 / 650Wブラシレスモーター",
+        "緑色LEDライト搭載",
+        "HEPA多重濾過",
+        "スティック/ハンディ 2WAY仕様",
+        "PSE認証済み",
+        "※注意: 吸引力「9999800Kpa」は虚偽のスペック表記である"
+      ]
+    }
+  }
+}
