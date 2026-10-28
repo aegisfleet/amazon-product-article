@@ -93,7 +93,7 @@ describe('RecommendationPromptBuilder', () => {
     const prompt = builder.build();
 
     expect(prompt).toContain('同一の画像URLを複数商品にコピペすることは厳禁');
-    expect(prompt).toContain('必ず null とせよ');
+    expect(prompt).toContain('必ず `null` とせよ');
     expect(prompt).toContain('price: 0');
   });
 });
