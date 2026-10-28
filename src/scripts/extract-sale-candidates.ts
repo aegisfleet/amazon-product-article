@@ -30,6 +30,7 @@ export interface SaleCandidate {
   };
   articleScore?: number;
   brand?: string;
+  imageUrl?: string;
   timestamp: number;
 }
 
@@ -369,6 +370,9 @@ function parseCandidateFromEntry(
   }
   if (article?.brand !== undefined) {
     candidate.brand = article.brand;
+  }
+  if (product.images?.primary !== undefined) {
+    candidate.imageUrl = product.images.primary;
   }
 
   return candidate;
