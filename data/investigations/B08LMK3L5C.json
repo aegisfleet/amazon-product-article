@@ -1,192 +1,142 @@
 {
   "analysis": {
-    "productName": "エレコム ワイヤレスマウス Bluetooth Slint 薄型 静音 M-TM10BBBK",
-    "parentAsin": "B0FKLZF9FW",
-    "productDescription": "厚さ28mmの薄型設計で持ち運びに便利なBluetooth対応ワイヤレスマウスです。静音スイッチを採用し、プレゼンモード機能や「戻る」ボタンも搭載しています。",
+    "productName": "エレコム ワイヤレスマウス Bluetooth Slint 薄型 静音 M-TM10BB",
+    "parentAsin": "B08LMK3L5C",
+    "productDescription": "厚さ28mmの薄型設計で持ち運びに便利なBluetooth対応ワイヤレスマウス。静音スイッチと「戻る」ボタンを備え、外出先での作業に適している。",
     "productUsage": [
-      "外出先でのノートパソコン操作",
-      "カフェや図書館などの静かな環境での作業",
-      "プレゼンテーション時のスライド操作"
+      "外出先でのノートPC作業",
+      "図書館やカフェなど静かな場所でのPC作業"
     ],
     "positivePoints": [
-      "厚さ28mmと薄型で、カバンに入れてもかさばらない",
-      "クリック音が静かで周囲を気にせず使用できる",
-      "Bluetooth接続でUSBポートを塞がない",
-      "「戻る」ボタン搭載でWebブラウジングが快適",
-      "プレゼンモード機能付きでスライド操作が可能"
+      "カバンに収納しやすい厚み28mmの薄型設計",
+      "クリック音が気にならない静音スイッチ採用",
+      "ブラウジングに便利な「戻る」ボタンを含む4ボタン構成",
+      "レシーバー不要のBluetooth 4.2接続対応"
     ],
     "negativePoints": [
-      "薄型のため、一般的なマウスと比較して握り心地が異なる場合がある",
-      "乾電池式のため、定期的な電池交換が必要"
+      "マルチペアリング非対応（複数デバイスのシームレスな切り替えには非対応）",
+      "Bluetooth 4.2規格であり、最新規格（Bluetooth 5.x）ではない"
     ],
     "useCases": [
-      "出張やテレワークでの持ち運び",
-      "図書館や会議室での作業",
-      "プレゼンテーションの進行"
+      "カフェや図書館でのテレワーク",
+      "出張時のカバンへの収納",
+      "タブレットやスマートフォンでのポインティング操作"
     ],
     "userStories": [
       {
-        "userType": "ビジネスパーソン",
-        "scenario": "カフェでのテレワーク中",
-        "experience": "厚さが28mmしかないので、ノートパソコンと一緒にバッグの隙間に入れて持ち運べます。クリック音がカチカチ鳴らない静音タイプなので、静かなカフェでも周りを気にせず作業に集中できました。",
+        "userType": "テレワーカー",
+        "scenario": "カフェやコワーキングスペースでの作業時に使用",
+        "experience": "カバンのポケットに入れてもかさばらない薄さが非常に便利。静音スイッチのおかげで、周囲にクリック音を響かせることなく集中して作業ができた。戻るボタンがあるため、Webブラウジングも快適にこなせる。",
         "supportingSourceIds": [
-          "amazon-product-page"
+          "amazon-official"
         ],
         "sentiment": "positive"
       }
     ],
-    "userImpression": "薄型・軽量で持ち運びに特化しており、静音ボタンとBluetooth接続の利便性が高く評価されています。モバイル用途として実用的なマウスです。",
+    "userImpression": "持ち運びやすさと静音性を高く評価できるモバイル向けマウス。厚さ28mmの薄型形状によりカバンの中でかさばらず、外出先での作業に最適。静音スイッチにより周囲を気にせず使用できる点も評価が高いが、マルチペアリング機能がないため、複数デバイスを頻繁に切り替えて使う用途よりは、特定のモバイルPCやタブレット専用として割り切った運用が適している。",
     "sources": [
       {
-        "id": "amazon-product-page",
-        "name": "Amazon商品ページ",
+        "id": "amazon-official",
+        "name": "Amazon公式商品ページ",
         "url": "https://www.amazon.co.jp/dp/B08LMK3L5C",
         "tier": "high",
         "evidenceType": "primary",
         "publishedAt": "2020-11-24",
-        "author": "Amazon.co.jp",
+        "author": "エレコム",
         "conflictOfInterest": "none",
-        "notes": "商品の基本仕様、特徴、価格情報を確認。"
+        "notes": "製品仕様、寸法、機能の特徴を確認"
       }
     ],
-    "claims": [
-      {
-        "claim": "厚み28mmの薄型設計",
-        "category": "durability",
-        "confidence": "high",
-        "supportingSourceIds": [
-          "amazon-product-page"
-        ],
-        "crossChecked": false,
-        "notes": "商品仕様に記載"
-      },
-      {
-        "claim": "静音スイッチ採用",
-        "category": "quality",
-        "confidence": "high",
-        "supportingSourceIds": [
-          "amazon-product-page"
-        ],
-        "crossChecked": false,
-        "notes": "商品仕様に記載"
-      }
-    ],
-    "lastInvestigated": "2026-04-06",
+    "claims": [],
+    "lastInvestigated": "2026-10-29",
+    "investigatedPrice": "￥1,973",
     "competitiveAnalysis": [
       {
-        "name": "エレコム ワイヤレスマウス 無線2.4GHz Slint M-TM10DBBK",
-        "asin": "B08LMRW2RX",
-        "priceComparison": "対象商品とほぼ同等の価格帯。本製品はUSBレシーバーによる2.4GHz無線接続モデルであり、Bluetooth非対応の機器向け。",
+        "name": "ロジクール PEBBLE MOUSE 2 M350sBL",
+        "asin": "B0CJR7N5MG",
+        "priceComparison": "ロジクール M350sの方がやや高価（約2,900円台）。",
         "featureComparison": [
-          "共通点：厚さ28mmの薄型設計、静音スイッチ、4ボタン、プレゼンモード機能",
-          "相違点：対象商品はBluetooth接続だが、本製品は2.4GHz無線（USBレシーバー）接続"
+          "共通点：薄型設計、静音スイッチ採用、Bluetooth接続対応",
+          "相違点：ロジクール M350sはBluetooth 5.1/Logi Bolt対応で3台のEasy-Switch（マルチペアリング）に対応するが、エレコム M-TM10BBはBluetooth 4.2でマルチペアリング非対応。またエレコムは「戻る」ボタン（4ボタン）があるのに対し、ロジクールは3ボタン。"
         ],
         "differentiators": [
-          "エレコム ワイヤレスマウス Bluetooth Slint M-TM10BBBKの利点：USBポートを塞がずに接続可能で、スマートフォンやタブレットにも対応",
-          "エレコム ワイヤレスマウス 無線2.4GHz Slint M-TM10DBBKの利点：Bluetooth非対応のPCでもUSBポートがあれば安定して接続可能"
+          "エレコム ワイヤレスマウス Bluetooth Slint 薄型の利点：Webブラウジングに便利な「戻る」ボタンが欲しい人や、価格を2,000円以下に抑えたい人に最適。",
+          "ロジクール PEBBLE MOUSE 2 M350sBLの利点：PCとタブレットなど、複数のデバイスをボタン一つでスムーズに切り替えて使いたい人（マルチペアリング重視）に最適。"
         ]
       },
       {
-        "name": "バッファロー ワイヤレス モバイルマウス Bluetooth FLEXUS",
-        "asin": "B0956BPVC7",
-        "priceComparison": "対象商品よりやや高い。MIL規格準拠の堅牢性や長電池寿命など、耐久性に優れる仕様となっている。",
-        "featureComparison": [
-          "共通点：薄型設計、Bluetooth接続、静音設計、プレゼンテーションモード搭載",
-          "相違点：本製品はMIL規格準拠、最大972日使用可能、dpi切替可能。ボタン数は3ボタン。"
-        ],
-        "differentiators": [
-          "エレコム ワイヤレスマウス Bluetooth Slint M-TM10BBBKの利点：4ボタン（戻るボタン）搭載でWeb閲覧が快適。価格が安い",
-          "バッファロー ワイヤレス モバイルマウス Bluetooth FLEXUSの利点：MIL規格準拠で持ち運び時の衝撃に強い。電池持ちが非常に長い"
-        ]
-      },
-      {
-        "name": "エレコム マウス ワイヤレスマウス Bluetooth Slint 充電式 M-TM15BBGM",
+        "name": "エレコム Bluetooth Slint M-TM15BBGM/EC",
         "asin": "B0B72MJYPH",
-        "priceComparison": "対象商品より高い。充電式バッテリーやマルチペアリング機能を備えているため、価格差は妥当。",
+        "priceComparison": "M-TM15BBGMの方がやや高価（約2,500円前後）。",
         "featureComparison": [
-          "共通点：薄型設計、静音、4ボタン、Bluetooth接続",
-          "相違点：本製品は充電式（対象商品は乾電池式）。最大3台のマルチペアリングに対応"
+          "共通点：同じエレコムのSlintシリーズ薄型マウス（厚み28mm）、静音スイッチ、4ボタン構成",
+          "相違点：M-TM15BBGMは充電式かつ3台のマルチペアリングに対応しているが、本機（M-TM10BB）は乾電池式でマルチペアリング非対応。"
         ],
         "differentiators": [
-          "エレコム ワイヤレスマウス Bluetooth Slint M-TM10BBBKの利点：初期費用が安く、電池交換ですぐに使える",
-          "エレコム マウス ワイヤレスマウス Bluetooth Slint 充電式 M-TM15BBGMの利点：電池交換不要で、複数デバイスをシームレスに切り替えて使用可能"
+          "エレコム ワイヤレスマウス Bluetooth Slint 薄型の利点：マルチペアリングや充電機能が不要で、初期コストを少しでも抑えたい人に最適。",
+          "エレコム Bluetooth Slint M-TM15BBGM/ECの利点：乾電池交換の手間を省きたい人や、複数デバイスで同じマウスを使い回したい人に最適。"
         ]
       },
       {
-        "name": "ロジクール ワイヤレスマウス PEBBLE MOUSE2 M350sGR",
-        "asin": "B0CJR5HBMN",
-        "priceComparison": "対象商品より大幅に高い。複数デバイス切替（Easy-Switch）やLogi Bolt対応などの高機能性が価格に反映されている。",
+        "name": "バッファロー FLEXUS BSMBB335NBK",
+        "asin": "B0956BPVC7",
+        "priceComparison": "バッファロー FLEXUSの方がやや安価（約1,500円台）。",
         "featureComparison": [
-          "共通点：薄型、静音、Bluetooth接続対応",
-          "相違点：本製品は3デバイス切替対応、Logi Boltレシーバー対応、解像度4000dpi。対象商品は4ボタン・プレゼンモード付きだが、本製品はカスタマイズ可能なミドルボタン搭載。"
+          "共通点：薄型設計、Bluetooth接続、静音スイッチ採用、プレゼンテーションモード搭載",
+          "相違点：バッファロー FLEXUSは3ボタンで解像度切り替え（600/1200dpi）に対応しMIL規格準拠の堅牢性を持つ。本機は4ボタン（戻るボタンあり）で1600dpi固定。"
         ],
         "differentiators": [
-          "エレコム ワイヤレスマウス Bluetooth Slint M-TM10BBBKの利点：安価でありながらプレゼンモードと戻るボタンを備え、コストパフォーマンスが高い",
-          "ロジクール ワイヤレスマウス PEBBLE MOUSE2 M350sGRの利点：複数デバイスの切り替えが容易で、センサー精度が高くデザイン性に優れる"
+          "エレコム ワイヤレスマウス Bluetooth Slint 薄型の利点：ブラウジングを効率化する「戻る」ボタンを重視する人に最適。",
+          "バッファロー FLEXUS BSMBB335NBKの利点：MIL規格の堅牢性や、解像度切り替え機能を安価に手に入れたい人に最適。"
         ]
       },
       {
-        "name": "AmeToNana 雨七 ワイヤレスマウス Bluetooth Mouse 静音マウス",
-        "asin": "B0CTF9MZQ9",
-        "priceComparison": "対象商品より高い。充電式である点が価格差の要因と考えられる。",
+        "name": "サンワサプライ SLIMO MA-BBS310BK",
+        "asin": "B0CKBLG4BZ",
+        "priceComparison": "サンワサプライ SLIMOの方がやや高価（約2,100円台）。",
         "featureComparison": [
-          "共通点：薄型（本製品は23mm）、静音、Bluetooth接続",
-          "相違点：本製品は充電式。対象商品は乾電池式で、戻るボタンやプレゼンモードを搭載"
+          "共通点：薄型設計、Bluetooth接続、静音スイッチ",
+          "相違点：サンワサプライ SLIMOは充電式（Type-C）かつ3ボタン。本機は「戻る」ボタンを搭載した4ボタン構成。"
         ],
         "differentiators": [
-          "エレコム ワイヤレスマウス Bluetooth Slint M-TM10BBBKの利点：大手メーカー製ならではのサポートと、戻るボタン・プレゼンモード等の機能性が充実している",
-          "AmeToNana 雨七 ワイヤレスマウス Bluetooth Mouse 静音マウスの利点：充電式で電池交換が不要。より薄い23mm設計"
-        ]
-      },
-      {
-        "name": "Nexmora ワイヤレスマウス 無線 静音 光学式 高精度 type-c 充電式",
-        "asin": "B0FY1X2YNQ",
-        "priceComparison": "対象商品と同価格帯。充電式や2WAY接続に対応しており、コストパフォーマンスが高い。",
-        "featureComparison": [
-          "共通点：薄型、静音、Bluetooth接続",
-          "相違点：本製品はBluetoothと2.4GHz無線の2WAY接続に対応し、Type-C充電式。対象商品は乾電池式で4ボタン搭載。"
-        ],
-        "differentiators": [
-          "エレコム ワイヤレスマウス Bluetooth Slint M-TM10BBBKの利点：戻るボタンやプレゼンモードなど、ビジネス用途に便利な機能が搭載されている",
-          "Nexmora ワイヤレスマウス 無線 静音 光学式 高精度 type-c 充電式 の利点：Type-C充電式で電池交換が不要。USBレシーバーも付属し接続方法が選べる"
+          "エレコム ワイヤレスマウス Bluetooth Slint 薄型の利点：充電の手間よりも「戻る」ボタンによる操作性を重視する人に最適。",
+          "サンワサプライ SLIMO MA-BBS310BKの利点：Type-Cケーブルで手軽に充電したい人（乾電池不要）に最適。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "ノートパソコンと一緒にマウスを持ち歩く機会が多い人",
-        "外出先や静かな場所で作業する人",
-        "プレゼンテーションでスライド操作を行う人"
+        "外出先に持ち運ぶため、カバンの中でかさばらない薄型マウスを求める人",
+        "カフェや図書館など、クリック音を立てられない環境で作業する人",
+        "薄型でありながら「戻る」ボタンなどの追加ボタンによる操作性を求める人"
       ],
       "pros": [
-        "カバンの中でかさばらない薄型設計",
-        "周囲に配慮できる静音スイッチ",
-        "Web閲覧に便利な「戻る」ボタン搭載",
-        "プレゼンモード機能で便利"
+        "厚さわずか28mmでカバンのスリットにもすっと入り、持ち運びのストレスがない",
+        "カチカチ音のない静音スイッチにより、周囲を気にせず集中して作業が可能",
+        "サイドの「戻る」ボタンにより、ノートPCのタッチパッドよりもWebブラウジングが快適になる"
       ],
       "cons": [
-        "薄型のため、手の大きい人には握りにくく感じる場合がある",
-        "電池式のため交換の手間がある"
+        "マルチペアリングには非対応のため、PCとタブレットなど複数デバイスを頻繁に切り替えて使うユーザーは上位モデルの検討を推奨"
       ],
-      "score": 83,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] 薄型28mm・軽量で持ち運びに非常に適した設計\n[加点: +5] Bluetooth接続・静音・戻るボタン・プレゼンモードと実用的な機能が充実\n[加点: +5] 機能に対して価格が安くコストパフォーマンスが高い\n[減点: -2] バッテリー内蔵型ではなく電池式のため維持費と手間がかかる\n[合計: 83]"
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +3] (厚さ28mmの優れた携帯性と静音設計による利便性)\n[加点: +2] (2,000円以下の手頃な価格ながら「戻る」ボタンを備えコスパが良い)\n[合計: 75]"
     },
     "technicalSpecs": {
+      "connectivity": [
+        "Bluetooth 4.2 Class2",
+        "HOGP (HID Over GATT Profile)"
+      ],
       "dimensions": {
-        "height": "28.0mm",
+        "height": "28mm",
         "width": "55.5mm",
-        "depth": "103.8mm"
+        "depth": "103.8mm",
+        "weight": "66g"
       },
-      "weight": "66.0g",
-      "connection": "Bluetooth 4.2 Class2",
-      "profile": "HOGP (HID Over GATT Profile)",
-      "resolution": "1600カウント",
-      "buttons": "4ボタン (静音スイッチ)",
-      "color": "ブラック",
-      "warranty": "6ヶ月",
       "other": [
-        "プレゼンモード機能搭載",
-        "対応OS: Windows, macOS, Android, iOS, iPadOS, FireOS"
+        "ボタン数: 4個 (戻るボタン含む)",
+        "分解能: 1600カウント",
+        "静音スイッチ採用",
+        "プレゼンモード機能搭載"
       ]
     }
   }
