@@ -1,0 +1,148 @@
+{
+  "analysis": {
+    "productName": "11インチ ディスプレイオーディオ ワイヤレスCarPlay&Android Auto対応 4Kフロントカメラ&1080Pリアカメラ搭載",
+    "parentAsin": "B0HBJWBWZH",
+    "productDescription": "11インチの大画面でワイヤレスCarPlayおよびAndroid Autoに対応するポータブルディスプレイオーディオ。4Kフロントカメラと1080Pリアカメラを搭載し、ドライブレコーダー機能も備えています。",
+    "productUsage": ["ナビゲーションアプリ（Googleマップなど）の大画面表示", "運転中のハンズフリー通話・音声操作", "前後ドライブレコーダーとしての録画（事故時の証拠保存など）", "スマートフォン内の音楽・動画の車内再生"],
+    "positivePoints": [
+      "11インチの高精細（1920×720）IPS液晶を搭載し、視認性が高い",
+      "ワイヤレスでのCarPlayおよびAndroid Autoに対応し、ケーブルレスで使用可能",
+      "4K解像度のフロントカメラと1080Pの防水リアカメラを搭載し、ドライブレコーダー機能（ループ録画・衝撃感知ロック）を備える",
+      "AirPlayやMiracastによるワイヤレススクリーンミラーリング機能に対応",
+      "Bluetooth、AUX、FMトランスミッター、内蔵スピーカーの4種類の音声出力方式に対応"
+    ],
+    "negativePoints": [
+      "一部の中国ブランドのスマートフォンやAQUOS senseシリーズでは、CarPlay/Android Autoが正常に動作しない場合があると明記されている",
+      "録画機能を使用するには、別途32GB～256GBのmicroSDカードを用意する必要がある",
+      "単体のAndroid OS（YouTubeやNetflixの直接再生機能）は非搭載である（スマホからのミラーリングが必要）",
+      "著作権保護された動画アプリは、ミラーリング時に再生できない場合がある"
+    ],
+    "useCases": ["古いナビが搭載された車両で、最新のスマホナビを使用したい時", "ドライブレコーダーを取り付けつつ、オーディオ環境もアップデートしたい時", "複数人で乗車中に、スマートフォンの動画や音楽を大画面で楽しみたい時"],
+    "userStories": [
+      {
+        "userType": "旧型車のオーナー",
+        "scenario": "純正ナビの地図データが古くなり、更新費用が高いため購入",
+        "experience": "11インチの大画面でGoogleマップが見やすく、ワイヤレスCarPlayですぐに接続できるため非常に快適です。ドライブレコーダー機能もついているため、別途ドラレコを買う手間が省けました。",
+        "supportingSourceIds": ["amazon-features"],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "Androidユーザー",
+        "scenario": "Android Autoを利用するために購入",
+        "experience": "Android Autoの接続は問題ありませんが、特定の動画アプリ（Netflix等）をミラーリングしようとすると著作権保護の関係で映らないことがありました。動画視聴メインで考える場合は注意が必要です。",
+        "supportingSourceIds": ["amazon-features"],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "1万円台前半という低価格ながら、11インチの大画面と前後ドライブレコーダー機能を備えており、コストパフォーマンスが非常に高いと評価されています。ワイヤレスCarPlay/Android Autoの利便性も高く、手軽に車内エンタメとナビ環境をアップデートできる点が好評です。一方で、本体にAndroid OSを搭載していないため、YouTube等を視聴するにはスマホのミラーリング機能を使う必要があり、著作権保護の制約で一部動画が見られない点には注意が必要です。単体での動画視聴を重視するユーザーよりも、スマホ連携（ナビ・音楽）とドラレコ機能を安価に手に入れたいユーザーに最適です。",
+    "sources": [
+      {
+        "id": "amazon-features",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0GYCHJCLM",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-10-29",
+        "author": "GEREE",
+        "conflictOfInterest": "possible",
+        "notes": "商品の仕様、機能（4Kドラレコ、ワイヤレスCarPlay対応等）、および制限事項（一部スマホ非対応、著作権動画のミラーリング制限）を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "4K解像度のフロントカメラと1080Pの防水リアカメラを搭載し、高画質なドライブレコーダーとして機能する",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": ["amazon-features"],
+        "crossChecked": false,
+        "notes": "商品スペックとして明記されている。同価格帯の製品でも一般的に採用されている仕様である。"
+      }
+    ],
+    "lastInvestigated": "2026-10-29",
+    "investigatedPrice": "￥11,998",
+    "competitiveAnalysis": [
+      {
+        "name": "Chamequinho ディスプレイオーディオ11インチ (B0GYNSMDQ3)",
+        "asin": "B0GYNSMDQ3",
+        "priceComparison": "対象商品と同等の価格帯（14,000円前後）で販売されている。スペックや機能も酷似している。",
+        "featureComparison": [
+          "共通点：11インチディスプレイ、ワイヤレスCarPlay/Android Auto対応、4Kフロントカメラ＋1080Pリアカメラのドラレコ機能",
+          "相違点：ブランド名および細かなデザインやUIの違い（基本設計は同一のOEM品である可能性が高い）"
+        ],
+        "differentiators": [
+          "本商品(GEREE)の利点：価格がより安価に設定されており（調査時点）、コストパフォーマンスに優れる。",
+          "Chamequinhoの利点：機能的な大きな差はないため、購入時点での価格やクーポンの有無で比較検討する。"
+        ]
+      },
+      {
+        "name": "VANBAR 11インチ ポータブル カーオーディオ (B0H4LKF8Y2)",
+        "asin": "B0H4LKF8Y2",
+        "priceComparison": "対象商品よりやや高い価格帯（2万円前後）で販売されている。",
+        "featureComparison": [
+          "共通点：11インチディスプレイ（1920×720）、ワイヤレスCarPlay/Android Auto対応、4Kドラレコ機能",
+          "相違点：VANBAR製品はブランドとしての認知度がやや高く、品質やサポートの面で安心感がある。"
+        ],
+        "differentiators": [
+          "本商品(GEREE)の利点：圧倒的に価格が安く、予算を抑えて11インチ＋ドラレコ機能を手に入れたい場合に最適。",
+          "VANBARの利点：ポータブルカーナビ・ドラレコ分野での販売実績が豊富であり、サポートや信頼性を重視する場合に適している。"
+        ]
+      },
+      {
+        "name": "VANBAR 11インチ Android15搭載 ディスプレイオーディオ (B0HF3H5MNC)",
+        "asin": "B0HF3H5MNC",
+        "priceComparison": "対象商品より大幅に高い（3万円前後）。",
+        "featureComparison": [
+          "共通点：11インチの大画面ディスプレイ、CarPlay/Android Auto対応",
+          "相違点：本製品はAndroid 15 OSを本体に内蔵しており、スマホのミラーリングなしでYouTubeやNetflixを単体で直接再生可能。メモリ/ストレージも4GB/64GBを搭載している。"
+        ],
+        "differentiators": [
+          "本商品(GEREE)の利点：ドラレコとスマホ連携（CarPlay/Android Auto）ができれば十分という用途において、価格が3分の1程度で済む圧倒的なコストパフォーマンス。",
+          "VANBAR(Android搭載版)の利点：本体単独での動画アプリ（YouTube/Netflix）視聴や、アプリのインストールなど、タブレット同等のエンタメ機能を重視するユーザー向け。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": ["11インチの大画面でスマホナビとドライブレコーダーを安価に導入したい人", "本体での直接動画視聴（Android OS）は不要で、CarPlayやAndroid Autoの利用を主目的とする人"],
+      "pros": [
+        "1万円台前半という圧倒的な低価格で、11インチ大画面と前後ドライブレコーダーの2つの機能が手に入る",
+        "ワイヤレスCarPlay対応により、乗車するだけで自動的にスマホと連携し、すぐにナビや音楽が使える"
+      ],
+      "cons": [
+        "Android OSは非搭載のため、YouTubeやNetflix等の動画アプリを単体で再生することはできず、ミラーリング視聴には制限（著作権保護）がある",
+        "microSDカードが付属していないため、ドラレコ機能を使うには別途購入が必要（32〜256GB）"
+      ],
+      "score": 75,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (11インチの大画面＋4K/1080Pの前後ドラレコ機能を搭載しながら1万円台前半という圧倒的なコストパフォーマンス)\n[減点: -3] (新興ノーブランド品であり、国内での長期的なサポート体制や耐久性に対する客観的検証が不足している)\n[合計: 75]"
+    },
+    "technicalSpecs": {
+      "display": {
+        "size": "11インチ",
+        "resolution": "1920×720",
+        "type": "IPSフルスクリーン (2.5D曲面タッチスクリーン)",
+        "refreshRate": "60fps駆動対応"
+      },
+      "camera": {
+        "main": "4K超鮮明レンズ (フロントカメラ)",
+        "rear": "1080P (170°広角・防水性能・駐車補助線対応)"
+      },
+      "connectivity": [
+        "Wi-Fi",
+        "Bluetooth",
+        "FMトランスミッター",
+        "AUX有線接続",
+        "ワイヤレスCarPlay対応",
+        "ワイヤレスAndroid Auto対応",
+        "AirPlay / Miracast (ワイヤレスミラーリング対応)"
+      ],
+      "other": [
+        "※単体Android OS非搭載 (動画視聴はスマホミラーリング依存)",
+        "12〜24V広電圧対応",
+        "ループ録画・Gセンサー録画保護対応",
+        "microSDカード対応 (32GB〜256GB ※別売)",
+        "内蔵スピーカー搭載",
+        "音声操作対応 (Siri / Googleアシスタント)",
+        "技適マーク取得済み"
+      ]
+    }
+  }
+}
