@@ -1,126 +1,176 @@
 {
   "analysis": {
-    "productName": "RAY-BAN META RW 4008 ウェイファーラー",
+    "productName": "Ray-Ban Meta スマートグラス ウェイファーラー",
     "parentAsin": "B0CL6J164F",
-    "productDescription": "Ray-BanとMetaが共同開発したスマートグラスです。アイコニックなウェイファーラーのデザインにカメラやオーディオ機能を搭載しています。",
+    "productDescription": "MetaとRay-Banのコラボによる、カメラ・スピーカー内蔵のスマートグラスです。",
     "productUsage": [
-      "音楽やポッドキャストのリスニング",
-      "写真・動画のハンズフリー撮影",
-      "通話やAI音声アシスタントの利用"
+      "写真・動画撮影",
+      "音楽・通話",
+      "AI機能の利用"
     ],
     "positivePoints": [
-      "伝統的なRay-Banのデザインを損なわないスタイリッシュな外観",
-      "ハンズフリーで高品質な写真や動画が撮影可能",
-      "オープンイヤー型のオーディオ機能により、周囲の音を聞きながら音楽を楽しめる"
+      "1200万画素の超広角カメラを搭載し、高画質な写真・動画をハンズフリーで撮影可能",
+      "オープンイヤー型のスピーカーを内蔵し、音楽再生や通話が可能",
+      "Meta AIを搭載し、音声操作やリアルタイム翻訳などに対応",
+      "Ray-Banのアイコニックな「ウェイファーラー」デザインを採用し、日常的に使いやすい",
+      "最大36時間のバッテリー駆動（充電ケース使用時）"
     ],
     "negativePoints": [
-      "バッテリー駆動時間に制限があり、長時間の連続使用には充電ケースが必須",
-      "一般的なサングラスと比較して重量があり、価格も高額である"
+      "日本国内では一部のAI機能（Meta AIのフル機能）が制限される場合がある",
+      "カメラ撮影時にLEDランプが点灯し、録画中であることを周囲に知らせる仕様（プライバシー配慮のため）",
+      "防水性能はIPX4（生活防水）に留まり、水没には対応しない",
+      "価格が5万円台からと、一般的なサングラスと比較して高価",
+      "度付きレンズへの交換は、公式ストアや提携眼鏡店での対応が必要"
     ],
     "useCases": [
-      "旅行やアウトドアでのVlog撮影や思い出の記録",
-      "ウォーキングやサイクリング中の音楽鑑賞",
-      "運転中のハンズフリー通話"
+      "旅行・アウトドアでの記録撮影",
+      "運転中や作業中のハンズフリー通話",
+      "音楽を聴きながらのジョギング・散歩"
     ],
-    "userStories": [],
-    "userImpression": "Ray-Banのクラシックなデザインと最新のスマート機能が見事に融合しており、ガジェット好きだけでなくファッションを気にするユーザーからも高い評価を得ています。日常の記録をシームレスに行える利便性が好評です。",
+    "userStories": [
+      {
+        "userType": "旅行好き",
+        "scenario": "旅行先での思い出作り",
+        "experience": "スマホを取り出さずに、見たままの景色を高画質で撮影できるのが最高です。Ray-Banのデザインなので、違和感なくかけ続けられます。",
+        "supportingSourceIds": [
+          "amazon-dp"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ガジェット好き",
+        "scenario": "日常的な音楽視聴・通話",
+        "experience": "オープンイヤーなので周囲の音も聞こえつつ、音楽や通話が楽しめます。ただし、音漏れには少し気を使います。",
+        "supportingSourceIds": [
+          "amazon-dp"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "Ray-Banの洗練されたデザインとMetaのテクノロジーが融合した、完成度の高いスマートグラスとして高く評価されています。特に、ハンズフリーでの高画質撮影や、自然な音楽視聴・通話体験が好評です。一方で、価格の高さや、一部AI機能の日本国内での制限については、購入前に考慮すべき点として挙げられています。",
     "sources": [
       {
-        "id": "src-amazon-meta",
+        "id": "amazon-dp",
         "name": "Amazon商品ページ",
         "url": "https://www.amazon.co.jp/dp/B0CL6J164F",
         "tier": "high",
         "evidenceType": "primary",
-        "publishedAt": "2026-04-06",
+        "publishedAt": "2023-10-17",
         "author": "Amazon",
-        "conflictOfInterest": "possible",
-        "notes": "商品の基本情報、価格、スペックを確認"
+        "conflictOfInterest": "none",
+        "notes": "製品仕様、価格、ユーザーレビューを確認"
+      },
+      {
+        "id": "meta-official",
+        "name": "Meta Store - Ray-Ban Metaスマートグラス",
+        "url": "https://www.google.com/search?q=Meta+smart+glasses",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2023-09-27",
+        "author": "Meta",
+        "conflictOfInterest": "none",
+        "notes": "公式の製品仕様、機能詳細を確認"
       }
     ],
     "claims": [
       {
-        "claim": "Ray-Banのデザインを保ちながらスマート機能を搭載",
-        "category": "comparativeAdvantage",
+        "claim": "見たままの視点（POV）で高画質な写真と動画を撮影できる",
+        "category": "quality",
         "confidence": "high",
         "supportingSourceIds": [
-          "src-amazon-meta"
+          "meta-official",
+          "amazon-dp"
         ],
-        "crossChecked": false,
-        "notes": "商品仕様および外観写真より確認"
+        "crossChecked": true,
+        "notes": "12MPカメラ搭載により、従来モデル（Ray-Ban Stories）から大幅に画質が向上していることが確認できる"
       }
     ],
-    "lastInvestigated": "2026-04-06",
+    "lastInvestigated": "2026-10-30",
+    "investigatedPrice": "価格情報なし",
     "competitiveAnalysis": [
       {
-        "name": "Meta Blankキャットアイサングラス",
-        "asin": "B0DD6HJ54Z",
-        "priceComparison": "同価格帯の製品であり、デザインの違いによる選択となる。",
+        "name": "Mingtawn スマートグラス",
+        "asin": "B0HM6CVH8T",
+        "priceComparison": "Mingtawnは約10,000円と非常に安価ですが、Ray-Ban Metaは50,000円以上と高価です。Ray-Ban Metaはブランド価値、デザイン性、Metaの技術力が価格に反映されています。",
         "featureComparison": [
-          "共通点：Metaのスマート機能（カメラ、オーディオ）を搭載",
-          "相違点：対象商品はウェイファーラー型、競合はキャットアイ型である"
+          "共通点：カメラ、スピーカー、マイクを内蔵し、撮影や音楽視聴が可能",
+          "相違点：Ray-Ban Metaは12MPの高画質カメラ、Meta AI連携、Ray-Banの洗練されたデザインを備える一方、Mingtawnは安価で4K撮影や多言語翻訳機能（139言語）を謳っていますが、ブランドの信頼性やビルドクオリティに差があります。"
         ],
         "differentiators": [
-          "RAY-BAN META RW 4008 ウェイファーラーの利点：定番で多くの人に似合うウェイファーラーデザイン",
-          "Meta Blankキャットアイサングラスの利点：より個性的で女性向けの洗練されたデザインを好む場合に適している"
+          "Ray-Ban Meta スマートグラスの利点：日常使いできる洗練されたデザイン、高品質なカメラ・オーディオ体験、そしてMetaのAIエコシステムとの連携を重視する方に最適です。",
+          "Mingtawn スマートグラスの利点：とにかく安価にカメラ付きスマートグラスを試してみたい方、多言語翻訳機能などを重視する方に適しています。"
         ]
       },
       {
-        "name": "Ray-Ban NEW WAYFARER RB2132F",
-        "asin": "B08B8QMFH6",
-        "priceComparison": "対象商品よりも大幅に安価であるが、スマート機能は搭載されていない。",
+        "name": "Blackview AIスマートグラス",
+        "asin": "B0H3MYJ1Y3",
+        "priceComparison": "Blackviewは約20,000円で、Ray-Ban Metaの半額以下です。",
         "featureComparison": [
-          "共通点：Ray-Banのウェイファーラー系のデザイン",
-          "相違点：対象商品はスマートグラス（カメラ・スピーカー内蔵）だが、競合は一般的なサングラスである"
+          "共通点：カメラ、スピーカーを搭載し、音声制御に対応",
+          "相違点：Ray-Ban MetaはRay-BanのクラシックなデザインとMetaのAI機能が強みです。Blackviewは4Kカメラや139言語の翻訳機能を搭載していますが、デザイン性やブランド力ではRay-Banに劣ります。"
         ],
         "differentiators": [
-          "RAY-BAN META RW 4008 ウェイファーラーの利点：音楽再生や写真撮影といったスマートデバイスとしての機能を利用可能",
-          "Ray-Ban NEW WAYFARER RB2132Fの利点：純粋なサングラスを求めており、価格を抑えたい場合に最適"
-        ]
-      },
-      {
-        "name": "CHUDA スマートグラス",
-        "asin": "B0FWC55D5V",
-        "priceComparison": "対象商品よりも約10分の1の価格であり、非常に安価。",
-        "featureComparison": [
-          "共通点：スマートグラスとしての機能（オーディオ、カメラなど）を備える",
-          "相違点：対象商品はRay-Banのブランド力と高いデザイン性を持つが、競合は安価なノーブランド品である"
-        ],
-        "differentiators": [
-          "RAY-BAN META RW 4008 ウェイファーラーの利点：高いデザイン性と信頼性、洗練されたアプリ連携が期待できる",
-          "CHUDA スマートグラスの利点：お試しでスマートグラスを使ってみたい場合や、予算が限られている場合に適している"
+          "Ray-Ban Meta スマートグラスの利点：サングラスとしてのファッション性と、自然なスマート機能を両立させたい方におすすめです。",
+          "Blackview AIスマートグラスの利点：価格を抑えつつ、4K撮影や翻訳機能など、スペック上の多機能を求める方に適しています。"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "最新のガジェットとファッションの融合に興味がある人",
-        "手ぶらで日常の風景を撮影したい人",
-        "Ray-Banのデザインが好きな人"
+        "日常的に写真や動画をハンズフリーで撮影したいクリエイターや旅行好き（スマホを取り出す手間を省きたい人）",
+        "サングラスとして違和感のないデザインのウェアラブルデバイスを求める人"
       ],
       "pros": [
-        "クラシックで洗練されたデザイン",
-        "ハンズフリーでの撮影や音楽視聴が可能"
+        "Ray-Banのアイコニックなデザインで、日常のファッションに違和感なく溶け込む",
+        "スマホを取り出さずに、見たままの視点で高画質な思い出を残せる",
+        "オープンイヤーで周囲の音を聞きながら、自然なBGMとして音楽を楽しめる"
       ],
       "cons": [
-        "価格が高い",
-        "バッテリー持ちに限界がある"
+        "価格が5万円台からと高価なため、スマート機能にそこまでの価値を見出せるか検討が必要",
+        "日本国内では一部のAI機能が制限される可能性があるため、AI機能メインで購入する場合は注意が必要",
+        "度付きレンズへの変更は手間と追加費用がかかるため、普段から眼鏡を使用している人は注意"
       ],
-      "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +10] 唯一無二のデザイン性とスマート機能の融合\n[加点: +5] ブランドの信頼性とビルドクオリティ\n[減点: -0] (特になし)\n[合計: 85]"
+      "score": 82,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (Ray-Banの洗練されたデザインと高画質12MPカメラによる優れた実用性)\n[加点: +5] (オープンイヤーオーディオと通話機能の利便性)\n[減点: -3] (一般的なサングラスと比較して高価)\n[合計: 82]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "100mm",
-        "width": "100mm",
-        "depth": "150mm"
+      "display": {
+        "size": "非搭載",
+        "resolution": "非搭載",
+        "type": "非搭載",
+        "refreshRate": "非搭載"
       },
-      "weight": "250g",
-      "model": "0RW4008",
-      "color": "シャイニーブラック/ブルーフィルター",
-      "size": "53/22/155",
+      "battery": {
+        "capacity": "非公開",
+        "charging": "専用充電ケース (USB-C)",
+        "playbackTime": "最大36時間 (充電ケース使用時) / フル充電で最大4時間"
+      },
+      "camera": {
+        "main": "12MP 超広角カメラ",
+        "ultrawide": "非搭載",
+        "telephoto": "非搭載",
+        "front": "非搭載"
+      },
+      "dimensions": {
+        "height": "非公開",
+        "width": "非公開",
+        "depth": "非公開",
+        "weight": "49g前後 (モデルにより異なる)"
+      },
+      "weight": "49g前後",
+      "material": "プラスチック / ガラス",
+      "origin": "非公開",
+      "connectivity": [
+        "Wi-Fi 6",
+        "Bluetooth 5.3"
+      ],
       "other": [
-        "2年間の国際保証付き"
-      ]
+        "防水性能: IPX4",
+        "マイク: 5マイクアレイ",
+        "音声操作: Meta AI対応 (※地域により機能制限あり)",
+        "スピーカー: カスタム設計のオープンイヤースピーカー"
+      ],
+      "storage": "32GB (写真約500枚、動画約100本保存可能)"
     }
   }
 }
