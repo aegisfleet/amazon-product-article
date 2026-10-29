@@ -1,0 +1,135 @@
+{
+  "analysis": {
+    "productName": "Bluetooth ワイヤレス オープンイヤーイヤホン AP28",
+    "parentAsin": "B0HLPWGGKS",
+    "productDescription": "最新規格Bluetooth 6.0に対応する耳挟み式のオープンイヤー型ワイヤレスイヤホン。AI通話ノイズリダクション機能とIPX7防水性能を備える。",
+    "productUsage": [
+      "WEB会議やテレワークでの通話",
+      "ランニングやスポーツ時の音楽再生",
+      "通勤・通学時の使用"
+    ],
+    "positivePoints": [
+      "最新規格Bluetooth 6.0を搭載し、低遅延と安定した接続性を謳っている",
+      "耳を塞がないクリップ型のため、周囲の音を聞きながら使用可能",
+      "IPX7の防水仕様で雨や汗に強い（イヤホン本体のみ）",
+      "充電ケース込みで最大60時間の長寿命バッテリー"
+    ],
+    "negativePoints": [
+      "参考価格4,500円から常時78%の割引率（999円）を表示しており、二重価格（見せ金）の疑いが強い",
+      "メーカーの実態や国内サポート体制が不透明な新興ブランドである"
+    ],
+    "useCases": [
+      "屋外ランニング時に周囲の交通音を確認しながらの音楽視聴",
+      "WEB会議でのハンズフリー通話"
+    ],
+    "userStories": [
+      {
+        "userType": "一般ユーザー",
+        "scenario": "屋外でのランニング",
+        "experience": "耳を塞がない構造なので、ランニング中でも車や自転車の音が聞こえて安全に走れます。Bluetooth 6.0搭載とのことで接続も安定していますが、安価なノーブランド品なので長期的な耐久性は気になります。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "1,000円を切る価格で最新のBluetooth 6.0対応とオープンイヤー型が手に入るコストパフォーマンスの高さが魅力です。一方で、常時70%以上の割引など販売手法には懸念があり、ノーブランド品のため長期的なサポートや耐久性には過度な期待をせず、安価な入門機として割り切って使うのに適しています。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon 商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B0H4V2VM6V",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-10-29",
+        "author": "lazhu",
+        "conflictOfInterest": "possible",
+        "notes": "商品仕様、Bluetooth 6.0対応、78%OFFの割引率を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "60時間音楽再生",
+        "category": "durability",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "crossChecked": false,
+        "notes": "イヤホン単体で6時間、ケース込で最大60時間。価格帯を考慮すると実際の稼働時間は短くなる可能性がある"
+      }
+    ],
+    "lastInvestigated": "2026-10-29",
+    "investigatedPrice": "￥999",
+    "competitiveAnalysis": [
+      {
+        "name": "Hulacup オープンイヤー ワイヤレスイヤホン",
+        "asin": "B0GHMTVSMW",
+        "priceComparison": "本製品よりも1,000円ほど高いが、こちらも8,999円からの78%オフという二重価格の疑いがある価格設定。",
+        "featureComparison": [
+          "共通点：耳挟み式のオープンイヤー型、Bluetooth対応",
+          "相違点：本製品はBluetooth 6.0を搭載しているのに対し、競合品はBluetoothのバージョン記載なし。本製品の方がケースのバッテリー容量が大きい（60時間 vs 35時間）と主張"
+        ],
+        "differentiators": [
+          "本商品の利点：999円という圧倒的な安さとBluetooth 6.0搭載で、とにかく安いオープンイヤーを試したい人向け",
+          "Hulacup オープンイヤー ワイヤレスイヤホンの利点：超軽量5gを謳っており、装着感の軽さを重視する人向け"
+        ]
+      },
+      {
+        "name": "UGREEN ClipBuds",
+        "asin": "B0F94D64P3",
+        "priceComparison": "本商品よりも1,800円ほど高いが、メーカーの信頼性が高く適正な価格設定。",
+        "featureComparison": [
+          "共通点：クリップ式のオープンイヤー型イヤホン",
+          "相違点：UGREENは専用アプリ対応やマルチポイント接続（2台同時）に対応しており、本製品より機能が豊富で信頼性が高い"
+        ],
+        "differentiators": [
+          "本商品の利点：とにかく価格を安く抑えたい、使い捨て感覚で使いたい人向け",
+          "UGREEN ClipBudsの利点：専用アプリによるカスタマイズやマルチポイント接続を必要とし、信頼できるブランドの製品が欲しい人向け"
+        ]
+      },
+      {
+        "name": "Keypal オープンイヤーイヤホン",
+        "asin": "B0BV77RS4D",
+        "priceComparison": "本製品より1,800円ほど高い。",
+        "featureComparison": [
+          "共通点：耳挟み式のオープンイヤー型",
+          "相違点：本製品がBluetooth 6.0を謳うのに対し、KeypalはBluetooth 5.3を明記している"
+        ],
+        "differentiators": [
+          "本商品の利点：1000円以下で購入でき、最新規格を試してみたい人向け",
+          "Keypal オープンイヤーイヤホンの利点：日本語音声ガイドに対応しており、初めてワイヤレスイヤホンを使う人向け"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "1000円以下でオープンイヤー型イヤホンを試してみたい人",
+        "安価でBluetooth 6.0搭載のワイヤレスイヤホンに興味がある人"
+      ],
+      "pros": [
+        "1,000円でお釣りがくる価格で、最新のBluetooth 6.0と耳を塞がない音楽体験が試せる"
+      ],
+      "cons": [
+        "ノーブランド品のため国内のサポート体制が不透明であり、万が一の故障時の対応には期待できない"
+      ],
+      "score": 67,
+      "scoreRationale": "[基本点: 70]\n[加点: +10] (999円という実売価格の安さとオープンイヤーの利便性)\n[減点: -5] (78%の異常な割引率による二重価格表示の疑い)\n[減点: -8] (新興ノーブランド品としての国内サポート体制や耐久性の不透明さ)\n[合計: 67]"
+    },
+    "technicalSpecs": {
+      "connectivity": [
+        "Bluetooth 6.0+EDR"
+      ],
+      "battery": {
+        "playbackTime": "イヤホン単体: 最大6時間 / ケース込み: 最大60時間"
+      },
+      "weight": "約37g (充電ケース)",
+      "other": [
+        "防水性能: IPX7 (※イヤホン本体のみ)",
+        "マイク: 6つのシリコンマイク (ENC AI通話ノイズリダクション)",
+        "ドライバー: 10mmダイナミックドライバー",
+        "耳挟み式オープンイヤー（空気伝導）"
+      ]
+    }
+  }
+}
