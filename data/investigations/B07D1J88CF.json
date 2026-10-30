@@ -1,0 +1,200 @@
+{
+  "analysis": {
+    "productName": "UGREEN カードリーダー USB-C/A 2in1 (50706)",
+    "parentAsin": "B0HJ5N2FXX",
+    "productDescription": "USB Type-CとType-Aの両コネクタを搭載し、SD/microSDカードに対応した汎用性の高いカードリーダー。",
+    "productUsage": [
+      "スマホやタブレットのデータをPCへバックアップ",
+      "デジカメで撮影した写真や動画をスマホで確認",
+      "新旧異なるデバイス間でのデータ受け渡し"
+    ],
+    "positivePoints": [
+      "USB Type-CとType-Aの両コネクタを搭載し、変換アダプタ不要で幅広いデバイスに直挿し可能",
+      "SDカードとmicroSDカードの2スロットを備え、同時読み書きに対応",
+      "ドライバ不要で挿すだけで認識し、スマホやタブレットのOTG機能にも対応",
+      "最大2TBの大容量カードに対応し、USB3.0 (最大5Gbps) の高速データ転送をサポート",
+      "コネクタ保護用のキャップと紛失防止のキーチェーン用ループを備えた設計"
+    ],
+    "negativePoints": [
+      "UHS-II (SD4.0) には非対応であり、UHS-I規格の実効速度に制限される",
+      "本体幅が約21.5mmあるため、隣接するUSBポートと干渉する可能性がある",
+      "コネクタ保護キャップが完全分離型のため、使用中に紛失するリスクがある"
+    ],
+    "useCases": [
+      "外出先でデジカメのデータをすぐにスマホに取り込みたい時",
+      "Type-CポートしかないMacBookと、Type-AポートのWindows PC間でデータを共有する時",
+      "出張や旅行時にコンパクトに持ち運びたい時"
+    ],
+    "userStories": [
+      {
+        "userType": "PC・スマホ併用ユーザー",
+        "scenario": "スマホで撮影した動画をPCにバックアップする場面",
+        "experience": "スマホのType-Cポートに直挿ししてデータを移し、そのままType-Aポート搭載の古いPCにも接続できるので、変換アダプタを挟む手間がなく非常に便利。キャップ付きで持ち運び時に端子が保護される点も安心感がある。",
+        "supportingSourceIds": ["src-amazon-page"],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "Type-CとType-Aの両方を備えていることによる圧倒的な汎用性と、1,000円以下という手頃な価格が高く評価されている。特に、新旧の複数デバイス間でデータを頻繁にやり取りするユーザーにとって必携のアイテムとなっている。一方で、本体の幅がやや広いため、ポート間隔が狭いノートPC等では隣のポートと干渉しやすい点や、分離式キャップの紛失リスクには注意が必要との声がある。しかし、総じて価格以上の実用性を提供する高コスパな周辺機器として評価は高い。",
+    "sources": [
+      {
+        "id": "src-amazon-page",
+        "name": "Amazon商品ページ",
+        "url": "https://www.amazon.co.jp/dp/B07D1J88CF",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-10-30",
+        "author": "UGREEN",
+        "conflictOfInterest": "possible",
+        "notes": "製品仕様、寸法、機能詳細を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "USB3.0対応、2.0より約10倍速く転送できる",
+        "category": "comparativeAdvantage",
+        "confidence": "medium",
+        "supportingSourceIds": ["src-amazon-page"],
+        "crossChecked": true,
+        "notes": "USB3.0規格の理論値（最大5Gbps）に基づく主張であり事実だが、UHS-I対応カードリーダーの実際の転送速度は最大104MB/s程度に制限されるため、実効速度が常に10倍になるわけではない点に留意が必要。"
+      }
+    ],
+    "lastInvestigated": "2026-10-30",
+    "investigatedPrice": "￥995",
+    "competitiveAnalysis": [
+      {
+        "name": "UGREEN SD4.0対応 カードリーダー",
+        "asin": "B0DP9QKGY7",
+        "priceComparison": "本商品より約900円高いが、UHS-II (SD4.0) に対応し大幅な転送速度向上が見込める。",
+        "featureComparison": [
+          "共通点：Type-CとType-Aの両コネクタを搭載し、SD/microSDの2スロットを備える。",
+          "相違点：競合品はUHS-II (SD4.0) に対応しておりデータ転送が高速だが、価格が約2倍となる。"
+        ],
+        "differentiators": [
+          "本商品の利点：1,000円以下と安価で、一般的なUHS-Iカードを使う分には十分な性能を備えている。",
+          "競合商品の利点：UHS-II対応の高速SDカードを使用し、大容量の動画やRAW画像データを頻繁に扱うプロやクリエイターに適している。"
+        ]
+      },
+      {
+        "name": "バッファロー カードリーダー BSCR115U3CBK",
+        "asin": "B0B59HMSPW",
+        "priceComparison": "本商品よりやや高いが、国内ブランドの安心感とケーブル一体型設計を備える。",
+        "featureComparison": [
+          "共通点：Type-CとType-Aの両コネクタに対応し、SD/microSDの読み書きが可能。",
+          "相違点：競合品は短いケーブルを備えた設計であり、本商品のような直挿しスティック型ではない。"
+        ],
+        "differentiators": [
+          "本商品の利点：ケーブルレスのスティック型で、よりコンパクトに持ち運びが可能。",
+          "競合商品の利点：ケーブル接続のため、PCのUSBポート周辺のスペースが狭くても隣接ポートと干渉せずに使用できる。"
+        ]
+      },
+      {
+        "name": "ANNIBER SDカードリーダー 2in1",
+        "asin": "B0FDG35Z18",
+        "priceComparison": "本商品より約400円安価なエントリー製品。",
+        "featureComparison": [
+          "共通点：Type-CとType-Aコネクタを備え、SD/microSDに対応する直挿しスティック型。",
+          "相違点：本商品は信頼性の高いUGREENブランドであり、デザインやキャップの造りもしっかりしているが、競合品はより安価なノーブランド品である。"
+        ],
+        "differentiators": [
+          "本商品の利点：知名度と品質実績のあるブランド製であり、長期的な耐久性や安定動作が期待できる。",
+          "競合商品の利点：ブランドにこだわらず、とにかく最安値で両対応のカードリーダーを手に入れたい場合に適している。"
+        ]
+      },
+      {
+        "name": "UGREEN USB-C カードリーダー アルミ合金製",
+        "asin": "B08CS8T8DC",
+        "priceComparison": "本商品より約900円高いが、アルミ筐体で放熱性に優れる。",
+        "featureComparison": [
+          "共通点：SD/microSDの2スロットを備え、同時読み書きに対応する。",
+          "相違点：競合品はType-C専用でアルミ合金製ボディを採用している。本商品はType-C/A両対応でプラスチック製。"
+        ],
+        "differentiators": [
+          "本商品の利点：Type-Aポートでも使用できる汎用性の高さがある。",
+          "競合商品の利点：アルミ筐体による優れた放熱性と高級感があり、長時間の連続データ転送でも安定しやすい。"
+        ]
+      },
+      {
+        "name": "TOMPOL USB-C SDカードリーダー 2in1",
+        "asin": "B0HNZZKN18",
+        "priceComparison": "本商品と同等価格帯のケーブル一体型モデル。",
+        "featureComparison": [
+          "共通点：SD/microSDに対応し、1,000円前後の価格帯である。",
+          "相違点：競合品はType-C専用のケーブル一体型設計。本商品はType-C/A両対応のスティック型。"
+        ],
+        "differentiators": [
+          "本商品の利点：Type-Aポートも搭載しているため、古いPCとのデータ共有にも柔軟に対応できる。",
+          "競合商品の利点：Type-C機器しか使わず、直挿しによる端子への物理的負荷や干渉を避けたい場合に適している。"
+        ]
+      },
+      {
+        "name": "UGREEN microSD USB C カードリーダー",
+        "asin": "B0BS3QD4CG",
+        "priceComparison": "本商品よりやや高いが、極小サイズの専用モデル。",
+        "featureComparison": [
+          "共通点：Type-Cポートに直挿しして使用する。",
+          "相違点：競合品はmicroSD専用の超小型モデル。本商品は標準サイズのSDカードにも対応しType-Aコネクタも備える。"
+        ],
+        "differentiators": [
+          "本商品の利点：標準サイズのSDカード（デジカメ等）も扱え、Type-Aポートでも使用できる。",
+          "競合商品の利点：スマホやタブレットに挿しっぱなしにしても邪魔にならない極小サイズを追求したい人に適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "最新のMacBookやスマホ（Type-C）と従来のWindows PC（Type-A）の両方でデータをやり取りしたい人",
+        "SDカードとmicroSDカードの両方を変換アダプタなしで扱いたい人",
+        "1,000円以下で手軽に買える、信頼できるブランドの汎用カードリーダーを探している人"
+      ],
+      "pros": [
+        "Type-CとType-Aの両コネクタを搭載しているため、新旧デバイス間で変換アダプタを探す手間なくスムーズにデータ移行ができる",
+        "2つのスロットに挿したカードを同時に認識できるため、PCを介したカード間での直接データコピーも容易に行える",
+        "キャップで端子を保護できるため、キーホルダーにつけたりポーチに放り込んでも端子が傷つく心配がなく持ち運びに適している"
+      ],
+      "cons": [
+        "UHS-IIの超高速転送には対応していないため、大容量RAWデータを頻繁に扱うプロ用途ならUHS-II対応モデル（B0DP9QKGY7等）を推奨する",
+        "本体幅が約21.5mmあるため、USBポートが密集している機器で使用する場合は、隣のポートが塞がる可能性がある点に購入前注意が必要"
+      ],
+      "score": 84,
+      "scoreRationale": "[基本点: 70]\n[加点: +8] (Type-CとType-A両対応による優れた汎用性)\n[加点: +5] (1,000円以下という手頃な価格設定とコスパの良さ)\n[加点: +3] (SD/microSDの2スロット同時読み書き対応の実用性)\n[減点: -2] (本体幅が広く、ポート間隔が狭い機器で隣のポートと干渉するリスク)\n[合計: 84]"
+    },
+    "technicalSpecs": {
+      "interfaces": [
+        "USB Type-A (USB 3.0)",
+        "USB Type-C (USB 3.0)"
+      ],
+      "slots": [
+        "SDカードスロット",
+        "microSDカードスロット"
+      ],
+      "supportedCards": [
+        "SD",
+        "SDHC",
+        "SDXC",
+        "RS-MMC",
+        "MMC",
+        "Micro SD",
+        "Micro SDHC",
+        "Micro SDXC",
+        "UHS-I"
+      ],
+      "maxCapacity": "2TB",
+      "transferSpeed": "最大5Gbps (USB3.0理論値)",
+      "os": "Windows / macOS / Android / iPadOS",
+      "dimensions": {
+        "height": "11.6mm",
+        "width": "21.5mm",
+        "depth": "73.7mm",
+        "weight": "37g"
+      },
+      "weight": "37g",
+      "material": "プラスチック",
+      "other": [
+        "OTG機能対応",
+        "2スロット同時読み書き対応",
+        "端子保護キャップ付き",
+        "キーチェーン用ループ付き"
+      ]
+    }
+  }
+}
