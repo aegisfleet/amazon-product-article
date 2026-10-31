@@ -2,8 +2,8 @@ name: Daily Maintenance
 
 on:
   schedule:
-    # Run daily at 05:00 JST (20:00 UTC)
-    - cron: '0 20 * * *'
+    # 1日3回（8時間ごと: 13:17, 21:17, 05:17 JST = 04:17, 12:17, 20:17 UTC）に3件ずつ実行
+    - cron: '17 4,12,20 * * *'
   workflow_dispatch:
 
 permissions:
@@ -41,7 +41,7 @@ jobs:
     - name: Find oldest product
       id: find-oldest
       run: |
-        OLD_ASIN=$(pnpm exec ts-node src/scripts/maintenance-find-oldest.ts --count 10)
+        OLD_ASIN=$(pnpm exec ts-node src/scripts/maintenance-find-oldest.ts --count 3)
         echo "Found oldest ASIN: $OLD_ASIN"
         echo "asin=$OLD_ASIN" >> $GITHUB_OUTPUT
 
@@ -60,7 +60,7 @@ jobs:
       id: prompts
       if: steps.search.outputs.products-found == 'true'
       env:
-        MAX_INVESTIGATION_PRODUCTS: '10'
+        MAX_INVESTIGATION_PRODUCTS: '3'
       run: pnpm run investigate -- --no-shuffle
 
     - name: Upload investigation prompts

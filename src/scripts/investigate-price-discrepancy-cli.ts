@@ -8,7 +8,7 @@
  *   2. --investigate: latest-session.json を読み込んで agy 調査プロンプトを生成
  *
  * 環境変数:
- *   MAX_INVESTIGATION_PRODUCTS  - 最大調査件数（デフォルト: 10）
+ *   MAX_INVESTIGATION_PRODUCTS  - 最大調査件数（デフォルト: 3）
  *   PRICE_DISCREPANCY_THRESHOLD - 乖離率閾値%（デフォルト: 15）
  */
 
@@ -63,7 +63,7 @@ async function findAndOutputAsins(
 async function main(): Promise<void> {
   logger.info('Starting Price Discrepancy Investigation CLI...');
 
-  const maxProducts = Number.parseInt(process.env.MAX_INVESTIGATION_PRODUCTS || '10', 10);
+  const maxProducts = Number.parseInt(process.env.MAX_INVESTIGATION_PRODUCTS || '3', 10);
   const threshold = Number.parseInt(process.env.PRICE_DISCREPANCY_THRESHOLD || '15', 10);
   const cooldownDays = Number.parseInt(process.env.PRICE_DISCREPANCY_COOLDOWN_DAYS || '30', 10);
   const investigatedPriceThreshold = Number.parseInt(process.env.INVESTIGATED_PRICE_DISCREPANCY_THRESHOLD || '30', 10);

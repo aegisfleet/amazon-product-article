@@ -64,7 +64,7 @@ jobs:
       id: prompts
       if: steps.search.outputs.products-found == 'true'
       env:
-        MAX_INVESTIGATION_PRODUCTS: '15'
+        MAX_INVESTIGATION_PRODUCTS: '3'
       run: pnpm run investigate -- --no-shuffle
 
     - name: Upload investigation prompts

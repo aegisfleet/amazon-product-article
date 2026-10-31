@@ -8,7 +8,7 @@
  *   2. --investigate: latest-session.json を読み込んで agy 調査プロンプトを生成
  *
  * 環境変数:
- *   MAX_INVESTIGATION_PRODUCTS - 最大調査件数（デフォルト: 10）
+ *   MAX_INVESTIGATION_PRODUCTS - 最大調査件数（デフォルト: 3）
  */
 
 import 'dotenv/config';
@@ -54,7 +54,7 @@ async function findAndOutputAsins(maxProducts: number): Promise<void> {
 async function main(): Promise<void> {
   logger.info('Starting Uncovered Deals Investigation CLI...');
 
-  const maxProducts = Number.parseInt(process.env.MAX_INVESTIGATION_PRODUCTS || '10', 10);
+  const maxProducts = Number.parseInt(process.env.MAX_INVESTIGATION_PRODUCTS || '3', 10);
   const mode = process.argv.includes('--investigate') ? 'investigate' : 'find-asins';
 
   try {

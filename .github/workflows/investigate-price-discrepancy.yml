@@ -2,8 +2,8 @@ name: Price Discrepancy Investigation
 
 on:
   schedule:
-    # 毎日 08:00 JST (23:00 UTC 前日) に実行
-    - cron: '0 23 * * *'
+    # 1日3回（8時間ごと: 15:17, 23:17, 07:17 JST = 06:17, 14:17, 22:17 UTC）に3件ずつ実行
+    - cron: '17 6,14,22 * * *'
   workflow_dispatch:
 
 permissions:
@@ -42,7 +42,7 @@ jobs:
     - name: Find price discrepancy candidates
       id: find
       env:
-        MAX_INVESTIGATION_PRODUCTS: '10'
+        MAX_INVESTIGATION_PRODUCTS: '3'
         PRICE_DISCREPANCY_THRESHOLD: '15'
         INVESTIGATED_PRICE_DISCREPANCY_THRESHOLD: '30'
       run: pnpm run investigate:price-discrepancy
@@ -91,7 +91,7 @@ jobs:
       id: prompts
       if: steps.search.outputs.products-found == 'true'
       env:
-        MAX_INVESTIGATION_PRODUCTS: '10'
+        MAX_INVESTIGATION_PRODUCTS: '3'
       run: pnpm run investigate:price-discrepancy -- --investigate
 
     - name: Upload investigation prompts

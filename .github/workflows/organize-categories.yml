@@ -8,8 +8,8 @@ permissions:
 
 on:
   schedule:
-    # 18:00 JST = 09:00 UTC
-    - cron: '0 9 * * *'
+    # 18:23 JST = 09:23 UTC（正時混雑および調査ジョブとの衝突を回避）
+    - cron: '23 9 * * *'
   workflow_dispatch:
 
 jobs:
