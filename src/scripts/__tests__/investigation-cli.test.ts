@@ -79,4 +79,3 @@ describe('generateInvestigationPromptsFromSession', () => {
     expect(setGitHubOutput).toHaveBeenCalledWith('has-prompts', 'false');
   });
 });
-

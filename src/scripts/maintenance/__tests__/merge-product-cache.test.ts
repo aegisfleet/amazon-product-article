@@ -69,7 +69,8 @@ describe('merge-product-cache', () => {
 
       expect(merged).toHaveProperty('A_ASIN');
       expect(merged).toHaveProperty('B_ASIN');
-      const lines = json.split('\n');
+      expect(json.endsWith('\n')).toBe(true);
+      const lines = json.trimEnd().split('\n');
       expect(lines[1]).toContain('"A_ASIN"');
       expect(lines[2]).toContain('"B_ASIN"');
     });
