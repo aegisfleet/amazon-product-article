@@ -88,7 +88,7 @@ export function mergeCacheObjects(ours: CacheFile, theirs: CacheFile): MergeResu
 export function formatCacheJSON(merged: CacheFile): string {
   const sortedKeys = Object.keys(merged).sort((a, b) => a.localeCompare(b));
   const lines = sortedKeys.map((key) => `  "${key}": ${JSON.stringify(merged[key])}`);
-  return `{\n${lines.join(',\n')}\n}`;
+  return `{\n${lines.join(',\n')}\n}\n`;
 }
 
 export function mergeContent(

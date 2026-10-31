@@ -11,6 +11,48 @@ if [ -z "$MESSAGE" ]; then
   exit 1
 fi
 
+# Guard 1: Verify git repository and working directory exist
+if [ ! -d ".git" ]; then
+  echo "⚠️ Warning: .git directory not found (checkout not completed or workspace missing). Skipping commit."
+  exit 0
+fi
+
+# Guard 2: If committing cache files, check directory existence and validate shard JSON integrity
+if echo "$FILES" | grep -q "data/cache"; then
+  if [ ! -d "data/cache" ]; then
+    echo "⚠️ Warning: data/cache directory does not exist. Skipping commit."
+    exit 0
+  fi
+
+  if [ -d "data/cache/paapi" ]; then
+    echo "Validating shard JSON files in data/cache/paapi..."
+    CORRUPT_SHARDS=$(node -e '
+      const fs = require("fs");
+      const path = require("path");
+      const dir = "data/cache/paapi";
+      const files = fs.readdirSync(dir).filter(f => f.endsWith(".json"));
+      let corrupt = [];
+      for (const f of files) {
+        try {
+          JSON.parse(fs.readFileSync(path.join(dir, f), "utf8"));
+        } catch (e) {
+          corrupt.push(f + ": " + e.message);
+        }
+      }
+      if (corrupt.length > 0) {
+        console.error(corrupt.join("\n"));
+        process.exit(1);
+      }
+    ' 2>&1 || true)
+
+    if [ -n "$CORRUPT_SHARDS" ]; then
+      echo "⚠️ Warning: Corrupt cache shard(s) detected in data/cache/paapi. Skipping commit to prevent corruption:"
+      echo "$CORRUPT_SHARDS"
+      exit 0
+    fi
+  fi
+fi
+
 # Configure git
 git config --global user.name "github-actions[bot]"
 git config --global user.email "github-actions[bot]@users.noreply.github.com"
@@ -83,12 +125,7 @@ for i in 1 2 3; do
       MERGE_SUCCESS=true
       echo "Merge successful, retrying push..."
     elif [ "$(git rev-parse --is-shallow-repository)" = "true" ] && git status --porcelain | grep -q "^fatal: refusing to merge unrelated histories"; then
-      echo "Shallow merge failed due to depth limit, unshallowing repository..."
-      git fetch --unshallow origin "$CURRENT_BRANCH" || true
-      if git merge origin/"$CURRENT_BRANCH" -m "Merge remote-tracking branch 'origin/$CURRENT_BRANCH' [skip ci]" --no-edit; then
-        MERGE_SUCCESS=true
-        echo "Merge successful after unshallow, retrying push..."
-      fi
+      echo "⚠️ Shallow merge failed due to depth limit or unrelated histories. Skipping unshallow to respect cancellation time budget."
     fi
 
     if [ "$MERGE_SUCCESS" = "false" ]; then
