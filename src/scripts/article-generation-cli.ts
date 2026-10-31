@@ -21,7 +21,7 @@ import { ArticleGenerator } from '../article/ArticleGenerator';
 import { GitHubPublisher } from '../github/GitHubPublisher';
 import { type InvestigationFileContent, InvestigationFileSchema } from '../schemas/InvestigationSchema';
 import type { GeneratedArticle } from '../types/ArticleTypes';
-import type { CompetitiveProduct, InvestigationResult, SourceReference } from '../types/JulesTypes';
+import type { CompetitiveProduct, InvestigationResult, SourceReference } from '../types/InvestigationTypes';
 import type { Product, ProductDetail } from '../types/Product';
 import { setGitHubOutput } from '../utils/github-actions';
 import { Logger } from '../utils/Logger';

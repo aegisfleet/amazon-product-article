@@ -5,7 +5,7 @@
 import fs from 'node:fs';
 import yaml from 'js-yaml';
 import type { ReviewAnalysisResult } from '../../analysis/ReviewAnalyzer';
-import type { InvestigationResult } from '../../types/JulesTypes';
+import type { InvestigationResult } from '../../types/InvestigationTypes';
 import type { Product, ProductDetail } from '../../types/Product';
 import { ArticleGenerator } from '../ArticleGenerator';
 
@@ -29,9 +29,6 @@ jest.mock('../../config/ConfigManager', () => {
             partnerTag: process.env.AMAZON_PARTNER_TAG || 'test-tag',
             accessKey: 'test-access-key',
             secretKey: 'test-secret-key',
-          },
-          jules: {
-            apiKey: 'test-api-key',
           },
         })),
       }),

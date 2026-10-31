@@ -1,5 +1,5 @@
 /**
- * JulesCategoryOrganizer - カテゴリ整理対象抽出およびプロンプト生成
+ * CategoryOrganizer - カテゴリ整理対象抽出およびプロンプト生成
  *
  * 「その他／全般」に分類されている（=categorygroups.jsonに未登録の）カテゴリを
  * 適切な親カテゴリに分類するためのプロンプトを生成する
@@ -45,7 +45,7 @@ interface ProductCache {
   [asin: string]: CacheEntry;
 }
 
-export class JulesCategoryOrganizer {
+export class CategoryOrganizer {
   private readonly logger: Logger;
   private categoryGroupsCache: CategoryGroup[] | null = null;
   private productCacheCache: Set<string> | null = null;

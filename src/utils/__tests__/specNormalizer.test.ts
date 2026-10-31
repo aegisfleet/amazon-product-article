@@ -1,4 +1,4 @@
-import type { TechnicalSpecs } from '../../types/JulesTypes';
+import type { TechnicalSpecs } from '../../types/InvestigationTypes';
 import { normalizeTechnicalSpecs } from '../specNormalizer';
 
 describe('normalizeTechnicalSpecs', () => {

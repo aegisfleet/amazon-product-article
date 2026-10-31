@@ -4,7 +4,7 @@
  */
 
 import * as fc from 'fast-check';
-import type { InvestigationResult } from '../../types/JulesTypes';
+import type { InvestigationResult } from '../../types/InvestigationTypes';
 import { ReviewAnalyzer } from '../ReviewAnalyzer';
 
 describe('ReviewAnalyzer Property Tests', () => {
@@ -18,7 +18,7 @@ describe('ReviewAnalyzer Property Tests', () => {
    * Property 5: Investigation Result Processing Completeness
    * **Validates: Requirements 2.3, 5.3**
    *
-   * For any Jules investigation response, the system should successfully extract all required
+   * For any investigation response, the system should successfully extract all required
    * analysis components (pros/cons, competitive insights, user experiences) and structure them
    * for article generation.
    */

@@ -26,10 +26,10 @@ const nestedStats: Map<string, NestedFieldAnalysis> = new Map();
 let totalFilesWithSpecs = 0;
 let totalFiles = 0;
 
-// 未定義のフィールドを追跡（JulesTypes.tsにないフィールド）
+// 未定義のフィールドを追跡（InvestigationTypes.tsにないフィールド）
 const undefinedFields: Map<string, { count: number; examples: string[]; files: string[] }> = new Map();
 
-// JulesTypes.tsで定義済みのTechnicalSpecsフィールド
+// InvestigationTypes.tsで定義済みのTechnicalSpecsフィールド
 const definedFields = new Set([
   // スマートフォン・タブレット・PC
   'os',
@@ -238,7 +238,7 @@ function printNestedFields(): void {
 function printUndefinedFields(): void {
   if (undefinedFields.size === 0) return;
 
-  console.log('\n⚠️  JulesTypes.ts で未定義のフィールド');
+  console.log('\n⚠️  InvestigationTypes.ts で未定義のフィールド');
   console.log('=====================================\n');
 
   const sortedUndefined = Array.from(undefinedFields.entries()).sort((a, b) => b[1].count - a[1].count);

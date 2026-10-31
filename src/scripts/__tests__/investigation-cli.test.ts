@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { setGitHubOutput } from '../../utils/github-actions';
-import { generateInvestigationPromptsFromSession, type PromptManifest } from '../jules-investigation-cli';
+import { generateInvestigationPromptsFromSession, type PromptManifest } from '../investigation-cli';
 
 jest.mock('node:fs/promises');
 jest.mock('../../utils/github-actions', () => ({

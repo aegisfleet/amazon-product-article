@@ -10,7 +10,7 @@ import type { CreatorsAPIClient } from '../api/CreatorsAPIClient';
 import { ConfigManager, type SystemConfig } from '../config/ConfigManager';
 import categories from '../config/categories.json';
 import categoryMapping from '../config/categoryMapping.json';
-import type { InvestigationResult } from '../types/JulesTypes';
+import type { InvestigationResult } from '../types/InvestigationTypes';
 import type { Product, ProductSearchParams, ProductSearchResult } from '../types/Product';
 import { Logger } from '../utils/Logger';
 

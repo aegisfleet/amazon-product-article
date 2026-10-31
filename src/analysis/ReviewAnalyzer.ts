@@ -2,7 +2,7 @@
  * Review_Analyzer - ユーザーレビューの分析と評価を行うコンポーネント
  */
 
-import type { CompetitiveProduct, InvestigationResult } from '../types/JulesTypes';
+import type { CompetitiveProduct, InvestigationResult } from '../types/InvestigationTypes';
 import type { Product } from '../types/Product';
 import { Logger } from '../utils/Logger';
 
@@ -74,7 +74,7 @@ export class ReviewAnalyzer {
   }
 
   /**
-   * Jules調査結果を解析して構造化されたレビュー分析を生成
+   * AI調査結果を解析して構造化されたレビュー分析を生成
    */
   async analyzeInvestigationResult(result: InvestigationResult): Promise<ReviewAnalysisResult> {
     this.logger.info('Starting investigation result analysis', {

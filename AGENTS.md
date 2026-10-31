@@ -255,11 +255,11 @@ SonarQube / SonarLint による Code Smell を防止し、高い保守性を維�
 
 ### 6.2 プロンプト管理（InvestigationPromptBuilder）
 
-`src/jules/InvestigationPromptBuilder.ts` 等のプロンプトを編集する際は以下を遵守すること。
+`src/prompts/InvestigationPromptBuilder.ts` 等のプロンプトを編集する際は以下を遵守すること。
 
 - **構文維持**: 巨大なテンプレートリテラルのバックティックや波括弧の対応を壊さないこと。
 - **フレーズの維持**: プロパティテストでチェックされている特定の指示やキーワードを慎重に扱うこと。
-- **変更後の検証**: `pnpm test src/jules/__tests__/prompts.property.test.ts` を必ず実行すること。
+- **変更後の検証**: `pnpm test src/prompts/__tests__/prompts.property.test.ts` を必ず実行すること。
 
 ### 6.3 価格乖離・調査時価格乖離の自動再調査
 

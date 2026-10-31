@@ -12,7 +12,7 @@
 import crypto from 'node:crypto';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { formatInvestigationPrompt } from '../jules/prompts';
+import { formatInvestigationPrompt } from '../prompts/prompts';
 import type { Product } from '../types/Product';
 import { setGitHubOutput } from '../utils/github-actions';
 import { Logger } from '../utils/Logger';

@@ -1,5 +1,5 @@
 import type { AffiliateLink } from './AffiliateTypes';
-import type { TechnicalSpecs } from './JulesTypes';
+import type { TechnicalSpecs } from './InvestigationTypes';
 import type { StyleRule, TemplateSection } from './QualityTypes';
 
 export { StyleRule, TemplateSection } from './QualityTypes';

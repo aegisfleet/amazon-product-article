@@ -7,7 +7,7 @@
 import 'dotenv/config';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { formatRecommendationPrompt } from '../jules/prompts';
+import { formatRecommendationPrompt } from '../prompts/prompts';
 import { setGitHubOutput } from '../utils/github-actions';
 import { Logger } from '../utils/Logger';
 import { extractSaleCandidates } from './extract-sale-candidates';

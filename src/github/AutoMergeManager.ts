@@ -1,5 +1,5 @@
 /**
- * Auto_Merge_Manager - JulesプルリクエストのCondutional自動マージ
+ * Auto_Merge_Manager - 調査・整理プルリクエストの条件付き自動マージ
  */
 
 import crypto from 'node:crypto';
@@ -34,7 +34,7 @@ export class AutoMergeManager {
     const validationResults: ValidationResult[] = [];
 
     // 作成者チェック
-    const authorCheck = this.verifyJulesAuthor(pr);
+    const authorCheck = this.verifyAuthor(pr);
     validationResults.push({
       check: 'author',
       passed: authorCheck,
@@ -104,7 +104,7 @@ export class AutoMergeManager {
   /**
    * 許可された作成者かどうかを確認
    */
-  verifyJulesAuthor(pr: PullRequest): boolean {
+  verifyAuthor(pr: PullRequest): boolean {
     const isAuthorized = pr.author === this.conditions.requiredAuthor || pr.author === 'aegisfleet';
 
     if (isAuthorized) {

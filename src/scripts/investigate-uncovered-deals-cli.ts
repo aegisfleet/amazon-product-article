@@ -15,7 +15,7 @@ import 'dotenv/config';
 import { setGitHubOutput } from '../utils/github-actions';
 import { Logger } from '../utils/Logger';
 import { findUncoveredDeals } from './find-uncovered-deals';
-import { generateInvestigationPromptsFromSession } from './jules-investigation-cli';
+import { generateInvestigationPromptsFromSession } from './investigation-cli';
 
 const logger = Logger.getInstance();
 

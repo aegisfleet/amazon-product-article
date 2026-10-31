@@ -1,7 +1,7 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { ArticleGenerator } from '../../article/ArticleGenerator';
-import type { InvestigationResult } from '../../types/JulesTypes';
+import type { InvestigationResult } from '../../types/InvestigationTypes';
 import type { Product } from '../../types/Product';
 
 const main = async () => {

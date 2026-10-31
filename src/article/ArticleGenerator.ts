@@ -15,7 +15,7 @@ import type {
   GeneratedArticle,
   TemplateSection,
 } from '../types/ArticleTypes';
-import type { InvestigationResult, TechnicalSpecs } from '../types/JulesTypes';
+import type { InvestigationResult, TechnicalSpecs } from '../types/InvestigationTypes';
 import type { Product, ProductDetail } from '../types/Product';
 import { Logger } from '../utils/Logger';
 import { normalizeTechnicalSpecs } from '../utils/specNormalizer';
@@ -1556,7 +1556,7 @@ ${recommendationMessage}
   }
 
   private shouldBeFeatured(_product: Product, investigation: InvestigationResult): boolean {
-    // Jules調査の推奨スコアのみで判定（Creators API v1ではレビューデータ取得不可）
+    // AI調査の推奨スコアのみで判定（Creators API v1ではレビューデータ取得不可）
     return investigation.analysis.recommendation.score >= 80;
   }
 

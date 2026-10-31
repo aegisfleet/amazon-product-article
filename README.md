@@ -1,10 +1,10 @@
 # Amazon Product Research System
 
-Amazon Creators API と Google Jules を活用した商品調査・レビュー記事の自動生成・公開システムである。
+Amazon Creators API と Antigravity CLI（`agy`）を活用した商品調査・レビュー記事の自動生成・公開システムである。
 
 ## 概要
 
-本システムは、Amazon Creators APIを通じて商品データを取得し、Google Jules（AIエージェント）による徹底した調査レポートをもとに、詳細なレビュー記事を自動生成してGitHub Pagesで公開するWebプラットフォームである。
+本システムは、Amazon Creators APIを通じて商品データを取得し、Antigravity CLI（AIエージェント）による徹底した調査レポートをもとに、詳細なレビュー記事を自動生成してGitHub Pagesで公開するWebプラットフォームである。
 
 単なる個別記事の生成にとどまらず、カテゴリ階層分類、ブランド別一覧、セール対象（`/deals/`）、あともう一品（`/bargain/`）、低スコア・ワーストバイ調査（`/low-scores/`）、商品比較（Compare）、お気に入り（Favorites）など、購買意思決定を多角的にサポートする機能群を備えている。
 
@@ -27,7 +27,7 @@ Amazon Creators API と Google Jules を活用した商品調査・レビュー�
 │   ├── category/                # カテゴリツリー管理・補強処理
 │   ├── config/                  # 環境変数・設定管理
 │   ├── github/                  # GitHub API / Octokit連携
-│   ├── jules/                   # Google Jules API連携・プロンプト管理
+│   ├── prompts/                 # AI調査・推薦・カテゴリ整理プロンプト管理
 │   ├── navigation/              # サイトナビゲーションデータ生成
 │   ├── schemas/                 # Zodバリデーションスキーマ
 │   ├── scripts/                 # CLIエントリポイント（各種自動化コマンド）
@@ -50,14 +50,14 @@ Amazon Creators API と Google Jules を活用した商品調査・レビュー�
 │   ├── css/                     # スタイルシート（Material Design 3ベース）
 │   └── js/                      # クライアントサイドJS（検索、フィルター、比較等）
 ├── data/                         # データソース・キャッシュ
-│   ├── investigations/          # Jules調査結果データ（JSON）
+│   ├── investigations/          # AI調査結果データ（JSON）
 │   ├── categorygroups.json      # 親カテゴリグループ定義（手動管理）
 │   ├── brandgroups.json         # ブランドグループ・マッチャー定義（手動管理）
 │   ├── categories.yml           # 自動生成カテゴリ階層
 │   └── cache/                   # APIレスポンス・商品情報キャッシュ
 ├── .github/workflows/            # CI/CD・自動化ワークフロー
-│   ├── product-research.yml     # 定期商品調査・Jules依頼
-│   ├── pr-auto-merge.yml        # Jules PRの検証・自動マージ
+│   ├── product-research.yml     # 定期商品調査・Antigravity CLI実行
+│   ├── pr-auto-merge.yml        # 調査PRの検証・自動マージ
 │   ├── deploy-articles.yml      # 記事生成・Hugoビルド・Pagesデプロイ
 │   ├── maintenance.yml          # 定期保守（デッド商品チェック等）
 │   └── build-and-test.yml       # CIテスト・ビルド検証
@@ -77,7 +77,7 @@ Amazon Creators API と Google Jules を活用した商品調査・レビュー�
 | ドキュメント | 内容 |
 |---|---|
 | **[自動記事更新・生成システム](docs/article-automation-system.md)** | 調査からAIレビュー、PR自動マージ、記事生成、Pagesデプロイまでのパイプライン解説 |
-| **[カテゴリ管理・整理システム](docs/category-management.md)** | 親カテゴリ命名規約（14文字以内）、Jules自動分類、正規化エンジン（CategoryNormalizer）仕様 |
+| **[カテゴリ管理・整理システム](docs/category-management.md)** | 親カテゴリ命名規約（14文字以内）、AI自動分類、正規化エンジン（CategoryNormalizer）仕様 |
 | **[ブランド管理システム](docs/brand-management.md)** | ブランド定義マッチャー、単語境界（`\b`）誤判定防止規約、自動抽出とページ生成仕様 |
 | **[キャッシュ & データアーキテクチャ](docs/cache-and-data-architecture.md)** | 本番（56MB）と開発用ダミーキャッシュの2層設計、TTL、ステータス遷移、リセット運用 |
 | **[フロントエンド & UIアーキテクチャ](docs/frontend-architecture.md)** | HugoテンプレートとVanilla JSカード描画の同期規約、M3バッジ、検索・比較機能の仕様 |
@@ -91,7 +91,8 @@ Amazon Creators API と Google Jules を活用した商品調査・レビュー�
 |---|---|
 | `src/api/CreatorsAPIClient.ts` | Amazon Creators API v1 通信クライアント。商品情報取得、レートリミット制御、署名検証を担当 |
 | `src/article/ArticleGenerator.ts` | 調査JSONデータからHugo用Markdown記事を生成。Front matter、スペック表、長所・短所を構成 |
-| `src/jules/JulesInvestigator.ts` | Google Jules APIへの調査タスク投入とプロンプト構成を担当 |
+| `src/prompts/InvestigationPromptBuilder.ts` | 商品調査プロンプトの構成を担当 |
+| `src/prompts/CategoryOrganizer.ts` | 未登録カテゴリの抽出とカテゴリ整理プロンプト生成を担当 |
 | `data/categorygroups.json` | 親カテゴリと子カテゴリのマッピング定義。14文字以内の親カテゴリ名規約に準拠 |
 | `data/brandgroups.json` | ブランド名マッチャー（正規表現）定義。単語境界（`\b`）によるブランド誤認防止を適用 |
 | `scripts/validate_artifact.py` | 調査成果物JSONの整合性検証（非メートル法表記の排除、URLリンク有効性チェック、スキーマ検証） |
@@ -177,7 +178,7 @@ hugo
 # キーワードによる商品検索
 pnpm run search:products
 
-# Jules調査依頼（標準）
+# 商品調査プロンプト生成（標準）
 pnpm run investigate
 
 # 『本日』のおすすめ商品の調査・依頼
@@ -204,7 +205,7 @@ pnpm run generate:articles -- --asin B0007TT7I0
 # Creators API呼び出しをスキップして記事生成
 pnpm run generate:articles -- --skip-creators-api
 
-# Julesが作成したPRのマージ処理
+# 調査PRのマージ処理
 pnpm run merge:pr
 ```
 
@@ -234,7 +235,7 @@ pnpm run audit:score-discrepancy
 ```
 
 > [!TIP]
-> カテゴリの階層構造、親カテゴリ命名規約（14文字以内）、Julesによる自動整理、正規化ロジックの修正手順については、[docs/category-management.md](docs/category-management.md) を参照のこと。
+> カテゴリの階層構造、親カテゴリ命名規約（14文字以内）、AIによる自動整理、正規化ロジックの修正手順については、[docs/category-management.md](docs/category-management.md) を参照のこと。
 
 ### Python 調査スクリプト（uv実行）
 
@@ -260,9 +261,6 @@ uv run python scripts/creators_search_items.py "<検索キーワード>"
 | `CREATORS_API_BURST_LIMIT` | - | Creators API バースト許容数（デフォルト: `5`） |
 | `CREATORS_API_RETRY_DELAY` | - | リトライ初期待機ミリ秒（デフォルト: `1000`） |
 | `CREATORS_API_MAX_RETRIES` | - | 最大リトライ回数（デフォルト: `5`） |
-| `JULES_API_KEY` | ○ | Google Jules APIキー |
-| `JULES_SOURCE` | ○ | Jules連携ソース名（例: `sources/github/owner/repo`） |
-| `JULES_STARTING_BRANCH` | - | Jules作業ブランチ（デフォルト: `main`） |
 | `GITHUB_TOKEN` | ○ | GitHub Personal Access Token |
 | `GITHUB_REPOSITORY` | ○ | 対象リポジトリ（`owner/repo` 形式） |
 | `GITHUB_BRANCH` | - | 対象ブランチ（デフォルト: `main`） |
@@ -272,11 +270,11 @@ uv run python scripts/creators_search_items.py "<検索キーワード>"
 
 ## ワークフローの自動化サイクル
 
-1. **商品選定と調査依頼** (`product-research.yml`, `investigate-*.yml`):
+1. **商品選定と調査プロンプト生成** (`product-research.yml`, `investigate-*.yml`):
    - Creators API による検索やセール候補抽出、ユーザーリクエストから対象ASINを選定。
-   - Google Jules に商品調査プロンプトを投入。
+   - 商品調査プロンプトおよびマニフェスト（`data/prompts/`）を生成し、セルフホストランナーへ受け渡す。
 2. **AIによる調査レポート作成**:
-   - Jules が商品情報取得スクリプト（`scripts/creators_get_item.py` 等）を活用し、客観的な事実・レビュー・競合比較を調査。
+   - セルフホストランナー上の Antigravity CLI（`agy`）が商品情報取得スクリプト（`scripts/creators_get_item.py` 等）やWeb検索を活用し、客観的な事実・レビュー・競合比較を調査。
    - `data/investigations/{ASIN}.json` を追加する Pull Request を自動作成。
 3. **PRの自動検証とマージ** (`pr-auto-merge.yml`):
    - スキーマ構造、リンク切れチェック、非メートル法検証（`validate_artifact.py`）を実施。

@@ -1,4 +1,4 @@
-import type { BatterySpec, DisplaySpec, TechnicalSpecs } from '../types/JulesTypes';
+import type { BatterySpec, DisplaySpec, TechnicalSpecs } from '../types/InvestigationTypes';
 
 interface SpecMatcher {
   pattern: RegExp;

@@ -3,9 +3,9 @@ import { InvestigationPromptBuilder } from './InvestigationPromptBuilder';
 import { RecommendationPromptBuilder } from './RecommendationPromptBuilder';
 
 /**
- * Jules Investigation Prompts
+ * Product Investigation & Recommendation Prompts
  *
- * Handles the generation of prompts for the Jules API investigation sessions.
+ * Handles the generation of prompts for Antigravity CLI (agy) investigation sessions.
  */
 
 /**

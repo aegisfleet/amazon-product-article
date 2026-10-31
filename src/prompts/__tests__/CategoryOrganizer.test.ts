@@ -1,13 +1,13 @@
 import * as fs from 'node:fs/promises';
-import { JulesCategoryOrganizer } from '../JulesCategoryOrganizer';
+import { CategoryOrganizer } from '../CategoryOrganizer';
 
 jest.mock('node:fs/promises');
 
-describe('JulesCategoryOrganizer', () => {
-  let organizer: JulesCategoryOrganizer;
+describe('CategoryOrganizer', () => {
+  let organizer: CategoryOrganizer;
 
   beforeEach(() => {
-    organizer = new JulesCategoryOrganizer();
+    organizer = new CategoryOrganizer();
     jest.clearAllMocks();
   });
 

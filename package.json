@@ -1,7 +1,7 @@
 {
   "name": "amazon-product-research-system",
   "version": "1.0.0",
-  "description": "Amazon Creators APIとGoogle Julesを活用した商品調査記事の自動生成・公開システム",
+  "description": "Amazon Creators APIとAntigravity CLIを活用した商品調査記事の自動生成・公開システム",
   "main": "dist/index.js",
   "scripts": {
     "sanitize:frontmatter": "ts-node src/scripts/sanitize-frontmatter.ts",
@@ -21,7 +21,7 @@
     "lint:fix": "eslint src/**/*.ts --fix",
     "clean": "rimraf dist",
     "search:products": "ts-node src/scripts/product-search-cli.ts",
-    "investigate": "ts-node src/scripts/jules-investigation-cli.ts",
+    "investigate": "ts-node src/scripts/investigation-cli.ts",
     "investigate:recommendations": "ts-node src/scripts/today-recommendation-cli.ts",
     "investigate:price-discrepancy": "ts-node src/scripts/investigate-price-discrepancy-cli.ts",
     "investigate:uncovered-deals": "ts-node src/scripts/investigate-uncovered-deals-cli.ts",
@@ -45,7 +45,7 @@
   "keywords": [
     "amazon",
     "product-research",
-    "jules-api",
+    "antigravity-cli",
     "github-actions",
     "affiliate"
   ],

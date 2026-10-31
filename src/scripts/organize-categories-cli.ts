@@ -9,7 +9,7 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { JulesCategoryOrganizer } from '../jules/JulesCategoryOrganizer';
+import { CategoryOrganizer } from '../prompts/CategoryOrganizer';
 import { setGitHubOutput } from '../utils/github-actions';
 import { Logger } from '../utils/Logger';
 
@@ -19,7 +19,7 @@ async function main(): Promise<void> {
   logger.info('Starting category organization prompt generation CLI...');
 
   try {
-    const organizer = new JulesCategoryOrganizer();
+    const organizer = new CategoryOrganizer();
 
     // 未登録カテゴリの確認
     const unregisteredCategories = await organizer.getUnregisteredCategories();
