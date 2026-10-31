@@ -38,8 +38,17 @@ interface Run {
   display_title: string;
 }
 
+interface RunClassification {
+  a_not_started: any[];
+  b_generate_cancelled_commit_success: any[];
+  c_generate_cancelled_commit_lost: any[];
+  d_after_commit_cancelled: any[];
+}
+
 function ghApi(endpoint: string): any {
-  const out = execFileSync('gh', ['api', endpoint], { encoding: 'utf-8', maxBuffer: 50 * 1024 * 1024 });
+  const ghPath = process.platform === 'win32' ? 'gh.exe' : '/usr/bin/gh';
+  const executable = process.env.GH_PATH || ghPath;
+  const out = execFileSync(executable, ['api', endpoint], { encoding: 'utf-8', maxBuffer: 50 * 1024 * 1024 });
   return JSON.parse(out);
 }
 
@@ -48,9 +57,11 @@ function durationSec(start: string | null, end: string | null): number | null {
   return Math.round((new Date(end).getTime() - new Date(start).getTime()) / 1000);
 }
 
-async function main() {
+function fetchCancelledRuns(): Run[] {
   console.log('Fetching runs for deploy-articles.yml...');
-  const runsResp = ghApi('repos/aegisfleet/amazon-product-article/actions/workflows/deploy-articles.yml/runs?per_page=100');
+  const runsResp = ghApi(
+    'repos/aegisfleet/amazon-product-article/actions/workflows/deploy-articles.yml/runs?per_page=100',
+  );
   const allRuns: Run[] = runsResp.workflow_runs || [];
 
   const cancelledRuns = allRuns.filter((r) => r.conclusion === 'cancelled');
@@ -60,92 +71,114 @@ async function main() {
     );
     const page2Runs: Run[] = runsResp2.workflow_runs || [];
     for (const r of page2Runs) {
-      allRuns.push(r);
       if (r.conclusion === 'cancelled') {
         cancelledRuns.push(r);
       }
     }
   }
 
-  const targetCancelled = cancelledRuns.slice(0, 100);
-  console.log(`Analyzing ${targetCancelled.length} cancelled runs...`);
+  return cancelledRuns.slice(0, 100);
+}
 
-  const categories = {
-    a_not_started: [] as any[],
-    b_generate_cancelled_commit_success: [] as any[],
-    c_generate_cancelled_commit_lost: [] as any[],
-    d_after_commit_cancelled: [] as any[],
+function classifyRun(run: Run, categories: RunClassification): void {
+  const jobsResp = ghApi(`repos/aegisfleet/amazon-product-article/actions/runs/${run.id}/jobs`);
+  const jobs: Job[] = jobsResp.jobs || [];
+  const buildJob = jobs.find((j) => j.name === 'build');
+
+  if (
+    !buildJob?.steps ||
+    buildJob.steps.every((s) => s.conclusion === 'skipped' || s.conclusion === null)
+  ) {
+    categories.a_not_started.push({ runId: run.id, created_at: run.created_at, jobConclusion: buildJob?.conclusion });
+    return;
+  }
+
+  const checkoutStep = buildJob.steps.find((s) => s.name.includes('Checkout') || s.number === 2);
+  const generateStep = buildJob.steps.find((s) => s.name === 'Generate articles');
+  const prepareStep = buildJob.steps.find((s) => s.name === 'Prepare static data');
+  const commitStep = buildJob.steps.find(
+    (s) => s.name.includes('Commit build artifacts') || s.name.includes('Commit fetched cache'),
+  );
+  const hugoStep = buildJob.steps.find((s) => s.name === 'Build site with Hugo');
+
+  const info = {
+    runId: run.id,
+    created_at: run.created_at,
+    event: run.event,
+    checkout: checkoutStep?.conclusion,
+    generate: generateStep?.conclusion,
+    prepare: prepareStep?.conclusion,
+    commit: commitStep?.conclusion,
+    commitDur: commitStep ? durationSec(commitStep.started_at, commitStep.completed_at) : null,
+    hugo: hugoStep?.conclusion,
   };
 
-  const commitDurations: number[] = [];
-
-  for (const run of targetCancelled) {
-    const jobsResp = ghApi(`repos/aegisfleet/amazon-product-article/actions/runs/${run.id}/jobs`);
-    const jobs: Job[] = jobsResp.jobs || [];
-    const buildJob = jobs.find((j) => j.name === 'build');
-
-    if (!buildJob?.steps || buildJob.steps.length === 0 || buildJob.steps.every((s) => s.conclusion === 'skipped' || s.conclusion === null)) {
-      categories.a_not_started.push({ runId: run.id, created_at: run.created_at, jobConclusion: buildJob?.conclusion });
-      continue;
+  if (!generateStep || generateStep.conclusion === 'skipped' || (generateStep.conclusion === 'cancelled' && !generateStep.started_at)) {
+    if (commitStep?.conclusion === 'failure') {
+      categories.c_generate_cancelled_commit_lost.push({ ...info, reason: 'before_generate_commit_failed' });
+    } else {
+      categories.a_not_started.push({ ...info, reason: 'cancelled_before_generate' });
     }
+    return;
+  }
 
-    const checkoutStep = buildJob.steps.find((s) => s.name.includes('Checkout') || s.number === 2);
-    const generateStep = buildJob.steps.find((s) => s.name === 'Generate articles');
-    const prepareStep = buildJob.steps.find((s) => s.name === 'Prepare static data');
-    const commitStep = buildJob.steps.find((s) => s.name.includes('Commit build artifacts') || s.name.includes('Commit fetched cache'));
-    const hugoStep = buildJob.steps.find((s) => s.name === 'Build site with Hugo');
-
-    const commitDur = commitStep ? durationSec(commitStep.started_at, commitStep.completed_at) : null;
-    if (commitStep?.conclusion === 'success' && commitDur !== null) {
-      commitDurations.push(commitDur);
-    }
-
-    const info = {
-      runId: run.id,
-      created_at: run.created_at,
-      event: run.event,
-      checkout: checkoutStep?.conclusion,
-      generate: generateStep?.conclusion,
-      prepare: prepareStep?.conclusion,
-      commit: commitStep?.conclusion,
-      commitDur,
-      hugo: hugoStep?.conclusion,
-    };
-
-    if (!generateStep || generateStep.conclusion === 'skipped' || (generateStep.conclusion === 'cancelled' && !generateStep.started_at)) {
-      if (commitStep?.conclusion === 'failure') {
-        categories.c_generate_cancelled_commit_lost.push({ ...info, reason: 'before_generate_commit_failed' });
-      } else {
-        categories.a_not_started.push({ ...info, reason: 'cancelled_before_generate' });
-      }
-      continue;
-    }
-
-    if (generateStep.conclusion === 'cancelled' || prepareStep?.conclusion === 'cancelled') {
-      if (commitStep?.conclusion === 'success') {
-        categories.b_generate_cancelled_commit_success.push(info);
-      } else {
-        categories.c_generate_cancelled_commit_lost.push(info);
-      }
-    } else if (commitStep?.conclusion === 'success') {
-      categories.d_after_commit_cancelled.push(info);
+  if (generateStep.conclusion === 'cancelled' || prepareStep?.conclusion === 'cancelled') {
+    if (commitStep?.conclusion === 'success') {
+      categories.b_generate_cancelled_commit_success.push(info);
     } else {
       categories.c_generate_cancelled_commit_lost.push(info);
     }
+  } else if (commitStep?.conclusion === 'success') {
+    categories.d_after_commit_cancelled.push(info);
+  } else {
+    categories.c_generate_cancelled_commit_lost.push(info);
   }
+}
 
+function printSummary(targetCancelledCount: number, categories: RunClassification): void {
   console.log('\n=== Classification Summary ===');
-  console.log(`Total analyzed cancelled runs: ${targetCancelled.length}`);
+  console.log(`Total analyzed cancelled runs: ${targetCancelledCount}`);
   console.log(`a. Not started / Before Generate (No loss): ${categories.a_not_started.length}`);
-  console.log(`b. Cancelled during Generate/Prepare -> Commit success: ${categories.b_generate_cancelled_commit_success.length}`);
-  console.log(`c. Cancelled -> Commit failure / skipped / cancelled (LOST): ${categories.c_generate_cancelled_commit_lost.length}`);
+  console.log(
+    `b. Cancelled during Generate/Prepare -> Commit success: ${categories.b_generate_cancelled_commit_success.length}`,
+  );
+  console.log(
+    `c. Cancelled -> Commit failure / skipped / cancelled (LOST): ${categories.c_generate_cancelled_commit_lost.length}`,
+  );
   console.log(`d. Cancelled after Commit completed (Hugo / deploy): ${categories.d_after_commit_cancelled.length}`);
 
-  const validRunsTotal = categories.b_generate_cancelled_commit_success.length + categories.c_generate_cancelled_commit_lost.length + categories.d_after_commit_cancelled.length;
-  const successTotal = categories.b_generate_cancelled_commit_success.length + categories.d_after_commit_cancelled.length;
+  const validRunsTotal =
+    categories.b_generate_cancelled_commit_success.length +
+    categories.c_generate_cancelled_commit_lost.length +
+    categories.d_after_commit_cancelled.length;
+  const successTotal =
+    categories.b_generate_cancelled_commit_success.length + categories.d_after_commit_cancelled.length;
   const successRate = validRunsTotal > 0 ? ((successTotal / validRunsTotal) * 100).toFixed(1) : 'N/A';
 
   console.log(`\nCommit Success Rate (excluding category a): ${successRate}% (${successTotal}/${validRunsTotal})`);
 }
 
-main().catch(console.error);
+function main(): void {
+  const targetCancelled = fetchCancelledRuns();
+  console.log(`Analyzing ${targetCancelled.length} cancelled runs...`);
+
+  const categories: RunClassification = {
+    a_not_started: [],
+    b_generate_cancelled_commit_success: [],
+    c_generate_cancelled_commit_lost: [],
+    d_after_commit_cancelled: [],
+  };
+
+  for (const run of targetCancelled) {
+    classifyRun(run, categories);
+  }
+
+  printSummary(targetCancelled.length, categories);
+}
+
+try {
+  main();
+} catch (error) {
+  console.error(error);
+  process.exit(1);
+}

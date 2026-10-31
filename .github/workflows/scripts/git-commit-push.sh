@@ -12,19 +12,19 @@ if [ -z "$MESSAGE" ]; then
 fi
 
 # Guard 1: Verify git repository and working directory exist
-if [ ! -d ".git" ]; then
+if [[ ! -d ".git" ]]; then
   echo "⚠️ Warning: .git directory not found (checkout not completed or workspace missing). Skipping commit."
   exit 0
 fi
 
 # Guard 2: If committing cache files, check directory existence and validate shard JSON integrity
 if echo "$FILES" | grep -q "data/cache"; then
-  if [ ! -d "data/cache" ]; then
+  if [[ ! -d "data/cache" ]]; then
     echo "⚠️ Warning: data/cache directory does not exist. Skipping commit."
     exit 0
   fi
 
-  if [ -d "data/cache/paapi" ]; then
+  if [[ -d "data/cache/paapi" ]]; then
     echo "Validating shard JSON files in data/cache/paapi..."
     CORRUPT_SHARDS=$(node -e '
       const fs = require("fs");
@@ -45,7 +45,7 @@ if echo "$FILES" | grep -q "data/cache"; then
       }
     ' 2>&1 || true)
 
-    if [ -n "$CORRUPT_SHARDS" ]; then
+    if [[ -n "$CORRUPT_SHARDS" ]]; then
       echo "⚠️ Warning: Corrupt cache shard(s) detected in data/cache/paapi. Skipping commit to prevent corruption:"
       echo "$CORRUPT_SHARDS"
       exit 0
