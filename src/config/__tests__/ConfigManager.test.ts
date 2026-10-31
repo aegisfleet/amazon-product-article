@@ -28,9 +28,6 @@ describe('ConfigManager Property-Based Tests', () => {
       'AMAZON_CREATORS_CREDENTIAL_ID',
       'AMAZON_CREATORS_CREDENTIAL_SECRET',
       'AMAZON_PARTNER_TAG',
-      'JULES_API_KEY',
-      'JULES_BASE_URL',
-      'JULES_TIMEOUT',
       'GITHUB_TOKEN',
       'GITHUB_REPOSITORY',
       'GITHUB_BRANCH',
@@ -89,9 +86,6 @@ describe('ConfigManager Property-Based Tests', () => {
           amazonCredentialId: nonEmptyAlphanumericString(20, 100),
           amazonCredentialSecret: nonEmptyAlphanumericString(20, 100),
           amazonPartnerTag: nonEmptyAlphanumericString(5, 20),
-          julesApiKey: nonEmptyAlphanumericString(20, 100),
-          julesBaseUrl: fc.webUrl(),
-          julesTimeout: fc.integer({ min: 1000, max: 60000 }),
           githubToken: nonEmptyAlphanumericString(20, 100),
           githubRepository: repositoryString(),
           githubBranch: fc.constantFrom('main', 'master', 'develop'),
@@ -114,9 +108,6 @@ describe('ConfigManager Property-Based Tests', () => {
           process.env.AMAZON_CREATORS_CREDENTIAL_ID = validConfig.amazonCredentialId;
           process.env.AMAZON_CREATORS_CREDENTIAL_SECRET = validConfig.amazonCredentialSecret;
           process.env.AMAZON_PARTNER_TAG = validConfig.amazonPartnerTag;
-          process.env.JULES_API_KEY = validConfig.julesApiKey;
-          process.env.JULES_BASE_URL = validConfig.julesBaseUrl;
-          process.env.JULES_TIMEOUT = validConfig.julesTimeout.toString();
           process.env.GITHUB_TOKEN = validConfig.githubToken;
           process.env.GITHUB_REPOSITORY = validConfig.githubRepository;
           process.env.GITHUB_BRANCH = validConfig.githubBranch;
@@ -138,7 +129,6 @@ describe('ConfigManager Property-Based Tests', () => {
           const config = configManager.getConfig();
           expect(config).toBeDefined();
           expect(config.amazon.applicationId).toBe(validConfig.amazonApplicationId);
-          expect(config.jules.apiKey).toBe(validConfig.julesApiKey);
           expect(config.github.token).toBe(validConfig.githubToken);
         },
       ),
@@ -158,7 +148,6 @@ describe('ConfigManager Property-Based Tests', () => {
             amazonCredentialId: nonEmptyAlphanumericString(20, 100),
             amazonCredentialSecret: nonEmptyAlphanumericString(20, 100),
             amazonPartnerTag: nonEmptyAlphanumericString(5, 20),
-            julesApiKey: nonEmptyAlphanumericString(20, 100),
             githubToken: nonEmptyAlphanumericString(20, 100),
             githubRepository: repositoryString(),
           }),
@@ -169,7 +158,6 @@ describe('ConfigManager Property-Based Tests', () => {
             amazonCredentialId: nonEmptyAlphanumericString(20, 100),
             amazonCredentialSecret: nonEmptyAlphanumericString(20, 100),
             amazonPartnerTag: nonEmptyAlphanumericString(5, 20),
-            julesApiKey: nonEmptyAlphanumericString(20, 100),
             githubToken: nonEmptyAlphanumericString(20, 100),
             githubRepository: repositoryString(),
             retryAttempts: fc.integer({ min: 11, max: 100 }), // Invalid: > 10
@@ -181,7 +169,6 @@ describe('ConfigManager Property-Based Tests', () => {
             amazonCredentialId: nonEmptyAlphanumericString(20, 100),
             amazonCredentialSecret: nonEmptyAlphanumericString(20, 100),
             amazonPartnerTag: nonEmptyAlphanumericString(5, 20),
-            julesApiKey: nonEmptyAlphanumericString(20, 100),
             githubToken: nonEmptyAlphanumericString(20, 100),
             githubRepository: repositoryString(),
             minWordCount: fc.integer({ min: 10001, max: 50000 }), // Invalid: > 10000
@@ -202,7 +189,6 @@ describe('ConfigManager Property-Based Tests', () => {
           process.env.AMAZON_CREATORS_CREDENTIAL_ID = invalidConfig.amazonCredentialId;
           process.env.AMAZON_CREATORS_CREDENTIAL_SECRET = invalidConfig.amazonCredentialSecret;
           process.env.AMAZON_PARTNER_TAG = invalidConfig.amazonPartnerTag;
-          process.env.JULES_API_KEY = invalidConfig.julesApiKey;
           process.env.GITHUB_TOKEN = invalidConfig.githubToken;
           process.env.GITHUB_REPOSITORY = invalidConfig.githubRepository;
 
@@ -230,7 +216,6 @@ describe('ConfigManager Property-Based Tests', () => {
           process.env.AMAZON_CREATORS_CREDENTIAL_ID = invalidConfig.amazonCredentialId;
           process.env.AMAZON_CREATORS_CREDENTIAL_SECRET = invalidConfig.amazonCredentialSecret;
           process.env.AMAZON_PARTNER_TAG = invalidConfig.amazonPartnerTag;
-          process.env.JULES_API_KEY = invalidConfig.julesApiKey;
           process.env.GITHUB_TOKEN = invalidConfig.githubToken;
           process.env.GITHUB_REPOSITORY = invalidConfig.githubRepository;
           if ('retryAttempts' in invalidConfig) {
@@ -287,7 +272,6 @@ describe('ConfigManager Property-Based Tests', () => {
           process.env.AMAZON_CREATORS_CREDENTIAL_ID = 'test_credential_id_123456';
           process.env.AMAZON_CREATORS_CREDENTIAL_SECRET = 'test_credential_secret_123';
           process.env.AMAZON_PARTNER_TAG = 'test_tag';
-          process.env.JULES_API_KEY = 'test_jules_key_1234567890';
           process.env.GITHUB_TOKEN = 'test_github_token_1234567890';
           process.env.GITHUB_REPOSITORY = 'user/repo';
           process.env.RETRY_ATTEMPTS = testData.initialRetryAttempts.toString();

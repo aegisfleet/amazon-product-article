@@ -253,13 +253,13 @@ SonarQube / SonarLint による Code Smell を防止し、高い保守性を維�
 | `scripts/creators_get_item.py` | 商品詳細取得 | `tmp/product_info.json` |
 | `scripts/creators_search_items.py` | 競合商品検索 | `tmp/search_results.json` |
 
-### 6.2 プロンプト管理（JulesInvestigator）
+### 6.2 プロンプト管理（InvestigationPromptBuilder）
 
-`src/jules/JulesInvestigator.ts` 等のプロンプトを編集する際は以下を遵守すること。
+`src/jules/InvestigationPromptBuilder.ts` 等のプロンプトを編集する際は以下を遵守すること。
 
 - **構文維持**: 巨大なテンプレートリテラルのバックティックや波括弧の対応を壊さないこと。
 - **フレーズの維持**: プロパティテストでチェックされている特定の指示やキーワードを慎重に扱うこと。
-- **変更後の検証**: `pnpm test src/jules/__tests__/JulesInvestigator.property.test.ts` を必ず実行すること。
+- **変更後の検証**: `pnpm test src/jules/__tests__/prompts.property.test.ts` を必ず実行すること。
 
 ### 6.3 価格乖離・調査時価格乖離の自動再調査
 
@@ -269,7 +269,7 @@ SonarQube / SonarLint による Code Smell を防止し、高い保守性を維�
   - **Amazonセール乖離**: Amazon公式の割引率が閾値以上（デフォルト 15%）、またはセールバッジが付与されている商品。
   - **調査時価格乖離**: 調査時点の価格（`investigatedPrice`）と最新キャッシュ価格との間に大幅な乖離（デフォルト 30% 以上）が発生している商品（例: ふるさと納税返礼品から市販品への出品切替や相場変動など）。
 - **優先順位**:
-  調査時価格からの乖離率が高い商品を最優先で抽出し、Jules による再調査セッションを自動発行する。
+  調査時価格からの乖離率が高い商品を最優先で抽出し、Antigravity CLI（`agy`）による再調査を自動実行する。
 - **実行コマンド**:
   - 候補抽出・再調査実行: `pnpm run investigate:price-discrepancy`
 

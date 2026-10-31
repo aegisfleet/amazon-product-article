@@ -1,4 +1,4 @@
-name: Auto-Merge Jules PRs
+name: Auto-Merge PRs
 
 on:
   pull_request:
@@ -6,8 +6,8 @@ on:
 
 jobs:
   auto-merge:
-    # JulesボットまたはJules関連のユーザーからのPRのみ処理
-    if: github.actor == 'jules[bot]' || contains(github.actor, 'jules') || github.actor == 'aegisfleet' # zizmor: ignore[bot-conditions]
+    # 許可されたユーザーからのPRのみ処理
+    if: github.actor == 'aegisfleet'
     runs-on: ubuntu-latest
 
     permissions:

@@ -1,94 +1,46 @@
 #!/usr/bin/env ts-node
 /**
- * Today's Recommendation CLI Script
- * 本日の注目商品10選を調査する Jules セッションを開始する
+ * Today's Recommendation Prompt Generation CLI Script
+ * 本日の注目商品10選を調査するためのセール候補抽出およびプロンプト生成を行う
  */
 
 import 'dotenv/config';
-import { JulesInvestigator } from '../jules/JulesInvestigator';
-import type { JulesCredentials, SourceContext } from '../types/JulesTypes';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { formatRecommendationPrompt } from '../jules/prompts';
 import { setGitHubOutput } from '../utils/github-actions';
 import { Logger } from '../utils/Logger';
 import { extractSaleCandidates } from './extract-sale-candidates';
 
 const logger = Logger.getInstance();
 
-interface CLIOptions {
-  apiKey: string;
-  source: string;
-  startingBranch: string;
-  maxProducts: number;
-}
-
-function getOptions(): CLIOptions {
-  const apiKey = process.env.JULES_API_KEY;
-  const source = process.env.JULES_SOURCE;
-  const startingBranch = process.env.JULES_STARTING_BRANCH || 'main';
-  const maxProducts = Number.parseInt(process.env.MAX_RECOMMENDATION_PRODUCTS || '10', 10);
-
-  if (!apiKey) {
-    throw new Error('Missing required environment variable: JULES_API_KEY');
-  }
-
-  if (!source) {
-    throw new Error('Missing required environment variable: JULES_SOURCE (e.g., sources/github/owner/repo)');
-  }
-
-  return {
-    apiKey,
-    source,
-    startingBranch,
-    maxProducts,
-  };
-}
-
 async function main(): Promise<void> {
-  logger.info("Starting Today's Recommendation investigation CLI...");
+  logger.info("Starting Today's Recommendation prompt generation CLI...");
 
   try {
-    const options = getOptions();
-    logger.info(`Source: ${options.source}`);
-    logger.info(`Starting Branch: ${options.startingBranch}`);
-    logger.info(`Max recommendation products: ${options.maxProducts}`);
+    const maxProducts = Number.parseInt(process.env.MAX_RECOMMENDATION_PRODUCTS || '10', 10);
+    logger.info(`Max recommendation products: ${maxProducts}`);
 
-    // キャッシュからセール・値引き候補商品を事前抽出
+    // キャッシュからセール・値引き候補商品を事前抽出 (tmp/sale_candidates.json)
     logger.info('Extracting sale candidates from cache...');
     await extractSaleCandidates();
 
-    // Jules Investigator を初期化
-    const credentials: JulesCredentials = {
-      apiKey: options.apiKey,
-    };
-    const investigator = new JulesInvestigator(credentials);
+    // 注目商品調査プロンプトを生成
+    const prompt = formatRecommendationPrompt(maxProducts);
+    const promptPath = path.join(process.cwd(), 'data', 'prompts', 'recommendations-prompt.txt');
+    await fs.mkdir(path.dirname(promptPath), { recursive: true });
+    await fs.writeFile(promptPath, prompt, 'utf-8');
 
-    // ソースコンテキストを作成
-    const sourceContext: SourceContext = {
-      source: options.source,
-      githubRepoContext: {
-        startingBranch: options.startingBranch,
-      },
-    };
-
-    // 調査セッションを開始
-    logger.info("Requesting Jules to find today's recommended products...");
-    const sessionInfo = await investigator.startRecommendationInvestigation(sourceContext, options.maxProducts);
-
-    logger.info(`Recommendation investigation session started: ${sessionInfo.sessionId}`);
-    logger.info(`Session Name: ${sessionInfo.sessionName}`);
-
-    // GitHub Actions 出力を設定
-    await setGitHubOutput('session-id', sessionInfo.sessionId);
-    await setGitHubOutput('session-name', sessionInfo.sessionName);
-
-    logger.info('Jules will now search for recommended products and create a PR asynchronously.');
+    await setGitHubOutput('has-prompt', 'true');
+    logger.info(`Recommendation prompt generated successfully at ${promptPath}`);
     process.exit(0);
   } catch (error) {
-    logger.error("Today's recommendation investigation failed:", error);
+    logger.error("Today's recommendation prompt generation failed:", error);
+    await setGitHubOutput('has-prompt', 'false');
     process.exit(1);
   }
 }
 
-// CommonJS環境では最上位でのawaitが使用できないため、Promiseチェーンを使用
 void main().catch((error) => {
   console.error('Unhandled error:', error);
   process.exit(1);

@@ -1,23 +1,13 @@
 /**
- * JulesCategoryOrganizer - Google Jules APIを使用したカテゴリ整理の実行
+ * JulesCategoryOrganizer - カテゴリ整理対象抽出およびプロンプト生成
  *
  * 「その他／全般」に分類されている（=categorygroups.jsonに未登録の）カテゴリを
- * 適切な親カテゴリに分類するためのJulesセッションを作成する
+ * 適切な親カテゴリに分類するためのプロンプトを生成する
  */
 
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
-import axios, { type AxiosInstance } from 'axios';
-import type {
-  JulesCredentials,
-  JulesError,
-  JulesSessionRequest,
-  JulesSessionResponse,
-  SourceContext,
-} from '../types/JulesTypes';
 import { Logger } from '../utils/Logger';
-
-const JULES_API_BASE_URL = 'https://jules.googleapis.com/v1alpha';
 
 /**
  * カテゴリグループの型定義
@@ -55,81 +45,13 @@ interface ProductCache {
   [asin: string]: CacheEntry;
 }
 
-/**
- * 整理結果のセッション情報
- */
-export interface OrganizationSession {
-  sessionId: string;
-  sessionName: string;
-  unregisteredCategories: string[];
-  startedAt: Date;
-}
-
 export class JulesCategoryOrganizer {
-  private readonly client: AxiosInstance;
   private readonly logger: Logger;
   private categoryGroupsCache: CategoryGroup[] | null = null;
   private productCacheCache: Set<string> | null = null;
 
-  constructor(credentials: JulesCredentials) {
+  constructor() {
     this.logger = Logger.getInstance();
-
-    this.client = axios.create({
-      baseURL: JULES_API_BASE_URL,
-      timeout: 30000,
-      headers: {
-        'X-Goog-Api-Key': credentials.apiKey,
-        'Content-Type': 'application/json',
-      },
-    });
-
-    // Add request/response interceptors for logging
-    this.client.interceptors.request.use(
-      (config) => {
-        this.logger.info('Jules API Request (CategoryOrganizer)', {
-          method: config.method,
-          url: config.url,
-        });
-        return config;
-      },
-      (error: unknown) => {
-        if (axios.isAxiosError(error)) {
-          this.logger.error('Jules API Request Error', {
-            message: error.message,
-            code: error.code,
-            config: {
-              method: error.config?.method,
-              url: error.config?.url,
-            },
-          });
-        } else {
-          this.logger.error('Jules API Request Error', error);
-        }
-        return Promise.reject(error instanceof Error ? error : new Error(String(error)));
-      },
-    );
-
-    this.client.interceptors.response.use(
-      (response) => {
-        this.logger.info('Jules API Response', {
-          status: response.status,
-          statusText: response.statusText,
-        });
-        return response;
-      },
-      (error: unknown) => {
-        if (axios.isAxiosError(error)) {
-          this.logger.error('Jules API Response Error', {
-            status: error.response?.status,
-            statusText: error.response?.statusText,
-            data: error.response?.data as unknown,
-          });
-        } else {
-          this.logger.error('Jules API Response Error (Non-Axios)', error);
-        }
-        return Promise.reject(error instanceof Error ? error : new Error(String(error)));
-      },
-    );
   }
 
   /**
@@ -339,22 +261,18 @@ export class JulesCategoryOrganizer {
    - Pythonスクリプト (\`.py\`) や Node.jsスクリプト (\`.js\`) を作成して作業を行わない。
    - すべての操作は標準的なファイル編集ツールと、指定されたコマンドのみで行う。
 
-2. **\`npm run sort:categories\` の実行必須**
-   - カテゴリの追加・移動を行った後は、必ずこのコマンドを最後に一度だけ実行する。
-   - これ以外の方法（手動ソート、独自スクリプト、jq等）でソートを行わない。
-
-3. **編集対象の限定**
+2. **編集対象の限定**
    - \`data/categorygroups.json\` 以外のファイルは絶対に変更しない。
 
-4. **自律性を伴う完遂の義務・アドバイス/確認要求の完全禁止 (最重要)**
+3. **自律性を伴う完遂の義務・アドバイス/確認要求の完全禁止 (最重要)**
    - あなたには提示された全ての未登録カテゴリを分類し、タスクを完遂する責任がある。
    - システムは完全自動・非同期バッチで実行されており、ユーザー（人間）からの回答や指示は一切得られない。
    - 「このまま進めてよろしいでしょうか？」「指示をお願いします」といった**ユーザーへの確認・アドバイス要求・待機は厳禁**である。
    - 分類先が不明確な場合でも、類似カテゴリへの割り当てや「その他／全般」への分類を自律的に判断して行い、作業を中断しないこと。
 
-5. **セルフ検証による自己完結**
-   - 「コードレビュー」や「事前検証（Pre-commit steps）」とは、人間へのレビュー依頼ではなく**あなた自身によるセルフ検証（git diff の確認・ソート実行・構文チェック）**を意味する。
-   - セルフ検証が完了したら、人間に確認を求めず直ちにコミットおよびPR作成を行ってセッションを終了すること。
+4. **セルフ検証による自己完結**
+   - 「コードレビュー」や「事前検証（Pre-commit steps）」とは、人間へのレビュー依頼ではなく**あなた自身によるセルフ検証（git diff の確認・構文チェック）**を意味する。
+   - セルフ検証が完了したら、人間に確認を求めず直ちにセッションを終了すること。
 
 ---
 
@@ -368,16 +286,10 @@ export class JulesCategoryOrganizer {
    - 適した親カテゴリがない場合は「その他／全般」に追加する。
    - 新しい親カテゴリは作成しない。
 
-3. **カテゴリのソートとフォーマット検証**
-   - 以下のコマンドを実行して、\`data/categorygroups.json\` を正規の順序に自動ソートし、フォーマット（末尾改行等）を整える。
-     \`\`\`bash
-     npm run sort:categories
-     npm run biome:fix
-     \`\`\`
-
-4. **セルフ検証と完了**
+3. **セルフ検証と完了**
+   - \`jq empty data/categorygroups.json\` でJSON構文が正しいことを確認する。
    - \`git diff data/categorygroups.json\` で意図した差分のみが含まれていることをセルフチェックする。
-   - 不要なファイルが作成されていないことを確認し、PR作成まで自律的に完遂する。
+   - 不要なファイルが作成されていないことを確認し、自律的に完遂する。
 
 ---
 
@@ -391,7 +303,6 @@ ${unregisteredList}
 
 - カテゴリ名から商品の用途・特性を推測する。
 - 既存の親カテゴリにある類似カテゴリを参考にする。
-- 判断に迷う場合は、\`data/cache/paapi-product-cache.json\` を参照して商品情報（タイトル等）を確認できる。
 - それでも判断が難しい場合は、作業を止めずに「その他／全般」に分類すること。
 
 ---
@@ -399,142 +310,9 @@ ${unregisteredList}
 ## 完了の条件
 
 - すべての未登録カテゴリが \`data/categorygroups.json\` に振り分けられている。
-- \`npm run sort:categories\` および \`npm run biome:fix\` が実行され、JSONが正規の順序・フォーマットで保存されている。
+- JSON構文が正しく保存されている（ソートとフォーマット整形は後続スクリプトでも自動実行される）。
 - 不要なファイルが作成されていない。
-- ユーザーへの確認待機をせず、自律的にPR作成まで完了している。
+- ユーザーへの確認待機をせず、自律的に作業を完了している。
 `;
-  }
-
-  /**
-   * カテゴリ整理セッションを作成
-   */
-  async createSession(prompt: string, sourceContext: SourceContext): Promise<string> {
-    try {
-      const request: JulesSessionRequest = {
-        prompt,
-        sourceContext,
-        title: `Category Organization: ${new Date().toISOString().split('T')[0]}`,
-        automationMode: 'AUTO_CREATE_PR',
-        requirePlanApproval: false,
-      };
-
-      const response = await this.client.post<JulesSessionResponse>('/sessions', request);
-
-      const sessionId = response.data.id;
-      this.logger.info('Jules category organization session created', {
-        sessionId,
-        name: response.data.name,
-      });
-
-      return sessionId;
-    } catch (error) {
-      const julesError = this.handleApiError(error);
-      this.logger.error('Failed to create Jules session', julesError);
-      throw new Error(`Jules session creation failed: ${julesError.message}`, { cause: error });
-    }
-  }
-
-  /**
-   * セッション情報を取得
-   */
-  async getSession(sessionId: string): Promise<JulesSessionResponse> {
-    try {
-      const response = await this.client.get<JulesSessionResponse>(`/sessions/${sessionId}`);
-      return response.data;
-    } catch (error) {
-      const julesError = this.handleApiError(error);
-      this.logger.error('Failed to get session', { sessionId, error: julesError });
-      throw new Error(`Failed to get session: ${julesError.message}`, { cause: error });
-    }
-  }
-
-  /**
-   * カテゴリ整理を開始（非同期）
-   */
-  async startOrganization(sourceContext: SourceContext): Promise<OrganizationSession> {
-    const unregisteredCategories = await this.getUnregisteredCategories();
-
-    if (unregisteredCategories.length === 0) {
-      this.logger.info('No unregistered categories found');
-      throw new Error('No unregistered categories to organize');
-    }
-
-    this.logger.info(`Found ${unregisteredCategories.length} unregistered categories`, {
-      categories: unregisteredCategories.slice(0, 10), // Log first 10
-    });
-
-    const prompt = this.formatOrganizationPrompt(unregisteredCategories);
-    const sessionId = await this.createSession(prompt, sourceContext);
-    const session = await this.getSession(sessionId);
-
-    return {
-      sessionId,
-      sessionName: session.name,
-      unregisteredCategories,
-      startedAt: new Date(),
-    };
-  }
-
-  /**
-   * APIエラーを処理
-   */
-  private handleApiError(error: unknown): JulesError {
-    if (axios.isAxiosError(error)) {
-      const status = error.response?.status;
-      const data: unknown = error.response?.data;
-
-      if (status === 429) {
-        return {
-          code: 'RATE_LIMIT_EXCEEDED',
-          message: 'Jules API rate limit exceeded',
-          details: data,
-          retryable: true,
-        };
-      }
-
-      if (status === 401 || status === 403) {
-        return {
-          code: 'AUTHENTICATION_ERROR',
-          message: 'Jules API authentication failed. Check your API key.',
-          details: data,
-          retryable: false,
-        };
-      }
-
-      if (status && status >= 500) {
-        return {
-          code: 'SERVER_ERROR',
-          message: 'Jules API server error',
-          details: data,
-          retryable: true,
-        };
-      }
-
-      return {
-        code: 'HTTP_ERROR',
-        message: `Jules API HTTP error: ${status}`,
-        details: data,
-        retryable: false,
-      };
-    }
-
-    if (error instanceof Error) {
-      return {
-        code: 'UNKNOWN_ERROR',
-        message: error.message,
-        details: {
-          name: error.name,
-          message: error.message,
-        },
-        retryable: false,
-      };
-    }
-
-    return {
-      code: 'UNKNOWN_ERROR',
-      message: 'Unknown Jules API error',
-      details: String(error),
-      retryable: false,
-    };
   }
 }

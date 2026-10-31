@@ -1,98 +1,25 @@
 #!/usr/bin/env ts-node
 /**
  * Category Organization CLI Script
- * GitHub Actions から実行されるカテゴリ整理スクリプト
+ * GitHub Actions (hosted runner) から実行されるカテゴリ整理プロンプト生成スクリプト
  *
- * 毎日18:00 JSTに実行され、「その他／全般」に分類されているカテゴリを
- * JulesAPIを使って適切な親カテゴリに整理する
- *
- * 環境変数:
- *   JULES_API_KEY - Jules API キー
- *   JULES_SOURCE - Jules ソース名 (例: sources/github/owner/repo)
- *   JULES_STARTING_BRANCH - 開始ブランチ (デフォルト: main)
+ * 「その他／全般」に分類されている（categorygroups.jsonに未登録の）カテゴリを検出し、
+ * Antigravity CLI (agy) 用のプロンプトファイルを data/prompts/organize-categories-prompt.txt に出力する。
  */
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { JulesCategoryOrganizer, type OrganizationSession } from '../jules/JulesCategoryOrganizer';
-import type { JulesCredentials, SourceContext } from '../types/JulesTypes';
+import { JulesCategoryOrganizer } from '../jules/JulesCategoryOrganizer';
 import { setGitHubOutput } from '../utils/github-actions';
 import { Logger } from '../utils/Logger';
 
 const logger = Logger.getInstance();
 
-interface CLIOptions {
-  apiKey: string;
-  source: string;
-  startingBranch: string;
-}
-
-function getOptions(): CLIOptions {
-  const apiKey = process.env.JULES_API_KEY;
-  const source = process.env.JULES_SOURCE;
-  const startingBranch = process.env.JULES_STARTING_BRANCH || 'main';
-
-  if (!apiKey) {
-    throw new Error(
-      'Missing required environment variable: JULES_API_KEY. Please set it in your .env file or environment.',
-    );
-  }
-
-  if (!source) {
-    throw new Error(
-      'Missing required environment variable: JULES_SOURCE (e.g., sources/github/owner/repo). Please ensure it is correctly configured.',
-    );
-  }
-
-  return {
-    apiKey,
-    source,
-    startingBranch,
-  };
-}
-
-async function saveSessionInfo(session: OrganizationSession): Promise<void> {
-  const sessionsDir = path.join(process.cwd(), 'data', 'sessions');
-  await fs.mkdir(sessionsDir, { recursive: true });
-
-  const filename = `category-organization-${Date.now()}.json`;
-  const filePath = path.join(sessionsDir, filename);
-
-  await fs.writeFile(
-    filePath,
-    JSON.stringify(
-      {
-        type: 'category-organization',
-        session: {
-          sessionId: session.sessionId,
-          sessionName: session.sessionName,
-        },
-        unregisteredCategories: session.unregisteredCategories,
-        status: 'started',
-        startedAt: session.startedAt.toISOString(),
-        timestamp: new Date().toISOString(),
-      },
-      null,
-      2,
-    ),
-  );
-
-  logger.info(`Session info saved: ${filename}`);
-}
-
 async function main(): Promise<void> {
-  logger.info('Starting category organization CLI...');
+  logger.info('Starting category organization prompt generation CLI...');
 
   try {
-    const options = getOptions();
-    logger.info(`Source: ${options.source}`);
-    logger.info(`Starting Branch: ${options.startingBranch}`);
-
-    // Jules Category Organizer を初期化
-    const credentials: JulesCredentials = {
-      apiKey: options.apiKey,
-    };
-    const organizer = new JulesCategoryOrganizer(credentials);
+    const organizer = new JulesCategoryOrganizer();
 
     // 未登録カテゴリの確認
     const unregisteredCategories = await organizer.getUnregisteredCategories();
@@ -100,12 +27,11 @@ async function main(): Promise<void> {
     if (unregisteredCategories.length === 0) {
       logger.info('No unregistered categories found. Nothing to organize.');
       await setGitHubOutput('categories-found', '0');
-      await setGitHubOutput('session-started', 'false');
+      await setGitHubOutput('has-prompt', 'false');
       process.exit(0);
     }
 
     logger.info(`Found ${unregisteredCategories.length} unregistered categories:`);
-    // 最初の20件を表示
     for (const category of unregisteredCategories.slice(0, 20)) {
       logger.info(`  - ${category}`);
     }
@@ -113,43 +39,21 @@ async function main(): Promise<void> {
       logger.info(`  ... and ${unregisteredCategories.length - 20} more`);
     }
 
-    // ソースコンテキストを作成
-    const sourceContext: SourceContext = {
-      source: options.source,
-      githubRepoContext: {
-        startingBranch: options.startingBranch,
-      },
-    };
+    const prompt = organizer.formatOrganizationPrompt(unregisteredCategories);
+    const promptPath = path.join(process.cwd(), 'data', 'prompts', 'organize-categories-prompt.txt');
+    await fs.mkdir(path.dirname(promptPath), { recursive: true });
+    await fs.writeFile(promptPath, prompt, 'utf-8');
 
-    // カテゴリ整理セッションを開始
-    logger.info('Starting Jules category organization session...');
-    const session = await organizer.startOrganization(sourceContext);
-
-    await saveSessionInfo(session);
-
-    // GitHub Actions 出力を設定
     await setGitHubOutput('categories-found', unregisteredCategories.length.toString());
-    await setGitHubOutput('session-started', 'true');
-    await setGitHubOutput('session-id', session.sessionId);
+    await setGitHubOutput('has-prompt', 'true');
 
-    logger.info(`Category organization session started successfully!`);
-    logger.info(`Session ID: ${session.sessionId}`);
-    logger.info(`Session Name: ${session.sessionName}`);
+    logger.info(`Category organization prompt generated at ${promptPath}`);
     logger.info(`Categories to organize: ${unregisteredCategories.length}`);
-    logger.info('Note: Jules will create a PR asynchronously. Check GitHub for PR creation.');
-
     process.exit(0);
   } catch (error) {
-    if (error instanceof Error && error.message === 'No unregistered categories to organize') {
-      logger.info('No categories need organization. Exiting cleanly.');
-      await setGitHubOutput('categories-found', '0');
-      await setGitHubOutput('session-started', 'false');
-      process.exit(0);
-    }
-
-    logger.error('Category organization failed:', error);
+    logger.error('Category organization prompt generation failed:', error);
     await setGitHubOutput('categories-found', '0');
-    await setGitHubOutput('session-started', 'false');
+    await setGitHubOutput('has-prompt', 'false');
     process.exit(1);
   }
 }

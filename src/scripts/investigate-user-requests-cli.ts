@@ -6,7 +6,7 @@
  *
  * モード:
  *   1. --fetch-requests: 未処理URLを取得し、ASINを抽出して GITHUB_OUTPUT に出力
- *   2. --update-status:  調査開始後のステータス（セッション開始済等）をGASに更新
+ *   2. --update-status:  agy によるPR作成完了後のステータス（完了）をGASに更新
  *
  * 環境変数:
  *   GAS_API_URL                - デプロイされたGAS Web APIのURL
@@ -31,6 +31,7 @@ import {
 
 const logger = Logger.getInstance();
 const SESSION_FILE_PATH = path.join(process.cwd(), 'data', 'products', 'user-requests-session.json');
+const COMPLETED_ASINS_FILE_PATH = path.join(process.cwd(), 'data', 'prompts', 'completed-asins.txt');
 
 const RETRY_THRESHOLD_HOURS = 24;
 
@@ -81,7 +82,7 @@ async function evaluateSingleRequest(req: UserRequestItem, validAsins: Set<strin
   }
 
   if (req.status === 'セッション開始済' && !isSessionTimedOut(req.processedAt)) {
-    logger.info(`Jules session still in progress for ${asin} (Row ${req.row}) -> Waiting`);
+    logger.info(`Investigation session still in progress for ${asin} (Row ${req.row}) -> Waiting`);
     return { type: 'in_progress_skip' };
   }
 
@@ -196,10 +197,27 @@ async function fetchAndProcessRequests(gasApiUrl: string, token: string, maxProd
 }
 
 /**
- * モード2: 調査セッション開始完了後のステータス更新
+ * PR作成が完了したASIN一覧を completed-asins.txt から読み込む
+ */
+async function loadCompletedAsins(): Promise<Set<string>> {
+  try {
+    const raw = await fs.readFile(COMPLETED_ASINS_FILE_PATH, 'utf-8');
+    const asins = raw
+      .split(/\r?\n/)
+      .map((line) => line.trim().toUpperCase())
+      .filter((line) => /^[A-Z0-9]{10}$/.test(line));
+    return new Set(asins);
+  } catch {
+    logger.warn(`Completed ASINs file not found at ${COMPLETED_ASINS_FILE_PATH}.`);
+    return new Set();
+  }
+}
+
+/**
+ * モード2: agy によるPR作成成功分のステータスを「完了」に更新
  */
 async function updateCompletedStatus(gasApiUrl: string, token: string): Promise<void> {
-  logger.info('Updating user requests status to "セッション開始済"...');
+  logger.info('Updating user requests status for completed investigations...');
 
   let sessionData: UserRequestsSessionData;
   try {
@@ -215,16 +233,24 @@ async function updateCompletedStatus(gasApiUrl: string, token: string): Promise<
     return;
   }
 
-  const updates: UserRequestUpdate[] = sessionData.processedRequests.map((req) => ({
+  const completedAsins = await loadCompletedAsins();
+  const completedRequests = sessionData.processedRequests.filter((req) => completedAsins.has(req.asin.toUpperCase()));
+
+  if (completedRequests.length === 0) {
+    logger.warn('No requests succeeded in creating PRs during this run. Leaving requests for retry.');
+    return;
+  }
+
+  const updates: UserRequestUpdate[] = completedRequests.map((req) => ({
     row: req.row,
-    status: 'セッション開始済',
+    status: '完了',
     asin: req.asin,
-    note: 'Jules AI による調査セッションを開始しました。記事生成待ちです。',
+    note: 'Antigravity CLI (agy) により調査PRを作成しました。記事公開処理へ進みます。',
   }));
 
   try {
     const count = await updateUserRequestsInGas(gasApiUrl, token, updates);
-    logger.info(`Successfully updated ${count} request(s) in GAS.`);
+    logger.info(`Successfully updated ${count} completed request(s) in GAS.`);
   } catch (error) {
     logger.error('Failed to update status in GAS:', error);
   }

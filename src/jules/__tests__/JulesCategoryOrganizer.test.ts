@@ -2,23 +2,12 @@ import * as fs from 'node:fs/promises';
 import { JulesCategoryOrganizer } from '../JulesCategoryOrganizer';
 
 jest.mock('node:fs/promises');
-jest.mock('axios', () => ({
-  create: jest.fn(() => ({
-    interceptors: {
-      request: { use: jest.fn() },
-      response: { use: jest.fn() },
-    },
-    post: jest.fn(),
-    get: jest.fn(),
-  })),
-}));
 
 describe('JulesCategoryOrganizer', () => {
   let organizer: JulesCategoryOrganizer;
-  const mockCredentials = { apiKey: 'test-key' };
 
   beforeEach(() => {
-    organizer = new JulesCategoryOrganizer(mockCredentials);
+    organizer = new JulesCategoryOrganizer();
     jest.clearAllMocks();
   });
 

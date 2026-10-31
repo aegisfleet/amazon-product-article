@@ -1,56 +1,34 @@
 #!/usr/bin/env ts-node
 /**
- * Jules Investigation CLI Script
- * GitHub Actions から実行されるJules調査スクリプト
- *
- * Jules API ドキュメント: https://jules.google/docs/api/reference/
+ * Product Investigation Prompt Generation CLI Script
+ * GitHub Actions (hosted runner) から実行され、調査対象商品のプロンプトとマニフェストを
+ * data/prompts/ 配下に生成するスクリプト。
+ * 生成されたプロンプトは self-hosted runner 上の Antigravity CLI (agy) で実行される。
  *
  * 環境変数:
- *   JULES_API_KEY - Jules API キー (https://jules.google.com/settings#api で取得)
- *   JULES_SOURCE - Jules ソース名 (例: sources/github/owner/repo)
- *   JULES_STARTING_BRANCH - 開始ブランチ (デフォルト: main)
+ *   MAX_INVESTIGATION_PRODUCTS - 最大調査件数 (デフォルト: 30)
  */
 
 import crypto from 'node:crypto';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { JulesInvestigator } from '../jules/JulesInvestigator';
-import { saveSessionInfo } from '../jules/SessionManager';
-import type { JulesCredentials, SourceContext } from '../types/JulesTypes';
+import { formatInvestigationPrompt } from '../jules/prompts';
 import type { Product } from '../types/Product';
 import { setGitHubOutput } from '../utils/github-actions';
 import { Logger } from '../utils/Logger';
 
 const logger = Logger.getInstance();
 
-interface CLIOptions {
-  apiKey: string;
-  source: string;
-  startingBranch: string;
-  maxProducts: number;
+export interface PromptManifestItem {
+  asin: string;
+  title: string;
+  promptFile: string;
 }
 
-function getOptions(): CLIOptions {
-  const apiKey = process.env.JULES_API_KEY;
-  const source = process.env.JULES_SOURCE;
-  const startingBranch = process.env.JULES_STARTING_BRANCH || 'main';
-
-  if (!apiKey) {
-    throw new Error('Missing required environment variable: JULES_API_KEY');
-  }
-
-  if (!source) {
-    throw new Error('Missing required environment variable: JULES_SOURCE (e.g., sources/github/owner/repo)');
-  }
-
-  const maxProducts = Number.parseInt(process.env.MAX_INVESTIGATION_PRODUCTS || '30', 10);
-
-  return {
-    apiKey,
-    source,
-    startingBranch,
-    maxProducts,
-  };
+export interface PromptManifest {
+  generatedAt: string;
+  totalProducts: number;
+  items: PromptManifestItem[];
 }
 
 async function loadProducts(): Promise<Product[]> {
@@ -73,126 +51,97 @@ async function loadProducts(): Promise<Product[]> {
   }
 }
 
-async function ensureOutputDirectories(): Promise<void> {
-  const dirs = [path.join(process.cwd(), 'data'), path.join(process.cwd(), 'data', 'investigations')];
+/**
+ * latest-session.json から調査対象商品を読み込み、data/prompts/ にプロンプトと manifest.json を生成する
+ */
+export async function generateInvestigationPromptsFromSession(maxProducts: number, shuffle = true): Promise<number> {
+  const promptsDir = path.join(process.cwd(), 'data', 'prompts');
+  await fs.mkdir(promptsDir, { recursive: true });
 
-  for (const dir of dirs) {
-    await fs.mkdir(dir, { recursive: true });
+  const products = await loadProducts();
+  if (products.length === 0) {
+    logger.warn('No products to investigate');
+    await setGitHubOutput('prompts-generated', '0');
+    await setGitHubOutput('total-products', '0');
+    await setGitHubOutput('has-prompts', 'false');
+    return 0;
   }
+
+  logger.info(`Loaded ${products.length} products`);
+
+  const candidateProducts = [...products];
+  if (shuffle) {
+    for (let i = candidateProducts.length - 1; i > 0; i--) {
+      const j = crypto.randomInt(0, i + 1);
+      [candidateProducts[i], candidateProducts[j]] = [candidateProducts[j]!, candidateProducts[i]!];
+    }
+  }
+
+  const productsToInvestigate = candidateProducts.slice(0, maxProducts);
+  logger.info(
+    `Generating prompts for ${productsToInvestigate.length} products (${shuffle ? 'shuffled' : 'ordered'} from ${products.length} found)`,
+  );
+
+  const items: PromptManifestItem[] = [];
+
+  for (const product of productsToInvestigate) {
+    if (!/^[A-Z0-9]{10}$/i.test(product.asin)) {
+      logger.warn(`Skipping product with invalid ASIN: ${product.asin}`);
+      continue;
+    }
+
+    const prompt = formatInvestigationPrompt(product);
+    const relativePromptPath = path.posix.join('data', 'prompts', `${product.asin}.txt`);
+    const fullPromptPath = path.join(process.cwd(), 'data', 'prompts', `${product.asin}.txt`);
+
+    await fs.writeFile(fullPromptPath, prompt, 'utf-8');
+    items.push({
+      asin: product.asin,
+      title: product.title,
+      promptFile: relativePromptPath,
+    });
+
+    logger.info(`Generated investigation prompt for ${product.asin}: ${product.title}`);
+  }
+
+  const manifest: PromptManifest = {
+    generatedAt: new Date().toISOString(),
+    totalProducts: items.length,
+    items,
+  };
+
+  const manifestPath = path.join(promptsDir, 'manifest.json');
+  await fs.writeFile(manifestPath, JSON.stringify(manifest, null, 2), 'utf-8');
+
+  await setGitHubOutput('prompts-generated', items.length.toString());
+  await setGitHubOutput('total-products', productsToInvestigate.length.toString());
+  await setGitHubOutput('has-prompts', items.length > 0 ? 'true' : 'false');
+
+  logger.info(`Investigation prompts generated: ${items.length}/${productsToInvestigate.length} products`);
+  return items.length;
 }
 
 async function main(): Promise<void> {
-  logger.info('Starting Jules investigation CLI...');
+  logger.info('Starting investigation prompt generation CLI...');
 
   try {
-    const options = getOptions();
-    logger.info(`Source: ${options.source}`);
-    logger.info(`Starting Branch: ${options.startingBranch}`);
-    logger.info(`Max products to investigate: ${options.maxProducts}`);
+    const maxProducts = Number.parseInt(process.env.MAX_INVESTIGATION_PRODUCTS || '30', 10);
+    const shuffle = !process.argv.includes('--no-shuffle');
 
-    await ensureOutputDirectories();
-
-    // 商品データを読み込み
-    const products = await loadProducts();
-    if (products.length === 0) {
-      logger.warn('No products to investigate');
-      await setGitHubOutput('investigations-completed', '0');
-      process.exit(0);
-    }
-
-    logger.info(`Loaded ${products.length} products`);
-
-    // 調査対象をランダム化して多様性を確保
-    const shuffledProducts = [...products];
-    for (let i = shuffledProducts.length - 1; i > 0; i--) {
-      const j = crypto.randomInt(0, i + 1);
-      [shuffledProducts[i], shuffledProducts[j]] = [shuffledProducts[j]!, shuffledProducts[i]!];
-    }
-
-    // 調査対象を制限
-    const productsToInvestigate = shuffledProducts.slice(0, options.maxProducts);
-    logger.info(`Investigating ${productsToInvestigate.length} products (shuffled from ${products.length} found)`);
-
-    // Jules Investigator を初期化
-    const credentials: JulesCredentials = {
-      apiKey: options.apiKey,
-    };
-    const investigator = new JulesInvestigator(credentials);
-
-    // ソースコンテキストを作成
-    const sourceContext: SourceContext = {
-      source: options.source,
-      githubRepoContext: {
-        startingBranch: options.startingBranch,
-      },
-    };
-
-    // 各商品のセッションを開始
-    let startedSessions = 0;
-    const sessionResults: Array<{
-      product: Product;
-      session: { sessionId: string; sessionName: string };
-    }> = [];
-
-    for (const product of productsToInvestigate) {
-      try {
-        // Validate ASIN to prevent path traversal and ensure data integrity
-        if (!/^[A-Z0-9]{10}$/i.test(product.asin)) {
-          logger.warn(`Skipping product with invalid ASIN: ${product.asin}`);
-          continue;
-        }
-
-        logger.info(`Starting investigation for: ${product.title} (ASIN: ${product.asin})`);
-
-        // 非同期でセッションを開始（Julesが非同期でPRを作成）
-        const sessionInfo = await investigator.startInvestigation(product, sourceContext);
-
-        await saveSessionInfo(product, sessionInfo);
-        sessionResults.push({ product, session: sessionInfo });
-        startedSessions++;
-
-        logger.info(`Investigation session started for ${product.asin}: ${sessionInfo.sessionId}`);
-
-        // レート制限対応
-        await new Promise((resolve) => setTimeout(resolve, 2000));
-      } catch (error) {
-        logger.error(`Failed to start investigation for ${product.asin}:`, error);
-        // 個別の失敗は継続
-      }
-    }
-
-    // 結果サマリーを保存
-    const summaryFile = path.join(process.cwd(), 'data', 'sessions', 'latest-summary.json');
-    await fs.mkdir(path.dirname(summaryFile), { recursive: true });
-    await fs.writeFile(
-      summaryFile,
-      JSON.stringify(
-        {
-          totalProducts: productsToInvestigate.length,
-          startedSessions,
-          sessions: sessionResults,
-          timestamp: new Date().toISOString(),
-        },
-        null,
-        2,
-      ),
-    );
-
-    // GitHub Actions 出力を設定
-    await setGitHubOutput('sessions-started', startedSessions.toString());
-    await setGitHubOutput('total-products', productsToInvestigate.length.toString());
-
-    logger.info(`Jules sessions started: ${startedSessions}/${productsToInvestigate.length} products`);
-    logger.info('Note: Jules will create PRs asynchronously. Check GitHub for PR creation.');
+    logger.info(`Max products to investigate: ${maxProducts} (shuffle: ${shuffle})`);
+    await generateInvestigationPromptsFromSession(maxProducts, shuffle);
     process.exit(0);
   } catch (error) {
-    logger.error('Jules investigation failed:', error);
-    await setGitHubOutput('sessions-started', '0');
+    logger.error('Investigation prompt generation failed:', error);
+    await setGitHubOutput('prompts-generated', '0');
+    await setGitHubOutput('has-prompts', 'false');
     process.exit(1);
   }
 }
 
-main().catch((error) => {
-  console.error('Unhandled error:', error);
-  process.exit(1);
-});
+if (require.main === module) {
+  main().catch((error) => {
+    console.error('Unhandled error:', error);
+    process.exit(1);
+  });
+}

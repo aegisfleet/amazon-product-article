@@ -15,13 +15,6 @@ export interface SystemConfig {
     partnerTag: string;
   };
 
-  // Jules API Configuration
-  jules: {
-    apiKey: string;
-    baseUrl: string;
-    timeout: number;
-  };
-
   // GitHub Configuration
   github: {
     token: string;
@@ -122,11 +115,6 @@ export class ConfigManager {
         credentialSecret: this.getRequiredEnvVar('AMAZON_CREATORS_CREDENTIAL_SECRET'),
         partnerTag: this.getRequiredEnvVar('AMAZON_PARTNER_TAG'),
       },
-      jules: {
-        apiKey: this.getRequiredEnvVar('JULES_API_KEY'),
-        baseUrl: this.getEnvVar('JULES_BASE_URL', 'https://api.jules.google.com'),
-        timeout: this.parseNumericEnvVar('JULES_TIMEOUT', 30000),
-      },
       github: {
         token: this.getRequiredEnvVar('GITHUB_TOKEN'),
         repository: this.getRequiredEnvVar('GITHUB_REPOSITORY'),
@@ -164,10 +152,6 @@ export class ConfigManager {
 
     if (config.system.maxConcurrentRequests < 1 || config.system.maxConcurrentRequests > 20) {
       errors.push('Max concurrent requests must be a number between 1 and 20');
-    }
-
-    if (config.jules.timeout < 1000 || config.jules.timeout > 60000) {
-      errors.push('Jules timeout must be a number between 1s and 60s');
     }
 
     if (config.productSearch.maxResultsPerCategory < 1 || config.productSearch.maxResultsPerCategory > 50) {

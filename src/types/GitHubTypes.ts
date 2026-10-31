@@ -101,7 +101,7 @@ export interface GitHubConfig {
 
 export const DEFAULT_MERGE_CONDITIONS: MergeConditions = {
   allowedPaths: ['data/'],
-  requiredAuthor: 'jules[bot]',
+  requiredAuthor: 'aegisfleet',
   requiredChecks: ['quality-check', 'format-validation'],
   excludedPaths: ['.github/', 'config/', '_config.yml', 'src/'],
 };

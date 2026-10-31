@@ -102,22 +102,18 @@ export class AutoMergeManager {
   }
 
   /**
-   * Jules作成者かどうかを確認
+   * 許可された作成者かどうかを確認
    */
   verifyJulesAuthor(pr: PullRequest): boolean {
-    const isJules =
-      pr.author === this.conditions.requiredAuthor ||
-      pr.author.toLowerCase().includes('jules') ||
-      pr.author === 'jules[bot]' ||
-      pr.author === 'aegisfleet';
+    const isAuthorized = pr.author === this.conditions.requiredAuthor || pr.author === 'aegisfleet';
 
-    if (isJules) {
-      this.logger.info(`PR author ${pr.author} is verified as Jules`);
+    if (isAuthorized) {
+      this.logger.info(`PR author ${pr.author} is verified as authorized`);
     } else {
-      this.logger.warn(`PR author ${pr.author} is not Jules`);
+      this.logger.warn(`PR author ${pr.author} is not authorized`);
     }
 
-    return isJules;
+    return isAuthorized;
   }
 
   /**

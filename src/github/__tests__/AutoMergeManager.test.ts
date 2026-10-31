@@ -23,19 +23,14 @@ describe('AutoMergeManager', () => {
     changedFiles: ['data/test.json'],
   });
 
-  test('verifyJulesAuthor should return true for jules[bot]', () => {
-    const pr = createMockPr('jules[bot]');
-    expect(autoMergeManager.verifyJulesAuthor(pr)).toBe(true);
-  });
-
-  test('verifyJulesAuthor should return true for author containing jules', () => {
-    const pr = createMockPr('some-jules-user');
-    expect(autoMergeManager.verifyJulesAuthor(pr)).toBe(true);
-  });
-
   test('verifyJulesAuthor should return true for aegisfleet', () => {
     const pr = createMockPr('aegisfleet');
     expect(autoMergeManager.verifyJulesAuthor(pr)).toBe(true);
+  });
+
+  test('verifyJulesAuthor should return false for jules[bot]', () => {
+    const pr = createMockPr('jules[bot]');
+    expect(autoMergeManager.verifyJulesAuthor(pr)).toBe(false);
   });
 
   test('verifyJulesAuthor should return false for other authors', () => {

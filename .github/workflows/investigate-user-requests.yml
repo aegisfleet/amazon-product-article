@@ -18,6 +18,9 @@ on:
           - '5'
           - '10'
 
+permissions:
+  contents: read
+
 jobs:
   fetch-user-requests:
     name: Fetch User Requests from GAS
@@ -65,14 +68,14 @@ jobs:
         retention-days: 7
 
   product-search:
-    name: Fetch Product Data from Creators API
+    name: Fetch Product Data & Generate Prompts
     needs: fetch-user-requests
     if: needs.fetch-user-requests.outputs.products-found == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: read
     outputs:
-      products-found: ${{ steps.search.outputs.products-found }}
+      has-prompts: ${{ steps.prompts.outputs.has-prompts }}
 
     steps:
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -104,22 +107,63 @@ jobs:
         INPUT_ASINS: ${{ needs.fetch-user-requests.outputs.asins }}
       run: pnpm run search:products
 
-    - name: Upload product data
+    - name: Generate investigation prompts
+      id: prompts
       if: steps.search.outputs.products-found == 'true'
+      env:
+        MAX_INVESTIGATION_PRODUCTS: ${{ inputs.max_products || '3' }}
+      run: pnpm run investigate -- --no-shuffle
+
+    - name: Upload investigation prompts
+      if: steps.prompts.outputs.has-prompts == 'true'
       uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
       with:
-        name: user-requests-product-data
-        path: data/products/
+        name: user-requests-prompts
+        path: data/prompts/
         retention-days: 7
 
-  jules-investigation:
-    name: Start Jules Investigation & Update Status
+  agy-investigation:
+    name: Antigravity Investigation
     needs: [fetch-user-requests, product-search]
-    if: needs.product-search.outputs.products-found == 'true'
+    if: needs.product-search.outputs.has-prompts == 'true'
+    runs-on: [self-hosted, e2-micro, agy]
+    permissions:
+      contents: read
+
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      with:
+        persist-credentials: false
+
+    - name: Download investigation prompts
+      uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+      with:
+        name: user-requests-prompts
+        path: data/prompts/
+
+    - name: Run Antigravity CLI investigation
+      env:
+        AMAZON_CREATORS_APPLICATION_ID: ${{ secrets.AMAZON_CREATORS_APPLICATION_ID }}
+        AMAZON_CREATORS_CREDENTIAL_ID: ${{ secrets.AMAZON_CREATORS_CREDENTIAL_ID }}
+        AMAZON_CREATORS_CREDENTIAL_SECRET: ${{ secrets.AMAZON_CREATORS_CREDENTIAL_SECRET }}
+        AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
+      run: bash .github/workflows/scripts/investigate-products.sh
+
+    - name: Upload completed ASINs
+      if: always()
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+      with:
+        name: user-requests-completed-asins
+        path: data/prompts/completed-asins.txt
+        retention-days: 7
+
+  update-gas-status:
+    name: Update Status in GAS
+    needs: [fetch-user-requests, agy-investigation]
+    if: always() && needs.agy-investigation.result != 'skipped'
     runs-on: ubuntu-latest
     permissions:
-      contents: write
-      pull-requests: write
+      contents: read
 
     steps:
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -141,35 +185,20 @@ jobs:
     - name: Build project
       run: pnpm run build
 
-    - name: Download product data
-      uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
-      with:
-        name: user-requests-product-data
-        path: data/products/
-
     - name: Download user requests session data
       uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
       with:
         name: user-requests-session
         path: data/products/
 
-    - name: Start Jules investigation sessions
-      env:
-        JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
-        JULES_SOURCE: sources/github/${{ github.repository }}
-        JULES_STARTING_BRANCH: ${{ github.ref_name }}
-        MAX_INVESTIGATION_PRODUCTS: ${{ inputs.max_products || '3' }}
-      run: pnpm run investigate
+    - name: Download completed ASINs
+      uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+      with:
+        name: user-requests-completed-asins
+        path: data/prompts/
 
     - name: Update status in GAS
       env:
         GAS_API_URL: ${{ secrets.GAS_API_URL }}
         GAS_API_TOKEN: ${{ secrets.GAS_API_TOKEN }}
       run: pnpm run investigate:user-requests -- --update-status
-
-    - name: Upload session data
-      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
-      with:
-        name: user-requests-session-data
-        path: data/sessions/
-        retention-days: 30
