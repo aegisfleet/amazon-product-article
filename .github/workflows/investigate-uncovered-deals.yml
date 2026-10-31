@@ -2,7 +2,7 @@ name: Uncovered Deals Investigation
 
 on:
   schedule:
-    # 1日3回（8時間ごと: 11:17, 19:17, 03:17 JST = 02:17, 10:17, 18:17 UTC）に3件ずつ実行
+    # 1日1回（11:17 JST = 02:17 UTC）に3件ずつ実行
     - cron: '17 2 * * *'
   workflow_dispatch:
 

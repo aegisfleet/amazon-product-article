@@ -2,7 +2,7 @@ name: Price Discrepancy Investigation
 
 on:
   schedule:
-    # 1日3回（8時間ごと: 15:17, 23:17, 07:17 JST = 06:17, 14:17, 22:17 UTC）に3件ずつ実行
+    # 1日1回（07:17 JST = 22:17 UTC）に3件ずつ実行
     - cron: '17 22 * * *'
   workflow_dispatch:
 
