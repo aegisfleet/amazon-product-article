@@ -10,7 +10,8 @@
 set -euo pipefail
 
 # Load common library
-readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+readonly SCRIPT_DIR
 # shellcheck source=.github/workflows/scripts/agy-common.sh
 source "${SCRIPT_DIR}/agy-common.sh"
 
@@ -42,7 +43,9 @@ process_single_product() {
   fi
 
   local -r target_path="data/investigations/${asin}.json"
-  local -r branch_name="investigate-${asin}-$(TZ='Asia/Tokyo' date +%Y%m%d-%H%M%S)"
+  local branch_name
+  branch_name="investigate-${asin}-$(TZ='Asia/Tokyo' date +%Y%m%d-%H%M%S)"
+  readonly branch_name
 
   log_info "=== Investigating Product: ${asin} (${title}) ==="
   git checkout -b "${branch_name}" "${base_sha}"
@@ -77,7 +80,9 @@ process_single_product() {
 # Main execution function.
 #######################################
 main() {
-  local -r today_jst="$(TZ='Asia/Tokyo' date +'%Y-%m-%d')"
+  local today_jst
+  today_jst="$(TZ='Asia/Tokyo' date +'%Y-%m-%d')"
+  readonly today_jst
 
   log_info "Starting product investigation batch with Antigravity CLI."
 
@@ -99,7 +104,9 @@ main() {
 
   setup_git_and_gh
 
-  local -r base_sha="$(git rev-parse HEAD)"
+  local base_sha
+  base_sha="$(git rev-parse HEAD)"
+  readonly base_sha
   log_info "Base commit SHA: ${base_sha}"
   log_info "Products to investigate: ${total_items}"
 
