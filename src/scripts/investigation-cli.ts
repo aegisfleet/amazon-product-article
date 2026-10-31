@@ -6,7 +6,7 @@
  * 生成されたプロンプトは self-hosted runner 上の Antigravity CLI (agy) で実行される。
  *
  * 環境変数:
- *   MAX_INVESTIGATION_PRODUCTS - 最大調査件数 (デフォルト: 30)
+ *   MAX_INVESTIGATION_PRODUCTS - 最大調査件数 (デフォルト: 3)
  */
 
 import crypto from 'node:crypto';
@@ -125,7 +125,7 @@ async function main(): Promise<void> {
   logger.info('Starting investigation prompt generation CLI...');
 
   try {
-    const maxProducts = Number.parseInt(process.env.MAX_INVESTIGATION_PRODUCTS || '30', 10);
+    const maxProducts = Number.parseInt(process.env.MAX_INVESTIGATION_PRODUCTS || '3', 10);
     const shuffle = !process.argv.includes('--no-shuffle');
 
     logger.info(`Max products to investigate: ${maxProducts} (shuffle: ${shuffle})`);

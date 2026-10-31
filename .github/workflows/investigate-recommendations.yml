@@ -2,8 +2,8 @@ name: Today's Recommendations Investigation
 
 on:
   schedule:
-    # 毎日深夜2時 JST (17:00 UTC) に実行
-    - cron: '0 17 * * *'
+    # 毎日深夜 02:23 JST (17:23 UTC) に実行（正時混雑および調査ジョブとの衝突を回避）
+    - cron: '23 17 * * *'
   workflow_dispatch:
 
 permissions:

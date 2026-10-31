@@ -2,8 +2,8 @@ name: Uncovered Deals Investigation
 
 on:
   schedule:
-    # 毎日 11:00 JST (02:00 UTC) に実行
-    - cron: '0 2 * * *'
+    # 1日3回（8時間ごと: 11:17, 19:17, 03:17 JST = 02:17, 10:17, 18:17 UTC）に3件ずつ実行
+    - cron: '17 2,10,18 * * *'
   workflow_dispatch:
 
 permissions:
@@ -42,7 +42,7 @@ jobs:
     - name: Find uncovered deal candidates
       id: find
       env:
-        MAX_INVESTIGATION_PRODUCTS: '10'
+        MAX_INVESTIGATION_PRODUCTS: '3'
       run: pnpm run investigate:uncovered-deals
 
   product-search:
@@ -89,7 +89,7 @@ jobs:
       id: prompts
       if: steps.search.outputs.products-found == 'true'
       env:
-        MAX_INVESTIGATION_PRODUCTS: '10'
+        MAX_INVESTIGATION_PRODUCTS: '3'
       run: pnpm run investigate:uncovered-deals -- --investigate
 
     - name: Upload investigation prompts
