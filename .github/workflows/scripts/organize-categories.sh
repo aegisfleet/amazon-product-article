@@ -9,7 +9,8 @@
 set -euo pipefail
 
 # Load common library
-readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+readonly SCRIPT_DIR
 # shellcheck source=.github/workflows/scripts/agy-common.sh
 source "${SCRIPT_DIR}/agy-common.sh"
 
@@ -42,7 +43,9 @@ with open(path, "w", encoding="utf-8", newline="\n") as f:
 # Main execution function.
 #######################################
 main() {
-  local -r today_jst="$(TZ='Asia/Tokyo' date +'%Y-%m-%d')"
+  local today_jst
+  today_jst="$(TZ='Asia/Tokyo' date +'%Y-%m-%d')"
+  readonly today_jst
 
   log_info "Starting category organization with Antigravity CLI for ${today_jst}."
 
@@ -53,8 +56,10 @@ main() {
 
   setup_git_and_gh
 
-  local -r base_sha="$(git rev-parse HEAD)"
-  local -r branch_name="organize-categories-${today_jst}-$(TZ='Asia/Tokyo' date +%H%M%S)"
+  local base_sha branch_name
+  base_sha="$(git rev-parse HEAD)"
+  branch_name="organize-categories-${today_jst}-$(TZ='Asia/Tokyo' date +%H%M%S)"
+  readonly base_sha branch_name
 
   log_info "Creating and checking out branch: ${branch_name}"
   git checkout -b "${branch_name}" "${base_sha}"

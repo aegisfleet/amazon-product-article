@@ -8,7 +8,8 @@
 set -euo pipefail
 
 # Load common library
-readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+readonly SCRIPT_DIR
 # shellcheck source=.github/workflows/scripts/agy-common.sh
 source "${SCRIPT_DIR}/agy-common.sh"
 
@@ -19,7 +20,9 @@ readonly TARGET_FILE="data/recommendations/today.json"
 # Main execution function.
 #######################################
 main() {
-  local -r today_jst="$(TZ='Asia/Tokyo' date +'%Y-%m-%d')"
+  local today_jst
+  today_jst="$(TZ='Asia/Tokyo' date +'%Y-%m-%d')"
+  readonly today_jst
 
   log_info "Starting today's recommendations investigation for ${today_jst}."
 
@@ -30,8 +33,10 @@ main() {
 
   setup_git_and_gh
 
-  local -r base_sha="$(git rev-parse HEAD)"
-  local -r branch_name="recommendations-${today_jst}-$(TZ='Asia/Tokyo' date +%H%M%S)"
+  local base_sha branch_name
+  base_sha="$(git rev-parse HEAD)"
+  branch_name="recommendations-${today_jst}-$(TZ='Asia/Tokyo' date +%H%M%S)"
+  readonly base_sha branch_name
 
   log_info "Creating and checking out branch: ${branch_name}"
   git checkout -b "${branch_name}" "${base_sha}"
