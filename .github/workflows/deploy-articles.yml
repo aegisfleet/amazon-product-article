@@ -56,11 +56,19 @@ jobs:
         AMAZON_CREATORS_CREDENTIAL_SECRET: ${{ secrets.AMAZON_CREATORS_CREDENTIAL_SECRET }}
       run: pnpm run generate:articles
 
+    - name: Commit fetched cache (early commit)
+      if: always()
+      timeout-minutes: 4
+      run: |
+        chmod +x .github/workflows/scripts/git-commit-push.sh
+        ./.github/workflows/scripts/git-commit-push.sh "ビルド成果物の更新 [skip ci]" "data/cache/paapi"
+
     - name: Prepare static data
       run: pnpm run prebuild:hugo
 
     - name: Commit build artifacts
       if: always()
+      timeout-minutes: 4
       run: |
         chmod +x .github/workflows/scripts/git-commit-push.sh
         ./.github/workflows/scripts/git-commit-push.sh "ビルド成果物の更新 [skip ci]" "data/cache/paapi"
