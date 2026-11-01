@@ -82,27 +82,30 @@ export async function generateInvestigationPromptsFromSession(maxProducts: numbe
     `Generating prompts for ${productsToInvestigate.length} products (${shuffle ? 'shuffled' : 'ordered'} from ${products.length} found)`,
   );
 
-  const items: PromptManifestItem[] = [];
-
-  for (const product of productsToInvestigate) {
+  const validProducts = productsToInvestigate.filter((product) => {
     if (!/^[A-Z0-9]{10}$/i.test(product.asin)) {
       logger.warn(`Skipping product with invalid ASIN: ${product.asin}`);
-      continue;
+      return false;
     }
+    return true;
+  });
 
+  const writePromises = validProducts.map(async (product) => {
     const prompt = formatInvestigationPrompt(product);
     const relativePromptPath = path.posix.join('data', 'prompts', `${product.asin}.txt`);
     const fullPromptPath = path.join(process.cwd(), 'data', 'prompts', `${product.asin}.txt`);
 
     await fs.writeFile(fullPromptPath, prompt, 'utf-8');
-    items.push({
+    logger.info(`Generated investigation prompt for ${product.asin}: ${product.title}`);
+
+    return {
       asin: product.asin,
       title: product.title,
       promptFile: relativePromptPath,
-    });
+    };
+  });
 
-    logger.info(`Generated investigation prompt for ${product.asin}: ${product.title}`);
-  }
+  const items: PromptManifestItem[] = await Promise.all(writePromises);
 
   const manifest: PromptManifest = {
     generatedAt: new Date().toISOString(),
