@@ -432,8 +432,8 @@ export function categorizeAsins(
   // 完全新規（brandNewMissing）を最優先で取得し、その後に期限切れ（expiredMissing）を取得する
   const allMissing = [...brandNewMissing, ...expiredMissing, ...retries];
 
-  // 上限件数の決定: 引数指定 > 環境変数 MAX_FETCH_ASINS > デフォルト 1000
-  let maxFetchLimit = 1000;
+  // 上限件数の決定: 引数指定 > 環境変数 MAX_FETCH_ASINS > デフォルト 5000
+  let maxFetchLimit = 5000;
   if (maxFetchLimitOverride !== undefined) {
     maxFetchLimit = maxFetchLimitOverride;
   } else if (process.env.MAX_FETCH_ASINS === 'unlimited') {

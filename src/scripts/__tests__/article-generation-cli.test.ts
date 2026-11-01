@@ -66,6 +66,22 @@ describe('categorizeAsins', () => {
     expect(missingAsins).toEqual(['NEW1', 'NEW2']);
   });
 
+  it('should default to a max fetch limit of 5000', () => {
+    const originalEnv = process.env.MAX_FETCH_ASINS;
+    try {
+      delete process.env.MAX_FETCH_ASINS;
+
+      const cache = createMockCache({});
+      const asins = new Set(Array.from({ length: 5005 }, (_, i) => `ASIN${i}`));
+
+      const { missingAsins, stats } = categorizeAsins(asins, cache);
+      expect(missingAsins).toHaveLength(5000);
+      expect(stats.deferred).toBe(5);
+    } finally {
+      process.env.MAX_FETCH_ASINS = originalEnv;
+    }
+  });
+
   it('should respect MAX_FETCH_ASINS environment variable', () => {
     const originalEnv = process.env.MAX_FETCH_ASINS;
     try {
