@@ -286,6 +286,9 @@
                     </div>
                     {{- end -}}
                 </a>
+                {{- if not $inStock }}
+                <span class="card-image-stock-label" aria-hidden="true">在庫切れ</span>
+                {{- end }}
             </div>
             <div class="card-content">
                 <div class="card-header">

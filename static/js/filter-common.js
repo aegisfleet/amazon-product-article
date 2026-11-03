@@ -282,6 +282,8 @@ function bindCardDataset(article, p) {
   const inStock = p.inStock !== undefined ? Boolean(p.inStock) : isAvailableInStock(p.availability);
   article.dataset.inStock = String(inStock);
   article.classList.toggle('is-out-of-stock', !inStock);
+  const stockLabel = article.querySelector('[data-slot="image-stock-label"]');
+  if (stockLabel) stockLabel.style.display = inStock ? 'none' : '';
 }
 
 function bindCardImage(article, p) {
