@@ -17,17 +17,12 @@
                 <summary>ご利用前の注意</summary>
                 <p>AIエージェントによる調査結果には誤りが含まれる可能性があります。最終的な購入判断は必ず公式情報をご確認ください。</p>
             </details>
-            <div class="hero-cta-group" aria-label="最初の探索導線">
-                <button type="button" class="hero-search-bar" data-hero-entry="search" aria-label="商品名・スペック・Amazon URLから検索を開く">
+            <div class="hero-cta-group" id="search-section" aria-label="最初の探索導線">
+                <button type="button" class="hero-search-bar" id="home-search-trigger" data-hero-entry="search" aria-label="商品名・スペック・Amazon URLから検索を開く">
                     <span class="material-symbols-outlined hero-search-bar-icon" aria-hidden="true">search</span>
                     <span class="hero-search-bar-placeholder">商品名・型番・スペック・Amazon URLで検索...</span>
                     <span class="hero-search-bar-btn">検索</span>
                 </button>
-                <div class="hero-cta-primary-row">
-                    <a href="#search-section" class="hero-cta-button" data-hero-entry="search">検索から探す</a>
-                    <a href="{{ `deals/` | relURL }}" class="hero-cta-button hero-cta-deals" data-hero-entry="deals">🔥 セール対象</a>
-                    <a href="{{ `recommendations/` | relURL }}" class="hero-cta-button hero-cta-rec" data-hero-entry="recommendations">🏆 本日の厳選10選</a>
-                </div>
                 <div class="hero-popular-categories" aria-label="注目カテゴリから探す">
                     <a href="{{ `parent-category/pc-workstation/` | relURL }}" class="hero-category-chip" data-hero-entry="category_chip">💻 PC・モニター</a>
                     <a href="{{ `parent-category/smartphone-tablet/` | relURL }}" class="hero-category-chip" data-hero-entry="category_chip">📱 スマホ・タブレット</a>
@@ -64,26 +59,26 @@
                 <span class="product-count-text">掲載商品数: <span class="product-count-number">{{ len $articles }}</span>
                     点</span>
             </div>
-            <a href="{{ `ai/` | relURL }}" class="ai-guide-link" id="ai-guide-link">
+            <a href="{{ `ai/` | relURL }}" class="ai-guide-link" id="ai-guide-link" data-hero-entry="ai">
                 <span class="material-symbols-outlined ai-guide-link-icon" aria-hidden="true">smart_toy</span>
                 <span>AIで探す</span>
             </a>
         </div>
         <div class="quick-nav-group">
-            <a href="{{ `recommendations/` | relURL }}" class="today-recommendation-link">
+            <a href="{{ `recommendations/` | relURL }}" class="today-recommendation-link" data-hero-entry="recommendations">
                 <span class="material-symbols-outlined today-recommendation-icon" aria-hidden="true">ads_click</span>
                 <span class="today-recommendation-text">本日の注目商品</span>
             </a>
-            <a href="{{ `bargain/` | relURL }}" class="bargain-link" id="bargain-link">
+            <a href="{{ `bargain/` | relURL }}" class="bargain-link" id="bargain-link" data-hero-entry="bargain">
                 <span class="material-symbols-outlined bargain-link-icon" aria-hidden="true">redeem</span>
                 <span>あともう一品</span>
             </a>
-            <a href="{{ `deals/` | relURL }}" class="deals-link" id="deals-link">
+            <a href="{{ `deals/` | relURL }}" class="deals-link" id="deals-link" data-hero-entry="deals">
                 <span class="material-symbols-outlined deals-link-icon" aria-hidden="true">local_fire_department</span>
                 <span>セール対象商品</span>
             </a>
             {{- with .Site.Params.productRequestFormUrl -}}
-            <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="request-link" id="request-link" aria-label="商品調査リクエストフォーム（新しいタブで開く）">
+            <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="request-link" id="request-link" data-hero-entry="request" aria-label="商品調査リクエストフォーム（新しいタブで開く）">
                 <span class="material-symbols-outlined request-link-icon" aria-hidden="true">edit_note</span>
                 <span>調査リクエスト</span>
             </a>
@@ -185,25 +180,6 @@
         <script src="{{ `js/home-pickup.js` | relURL }}"></script>
     </div>
     {{- end -}}
-
-    <!-- Search Section -->
-    <div class="search-header" id="search-section" style="text-align: center;">
-        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--color-text-primary); display: flex; align-items: center; justify-content: center; gap: 0.35rem;">
-            <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 1.35rem;">search</span> 商品を検索する</h3>
-        <p style="font-size: 0.875rem; color: var(--color-text-secondary);">商品名、スペック、特徴から商品を探せます</p>
-    </div>
-
-    <div class="home-search-container">
-        <button type="button" class="home-search-trigger" id="home-search-trigger" aria-label="商品・スペック検索を開く">
-            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-            <span class="home-search-placeholder">キーワード・スペック・Amazon URLで探す...</span>
-            <span class="home-search-shortcut"><kbd>Ctrl</kbd> + <kbd>K</kbd></span>
-        </button>
-    </div>
 
     <div class="header-content" id="category-section">
         <h2>カテゴリから探す</h2>

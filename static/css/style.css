@@ -11122,22 +11122,6 @@ legend.font-size-label {
   border-radius: 9999px;
 }
 
-.hero-cta-primary-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-cta-button.hero-cta-deals {
-  background: linear-gradient(135deg, #ea580c, #dc2626);
-}
-
-.hero-cta-button.hero-cta-rec {
-  background: linear-gradient(135deg, #4f46e5, #7c3aed);
-}
-
 .hero-popular-categories {
   display: flex;
   flex-wrap: wrap;
@@ -11172,7 +11156,6 @@ legend.font-size-label {
 }
 
 @media (min-width: 768px) {
-  .hero-cta-primary-row,
   .hero-popular-categories {
     justify-content: flex-start;
   }
@@ -11189,5 +11172,12 @@ legend.font-size-label {
 
   .hero .hero-content .hero-image img {
     max-width: 180px;
+  }
+}
+
+/* ワイド画面（1780px以上）では右固定サイドバー目次が表示されるため本文内のインライン目次を非表示にする */
+@media (min-width: 1780px) {
+  .article-content #toc.table-of-contents {
+    display: none;
   }
 }
