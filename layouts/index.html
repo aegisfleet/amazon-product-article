@@ -18,7 +18,24 @@
                 <p>AIエージェントによる調査結果には誤りが含まれる可能性があります。最終的な購入判断は必ず公式情報をご確認ください。</p>
             </details>
             <div class="hero-cta-group" aria-label="最初の探索導線">
-                <a href="#search-section" class="hero-cta-button" data-hero-entry="search">検索から探す</a>
+                <button type="button" class="hero-search-bar" data-hero-entry="search" aria-label="商品名・スペック・Amazon URLから検索を開く">
+                    <span class="material-symbols-outlined hero-search-bar-icon" aria-hidden="true">search</span>
+                    <span class="hero-search-bar-placeholder">商品名・型番・スペック・Amazon URLで検索...</span>
+                    <span class="hero-search-bar-btn">検索</span>
+                </button>
+                <div class="hero-cta-primary-row">
+                    <a href="#search-section" class="hero-cta-button" data-hero-entry="search">検索から探す</a>
+                    <a href="{{ `deals/` | relURL }}" class="hero-cta-button hero-cta-deals" data-hero-entry="deals">🔥 セール対象</a>
+                    <a href="{{ `recommendations/` | relURL }}" class="hero-cta-button hero-cta-rec" data-hero-entry="recommendations">🏆 本日の厳選10選</a>
+                </div>
+                <div class="hero-popular-categories" aria-label="注目カテゴリから探す">
+                    <a href="{{ `parent-category/pc-workstation/` | relURL }}" class="hero-category-chip" data-hero-entry="category_chip">💻 PC・モニター</a>
+                    <a href="{{ `parent-category/smartphone-tablet/` | relURL }}" class="hero-category-chip" data-hero-entry="category_chip">📱 スマホ・タブレット</a>
+                    <a href="{{ `parent-category/audio-equipment/` | relURL }}" class="hero-category-chip" data-hero-entry="category_chip">🎧 イヤホン・音響</a>
+                    <a href="{{ `parent-category/living-seasonal-appliances/` | relURL }}" class="hero-category-chip" data-hero-entry="category_chip">🧹 生活・季節家電</a>
+                    <a href="{{ `parent-category/kitchen-large-appliances/` | relURL }}" class="hero-category-chip" data-hero-entry="category_chip">📺 キッチン・大型家電</a>
+                    <a href="{{ `parent-category/housewares/` | relURL }}" class="hero-category-chip" data-hero-entry="category_chip">🧼 日用品・雑貨</a>
+                </div>
                 <div class="hero-cta-secondary">
                     <a href="#category-section" class="hero-sub-link" data-hero-entry="category">カテゴリから探す</a>
                     <a href="#brand-section" class="hero-sub-link" data-hero-entry="brand">ブランドから探す</a>

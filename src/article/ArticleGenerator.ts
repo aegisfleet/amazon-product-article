@@ -403,7 +403,7 @@ export class ArticleGenerator {
     // 商品名の後にアフィリエイトリンクを挿入
     const contentWithLinks = content.replace(
       /(## (🛒 )?商品詳細(・購入)?)/,
-      `$1\n\n<a href="${this.escapeHtml(affiliateUrl)}" class="affiliate-link mobile-friendly-button" target="_blank" rel="noopener noreferrer"><strong>${this.escapeHtml(product.asin)}をAmazonで確認する</strong></a>\n`,
+      `$1\n\n<a href="${this.escapeHtml(affiliateUrl)}" class="affiliate-link mobile-friendly-button" target="_blank" rel="noopener noreferrer" data-track-product="1" data-mall="amazon" data-position="mid_article" data-asin="${this.escapeHtml(product.asin)}"><strong>${this.escapeHtml(product.asin)}をAmazonで確認する</strong></a>\n`,
     );
 
     return contentWithLinks;

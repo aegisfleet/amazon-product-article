@@ -353,7 +353,7 @@
                             }}{{- else -}}{{ .Date.Format "2006年01月02日" }}{{- end -}}</span>
                         {{- if .Params.affiliate_url -}}
                         <a href="{{ .Params.affiliate_url }}" class="btn-amazon-small" target="_blank"
-                            rel="noopener noreferrer" data-track-product="1" data-asin="{{ .Params.asin }}"
+                            rel="noopener noreferrer" data-track-product="1" data-mall="amazon" data-position="card" data-asin="{{ .Params.asin }}" data-title="{{ .Title }}"
                             data-category="{{ $trackingCategory }}"
                             data-price-bucket="{{ partial `utils-price-bucket.html` .Params.price }}"
                             data-price="{{ .Params.price }}" data-score="{{ .Params.score | default 0 }}"><span

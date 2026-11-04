@@ -713,7 +713,7 @@
                             <span class="material-symbols-outlined" aria-hidden="true" style="font-size:0.95rem;">edit_note</span> レビュー
                         </a>
                         {{- end -}}
-                        <a href='{{ if and $articlePage $articlePage.Params.affiliate_url }}{{ $articlePage.Params.affiliate_url }}{{ else }}{{ printf "https://www.amazon.co.jp/dp/%s?tag=aegis-22" $drop.asin }}{{ end }}' class="price-drop-btn price-drop-btn-amazon" target="_blank" rel="noopener noreferrer">
+                        <a href='{{ if and $articlePage $articlePage.Params.affiliate_url }}{{ $articlePage.Params.affiliate_url }}{{ else }}{{ printf "https://www.amazon.co.jp/dp/%s?tag=aegis-22" $drop.asin }}{{ end }}' class="price-drop-btn price-drop-btn-amazon" target="_blank" rel="noopener noreferrer" data-track-product="1" data-mall="amazon" data-position="recommendations" data-asin="{{ $drop.asin }}" data-title="{{ $drop.title }}" data-category="{{ $drop.category }}" data-price="{{ $drop.currentPrice }}" data-score="{{ $drop.score | default 0 }}">
                             <span class="material-symbols-outlined" aria-hidden="true" style="font-size:0.95rem;">shopping_cart</span> Amazon
                         </a>
                     </div>
@@ -825,7 +825,7 @@
                                 class="rec-summary-btn rec-summary-btn-internal"><span class="material-symbols-outlined" aria-hidden="true" style="font-size:0.9rem;">edit_note</span> レビュー</a>
                             {{- end -}}
                             <a href='{{ printf "https://www.amazon.co.jp/dp/%s?tag=aegis-22" $rec.asin }}'
-                                class="rec-summary-btn rec-summary-btn-amazon" target="_blank"
+                                class="rec-summary-btn rec-summary-btn-amazon" target="_blank" data-track-product="1" data-mall="amazon" data-position="recommendations" data-asin="{{ $rec.asin }}" data-title="{{ $rec.title }}" data-category="{{ $rec.category }}" data-price="{{ $rec.price }}" data-score="{{ $score }}"
                                 rel="noopener noreferrer"><span class="material-symbols-outlined" aria-hidden="true" style="font-size:0.9rem;">shopping_cart</span> Amazon</a>
                         </div>
                     </td>
@@ -916,7 +916,7 @@
                         <a href="https://keepa.com/#!product/5-{{ $rec.asin }}" target="_blank"
                             rel="noopener noreferrer" aria-label="Keepaで価格推移を見る (新しいタブで開く)" title="Keepaで価格推移を見る">
                             <img src="https://graph.keepa.com/pricehistory.png?asin={{ $rec.asin }}&domain=5&amazon=1&new=1&used=1&salesrank=1&bb=1&range=90&width=600&height=300"
-                                alt="{{ $rec.title }} の価格履歴グラフ" class="keepa-graph-image" loading="lazy"
+                                alt="{{ $rec.title }} の価格履歴グラフ" class="keepa-graph-image" width="600" height="300" loading="lazy"
                                 decoding="async" referrerpolicy="no-referrer"
                                 style="width: 100%; height: auto; border-radius: var(--radius-sm); border: 1px solid var(--color-border); background: #fff; padding: 4px; margin-left: 0;">
                         </a>

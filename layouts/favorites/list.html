@@ -589,7 +589,7 @@
                     <div class="card-footer-row card-footer-row-main">
                         <span class="article-meta"><span class="material-symbols-outlined icon-date" aria-hidden="true">calendar_today</span> 登録日: ${formatDate(item.savedAt)}</span>
                         ${item.affiliateUrl
-                    ? `<a href="${escapeHTML(item.affiliateUrl)}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer" aria-label="${escapeHTML(item.title)}をAmazonで見る"><span class="material-symbols-outlined icon-cart" aria-hidden="true">shopping_cart</span> Amazonで見る</a>`
+                    ? `<a href="${escapeHTML(item.affiliateUrl)}" class="btn-amazon-small" target="_blank" rel="noopener noreferrer" data-track-product="1" data-mall="amazon" data-position="favorites" data-asin="${escapeHTML(item.asin)}" data-title="${escapeHTML(item.title)}" data-category="${escapeHTML(item.category)}" data-price="${escapeHTML(item.price)}" data-score="${escapeHTML(item.score || 0)}" aria-label="${escapeHTML(item.title)}をAmazonで見る"><span class="material-symbols-outlined icon-cart" aria-hidden="true">shopping_cart</span> Amazonで見る</a>`
                     : `<a href="${escapeHTML(item.url)}" class="btn-amazon-small" aria-label="${escapeHTML(item.title)}の詳細を見る"><span class="material-symbols-outlined" aria-hidden="true">auto_stories</span> 詳細を見る</a>`
                 }
                     </div>

@@ -574,7 +574,7 @@
                 <td class="compare-cell">
                     <div class="compare-actions-wrapper">
                         ${item.url ? `<a href="${escapeHtml(item.url)}" class="compare-btn-review">詳細レビューを読む →</a>` : ''}
-                        ${item.affiliateUrl ? `<a href="${escapeHtml(item.affiliateUrl)}" class="compare-btn-amazon" target="_blank" rel="noopener noreferrer">🛒 Amazonで見る</a>` : ''}
+                        ${item.affiliateUrl ? `<a href="${escapeHtml(item.affiliateUrl)}" class="compare-btn-amazon" target="_blank" rel="noopener noreferrer" data-track-product="1" data-mall="amazon" data-position="compare_modal" data-asin="${escapeHtml(item.asin || '')}" data-title="${escapeHtml(item.title || '')}" data-category="${escapeHtml(item.category || '')}" data-price="${escapeHtml(item.price || '')}" data-score="${escapeHtml(String(item.score || 0))}">🛒 Amazonで見る</a>` : ''}
                     </div>
                 </td>
             `;

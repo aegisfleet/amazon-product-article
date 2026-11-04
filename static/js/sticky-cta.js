@@ -38,25 +38,38 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
+  const finalActionElement = document.querySelector('.final-recommendation-action');
+  let isHeroPassed = false;
+  let isFinalVisible = false;
+
+  function updateStickyVisibility() {
+    const shouldShow = isHeroPassed && !isFinalVisible;
+    if (shouldShow) {
+      stickyBar.classList.add('is-active');
+      stickyBar.setAttribute('aria-hidden', 'false');
+      if (globalThis.Compare && typeof globalThis.Compare.autoMinimize === 'function') {
+        globalThis.Compare.autoMinimize(true);
+      }
+    } else {
+      stickyBar.classList.remove('is-active');
+      stickyBar.setAttribute('aria-hidden', 'true');
+      if (globalThis.Compare && typeof globalThis.Compare.autoMinimize === 'function') {
+        globalThis.Compare.autoMinimize(false);
+      }
+    }
+    syncFloatingButtons();
+  }
+
   const observer = new IntersectionObserver(
     (entries) => {
       for (const entry of entries) {
-        // ターゲットが画面上部にスクロールアウトした際にStickyバーを表示
-        if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
-          stickyBar.classList.add('is-active');
-          stickyBar.setAttribute('aria-hidden', 'false');
-          if (globalThis.Compare && typeof globalThis.Compare.autoMinimize === 'function') {
-            globalThis.Compare.autoMinimize(true);
-          }
-        } else {
-          stickyBar.classList.remove('is-active');
-          stickyBar.setAttribute('aria-hidden', 'true');
-          if (globalThis.Compare && typeof globalThis.Compare.autoMinimize === 'function') {
-            globalThis.Compare.autoMinimize(false);
-          }
+        if (entry.target === targetElement) {
+          isHeroPassed = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+        } else if (entry.target === finalActionElement) {
+          isFinalVisible = entry.isIntersecting;
         }
-        syncFloatingButtons();
       }
+      updateStickyVisibility();
     },
     {
       threshold: 0,
@@ -64,6 +77,9 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   observer.observe(targetElement);
+  if (finalActionElement) {
+    observer.observe(finalActionElement);
+  }
 
   if ('MutationObserver' in window) {
     const mutObserver = new MutationObserver(syncFloatingButtons);

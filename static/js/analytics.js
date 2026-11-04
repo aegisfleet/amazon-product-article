@@ -55,34 +55,141 @@
         return 'other';
     }
 
-    // ---- 1. amazon_outbound_click ----
+    // ---- 1. amazon_outbound_click / mall_outbound_click ----
 
     /**
-     * [data-track-product] 属性を持つ Amazon アフィリエイトリンクのクリックをトラッキング。
-     * product-hero.html / product-card.html / list.html の各テンプレートに付与済みの属性を利用する。
+     * URL文字列から10桁のASINを抽出する。
+     * @param {string} href
+     * @returns {string}
+     */
+    function extractAsinFromUrl(href) {
+        if (!href) return '';
+        const match = String(href).match(/\/(?:dp|gp\/product)\/([A-Z0-9]{10})/i);
+        return match?.[1] ? match[1].toUpperCase() : '';
+    }
+
+    /**
+     * リンク要素が Amazon外部リンク / 他モール（楽天・Yahoo）外部リンク / サイト内リンク のいずれかを判定する。
+     * @param {{ href?: string, dataset?: Record<string, string | undefined> }} link
+     * @returns {{ type: 'amazon' | 'mall' | 'internal', mall: string }}
+     */
+    function classifyOutboundLink(link) {
+        const dataset = link?.dataset || {};
+        const href = String(link?.href || '');
+        const mallAttr = (dataset.mall || '').toLowerCase();
+
+        if (mallAttr === 'amazon' || /https?:\/\/(?:www\.)?(?:amazon\.co\.jp|amazon\.com|amzn\.to)\b/i.test(href)) {
+            return { type: 'amazon', mall: 'amazon' };
+        }
+        if (mallAttr === 'rakuten' || /search\.rakuten\.co\.jp|hb\.afl\.rakuten\.co\.jp/i.test(href)) {
+            return { type: 'mall', mall: 'rakuten' };
+        }
+        if (mallAttr === 'yahoo' || /shopping\.yahoo\.co\.jp/i.test(href)) {
+            return { type: 'mall', mall: 'yahoo' };
+        }
+        if (/af\.moshimo\.com/i.test(href)) {
+            return { type: 'mall', mall: mallAttr || 'moshimo' };
+        }
+        return { type: 'internal', mall: '' };
+    }
+
+    /**
+     * クリックされたCTAリンクの位置識別子（hero / sticky / competitor / mid_article / final / card 等）を返す。
+     * 明示指定も親コンテナもない場合はフォールバックの数値インデックスを返す。
+     * @param {{ dataset?: Record<string, string | undefined>, closest?: (selector: string) => unknown }} link
+     * @param {number} [fallbackIndex]
+     * @returns {string | number | undefined}
+     */
+    function resolveCtaPosition(link, fallbackIndex) {
+        const explicit = link?.dataset?.position;
+        if (explicit) return explicit;
+
+        if (typeof link?.closest === 'function') {
+            if (link.closest('#sticky-cta-bar, .sticky-cta-bar')) return 'sticky';
+            if (link.closest('.product-hero-card')) return 'hero';
+            if (link.closest('.final-recommendation-section, .final-recommendation-action, #final-shop-buttons-container')) return 'final';
+            if (link.closest('.competitor-card, .competitor-links')) return 'competitor';
+            if (link.closest('.compare-modal, #compare-modal')) return 'compare_modal';
+            if (link.closest('.article-body, .article-content')) return 'mid_article';
+            if (link.closest('.card, .pickup-card, .rec-card, .price-drop-card')) return 'card';
+        }
+
+        return typeof fallbackIndex === 'number' && fallbackIndex >= 0 ? fallbackIndex : undefined;
+    }
+
+    /**
+     * クリックされたリンクとページメタデータから送信用パラメータを構築する。
+     * @param {{ href?: string, textContent?: string | null, dataset?: Record<string, string | undefined>, closest?: (selector: string) => unknown }} link
+     * @param {Record<string, string | undefined> | null | undefined} pageMetaDataset
+     * @param {number} [fallbackIndex]
+     */
+    function extractOutboundPayload(link, pageMetaDataset, fallbackIndex) {
+        const dataset = link?.dataset || {};
+        const href = String(link?.href || '');
+        const urlAsin = extractAsinFromUrl(href);
+        const asin = dataset.asin || urlAsin || pageMetaDataset?.asin || '';
+        const isSameProduct = Boolean(
+            pageMetaDataset?.asin && asin && asin.toUpperCase() === String(pageMetaDataset.asin).toUpperCase()
+        );
+
+        const pageTitle = isSameProduct ? (pageMetaDataset?.productTitle || pageMetaDataset?.productName || '') : '';
+        const productName = dataset.productName || dataset.title || pageTitle || link?.textContent?.trim() || '';
+        const category = dataset.category || pageMetaDataset?.category || '';
+        const price = dataset.price || (isSameProduct ? (pageMetaDataset?.price || '') : '');
+        const priceBucket = dataset.priceBucket || (isSameProduct ? (pageMetaDataset?.priceBucket || '') : '');
+        const rawScore = dataset.score || (isSameProduct ? pageMetaDataset?.score : undefined);
+        const score = rawScore !== undefined && rawScore !== '' ? Number(rawScore) : undefined;
+        const position = resolveCtaPosition(link, fallbackIndex);
+
+        return {
+            asin: asin,
+            product_name: productName,
+            category: category,
+            price: price,
+            price_bucket: priceBucket,
+            score: score,
+            position: position,
+        };
+    }
+
+    /**
+     * Amazon アフィリエイトリンク（amazon_outbound_click）および
+     * 他モールリンク（mall_outbound_click）のクリックをトラッキングする。
+     * 内部リンク（.pickup-card や .card-title 等のサイト内遷移）は除外する。
      */
     function initAmazonOutboundClick() {
         document.addEventListener('click', function (event) {
             const target = event.target;
             if (!(target instanceof Element)) return;
-            const link = target.closest('[data-track-product]');
+            const link = target.closest('a[href]');
             if (!(link instanceof HTMLAnchorElement)) return;
 
-            // DOM内の位置（何番目の amazon リンクか）を算出
-            const allTrackLinks = Array.from(document.querySelectorAll('[data-track-product]'));
-            const position = allTrackLinks.indexOf(link);
+            const classification = classifyOutboundLink(link);
+            if (classification.type === 'internal') return;
 
-            sendEvent('amazon_outbound_click', {
-                asin: link.dataset.asin || '',
-                product_name: link.dataset.productName || link.textContent?.trim() || '',
-                category: link.dataset.category || '',
-                price: link.dataset.price || '',
-                price_bucket: link.dataset.priceBucket || '',
-                score: link.dataset.score ? Number(link.dataset.score) : undefined,
-                position: position >= 0 ? position : undefined,
+            const outboundCandidates = Array.from(
+                document.querySelectorAll('a[data-track-product], a.btn-shop, a.affiliate-link, a.competitor-preview')
+            ).filter(function (el) {
+                return classifyOutboundLink(/** @type {HTMLAnchorElement} */ (el)).type !== 'internal';
+            });
+            const fallbackIndex = outboundCandidates.indexOf(link);
+            const pageMeta = /** @type {HTMLElement | null} */ (
+                document.querySelector('meta[name="page-type"][content="product"]')
+            );
+            const payload = extractOutboundPayload(link, pageMeta?.dataset || null, fallbackIndex);
+            const eventParams = Object.assign({}, payload, {
                 page_type: getPageType(),
                 destination_url: link.href || '',
             });
+
+            if (classification.type === 'amazon') {
+                sendEvent('amazon_outbound_click', eventParams);
+            } else if (classification.type === 'mall') {
+                sendEvent(
+                    'mall_outbound_click',
+                    Object.assign({}, eventParams, { mall: classification.mall })
+                );
+            }
         });
     }
 
@@ -263,11 +370,21 @@
 
     // ---- グローバル API 公開 ----
 
-    globalThis.ApaAnalytics = {
+    const api = {
         sendEvent: sendEvent,
         trackFavoriteAdd: trackFavoriteAdd,
         trackFilterUse: trackFilterUse,
+        extractAsinFromUrl: extractAsinFromUrl,
+        classifyOutboundLink: classifyOutboundLink,
+        resolveCtaPosition: resolveCtaPosition,
+        extractOutboundPayload: extractOutboundPayload,
     };
+
+    globalThis.ApaAnalytics = api;
+
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = api;
+    }
 
     // ---- 初期化 ----
 
@@ -281,9 +398,11 @@
         initHomeEntryClick();
     }
 
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-    } else {
-        init();
+    if (typeof document !== 'undefined') {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
     }
 })();

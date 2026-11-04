@@ -72,7 +72,7 @@
                 <a href="https://keepa.com/#!product/5-{{ .Params.asin }}" target="_blank" rel="noopener noreferrer"
                     aria-label="Keepaで価格推移を見る (新しいタブで開く)" title="Keepaで価格推移を見る">
                     <img src="https://graph.keepa.com/pricehistory.png?asin={{ .Params.asin }}&domain=5&amazon=1&new=1&used=1&salesrank=1&bb=1&range=365&width=700&height=350"
-                        alt="{{ .Title }} の価格履歴グラフ" class="keepa-graph-image" loading="lazy" decoding="async"
+                        alt="{{ .Title }} の価格履歴グラフ" class="keepa-graph-image" width="700" height="350" loading="lazy" decoding="async"
                         referrerpolicy="no-referrer">
                 </a>
                 <p class="keepa-note">※ クリックで Keepa の詳細ページを開きます</p>
@@ -272,6 +272,7 @@
                     var finalAction = document.querySelector('.content .final-recommendation-action');
                     if (finalAction) {
                         finalAction.innerHTML = finalButtons.innerHTML;
+                        finalButtons.remove();
                     }
                 }
 
@@ -291,12 +292,24 @@
                 var productRequestEntryId = '{{ site.Params.productRequestEntryId | default "entry.662198856" }}';
 
                 // Helper to update shop button link and accessibility label
-                function setupShopBtn(parent, selector, href, ariaLabel) {
+                function setupShopBtn(parent, selector, href, ariaLabel, mall, meta) {
                     var btn = parent.querySelector(selector);
                     if (!btn) return;
                     btn.setAttribute('href', href);
                     if (ariaLabel) {
                         btn.setAttribute('aria-label', ariaLabel);
+                    }
+                    btn.dataset.trackProduct = '1';
+                    btn.dataset.mall = mall || '';
+                    btn.dataset.position = 'competitor';
+                    if (meta) {
+                        if (meta.asin) btn.dataset.asin = meta.asin;
+                        if (meta.title) btn.dataset.title = meta.title;
+                        if (meta.price) btn.dataset.price = meta.price;
+                        if (meta.score) btn.dataset.score = String(meta.score);
+                        if (meta.category) btn.dataset.category = meta.category;
+                    }
+                    if (false) {
                     }
                 }
 
@@ -309,7 +322,7 @@
                 }
 
                 // Helper to build shop buttons HTML element for competitor card
-                function buildCompetitorShopButtons(title, amazonHref, asin) {
+                function buildCompetitorShopButtons(title, amazonHref, asin, meta) {
                     var searchQuery = (title ? title.replace(/\([A-Z0-9]{10}\)/gi, '').trim() : '') || title;
                     var encodedQuery = encodeURIComponent(searchQuery);
                     var rakutenTarget = 'https://search.rakuten.co.jp/search/mall/' + encodedQuery + '/';
@@ -344,9 +357,9 @@
                             '<span class="btn-shop-label">Yahoo!</span>' +
                         '</a>';
 
-                    setupShopBtn(shopButtonsDiv, '.btn-shop-amazon', amazonHref, title ? title + 'をAmazonで見る' : '');
-                    setupShopBtn(shopButtonsDiv, '.btn-shop-rakuten', rakutenUrl, title ? title + 'を楽天市場で見る' : '');
-                    setupShopBtn(shopButtonsDiv, '.btn-shop-yahoo', yahooUrl, title ? title + 'をYahoo!ショッピングで見る' : '');
+                    setupShopBtn(shopButtonsDiv, '.btn-shop-amazon', amazonHref, title ? title + 'をAmazonで見る' : '', 'amazon', meta);
+                    setupShopBtn(shopButtonsDiv, '.btn-shop-rakuten', rakutenUrl, title ? title + 'を楽天市場で見る' : '', 'rakuten', meta);
+                    setupShopBtn(shopButtonsDiv, '.btn-shop-yahoo', yahooUrl, title ? title + 'をYahoo!ショッピングで見る' : '', 'yahoo', meta);
 
                     return shopButtonsDiv;
                 }
@@ -478,7 +491,8 @@
                     var image = imgElem ? imgElem.getAttribute('src') : '';
                     var score = extractCompetitorScore(card);
                     var specsJson = extractCompetitorSpecs(card);
-                    var shopButtonsDiv = buildCompetitorShopButtons(title, amazonHref, asin);
+                    var competitorMeta = { asin: asin, title: title, price: price, score: score, category: '{{ $currentCategory }}' };
+                    var shopButtonsDiv = buildCompetitorShopButtons(title, amazonHref, asin, competitorMeta);
 
                     // Upgrade preview container to link to Amazon if there is no internal review
                     var previewElem = card.querySelector('.competitor-preview');
@@ -554,9 +568,10 @@
                 }
 
                 // Sequence of insertions
+                var contentDiv = document.querySelector('.content');
                 insertElement(keepaSection, heroCard, toc);
-                insertElement(rakutenSection, keepaSection || heroCard, toc);
-                insertElement(relatedSection, rakutenSection || keepaSection || heroCard, toc);
+                insertElement(relatedSection, contentDiv, null);
+                insertElement(rakutenSection, relatedSection || contentDiv, null);
             })();
         </script>
 

@@ -56,7 +56,7 @@
 
 <div class="card-footer-row card-footer-row-shops">
   <a href="{{ $rakutenUrl }}" class="btn-shop btn-shop-rakuten btn-shop--card" target="_blank" rel="noopener noreferrer"
-    data-track-product="1" data-asin="{{ $asin }}" data-mall="rakuten" data-category="{{ $trackingCategory }}"
+    data-track-product="1" data-asin="{{ $asin }}" data-title="{{ $title }}" data-mall="rakuten" data-position="card" data-category="{{ $trackingCategory }}"
     data-price-bucket="{{ $priceBucket }}" data-price="{{ $price }}"
     data-score="{{ $score }}" aria-label="{{ $title }}を楽天市場で見る">
     <span class="btn-shop-icon-wrapper">
@@ -66,7 +66,7 @@
   </a>
 
   <a href="{{ $yahooUrl }}" class="btn-shop btn-shop-yahoo btn-shop--card" target="_blank" rel="noopener noreferrer"
-    data-track-product="1" data-asin="{{ $asin }}" data-mall="yahoo" data-category="{{ $trackingCategory }}"
+    data-track-product="1" data-asin="{{ $asin }}" data-title="{{ $title }}" data-mall="yahoo" data-position="card" data-category="{{ $trackingCategory }}"
     data-price-bucket="{{ $priceBucket }}" data-price="{{ $price }}"
     data-score="{{ $score }}" aria-label="{{ $title }}をYahoo!ショッピングで見る">
     <span class="btn-shop-icon-wrapper">

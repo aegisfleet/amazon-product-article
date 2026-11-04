@@ -443,7 +443,10 @@ function bindCardActionLink(article, p) {
     if (btnAmazon) {
       btnAmazon.href = safeUrl(p.affiliateUrl);
       btnAmazon.dataset.trackProduct = '1';
+      btnAmazon.dataset.mall = 'amazon';
+      btnAmazon.dataset.position = 'card';
       btnAmazon.dataset.asin = p.asin || '';
+      btnAmazon.dataset.title = p.title || '';
       btnAmazon.dataset.category = p.category || '';
       btnAmazon.dataset.priceBucket = getPriceBucket(p.priceRaw);
       btnAmazon.dataset.price = p.price || '';
@@ -468,7 +471,9 @@ function bindCardShopButtons(article, p) {
     btnRakuten.href = safeUrl(rakutenUrl);
     btnRakuten.dataset.trackProduct = '1';
     btnRakuten.dataset.asin = p.asin || '';
+    btnRakuten.dataset.title = p.title || '';
     btnRakuten.dataset.mall = 'rakuten';
+    btnRakuten.dataset.position = 'card';
     btnRakuten.dataset.category = p.category || '';
     btnRakuten.dataset.priceBucket = getPriceBucket(p.priceRaw);
     btnRakuten.dataset.price = p.price || '';
@@ -480,7 +485,9 @@ function bindCardShopButtons(article, p) {
     btnYahoo.href = safeUrl(yahooUrl);
     btnYahoo.dataset.trackProduct = '1';
     btnYahoo.dataset.asin = p.asin || '';
+    btnYahoo.dataset.title = p.title || '';
     btnYahoo.dataset.mall = 'yahoo';
+    btnYahoo.dataset.position = 'card';
     btnYahoo.dataset.category = p.category || '';
     btnYahoo.dataset.priceBucket = getPriceBucket(p.priceRaw);
     btnYahoo.dataset.price = p.price || '';

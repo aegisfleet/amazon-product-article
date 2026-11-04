@@ -10931,3 +10931,263 @@ legend.font-size-label {
 }
 
 
+/* ==========================================================================
+   CRO Improvements: Hero Primary CTA, Price Freshness, Desktop Sticky CTA,
+   and Home First-View Search & Category Quick Chips
+   ========================================================================== */
+
+/* 1. 価格の調査時点注記（信頼性とAmazonでのリアルタイム確認促進） */
+.hero-price-freshness-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.78rem;
+  color: var(--color-text-muted, #64748b);
+  margin-bottom: 10px;
+  line-height: 1.45;
+}
+
+.hero-price-freshness-note .icon-freshness {
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  color: var(--color-primary, #0284c7);
+}
+
+/* 2. ヒーローおよび記事末尾の3モールCTAでAmazonを主役化（1段目100%幅、2段目に楽天・Yahoo） */
+.product-shop-buttons.product-shop-buttons--hero,
+.product-shop-buttons.product-shop-buttons--large {
+  flex-wrap: wrap;
+}
+
+.product-shop-buttons.product-shop-buttons--hero .btn-shop-amazon,
+.product-shop-buttons.product-shop-buttons--large .btn-shop-amazon {
+  flex: 1 1 100%;
+  width: 100%;
+  min-height: 52px;
+  font-size: 1rem;
+}
+
+.product-shop-buttons.product-shop-buttons--hero .btn-shop-rakuten,
+.product-shop-buttons.product-shop-buttons--hero .btn-shop-yahoo,
+.product-shop-buttons.product-shop-buttons--large .btn-shop-rakuten,
+.product-shop-buttons.product-shop-buttons--large .btn-shop-yahoo {
+  flex: 1 1 calc(50% - 6px);
+  min-height: 42px;
+  font-size: 0.88rem;
+}
+
+/* 3. デスクトップ・タブレットを含む全画面での下部追従CTAバー（Sticky CTA）有効化 */
+#sticky-cta-bar.sticky-cta-bar {
+  display: block;
+}
+
+.sticky-cta-meta-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.sticky-cta-Meta-row .sticky-cta-price,
+.sticky-cta-meta-row .sticky-cta-price {
+  margin-top: 0;
+}
+
+.sticky-cta-score {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-primary, #2563eb);
+  background: rgba(37, 99, 235, 0.1);
+  padding: 1px 6px;
+  border-radius: 9999px;
+}
+
+.sticky-cta-score .icon-score {
+  font-size: 0.85rem;
+}
+
+.sticky-cta-price-note {
+  font-size: 0.68rem;
+  color: var(--color-text-muted, #6b7280);
+}
+
+.sticky-cta-btn-label-short {
+  display: none;
+}
+
+@media (max-width: 440px) {
+  .sticky-cta-btn-label-full {
+    display: none;
+  }
+
+  .sticky-cta-btn-label-short {
+    display: inline;
+  }
+
+  .sticky-cta-price-note {
+    display: none;
+  }
+}
+
+@media (min-width: 641px) {
+  #sticky-cta-bar.sticky-cta-bar {
+    padding: 10px 24px;
+  }
+
+  #sticky-cta-bar .sticky-cta-container {
+    max-width: 960px;
+    margin: 0 auto;
+    gap: 16px;
+  }
+
+  #sticky-cta-bar .sticky-cta-image,
+  #sticky-cta-bar .sticky-cta-noimage {
+    width: 44px;
+    height: 44px;
+  }
+
+  #sticky-cta-bar .sticky-cta-title {
+    font-size: 0.9rem;
+  }
+
+  #sticky-cta-bar .sticky-cta-price {
+    font-size: 1.02rem;
+  }
+
+  #sticky-cta-bar .sticky-cta-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* 4. トップページ（/）ファーストビューの検索バー・注目カテゴリチップ・モバイル順序最適化 */
+.hero .hero-cta-group {
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  gap: 0.65rem;
+}
+
+.hero-search-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  padding: 0.65rem 0.75rem 0.65rem 1rem;
+  background: var(--color-bg-card, #ffffff);
+  border: 2px solid var(--color-primary, #0284c7);
+  border-radius: 9999px;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.14);
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.hero-search-bar:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.22);
+}
+
+.hero-search-bar-icon {
+  color: var(--color-primary, #0284c7);
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.hero-search-bar-placeholder {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.9rem;
+  color: var(--color-text-muted, #64748b);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hero-search-bar-btn {
+  flex-shrink: 0;
+  padding: 0.35rem 0.85rem;
+  background: var(--color-primary, #0284c7);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border-radius: 9999px;
+}
+
+.hero-cta-primary-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-cta-button.hero-cta-deals {
+  background: linear-gradient(135deg, #ea580c, #dc2626);
+}
+
+.hero-cta-button.hero-cta-rec {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+}
+
+.hero-popular-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+}
+
+.hero-category-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text-main, #1e293b);
+  background: var(--color-bg-card, #ffffff);
+  border: 1px solid var(--color-border, #cbd5e1);
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.hero-category-chip:hover {
+  border-color: var(--color-primary, #0284c7);
+  color: var(--color-primary, #0284c7);
+}
+
+[data-theme="dark"] .hero-search-bar,
+[data-theme="dark"] .hero-category-chip {
+  background: var(--color-bg-card, #1e293b);
+  border-color: rgba(148, 163, 184, 0.3);
+  color: var(--color-text-main, #f1f5f9);
+}
+
+@media (min-width: 768px) {
+  .hero-cta-primary-row,
+  .hero-popular-categories {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero .hero-content .hero-message {
+    order: 1;
+  }
+
+  .hero .hero-content .hero-image {
+    order: 2;
+  }
+
+  .hero .hero-content .hero-image img {
+    max-width: 180px;
+  }
+}
