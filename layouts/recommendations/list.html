@@ -238,7 +238,7 @@
         gap: 4px;
         cursor: pointer;
         white-space: nowrap;
-        transition: all 0.2s ease;
+        transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
         user-select: none;
     }
 
@@ -276,7 +276,7 @@
         border: 1px solid var(--md-sys-color-outline-variant, #E2E8F0);
         box-sizing: border-box;
         white-space: nowrap;
-        transition: all 0.2s ease;
+        transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .rec-card-actions .btn-internal-small:hover,
@@ -345,7 +345,7 @@
         background: var(--color-bg-secondary);
         color: var(--color-text-main);
         border: 1.5px solid var(--color-border);
-        transition: all 0.2s ease;
+        transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
     }
 
     .rec-nav-btn:hover {
@@ -535,7 +535,7 @@
         text-decoration: none;
         white-space: nowrap;
         box-sizing: border-box;
-        transition: all 0.2s ease;
+        transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
     }
 
     .price-drop-btn-review {
@@ -562,6 +562,34 @@
 
     [data-theme="dark"] .price-drop-card {
         background: var(--color-bg-secondary);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .rec-summary-toggle,
+        .rec-summary-toggle .toggle-icon,
+        .rec-summary-btn,
+        .rec-card-actions .btn-compare-card,
+        .rec-action-row .btn-compare-card,
+        .rec-card-actions .btn-internal-small,
+        .rec-card-actions .btn-internal--full,
+        .rec-nav-btn,
+        .price-drop-card,
+        .price-drop-image-wrap img,
+        .price-drop-btn {
+            transition: none;
+            transform: none;
+        }
+
+        .rec-card-actions .btn-compare-card:hover,
+        .rec-action-row .btn-compare-card:hover,
+        .rec-card-actions .btn-internal-small:hover,
+        .rec-card-actions .btn-internal--full:hover,
+        .rec-nav-btn:hover,
+        .price-drop-card:hover,
+        .price-drop-card:hover .price-drop-image-wrap img,
+        .price-drop-btn:hover {
+            transform: none;
+        }
     }
 </style>
 <div class="container recommendations-container">
