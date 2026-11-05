@@ -221,6 +221,9 @@ export class ArticleGenerator {
     if (investigation.analysis.lastInvestigated) {
       metadata.lastInvestigated = investigation.analysis.lastInvestigated;
     }
+    if (product.priceUpdatedAt) {
+      metadata.priceUpdatedAt = product.priceUpdatedAt;
+    }
     if (images.length > 0) {
       metadata.images = images;
     }
@@ -1484,6 +1487,8 @@ ${recommendationMessage}
     if (metadata.featured) lines.push(`featured: ${metadata.featured}`);
     if (typeof metadata.mobileOptimized === 'boolean') lines.push(`mobile_optimized: ${metadata.mobileOptimized}`);
     if (metadata.lastInvestigated) lines.push(`last_investigated: "${metadata.lastInvestigated}"`);
+    if (metadata.priceUpdatedAt)
+      lines.push(`price_updated_at: "${this.escapeForFrontMatter(metadata.priceUpdatedAt)}"`);
     if (metadata.affiliate_url) lines.push(`affiliate_url: "${metadata.affiliate_url}"`);
 
     if (metadata.images && metadata.images.length > 0) {

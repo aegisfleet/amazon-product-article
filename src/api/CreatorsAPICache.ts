@@ -309,6 +309,21 @@ export class CreatorsAPICache {
   }
 
   /**
+   * Get cache timestamp (milliseconds since epoch) for the given ASIN if entry exists
+   */
+  public getTimestamp(asin: string): number | undefined {
+    const shardKey = CreatorsAPICache.getShardKey(asin);
+    this.ensureShardLoaded(shardKey);
+
+    const entry = this.cache[asin];
+    if (!entry || typeof entry.timestamp !== 'number') {
+      return undefined;
+    }
+
+    return entry.timestamp;
+  }
+
+  /**
    * Check if ASIN is marked as invalid/not-found and is still within TTL
    */
   public isInvalid(asin: string): boolean {

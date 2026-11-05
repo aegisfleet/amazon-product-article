@@ -24,6 +24,7 @@ export interface ArticleMetadata {
   mobileOptimized: boolean;
   seoKeywords: string[];
   lastInvestigated?: string | undefined;
+  priceUpdatedAt?: string | undefined; // キャッシュ取得日時（価格・セール情報の最終更新日時）
   images?: string[] | undefined; // Product image URLs for Hugo front matter
   affiliate_url?: string | undefined; // Affiliate link for the hero button
   is_amazon_direct?: boolean | undefined;

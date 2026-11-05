@@ -45,6 +45,7 @@ export interface Product {
   dealBadge?: string | undefined;
   dealAccessType?: string | undefined;
   savingsPercentage?: number | undefined;
+  priceUpdatedAt?: string | undefined; // キャッシュの価格・セール情報取得日時（JST ISO文字列）
 }
 
 export interface ProductDetail extends Product {

@@ -323,4 +323,17 @@ describe('CreatorsAPICache', () => {
     expect(entry.previousPrice).toBe(3000);
     expect(entry.priceChangedAt).toBe(1234567890);
   });
+
+  test('getTimestamp should return timestamp for cached entry and undefined for missing entry', () => {
+    const fixedTime = 1762320600000;
+    (cache as any).cache.B_TS_TEST = {
+      data: mockProduct,
+      timestamp: fixedTime,
+      status: 'valid',
+    };
+    (cache as any).loadedShards.add('ST');
+
+    expect(cache.getTimestamp('B_TS_TEST')).toBe(fixedTime);
+    expect(cache.getTimestamp('B_MISSING')).toBeUndefined();
+  });
 });

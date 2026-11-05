@@ -27,7 +27,7 @@
                     {{- if $product.score -}}
                     <span class="sticky-cta-score"><span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span>{{ $product.score }}点</span>
                     {{- end -}}
-                    <span class="sticky-cta-price-note">調査時参考価格</span>
+                    <span class="sticky-cta-price-note">{{- with $product.price_updated_at -}}{{ time . | dateFormat "01/02 15:04" }}更新{{- else -}}毎日更新・参考価格{{- end -}}</span>
                 </div>
             </div>
         </div>

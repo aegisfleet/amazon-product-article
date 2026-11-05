@@ -1,5 +1,13 @@
 import type { CreatorsAPICache } from '../../api/CreatorsAPICache';
-import { categorizeAsins } from '../article-generation-cli';
+import { categorizeAsins, formatTimestampJstIso } from '../article-generation-cli';
+
+describe('formatTimestampJstIso', () => {
+  it('should format epoch milliseconds to JST ISO 8601 string (+09:00)', () => {
+    // 2026-11-05T05:30:00Z -> 2026-11-05T14:30:00+09:00
+    const ts = Date.UTC(2026, 10, 5, 5, 30, 0);
+    expect(formatTimestampJstIso(ts)).toBe('2026-11-05T14:30:00+09:00');
+  });
+});
 
 describe('categorizeAsins', () => {
   const createMockCache = (options: {

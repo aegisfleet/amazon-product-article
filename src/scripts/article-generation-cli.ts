@@ -542,6 +542,14 @@ async function performBatchFetching(
   }
 }
 /**
+ * ミリ秒Unixタイムスタンプを日本時間（JST, +09:00）のISO 8601文字列（YYYY-MM-DDTHH:mm:ss+09:00）に変換する
+ */
+export function formatTimestampJstIso(timestampMs: number): string {
+  const jstDate = new Date(timestampMs + 9 * 60 * 60 * 1000);
+  return `${jstDate.toISOString().slice(0, 19)}+09:00`;
+}
+
+/**
  * 単一記事の生成と保存を行う
  */
 async function generateSingleArticle(
@@ -562,7 +570,14 @@ async function generateSingleArticle(
         cachedProduct.savingsPercentage = undefined;
         cachedProduct.dealAccessType = undefined;
       }
-      data.product = { ...data.product, ...cachedProduct };
+      const cacheTimestamp = cache.getTimestamp(data.product.asin);
+      const priceUpdatedAt =
+        cacheTimestamp !== undefined && cacheTimestamp > 0 ? formatTimestampJstIso(cacheTimestamp) : undefined;
+      data.product = {
+        ...data.product,
+        ...cachedProduct,
+        ...(priceUpdatedAt ? { priceUpdatedAt } : {}),
+      };
       data.investigation.product = data.product;
       logger.debug(`Used cached product data for ${data.product.asin}`);
     } else if (skipApi) {

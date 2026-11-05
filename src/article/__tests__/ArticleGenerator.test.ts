@@ -1210,5 +1210,17 @@ describe('ArticleGenerator', () => {
         expect(result).toContain(`${score}点`);
       });
     });
+
+    describe('price_updated_at front matter', () => {
+      it('should output price_updated_at in front matter when product.priceUpdatedAt is set', async () => {
+        const productWithTimestamp: Product = {
+          ...mockProduct,
+          priceUpdatedAt: '2026-11-05T14:30:00+09:00',
+        };
+        const article = await generator.generateArticle(productWithTimestamp, mockInvestigation);
+        expect(article.metadata.priceUpdatedAt).toBe('2026-11-05T14:30:00+09:00');
+        expect(article.content).toContain('price_updated_at: "2026-11-05T14:30:00+09:00"');
+      });
+    });
   });
 });
