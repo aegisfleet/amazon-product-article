@@ -11,6 +11,12 @@ if [ -z "$MESSAGE" ]; then
   exit 1
 fi
 
+# Terminate any leftover generation/maintenance processes from cancelled steps
+# to prevent concurrent writes to cache shards during commit & push
+pkill -f "article-generation-cli" 2>/dev/null || true
+pkill -f "enhance-categories" 2>/dev/null || true
+pkill -f "extract-price-drops" 2>/dev/null || true
+
 # Guard 1: Verify git repository and working directory exist
 if [[ ! -d ".git" ]]; then
   echo "⚠️ Warning: .git directory not found (checkout not completed or workspace missing). Skipping commit."
@@ -114,9 +120,12 @@ for i in 1 2 3; do
       git fetch origin "$CURRENT_BRANCH"
     fi
 
-    # Reset cache files in working directory to HEAD to avoid "Your local changes..." error on merge
-    git checkout HEAD -- data/cache/paapi/*.json 2>/dev/null || true
-    git checkout HEAD -- data/cache/paapi-product-cache.json 2>/dev/null || true
+    # Reset working tree and index to HEAD to eliminate any local uncommitted changes
+    # (e.g. from background processes or cancelled steps) before pulling and merging.
+    # Using "git reset --hard HEAD" avoids glob expansion failures with untracked files
+    # and guarantees that Git will not abort with "Your local changes would be overwritten by merge".
+    git reset --hard HEAD
+    git clean -fd data/cache/ 2>/dev/null || true
 
     # Try to merge remote branch
     # Note: --no-edit to avoid prompting for commit message
@@ -141,16 +150,23 @@ for i in 1 2 3; do
       if [ -n "$NON_CACHE_CONFLICTS" ]; then
         echo "Merge failed due to conflicts outside data/cache/:"
         echo "$NON_CACHE_CONFLICTS"
-        git merge --abort || true
+        git merge --abort 2>/dev/null || true
+        git reset --hard HEAD
         rm -f .git/index.lock
         exit 1
       fi
 
       if [ -z "$CONFLICTS" ]; then
-        echo "No conflicts found, aborting..."
-        git merge --abort || true
+        echo "⚠️ Merge failed without identifiable conflict markers. Resetting working tree to HEAD for retry..."
+        git merge --abort 2>/dev/null || true
+        git reset --hard HEAD
         rm -f .git/index.lock
-        exit 1
+        if [ "$i" -eq 3 ]; then
+          echo "Error: Merge failed on final attempt."
+          exit 1
+        fi
+        sleep 2
+        continue
       fi
 
       echo "Conflicts detected only in cache files. Attempting batch automatic merge..."
@@ -171,13 +187,15 @@ for i in 1 2 3; do
           echo "Merge completed successfully. Retrying push..."
         else
           echo "Merge completion failed, aborting..."
-          git merge --abort || true
+          git merge --abort 2>/dev/null || true
+          git reset --hard HEAD
           rm -f .git/index.lock
           exit 1
         fi
       else
         echo "Auto-merge failed, aborting merge..."
-        git merge --abort || true
+        git merge --abort 2>/dev/null || true
+        git reset --hard HEAD
         rm -f .git/index.lock
         exit 1
       fi
