@@ -1591,8 +1591,7 @@ ${recommendationMessage}
 
       if (
         linkText &&
-        linkUrl &&
-        linkUrl.includes('amazon.co.jp') &&
+        linkUrl?.includes('amazon.co.jp') &&
         (linkUrl.includes('tag=') || linkUrl.includes('/dp/'))
       ) {
         const asinMatch = /\/dp\/([A-Z0-9]{10})/.exec(linkUrl);
