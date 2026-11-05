@@ -45,7 +45,7 @@
             <h1 class="hero-title" style="margin-top: var(--md-sys-spacing-2);">{{ .Title }}</h1>
             <div class="article-meta">
                 <div class="article-meta-info">
-                    <span>記事更新: {{ .Lastmod.Format "2006年01月02日" }}</span>{{- with .Params.price_updated_at -}}<span> / 価格・セール更新: {{ time . | dateFormat "2006年01月02日 15:04" }}</span>{{- end -}}
+                    <span>記事更新: {{ .Lastmod.Format "2006年01月02日" }}</span>
                     {{- with .Params.author -}}<span> / 著者: {{ . }}</span>{{- end -}}
                 </div>
                 <fieldset class="font-size-switcher" aria-label="文字サイズ変更">

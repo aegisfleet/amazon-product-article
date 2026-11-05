@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const scrollToTopBtn = document.getElementById('scroll-to-top');
   const tocFab = document.getElementById('toc-fab');
-  const GAP = 12; // バーとフローティングボタンの間のマージン(px)
 
   function syncFloatingButtons() {
+    const gap = window.innerWidth <= 640 ? 8 : 12;
     const compareTray = document.getElementById('compare-tray');
     const badgeBtn = document.getElementById('compare-tray-badge');
     const floatingSearchFab = document.getElementById('floating-search-fab');
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const floatingButtons = [scrollToTopBtn, tocFab, floatingSearchFab, badgeBtn].filter(Boolean);
 
     if (maxBarHeight > 0) {
-      const bottomOffset = `${maxBarHeight + GAP}px`;
+      const bottomOffset = `${maxBarHeight + gap}px`;
       floatingButtons.forEach((btn) => btn.style.setProperty('bottom', bottomOffset));
     } else {
       floatingButtons.forEach((btn) => btn.style.removeProperty('bottom'));

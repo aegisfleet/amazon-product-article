@@ -24,7 +24,6 @@
                 <div class="sticky-cta-title">{{ .Title }}</div>
                 <div class="sticky-cta-meta-row">
                     <span class="sticky-cta-price">{{ partial "utils-price-format.html" $product.price }}</span>
-                    <span class="sticky-cta-price-note">（{{- with $product.price_updated_at -}}{{ time . | dateFormat "01月02日 15:04" }}時点の価格{{- else -}}参考価格{{- end -}}）</span>
                     {{- if $product.score -}}
                     <span class="sticky-cta-score"><span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span>{{ $product.score }}点</span>
                     {{- end -}}
