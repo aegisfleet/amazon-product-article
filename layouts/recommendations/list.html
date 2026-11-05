@@ -574,7 +574,7 @@
     <div class="bargain-hero recommendations-hero">
         <div class="bargain-hero-icon"><span class="material-symbols-outlined" style="font-size:2.5rem;" aria-hidden="true">ads_click</span></div>
         <h1 class="bargain-hero-title">{{ .Title }}</h1>
-        <p class="bargain-hero-subtitle">調査日: {{- $todayData.date -}}</p>
+        <p class="bargain-hero-subtitle">調査日: {{- with $todayData.date -}}{{ time . | dateFormat "2006年01月02日" }}{{- end -}}</p>
         <p class="bargain-hero-desc">
             <strong>{{- $todayData.headline -}}</strong>
             <br>
@@ -602,7 +602,7 @@
             本日の値下がり・セール目玉商品
         </h2>
         <p class="rec-section-subtext">
-            直近で値下げされた注目アイテムや、調査時より大幅にお得になっている高スコア商品です（{{- $priceDropsData.date -}} 更新）。
+            直近で値下げされた注目アイテムや、調査時より大幅にお得になっている高スコア商品です（{{- with $priceDropsData.updatedAt -}}{{ time . | dateFormat "2006年01月02日 15:04" }}{{- else -}}{{- with $priceDropsData.date -}}{{ time . | dateFormat "2006年01月02日" }}{{- end -}}{{- end -}} 更新）。
         </p>
 
         <div class="price-drops-grid">

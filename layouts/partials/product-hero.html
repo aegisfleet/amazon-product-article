@@ -195,7 +195,7 @@
         <div class="hero-actions-main">
             <div class="hero-price-freshness-note">
                 <span class="material-symbols-outlined icon-freshness" aria-hidden="true">schedule</span>
-                <span>{{- with .Params.price_updated_at -}}{{ time . | dateFormat "2006/01/02 15:04" }}時点のAmazon価格・セール情報（リアルタイムの在庫・クーポンはAmazonでご確認ください）{{- else -}}{{- with .Params.last_investigated -}}{{ time . | dateFormat "2006/01/02" }}{{- else -}}{{ .Lastmod.Format "2006/01/02" }}{{- end -}}時点の参考価格（最新のセール・在庫・クーポンはAmazonでご確認ください）{{- end -}}</span>
+                <span>{{- with .Params.price_updated_at -}}{{ time . | dateFormat "2006年01月02日 15:04" }}時点のAmazon価格・セール情報（リアルタイムの在庫・クーポンはAmazonでご確認ください）{{- else -}}{{- with .Params.last_investigated -}}{{ time . | dateFormat "2006年01月02日" }}{{- else -}}{{ .Lastmod.Format "2006年01月02日" }}{{- end -}}時点の参考価格（最新のセール・在庫・クーポンはAmazonでご確認ください）{{- end -}}</span>
             </div>
             {{- partial "product-shop-buttons.html" (dict "context" . "variant" "hero" "position" "hero") -}}
         </div>
