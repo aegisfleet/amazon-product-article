@@ -40,6 +40,19 @@
     </div>
 </section>
 
+<section class="hero-social-strip" aria-label="公式SNSフォロー案内">
+    <div class="container hero-social-container">
+        <div class="hero-social-lead">
+            <span class="hero-social-lead-badge">
+                <span class="material-symbols-outlined hero-social-badge-icon" aria-hidden="true">campaign</span>
+                公式SNS
+            </span>
+            <span class="hero-social-lead-text">新着レビュー・セール速報を配信中！</span>
+        </div>
+        {{- partial "social-links.html" (dict "variant" "hero") -}}
+    </div>
+</section>
+
 <section class="container" style="margin-top: var(--spacing-lg);">
     <!-- Product Count Display -->
     {{- $articles := where .Site.RegularPages "Section" "articles" -}}

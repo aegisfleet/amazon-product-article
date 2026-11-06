@@ -11199,3 +11199,200 @@ legend.font-size-label {
     display: none;
   }
 }
+
+/* ==========================================================================
+   公式SNSリンク (Instagram / Threads)
+   ========================================================================== */
+.social-links-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 9999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-card);
+  color: var(--color-text-main);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  line-height: 1.2;
+  box-sizing: border-box;
+}
+
+.social-btn-icon {
+  flex-shrink: 0;
+  display: block;
+}
+
+.social-btn--instagram .social-btn-icon {
+  color: #e1306c;
+  transition: color 0.2s ease;
+}
+
+.social-btn--instagram:hover {
+  background: #e1306c;
+  border-color: #e1306c;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(225, 48, 108, 0.3);
+}
+
+.social-btn--instagram:hover .social-btn-icon {
+  color: #ffffff;
+}
+
+.social-btn--threads .social-btn-icon {
+  color: currentColor;
+}
+
+.social-btn--threads:hover {
+  background: #111827;
+  border-color: #111827;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="dark"] .social-btn {
+  background: var(--color-bg-card);
+  border-color: rgba(148, 163, 184, 0.3);
+  color: var(--color-text-main);
+}
+
+[data-theme="dark"] .social-btn--threads:hover {
+  background: #f8fafc;
+  border-color: #f8fafc;
+  color: #0f172a;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+/* ヒーロー下 SNSストリップ */
+.hero-social-strip {
+  background: var(--color-bg-card);
+  border-bottom: 1px solid var(--color-border);
+  padding: 0.75rem 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.hero-social-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.hero-social-lead {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.hero-social-lead-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(2, 132, 199, 0.12);
+  color: var(--color-primary, #0284c7);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  letter-spacing: 0.02em;
+}
+
+.hero-social-badge-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.hero-social-lead-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+@media (max-width: 639px) {
+  .hero-social-container {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 0.6rem;
+  }
+
+  .hero-social-lead {
+    justify-content: center;
+  }
+
+  .hero-social-strip .social-links-group {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero-social-strip .social-btn {
+    flex: 1;
+    max-width: 180px;
+    justify-content: center;
+  }
+}
+
+/* フッター SNSセクション */
+.footer-social-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.25rem;
+}
+
+.footer-social-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+}
+
+.social-links-group--footer .social-btn {
+  background: transparent;
+  font-size: 0.8rem;
+  padding: 0.35rem 0.8rem;
+}
+
+/* ドロワーメニュー SNSセクション */
+.nav-drawer-social-container {
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-drawer-social-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+}
+
+.social-links-group--drawer {
+  display: flex;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.social-links-group--drawer .social-btn {
+  flex: 1;
+  min-width: 0;
+  justify-content: center;
+  font-size: 0.82rem;
+  padding: 0.45rem 0.5rem;
+}
