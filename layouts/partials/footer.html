@@ -9,6 +9,11 @@
             <a href="{{ `ai/` | relURL }}" class="footer-nav-link"><span class="material-symbols-outlined footer-nav-icon" aria-hidden="true">smart_toy</span> AIで探す</a>
         </nav>
 
+        <div class="footer-social-section" aria-label="公式SNSアカウント">
+            <span class="footer-social-label">公式SNS</span>
+            {{- partial "social-links.html" (dict "variant" "footer") -}}
+        </div>
+
         <hr class="footer-divider" />
 
         <div class="footer-disclaimer">

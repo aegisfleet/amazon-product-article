@@ -18,6 +18,10 @@ description = "高評価の商品・価格帯・主要スペックを一覧で�
 productRequestFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSc09aO5nj3y247QRkO2TQZ_ASH1J5mljIB--2ym1CkwRGUVqw/viewform"
 productRequestEntryId = "entry.662198856"
 
+[params.social]
+  instagram = "https://www.instagram.com/amazon_hikaku/"
+  threads = "https://www.threads.com/@amazon_hikaku"
+
 # SEO / インデックス管理（判定は layouts/partials/seo-indexable.html が単一の実装）
 # 商品数がこの値未満のカテゴリページは noindex とし、sitemap からも除外する。
 [params.seo]
