@@ -5,8 +5,12 @@
       var path = globalThis.location.pathname;
       var match = /^\/(?:articles\/)?([A-Za-z0-9]{10})\/?$/i.exec(path);
       if (match) {
-        var asin = match[1].toLowerCase();
-        globalThis.location.replace('/' + asin + '/');
+        var target = '/' + match[1].toLowerCase() + '/';
+        // 遷移先が現在のURLと同一ならリダイレクトしない。
+        // 存在しないASINでも404.htmlが返るため、このガードがないと無限ループになる。
+        if (target !== path) {
+          globalThis.location.replace(target);
+        }
       }
     } catch (e) {
       // ignore
