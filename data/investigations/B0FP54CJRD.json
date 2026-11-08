@@ -3,7 +3,13 @@
     "productName": "ALLDOCUBE Ultra Pad",
     "parentAsin": "B0FY3118Z2",
     "productDescription": "Snapdragon 7+ Gen3を搭載し、13インチ・2.8K解像度・144Hzの大型ディスプレイを備えたハイスペックAndroidタブレット。",
-    "productUsage": ["動画視聴", "ゲームプレイ", "ブラウジング", "文書作成やデータ整理などの軽作業", "電子書籍の閲覧"],
+    "productUsage": [
+      "動画視聴",
+      "ゲームプレイ",
+      "ブラウジング",
+      "文書作成やデータ整理などの軽作業",
+      "電子書籍の閲覧"
+    ],
     "positivePoints": [
       "Snapdragon 7+ Gen3を搭載し、Antutuスコア約140万点の高い処理性能を持つ",
       "13インチ、1840×2880の高解像度、144Hzリフレッシュレートの大型・高精細・滑らかなディスプレイを搭載",
@@ -19,20 +25,29 @@
       "3.5mmイヤホンジャックが非搭載（Type-Cポートと兼用）",
       "キーボードやスタイラスペンは別売りである"
     ],
-    "useCases": ["外出先での動画鑑賞や大画面でのゲームプレイ", "大画面を活かしたマルチタスクでの資料作成やウェブブラウジング", "Type-Cケーブル1本で外部ディスプレイに出力してのプレゼンテーション", "寝室やリビングでの電子書籍の閲覧やメディア鑑賞"],
+    "useCases": [
+      "外出先での動画鑑賞や大画面でのゲームプレイ",
+      "大画面を活かしたマルチタスクでの資料作成やウェブブラウジング",
+      "Type-Cケーブル1本で外部ディスプレイに出力してのプレゼンテーション",
+      "寝室やリビングでの電子書籍の閲覧やメディア鑑賞"
+    ],
     "userStories": [
       {
         "userType": "エンタメ重視のユーザー",
         "scenario": "自宅のリビングや寝室で動画やゲームを楽しむ",
         "experience": "13インチの大きな画面と8つのスピーカーによる立体音響が素晴らしく、映画やゲームの臨場感が格段にアップしました。Snapdragon 7+ Gen3のおかげで重い3Dゲームもサクサク動き、144Hzの滑らかな画面表示はスクロールや操作時のストレスを無くしてくれました。バッテリーが15000mAhもあるので、休日に1日中動画を見ていても充電切れを気にせず楽しめるのが大きな決め手でした。ただし、顔認証や指紋認証がないため、毎回パスワードを入れるのが少し手間に感じます。",
-        "supportingSourceIds": ["amazon-jp-B0FP54CJRD"],
+        "supportingSourceIds": [
+          "amazon-jp-B0FP54CJRD"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ビジネスワーカー",
         "scenario": "出張先やカフェでの資料作成やデータ整理",
         "experience": "PCモードを活用し、別売りの磁気式キーボードを組み合わせることで、ノートパソコンに近い感覚でタイピング作業が円滑に行えました。USB 3.1 Gen 2ポートから外部ディスプレイへ簡単に映像出力できるので、会議のプレゼンでも重宝しています。ただ、Wi-Fiモデルのみなので、外出先ではスマホのテザリングが必須な点と、GPSが非搭載なので地図アプリの現在地取得には向かない点が注意点です。",
-        "supportingSourceIds": ["amazon-jp-B0FP54CJRD"],
+        "supportingSourceIds": [
+          "amazon-jp-B0FP54CJRD"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -55,7 +70,9 @@
         "claim": "Snapdragon 7+Gen3を搭載し、Antutuスコアが約140万点を達成する",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-jp-B0FP54CJRD"],
+        "supportingSourceIds": [
+          "amazon-jp-B0FP54CJRD"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式スペックによる。SoC自体の公称性能として妥当な数値。"
       },
@@ -63,7 +80,9 @@
         "claim": "USB 3.1 Gen 2は最大10Gbpsの高速データ転送が可能で、一般的なAndroidタブレットのUSB 2.0（最大480Mbps）と比べて約20倍の速度を誇る",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-jp-B0FP54CJRD"],
+        "supportingSourceIds": [
+          "amazon-jp-B0FP54CJRD"
+        ],
         "crossChecked": false,
         "notes": "USB 3.1 Gen 2の規格仕様上の数値として事実に基づく。"
       }
@@ -95,19 +114,6 @@
         "differentiators": [
           "ALLDOCUBE Ultra Padの利点：価格差がほとんどないにもかかわらず、処理性能（SoC）と画面の滑らかさ（144Hz）、バッテリー容量で大きく上回っており、重い3Dゲームも快適に遊びたいコスパ重視のユーザーなら迷わずこちら。",
           "Xiaomi POCO Pad M1の利点：Xiaomiエコシステムとの連携機能や、信頼性の高いブランドサポート、そしてDolby Atmos対応の音響チューニングなど、全体のバランスとブランドへの安心感を重視するならこちら。"
-        ]
-      },
-      {
-        "name": "Redmi Pad 2 Pro",
-        "asin": "B08N65TPYD",
-        "priceComparison": "Redmi Pad 2 Proの方が約6,000円安い。ミドルレンジ機とハイエンド機という違いがある。",
-        "featureComparison": [
-          "共通点：12インチ以上の大型ディスプレイを搭載し、長時間の動画視聴や作業に適している。",
-          "相違点：本商品は13インチでSnapdragon 7+ Gen3というハイエンド級のSoCを積んでいるが、Redmi Pad 2 Proは12.1インチでSnapdragon 7sシリーズのミドルレンジSoCとなる。"
-        ],
-        "differentiators": [
-          "ALLDOCUBE Ultra Padの利点：数千円の追加投資で、Antutu約140万点という圧倒的な処理性能が手に入るため、長く快適に使いたい、あるいは原神などの重いゲームもプレイしたいなら迷わずこちら。",
-          "Redmi Pad 2 Proの利点：ブラウジングや動画視聴など軽い用途がメインであり、少しでも初期費用を抑えつつ12インチの大画面タブレットを手に入れたいならこちら。"
         ]
       }
     ],

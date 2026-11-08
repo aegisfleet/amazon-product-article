@@ -30,14 +30,18 @@
         "userType": "ASMR愛好家",
         "scenario": "睡眠前にリラックスするためにASMR動画を視聴する",
         "experience": "ASMRを聞く目的だったら、本当に他のイヤホンが必要ないくらい音が良いです。雨の降る音などを聞くと、目を閉じれば本当にそこで雨が降っているかのようにリアルに感じられます。有線である点以外は非常に満足しており、初めてのASMRイヤホンとして自信を持っておすすめできます。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "VR・ASMR入門者",
         "scenario": "初めてASMRに特化したイヤホンを試してみる",
         "experience": "ASMR用のイヤホンを買ってみたいけれど、どれがいいか分からず値段も抑えたいと思い購入しました。このイヤホンでASMRの良さを存分に堪能できたので、ここからさらに上位のASMR用イヤホンにステップアップしていく良いきっかけになりました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -60,7 +64,9 @@
         "claim": "バイノーラル制作された音源において、制作者の意図通りの音色と空間イメージや方向感を感じることができる",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "公式の製品説明および複数のユーザーレビューで、ASMRやバイノーラル音源のリアルさが高く評価されているため事実と判断。"
       },
@@ -68,7 +74,9 @@
         "claim": "イヤーピースが耳道の傾きにジャストフィットするスウィングフィット機構を採用",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "公式の仕様説明にて画像付きで解説されているため事実と判断。"
       }
@@ -139,19 +147,6 @@
           "final E500 カナル型イヤホンの利点：音響研究に基づいた独自のバイノーラル音源特化の設計と、スウィングフィット機構による確実な装着感。",
           "FUNLOGY Wired Earbudsの利点：1,000円以下で購入できる驚異的な低価格と、断線しにくいL字プラグの採用。"
         ]
-      },
-      {
-        "name": "final E3000 カナル型イヤホン",
-        "asin": "B071FB3PNM",
-        "priceComparison": "対象商品よりもやや高価ですが、音楽鑑賞向けに設計されており、用途の違いによる価格差といえます。",
-        "featureComparison": [
-          "共通点：final製の有線カナル型イヤホンである点。",
-          "相違点：E3000はステンレス切削高剛性筐体を採用し、音楽のコンサートホールにいるかのような響きを追求したモデル。E500はASMRやVRなど空間表現に特化。"
-        ],
-        "differentiators": [
-          "final E500 カナル型イヤホンの利点：ASMRやVRコンテンツにおける正確な方向感と空間表現に特化しており、価格も手頃な点。",
-          "final E3000 カナル型イヤホンの利点：音楽鑑賞において、高い解像度と豊かな低音、広がりのあるサウンドステージを楽しめる点。"
-        ]
       }
     ],
     "recommendation": {
@@ -186,7 +181,9 @@
       "cableLength": "1.2m",
       "sensitivity": "98dB",
       "impedance": "16Ω",
-      "accessories": ["イヤーピース（TYPE E 5サイズ）"],
+      "accessories": [
+        "イヤーピース（TYPE E 5サイズ）"
+      ],
       "other": [
         "コネクター: 3.5mm TRSプラグ（有線）",
         "マイク: 非搭載"

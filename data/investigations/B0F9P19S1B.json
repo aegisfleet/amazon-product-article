@@ -31,7 +31,9 @@
         "userType": "動画視聴メインのユーザー",
         "scenario": "動画配信サービスの視聴",
         "experience": "2.5Kの高精細ディスプレイとDolby Atmos対応のクアッドスピーカーのおかげで、映画やアニメへの没入感が非常に高いです。9000mAhの大容量バッテリーで、休日に動画を何本も続けて見てもバッテリー切れの心配がありません。ストレージもmicroSDで拡張できるため、ダウンロードした動画もたっぷり保存できます。",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -54,7 +56,9 @@
         "claim": "圧倒的なスタミナを誇る9000mAh大容量バッテリー",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "公式スペックとして9000mAh搭載が明記されており、同価格帯のタブレット（7000mAh前後が多い）の中では優位性がある。"
       }
@@ -73,19 +77,6 @@
         "differentiators": [
           "Redmi Pad 2 4GB+128GBの利点：大画面11インチの2.5Kディスプレイと9000mAhバッテリーを活かし、動画視聴や読書でより高い没入感と長時間のスタミナを重視するなら迷わずこちら。",
           "REDMI Pad 2 9.7の利点：携帯性を重視し、予算を抑えつつ日常使いに十分なタブレットを探している人向け。"
-        ]
-      },
-      {
-        "name": "REDMI Pad 2 Pro 6GB+128GB",
-        "asin": "B08N65TPYD",
-        "priceComparison": "本商品より約10,400円高いが、RAMが6GBに増量され、より高性能なSnapdragon 7s Gen 4を搭載し、ディスプレイも12.1インチと大型化されている。",
-        "featureComparison": [
-          "共通点：2.5Kディスプレイ、Dolby Atmos対応",
-          "相違点：Proモデルは12.1インチ/120Hzディスプレイ、12000mAhバッテリー、上位SoC、6GB RAMを搭載し基本性能が高い。"
-        ],
-        "differentiators": [
-          "Redmi Pad 2 4GB+128GBの利点：過剰なスペックは不要で、手頃な価格で高品質な動画視聴用タブレットを手に入れたい場合に最適。",
-          "REDMI Pad 2 Pro 6GB+128GBの利点：マルチタスクを快適にこなしたい、少し重めのゲームも遊びたい、より大きな画面と120Hzの滑らかさを求める人向け。"
         ]
       },
       {
