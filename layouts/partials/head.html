@@ -179,6 +179,33 @@
 "name" .Title
 "item" .Permalink
 ) -}}
+{{- else if eq .Kind "term" -}}
+{{- $lowerTerm := lower .Title -}}
+{{- $termParentName := "" -}}
+{{- $termParentSlug := "" -}}
+{{- range $parent, $data := hugo.Data.categorygroups -}}
+{{- range $data.categories -}}
+{{- if eq (lower .) $lowerTerm -}}
+{{- $termParentName = $parent -}}
+{{- $termParentSlug = $data.slug -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+{{- if $termParentName -}}
+{{- $breadcrumbItems = $breadcrumbItems | append (dict
+"@type" "ListItem"
+"position" 2
+"name" $termParentName
+"item" (printf "%sparent-category/%s/" .Site.BaseURL $termParentSlug)
+) -}}
+{{- end -}}
+{{- $termPosition := cond (ne $termParentName "") 3 2 -}}
+{{- $breadcrumbItems = $breadcrumbItems | append (dict
+"@type" "ListItem"
+"position" $termPosition
+"name" .Title
+"item" .Permalink
+) -}}
 {{- end -}}
 {{- $breadcrumbSchema := dict
 "@context" "https://schema.org"

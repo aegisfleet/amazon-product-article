@@ -241,6 +241,13 @@ describe('CategoryNormalizer', () => {
         'CEROレーティングB',
         '2014C-TAX Video Game',
         'すべてのゲーム',
+        'ポイント10%還元対象',
+        '春の総力祭',
+        '雑誌掲載コスメ',
+        '週末キャンプのススメ',
+        '猛暑を乗り切る',
+        '電池：単3形',
+        'AppleAll',
       ];
       invalidNames.forEach((name) => {
         expect(CategoryNormalizer.isValidCategoryName(name)).toBe(false);
@@ -405,20 +412,34 @@ describe('CategoryNormalizer', () => {
       expect(res2.main).toBe('有機ELテレビ');
     });
 
-    it('should sanitize "イヤ・ヘッド" to "イヤホン・ヘッドホン"', () => {
+    it('should sanitize "イヤ・ヘッド" to "イヤホン"', () => {
       const node: BrowseNode = { displayName: 'イヤ・ヘッド', id: '7356944051' };
       const res = CategoryNormalizer.normalize(node);
-      expect(res.main).toBe('イヤホン・ヘッドホン');
+      expect(res.main).toBe('イヤホン');
+    });
+
+    it('should map synonym categories via CATEGORY_ALIAS_MAP', () => {
+      expect(CategoryNormalizer.sanitizeCategoryName('携帯電話・スマートフォン本体')).toBe('スマートフォン本体');
+      expect(CategoryNormalizer.sanitizeCategoryName('イヤホン・ヘッドホン')).toBe('イヤホン');
+      expect(CategoryNormalizer.sanitizeCategoryName('イヤホン・ヘッドホン本体')).toBe('イヤホン');
+      expect(CategoryNormalizer.sanitizeCategoryName('パソコン用キーボード')).toBe('キーボード');
+      expect(CategoryNormalizer.sanitizeCategoryName('キーボード・マウス・入力機器')).toBe('キーボード');
+      expect(CategoryNormalizer.sanitizeCategoryName('無線・有線LANルーター')).toBe('Wi-Fiルーター');
+      expect(CategoryNormalizer.sanitizeCategoryName('収納')).toBe('収納ケース・ボックス');
+      expect(CategoryNormalizer.sanitizeCategoryName('収納アイテム')).toBe('収納ケース・ボックス');
+      expect(CategoryNormalizer.sanitizeCategoryName('収納ボックス')).toBe('収納ケース・ボックス');
+      expect(CategoryNormalizer.sanitizeCategoryName('収納・ケース')).toBe('収納ケース・ボックス');
+      expect(CategoryNormalizer.sanitizeCategoryName('水・ミネラルウォーター')).toBe('ミネラルウォーター');
     });
 
     it('should sanitize "家電＆カメラ" or "カテゴリー別" to detailed category based on title', () => {
       const node: BrowseNode = { displayName: 'カテゴリー別', contextFreeName: '家電＆カメラ', id: '3210991' };
 
       const res1 = CategoryNormalizer.normalize(node, 'ゼンハイザー HD 599 SE 開放型スタジオヘッドホン');
-      expect(res1.main).toBe('イヤホン・ヘッドホン');
+      expect(res1.main).toBe('イヤホン');
 
       const res2 = CategoryNormalizer.normalize(node, 'イヤホン bluetooth 耳掛け ワイヤレスイヤホン');
-      expect(res2.main).toBe('イヤホン・ヘッドホン');
+      expect(res2.main).toBe('イヤホン');
 
       const res3 = CategoryNormalizer.normalize(node, 'TCL テレビ 75V型 液晶テレビ');
       expect(res3.main).toBe('液晶テレビ');

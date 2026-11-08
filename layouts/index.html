@@ -198,29 +198,37 @@
         <h2>カテゴリから探す</h2>
     </div>
 
-    <!-- Mobile: Dropdown UI -->
     {{- $urlMap := dict -}}{{- $countMap := dict -}}{{- range $name, $items := .Site.Taxonomies.categories -}}{{- with
     $.Site.GetPage (printf
     "/categories/%s" $name) -}}{{- $urlMap = merge $urlMap (dict .LinkTitle .RelPermalink) -}}{{- $countMap = merge
     $countMap (dict .LinkTitle (len $items)) -}}{{- end -}}{{- end -}}
     <script id="category-url-data" type="application/json">{{- $urlMap | jsonify | safeJS -}}</script>
     <script id="category-count-data" type="application/json">{{- $countMap | jsonify | safeJS -}}</script>
-    <div class="category-dropdown-container" id="category-dropdown-container">
-        <div class="category-dropdown-group">
-            <label for="category-group-select" class="category-dropdown-label">グループ</label>
-            <select id="category-group-select" class="category-dropdown-select">
-                <option value="">グループを選択...</option>
-            </select>
-        </div>
-        <div class="category-dropdown-group">
-            <label for="category-sub-select" class="category-dropdown-label">カテゴリ</label>
-            <select id="category-sub-select" class="category-dropdown-select" disabled>
-                <option value="">カテゴリを選択...</option>
-            </select>
-        </div>
+
+    <!-- Upper Tier: Popular Subcategory Quick Tiles -->
+    <div class="popular-categories-section" aria-label="人気サブカテゴリ">
+        <div class="popular-categories-label">🔥 人気のカテゴリ（1タップで直行）</div>
+        <div id="popular-categories-grid" class="popular-categories-grid"></div>
     </div>
 
-    <!-- Desktop: Grouped View (Populated by JS) -->
+    <!-- Lower Tier: Incremental Search + 31 Parent Category Grid -->
+    <div class="category-filter-bar">
+        <div class="category-filter-input-wrapper">
+            <span class="material-symbols-outlined category-filter-icon" aria-hidden="true">search</span>
+            <input type="search" id="category-filter-input" class="category-filter-input"
+                placeholder="カテゴリ名で絞り込む（例：キーボード、充電器、プロテイン...）"
+                aria-label="カテゴリ名で絞り込む" autocomplete="off">
+            <button type="button" id="category-filter-clear" class="category-filter-clear-btn"
+                aria-label="絞り込みをクリア" hidden>
+                <span class="material-symbols-outlined" aria-hidden="true">close</span>
+            </button>
+        </div>
+        <p id="category-filter-empty" class="category-filter-empty" hidden>
+            該当するカテゴリが見つかりませんでした。別のキーワードをお試しください。
+        </p>
+    </div>
+
+    <!-- Unified Responsive Grouped View (Populated by JS) -->
     <div id="category-grouped-view" class="category-grouped-view"></div>
 
     <!-- Brand Section -->

@@ -198,8 +198,30 @@ function initCategoryFeatures() {
             const currentCat = categorySelect.value;
             categoryPillElements.forEach(pill => {
                 const pCat = pill.dataset.category || pill.textContent.trim();
-                pill.classList.toggle('active', pCat === currentCat && currentCat !== '');
+                const isActive = pCat === currentCat && currentCat !== '';
+                pill.classList.toggle('active', isActive);
+                if (isActive && pill.classList.contains('category-pill-extra-hidden')) {
+                    expandExtraCategoryPills(true);
+                }
             });
+        }
+    }
+
+    function expandExtraCategoryPills(expand) {
+        const toggleBtn = document.getElementById('category-pills-toggle-btn');
+        const extraPills = document.querySelectorAll('.category-pill-extra');
+        if (extraPills.length === 0) return;
+
+        extraPills.forEach(pill => {
+            pill.classList.toggle('category-pill-extra-hidden', !expand);
+        });
+
+        if (toggleBtn) {
+            const total = toggleBtn.dataset.total || '';
+            toggleBtn.setAttribute('aria-expanded', expand ? 'true' : 'false');
+            toggleBtn.textContent = expand
+                ? 'サブカテゴリを折りたたむ'
+                : `すべてのサブカテゴリを表示（全${total}件）`;
         }
     }
 
@@ -629,6 +651,12 @@ function initCategoryFeatures() {
     const categoryPillsContainer = document.querySelector('.category-pills-container');
     if (categoryPillsContainer) {
         categoryPillsContainer.addEventListener('click', (e) => {
+            const toggleBtn = e.target.closest('#category-pills-toggle-btn');
+            if (toggleBtn) {
+                const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+                expandExtraCategoryPills(!isExpanded);
+                return;
+            }
             const pill = e.target.closest('.category-pill');
             if (!pill) return;
             e.preventDefault();

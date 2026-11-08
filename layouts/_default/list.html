@@ -12,6 +12,44 @@
         {{- with .Description -}}<p class="article-meta">{{ . }}</p>{{- end -}}
     </div>
 
+    {{- if eq .Kind "term" -}}
+    {{- $currentCategory := .Title -}}
+    {{- $lowerCurrent := lower $currentCategory -}}
+    {{- $matchedParent := "" -}}
+    {{- range $parentName, $parentData := hugo.Data.categories.parents -}}
+    {{- range $parentData.childrenWithCounts -}}
+    {{- if eq (lower .name) $lowerCurrent -}}
+    {{- $matchedParent = $parentData -}}
+    {{- end -}}
+    {{- end -}}
+    {{- end -}}
+    {{- if $matchedParent -}}
+    <nav class="sibling-category-nav" aria-label="同グループの関連カテゴリ">
+        <div class="sibling-category-scroll">
+            <a href="{{ printf `parent-category/%s/` $matchedParent.slug | relURL }}" class="sibling-parent-badge">
+                <span aria-hidden="true">{{ $matchedParent.icon | default "📁" }}</span>
+                <span>{{ $matchedParent.name }}</span>
+                <span class="sibling-badge-count">({{ $matchedParent.productCount }})</span>
+            </a>
+            <span class="sibling-nav-divider" aria-hidden="true"></span>
+            {{- $validSiblings := where $matchedParent.childrenWithCounts "productCount" "gt" 0 -}}
+            {{- $sortedSiblings := first 12 (sort $validSiblings "productCount" "desc") -}}
+            {{- range $sortedSiblings -}}
+            {{- $isCurrent := eq (lower .name) $lowerCurrent -}}
+            {{- $sibUrl := printf "categories/%s/" (.name | urlize) | relURL -}}
+            {{- with $.Site.GetPage (printf "/categories/%s" (.name | urlize)) -}}
+            {{- $sibUrl = .RelPermalink -}}
+            {{- end -}}
+            <a href="{{ $sibUrl }}" class="sibling-category-pill{{ if $isCurrent }} active{{ end }}"{{ if $isCurrent }} aria-current="page"{{ end }}>
+                <span>{{ .name }}</span>
+                <span class="sibling-pill-count">({{ .productCount }})</span>
+            </a>
+            {{- end -}}
+        </div>
+    </nav>
+    {{- end -}}
+    {{- end -}}
+
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-sm);">
         <h2 style="font-size: 1.1rem; font-weight: bold; margin: 0; color: var(--color-text-main);">商品絞り込み</h2>
         <button type="button" id="filter-reset" class="bargain-category-reset-btn"

@@ -5,6 +5,7 @@
 
 import {
   BIKE_MOUNT_KEYWORDS,
+  CATEGORY_ALIAS_MAP,
   CHARGER_KEYWORDS,
   GAMEPAD_KEYWORDS,
   HEADPHONE_KEYWORDS,
@@ -34,7 +35,9 @@ export class CategorySanitizer {
       finalName = 'イヤホン・ヘッドホン';
     }
 
-    return CategorySanitizer.resolveGenericCategory(finalName, title);
+    finalName = CategorySanitizer.resolveGenericCategory(finalName, title);
+
+    return CATEGORY_ALIAS_MAP[finalName] ?? finalName;
   }
 
   /**

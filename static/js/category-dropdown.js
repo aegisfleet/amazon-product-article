@@ -14,6 +14,44 @@
     let groupCounts = {}; // NEW: Store product counts for parent category groups
     let dataLoaded = false;
 
+    const PRIMARY_LIMIT = 10;
+    const MIN_PRIMARY_COUNT = 5;
+    const POPULAR_TILE_LIMIT = 12;
+
+    const SUBCATEGORY_ICON_MAP = {
+        イヤホン: '🎧',
+        タブレット: '📱',
+        スマートフォン本体: '📱',
+        ディスプレイ: '🖥️',
+        シャンプー: '🧴',
+        スマートウォッチ: '⌚',
+        コンピュータモニターアーム: '🦾',
+        モニターアーム: '🦾',
+        モバイルバッテリー: '🔋',
+        標準型ノートパソコン: '💻',
+        ノートパソコン: '💻',
+        スティッククリーナー: '🧹',
+        ロボット型クリーナー: '🤖',
+        キーボード: '⌨️',
+        マウス: '🖱️',
+        プロテイン: '💪',
+        ホエイプロテインサプリメント: '💪',
+        化粧水: '✨',
+        ヘアドライヤー: '💨',
+        電動歯ブラシ: '🪥',
+        コーヒー豆: '☕',
+        ミネラルウォーター: '💧',
+        'Wi-Fiルーター': '📡',
+        ヘッドホン: '🎧',
+        スピーカー: '🔊'
+    };
+
+    const SUBCATEGORY_SHORT_LABELS = {
+        コンピュータモニターアーム: 'モニターアーム',
+        標準型ノートパソコン: 'ノートPC',
+        ホエイプロテインサプリメント: 'ホエイプロテイン'
+    };
+
     /**
      * Sort category groups by priority
      */
@@ -23,6 +61,29 @@
             const priorityB = b.priority !== undefined ? b.priority : 999;
             return priorityA - priorityB;
         });
+    }
+
+    /**
+     * Sort child category names by product count descending, then Japanese locale name
+     */
+    function sortChildCategoryNames(categories, countsMap) {
+        return [...categories].sort((a, b) => {
+            const countA = countsMap[a] || 0;
+            const countB = countsMap[b] || 0;
+            return countB - countA || a.localeCompare(b, 'ja');
+        });
+    }
+
+    /**
+     * Normalize search text (NFKC, lowercase, katakana -> hiragana)
+     */
+    function normalizeSearchText(str) {
+        if (!str) return '';
+        return str
+            .normalize('NFKC')
+            .toLowerCase()
+            .replace(/[\u30a1-\u30f6]/g, ch => String.fromCharCode(ch.charCodeAt(0) - 0x60))
+            .trim();
     }
 
     /**
@@ -65,7 +126,9 @@
 
                 for (const group of visibleGroups) {
                     const visibleChildren = group.childrenWithCounts
-                        ? group.childrenWithCounts.filter(child => child.productCount > 0)
+                        ? group.childrenWithCounts
+                            .filter(child => child.productCount > 0)
+                            .sort((a, b) => b.productCount - a.productCount || a.name.localeCompare(b.name, 'ja'))
                         : [];
 
                     if (visibleChildren.length > 0 || group.name === 'その他／全般' || (group.productCount !== undefined && group.productCount > 0)) {
@@ -194,6 +257,11 @@
                 });
                 groupCounts['その他／全般'] = (groupCounts['その他／全般'] || 0) + othersCount;
             }
+
+            // Sort child categories within every parent group by product count descending
+            for (const group of Object.keys(filteredGroups)) {
+                filteredGroups[group] = sortChildCategoryNames(filteredGroups[group], childCounts);
+            }
         }
         return filteredGroups;
     }
@@ -310,6 +378,95 @@
         }
     }
 
+    function createCategoryTag(category, url, isExtra) {
+        const tag = document.createElement('a');
+        tag.href = safeCategoryUrl(url);
+        tag.className = isExtra
+            ? 'category-tag-link category-tag-extra category-tag-extra-hidden'
+            : 'category-tag-link';
+        tag.dataset.categoryName = category;
+
+        const count = categoryCounts[category];
+        tag.textContent = count !== undefined ? `${category} (${count})` : category;
+        return tag;
+    }
+
+    function createExtraToggleButton(extraCount, tagsContainer) {
+        const moreBtn = document.createElement('button');
+        moreBtn.type = 'button';
+        moreBtn.className = 'category-more-toggle-btn';
+        moreBtn.dataset.extraCount = String(extraCount);
+        moreBtn.setAttribute('aria-expanded', 'false');
+        moreBtn.textContent = `＋ 他 ${extraCount} カテゴリを表示`;
+
+        moreBtn.addEventListener('click', function () {
+            const isExpanded = tagsContainer.classList.toggle('category-tags-expanded');
+            const extraTags = tagsContainer.querySelectorAll('.category-tag-extra');
+            extraTags.forEach(el => {
+                el.classList.toggle('category-tag-extra-hidden', !isExpanded);
+            });
+            this.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+            this.textContent = isExpanded
+                ? '－ 折りたたむ'
+                : `＋ 他 ${extraCount} カテゴリを表示`;
+        });
+
+        return moreBtn;
+    }
+
+    function populatePopularCategories() {
+        const popularGrid = document.getElementById('popular-categories-grid');
+        if (!popularGrid) return;
+
+        const groups = getFilteredGroups();
+        const urls = getCategoryUrls();
+
+        // Map each child category to its parent group icon as fallback
+        const childToGroupIcon = {};
+        for (const [groupName, categories] of Object.entries(groups)) {
+            if (groupName === 'その他／全般') continue;
+            const gIcon = categoryIcons[groupName] || '🏷️';
+            for (const cat of categories) {
+                if (!childToGroupIcon[cat]) {
+                    childToGroupIcon[cat] = gIcon;
+                }
+            }
+        }
+
+        const excludedNames = new Set(['その他／全般', 'その他', '一般']);
+        const candidates = Object.keys(urls)
+            .filter(cat => !excludedNames.has(cat) && (categoryCounts[cat] || 0) > 0)
+            .sort((a, b) => (categoryCounts[b] || 0) - (categoryCounts[a] || 0) || a.localeCompare(b, 'ja'))
+            .slice(0, POPULAR_TILE_LIMIT);
+
+        popularGrid.innerHTML = '';
+
+        candidates.forEach(cat => {
+            const tile = document.createElement('a');
+            tile.href = safeCategoryUrl(urls[cat]);
+            tile.className = 'popular-category-tile';
+            tile.title = `${cat} (${categoryCounts[cat] || 0}件)`;
+
+            const iconSpan = document.createElement('span');
+            iconSpan.className = 'popular-category-tile-icon';
+            iconSpan.setAttribute('aria-hidden', 'true');
+            iconSpan.textContent = SUBCATEGORY_ICON_MAP[cat] || childToGroupIcon[cat] || '🏷️';
+
+            const nameSpan = document.createElement('span');
+            nameSpan.className = 'popular-category-tile-name';
+            nameSpan.textContent = SUBCATEGORY_SHORT_LABELS[cat] || cat;
+
+            const countSpan = document.createElement('span');
+            countSpan.className = 'popular-category-tile-count';
+            countSpan.textContent = `(${categoryCounts[cat] || 0})`;
+
+            tile.appendChild(iconSpan);
+            tile.appendChild(nameSpan);
+            tile.appendChild(countSpan);
+            popularGrid.appendChild(tile);
+        });
+    }
+
     function populateGroupedView() {
         const groupedView = document.getElementById('category-grouped-view');
         if (!groupedView) return;
@@ -322,6 +479,7 @@
         Object.entries(groups).forEach(([groupName, categories]) => {
             const groupSection = document.createElement('div');
             groupSection.className = 'category-group-section category-collapsed';
+            groupSection.dataset.groupName = groupName;
 
             // Build parent category URL
             const slug = parentCategoryUrls[groupName];
@@ -374,22 +532,126 @@
             const tagsContainer = document.createElement('div');
             tagsContainer.className = 'category-tags-container';
 
-            categories.forEach(category => {
-
-                const tag = document.createElement('a');
-                tag.href = safeCategoryUrl(urls[category]);
-                tag.className = 'category-tag-link';
-
-                // Append product count if available
-                const count = categoryCounts[category];
-                tag.textContent = count !== undefined ? `${category} (${count})` : category;
-
-                tagsContainer.appendChild(tag);
+            const primaryChildren = categories.filter((cat, idx) => {
+                const count = categoryCounts[cat] || 0;
+                return idx < PRIMARY_LIMIT && (count >= MIN_PRIMARY_COUNT || idx < 5);
             });
+            const extraChildren = categories.slice(primaryChildren.length);
+
+            primaryChildren.forEach(category => {
+                tagsContainer.appendChild(createCategoryTag(category, urls[category], false));
+            });
+
+            if (extraChildren.length > 0) {
+                extraChildren.forEach(category => {
+                    tagsContainer.appendChild(createCategoryTag(category, urls[category], true));
+                });
+                tagsContainer.appendChild(createExtraToggleButton(extraChildren.length, tagsContainer));
+            }
 
             groupSection.appendChild(tagsContainer);
             groupedView.appendChild(groupSection);
         });
+    }
+
+    function applyGroupFilterState(section, normalizedQuery) {
+        const groupName = section.dataset.groupName || '';
+        const headingWrapper = section.querySelector('.category-heading-wrapper');
+        const tagsContainer = section.querySelector('.category-tags-container');
+        const childTags = tagsContainer ? Array.from(tagsContainer.querySelectorAll('.category-tag-link')) : [];
+        const moreBtn = tagsContainer ? tagsContainer.querySelector('.category-more-toggle-btn') : null;
+
+        if (!normalizedQuery) {
+            section.hidden = false;
+            section.classList.add('category-collapsed');
+            if (headingWrapper) {
+                headingWrapper.setAttribute('aria-expanded', 'false');
+                headingWrapper.setAttribute('aria-label', `${groupName}を展開`);
+            }
+            const isExpanded = tagsContainer?.classList.contains('category-tags-expanded') || false;
+            childTags.forEach(tag => {
+                tag.classList.remove('category-tag-highlight', 'category-tag-filter-hidden');
+                if (tag.classList.contains('category-tag-extra')) {
+                    tag.classList.toggle('category-tag-extra-hidden', !isExpanded);
+                }
+            });
+            if (moreBtn) {
+                moreBtn.hidden = false;
+            }
+            return true;
+        }
+
+        const groupMatches = normalizeSearchText(groupName).includes(normalizedQuery);
+        let matchingChildrenCount = 0;
+
+        childTags.forEach(tag => {
+            const catName = tag.dataset.categoryName || '';
+            const isMatch = normalizeSearchText(catName).includes(normalizedQuery);
+            tag.classList.toggle('category-tag-highlight', isMatch);
+            if (isMatch) {
+                matchingChildrenCount += 1;
+                tag.classList.remove('category-tag-extra-hidden', 'category-tag-filter-hidden');
+            } else if (groupMatches) {
+                tag.classList.remove('category-tag-filter-hidden');
+            } else {
+                tag.classList.add('category-tag-filter-hidden');
+            }
+        });
+
+        const hasMatch = groupMatches || matchingChildrenCount > 0;
+        section.hidden = !hasMatch;
+
+        if (hasMatch) {
+            section.classList.remove('category-collapsed');
+            if (headingWrapper) {
+                headingWrapper.setAttribute('aria-expanded', 'true');
+                headingWrapper.setAttribute('aria-label', `${groupName}を折り畳む`);
+            }
+            if (moreBtn) {
+                moreBtn.hidden = !groupMatches;
+            }
+        }
+
+        return hasMatch;
+    }
+
+    function initCategoryFilter() {
+        const filterInput = document.getElementById('category-filter-input');
+        const clearBtn = document.getElementById('category-filter-clear');
+        const emptyMsg = document.getElementById('category-filter-empty');
+        const groupedView = document.getElementById('category-grouped-view');
+
+        if (!filterInput || !groupedView) return;
+
+        function runFilter() {
+            const rawQuery = filterInput.value || '';
+            const normalizedQuery = normalizeSearchText(rawQuery);
+            if (clearBtn) {
+                clearBtn.hidden = normalizedQuery.length === 0;
+            }
+
+            const sections = groupedView.querySelectorAll('.category-group-section');
+            let matchedSections = 0;
+            sections.forEach(section => {
+                if (applyGroupFilterState(section, normalizedQuery)) {
+                    matchedSections += 1;
+                }
+            });
+
+            if (emptyMsg) {
+                emptyMsg.hidden = matchedSections > 0;
+            }
+        }
+
+        filterInput.addEventListener('input', runFilter);
+
+        if (clearBtn) {
+            clearBtn.addEventListener('click', () => {
+                filterInput.value = '';
+                runFilter();
+                filterInput.focus();
+            });
+        }
     }
 
     async function init() {
@@ -401,7 +663,9 @@
         }
 
         populateGroupSelect();
+        populatePopularCategories();
         populateGroupedView();
+        initCategoryFilter();
     }
 
     // Use event delegation on document for reliable event handling
