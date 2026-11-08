@@ -336,4 +336,68 @@ describe('CreatorsAPICache', () => {
     expect(cache.getTimestamp('B_TS_TEST')).toBe(fixedTime);
     expect(cache.getTimestamp('B_MISSING')).toBeUndefined();
   });
+
+  test('isOutOfStockData should detect zero price and out-of-stock availability strings', () => {
+    expect(CreatorsAPICache.isOutOfStockData(null)).toBe(true);
+    expect(CreatorsAPICache.isOutOfStockData(undefined)).toBe(true);
+    expect(
+      CreatorsAPICache.isOutOfStockData({
+        ...mockProduct,
+        price: { amount: 0, currency: 'JPY', formatted: '価格情報なし' },
+      }),
+    ).toBe(true);
+    expect(
+      CreatorsAPICache.isOutOfStockData({
+        ...mockProduct,
+        availability: '現在在庫切れです。',
+      }),
+    ).toBe(true);
+    expect(
+      CreatorsAPICache.isOutOfStockData({
+        ...mockProduct,
+        availability: 'Currently unavailable.',
+      }),
+    ).toBe(true);
+    expect(
+      CreatorsAPICache.isOutOfStockData({
+        ...mockProduct,
+        availability: '在庫あり。',
+      }),
+    ).toBe(false);
+    expect(CreatorsAPICache.isOutOfStockData(mockProduct)).toBe(false);
+  });
+
+  test('should record, preserve, and reset outOfStockSince across set and markInvalid/markPermanentInvalid', () => {
+    const pastOutOfStockTime = Date.now() - 30 * 24 * 60 * 60 * 1000;
+
+    // 1. Set in-stock product -> outOfStockSince should be undefined
+    cache.set('B_OOS_TEST', mockProduct);
+    expect((cache as any).cache.B_OOS_TEST.outOfStockSince).toBeUndefined();
+
+    // 2. Set no-price product (while preserving previous valid price) -> outOfStockSince should be set
+    const noPriceProduct: ProductDetail = {
+      ...mockProduct,
+      price: { amount: 0, currency: 'JPY', formatted: '価格情報なし' },
+    };
+    cache.set('B_OOS_TEST', noPriceProduct);
+    const entryAfterNoPrice = (cache as any).cache.B_OOS_TEST;
+    expect(entryAfterNoPrice.data.price.amount).toBe(1000); // preserved display price
+    expect(typeof entryAfterNoPrice.outOfStockSince).toBe('number');
+
+    // Simulate older outOfStockSince and expired timestamp
+    entryAfterNoPrice.outOfStockSince = pastOutOfStockTime;
+    entryAfterNoPrice.timestamp = Date.now() - 25 * 60 * 60 * 1000;
+
+    // 3. markInvalid should preserve existing outOfStockSince
+    cache.markInvalid('B_OOS_TEST');
+    expect((cache as any).cache.B_OOS_TEST.outOfStockSince).toBe(pastOutOfStockTime);
+
+    // 4. markPermanentInvalid should preserve existing outOfStockSince
+    cache.markPermanentInvalid('B_OOS_TEST');
+    expect((cache as any).cache.B_OOS_TEST.outOfStockSince).toBe(pastOutOfStockTime);
+
+    // 5. Restock -> outOfStockSince should be cleared
+    cache.set('B_OOS_TEST', mockProduct);
+    expect((cache as any).cache.B_OOS_TEST.outOfStockSince).toBeUndefined();
+  });
 });

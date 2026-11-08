@@ -26,11 +26,13 @@
 import fs from 'node:fs';
 import https from 'node:https';
 import path from 'node:path';
+import { type CacheEntry, CreatorsAPICache } from '../../api/CreatorsAPICache';
 import { enhanceCategories } from '../enhance-categories';
 
 export interface CheckResult {
   asin: string;
   isDead: boolean;
+  reason?: '404' | 'stale_out_of_stock' | undefined;
   statusCode: number;
   title: string | undefined;
   hasArticle: boolean;
@@ -53,7 +55,7 @@ export interface OrphanFilesResult {
 
 export interface CliOptions {
   mode: 'audit' | 'prune';
-  scope: 'perm-invalid' | 'all' | 'single';
+  scope: 'perm-invalid' | 'stale' | 'all' | 'single';
   singleAsin: string | undefined;
   dryRun: boolean;
   concurrency: number;
@@ -62,9 +64,9 @@ export interface CliOptions {
   checkReferences: boolean;
   cleanReferences: boolean;
   checkOrphans: boolean;
+  staleDays: number;
+  maxPrune: number;
 }
-
-import { CreatorsAPICache } from '../../api/CreatorsAPICache';
 
 export const ROOT_DIR = path.resolve(__dirname, '../../..');
 export const ARTICLES_DIR = path.join(ROOT_DIR, 'content/articles');
@@ -73,6 +75,7 @@ export const CACHE_DIR = path.join(ROOT_DIR, 'data/cache');
 export const SHARDS_DIR = path.join(CACHE_DIR, 'paapi');
 export const CACHE_PATH = path.join(CACHE_DIR, 'paapi-product-cache.json');
 const TITLE_REGEX = /<title>([^<]*)<\/title>/i;
+const MS_PER_DAY = 24 * 60 * 60 * 1000;
 
 // コマンドライン引数のパース
 export function parseArgs(customArgs?: string[]): CliOptions {
@@ -88,6 +91,8 @@ export function parseArgs(customArgs?: string[]): CliOptions {
     checkReferences: true,
     cleanReferences: true,
     checkOrphans: true,
+    staleDays: 90,
+    maxPrune: 0,
   };
 
   let i = 0;
@@ -106,11 +111,22 @@ export function parseArgs(customArgs?: string[]): CliOptions {
         break;
       case '--scope': {
         const val = args[i++];
-        if (val === 'all' || val === 'perm-invalid') {
+        if (val === 'all' || val === 'perm-invalid' || val === 'stale') {
           options.scope = val;
         }
         break;
       }
+      case '--include-stale':
+        if (options.scope === 'perm-invalid') {
+          options.scope = 'stale';
+        }
+        break;
+      case '--stale-days':
+        options.staleDays = Number.parseInt(args[i++] || '90', 10) || 90;
+        break;
+      case '--max-prune':
+        options.maxPrune = Number.parseInt(args[i++] || '0', 10) || 0;
+        break;
       case '--asin':
         options.scope = 'single';
         options.singleAsin = args[i++];
@@ -149,38 +165,135 @@ function loadCache(): Record<string, any> {
   }
 }
 
+// 記事Frontmatterの在庫切れ判定ヘルパー
+function checkArticleOutOfStock(articlePath: string): boolean {
+  if (!fs.existsSync(articlePath)) return false;
+  try {
+    const head = fs.readFileSync(articlePath, 'utf8').slice(0, 1500);
+    return (
+      /^in_stock:\s*false\b/m.test(head) ||
+      /^availability:\s*["']?(?:在庫切れ|Currently unavailable|Out of Stock|一時的に在庫切れ)/m.test(head)
+    );
+  } catch {
+    return false;
+  }
+}
+
+// 調査JSONの最終調査日時（ミリ秒）取得ヘルパー
+function getLastInvestigatedTime(investPath: string): number | undefined {
+  if (!fs.existsSync(investPath)) return undefined;
+  try {
+    const parsed = JSON.parse(fs.readFileSync(investPath, 'utf8'));
+    const lastInvestigated = parsed?.analysis?.lastInvestigated;
+    if (typeof lastInvestigated !== 'string') return undefined;
+    const investigatedTime = new Date(lastInvestigated).getTime();
+    return Number.isNaN(investigatedTime) ? undefined : investigatedTime;
+  } catch {
+    return undefined;
+  }
+}
+
+/**
+ * 記事Frontmatterまたは調査JSON・キャッシュから長期在庫切れ候補かどうかを判定する
+ */
+export function isLongOutOfStockEntry(
+  asin: string,
+  entry: Partial<CacheEntry> | undefined,
+  staleCutoffMs: number,
+  articlesDir: string = ARTICLES_DIR,
+  investigationsDir: string = INVESTIGATIONS_DIR,
+): boolean {
+  // 1. キャッシュに outOfStockSince が記録されており、閾値日数以上経過している場合
+  if (typeof entry?.outOfStockSince === 'number') {
+    return entry.outOfStockSince <= staleCutoffMs;
+  }
+
+  // 2. 既存データのフォールバック判定:
+  // キャッシュが invalid / permanent_invalid、または data が在庫切れ、または記事Frontmatterが in_stock: false
+  const isCacheOutOfStock = Boolean(
+    entry &&
+      (entry.status === 'permanent_invalid' ||
+        entry.status === 'invalid' ||
+        CreatorsAPICache.isOutOfStockData(entry.data)),
+  );
+
+  const isArticleOutOfStock = checkArticleOutOfStock(path.join(articlesDir, `${asin}.md`));
+
+  if (!isCacheOutOfStock && !isArticleOutOfStock) {
+    return false;
+  }
+
+  // 調査データの lastInvestigated またはキャッシュ timestamp が閾値日数以前か確認
+  const investigatedTime = getLastInvestigatedTime(path.join(investigationsDir, `${asin}.json`));
+  if (investigatedTime !== undefined && investigatedTime <= staleCutoffMs) {
+    return true;
+  }
+
+  return typeof entry?.timestamp === 'number' && entry.timestamp <= staleCutoffMs;
+}
+
 // 対象ASINの収集
-function collectTargetAsins(options: CliOptions, cache: Record<string, any>): string[] {
+export function collectTargetAsins(
+  options: CliOptions,
+  cache: Record<string, any>,
+  articlesDir: string = ARTICLES_DIR,
+  investigationsDir: string = INVESTIGATIONS_DIR,
+): string[] {
   if (options.scope === 'single' && options.singleAsin) {
     return [options.singleAsin];
   }
 
-  const articleAsins = fs.existsSync(ARTICLES_DIR)
+  const articleAsins = fs.existsSync(articlesDir)
     ? fs
-        .readdirSync(ARTICLES_DIR)
+        .readdirSync(articlesDir)
         .filter((f) => f.endsWith('.md'))
         .map((f) => f.replace('.md', ''))
     : [];
 
+  const investAsins = fs.existsSync(investigationsDir)
+    ? fs
+        .readdirSync(investigationsDir)
+        .filter((f) => f.endsWith('.json'))
+        .map((f) => f.replace('.json', ''))
+    : [];
+
+  const productAsins = Array.from(new Set([...articleAsins, ...investAsins]));
+
   if (options.scope === 'all') {
-    return articleAsins;
+    return productAsins;
   }
 
-  // perm-invalid (デフォルト): キャッシュが permanent_invalid かつ記事が存在するもの
-  return Object.keys(cache).filter(
-    (asin) => cache[asin]?.status === 'permanent_invalid' && articleAsins.includes(asin),
-  );
+  const staleCutoffMs = Date.now() - options.staleDays * MS_PER_DAY;
+
+  return productAsins.filter((asin) => {
+    const entry = cache[asin];
+    if (entry?.status === 'permanent_invalid') {
+      return true;
+    }
+    if (options.scope === 'stale') {
+      return isLongOutOfStockEntry(asin, entry, staleCutoffMs, articlesDir, investigationsDir);
+    }
+    return false;
+  });
 }
 
-// Amazon HTTP 404 チェック
+// Amazon HTTP 404 および在庫切れチェック
 function checkAmazonUrl(
   asin: string,
-): Promise<{ statusCode: number; isDead: boolean; title: string | undefined; error: string | undefined }> {
+  checkStaleOutOfStock: boolean = false,
+): Promise<{
+  statusCode: number;
+  isDead: boolean;
+  reason?: '404' | 'stale_out_of_stock' | undefined;
+  title: string | undefined;
+  error: string | undefined;
+}> {
   return new Promise((resolve) => {
     let isResolved = false;
     const safeResolve = (val: {
       statusCode: number;
       isDead: boolean;
+      reason?: '404' | 'stale_out_of_stock' | undefined;
       title: string | undefined;
       error: string | undefined;
     }) => {
@@ -222,9 +335,26 @@ function checkAmazonUrl(
             body.includes('ご指定のページが見つかりませんでした') ||
             body.includes('お探しのページが見つかりませんでした');
 
+          const isOutOfStockOnPage =
+            body.includes('現在在庫切れです') ||
+            body.includes('一時的に在庫切れ') ||
+            body.includes('Currently unavailable') ||
+            body.includes('Out of Stock');
+
+          let isDead = false;
+          let reason: '404' | 'stale_out_of_stock' | undefined;
+          if (is404) {
+            isDead = true;
+            reason = '404';
+          } else if (checkStaleOutOfStock && isOutOfStockOnPage) {
+            isDead = true;
+            reason = 'stale_out_of_stock';
+          }
+
           safeResolve({
             statusCode: res.statusCode || 200,
-            isDead: is404,
+            isDead,
+            reason,
             title,
             error: undefined,
           });
@@ -256,19 +386,21 @@ function checkAmazonUrl(
 // チャンクごとに並列実行
 async function checkAsinsInBatches(
   asins: string[],
-  concurrency: number,
-  delayMs: number,
+  options: CliOptions,
   cache: Record<string, any>,
 ): Promise<CheckResult[]> {
   const results: CheckResult[] = [];
   const total = asins.length;
+  const { concurrency, delayMs, staleDays, scope } = options;
+  const staleCutoffMs = Date.now() - staleDays * MS_PER_DAY;
 
   const processBatch = async (startIndex: number): Promise<void> => {
     if (startIndex >= total) return;
 
     const chunk = asins.slice(startIndex, startIndex + concurrency);
     const chunkPromises = chunk.map(async (asin) => {
-      const check = await checkAmazonUrl(asin);
+      const checkStale = scope !== 'perm-invalid' && isLongOutOfStockEntry(asin, cache[asin], staleCutoffMs);
+      const check = await checkAmazonUrl(asin, checkStale);
       const articlePath = path.join(ARTICLES_DIR, `${asin}.md`);
       const investPath = path.join(INVESTIGATIONS_DIR, `${asin}.json`);
 
@@ -280,6 +412,7 @@ async function checkAsinsInBatches(
       return {
         asin,
         isDead: check.isDead,
+        reason: check.reason,
         statusCode: check.statusCode,
         title: displayTitle,
         hasArticle: fs.existsSync(articlePath),
@@ -627,21 +760,26 @@ export function printAuditResults(
   options: CliOptions,
 ): { deadItems: CheckResult[]; references: CompetitorReference[]; orphans: OrphanFilesResult } {
   const deadItems = results.filter((r) => r.isDead);
+  const dead404Count = deadItems.filter((r) => r.reason !== 'stale_out_of_stock').length;
+  const deadStaleCount = deadItems.filter((r) => r.reason === 'stale_out_of_stock').length;
   const aliveItems = results.filter((r) => !r.isDead && r.statusCode === 200);
   const errorItems = results.filter((r) => !r.isDead && r.statusCode !== 200);
 
   console.log('\n=== 調査結果 ===');
   console.log(`チェック総数: ${results.length} 件`);
-  console.log(`❌ デッド商品 (404 Not Found): ${deadItems.length} 件`);
-  console.log(`✅ 正常商品 (200 OK): ${aliveItems.length} 件`);
+  console.log(
+    `❌ 削除対象商品: ${deadItems.length} 件 (404 Not Found: ${dead404Count} 件, ${options.staleDays}日以上在庫切れ: ${deadStaleCount} 件)`,
+  );
+  console.log(`✅ 正常・継続保持商品 (200 OK): ${aliveItems.length} 件`);
   if (errorItems.length > 0) {
     console.log(`⚠️ その他/エラー: ${errorItems.length} 件`);
   }
 
   if (deadItems.length > 0) {
-    console.log('\n--- 検出されたデッド商品一覧 ---');
+    console.log('\n--- 検出された削除対象商品一覧 ---');
     for (const item of deadItems) {
-      console.log(`- [${item.asin}] ${item.title || 'タイトルなし'}`);
+      const reasonLabel = item.reason === 'stale_out_of_stock' ? '長期在庫切れ' : '404';
+      console.log(`- [${item.asin}] (${reasonLabel}) ${item.title || 'タイトルなし'}`);
     }
   }
 
@@ -658,18 +796,25 @@ function handlePruning(deadItems: CheckResult[], options: CliOptions, cache: Rec
     return;
   }
 
-  executePruning(deadItems, options.dryRun, cache, options.cleanReferences);
+  const targetDeadItems =
+    options.maxPrune > 0 && deadItems.length > options.maxPrune ? deadItems.slice(0, options.maxPrune) : deadItems;
 
-  if (!options.dryRun && !options.skipPrebuild) {
+  if (targetDeadItems.length < deadItems.length) {
+    console.log(`\n※ --max-prune 制限により ${deadItems.length} 件中 ${targetDeadItems.length} 件のみ削除します。`);
+  }
+
+  executePruning(targetDeadItems, options.dryRun, cache, options.cleanReferences);
+
+  if (!options.dryRun && !options.skipPrebuild && fs.existsSync(ARTICLES_DIR)) {
     rebuildSiteIndex();
   }
 }
 
 async function main() {
   const options = parseArgs();
-  console.log('=== Amazon デッド商品 調査・棚卸しツール ===');
+  console.log('=== Amazon デッド商品・長期在庫切れ 調査・棚卸しツール ===');
   console.log(`Mode: ${options.mode.toUpperCase()}${options.dryRun ? ' (DRY RUN)' : ''}`);
-  console.log(`Scope: ${options.scope}`);
+  console.log(`Scope: ${options.scope}${options.scope === 'stale' ? ` (staleDays: ${options.staleDays})` : ''}`);
 
   const cache = loadCache();
   const targetAsins = collectTargetAsins(options, cache);
@@ -681,7 +826,7 @@ async function main() {
   }
 
   console.log('\nAmazon ページ疎通確認中...');
-  const results = await checkAsinsInBatches(targetAsins, options.concurrency, options.delayMs, cache);
+  const results = await checkAsinsInBatches(targetAsins, options, cache);
   const { deadItems } = printAuditResults(results, options);
 
   if (options.mode === 'prune') {

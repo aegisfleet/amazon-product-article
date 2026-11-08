@@ -3,8 +3,10 @@ import os from 'node:os';
 import path from 'node:path';
 import {
   cleanCompetitorReferences,
+  collectTargetAsins,
   findCompetitorReferences,
   findOrphanedFiles,
+  isLongOutOfStockEntry,
   parseArgs,
 } from '../maintenance/prune-dead-products';
 
@@ -155,6 +157,82 @@ describe('prune-dead-products 参照整合性チェック', () => {
     it('--skip-orphans オプションで孤立ファイルチェックが無効化される', () => {
       const options = parseArgs(['--skip-orphans']);
       expect(options.checkOrphans).toBe(false);
+    });
+
+    it('--scope stale, --stale-days, --max-prune, --include-stale を正しく解釈する', () => {
+      const options1 = parseArgs(['--scope', 'stale', '--stale-days', '60', '--max-prune', '25']);
+      expect(options1.scope).toBe('stale');
+      expect(options1.staleDays).toBe(60);
+      expect(options1.maxPrune).toBe(25);
+
+      const options2 = parseArgs(['--include-stale']);
+      expect(options2.scope).toBe('stale');
+      expect(options2.staleDays).toBe(90);
+    });
+  });
+
+  describe('isLongOutOfStockEntry & collectTargetAsins', () => {
+    const DAY_MS = 24 * 60 * 60 * 1000;
+
+    it('outOfStockSince が閾値以前であれば true、閾値より新しければ false を返す', () => {
+      const now = Date.now();
+      const cutoff = now - 90 * DAY_MS;
+
+      expect(
+        isLongOutOfStockEntry(
+          'B0STALE001',
+          { status: 'valid', timestamp: now, outOfStockSince: now - 95 * DAY_MS, data: null },
+          cutoff,
+          articlesDir,
+          investDir,
+        ),
+      ).toBe(true);
+
+      expect(
+        isLongOutOfStockEntry(
+          'B0RECENT01',
+          { status: 'valid', timestamp: now, outOfStockSince: now - 10 * DAY_MS, data: null },
+          cutoff,
+          articlesDir,
+          investDir,
+        ),
+      ).toBe(false);
+    });
+
+    it('outOfStockSince 未設定時でも記事またはキャッシュが在庫切れかつ最終調査日が閾値以前なら true を返す', () => {
+      const now = Date.now();
+      const cutoff = now - 90 * DAY_MS;
+      const oldDateIso = new Date(now - 100 * DAY_MS).toISOString();
+
+      fs.writeFileSync(path.join(articlesDir, 'B0LEGACY01.md'), '---\ntitle: "テスト"\nin_stock: false\n---\n本文');
+      fs.writeFileSync(
+        path.join(investDir, 'B0LEGACY01.json'),
+        JSON.stringify({ analysis: { lastInvestigated: oldDateIso } }),
+      );
+
+      expect(isLongOutOfStockEntry('B0LEGACY01', undefined, cutoff, articlesDir, investDir)).toBe(true);
+    });
+
+    it('collectTargetAsins は scope=stale で permanent_invalid と長期在庫切れ候補の両方を抽出する', () => {
+      const now = Date.now();
+      fs.writeFileSync(path.join(investDir, 'B0PERM0001.json'), '{}');
+      fs.writeFileSync(path.join(investDir, 'B0STALE001.json'), '{}');
+      fs.writeFileSync(path.join(investDir, 'B0VALID001.json'), '{}');
+
+      const cache = {
+        B0PERM0001: { status: 'permanent_invalid', timestamp: now, data: null },
+        B0STALE001: { status: 'valid', timestamp: now, outOfStockSince: now - 95 * DAY_MS, data: null },
+        B0VALID001: {
+          status: 'valid',
+          timestamp: now,
+          data: { price: { amount: 1500, currency: 'JPY', formatted: '￥1,500' }, availability: '在庫あり' },
+        },
+      };
+
+      const options = parseArgs(['--scope', 'stale', '--stale-days', '90']);
+      const targets = collectTargetAsins(options, cache, articlesDir, investDir);
+
+      expect(targets.sort()).toEqual(['B0PERM0001', 'B0STALE001']);
     });
   });
 });

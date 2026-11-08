@@ -1,4 +1,4 @@
-name: Update Cache Order
+name: Update Cache Order & Prune Stale Products
 
 on:
   schedule:
@@ -28,10 +28,18 @@ jobs:
     - name: Install dependencies
       run: pnpm install --frozen-lockfile --ignore-scripts
     
+    - name: Prune dead and 90-day out-of-stock products
+      run: pnpm run prune:dead -- --skip-prebuild
+    
     - name: Sort cache by status
       run: pnpm exec ts-node src/scripts/maintenance/sort-cache-by-status.ts
       
-    - name: Commit sorted cache
+    - name: Commit pruned files and sorted cache to main
       run: |
         chmod +x .github/workflows/scripts/git-commit-push.sh
-        ./.github/workflows/scripts/git-commit-push.sh "chore: Sort product cache by status [skip ci]" "data/cache/paapi"
+        if [ -n "$(git status --porcelain data/investigations)" ]; then
+          COMMIT_MSG="chore: Prune 90-day out-of-stock products and sort cache"
+        else
+          COMMIT_MSG="chore: Sort product cache by status [skip ci]"
+        fi
+        ./.github/workflows/scripts/git-commit-push.sh "$COMMIT_MSG" "data/investigations data/cache/paapi"

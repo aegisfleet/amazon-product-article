@@ -9,6 +9,7 @@ export interface CacheEntry {
   status: 'valid' | 'invalid' | 'permanent_invalid';
   previousPrice?: number;
   priceChangedAt?: number;
+  outOfStockSince?: number;
 }
 
 export interface CacheStore {
@@ -76,11 +77,13 @@ export class CreatorsAPICache {
 
     const previousPrice = typeof entry.previousPrice === 'number' ? entry.previousPrice : undefined;
     const priceChangedAt = typeof entry.priceChangedAt === 'number' ? entry.priceChangedAt : undefined;
+    const outOfStockSince = typeof entry.outOfStockSince === 'number' ? entry.outOfStockSince : undefined;
 
     if (entry.status) {
       const normalized: CacheEntry = entry as CacheEntry;
       if (previousPrice !== undefined) normalized.previousPrice = previousPrice;
       if (priceChangedAt !== undefined) normalized.priceChangedAt = priceChangedAt;
+      if (outOfStockSince !== undefined) normalized.outOfStockSince = outOfStockSince;
       return normalized;
     }
 
@@ -91,6 +94,7 @@ export class CreatorsAPICache {
       status: 'valid',
       ...(previousPrice !== undefined && { previousPrice }),
       ...(priceChangedAt !== undefined && { priceChangedAt }),
+      ...(outOfStockSince !== undefined && { outOfStockSince }),
     };
   }
 
@@ -413,6 +417,20 @@ export class CreatorsAPICache {
   }
 
   /**
+   * Check if product data indicates out-of-stock or missing offer price
+   */
+  public static isOutOfStockData(data: ProductDetail | null | undefined): boolean {
+    if (!data?.price || data.price.amount === 0) return true;
+    const avail = data.availability || '';
+    return (
+      avail.includes('在庫切れ') ||
+      avail.includes('Currently unavailable') ||
+      avail.includes('Out of Stock') ||
+      avail.includes('一時的に在庫切れ')
+    );
+  }
+
+  /**
    * Set item in cache as valid
    * If new data has no price info but existing cache has valid price, preserve it
    */
@@ -425,6 +443,10 @@ export class CreatorsAPICache {
     const existingEntry = this.cache[asin];
     let previousPrice = existingEntry?.previousPrice;
     let priceChangedAt = existingEntry?.priceChangedAt;
+
+    // 価格上書き前に実際の在庫切れ・価格欠落状態を判定
+    const isCurrentlyOutOfStock = this.isNoPriceData(sanitizedData) || CreatorsAPICache.isOutOfStockData(sanitizedData);
+    const outOfStockSince = isCurrentlyOutOfStock ? (existingEntry?.outOfStockSince ?? Date.now()) : undefined;
 
     const oldPrice = existingEntry?.data?.price?.amount;
     const newPrice = sanitizedData?.price?.amount;
@@ -452,6 +474,7 @@ export class CreatorsAPICache {
       status: 'valid',
       ...(previousPrice !== undefined && { previousPrice }),
       ...(priceChangedAt !== undefined && { priceChangedAt }),
+      ...(outOfStockSince !== undefined && { outOfStockSince }),
     };
 
     this.dirtyShards.add(shardKey);
@@ -489,10 +512,14 @@ export class CreatorsAPICache {
       return;
     }
 
+    const outOfStockSince = existing?.outOfStockSince ?? Date.now();
     this.cache[asin] = {
       data: this.sanitizePreservedData(existing?.data),
       timestamp: Date.now(),
       status: 'invalid',
+      ...(existing?.previousPrice !== undefined && { previousPrice: existing.previousPrice }),
+      ...(existing?.priceChangedAt !== undefined && { priceChangedAt: existing.priceChangedAt }),
+      outOfStockSince,
     };
 
     this.dirtyShards.add(shardKey);
@@ -513,10 +540,14 @@ export class CreatorsAPICache {
       return;
     }
 
+    const outOfStockSince = existing?.outOfStockSince ?? Date.now();
     this.cache[asin] = {
       data: this.sanitizePreservedData(existing?.data),
       timestamp: Date.now(),
       status: 'permanent_invalid',
+      ...(existing?.previousPrice !== undefined && { previousPrice: existing.previousPrice }),
+      ...(existing?.priceChangedAt !== undefined && { priceChangedAt: existing.priceChangedAt }),
+      outOfStockSince,
     };
 
     this.dirtyShards.add(shardKey);
