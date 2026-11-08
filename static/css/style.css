@@ -3170,7 +3170,7 @@ a.competitor-link:hover,
   font-size: 0.82rem;
   font-weight: 600;
   min-width: 0;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .popular-category-tile:hover {
@@ -3393,7 +3393,7 @@ button.category-pill {
   font-family: inherit;
   color: var(--color-primary);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .category-pills-toggle-btn:hover {
@@ -3468,7 +3468,7 @@ button.category-pill {
   text-decoration: none;
   white-space: nowrap;
   flex-shrink: 0;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .sibling-category-pill:hover {
@@ -3542,7 +3542,7 @@ button.category-pill {
   font-family: inherit;
   color: var(--color-primary);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .category-more-toggle-btn[hidden] {
