@@ -30,8 +30,29 @@ jobs:
     - name: Install dependencies
       run: pnpm install --frozen-lockfile --ignore-scripts
 
+    - name: Cache Hugo binary
+      id: cache-hugo
+      uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+      with:
+        path: node_modules/.pnpm/hugo-extended@*/node_modules/hugo-extended/bin
+        key: hugo-extended-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('pnpm-lock.yaml') }}
+
     - name: Setup Hugo binary
-      run: pnpm rebuild hugo-extended
+      if: steps.cache-hugo.outputs.cache-hit != 'true'
+      run: |
+        for i in 1 2 3 4 5; do
+          echo "Attempt $i to install Hugo binary..."
+          if pnpm rebuild hugo-extended; then
+            echo "Hugo binary setup succeeded."
+            exit 0
+          fi
+          if [ "$i" -lt 5 ]; then
+            echo "Download failed, retrying in 20 seconds..."
+            sleep 20
+          fi
+        done
+        echo "Failed to setup Hugo binary after 5 attempts."
+        exit 1
 
     - name: Build project
       run: pnpm run build
