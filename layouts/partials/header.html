@@ -42,13 +42,13 @@
             var links = document.querySelectorAll('.header-nav-link');
             links.forEach(function (link) {
                 var href = link.getAttribute('href');
-                if (!href || link.getAttribute('target') === '_blank' || href.indexOf('http') === 0 || href.indexOf('#') !== -1) return;
+                if (!href || link.getAttribute('target') === '_blank' || href.startsWith('http') || href.includes('#')) return;
                 var isHome = href === '/' || href === '' || href.endsWith('/index.html');
                 var isMatch = false;
                 if (isHome) {
                     isMatch = currentPath === '/' || currentPath === '' || currentPath.endsWith('/index.html');
                 } else {
-                    isMatch = currentPath === href || (href !== '/' && currentPath.indexOf(href) === 0);
+                    isMatch = currentPath === href || (href !== '/' && currentPath.startsWith(href));
                 }
                 if (isMatch) {
                     link.classList.add('active');
