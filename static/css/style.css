@@ -3245,6 +3245,15 @@ a.competitor-link:hover,
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
 }
 
+.category-filter-input::-webkit-search-cancel-button,
+.category-filter-input::-webkit-search-decoration,
+.category-filter-input::-webkit-search-results-button,
+.category-filter-input::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+
 .category-filter-clear-btn {
   position: absolute;
   right: 0.65rem;
