@@ -29,7 +29,9 @@
         "userType": "出張が多いビジネスマン",
         "scenario": "数日間の出張での利用",
         "experience": "20000mAhの大容量のおかげで、出張中にスマートフォンのバッテリー切れを気にすることなく過ごせました。ただ、約480gの重さはカバンに入れるとずっしりと感じます。パススルー充電ができるので、ホテルでの充電が1つのコンセントで済むのは非常に助かります。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -52,7 +54,9 @@
         "claim": "おまかせ充電で接続機器を自動で見分けて適した出力で最速に充電できる",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "メーカーの技術仕様として記載されており、一般的なスマートICと同等の機能と認められる"
       },
@@ -60,7 +64,9 @@
         "claim": "まとめて充電で本体とスマートフォンを充電できる",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "パススルー充電機能として広く認知されている仕様"
       }
@@ -91,19 +97,6 @@
         "differentiators": [
           "エレコム EC-C07BKの利点：エレコム独自の「おまかせ充電」「強制出力モード」などの安全機能に魅力を感じる人に適している。",
           "オウルテック モバイルバッテリーの利点：20000mAhでありながら約344gと軽量さを求める人、PPSによるより効率的な充電や3ポート同時充電を求める人に適している。"
-        ]
-      },
-      {
-        "name": "SOOEO モバイルバッテリー 20000mAh",
-        "asin": "B0F43XLHSM",
-        "priceComparison": "対象商品よりも大幅に安いが、PD 20W対応ではなく最大12W出力にとどまるため、最新スマホの急速充電性能を求める場合は注意が必要。",
-        "featureComparison": [
-          "共通点：20000mAh、複数ポート搭載",
-          "相違点：SOOEOは出力が最大2.4A（12W）でPD 20W非対応。ただし、重量が約171gと極めて軽量・薄型を謳っている。"
-        ],
-        "differentiators": [
-          "エレコム EC-C07BKの利点：PD 20Wの急速充電スピードが必要な人、国内有名メーカーの信頼性を重視する人に適している。",
-          "SOOEO モバイルバッテリーの利点：充電速度よりも圧倒的な薄さや軽さ、安さを最優先する人に適している。"
         ]
       },
       {
@@ -169,7 +162,12 @@
       "ports": "2ポート (USB Type-C × 1, USB-A × 1)",
       "weight": "約480g",
       "color": "ブラック",
-      "features": ["おまかせ充電", "まとめて充電(パススルー)", "低電流モード", "強制出力モード"]
+      "features": [
+        "おまかせ充電",
+        "まとめて充電(パススルー)",
+        "低電流モード",
+        "強制出力モード"
+      ]
     }
   }
 }
