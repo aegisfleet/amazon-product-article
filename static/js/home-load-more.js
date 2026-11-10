@@ -1,3 +1,4 @@
+if (typeof document !== 'undefined') {
 document.addEventListener('DOMContentLoaded', function () {
     const loadMoreButton = document.getElementById('load-more-button');
     const productGrid = document.getElementById('product-grid');
@@ -177,17 +178,33 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+}
 
 // Map index.json item to renderCard format
 function mapIndexItemToProduct(item) {
     let specsHtml = '';
-    if (item.specs_json) {
+    if (item.specs_html) {
+        specsHtml = item.specs_html;
+    } else if (item.specs_json) {
         try {
             const specsObj = typeof item.specs_json === 'string' ? JSON.parse(item.specs_json) : item.specs_json;
             if (specsObj && typeof specsObj === 'object') {
-                specsHtml = Object.entries(specsObj)
-                    .map(function (entry) {
-                        return '<span class="card-spec-tag">' + entry[0] + ': ' + entry[1] + '</span>';
+                const orderedKeys = [
+                    'OS', 'プロセッサ', 'メモリ', 'ストレージ', '画面', 'バッテリー',
+                    '重量', '内容量', '個数', '容量', '素材', 'サイズ'
+                ];
+                specsHtml = orderedKeys
+                    .filter(function (key) {
+                        return specsObj[key] && specsObj[key] !== '不明';
+                    })
+                    .map(function (key) {
+                        const safeKey = String(key).replace(/[<>&"]/g, function (c) {
+                            return { '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;' }[c];
+                        });
+                        const safeVal = String(specsObj[key]).replace(/[<>&"]/g, function (c) {
+                            return { '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;' }[c];
+                        });
+                        return '<span class="card-spec-tag">' + safeKey + ': ' + safeVal + '</span>';
                     })
                     .join('');
             }
@@ -215,4 +232,8 @@ function mapIndexItemToProduct(item) {
         inStock: item.in_stock !== undefined ? Boolean(item.in_stock) : true,
         specsHtml: specsHtml
     };
+}
+
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { mapIndexItemToProduct };
 }
