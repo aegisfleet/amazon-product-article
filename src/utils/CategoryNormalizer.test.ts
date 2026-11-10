@@ -78,6 +78,9 @@ describe('CategoryNormalizer', () => {
         'Toys - AmazonGlobal Free Shipping',
         'ドラッグストア 表示されている方限定キャンペーン',
         'テスト　半額ストア',
+        'STEM Toys ~理系脳を育むおもちゃ~｜プログラミング・ロボット',
+        'STEM Toys ~理系脳を育むおもちゃ~',
+        'SwitchBot',
         'Drugstore - AmazonGlobal free shipping',
         'HPC_CreatorInfoHub_栄養補助食品',
         'ホーム&キッチン用品ポイントアップ+1% _1',
@@ -838,6 +841,48 @@ describe('CategoryNormalizer', () => {
       const result = CategoryNormalizer.selectBestCategory(nodes, title);
       expect(result.main).toBe('業務用カーペットスチーム洗浄機');
       expect(result.browseNodeId).toBe('3450823051');
+    });
+
+    it('should select "スマートスイッチ" for SwitchBot smart switch (B07B7NXV4R)', () => {
+      const nodes: BrowseNode[] = [
+        {
+          contextFreeName: 'STEM Toys ~理系脳を育むおもちゃ~｜プログラミング・ロボット',
+          displayName: 'STEM Toys ~理系脳を育むおもちゃ~｜プログラミング・ロボット',
+          id: '5368150051',
+          isRoot: false,
+        },
+        {
+          contextFreeName: '電設用スイッチ',
+          displayName: 'スイッチ',
+          id: '2033789051',
+          isRoot: false,
+        },
+        {
+          contextFreeName: 'スマートホーム',
+          displayName: 'スマートホーム',
+          id: '205573746051',
+          isRoot: false,
+        },
+        {
+          contextFreeName: 'SwitchBot',
+          displayName: 'SwitchBot',
+          id: '8105429051',
+          isRoot: false,
+        },
+        {
+          contextFreeName: 'スマートスイッチ',
+          displayName: 'スマートスイッチ',
+          id: '207342701051',
+          isRoot: false,
+        },
+      ];
+      const title =
+        'SwitchBot スイッチボット スイッチ ボタンに適用 指ロボット スマートスイッチ スマートホーム ワイヤレス タイマー スマホで遠隔操作 Alexa, Google Home, Siri, IFTTTなどに対応(ハブ必要) ホワイト';
+
+      const result = CategoryNormalizer.selectBestCategory(nodes, title);
+      expect(result.main).toBe('スマートスイッチ');
+      expect(result.sub).toBe('スマートホーム');
+      expect(result.browseNodeId).toBe('207342701051');
     });
   });
 });

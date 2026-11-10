@@ -37,6 +37,9 @@ export const PREFERRED_KEYWORDS: readonly string[] = [
   'Alexa',
   'Ring',
   'Amazonデバイス',
+  'スマートホーム',
+  'スマートプラグ',
+  'スマートリモコン',
   'コントローラー',
   'ゲームパッド',
   'PC用ゲームパッド',
@@ -132,6 +135,7 @@ export const HIGH_PRIORITY_KEYWORDS: readonly string[] = [
   '育毛',
   'トニック',
   'スカルプ',
+  'スマートスイッチ',
 ] as const;
 
 /**
@@ -364,6 +368,7 @@ export const INVALID_PATTERNS: readonly RegExp[] = [
   /文房具・オフィス用品ヤスいいね対象/,
   /日本ヒルズ・コルゲート/i,
   /umall/i,
+  /stem\s*toys/i,
   /祝い|(?<!グルメ|水産加工品|魚介類|スイーツ|お菓子|調味料|スープ|ドリンク)ギフト/i,
   /brandname変更/i,
   /deal/i,
@@ -387,7 +392,7 @@ export const INVALID_PATTERNS: readonly RegExp[] = [
   // Brand-specific promotion/coordinated pages and brand store categories
   /(?:sony|ソニー|panasonic|パナソニック|logicool|ロジクール|elecom|エレコム).*(?:特集|一覧|プロモーション|キャンペーン|限定|コーディネート)/i,
   /(?:iris|アイリス|brother|ブラザー|nestle|ネスレ|cleansui|クリンスイ|luminous|ルミナス).*(?:特集|一覧|プロモーション|キャンペーン|限定|コーディネート)/i,
-  /^(?:(?:sony|ソニー|panasonic|パナソニック|logicool|ロジクール|elecom|エレコム|sanwasupply|サンワサプライ|anker|アンカー|buffalo|バッファロー|iris|アイリスオーヤマ|アイリス|brother|ブラザー|nestle|ネスレ|cleansui|クリンスイ|luminous|ルミナス|yamazen|山善|huawei|ファーウェイ|fitbit|フィットビット)[\s\u3000]*)+(?:[-－–—:・]|ストア|store|usb|ウェブカメラ|カメラ|イヤホン|ヘッドセット|ケーブル|マウス|スマートフォン|スマートウォッチ|携帯電話|衣類|ふとん乾燥機|スマホーム|充電|テレビ|話題の|$)/i,
+  /^(?:(?:sony|ソニー|panasonic|パナソニック|logicool|ロジクール|elecom|エレコム|sanwasupply|サンワサプライ|anker|アンカー|buffalo|バッファロー|iris|アイリスオーヤマ|アイリス|brother|ブラザー|nestle|ネスレ|cleansui|クリンスイ|luminous|ルミナス|yamazen|山善|huawei|ファーウェイ|fitbit|フィットビット|switchbot|スイッチボット)[\s\u3000]*)+(?:[-－–—:・]|ストア|store|usb|ウェブカメラ|カメラ|イヤホン|ヘッドセット|ケーブル|マウス|スマートフォン|スマートウォッチ|携帯電話|衣類|ふとん乾燥機|スマホーム|充電|テレビ|話題の|$)/i,
   /話題の/,
   /日用品・生活必需品\s*[-－–—:]/i,
   /^panasonic-ha-/i,
