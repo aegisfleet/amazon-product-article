@@ -1,0 +1,299 @@
+{
+  "analysis": {
+    "productName": "Amazon eero 7 (1ユニット)",
+    "parentAsin": "B0F8VHN7MD",
+    "productDescription": "Wi-Fi 7に対応し、2基の2.5Gbpsマルチギガビットポートを搭載したデュアルバンドメッシュWi-Fiルーター。日本国内のIPv6 IPoE（MAP-E / DS-Lite）に正式対応し、スマートホームハブ（Matter/Thread/Zigbee）も内蔵する。",
+    "productUsage": [
+      "戸建て・マンションにおける全室カバーの高速メッシュWi-Fi環境構築",
+      "2.5Gbps光回線やNASを活かしたマルチギガ有線・無線LANネットワークの構築",
+      "Matter/Thread/Zigbee対応スマートホーム機器の一元接続とAmazon Alexa連携"
+    ],
+    "positivePoints": [
+      "Wi-Fi 7（IEEE 802.11be）規格に対応し、デュアルバンドで最大3400Mbps（5GHz帯: 2882Mbps + 2.4GHz帯: 688Mbps）の高速通信を実現",
+      "有線LANポートにWAN/LAN自動判別対応の2.5Gbpsポートを2基搭載し、マルチギガ回線や高速NASの性能を損なわずに接続可能",
+      "国内向けファームウェアにより日本のフレッツ光等のIPv6 IPoE（MAP-E / DS-Lite）接続方式に正式対応",
+      "1ユニットあたり最大190平方メートルの広域カバレッジと最大120台の同時接続をサポートする独自のTrueMesh技術を搭載",
+      "スマートホーム共通規格Matter、Threadボーダールーター、Zigbeeスマートホームハブを本体に標準内蔵",
+      "EchoシリーズをWi-Fi中継機として拡張できる『eeroビルトイン』に対応",
+      "アンテナ内蔵型で白を基調としたミニマルかつコンパクトな筐体設計によりインテリアに自然に調和"
+    ],
+    "negativePoints": [
+      "Wi-Fi 7の目玉機能である6GHz帯（320MHz幅）には非対応のデュアルバンド仕様（2.4GHz/5GHzのみ）",
+      "有線イーサネットポートが2基のみのため、3台以上の有線LAN機器を接続するには別途スイッチングハブが必要",
+      "Webブラウザ経由の管理画面が存在せず、詳細なルーティングやポート開放などの詳細設定は行えない（スマホアプリ専用）",
+      "高度なセキュリティ保護機能や詳細なペアレンタルコントロール、広告ブロックの利用には有料サブスクリプション（eero Plus）が必要",
+      "競合の単体Wi-Fi 7ルーター（1万円台前半～中盤）と比較して通常定価（24,800円）がやや高価"
+    ],
+    "useCases": [
+      "戸建て住宅（2～3階建て）や広めのマンションで、家中どこでも途切れない安定した高速Wi-Fi環境を構築するシーン",
+      "NURO光やフレッツ光クロスなどの2Gbps超高速光回線を契約し、PCやスマホで回線本来の速度を引き出すシーン",
+      "多数のスマート家電やIoTセンサーを導入し、ルーター1台でスマートホームハブ機能まで統合管理したいシーン"
+    ],
+    "userStories": [
+      {
+        "userType": "戸建て3階建て住宅の在宅ワーカー",
+        "scenario": "1階から3階までの通信環境改善と、光回線のマルチギガ化に伴うWi-Fi 7への刷新",
+        "experience": "これまで使っていたWi-Fi 6ルーターでは3階の書斎で電波が弱くビデオ会議が途切れることがあったため、2.5GbE有線ポートとWi-Fi 7を備えたeero 7を導入した。上位ホームゲートウェイのDHCP設定を整理することで待望のIPv6 IPoE（MAP-E）接続も無事に開通し、セットアップはスマホのeeroアプリの指示に従うだけで数分で完了した。1階に親機を設置しメッシュ構成にしたところ、3階の窓際でも下り400Mbps前後の高速かつ安定した通信が維持できるようになり、書斎での大容量ファイル送受信やWeb会議が極めて快適になった。競合の大型外付けアンテナ付きルーターと違い、手のひらに乗るようなコンパクトでクリーンな白筐体なのでリビングの棚の上に置いても家族から不満が出ない点が購入の決定打となった。",
+        "supportingSourceIds": [
+          "src-1"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "スマートホーム導入世帯のガジェット愛好家",
+        "scenario": "Matter/Thread機器の接続統合と宅内Wi-Fiエリアの拡張",
+        "experience": "自宅にスマート照明やスマートプラグなどのIoT機器が30台以上あり、Wi-Fiの混雑とスマートホームハブの集約に悩んでいたところ、Matter・ThreadボーダールーターとZigbeeハブが標準内蔵されているeero 7を選択した。本体は熱を持ちにくく静音で、リビングのインテリアにもすっきり溶け込む。セットアップ後、アレクサアプリとの連携もシームレスに行われ、EchoシリーズをWi-Fi中継機として活用するeeroビルトイン機能により廊下の死角も簡単に解消された。ただし、詳細なポート開放や固定IPのルーティング設定などはアプリの簡易設定項目しかなく、PCのWebブラウザから高度な管理画面に入れない点と、高度なコンテンツフィルタリングや広告ブロックが有料のeero Plusサブスクリプション限定なのは惜しいと感じた。",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "sentiment": "mixed"
+      },
+      {
+        "userType": "マルチギガ光回線（2.5Gbpsプラン）の契約者",
+        "scenario": "2.5Gbpsポートを活かした有線・無線両対応のホームネットワーク構築",
+        "experience": "2.5Gbpsのインターネット回線を最大限に活かすため、2基のイーサネットポートが両方とも2.5GbEに対応しているeero 7を選定した。他社の安価なWi-Fi 7ルーターは2.5Gポートが1基しかなく、WAN側に使うとLAN側が1Gbpsに制限されてしまう製品が多い中、本機はWAN/LAN自動判別で有線NASも2.5Gbpsで直結できる点が最大の決め手だった。近距離のWi-Fi 7対応スマートフォンでの測定では下り1.7Gbps超を記録し、PCへの有線接続も2.3Gbps近くまで実測が出ている。6GHz帯には非対応のデュアルバンド仕様ではあるものの、一般家庭での利用であれば5GHz帯の2882Mbps通信で十分以上の爆速環境が手に入り大満足している。",
+        "supportingSourceIds": [
+          "src-1",
+          "src-3"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "レビューや実機検証では、従来の国内版eeroで最大の課題とされていた『IPv6 IPoE（MAP-E / DS-Lite）』への正式対応と、WAN/LAN自動判別の2.5Gbpsデュアルポート搭載が高く評価されている。スマホアプリのみで完結する数分間の初期設定の簡便さや、インテリアを選ばないアンテナ内蔵のクリーンな白筐体、1台で最大190平方メートルをカバーする安定したTrueMesh性能により、戸建て住宅や広めのマンションで配線や設定に悩まず快適な通信環境を構築できたという満足の声が極めて多い。一方で、6GHz帯には非対応のデュアルバンド仕様であること、PCからアクセスできる詳細なWeb管理画面がないこと、広告ブロック等の高度なセキュリティ機能が有料サブスク（eero Plus）である点については上級者から不満や慎重論も出ている。総じて『複雑な設定や配線に悩まされず、手軽に高速なマルチギガ・Wi-Fi 7環境とスマートホームハブを導入したい人』からは圧倒的な支持を得ているが、『6GHz帯の最速通信を追求したいエンスージアストや、詳細なネットワークルーティングを自在に弄りたい人』は購入後に物足りなさを感じる傾向がある。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "INTERNET Watch「清水理史の『イニシャルB』：Amazonの新型Wi-Fi 7ルーター『eero 7』、待望のIPv6 IPoE対応で、どこまで良くなった？」",
+        "url": "https://internet.watch.impress.co.jp/docs/column/shimizu/2030066.html",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-07-22",
+        "author": "清水理史 (インプレス)",
+        "conflictOfInterest": "none",
+        "notes": "実機検証によるIPv6 IPoE対応状況、デュアルバンドBE3400仕様の分析、3階建て住宅での実測速度（近距離下り1.7Gbps、3階メッシュ下り400Mbps）、2.5GbEデュアルポートの挙動を詳細にレポート"
+      },
+      {
+        "id": "src-2",
+        "name": "ケータイ Watch「eero、Wi-Fi 7対応のルーター『eero 7』『eero Pro 7』 25日発売」",
+        "url": "https://k-tai.watch.impress.co.jp/docs/news/2021120.html",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2025-06-10",
+        "author": "ケータイ Watch編集部",
+        "conflictOfInterest": "none",
+        "notes": "日本国内向けeero 7の製品仕様、発売日、価格、Matter/Thread/Zigbeeスマートホームハブ機能、最大接続台数120台、カバー範囲190平方メートルの公式発表情報"
+      },
+      {
+        "id": "src-3",
+        "name": "ASCII.jp「ASCII.jp：eero、Wi-Fi 7対応の新製品2モデルを6月25日（水）に発売」",
+        "url": "https://ascii.jp/elem/000/004/280/4280588/",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2025-06-10",
+        "author": "ASCII編集部",
+        "conflictOfInterest": "none",
+        "notes": "Wi-Fi 7規格対応のデュアルバンド仕様、2.5GbEポート×2搭載、最大有線速度2.3Gbps・無線速度1.8Gbps、TrueMeshソフトウェアの特徴を掲載"
+      },
+      {
+        "id": "src-4",
+        "name": "価格.com「Amazon eero 7 (1ユニット) B0DN36NDPN 価格比較」",
+        "url": "https://kakaku.com/item/K0001787314/",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2025-06-25",
+        "author": "カカクコム",
+        "conflictOfInterest": "none",
+        "notes": "国内取扱価格、製品スペック、ユーザーレビュー、評価スコアの集約情報"
+      },
+      {
+        "id": "src-5",
+        "name": "Amazon商品ページ「Amazon eero 7 - メッシュwifiルーター | Wi-Fi 7対応 | BE3400 | 2.5Gbpsイーサネット×2 | 1ユニット」",
+        "url": "https://www.amazon.co.jp/dp/B0DN36NDPN",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-06-25",
+        "author": "Amazon / eero",
+        "conflictOfInterest": "disclosed",
+        "notes": "公式製品仕様、外形寸法・重量、バンド構成、ポート仕様、互換性情報"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "独自のTrueMeshソフトウェアにより、最適なwifi接続経路を自動で見つけ出し途切れのない安定した通信環境を提供する",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-5"
+        ],
+        "crossChecked": true,
+        "notes": "INTERNET Watchの実機検証にて、3階建て住宅の各階でメッシュ中継を行っても下り400Mbps以上の高速・安定した通信が確認されており、メーカー主張のTrueMeshの安定性と合致している。"
+      },
+      {
+        "claim": "2つの自動検知2.5GbEポートとWi-Fi 7により、最大2.5Gbpsのインターネットプランに対応し最大速度は有線2.3Gbps・無線1.8Gbpsを実現する",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-3",
+          "src-5"
+        ],
+        "crossChecked": true,
+        "notes": "2基の2.5GbEポート搭載により、実測でも近距離で下り約1.7Gbps、有線で2.3Gbps近いパフォーマンスが専門メディアの実機テストで実証されている。"
+      }
+    ],
+    "lastInvestigated": "2026-11-11",
+    "investigatedPrice": "￥19,800",
+    "competitiveAnalysis": [
+      {
+        "name": "Amazon eero Pro 7 (1ユニット)",
+        "asin": "B0DN316F6S",
+        "priceComparison": "上位モデルの本機より高価格帯に位置するが、トライバンド（6GHz帯対応）と5Gbpsイーサネット×2を搭載しており、最先端スペックを追求するユーザーには価格差に見合う価値がある。",
+        "featureComparison": [
+          "共通点：Amazon eeroシリーズのメッシュWi-Fi 7ルーター、TrueMesh技術、Matter/Thread/Zigbeeスマートホームハブ内蔵、eeroアプリ対応",
+          "相違点：eero 7は2.4GHz/5GHzデュアルバンド（BE3400）かつ2.5GbEポート×2であるのに対し、eero Pro 7は6GHz帯を含むトライバンド（BE9200）かつ5Gbpsイーサネットポート×2を搭載"
+        ],
+        "differentiators": [
+          "Amazon eero 7の利点：一般的な2Gbps前後の光回線環境において、手頃なコストで必要十分なマルチギガビットメッシュWi-Fi 7環境を構築したいなら迷わずこちら",
+          "Amazon eero Pro 7の利点：5Gbpsや10Gbpsの超高速回線を契約しており、Wi-Fi 7の目玉である6GHz帯（320MHz幅）の超広帯域通信を存分に活用したいならこちら"
+        ]
+      },
+      {
+        "name": "Amazon eero Max 7",
+        "asin": "B0CS7J984Y",
+        "priceComparison": "eeroシリーズの最上位フラッグシップであり価格差は非常に大きいが、10Gbpsポート×2基およびトライバンドBE17850を備え、究極のパフォーマンスを求めるプロ用途向けの製品である。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7対応のeeroメッシュルーター、TrueMesh技術、Matter/Thread/Zigbeeハブ内蔵、IPv6 IPoE対応",
+          "相違点：eero 7はデュアルバンドBE3400・2.5GbE×2・接続120台であるのに対し、eero Max 7はトライバンドBE17850・10GbE×2＋2.5GbE×2の計4ポート・最大250台接続に対応"
+        ],
+        "differentiators": [
+          "Amazon eero 7の利点：家庭用として現実的な予算内で設置スペースを取らずにWi-Fi 7を導入したいなら迷わずこちら",
+          "Amazon eero Max 7の利点：10Gbps回線をフル活用し、複数台の10GbE有線端末や数百台のIoTデバイスを抱える大規模環境ならこちら"
+        ]
+      },
+      {
+        "name": "Amazon eero Pro 6E",
+        "asin": "B0BP65CM55",
+        "priceComparison": "前世代の上位モデルであり、定価ベースでは本機と同等～やや高めの価格設定となっている。Wi-Fi 6E対応で6GHz帯が使える一方、有線ポートは2.5GbEが1基のみにとどまる。",
+        "featureComparison": [
+          "共通点：eeroメッシュシステム、TrueMesh、スマートホームハブ内蔵、コンパクトな白筐体デザイン",
+          "相違点：eero 7は最新のWi-Fi 7対応で2.5GbEポートを2基備える（デュアルバンド）のに対し、eero Pro 6EはWi-Fi 6Eトライバンド（6GHz対応）だが2.5GbEポートは1基のみ（もう1基は1GbE）"
+        ],
+        "differentiators": [
+          "Amazon eero 7の利点：WAN/LANの両方を2.5Gbpsで揃え、MLOや4K-QAMなどの最新Wi-Fi 7通信技術を活かしたいなら迷わずこちら",
+          "Amazon eero Pro 6Eの利点：Wi-Fi 6E対応端末を多数所持しており、安価に6GHz専用帯域の混雑のない電波を利用したいならこちら"
+        ]
+      },
+      {
+        "name": "TP-Link Deco BE22 (1-pack)",
+        "asin": "B0DTTW9ZFC",
+        "priceComparison": "同一のBE3600規格かつ2.5Gbpsデュアルポートを搭載する直接的な競合モデルであり、実売価格も近い水準にある。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7対応デュアルバンドメッシュルーター（2882+688Mbps）、2.5Gbpsイーサネットポート×2、アプリによる簡単設定",
+          "相違点：eero 7はMatter/Thread/Zigbeeハブおよびeeroビルトイン（Echo中継）を内蔵するのに対し、Deco BE22はTP-LinkのDecoメッシュエコシステムに対応し無料の基本保護機能を備える"
+        ],
+        "differentiators": [
+          "Amazon eero 7の利点：Amazon Echoやアレクサ対応スマート家電を中心に揃えており、インテリア性の高いデザインを重視するなら迷わずこちら",
+          "TP-Link Deco BE22の利点：既存のDecoシリーズとメッシュ連携させたい場合や、TP-Linkのネットワーク管理機能に慣れ親しんでいるならこちら"
+        ]
+      },
+      {
+        "name": "バッファロー WSR-3600BE4P/NBK",
+        "asin": "B0F5B69SKC",
+        "priceComparison": "本商品よりも安価な価格帯で購入できる国内メーカーのWi-Fi 7エントリー機であり、単体ルーターとしての導入コストを重視する場合に有力な選択肢となる。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7デュアルバンド（2882+688Mbps）、国内IPv6 IPoE対応、メッシュ機能対応（EasyMesh vs TrueMesh）",
+          "相違点：eero 7は2.5Gbpsポート×2およびスマートホームハブを内蔵するのに対し、バッファロー機は2.5Gbpsポート×1（LAN側は1Gbps×3）で国内Web設定画面やJC-STAR適合の安心設計"
+        ],
+        "differentiators": [
+          "Amazon eero 7の利点：LAN側にも2.5GbE機器（NASやPC）を有線接続したい場合や、スマートホーム機器の一元化・デザイン性を優先するなら迷わずこちら",
+          "バッファロー WSR-3600BE4Pの利点：有線LANポート数を多く確保したい単身・少人数世帯や、国内定番メーカーのWeb管理UI・安価な導入費を求めるならこちら"
+        ]
+      },
+      {
+        "name": "ASUS RT-BE3600J PRO",
+        "asin": "B0GY3GH9YY",
+        "priceComparison": "本商品のセール時価格と近い価格帯に位置し、デュアル2.5Gポートを備えつつ豊富なネットワーク設定機能を搭載した高機能ルーターである。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7デュアルバンド、2.5Gbpsポート×2搭載、メッシュ機能対応（AiMesh vs TrueMesh）",
+          "相違点：eero 7はアプリおまかせのシンプル運用とスマートホームハブ内蔵であるのに対し、ASUS機は高度なVPN機能やAiProtectionセキュリティが無償で利用可能"
+        ],
+        "differentiators": [
+          "Amazon eero 7の利点：配線やルーター設定に煩わされず、リビングに馴染む小型筐体で家族全員が手軽に安定接続を使いたいなら迷わずこちら",
+          "ASUS RT-BE3600J PROの利点：追加費用なしの商用レベルセキュリティやVPNサーバー機能、詳細なQoS設定など上級者向け機能を使い倒したいならこちら"
+        ]
+      },
+      {
+        "name": "TP-Link Archer BE450",
+        "asin": "B0DG1JKNTQ",
+        "priceComparison": "本商品と同等価格帯でありながら、BE7200規格および超高速10Gbpsポートを搭載した単体パフォーマンス重視のルーターである。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7対応ルーター、IPv6 IPoE対応、メッシュWi-Fi対応（EasyMesh vs TrueMesh）",
+          "相違点：eero 7はコンパクトなメッシュ専業設計・2.5GbE×2であるのに対し、Archer BE450は外付けアンテナ大型筐体で10Gbpsポート×1＋2.5Gbpsポート×4を備える"
+        ],
+        "differentiators": [
+          "Amazon eero 7の利点：住居のインテリアを損ねないコンパクトな白筐体で、複数部屋に分散配置して家中をシームレスにカバーしたいなら迷わずこちら",
+          "TP-Link Archer BE450の利点：1部屋またはワンフロア集中型で10Gbps回線や多数の有線LAN機器を接続し、単体での最高スループットを狙いたいならこちら"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "戸建てや広めのマンションで、設定に悩まず家中をカバーする高速メッシュWi-Fi 7環境を手軽に構築したい人（大型アンテナ付きルーターの配線や設定を避けたい人）",
+        "2Gbps超の高速光回線（フレッツ光クロスやNURO光等）を契約しており、WAN側とLAN側の両方で2.5Gbpsマルチギガ接続を活用したい家庭（1ポートのみ2.5Gの安価な競合ルーターでは不満な人）",
+        "Amazon EchoやAlexa、Matter/Thread/Zigbee対応のスマートホーム家電を多数導入しており、ルーターにハブ機能を集約したいユーザー（他社ルーターでは別途スマートハブが必要な人）"
+      ],
+      "pros": [
+        "スマホアプリの指示に従うだけで数分で初期設定が完了し、煩わしいネットワーク設定なしで即座に安定した高速メッシュ通信を享受できる",
+        "2基の有線ポートがいずれも2.5Gbpsに対応しているため、マルチギガ光回線の高速通信を有線PCや高速NASへ余すことなく伝送できる",
+        "Matter/Thread/Zigbeeのスマートホームハブが内蔵されており、別売りの専用ハブを買い足すことなくスマート照明や各種センサーを一元管理できる",
+        "白を基調としたアンテナ内蔵の洗練されたミニマルデザインにより、リビングのチェストやテレビ台の上に置いても生活感を乱さない"
+      ],
+      "cons": [
+        "Wi-Fi 7の大きな特徴である6GHz帯（320MHz幅）には非対応のデュアルバンド仕様のため、6GHz帯の混雑のない超高速通信を求めるユーザーは上位のeero Pro 7やMax 7を確認すること",
+        "有線LANポートが2基しかないため、テレビ・レコーダー・ゲーム機など3台以上の機器を有線接続したい場合は別途スイッチングハブの用意が必要である点に注意すること",
+        "詳細なルーティングやポート開放をPCブラウザから設定したい上級者や、広告ブロック等の高度なセキュリティを無料の標準機能で使いたい人は仕様と追加サブスク（eero Plus）の要否を事前確認すること"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] Wi-Fi 7対応および2基の2.5Gbpsマルチギガポート搭載による高速有線・無線環境の実現\n[加点: +3] 独自TrueMesh技術による安定した通信と1台あたり最大190m²・120台の広範囲カバレッジ\n[減点: -4] 6GHz帯非対応のデュアルバンド仕様（2.4GHz/5GHzのみ）による通信帯域の制約\n[加点: +3] 2.5GbE×2基搭載のWi-Fi 7メッシュルーターとしてセール時19,800円の実用的な価格設定\n[減点: -2] 競合の単体Wi-Fi 7ルーター（1.2万〜1.6万円台）と比較した際の通常価格における割高感\n[加点: +3] アンテナ内蔵で部屋のインテリアに自然に溶け込むミニマルで洗練された白筐体デザイン\n[加点: +4] アプリによる数分での簡単初期設定および日本国内のIPv6 IPoE（MAP-E/DS-Lite）への正式対応\n[減点: -3] Web管理画面の非搭載による詳細設定の制約および高度なセキュリティ機能の有料サブスク化\n[加点: +4] Matter/Thread/Zigbeeハブ内蔵およびEcho端末を中継機化できるeeroビルトイン連携\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "cpu": "1.1GHz クアッドコアプロセッサ (Qualcomm Immersive Home プラットフォーム)",
+      "ram": "1GB",
+      "storage": "4GB フラッシュストレージ",
+      "dimensions": {
+        "height": "130mm",
+        "width": "64mm",
+        "depth": "130mm",
+        "weight": "608g"
+      },
+      "weight": "608g",
+      "material": "プラスチック",
+      "origin": "中国",
+      "connectivity": [
+        "Wi-Fi 7 (IEEE 802.11a/b/g/n/ac/ax/be)",
+        "デュアルバンド (5GHz / 2.4GHz)",
+        "2.5Gbps イーサネット (RJ-45 自動検知WAN/LAN) × 2",
+        "Bluetooth Low Energy",
+        "Thread (802.15.4)",
+        "Zigbee",
+        "Matter対応"
+      ],
+      "other": [
+        "最大無線通信速度: 5GHz帯 最大2882Mbps / 2.4GHz帯 最大688Mbps (BE3400)",
+        "有線ポート: 2.5Gbps 自動検知LAN/WANポート × 2 (最大有線速度: 約2.3Gbps)",
+        "カバレッジ: 1台あたり最大190平方メートル (約115畳)",
+        "同時接続可能デバイス数: 最大120台",
+        "メッシュ技術: eero TrueMesh (TrueRoam / TrueChannel 連動)",
+        "ネットワーク接続方式: IPv6 IPoE (MAP-E / DS-Lite), IPv4, DHCP, PPPoE",
+        "スマートホームハブ機能: Zigbee内蔵、Threadボーダールーター、Matterコントローラー",
+        "Amazonエコシステム連携: Alexa対応、eeroビルトイン (対応Echo端末を中継機化)",
+        "電源仕様: USB Type-C (付属 27W 電源アダプター)",
+        "暗号化セキュリティ: WPA3-Personal, WPA2-Personal",
+        "※6GHz帯 (Wi-Fi 7 320MHz幅) には非対応 (デュアルバンド仕様)",
+        "※Webブラウザ経由の管理画面は非搭載 (iOS/Android eeroアプリ専用)"
+      ]
+    }
+  }
+}
