@@ -43,13 +43,33 @@
         ミネラルウォーター: '💧',
         'Wi-Fiルーター': '📡',
         ヘッドホン: '🎧',
-        スピーカー: '🔊'
+        スピーカー: '🔊',
+        // 新タクソノミー（Gemini Decision 1）の子カテゴリ名
+        完全ワイヤレスイヤホン: '🎧',
+        'モニター・ディスプレイ': '🖥️',
+        'モニターアーム・スタンド': '🦾',
+        タブレット端末本体: '📱',
+        スマートウォッチ本体: '⌚',
+        '掃除機・クリーナー': '🧹',
+        'マッサージ器・リラックス': '💆',
+        '化粧水・美容液・乳液': '✨',
+        'シャンプー・トリートメント': '🧴',
+        'プロテイン・アミノ酸': '💪',
+        '充電器・USBケーブル': '🔌',
+        'ドライヤー・ヘアアイロン': '💨',
+        'お茶・紅茶・健康茶': '🍵',
+        'マウス・操作デバイス': '🖱️'
     };
 
     const SUBCATEGORY_SHORT_LABELS = {
         コンピュータモニターアーム: 'モニターアーム',
         標準型ノートパソコン: 'ノートPC',
-        ホエイプロテインサプリメント: 'ホエイプロテイン'
+        ホエイプロテインサプリメント: 'ホエイプロテイン',
+        'モニターアーム・スタンド': 'モニターアーム',
+        'マッサージ器・リラックス': 'マッサージ器',
+        '化粧水・美容液・乳液': '化粧水・美容液',
+        'シャンプー・トリートメント': 'シャンプー',
+        'プロテイン・アミノ酸': 'プロテイン'
     };
 
     /**
@@ -434,8 +454,9 @@
         }
 
         const excludedNames = new Set(['その他／全般', 'その他', '一般']);
+        const isOtherBucket = cat => cat.startsWith('その他') || cat.startsWith('未分類');
         const candidates = Object.keys(urls)
-            .filter(cat => !excludedNames.has(cat) && (categoryCounts[cat] || 0) > 0)
+            .filter(cat => !excludedNames.has(cat) && !isOtherBucket(cat) && (categoryCounts[cat] || 0) > 0)
             .sort((a, b) => (categoryCounts[b] || 0) - (categoryCounts[a] || 0) || a.localeCompare(b, 'ja'))
             .slice(0, POPULAR_TILE_LIMIT);
 

@@ -46,6 +46,7 @@
   "category" $category
   "categoryUrl" $categoryUrl
   "subcategory" (.Params.subcategory | default "")
+  "amazonCategory" (.Params.amazon_category | default "")
   "brand" (.Params.brand | default "")
   "description" (.Description | default (.Summary | truncate 100))
   "image" (cond (and .Params.images (gt (len .Params.images) 0)) (index .Params.images 0) "")

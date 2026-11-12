@@ -44,6 +44,7 @@
       "title" $product_name
       "permalink" .RelPermalink
       "categories" .Params.categories
+      "amazon_category" (.Params.amazon_category | default "")
       "category_url" $categoryUrl
       "summary" $summary
       "image" $image

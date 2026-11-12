@@ -248,7 +248,8 @@ export function selectPickupPool(
 
 export function generatePickupPool(options: GeneratePickupPoolOptions = {}): PickupPoolItem[] {
   const articlesDir = options.articlesDir || path.resolve(process.cwd(), 'content/articles');
-  const categoryGroupsPath = options.categoryGroupsPath || path.resolve(process.cwd(), 'data/categorygroups.json');
+  const categoryGroupsPath =
+    options.categoryGroupsPath || path.resolve(process.cwd(), 'static/data/categorygroups.json');
   const outputPath = options.outputPath || path.resolve(process.cwd(), 'data/recommendations/pickup-pool.json');
   const maxPerGroup = options.maxPerGroup ?? 10;
   const topOverallCount = options.topOverallCount ?? 30;
