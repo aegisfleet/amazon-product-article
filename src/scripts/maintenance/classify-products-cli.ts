@@ -9,13 +9,14 @@ dotenv.config();
 
 /**
  * CLI Tool for Product Classification with Gemini Decision 1
- * Supports rate control, checkpoint resumption, dry-run, and batch reporting.
+ * Supports rate control, concurrency, checkpoint resumption, dry-run, and batch reporting.
  */
 
 interface RunOptions {
   sampleSize?: number | undefined;
   limit?: number | undefined;
   delayMs?: number | undefined;
+  concurrency: number;
   dryRun: boolean;
   asin?: string | undefined;
   resume: boolean;
@@ -32,6 +33,7 @@ function parseArgs(): RunOptions {
   let sampleSize: number | undefined;
   let limit: number | undefined;
   let delayMs: number | undefined;
+  let concurrency = 5;
   let dryRun = true;
   let asin: string | undefined;
   let resume = true;
@@ -49,6 +51,9 @@ function parseArgs(): RunOptions {
     } else if (arg === '--delay' && nextArg !== undefined) {
       delayMs = Number.parseInt(nextArg, 10);
       i++;
+    } else if (arg === '--concurrency' && nextArg !== undefined) {
+      concurrency = Math.max(1, Number.parseInt(nextArg, 10));
+      i++;
     } else if (arg === '--apply') {
       dryRun = false;
     } else if (arg === '--dry-run') {
@@ -63,7 +68,7 @@ function parseArgs(): RunOptions {
     }
   }
 
-  return { sampleSize, limit, delayMs, dryRun, asin, resume, force };
+  return { sampleSize, limit, delayMs, concurrency, dryRun, asin, resume, force };
 }
 
 function loadCheckpoint(checkpointPath: string): CheckpointData {
@@ -96,7 +101,7 @@ async function run(): Promise<void> {
   const reportPath = path.resolve(process.cwd(), 'tmp/classification-report.json');
 
   console.log('\n======================================================');
-  console.log(' Gemini Decision 1 商品カテゴリ分類・検証 CLI');
+  console.log(' Gemini Decision 1 商品カテゴリ分類・全件実行 CLI');
   console.log('======================================================');
   console.log(`モード: ${options.dryRun ? 'DRY-RUN (記事は更新されません)' : 'APPLY (記事frontmatterを更新します)'}`);
   if (options.asin) {
@@ -108,6 +113,7 @@ async function run(): Promise<void> {
   } else {
     console.log('対象: 全記事');
   }
+  console.log(`並行数 (Concurrency): ${options.concurrency}`);
   if (options.delayMs) {
     console.log(`リクエスト間インターバル: ${options.delayMs} ms`);
   }
@@ -146,14 +152,10 @@ async function run(): Promise<void> {
   let filesToProcess = targetFiles;
   if (!options.force && options.resume) {
     filesToProcess = targetFiles.filter((f) => {
-      const asin = path.basename(f, '.md');
-      if (processedSet.has(asin)) {
-        return false;
-      }
-      // frontmatter に既に taxonomy_version: 2 が入っているかも確認
       const filePath = path.join(articlesDir, f);
       const content = fs.readFileSync(filePath, 'utf8');
       const parsed = matter(content);
+      // 記事に既に taxonomy_version: 2 が付与されていればスキップ
       return parsed.data.taxonomy_version !== 2;
     });
   }
@@ -180,87 +182,99 @@ async function run(): Promise<void> {
     durationMs: number;
   }> = [];
 
-  let count = 0;
+  let completedCount = 0;
+  const totalCount = filesToProcess.length;
   const startTime = Date.now();
 
-  for (const file of filesToProcess) {
-    count++;
-    const asin = path.basename(file, '.md');
-    const filePath = path.join(articlesDir, file);
-    const content = fs.readFileSync(filePath, 'utf8');
-    const parsed = matter(content);
-    const data = parsed.data;
+  // ワーカープールによる並行処理
+  let queueIndex = 0;
 
-    const title = String(data.title || data.item_name || asin);
-    const brand = String(data.brand || data.manufacturer || '');
-    const oldCat = Array.isArray(data.categories) ? data.categories[0] : String(data.category || '');
+  async function worker(): Promise<void> {
+    while (queueIndex < filesToProcess.length) {
+      const currentIndex = queueIndex++;
+      const file = filesToProcess[currentIndex];
+      if (!file) break;
 
-    let specsSummary = '';
-    if (typeof data.specs === 'object' && data.specs !== null) {
-      specsSummary = Object.entries(data.specs)
-        .slice(0, 5)
-        .map(([k, v]) => `${k}: ${String(v)}`)
-        .join(', ');
-    }
+      const asin = path.basename(file, '.md');
+      const filePath = path.join(articlesDir, file);
+      const content = fs.readFileSync(filePath, 'utf8');
+      const parsed = matter(content);
+      const data = parsed.data;
 
-    const itemStartTime = Date.now();
-    try {
-      const res = await classifier.classify(
-        {
-          title,
-          brand,
-          specsSummary,
-          description: typeof data.description === 'string' ? data.description.slice(0, 200) : undefined,
-        },
-        oldCat,
-      );
+      const title = String(data.title || data.item_name || asin);
+      const brand = String(data.brand || data.manufacturer || '');
+      const oldCat = Array.isArray(data.categories) ? data.categories[0] : String(data.category || '');
 
-      const durationMs = Date.now() - itemStartTime;
-      results.push({ asin, title, oldCat, classification: res, durationMs });
-      processedSet.add(asin);
+      let specsSummary = '';
+      if (typeof data.specs === 'object' && data.specs !== null) {
+        specsSummary = Object.entries(data.specs)
+          .slice(0, 5)
+          .map(([k, v]) => `${k}: ${String(v)}`)
+          .join(', ');
+      }
 
-      const reviewMark = res.needsReview ? '⚠️ [要確認]' : '✅';
-      const sourceTag = res.source === 'fallback-map' ? '[FB]' : '';
-      console.log(
-        `[${count}/${filesToProcess.length}] ${asin} | ${reviewMark} ${sourceTag} ${res.parentSlug} › ${res.childSlug} | 親: ${(res.parentConfidence * 100).toFixed(0)}% 子: ${(res.childConfidence * 100).toFixed(0)}% (${durationMs}ms)`,
-      );
+      const itemStartTime = Date.now();
+      try {
+        const res = await classifier.classify(
+          {
+            title,
+            brand,
+            specsSummary,
+            description: typeof data.description === 'string' ? data.description.slice(0, 200) : undefined,
+          },
+          oldCat,
+        );
 
-      if (!options.dryRun) {
-        data.taxonomy_version = 2;
-        data.category_parent = res.parentSlug;
-        data.category_child = res.childSlug;
-        data.classification = {
-          source: res.source,
-          parent_confidence: res.parentConfidence,
-          child_confidence: res.childConfidence,
-          classified_at: res.classifiedAt,
-          input_hash: res.inputHash,
-          needs_review: res.needsReview,
-        };
-        if (res.parentRunnerUp) {
-          data.classification.parent_runner_up = res.parentRunnerUp;
+        const durationMs = Date.now() - itemStartTime;
+        results.push({ asin, title, oldCat, classification: res, durationMs });
+        processedSet.add(asin);
+        completedCount++;
+
+        const reviewMark = res.needsReview ? '⚠️ [要確認]' : '✅';
+        const sourceTag = res.source === 'fallback-map' ? '[FB]' : '';
+        console.log(
+          `[${completedCount}/${totalCount}] ${asin} | ${reviewMark} ${sourceTag} ${res.parentSlug} › ${res.childSlug} | 親: ${(res.parentConfidence * 100).toFixed(0)}% 子: ${(res.childConfidence * 100).toFixed(0)}% (${durationMs}ms)`,
+        );
+
+        if (!options.dryRun) {
+          data.taxonomy_version = 2;
+          data.category_parent = res.parentSlug;
+          data.category_child = res.childSlug;
+          data.amazon_category = oldCat || (Array.isArray(data.categories) ? data.categories[0] : data.category);
+          data.classification = {
+            source: res.source,
+            parent_confidence: res.parentConfidence,
+            child_confidence: res.childConfidence,
+            classified_at: res.classifiedAt,
+            input_hash: res.inputHash,
+            needs_review: res.needsReview,
+          };
+          if (res.parentRunnerUp) {
+            data.classification.parent_runner_up = res.parentRunnerUp;
+          }
+          if (res.childRunnerUp) {
+            data.classification.child_runner_up = res.childRunnerUp;
+          }
+
+          const newContent = matter.stringify(parsed.content, data);
+          fs.writeFileSync(filePath, newContent, 'utf8');
         }
-        if (res.childRunnerUp) {
-          data.classification.child_runner_up = res.childRunnerUp;
+
+        if (completedCount % 20 === 0) {
+          saveCheckpoint(checkpointPath, processedSet);
         }
 
-        const newContent = matter.stringify(parsed.content, data);
-        fs.writeFileSync(filePath, newContent, 'utf8');
+        if (options.delayMs && options.delayMs > 0) {
+          await new Promise((resolve) => setTimeout(resolve, options.delayMs));
+        }
+      } catch (err) {
+        console.error(`[${completedCount}/${totalCount}] ${asin} でエラー:`, err instanceof Error ? err.message : err);
       }
-
-      // 10件ごとにチェックポイント保存
-      if (count % 10 === 0) {
-        saveCheckpoint(checkpointPath, processedSet);
-      }
-
-      // インターバル待機（レート制御）
-      if (options.delayMs && options.delayMs > 0 && count < filesToProcess.length) {
-        await new Promise((resolve) => setTimeout(resolve, options.delayMs));
-      }
-    } catch (err) {
-      console.error(`[${count}/${filesToProcess.length}] ${asin} でエラー:`, err instanceof Error ? err.message : err);
     }
   }
+
+  const workerPromises = Array.from({ length: options.concurrency }, () => worker());
+  await Promise.all(workerPromises);
 
   // 終了時チェックポイント保存
   saveCheckpoint(checkpointPath, processedSet);
@@ -285,9 +299,11 @@ async function run(): Promise<void> {
       : 0;
 
   console.log('\n======================================================');
-  console.log(' 検証集計レポート');
+  console.log(' 全件処理 完了集計レポート');
   console.log('======================================================');
-  console.log(`処理数: ${results.length} 件 (所要時間: ${(totalDuration / 1000).toFixed(1)} 秒 / 平均 ${avgMs} ms/件)`);
+  console.log(
+    `処理数: ${results.length} 件 (総所要時間: ${(totalDuration / 1000).toFixed(1)} 秒 / 平均: ${avgMs} ms/件 / 実効速度: ${(results.length / (totalDuration / 1000)).toFixed(1)} 件/秒)`,
+  );
   console.log(`平均 親確信度 (Parent Confidence): ${avgParentConf.toFixed(1)}%`);
   console.log(`平均 子確信度 (Child Confidence): ${avgChildConf.toFixed(1)}%`);
   console.log(
@@ -314,7 +330,6 @@ async function run(): Promise<void> {
         autoConfirmed: results.length - reviewCount,
         needsReview: reviewCount,
         othersCount,
-        results,
       },
       null,
       2,
