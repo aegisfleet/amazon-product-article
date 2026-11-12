@@ -17,67 +17,96 @@ interface AuditFrontmatter {
   title?: string;
 }
 
+interface AuditStats {
+  v2Count: number;
+  reviewCount: number;
+  othersParentCount: number;
+  othersChildCount: number;
+  parentDistribution: Map<string, number>;
+  childDistribution: Map<string, number>;
+  parentConfidenceSum: Map<string, { sum: number; count: number }>;
+  cameraFromBaby: string[];
+  contactFromMakeup: string[];
+}
+
+function createEmptyStats(): AuditStats {
+  return {
+    v2Count: 0,
+    reviewCount: 0,
+    othersParentCount: 0,
+    othersChildCount: 0,
+    parentDistribution: new Map(),
+    childDistribution: new Map(),
+    parentConfidenceSum: new Map(),
+    cameraFromBaby: [],
+    contactFromMakeup: [],
+  };
+}
+
+function recordArticleMetrics(d: AuditFrontmatter, file: string, stats: AuditStats): void {
+  if (d.taxonomy_version !== 2) {
+    return;
+  }
+
+  stats.v2Count++;
+  const p = d.category_parent || 'unknown';
+  const c = d.category_child || 'unknown';
+  const amazonCat = d.amazon_category || '';
+
+  stats.parentDistribution.set(p, (stats.parentDistribution.get(p) || 0) + 1);
+  stats.childDistribution.set(`${p} › ${c}`, (stats.childDistribution.get(`${p} › ${c}`) || 0) + 1);
+
+  if (p === 'others') stats.othersParentCount++;
+  if (c.startsWith('zz-')) stats.othersChildCount++;
+
+  if (d.classification?.needs_review) {
+    stats.reviewCount++;
+  }
+
+  if (typeof d.classification?.parent_confidence === 'number') {
+    const current = stats.parentConfidenceSum.get(p) || { sum: 0, count: 0 };
+    current.sum += d.classification.parent_confidence;
+    current.count += 1;
+    stats.parentConfidenceSum.set(p, current);
+  }
+
+  const itemAsin = d.asin || path.basename(file, '.md');
+  const itemTitle = (d.title || itemAsin).slice(0, 30);
+
+  if (p === 'camera-video' && amazonCat.includes('ベビー')) {
+    stats.cameraFromBaby.push(`${itemAsin}: ${itemTitle}`);
+  }
+  if (
+    p === 'healthcare-appliances' &&
+    (amazonCat.includes('メイク') || amazonCat.includes('ネイル') || c.includes('contact'))
+  ) {
+    stats.contactFromMakeup.push(`${itemAsin}: ${itemTitle}`);
+  }
+}
+
 function auditDistribution(): void {
   const articlesDir = path.resolve(process.cwd(), 'content/articles');
   const files = fs.readdirSync(articlesDir).filter((f) => f.endsWith('.md'));
-
   const total = files.length;
-  let v2Count = 0;
-  let reviewCount = 0;
-  let othersParentCount = 0;
-  let othersChildCount = 0;
-
-  const parentDistribution = new Map<string, number>();
-  const childDistribution = new Map<string, number>();
-  const parentConfidenceSum = new Map<string, { sum: number; count: number }>();
-
-  // 既知のAmazon混入ケースの是正確認用トラッカー
-  const cameraFromBaby: string[] = [];
-  const contactFromMakeup: string[] = [];
+  const stats = createEmptyStats();
 
   for (const file of files) {
     const filePath = path.join(articlesDir, file);
     const content = fs.readFileSync(filePath, 'utf8');
     const parsed = matter(content);
-    const d = parsed.data as AuditFrontmatter;
-
-    if (d.taxonomy_version === 2) {
-      v2Count++;
-      const p = d.category_parent || 'unknown';
-      const c = d.category_child || 'unknown';
-      const amazonCat = d.amazon_category || '';
-
-      parentDistribution.set(p, (parentDistribution.get(p) || 0) + 1);
-      childDistribution.set(`${p} › ${c}`, (childDistribution.get(`${p} › ${c}`) || 0) + 1);
-
-      if (p === 'others') othersParentCount++;
-      if (c.startsWith('zz-')) othersChildCount++;
-
-      if (d.classification?.needs_review) {
-        reviewCount++;
-      }
-
-      if (typeof d.classification?.parent_confidence === 'number') {
-        const current = parentConfidenceSum.get(p) || { sum: 0, count: 0 };
-        current.sum += d.classification.parent_confidence;
-        current.count += 1;
-        parentConfidenceSum.set(p, current);
-      }
-
-      const itemAsin = d.asin || path.basename(file, '.md');
-      const itemTitle = (d.title || itemAsin).slice(0, 30);
-
-      if (p === 'camera-video' && amazonCat.includes('ベビー')) {
-        cameraFromBaby.push(`${itemAsin}: ${itemTitle}`);
-      }
-      if (
-        p === 'healthcare-appliances' &&
-        (amazonCat.includes('メイク') || amazonCat.includes('ネイル') || c.includes('contact'))
-      ) {
-        contactFromMakeup.push(`${itemAsin}: ${itemTitle}`);
-      }
-    }
+    recordArticleMetrics(parsed.data, file, stats);
   }
+
+  const {
+    v2Count,
+    reviewCount,
+    othersParentCount,
+    othersChildCount,
+    parentDistribution,
+    parentConfidenceSum,
+    cameraFromBaby,
+    contactFromMakeup,
+  } = stats;
 
   console.log('\n======================================================');
   console.log(' 全件処理 完了分布・品質監査レポート (Phase 3)');

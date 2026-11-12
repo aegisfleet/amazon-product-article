@@ -19,12 +19,12 @@ dotenv.config();
  */
 
 interface RunOptions {
-  sampleSize?: number | undefined;
-  limit?: number | undefined;
-  delayMs?: number | undefined;
+  sampleSize?: number;
+  limit?: number;
+  delayMs?: number;
   concurrency: number;
   dryRun: boolean;
-  asin?: string | undefined;
+  asin?: string;
   resume: boolean;
   force: boolean;
 }
@@ -39,9 +39,9 @@ interface ProductInputData {
   title: string;
   brand: string;
   oldCat: string;
-  specsSummary?: string | undefined;
-  description?: string | undefined;
-  articlePath?: string | undefined;
+  specsSummary?: string;
+  description?: string;
+  articlePath?: string;
 }
 
 interface RawFrontmatter {
@@ -90,23 +90,39 @@ function parseArgs(): RunOptions {
 
   for (let i = 0; i < args.length; i++) {
     const arg = args[i];
-    if (!arg) continue;
-    if (arg === '--sample' && args[i + 1]) {
-      options.sampleSize = Number.parseInt(args[++i] || '0', 10);
-    } else if (arg === '--limit' && args[i + 1]) {
-      options.limit = Number.parseInt(args[++i] || '0', 10);
-    } else if (arg === '--delay' && args[i + 1]) {
-      options.delayMs = Number.parseInt(args[++i] || '0', 10);
-    } else if (arg === '--concurrency' && args[i + 1]) {
-      options.concurrency = Math.max(1, Number.parseInt(args[++i] || '1', 10));
-    } else if (arg === '--dry-run') {
-      options.dryRun = true;
-    } else if (arg === '--asin' && args[i + 1]) {
-      options.asin = args[++i];
-    } else if (arg === '--no-resume') {
-      options.resume = false;
-    } else if (arg === '--force') {
-      options.force = true;
+    const next = args[i + 1];
+    switch (arg) {
+      case '--sample':
+        if (next) options.sampleSize = Number.parseInt(next, 10);
+        i++;
+        break;
+      case '--limit':
+        if (next) options.limit = Number.parseInt(next, 10);
+        i++;
+        break;
+      case '--delay':
+        if (next) options.delayMs = Number.parseInt(next, 10);
+        i++;
+        break;
+      case '--concurrency':
+        if (next) options.concurrency = Math.max(1, Number.parseInt(next, 10));
+        i++;
+        break;
+      case '--dry-run':
+        options.dryRun = true;
+        break;
+      case '--asin':
+        if (next) options.asin = next;
+        i++;
+        break;
+      case '--no-resume':
+        options.resume = false;
+        break;
+      case '--force':
+        options.force = true;
+        break;
+      default:
+        break;
     }
   }
 
@@ -160,7 +176,7 @@ function extractFromArticle(articlePath: string, asin: string): ProductInputData
     if (data.specs && typeof data.specs === 'object') {
       specsSummary = Object.entries(data.specs)
         .slice(0, 5)
-        .map(([k, v]) => `${k}: ${String(v)}`)
+        .map(([k, v]) => `${k}: ${ensureString(v)}`)
         .join(', ');
     }
 
@@ -169,8 +185,8 @@ function extractFromArticle(articlePath: string, asin: string): ProductInputData
       title,
       brand,
       oldCat,
-      specsSummary: specsSummary || undefined,
-      description: typeof data.description === 'string' ? data.description.slice(0, 200) : undefined,
+      ...(specsSummary ? { specsSummary } : {}),
+      ...(typeof data.description === 'string' ? { description: data.description.slice(0, 200) } : {}),
       articlePath,
     };
   } catch (err) {
@@ -222,7 +238,7 @@ function extractFromCache(asin: string): ProductInputData | undefined {
     title: finalTitle,
     brand: cacheBrand,
     oldCat: cacheCategory,
-    description: invDesc ? invDesc.slice(0, 200) : undefined,
+    ...(invDesc ? { description: invDesc.slice(0, 200) } : {}),
   };
 }
 
@@ -267,37 +283,28 @@ function updateArticleFrontmatter(articlePath: string, res: ClassificationResult
   }
 }
 
-function collectTargetAsins(
-  options: RunOptions,
-  articlesDir: string,
-  investigationsDir: string,
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function scanDirectoryForAsins(dirPath: string, extension: string): string[] {
+  if (!fs.existsSync(dirPath)) return [];
+  const files = fs.readdirSync(dirPath);
+  return files.filter((f) => f.endsWith(extension)).map((f) => path.basename(f, extension));
+}
+
+function filterAsinsToProcess(
+  allAsins: string[],
   categoryStore: ProductCategoryMap,
   processedSet: Set<string>,
-): { allAsins: string[]; asinsToProcess: string[] } {
-  const allAsinsSet = new Set<string>();
-
-  if (options.asin) {
-    allAsinsSet.add(options.asin);
-  } else {
-    if (fs.existsSync(investigationsDir)) {
-      for (const f of fs.readdirSync(investigationsDir)) {
-        if (f.endsWith('.json')) allAsinsSet.add(path.basename(f, '.json'));
-      }
-    }
-    if (fs.existsSync(articlesDir)) {
-      for (const f of fs.readdirSync(articlesDir)) {
-        if (f.endsWith('.md')) allAsinsSet.add(path.basename(f, '.md'));
-      }
-    }
-  }
-
-  const allAsins = Array.from(allAsinsSet).sort();
+  options: RunOptions,
+): string[] {
   let toProcess = allAsins;
 
   if (!options.force) {
     toProcess = allAsins.filter((asin) => {
       const stored = categoryStore[asin];
-      if (stored && stored.taxonomy_version === 2) return false;
+      if (stored?.taxonomy_version === 2) return false;
       if (options.resume && processedSet.has(asin)) return false;
       return true;
     });
@@ -317,7 +324,61 @@ function collectTargetAsins(
     toProcess = toProcess.slice(0, options.limit);
   }
 
-  return { allAsins, asinsToProcess: toProcess };
+  return toProcess;
+}
+
+function collectTargetAsins(
+  options: RunOptions,
+  articlesDir: string,
+  investigationsDir: string,
+  categoryStore: ProductCategoryMap,
+  processedSet: Set<string>,
+): { allAsins: string[]; asinsToProcess: string[] } {
+  const allAsinsSet = new Set<string>();
+
+  if (options.asin) {
+    allAsinsSet.add(options.asin);
+  } else {
+    for (const asin of scanDirectoryForAsins(investigationsDir, '.json')) {
+      allAsinsSet.add(asin);
+    }
+    for (const asin of scanDirectoryForAsins(articlesDir, '.md')) {
+      allAsinsSet.add(asin);
+    }
+  }
+
+  const allAsins = Array.from(allAsinsSet).sort((a, b) => a.localeCompare(b));
+  const asinsToProcess = filterAsinsToProcess(allAsins, categoryStore, processedSet, options);
+
+  return { allAsins, asinsToProcess };
+}
+
+function recordProductCategory(
+  categoryStore: ProductCategoryMap,
+  asin: string,
+  res: ClassificationResult,
+  input: ProductInputData,
+): void {
+  categoryStore[asin] = {
+    taxonomy_version: 2,
+    category_parent: res.parentSlug,
+    category_child: res.childSlug,
+    ...(input.oldCat ? { amazon_category: input.oldCat } : {}),
+    classification: {
+      source: res.source,
+      parent_confidence: res.parentConfidence,
+      child_confidence: res.childConfidence,
+      classified_at: res.classifiedAt,
+      input_hash: res.inputHash,
+      needs_review: res.needsReview,
+      ...(res.parentRunnerUp ? { parent_runner_up: res.parentRunnerUp } : {}),
+      ...(res.childRunnerUp ? { child_runner_up: res.childRunnerUp } : {}),
+    },
+  };
+
+  if (input.articlePath && fs.existsSync(input.articlePath)) {
+    updateArticleFrontmatter(input.articlePath, res, input.oldCat);
+  }
 }
 
 async function run(): Promise<void> {
@@ -373,77 +434,61 @@ async function run(): Promise<void> {
   const totalCount = asinsToProcess.length;
   let queueIndex = 0;
 
+  async function processItem(asin: string): Promise<void> {
+    const input = loadProductInput(asin, articlesDir);
+    if (!input) {
+      console.warn(`[WARN] ASIN ${asin} の商品データが取得できないためスキップします`);
+      return;
+    }
+
+    const itemStartTime = Date.now();
+    try {
+      const res = await classifier.classify(
+        {
+          title: input.title,
+          brand: input.brand,
+          specsSummary: input.specsSummary,
+          description: input.description,
+        },
+        input.oldCat,
+      );
+
+      const durationMs = Date.now() - itemStartTime;
+      results.push({ asin, title: input.title, oldCat: input.oldCat, classification: res, durationMs });
+      processedSet.add(asin);
+      completedCount++;
+
+      const reviewMark = res.needsReview ? '⚠️ [要確認]' : '✅';
+      const sourceTag = res.source === 'fallback-map' ? '[FB]' : '';
+      console.log(
+        `[${completedCount}/${totalCount}] ${asin} | ${reviewMark} ${sourceTag} ${res.parentSlug} › ${res.childSlug} | 親: ${(res.parentConfidence * 100).toFixed(0)}% 子: ${(res.childConfidence * 100).toFixed(0)}% (${durationMs}ms)`,
+      );
+
+      if (!options.dryRun) {
+        recordProductCategory(categoryStore, asin, res, input);
+      }
+
+      if (completedCount % 20 === 0) {
+        saveCheckpoint(checkpointPath, processedSet);
+        if (!options.dryRun) {
+          saveProductCategories(categoryStore);
+        }
+      }
+
+      if (options.delayMs && options.delayMs > 0) {
+        await sleep(options.delayMs);
+      }
+    } catch (err) {
+      console.error(`[${completedCount}/${totalCount}] ${asin} でエラー:`, err instanceof Error ? err.message : err);
+    }
+  }
+
   async function worker(): Promise<void> {
     while (queueIndex < asinsToProcess.length) {
       const currentIndex = queueIndex++;
       const asin = asinsToProcess[currentIndex];
       if (!asin) break;
-
-      const input = loadProductInput(asin, articlesDir);
-      if (!input) {
-        console.warn(`[WARN] ASIN ${asin} の商品データが取得できないためスキップします`);
-        continue;
-      }
-
-      const itemStartTime = Date.now();
-      try {
-        const res = await classifier.classify(
-          {
-            title: input.title,
-            brand: input.brand,
-            specsSummary: input.specsSummary,
-            description: input.description,
-          },
-          input.oldCat,
-        );
-
-        const durationMs = Date.now() - itemStartTime;
-        results.push({ asin, title: input.title, oldCat: input.oldCat, classification: res, durationMs });
-        processedSet.add(asin);
-        completedCount++;
-
-        const reviewMark = res.needsReview ? '⚠️ [要確認]' : '✅';
-        const sourceTag = res.source === 'fallback-map' ? '[FB]' : '';
-        console.log(
-          `[${completedCount}/${totalCount}] ${asin} | ${reviewMark} ${sourceTag} ${res.parentSlug} › ${res.childSlug} | 親: ${(res.parentConfidence * 100).toFixed(0)}% 子: ${(res.childConfidence * 100).toFixed(0)}% (${durationMs}ms)`,
-        );
-
-        if (!options.dryRun) {
-          categoryStore[asin] = {
-            taxonomy_version: 2,
-            category_parent: res.parentSlug,
-            category_child: res.childSlug,
-            amazon_category: input.oldCat || undefined,
-            classification: {
-              source: res.source,
-              parent_confidence: res.parentConfidence,
-              child_confidence: res.childConfidence,
-              classified_at: res.classifiedAt,
-              input_hash: res.inputHash,
-              needs_review: res.needsReview,
-              ...(res.parentRunnerUp ? { parent_runner_up: res.parentRunnerUp } : {}),
-              ...(res.childRunnerUp ? { child_runner_up: res.childRunnerUp } : {}),
-            },
-          };
-
-          if (input.articlePath && fs.existsSync(input.articlePath)) {
-            updateArticleFrontmatter(input.articlePath, res, input.oldCat);
-          }
-        }
-
-        if (completedCount % 20 === 0) {
-          saveCheckpoint(checkpointPath, processedSet);
-          if (!options.dryRun) {
-            saveProductCategories(categoryStore);
-          }
-        }
-
-        if (options.delayMs && options.delayMs > 0) {
-          await new Promise((resolve) => setTimeout(resolve, options.delayMs));
-        }
-      } catch (err) {
-        console.error(`[${completedCount}/${totalCount}] ${asin} でエラー:`, err instanceof Error ? err.message : err);
-      }
+      await processItem(asin);
     }
   }
 

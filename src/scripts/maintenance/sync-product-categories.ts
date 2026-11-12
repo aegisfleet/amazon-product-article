@@ -70,12 +70,15 @@ function extractCategoryFromArticle(filePath: string): StoredProductCategory | n
       return null;
     }
 
+    const amazonCategory = resolveAmazonCategory(d);
+    const classification = parseClassification(d.classification);
+
     return {
       taxonomy_version: 2,
       category_parent: ensureString(d.category_parent),
       category_child: ensureString(d.category_child),
-      amazon_category: resolveAmazonCategory(d),
-      classification: parseClassification(d.classification),
+      ...(amazonCategory ? { amazon_category: amazonCategory } : {}),
+      ...(classification ? { classification } : {}),
     };
   } catch (err) {
     console.error(`Error reading ${filePath}:`, err);

@@ -71,9 +71,7 @@ export class ArticleGenerator {
   }
 
   private getProductCategoryData(asin: string): StoredProductCategory | undefined {
-    if (!this.productCategoryMap) {
-      this.productCategoryMap = loadProductCategories();
-    }
+    this.productCategoryMap ??= loadProductCategories();
     return this.productCategoryMap[asin];
   }
 
@@ -279,20 +277,26 @@ export class ArticleGenerator {
     }
 
     // 自前タクソノミー（Gemini Decision 1）の分類結果を付与
-    const catData = this.getProductCategoryData(product.asin);
-    if (catData && catData.taxonomy_version === 2) {
-      metadata.taxonomy_version = catData.taxonomy_version;
-      metadata.category_parent = catData.category_parent;
-      metadata.category_child = catData.category_child;
-      if (catData.amazon_category) {
-        metadata.amazon_category = catData.amazon_category;
-      }
-      if (catData.classification) {
-        metadata.classification = catData.classification;
-      }
-    }
+    this.applyTaxonomyMetadata(metadata, product.asin);
 
     return metadata;
+  }
+
+  private applyTaxonomyMetadata(metadata: ArticleMetadata, asin: string): void {
+    const catData = this.getProductCategoryData(asin);
+    if (catData?.taxonomy_version !== 2) {
+      return;
+    }
+
+    metadata.taxonomy_version = catData.taxonomy_version;
+    metadata.category_parent = catData.category_parent;
+    metadata.category_child = catData.category_child;
+    if (catData.amazon_category) {
+      metadata.amazon_category = catData.amazon_category;
+    }
+    if (catData.classification) {
+      metadata.classification = catData.classification;
+    }
   }
 
   private extractVerifiedReviewSummary(investigation: InvestigationResult): string | undefined {

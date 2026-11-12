@@ -2,7 +2,7 @@ import * as crypto from 'node:crypto';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { Logger } from '../../utils/Logger';
-import type { TaxonomyV2 } from '../taxonomy/types';
+import type { ParentCategoryDef, TaxonomyV2 } from '../taxonomy/types';
 import { GeminiDecisionClient } from './GeminiDecisionClient';
 import type { ClassificationResult, DecisionChoiceAnswer, ProductClassificationInput } from './types';
 
@@ -91,6 +91,131 @@ export class GeminiDecisionClassifier {
     return undefined;
   }
 
+  private async executeStage1(inputText: string): Promise<{
+    selectedParentSlug: string;
+    parentConfidence: number;
+    parentRunnerUp?: { slug: string; probability: number };
+    parentMargin: number;
+    targetParentDef?: ParentCategoryDef;
+  }> {
+    const parentCriteria: Record<string, string> = {};
+    for (const parent of this.taxonomy.parents) {
+      const key = parent.slug === 'others' ? 'zz-others' : parent.slug;
+      parentCriteria[key] = parent.criteria;
+    }
+
+    const stage1Res = await this.client.decide({
+      model: 'gemini-decision-1',
+      input: inputText,
+      questions: {
+        parent_category: {
+          type: 'choice',
+          instructions: 'この商品が属する最も適切な親カテゴリを選択してください。',
+          criteria: parentCriteria,
+        },
+      },
+    });
+
+    const parentAnswer = stage1Res.answers?.parent_category;
+    if (!parentAnswer) {
+      throw new Error('Stage 1 response missing parent_category answer');
+    }
+
+    const selectedParentSlug = parentAnswer.choice === 'zz-others' ? 'others' : parentAnswer.choice;
+    const parentConfidence = parentAnswer.confidence ?? 0;
+    const parentRunnerUp = this.extractRunnerUp(parentAnswer, parentAnswer.choice);
+    const parentMargin = parentRunnerUp ? parentConfidence - parentRunnerUp.probability : parentConfidence;
+
+    const targetParentDef =
+      this.taxonomy.parents.find((p) => p.slug === selectedParentSlug) ||
+      this.taxonomy.parents.find((p) => p.slug === 'others');
+
+    return {
+      selectedParentSlug,
+      parentConfidence,
+      parentMargin,
+      ...(parentRunnerUp ? { parentRunnerUp } : {}),
+      ...(targetParentDef ? { targetParentDef } : {}),
+    };
+  }
+
+  private async executeStage2(
+    inputText: string,
+    targetParentDef: ParentCategoryDef,
+  ): Promise<{
+    childSlug: string;
+    childConfidence: number;
+    childRunnerUp?: { slug: string; probability: number };
+    childMargin: number;
+  }> {
+    const childCriteria: Record<string, string> = {};
+    for (const child of targetParentDef.children) {
+      childCriteria[child.slug] = child.criteria;
+    }
+
+    const stage2Res = await this.client.decide({
+      model: 'gemini-decision-1',
+      input: inputText,
+      questions: {
+        child_category: {
+          type: 'choice',
+          instructions: `この商品が属する最も適切な「${targetParentDef.name}」配下の子カテゴリを選択してください。`,
+          criteria: childCriteria,
+        },
+      },
+    });
+
+    const childAnswer = stage2Res.answers?.child_category;
+    if (!childAnswer) {
+      throw new Error('Stage 2 response missing child_category answer');
+    }
+
+    const childSlug = childAnswer.choice;
+    const childConfidence = childAnswer.confidence ?? 0;
+    const childRunnerUp = this.extractRunnerUp(childAnswer, childAnswer.choice);
+    const childMargin = childRunnerUp ? childConfidence - childRunnerUp.probability : childConfidence;
+
+    return {
+      childSlug,
+      childConfidence,
+      childMargin,
+      ...(childRunnerUp ? { childRunnerUp } : {}),
+    };
+  }
+
+  private evaluateQualityGate(
+    parentConfidence: number,
+    parentMargin: number,
+    childConfidence: number,
+    childMargin: number,
+    childSlug: string,
+    selectedParentSlug: string,
+    targetParentDef: ParentCategoryDef,
+  ): { finalChildSlug: string; needsReview: boolean } {
+    let finalChildSlug = childSlug;
+    let needsReview = false;
+
+    if (parentConfidence < this.parentThreshold || parentMargin < this.runnerUpMargin) {
+      needsReview = true;
+    }
+
+    if (childConfidence < this.childThreshold || childMargin < this.runnerUpMargin) {
+      needsReview = true;
+      if (childConfidence < this.childThreshold) {
+        const otherChild = targetParentDef.children.find((c) => c.slug.startsWith('zz-'));
+        if (otherChild) {
+          finalChildSlug = otherChild.slug;
+        }
+      }
+    }
+
+    if (finalChildSlug.startsWith('zz-') || selectedParentSlug === 'others') {
+      needsReview = true;
+    }
+
+    return { finalChildSlug, needsReview };
+  }
+
   public async classify(
     input: ProductClassificationInput,
     fallbackOldCategory?: string,
@@ -100,39 +225,9 @@ export class GeminiDecisionClassifier {
     const now = new Date().toISOString();
 
     try {
-      // ----------------------------------------------------
-      // Stage 1: 親カテゴリ判定 (全27択)
-      // ----------------------------------------------------
-      const parentCriteria: Record<string, string> = {};
-      for (const parent of this.taxonomy.parents) {
-        // その他は辞書順末尾になるよう choiceKey は zz-others
-        const key = parent.slug === 'others' ? 'zz-others' : parent.slug;
-        parentCriteria[key] = parent.criteria;
-      }
-
-      const stage1Res = await this.client.decide({
-        model: 'gemini-decision-1',
-        input: inputText,
-        questions: {
-          parent_category: {
-            type: 'choice',
-            instructions: 'この商品が属する最も適切な親カテゴリを選択してください。',
-            criteria: parentCriteria,
-          },
-        },
-      });
-
-      const parentAnswer = stage1Res.answers?.parent_category;
-      if (!parentAnswer) {
-        throw new Error('Stage 1 response missing parent_category answer');
-      }
-
-      // zz-others を 'others' に戻す
-      const selectedParentSlug = parentAnswer.choice === 'zz-others' ? 'others' : parentAnswer.choice;
-      const parentConfidence = parentAnswer.confidence ?? 0;
-
-      const parentRunnerUp = this.extractRunnerUp(parentAnswer, parentAnswer.choice);
-      const parentMargin = parentRunnerUp ? parentConfidence - parentRunnerUp.probability : parentConfidence;
+      // Stage 1: 親カテゴリ判定
+      const { selectedParentSlug, parentConfidence, parentRunnerUp, parentMargin, targetParentDef } =
+        await this.executeStage1(inputText);
 
       // 確信度が 0.60 未満ならフォールバックへ
       if (parentConfidence < 0.6 && fallbackOldCategory && this.legacyMap[fallbackOldCategory]) {
@@ -149,17 +244,13 @@ export class GeminiDecisionClassifier {
         };
       }
 
-      const targetParentDef =
-        this.taxonomy.parents.find((p) => p.slug === selectedParentSlug) ||
-        this.taxonomy.parents.find((p) => p.slug === 'others');
-
       if (!targetParentDef || targetParentDef.slug === 'others') {
         return {
           parentSlug: 'others',
           parentConfidence,
           childSlug: 'general-uncategorized',
           childConfidence: parentConfidence,
-          parentRunnerUp,
+          ...(parentRunnerUp ? { parentRunnerUp } : {}),
           needsReview: true,
           inputHash,
           source: 'gemini-decision-1',
@@ -167,69 +258,29 @@ export class GeminiDecisionClassifier {
         };
       }
 
-      // ----------------------------------------------------
-      // Stage 2: 子カテゴリ判定 (該当親配下の5〜10択)
-      // ----------------------------------------------------
-      const childCriteria: Record<string, string> = {};
-      for (const child of targetParentDef.children) {
-        childCriteria[child.slug] = child.criteria;
-      }
+      // Stage 2: 子カテゴリ判定
+      const { childSlug, childConfidence, childRunnerUp, childMargin } = await this.executeStage2(
+        inputText,
+        targetParentDef,
+      );
 
-      const stage2Res = await this.client.decide({
-        model: 'gemini-decision-1',
-        input: inputText,
-        questions: {
-          child_category: {
-            type: 'choice',
-            instructions: `この商品が属する最も適切な「${targetParentDef.name}」配下の子カテゴリを選択してください。`,
-            criteria: childCriteria,
-          },
-        },
-      });
-
-      const childAnswer = stage2Res.answers?.child_category;
-      if (!childAnswer) {
-        throw new Error('Stage 2 response missing child_category answer');
-      }
-
-      const childSlug = childAnswer.choice;
-      const childConfidence = childAnswer.confidence ?? 0;
-      const childRunnerUp = this.extractRunnerUp(childAnswer, childAnswer.choice);
-      const childMargin = childRunnerUp ? childConfidence - childRunnerUp.probability : childConfidence;
-
-      // 品質ゲート判定
-      let finalChildSlug = childSlug;
-      let needsReview = false;
-
-      // 親が 0.60〜0.80 またはマージン僅差
-      if (parentConfidence < this.parentThreshold || parentMargin < this.runnerUpMargin) {
-        needsReview = true;
-      }
-
-      // 子の確信度が基準値未満、またはマージン僅差
-      if (childConfidence < this.childThreshold || childMargin < this.runnerUpMargin) {
-        needsReview = true;
-        // 子の確信度が低すぎる場合はその親の zz-*-other に寄せる
-        if (childConfidence < this.childThreshold) {
-          const otherChild = targetParentDef.children.find((c) => c.slug.startsWith('zz-'));
-          if (otherChild) {
-            finalChildSlug = otherChild.slug;
-          }
-        }
-      }
-
-      // その他行きは常時レビュー対象
-      if (finalChildSlug.startsWith('zz-') || selectedParentSlug === 'others') {
-        needsReview = true;
-      }
+      const { finalChildSlug, needsReview } = this.evaluateQualityGate(
+        parentConfidence,
+        parentMargin,
+        childConfidence,
+        childMargin,
+        childSlug,
+        selectedParentSlug,
+        targetParentDef,
+      );
 
       return {
         parentSlug: selectedParentSlug,
         parentConfidence,
         childSlug: finalChildSlug,
         childConfidence,
-        parentRunnerUp,
-        childRunnerUp,
+        ...(parentRunnerUp ? { parentRunnerUp } : {}),
+        ...(childRunnerUp ? { childRunnerUp } : {}),
         needsReview,
         inputHash,
         source: 'gemini-decision-1',

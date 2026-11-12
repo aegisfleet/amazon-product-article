@@ -53,6 +53,20 @@ export class CategoryManager {
     }
   }
 
+  private extractTaxonomyV2Children(childrenRaw: unknown): string[] {
+    if (!Array.isArray(childrenRaw)) {
+      return [];
+    }
+
+    const children: string[] = [];
+    for (const child of childrenRaw) {
+      if (typeof child === 'object' && child !== null && typeof (child as Record<string, unknown>).name === 'string') {
+        children.push((child as Record<string, unknown>).name as string);
+      }
+    }
+    return children;
+  }
+
   private parseTaxonomyV2Format(parents: unknown[], seenNames: Set<string>, seenSlugs: Set<string>): void {
     for (const item of parents) {
       if (typeof item !== 'object' || item === null) continue;
@@ -63,19 +77,7 @@ export class CategoryManager {
       const description = typeof p.criteria === 'string' ? p.criteria : undefined;
       const priority = typeof p.priority === 'number' ? p.priority : undefined;
       const legacySlugs = Array.isArray(p.legacy_slugs) ? (p.legacy_slugs as string[]) : undefined;
-
-      const children: string[] = [];
-      if (Array.isArray(p.children)) {
-        for (const child of p.children) {
-          if (
-            typeof child === 'object' &&
-            child !== null &&
-            typeof (child as Record<string, unknown>).name === 'string'
-          ) {
-            children.push((child as Record<string, unknown>).name as string);
-          }
-        }
-      }
+      const children = this.extractTaxonomyV2Children(p.children);
 
       this.addGroup(
         {

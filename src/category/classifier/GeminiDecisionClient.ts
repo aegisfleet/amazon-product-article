@@ -39,6 +39,10 @@ export class GeminiDecisionClient {
     });
   }
 
+  private async sleep(ms: number): Promise<void> {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
   public async decide(request: DecisionRequest): Promise<DecisionResponse> {
     const payload = {
       model: request.model || this.model,
@@ -82,7 +86,7 @@ export class GeminiDecisionClient {
           this.logger.warn(
             `Decisions API returned HTTP ${status}. Retrying attempt ${attempt}/${this.maxRetries} after ${finalDelay}ms...`,
           );
-          await new Promise((resolve) => setTimeout(resolve, finalDelay));
+          await this.sleep(finalDelay);
           continue;
         }
 
