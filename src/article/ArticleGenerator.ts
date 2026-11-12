@@ -6,6 +6,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { AffiliateLinkManager } from '../affiliate/AffiliateLinkManager';
 import type { ReviewAnalysisResult } from '../analysis/ReviewAnalyzer';
+import {
+  loadProductCategories,
+  type ProductCategoryMap,
+  type StoredProductCategory,
+} from '../category/store/ProductCategoryStore';
+import { TaxonomyLookup } from '../category/taxonomy/TaxonomyLookup';
 import { InvestigationFileSchema } from '../schemas/InvestigationSchema';
 import type { AffiliateLink } from '../types/AffiliateTypes';
 import type {
@@ -55,12 +61,25 @@ export class ArticleGenerator {
   private readonly affiliateManager: AffiliateLinkManager;
   // 調査結果ファイルのキャッシュ（記事生成プロセス中、同じ競合商品が何度も参照されるのを防ぐ）
   private readonly investigationCache: Map<string, InvestigationResult | null>;
+  // 自前タクソノミー（Gemini Decision 1）の分類マッピングキャッシュ
+  private productCategoryMap: ProductCategoryMap | null = null;
+  private taxonomyLookup: TaxonomyLookup | null = null;
 
   constructor() {
     this.logger = Logger.getInstance();
     this.defaultTemplate = DEFAULT_ARTICLE_TEMPLATE;
     this.affiliateManager = new AffiliateLinkManager();
     this.investigationCache = new Map();
+  }
+
+  private getProductCategoryData(asin: string): StoredProductCategory | undefined {
+    this.productCategoryMap ??= loadProductCategories();
+    return this.productCategoryMap[asin];
+  }
+
+  private getTaxonomyLookup(): TaxonomyLookup {
+    this.taxonomyLookup ??= TaxonomyLookup.load();
+    return this.taxonomyLookup;
   }
 
   /**
@@ -264,7 +283,34 @@ export class ArticleGenerator {
       };
     }
 
+    // 自前タクソノミー（Gemini Decision 1）の分類結果を付与
+    this.applyTaxonomyMetadata(metadata, product.asin);
+
     return metadata;
+  }
+
+  private applyTaxonomyMetadata(metadata: ArticleMetadata, asin: string): void {
+    const catData = this.getProductCategoryData(asin);
+    if (catData?.taxonomy_version !== 2) {
+      return;
+    }
+
+    metadata.taxonomy_version = catData.taxonomy_version;
+    metadata.category_parent = catData.category_parent;
+    metadata.category_child = catData.category_child;
+
+    // 旧 Amazon カテゴリ名を退避し、表示用 category を新タクソノミーの子カテゴリ名へ切り替える
+    const amazonCategory = catData.amazon_category || metadata.amazon_category || metadata.category;
+    if (amazonCategory) {
+      metadata.amazon_category = amazonCategory;
+    }
+    const childName = this.getTaxonomyLookup().getChildName(catData.category_child);
+    if (childName) {
+      metadata.category = childName;
+    }
+    if (catData.classification) {
+      metadata.classification = catData.classification;
+    }
   }
 
   private extractVerifiedReviewSummary(investigation: InvestigationResult): string | undefined {
@@ -1422,6 +1468,23 @@ ${recommendationMessage}
       `categories: ["${this.escapeForFrontMatter(metadata.category)}"]`,
     );
     if (metadata.subcategory) lines.push(`subcategory: "${this.escapeForFrontMatter(metadata.subcategory)}"`);
+    if (metadata.amazon_category)
+      lines.push(`amazon_category: "${this.escapeForFrontMatter(metadata.amazon_category)}"`);
+    if (metadata.taxonomy_version) lines.push(`taxonomy_version: ${metadata.taxonomy_version}`);
+    if (metadata.category_parent)
+      lines.push(`category_parent: "${this.escapeForFrontMatter(metadata.category_parent)}"`);
+    if (metadata.category_child) lines.push(`category_child: "${this.escapeForFrontMatter(metadata.category_child)}"`);
+    if (metadata.classification) {
+      lines.push(
+        'classification:',
+        `  source: "${metadata.classification.source}"`,
+        `  parent_confidence: ${metadata.classification.parent_confidence}`,
+        `  child_confidence: ${metadata.classification.child_confidence}`,
+        `  classified_at: "${metadata.classification.classified_at}"`,
+        `  input_hash: "${metadata.classification.input_hash}"`,
+        `  needs_review: ${metadata.classification.needs_review}`,
+      );
+    }
     if (metadata.brand) lines.push(`brand: "${this.escapeForFrontMatter(metadata.brand)}"`);
     if (metadata.manufacturer) lines.push(`manufacturer: "${this.escapeForFrontMatter(metadata.manufacturer)}"`);
   }

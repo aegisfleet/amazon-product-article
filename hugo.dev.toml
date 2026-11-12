@@ -43,7 +43,7 @@ ignoreFiles = [
     source = "data/categories.yml"
     target = "data/categories.yml"
   [[module.mounts]]
-    source = "data/categorygroups.json"
+    source = "static/data/categorygroups.json"
     target = "data/categorygroups.json"
   [[module.mounts]]
     source = "data/recommendations"

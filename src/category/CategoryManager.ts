@@ -42,11 +42,56 @@ export class CategoryManager {
     const seenSlugs = new Set<string>();
 
     if (data && typeof data === 'object') {
-      if ('categoryGroups' in data && Array.isArray(data.categoryGroups)) {
-        this.parseStandardFormat(data.categoryGroups, seenNames, seenSlugs);
+      if ('parents' in data && Array.isArray((data as { parents: unknown[] }).parents)) {
+        // Taxonomy v2 形式 (data/taxonomy-v2.json)
+        this.parseTaxonomyV2Format((data as { parents: unknown[] }).parents, seenNames, seenSlugs);
+      } else if ('categoryGroups' in data && Array.isArray((data as { categoryGroups: unknown[] }).categoryGroups)) {
+        this.parseStandardFormat((data as { categoryGroups: unknown[] }).categoryGroups, seenNames, seenSlugs);
       } else {
         this.parseLegacyFormat(data as Record<string, unknown>, seenNames, seenSlugs);
       }
+    }
+  }
+
+  private extractTaxonomyV2Children(childrenRaw: unknown): string[] {
+    if (!Array.isArray(childrenRaw)) {
+      return [];
+    }
+
+    const children: string[] = [];
+    for (const child of childrenRaw) {
+      if (typeof child === 'object' && child !== null && typeof (child as Record<string, unknown>).name === 'string') {
+        children.push((child as Record<string, unknown>).name as string);
+      }
+    }
+    return children;
+  }
+
+  private parseTaxonomyV2Format(parents: unknown[], seenNames: Set<string>, seenSlugs: Set<string>): void {
+    for (const item of parents) {
+      if (typeof item !== 'object' || item === null) continue;
+      const p = item as Record<string, unknown>;
+      const name = typeof p.name === 'string' ? p.name : '';
+      const slug = typeof p.slug === 'string' ? p.slug : '';
+      const icon = typeof p.icon === 'string' ? p.icon : undefined;
+      const description = typeof p.criteria === 'string' ? p.criteria : undefined;
+      const priority = typeof p.priority === 'number' ? p.priority : undefined;
+      const legacySlugs = Array.isArray(p.legacy_slugs) ? (p.legacy_slugs as string[]) : undefined;
+      const children = this.extractTaxonomyV2Children(p.children);
+
+      this.addGroup(
+        {
+          name,
+          slug,
+          icon,
+          description,
+          priority,
+          legacySlugs,
+          children,
+        },
+        seenNames,
+        seenSlugs,
+      );
     }
   }
 
@@ -232,12 +277,18 @@ export class CategoryManager {
       activeSlugs.add(fileName);
 
       const filePath = path.join(parentCategoryDir, fileName);
-      const frontMatter = {
+      const aliases = group.legacySlugs?.map((s) => `/parent-category/${s}/`) || [];
+
+      const frontMatter: Record<string, unknown> = {
         title: group.name,
         description: group.description || `${group.name}カテゴリの商品一覧`,
         layout: 'parent-category',
         parent_category: group.name,
       };
+
+      if (aliases.length > 0) {
+        frontMatter.aliases = aliases;
+      }
 
       const content = `---\n${yaml.dump(frontMatter)}---\n`;
 

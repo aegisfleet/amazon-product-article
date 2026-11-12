@@ -114,16 +114,20 @@ pnpm run generate:articles
 > [!NOTE]
 > 開発用サーバー（`pnpm run server:dev`）上で表示確認を行う場合、起動高速化に伴う開発キャッシュ制限の影響により、一部の画像が `No Image` と表示される場合があります。本番ビルド時には正常に元の巨大キャッシュから取得され表示されます。
 
-## 5. 親カテゴリ（カテゴリグループ）の管理 (Parent Category Management)
+## 5. タクソノミー（親・子カテゴリ）の管理 (Taxonomy Management)
 
-親カテゴリ（`data/categorygroups.json`）の新規作成、改名、子カテゴリの所属変更を行う場合は、以下のルールを遵守します。
+親・子カテゴリの定義は `data/taxonomy-v2.json` を正本とする（旧 `data/categorygroups.json` は凍結。編集しない）。商品の所属は Gemini Decision 1 が判定し、`data/product-categories.json` に永続化される。
 
-### 5.1 命名規則と文字数制限（14文字以内）
-- **文字数制限**: ドロップダウンメニューやホーム画面等のUIでの見切れ・はみ出しを防ぐため、**親カテゴリ名は必ず14文字以内**（15文字以上は禁止）とする。
-- **命名スタイル**: スラッシュ `／` でサブジャンルを並べる場合も、14文字以内に収まるよう簡潔に表現する（例: `スマートウォッチ／活動量計`、`イヤホン／ヘッドホン／音響`）。
+### 5.1 命名規則と制約
+- **親カテゴリ名は14文字以内**、**子カテゴリ名は16文字以内**。各親は `zz-` 接頭辞の「その他」子を必ず持つ。
+- 親の統合・改名で旧スラッグが消える場合は、統合先親の `legacy_slugs` に旧スラッグを追加する（`/parent-category/<旧スラッグ>/` が alias としてリダイレクトされる）。
 
-### 5.2 編集後の必須同期手順
-1. **ソート実行**: `pnpm run sort:categories` を実行し、Unicodeコードポイント順に整列する。
-2. **事前ビルド同期**: `pnpm run prebuild:hugo` を実行し、`data/categories.yml` や `content/parent-category/*.md` を自動更新する。
-3. **構文チェック**: `pnpm run biome:check` でJSONの構文エラーがないことを確認する。
+### 5.2 商品の分類を修正・再実行する手順
+1. **ASIN 指定で再分類**: `pnpm run classify:products -- --force --asin <ASIN>[,<ASIN>...]`
+2. **記事へ反映**: `pnpm run sync:product-categories -- --to-articles`
+3. **事前ビルド同期**: `pnpm run prebuild:hugo` を実行し、`data/categories.yml` / `static/data/categorygroups.json` / `content/parent-category/*.md` を自動更新する。
+4. **検証**: `pnpm run biome:check` / `pnpm test`（`taxonomy-v2.test.ts` が命名規約と旧URL互換を検証する）。
 
+### 5.3 注意事項
+- `GEMINI_API_KEY` は `.env`（ローカル）または GitHub Secrets（CI）で管理し、ログへ出力しない。
+- 分類 API の呼び出しと `data/product-categories.json` のコミットは `deploy-articles.yml` に一本化されている。

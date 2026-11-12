@@ -1,31 +1,42 @@
 # カテゴリ管理・整理システム仕様書
 
-本ドキュメントでは、本システムにおける商品カテゴリの階層構造、正規化アルゴリズム、AI（Antigravity CLI）を活用した自動整理ワークフロー、親カテゴリの命名規約、およびトラブルシューティング手順を体系的に解説する。
+本ドキュメントでは、本システムにおける商品カテゴリの階層構造、Gemini Decision 1 による自前タクソノミー分類、親カテゴリの命名規約、および Amazon カテゴリ正規化のトラブルシューティング手順を体系的に解説する。
 
 ---
 
 ## 1. カテゴリシステムの構造
 
-本プラットフォームのカテゴリは、Amazon Creators API から取得される詳細な商品分類（子カテゴリ）と、サイトナビゲーション用に集約された「親カテゴリ（カテゴリグループ）」の2層構造で管理されている。
+本プラットフォームのカテゴリは、自前定義の **タクソノミー v2**（親27 × 子約250）を正本とする。商品ごとの所属は Gemini Decision 1（Decisions API）で判定し、結果を `data/product-categories.json` に永続化する。Amazon Creators API 由来のカテゴリ名は `amazon_category` として退避され、検索ヒットや再分類時の補助情報に用いる。
 
 ```mermaid
 graph TD
-    subgraph RawData["Amazon Creators API (BrowseNodes)"]
-        BN1["家電 & カメラ"] --> BN2["オーディオ"] --> BN3["イヤホン・ヘッドホン"] --> BN4["完全ワイヤレスイヤホン"]
+    subgraph Input["商品データ"]
+        Art["調査記事 / PA-API キャッシュ (title / brand / specs)"]
     end
 
-    subgraph Normalization["正規化エンジン (CategoryNormalizer.ts)"]
-        BN4 -->|"深さ優先 & 除外フィルタ"| ChildCat["完全ワイヤレスイヤホン (子カテゴリ)"]
+    subgraph Classify["分類 (pnpm run classify:products)"]
+        Art --> G1["Stage 1: 親カテゴリ判定 (27択)"]
+        G1 --> G2["Stage 2: 子カテゴリ判定 (親配下)"]
+        G2 --> Gate["品質ゲート (確信度 / runner-up margin)"]
     end
 
-    subgraph Grouping["カテゴリグループ定義 (data/categorygroups.json)"]
-        ChildCat -->|"所属マッピング"| ParentCat["イヤホン／ヘッドホン (親カテゴリ: 14文字以内)"]
+    subgraph Store["永続化"]
+        Gate --> PC["data/product-categories.json (1商品1行)"]
     end
 
-    subgraph Output["サイト表示 & 静的データ (prebuild:hugo)"]
-        ParentCat --> WebNav["ナビゲーション / ドロップダウン"]
-        ParentCat --> ParentPage["親カテゴリ一覧 (/parent-category/...)"]
-        ParentCat --> YamlData["data/categories.yml"]
+    subgraph Definition["定義 (正本)"]
+        TX["data/taxonomy-v2.json"]
+        TX --> G1
+        TX --> G2
+    end
+
+    subgraph Output["サイト表示 (prebuild:hugo)"]
+        PC --> Article["記事 frontmatter (category / category_parent / category_child)"]
+        TX --> Enhance["enhance-categories.ts"]
+        Article --> Enhance
+        Enhance --> Yaml["data/categories.yml"]
+        Enhance --> Static["static/data/categorygroups.json"]
+        Enhance --> Parent["content/parent-category/*.md (legacy_slugs から aliases 生成)"]
     end
 ```
 
@@ -33,85 +44,88 @@ graph TD
 
 | ファイル | 役割 | 管理形態 |
 |---|---|:---:|
-| `data/categorygroups.json` | 親カテゴリと所属する子カテゴリ（配列）のマッピング定義 | 手動管理 / AI自動更新 |
+| `data/taxonomy-v2.json` | 親27・子カテゴリの定義（slug・日本語名・判定基準・`legacy_slugs`）。**正本** | 手動管理 |
+| `data/product-categories.json` | ASIN ごとの分類結果（`category_parent` / `category_child` / `classification`）。1商品1行 | 自動生成（`classify:products`） |
+| `data/legacy-category-map.json` | 旧 Amazon カテゴリ → 新カテゴリのフォールバック対応表（API 失敗・低確信度時に使用） | 手動管理 |
+| `data/categorygroups.json` | 旧カテゴリグループ定義。URL 互換性テスト（`legacy_slugs` の取りこぼし検知）の参照用であり、ビルドでは使用しない | 凍結 |
 | `data/categories.yml` | 記事数集計やスラッグ等が付加されたHugo用カテゴリ階層データ | 自動生成（`prebuild:hugo`） |
-| `static/data/categorygroups.json` | フロントエンド（ドロップダウンメニュー等）で動的読み込みされるデータ | 自動同期（`prebuild:hugo`） |
-| `content/parent-category/*.md` | 親カテゴリごとの一覧表示用Markdownページ | 自動同期（`prebuild:hugo`） |
+| `static/data/categorygroups.json` | フロントエンドおよび Hugo テンプレート（`data/categorygroups.json` としてマウント）が参照するデータ | 自動生成（`prebuild:hugo`） |
+| `content/parent-category/*.md` | 親カテゴリごとの一覧表示用Markdownページ（旧スラッグは `aliases` でリダイレクト） | 自動生成（`prebuild:hugo`） |
 
 ---
 
-## 2. 親カテゴリ管理の必須規約
+## 2. タクソノミー管理の必須規約
 
-`data/categorygroups.json` を編集（新規追加、名称変更、所属変更）する際は、サイトUIの整合性を保つため以下のルールを厳格に遵守しなければならない。
+`data/taxonomy-v2.json` を編集（親・子の追加、名称変更、統合）する際は、サイトUIとURLの整合性を保つため以下のルールを遵守する。
 
-### 2.1 命名規則と文字数制限（14文字以内・厳守）
+### 2.1 命名規則と文字数制限
 
-- **文字数上限**: **親カテゴリ名は必ず14文字以内（15文字以上は禁止）** とする。
-  - スマートフォン表示、ヘッダードロップダウンメニュー、ホーム画面一覧等での改行崩れ・文字見切れを防止するためである。
-- **命名スタイル**: 複数ジャンルを並記する場合も、スラッシュ（`／`）を含めて14文字以内に収まるよう簡潔に命名する。
-  - ◯ 良い例: `スマートウォッチ／活動量計` (13文字)、`イヤホン／ヘッドホン` (10文字)、`文房具／オフィス用品` (10文字)
-  - ✕ 悪い例: `スマートウォッチ・ヘルスケア・活動量計` (21文字 - 禁止)
+- **親カテゴリ名は14文字以内**（15文字以上は禁止）。ドロップダウン・ホーム画面での見切れ防止のためである。
+- **子カテゴリ名は16文字以内**（カード・ピル表示の都合）。
+- 各親は、判定の受け皿として `zz-` 接頭辞の「その他」子カテゴリを必ず持つ。
+- これらは `src/category/taxonomy/__tests__/taxonomy-v2.test.ts` で検証される。
 
-### 2.2 ソート順（Unicodeコードポイント順）
+### 2.2 URL の後方互換（`legacy_slugs`）
 
-親カテゴリ定義内の子カテゴリ一覧は、常にUnicodeコードポイント順（英数字 > ひらがな > カタカナ > 漢字）で整列されている必要がある。手動編集後は必ず以下のコマンドを実行する：
-
-```bash
-pnpm run sort:categories
-```
+親カテゴリの統合・改名で旧スラッグが消える場合は、統合先親の `legacy_slugs` に旧スラッグを必ず追加する。`prebuild:hugo` が `aliases: ["/parent-category/<旧スラッグ>/"]` を自動生成し、既存の被リンクが 404 にならない。旧 `data/categorygroups.json` の全スラッグが新 `slug` または `legacy_slugs` に含まれることはテストで保証される。
 
 ### 2.3 構文検証と事前ビルド同期
 
-編集完了後は、以下の検証と同期処理を順に実行する：
-
 ```bash
-# 1. JSON構文エラーのチェック
+# 1. JSON構文・フォーマットのチェック
 pnpm run biome:check
 
-# 2. categories.yml および parent-category/*.md の自動同期
+# 2. categories.yml / static/data/categorygroups.json / parent-category/*.md の自動同期
 pnpm run prebuild:hugo
 ```
 
 ---
 
-## 3. AIによるカテゴリ自動整理ワークフロー
+## 3. Gemini Decision 1 による商品分類ワークフロー
 
-新規商品が調査されると、`data/categorygroups.json` に未登録の新しい子カテゴリが追加される場合がある。これらは一時的に「その他／全般」に分類されるが、GitHub Actions により自動で適切な親カテゴリへ整理される。
+### 3.1 分類の流れ
 
-### 3.1 自動整理サイクル（`organize-categories.yml`）
+1. **対象抽出**: `content/articles`・`data/investigations` の ASIN のうち、未分類のもの、および登録済みでも `classification.input_hash`（タイトル・ブランド・スペックのハッシュ）が現在の商品データと異なるもの（再調査で内容が更新された商品）を再分類対象とする。
+2. **2段階判定**: 親（27択）→ 子（親配下）の順に Decisions API で判定する。確信度が閾値未満の場合は `needs_review: true` を付与し、必要に応じて `legacy-category-map.json` へフォールバックする。
+3. **永続化**: 結果を `data/product-categories.json` に保存する。記事 frontmatter へは `category`（子カテゴリ日本語名）・`category_parent`・`category_child`・`classification` が反映され、旧 Amazon カテゴリ名は `amazon_category` に退避される。
 
-```mermaid
-sequenceDiagram
-    autonumber
-    actor Cron as GitHub Actions<br>(毎日 18:00 JST)
-    participant Script as organize-categories-cli.ts
-    participant AGY as Antigravity CLI (agy)
-    participant PR as GitHub Pull Request
-    participant AutoMerge as pr-auto-merge.yml
+### 3.2 主要コマンド
 
-    Cron->>Script: 未登録カテゴリの存在確認
-    Script->>Script: キャッシュ内の子カテゴリと categorygroups.json を照合
-    alt 未登録カテゴリが存在する場合
-        Script->>AGY: プロンプト生成・タスク投入 (CategoryOrganizer)
-        AGY->>AGY: 14文字制限・既存グループ構造を考慮して分類案を作成
-        AGY->>PR: data/categorygroups.json を更新する PR を作成
-        PR->>AutoMerge: 自動テスト・ビルド検証を経てマージ
-    else 未登録なし
-        Script-->>Cron: 正常終了 (何もしない)
-    end
+```bash
+# 未分類・入力変更商品のみ分類（増分）
+pnpm run classify:products
+
+# ASIN を指定して分類（カンマ区切りで複数指定可）
+pnpm run classify:products -- --asin B0XXXXXXXX,B0YYYYYYYY
+
+# ドライラン（保存しない）／レート制御
+pnpm run classify:products -- --dry-run --limit 20 --delay 500
+
+# data/product-categories.json の内容を記事 frontmatter へ反映
+pnpm run sync:product-categories -- --to-articles
+
+# APIキーの登録・疎通検証
+pnpm run set:gemini-key
+pnpm run verify:gemini-key
 ```
 
-1. **未登録カテゴリの検出**:
-   - `data/cache/paapi-product-cache.json` に存在するカテゴリと、`data/categorygroups.json` の登録カテゴリを照合する。
-2. **Antigravity CLI による自動分類**:
-   - 未登録カテゴリがある場合、`src/scripts/organize-categories-cli.ts` を通じて Antigravity CLI 用のプロンプトを生成し、セルフホストランナー上で `agy` を実行する。
-   - Antigravity は親カテゴリの「14文字以内ルール」と既存の分類体系を学習した上で、最適な親カテゴリへの割り当て（または新規親カテゴリの策定）を行い、`data/categorygroups.json` を更新する。
-3. **PR作成とマージ**:
-   - 更新後の `data/categorygroups.json` を含めた PR が自動作成され、`pr-auto-merge.yml` によって自動マージされる。
+### 3.3 CI での運用
+
+- 新規商品の分類（`GEMINI_API_KEY` を使用）と `data/product-categories.json` のコミットは `deploy-articles.yml` に一本化している。
+- `pr-auto-merge.yml` は読み取り専用権限のため分類 API を呼ばず、既存ストアに基づいて記事生成を検証する。
+- 旧日次ワークフロー `organize-categories.yml`（Antigravity CLI によるカテゴリ整理）は廃止済みである。
+
+### 3.4 SEO 上の扱い
+
+- 商品数が `minCategoryProducts`（現在 10）未満の子カテゴリページは `noindex` とする。
+- 検索意図が曖昧な「その他」受け皿（親 `others`、子「その他〜」「未分類・全般」）は商品数に関わらず `noindex` とする。
 
 ---
 
-## 4. 商品カテゴリ正規化エンジン（`CategoryNormalizer.ts`）
+## 4. Amazon カテゴリ正規化エンジン（`CategoryNormalizer.ts`）
+
+> [!NOTE]
+> 本章の正規化エンジンは Amazon 由来のカテゴリ名（`amazon_category`）を決定するためのものである。サイト上の表示カテゴリは第3章の自前タクソノミー分類が決定する。
 
 Amazon Creators API は、商品に対して複数のカテゴリ階層（BrowseNodes）を返却する。本システムの `src/utils/CategoryNormalizer.ts` は、その中から最も適切で具体的なカテゴリ名を1つ選出する。
 

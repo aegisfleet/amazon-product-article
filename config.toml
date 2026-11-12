@@ -25,7 +25,7 @@ productRequestEntryId = "entry.662198856"
 # SEO / インデックス管理（判定は layouts/partials/seo-indexable.html が単一の実装）
 # 商品数がこの値未満のカテゴリページは noindex とし、sitemap からも除外する。
 [params.seo]
-  minCategoryProducts = 5
+  minCategoryProducts = 10
 
 [params.affiliate.moshimo]
   rakuten_a_id = "5756223"
@@ -118,7 +118,7 @@ enableGitInfo = false
     source = "data/categories.yml"
     target = "data/categories.yml"
   [[module.mounts]]
-    source = "data/categorygroups.json"
+    source = "static/data/categorygroups.json"
     target = "data/categorygroups.json"
   [[module.mounts]]
     source = "data/recommendations"

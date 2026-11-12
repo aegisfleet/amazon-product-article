@@ -42,6 +42,11 @@ export interface SystemConfig {
     minWordCount: number;
     includeImages: boolean;
   };
+
+  // Gemini Decisions API Configuration (Optional: required for Category Classification)
+  gemini?: {
+    apiKey: string;
+  };
 }
 
 export class ConfigManager {
@@ -135,7 +140,18 @@ export class ConfigManager {
         minWordCount: this.parseNumericEnvVar('MIN_WORD_COUNT', 2000),
         includeImages: this.getEnvVar('INCLUDE_IMAGES', 'true') === 'true',
       },
+      gemini: {
+        apiKey: this.getEnvVar('GEMINI_API_KEY', '').trim(),
+      },
     };
+  }
+
+  public getGeminiApiKey(): string {
+    const key = process.env.GEMINI_API_KEY?.trim() || this.config?.gemini?.apiKey?.trim();
+    if (!key) {
+      throw new Error('Required environment variable GEMINI_API_KEY is not set');
+    }
+    return key;
   }
 
   private validateConfiguration(config: SystemConfig): void {
