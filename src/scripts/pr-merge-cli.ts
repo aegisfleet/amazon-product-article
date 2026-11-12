@@ -17,6 +17,43 @@ import { Logger } from '../utils/Logger';
 
 const logger = Logger.getInstance();
 
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+/**
+ * 一時的なネットワーク障害や 5xx / 429 サーバーエラーに対して指数バックオフでリトライする
+ */
+async function withApiRetry<T>(
+  operation: () => Promise<T>,
+  operationName: string,
+  maxRetries = 3,
+  baseDelayMs = 2000,
+): Promise<T> {
+  let lastError: unknown;
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      return await operation();
+    } catch (error) {
+      lastError = error;
+      const status =
+        typeof error === 'object' && error !== null && 'status' in error ? Number(error.status) : undefined;
+      const isRetryable = status === 429 || status === 500 || status === 502 || status === 503 || status === 504;
+
+      if (!isRetryable || attempt >= maxRetries) {
+        throw error;
+      }
+
+      const delay = baseDelayMs * 2 ** (attempt - 1);
+      logger.warn(
+        `[Retry] ${operationName} failed with HTTP ${status}. Retrying in ${delay / 1000}s (attempt ${attempt}/${maxRetries})...`,
+      );
+      await sleep(delay);
+    }
+  }
+  throw lastError;
+}
+
 /**
  * リポジトリのブランチを削除する
  */
@@ -326,17 +363,25 @@ async function validateMarkdownFiles(
  * PR情報と変更ファイルリストを取得し、PullRequestオブジェクトを構築する
  */
 async function fetchPullRequest(octokit: Octokit, options: CLIOptions): Promise<PullRequest> {
-  const { data: prData } = await octokit.pulls.get({
-    owner: options.owner,
-    repo: options.repo,
-    pull_number: options.prNumber,
-  });
+  const { data: prData } = await withApiRetry(
+    () =>
+      octokit.pulls.get({
+        owner: options.owner,
+        repo: options.repo,
+        pull_number: options.prNumber,
+      }),
+    `fetch PR #${options.prNumber}`,
+  );
 
-  const { data: filesData } = await octokit.pulls.listFiles({
-    owner: options.owner,
-    repo: options.repo,
-    pull_number: options.prNumber,
-  });
+  const { data: filesData } = await withApiRetry(
+    () =>
+      octokit.pulls.listFiles({
+        owner: options.owner,
+        repo: options.repo,
+        pull_number: options.prNumber,
+      }),
+    `fetch files for PR #${options.prNumber}`,
+  );
 
   return {
     number: prData.number,
@@ -371,7 +416,7 @@ async function handleDraftPr(octokit: Octokit, options: CLIOptions): Promise<voi
     let attempts = 0;
     const maxAttempts = 3;
     while (attempts < maxAttempts) {
-      await new Promise((resolve) => setTimeout(resolve, 3000));
+      await sleep(3000);
       const { data: updatedPr } = await octokit.pulls.get({
         owner: options.owner,
         repo: options.repo,
@@ -390,7 +435,7 @@ async function handleDraftPr(octokit: Octokit, options: CLIOptions): Promise<voi
   }
 
   // 最終的な待機（API反映の安定化）
-  await new Promise((resolve) => setTimeout(resolve, 3000));
+  await sleep(3000);
 }
 
 /**
@@ -509,7 +554,7 @@ async function enableAutoMergeWithRetry(_octokit: Octokit, options: CLIOptions, 
 
       if (attempt < maxRetries) {
         logger.warn(`Auto-merge failed (attempt ${attempt}/${maxRetries}), retrying in ${retryDelayMs / 1000}s...`);
-        await new Promise((resolve) => setTimeout(resolve, retryDelayMs));
+        await sleep(retryDelayMs);
       }
     }
   }
