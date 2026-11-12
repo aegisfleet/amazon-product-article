@@ -9,13 +9,6 @@ dotenv.config();
  * Validates the registered GEMINI_API_KEY with Gemini Decision 1 (Decisions API)
  */
 
-function maskKey(key: string): string {
-  if (key.length <= 8) {
-    return '***';
-  }
-  return `${key.slice(0, 4)}...${key.slice(-4)}`;
-}
-
 async function verify(): Promise<void> {
   const apiKey = process.env.GEMINI_API_KEY?.trim();
 
@@ -29,7 +22,7 @@ async function verify(): Promise<void> {
   console.log(`\n======================================================`);
   console.log(` Gemini Decision 1 (Decisions API) 疎通検証`);
   console.log(`======================================================`);
-  console.log(`使用APIキー: ${maskKey(apiKey)}`);
+  console.log('使用APIキー: 設定確認済み');
   console.log(`対象モデル: gemini-decision-1`);
   console.log(`エンドポイント: https://generativelanguage.googleapis.com/v1beta/decisions\n`);
 

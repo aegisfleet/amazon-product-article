@@ -7,13 +7,6 @@ import * as readline from 'node:readline';
  * Safely updates or appends GEMINI_API_KEY in .env file
  */
 
-function maskKey(key: string): string {
-  if (key.length <= 8) {
-    return '***';
-  }
-  return `${key.slice(0, 4)}...${key.slice(-4)}`;
-}
-
 function updateEnvFile(apiKey: string): void {
   const envPath = path.resolve(process.cwd(), '.env');
   let content = '';
@@ -33,7 +26,7 @@ function updateEnvFile(apiKey: string): void {
   }
 
   fs.writeFileSync(envPath, newContent, 'utf8');
-  console.log(`\n[SUCCESS] .env に GEMINI_API_KEY (${maskKey(apiKey)}) を登録・保存しました。`);
+  console.log('\n[SUCCESS] .env に GEMINI_API_KEY を登録・保存しました。');
   console.log('検証を実行するには、以下のコマンドを実行してください:');
   console.log('  pnpm run verify:gemini-key\n');
 }
