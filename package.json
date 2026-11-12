@@ -39,6 +39,9 @@
     "reset:category-cache": "ts-node src/scripts/maintenance/reset-category-cache.ts",
     "sync:variations": "ts-node src/scripts/maintenance/sync-variations.ts",
     "clean:outdated-deal-badges": "ts-node src/scripts/maintenance/clear-outdated-deal-badges.ts --execute --include-all-events",
+    "set:gemini-key": "ts-node src/scripts/maintenance/set-gemini-key.ts",
+    "verify:gemini-key": "ts-node src/scripts/maintenance/verify-gemini-key.ts",
+    "classify:products": "ts-node src/scripts/maintenance/classify-products-cli.ts",
     "biome:check": "biome check .",
     "biome:fix": "biome check --write ."
   },

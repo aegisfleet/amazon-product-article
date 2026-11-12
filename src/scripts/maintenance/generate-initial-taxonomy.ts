@@ -1,0 +1,1218 @@
+import * as fs from 'node:fs';
+import * as path from 'node:path';
+import type { TaxonomyV2 } from '../../category/taxonomy/types';
+
+/**
+ * Generate initial taxonomy-v2.json according to category_redesign_plan_v1_0.md
+ */
+
+const taxonomy: TaxonomyV2 = {
+  version: 2,
+  updated_at: '2026-11-12',
+  parents: [
+    {
+      slug: 'pc-workstation',
+      name: 'パソコン／周辺機器',
+      icon: '💻',
+      priority: 1,
+      legacy_slugs: ['pc-peripheral'],
+      criteria:
+        'PC本体、モニター、入力機器、内蔵外付けストレージ、USBハブ・ドック、PCスタンドなどPCおよびその周辺機器。',
+      children: [
+        {
+          slug: 'laptops',
+          name: 'ノートパソコン',
+          criteria: 'クラムシェル型および2in1のノートPC本体。タブレット単体はスマホ・タブレット本体へ。',
+          legacy_names: ['ノートパソコン', '2 in 1ノートパソコン', '標準型ノートパソコン'],
+        },
+        {
+          slug: 'desktop-mini-pc',
+          name: 'デスクトップ・ミニPC',
+          criteria: 'タワー型デスクトップPC、ミニPC、一体型PC本体。',
+          legacy_names: ['タワーPC', 'ミニPC', 'パソコン本体'],
+        },
+        {
+          slug: 'monitors',
+          name: 'モニター・ディスプレイ',
+          criteria:
+            'PC用液晶モニター、ゲーミングモニター、モバイルディスプレイ。テレビ受像機はカメラ・テレビ・映像へ。',
+          legacy_names: ['スタンダードモニター', 'ゲーミングモニター', 'ディスプレイ'],
+        },
+        {
+          slug: 'monitor-arms-stands',
+          name: 'モニターアーム・スタンド',
+          criteria: 'モニターアーム、モニタースタンド、ノートPC用スタンド。',
+          legacy_names: ['コンピューターモニターアーム', 'モニターアーム', 'モニタースタンド'],
+        },
+        {
+          slug: 'keyboards',
+          name: 'キーボード・テンキー',
+          criteria: 'メカニカル・メンブレン等のPC用キーボード、ゲーミングキーボード、テンキー。',
+          legacy_names: ['キーボード', 'ゲーミングキーボード', 'テンキー'],
+        },
+        {
+          slug: 'mice-trackballs',
+          name: 'マウス・操作デバイス',
+          criteria: 'マウス、ゲーミングマウス、トラックボール、マウスパッド、ペンタブレット。',
+          legacy_names: ['マウス', 'ゲーミングマウス', 'トラックボール', 'マウスパッド', 'ペンタブレット'],
+        },
+        {
+          slug: 'usb-hubs-docks',
+          name: 'USBハブ・ドック',
+          criteria: 'USBハブ、Type-Cドッキングステーション。スマホ用単体充電器はスマホ周辺機器へ。',
+          legacy_names: ['USBハブ', 'ドッキングステーション', 'HDDドッキングステーション'],
+        },
+        {
+          slug: 'storage-drives',
+          name: '外付・内蔵ストレージ',
+          criteria: '外付けSSD/HDD、内蔵SSD/HDD、USBメモリ、SDカード。',
+          legacy_names: ['外付SSD', '外付ハードディスク', '内蔵型SSD', 'USBメモリ・フラッシュドライブ', 'SDカード'],
+        },
+        {
+          slug: 'network-routers',
+          name: 'ルーター・LAN機器',
+          criteria: 'Wi-Fiルーター、メッシュWi-Fi、スイッチングハブ、LANケーブル。',
+          legacy_names: ['Wi-Fiルーター', 'LANケーブル', 'Cat 6イーサネットケーブル'],
+        },
+        {
+          slug: 'zz-pc-other',
+          name: 'その他PC周辺機器',
+          criteria: 'PCケース、電源タップ、OAクリーナー、PCスリーブなど上記に該当しないPC用品。',
+          legacy_names: ['PCケース', 'OA機器用エアダスター', 'PCバッグ・ケース・スリーブ'],
+        },
+      ],
+    },
+    {
+      slug: 'smartphone-tablet',
+      name: 'スマホ／タブレット本体',
+      icon: '📱',
+      priority: 2,
+      legacy_slugs: [],
+      criteria: 'スマートフォン本体、タブレット端末本体、電子書籍リーダー端末。周辺機器はスマホ周辺機器へ。',
+      children: [
+        {
+          slug: 'smartphones',
+          name: 'スマートフォン本体',
+          criteria: 'SIMフリースマートフォン本体、iPhone、Android端末。',
+          legacy_names: ['スマートフォン本体', '携帯電話・スマートフォン本体'],
+        },
+        {
+          slug: 'tablets',
+          name: 'タブレット端末本体',
+          criteria: 'iPad、Androidタブレット端末、Fireタブレット等の液晶タブレット。',
+          legacy_names: ['タブレット', 'Fireタブレット'],
+        },
+        {
+          slug: 'e-readers',
+          name: '電子書籍リーダー',
+          criteria: 'Kindle等のE-ink搭載電子書籍リーダー端末本体。',
+          legacy_names: ['電子書籍リーダー', 'Kindle電子書籍リーダー'],
+        },
+        {
+          slug: 'zz-smartphone-tablet-other',
+          name: 'その他端末本体',
+          criteria: '上記いずれにも分類されない携帯端末・モバイル本体。',
+        },
+      ],
+    },
+    {
+      slug: 'smartphone-accessories',
+      name: 'スマホ周辺機器',
+      icon: '🔌',
+      priority: 3,
+      legacy_slugs: [],
+      criteria:
+        'モバイルバッテリー、急速充電器、USBケーブル、スマホケース、保護フィルム、車載ホルダーなどスマホ用アクセサリ。',
+      children: [
+        {
+          slug: 'power-banks',
+          name: 'モバイルバッテリー',
+          criteria: 'スマートフォン・小型機器を充電するための携帯型バッテリー。大型ポータブル電源はアウトドアへ。',
+          legacy_names: ['携帯電話・スマートフォン用モバイルバッテリー', 'モバイルバッテリー'],
+        },
+        {
+          slug: 'chargers-cables',
+          name: '充電器・USBケーブル',
+          criteria: 'AC急速充電器、USB-C充電器、ワイヤレス充電器、Lightning/USBケーブル。',
+          legacy_names: ['AC式充電器', 'USB充電器', 'USB-Cケーブル', 'ライトニングケーブル'],
+        },
+        {
+          slug: 'cases-covers',
+          name: 'スマホケース・カバー',
+          criteria: 'スマートフォン・タブレット用の保護ケース、手帳型ケース、バンパー。',
+          legacy_names: ['ケース・カバー', 'スマホケース・カバー', '手帳型ケース'],
+        },
+        {
+          slug: 'screen-protectors',
+          name: '保護フィルム・ガラス',
+          criteria: 'スマートフォン・タブレット画面の保護ガラスフィルム、保護シート。',
+          legacy_names: ['スクリーンプロテクター', '保護フィルム'],
+        },
+        {
+          slug: 'stands-holders',
+          name: 'スマホスタンド・ホルダー',
+          criteria: '卓上スマホスタンド、車載スマホホルダー、スマホリング、自撮り棒。',
+          legacy_names: ['スタンド', '車載ホルダー', '携帯電話・スマートフォン用スタンド'],
+        },
+        {
+          slug: 'zz-mobile-acc-other',
+          name: 'その他スマホ周辺機器',
+          criteria: 'タッチペン、防塵プラグ、ストラップなど上記以外のスマホ関連品。',
+        },
+      ],
+    },
+    {
+      slug: 'smartwatch-wearables',
+      name: 'スマートウォッチ／活動量計',
+      icon: '⌚',
+      priority: 4,
+      legacy_slugs: [],
+      criteria: 'スマートウォッチ本体、活動量計・スマートバンド、スマートリング、スマートグラス、交換バンドなど。',
+      children: [
+        {
+          slug: 'smartwatches',
+          name: 'スマートウォッチ本体',
+          criteria: 'Apple Watch、Galaxy Watch、Garmin等の多機能スマートウォッチ本体。',
+          legacy_names: ['スマートウォッチ', 'スマートウォッチ本体'],
+        },
+        {
+          slug: 'fitness-trackers',
+          name: '活動量計・スマートバンド',
+          criteria: '歩数・心拍・睡眠測定に特化したスマートバンド、活動量計、スマートリング。',
+          legacy_names: ['活動量計', 'スマートバンド'],
+        },
+        {
+          slug: 'smartwatch-bands-acc',
+          name: '交換バンド・アクセサリ',
+          criteria: 'スマートウォッチ用交換バンド・ベルト、保護カバー、充電スタンド。',
+          legacy_names: ['スマートウォッチアクセサリ', '交換バンド'],
+        },
+        {
+          slug: 'zz-wearables-other',
+          name: 'その他ウェアラブル',
+          criteria: 'スマートグラス、紛失防止トラッカーなどその他のウェアラブルデバイス。',
+          legacy_names: ['スマートトラッカー'],
+        },
+      ],
+    },
+    {
+      slug: 'audio-equipment',
+      name: 'オーディオ／イヤホン',
+      icon: '🎧',
+      priority: 5,
+      legacy_slugs: [],
+      criteria: 'イヤホン、ヘッドホン、スピーカー、マイク、オーディオIF、アンプなど音声再生・録音機器。',
+      children: [
+        {
+          slug: 'true-wireless-earbuds',
+          name: '完全ワイヤレスイヤホン',
+          criteria: '左右独立型で充電ケース付きのBluetooth完全ワイヤレスイヤホン(TWS)。',
+          legacy_names: ['イヤホン', 'イヤホン・ヘッドホン', 'イヤホン・ヘッドホン本体'],
+        },
+        {
+          slug: 'open-ear-bone-conduction',
+          name: 'オープンイヤー・骨伝導',
+          criteria: '耳を塞がないオープンイヤー型イヤホン、イヤーカフ型、骨伝導イヤホン。',
+          legacy_names: ['オープンイヤーヘッドホン', '骨伝導イヤホン'],
+        },
+        {
+          slug: 'headphones-headsets',
+          name: 'ヘッドホン・ヘッドセット',
+          criteria: 'オーバーイヤー・オンイヤー型ヘッドホン、ゲーミングヘッドセット。',
+          legacy_names: ['ヘッドホン', 'ゲーミングヘッドセット', 'オーバーイヤーヘッドホン'],
+        },
+        {
+          slug: 'speakers',
+          name: 'スピーカー・サウンドバー',
+          criteria: 'Bluetoothポータブルスピーカー、PCスピーカー、テレビ用サウンドバー。',
+          legacy_names: ['ポータブルスピーカー', 'スピーカー', 'サウンドバー'],
+        },
+        {
+          slug: 'microphones-recording',
+          name: 'マイク・録音機器',
+          criteria: 'USBコンデンサーマイク、ダイナミックマイク、ICボイスレコーダー。',
+          legacy_names: ['コンデンサ', 'ボイスレコーダー', 'マイク'],
+        },
+        {
+          slug: 'audio-accessories',
+          name: 'オーディオアクセサリ',
+          criteria: 'イヤーピース、交換用ケーブル、オーディオアンプ、ヘッドホンスタンド。',
+          legacy_names: ['イヤーピース', 'ヘッドホン延長ケーブル'],
+        },
+        {
+          slug: 'zz-audio-other',
+          name: 'その他音響機器',
+          criteria: '上記に分類されないアンプ、DAC、その他オーディオ関連用品。',
+        },
+      ],
+    },
+    {
+      slug: 'camera-video',
+      name: 'カメラ／テレビ／映像',
+      icon: '📷',
+      priority: 6,
+      legacy_slugs: [],
+      criteria: 'デジタルカメラ、アクションカム、Webカメラ、三脚、ホームプロジェクター、液晶テレビなど映像機器。',
+      children: [
+        {
+          slug: 'projectors',
+          name: 'ホームプロジェクター',
+          criteria: 'ホームシアター用プロジェクター、モバイルプロジェクター、天吊りプロジェクター。',
+          legacy_names: ['ホームプロジェクター', 'プロジェクター'],
+        },
+        {
+          slug: 'televisions',
+          name: 'テレビ・チューナー',
+          criteria: '液晶テレビ、有機ELテレビ、チューナーレステレビ、テレビチューナー。',
+          legacy_names: ['テレビ', '液晶テレビ'],
+        },
+        {
+          slug: 'action-dash-cams',
+          name: 'アクション・防犯カメラ',
+          criteria: 'アクションカメラ(GoPro等)、ドーム型・見守り・防犯ネットワークカメラ。ドラレコはカー用品へ。',
+          legacy_names: ['アクションカメラ', '防犯カメラ', 'ネットワークカメラ'],
+        },
+        {
+          slug: 'webcams',
+          name: 'Webカメラ・配信用機器',
+          criteria: 'PC接続用Webカメラ、配信用ライト、キャプチャーボード。',
+          legacy_names: ['ウェブカメラ', 'Webカメラ'],
+        },
+        {
+          slug: 'digital-cameras',
+          name: 'デジタルカメラ・レンズ',
+          criteria: 'ミラーレス一眼、一眼レフ、コンパクトデジカメ、交換レンズ。',
+          legacy_names: ['コンパクトデジタルカメラ', 'デジタル一眼'],
+        },
+        {
+          slug: 'camera-accessories',
+          name: 'カメラ三脚・用品',
+          criteria: 'カメラ用三脚、一脚、ジンバル、カメラバッグ、レンズフィルター。',
+          legacy_names: ['三脚', '一脚', 'カメラバッグ'],
+        },
+        {
+          slug: 'zz-camera-video-other',
+          name: 'その他映像機器',
+          criteria: '上記に分類されないテレビリモコン、HDMI分配器、その他映像アクセサリ。',
+        },
+      ],
+    },
+    {
+      slug: 'living-seasonal-appliances',
+      name: '生活／季節・空調家電',
+      icon: '🧹',
+      priority: 7,
+      legacy_slugs: [],
+      criteria:
+        '掃除機、洗濯機、冷蔵庫、空気清浄機、加湿器、除湿機、扇風機、ヒーター、照明、スマートリモコンなど生活空調家電。',
+      children: [
+        {
+          slug: 'vacuum-cleaners',
+          name: '掃除機・クリーナー',
+          criteria: 'スティック掃除機、ロボット掃除機、布団クリーナー、ハンディ掃除機。高圧洗浄機はDIYへ。',
+          legacy_names: ['スティッククリーナー', 'ロボット型クリーナー', '布団クリーナー'],
+        },
+        {
+          slug: 'air-purifiers-humidifiers',
+          name: '空気清浄機・加湿除湿機',
+          criteria: '空気清浄機、加湿器、除湿機、脱臭機。',
+          legacy_names: ['空気清浄機', '加湿器', '除湿機'],
+        },
+        {
+          slug: 'fans-heaters',
+          name: '扇風機・暖房器具',
+          criteria: 'サーキュレーター、扇風機、セラミックファンヒーター、電気ストーブ、こたつヒーター。',
+          legacy_names: ['サーキュレーター', '扇風機', 'セラミックファンヒーター'],
+        },
+        {
+          slug: 'large-appliances',
+          name: '冷蔵庫・洗濯機・大型',
+          criteria: '冷蔵庫、冷凍庫、洗濯機、乾燥機、食洗機などの大型白物生活家電。',
+          legacy_names: ['冷蔵庫', '洗濯機', '食洗機'],
+        },
+        {
+          slug: 'lighting-smart-home',
+          name: '照明器具・スマートホーム',
+          criteria: 'LEDシーリングライト、デスクライト、スマート電球、スマートリモコン、SwitchBot製品。',
+          legacy_names: ['シーリングライト', 'デスクライト', 'スマートリモコン'],
+        },
+        {
+          slug: 'irons-steamer',
+          name: 'アイロン・衣類ケア',
+          criteria: '衣類スチーマー、アイロン、毛玉取り器、靴乾燥機。',
+          legacy_names: ['衣類スチーマー', '毛玉取り器'],
+        },
+        {
+          slug: 'zz-living-appliances-other',
+          name: 'その他生活家電',
+          criteria: '上記に分類されない温水洗浄便座、その他生活・季節家電。',
+        },
+      ],
+    },
+    {
+      slug: 'kitchen-appliances',
+      name: 'キッチン家電／調理家電',
+      icon: '🍳',
+      priority: 8,
+      legacy_slugs: ['kitchen-large-appliances'],
+      criteria:
+        '炊飯器、電子レンジ、トースター、電気ケトル、コーヒーメーカー、ホットプレート等の電源を使う調理機器。非電源の鍋はキッチン用品へ。',
+      children: [
+        {
+          slug: 'rice-cookers',
+          name: '炊飯器・精米機',
+          criteria: 'IH炊飯器、圧力IH炊飯器、マイコン炊飯器、糖質カット炊飯器、精米機。',
+          legacy_names: ['炊飯器', '精米機'],
+        },
+        {
+          slug: 'microwaves-ovens',
+          name: 'レンジ・トースター',
+          criteria: '電子レンジ、オーブンレンジ、オーブントースター、ポップアップトースター。',
+          legacy_names: ['電子レンジ', 'オーブントースター'],
+        },
+        {
+          slug: 'electric-kettles-coffee',
+          name: '電気ケトル・コーヒー機器',
+          criteria:
+            '電気ケトル、全自動コーヒーメーカー、エスプレッソマシン、電動ミル。手動ドリッパーはキッチン用品へ。',
+          legacy_names: ['電気ケトル', 'コーヒーメーカー'],
+        },
+        {
+          slug: 'cookers-fryers',
+          name: '電気圧力鍋・調理器',
+          criteria: '電気圧力鍋、ホットクック等の自動調理鍋、ノンフライヤー・エアフライヤー、ホットプレート。',
+          legacy_names: ['電気圧力鍋', 'ノンフライヤー', 'ホットプレート'],
+        },
+        {
+          slug: 'blenders-food-processors',
+          name: 'ブレンダー・ミキサー',
+          criteria: 'ハンドブレンダー、ミキサー、フードプロセッサー、ジューサー。',
+          legacy_names: ['ハンドブレンダー', 'ミキサー'],
+        },
+        {
+          slug: 'zz-kitchen-appliances-other',
+          name: 'その他調理家電',
+          criteria: 'ヨーグルトメーカー、燻製器、炭酸水メーカーなどその他の電動調理家電。',
+        },
+      ],
+    },
+    {
+      slug: 'kitchen',
+      name: 'キッチン用品／食器',
+      icon: '🥣',
+      priority: 9,
+      legacy_slugs: [],
+      criteria: 'フライパン、鍋、包丁、保存容器、水筒、食器、箸、キッチンペーパー、食器用洗剤など非電源の台所用品。',
+      children: [
+        {
+          slug: 'pans-pots',
+          name: '鍋・フライパン',
+          criteria: 'フライパン、片手鍋、両手鍋、土鍋、卵焼き器、圧力鍋（非電源）。',
+          legacy_names: ['フライパン', '鍋', '両手鍋'],
+        },
+        {
+          slug: 'knives-cutting-boards',
+          name: '包丁・まな板・調理道具',
+          criteria: '三徳包丁、牛刀、ペティナイフ、まな板、ピーラー、トング、ボウル、ザル。',
+          legacy_names: ['包丁', 'まな板', 'キッチンツール'],
+        },
+        {
+          slug: 'food-containers-bottles',
+          name: '水筒・保存容器・弁当箱',
+          criteria: 'ステンレス水筒、マグボトル、タッパー・耐熱保存容器、お弁当箱。',
+          legacy_names: ['水筒・マグボトル', '保存容器', '弁当箱'],
+        },
+        {
+          slug: 'tableware-cutlery',
+          name: '食器・グラス・カトラリー',
+          criteria: '皿、茶碗、マグカップ、ワイングラス、スプーン、フォーク、箸。',
+          legacy_names: ['食器', 'マグカップ', 'カトラリー'],
+        },
+        {
+          slug: 'kitchen-cleaning-consumables',
+          name: '洗剤・ラップ・消耗品',
+          criteria: '食器用洗剤、食洗機用洗剤、サランラップ、アルミホイル、キッチンペーパー、ゴミ受けネット。',
+          legacy_names: ['食器用洗剤', 'キッチンラップ', 'キッチンペーパー'],
+        },
+        {
+          slug: 'zz-kitchen-goods-other',
+          name: 'その他キッチン用品',
+          criteria: '水切りラック、油はねガード、調味料入れなど上記以外の台所用品。',
+        },
+      ],
+    },
+    {
+      slug: 'healthcare-appliances',
+      name: '健康家電／ヘルスケア',
+      icon: '🏥',
+      priority: 10,
+      legacy_slugs: [],
+      criteria: 'マッサージ器、体組成計、血圧計、温熱シート、コンタクトレンズ、衛生用品など健康管理・ケア機器。',
+      children: [
+        {
+          slug: 'massage-devices',
+          name: 'マッサージ器・リラックス',
+          criteria: 'マッサージガン、ネックマッサージャー、フットマッサージャー、アイマッサージャー。',
+          legacy_names: ['マッサージ機', 'マッサージガン', 'ネックマッサージャー'],
+        },
+        {
+          slug: 'body-meters',
+          name: '体重計・血圧計・体温計',
+          criteria: '体組成計、体重計、上腕式血圧計、非接触体温計、パルスオキシメーター。',
+          legacy_names: ['体重・体組成計', '血圧計', '体温計'],
+        },
+        {
+          slug: 'contact-lenses-care',
+          name: 'コンタクトレンズ・ケア',
+          criteria: '1day・2weekコンタクトレンズ、カラコン、コンタクト洗浄液、目薬。',
+          legacy_names: ['コンタクトレンズ', 'ソフトコンタクトレンズ', 'コンタクトケア用品'],
+        },
+        {
+          slug: 'health-supports-relief',
+          name: 'サポーター・温熱・快眠',
+          criteria: '腰痛・膝サポーター、めぐりズム等のホットアイマスク、磁気ネックレス、冷却シート。',
+          legacy_names: ['サポーター', 'ホットアイマスク', '磁気ネックレス'],
+        },
+        {
+          slug: 'hygiene-masks-tests',
+          name: 'マスク・衛生・検査用品',
+          criteria: '不織布マスク、絆創膏、消毒液、綿棒、検査キット、介護用品。',
+          legacy_names: ['マスク', '衛生用品', '絆創膏'],
+        },
+        {
+          slug: 'zz-healthcare-other',
+          name: 'その他ヘルスケア品',
+          criteria: '上記に分類されない健康器具・衛生消耗品。',
+        },
+      ],
+    },
+    {
+      slug: 'supplements-medicine',
+      name: 'サプリ／健康食品／医薬品',
+      icon: '💊',
+      priority: 11,
+      legacy_slugs: [],
+      criteria: 'プロテイン、ビタミン剤、アミノ酸サプリ、第2/3類医薬品、漢方、整腸剤。一般食品は食品へ。',
+      children: [
+        {
+          slug: 'protein-fitness-supplements',
+          name: 'プロテイン・アミノ酸',
+          criteria: 'ホエイプロテイン、ソイプロテイン、EAA、BCAA、クレアチン、シェイカー。',
+          legacy_names: ['ホエイプロテイン', 'ソイプロテイン', 'BCAA'],
+        },
+        {
+          slug: 'vitamins-minerals-supplements',
+          name: 'ビタミン・各種サプリ',
+          criteria: 'マルチビタミン、ビタミンC、亜鉛、オメガ3、コラーゲン、ルテイン等の栄養サプリ。',
+          legacy_names: ['マルチビタミン', 'サプリメント'],
+        },
+        {
+          slug: 'otc-medicines-relief',
+          name: '医薬品・漢方・整腸剤',
+          criteria: '解熱鎮痛剤、風邪薬、胃腸薬・整腸剤、目薬、漢方薬、湿布薬（OTC第2・第3類）。',
+          legacy_names: ['第2類医薬品', '第3類医薬品', '胃腸薬', '整腸剤'],
+        },
+        {
+          slug: 'zz-supplements-other',
+          name: 'その他健康食品',
+          criteria: '青汁、酵素ドリンク、特定保健用食品、上記以外の健康サプリ。',
+        },
+      ],
+    },
+    {
+      slug: 'food',
+      name: '食品',
+      icon: '🍛',
+      priority: 12,
+      legacy_slugs: [],
+      criteria: '米、レトルト食品、冷凍食品、パスタ・麺類、調味料、お菓子・スイーツ、非常食など一般食品。',
+      children: [
+        {
+          slug: 'rice-grains-noodles',
+          name: '米・麺類・パスタ',
+          criteria: '精米、パックご飯、うどん、蕎麦、ラーメン、パスタ、シリアル・オートミール。',
+          legacy_names: ['米・白米', 'パスタ', '乾麺'],
+        },
+        {
+          slug: 'instant-canned-prepared',
+          name: 'レトルト・缶詰・惣菜',
+          criteria: 'レトルトカレー、パスタソース、カップ麺、缶詰、フリーズドライ味噌汁、非常食。',
+          legacy_names: ['レトルトカレー', '缶詰', 'インスタント食品'],
+        },
+        {
+          slug: 'seasonings-cooking-oils',
+          name: '調味料・油・スパイス',
+          criteria: 'オリーブオイル、醤油、味噌、塩、砂糖、ドレッシング、スパイス、つゆ・出汁。',
+          legacy_names: ['食用油', 'ドレッシング', '調味料'],
+        },
+        {
+          slug: 'snacks-sweets-nuts',
+          name: 'お菓子・スイーツ・ナッツ',
+          criteria: 'チョコレート、クッキー、スナック菓子、ミックスナッツ、ドライフルーツ、和菓子。',
+          legacy_names: ['ナッツ', 'チョコレート', 'スナック菓子'],
+        },
+        {
+          slug: 'zz-food-other',
+          name: 'その他食品',
+          criteria: 'ジャム、はちみつ、乾物、上記に該当しない一般加工食品。',
+        },
+      ],
+    },
+    {
+      slug: 'beverage',
+      name: '飲料・お酒',
+      icon: '🥤',
+      priority: 13,
+      legacy_slugs: [],
+      criteria: '水、炭酸水、お茶、コーヒー飲料・豆、野菜ジュース、スポーツドリンク、ビール、ウイスキーなど飲料全般。',
+      children: [
+        {
+          slug: 'water-carbonated',
+          name: '水・炭酸水・ミネラル',
+          criteria: 'ミネラルウォーター、天然水、無糖強炭酸水。',
+          legacy_names: ['水・ミネラルウォーター', '炭酸水'],
+        },
+        {
+          slug: 'tea-healthy-drinks',
+          name: 'お茶・紅茶・健康茶',
+          criteria: '緑茶、麦茶、烏龍茶、紅茶ティーバッグ、ルイボスティー、野菜ジュース。',
+          legacy_names: ['緑茶', '麦茶', '紅茶'],
+        },
+        {
+          slug: 'coffee-cocoa',
+          name: 'コーヒー豆・粉・ボトル',
+          criteria: 'レギュラーコーヒー豆・粉、ドリップバッグ、インスタントコーヒー、ボトルコーヒー。',
+          legacy_names: ['コーヒー豆', 'ドリップコーヒー', 'インスタントコーヒー'],
+        },
+        {
+          slug: 'soft-drinks-sports',
+          name: '清涼飲料・エナジー飲料',
+          criteria: 'スポーツドリンク、果汁ジュース、コーラ、エナジードリンク。',
+          legacy_names: ['スポーツドリンク', 'エナジードリンク'],
+        },
+        {
+          slug: 'alcohol-beers-spirits',
+          name: 'お酒・ビール・ワイン',
+          criteria: 'ビール、発泡酒、チューハイ・ハイボール、ウイスキー、ワイン、日本酒。',
+          legacy_names: ['ビール', 'ウイスキー', 'ワイン'],
+        },
+        {
+          slug: 'zz-beverage-other',
+          name: 'その他飲料',
+          criteria: 'シロップ、割り材、上記に分類されないその他飲料。',
+        },
+      ],
+    },
+    {
+      slug: 'housewares',
+      name: '日用品／生活雑貨',
+      icon: '🧼',
+      priority: 14,
+      legacy_slugs: [],
+      criteria: '洗濯洗剤、柔軟剤、ティッシュ、トイレットペーパー、タオル、シャワーヘッド、防虫消臭剤、掃除用品。',
+      children: [
+        {
+          slug: 'laundry-cleaning-detergents',
+          name: '洗濯洗剤・柔軟剤・掃除洗剤',
+          criteria: '洗濯用液体・ジェルボール洗剤、柔軟剤、漂白剤、お風呂用・トイレ用洗剤、カビ取り剤。',
+          legacy_names: ['洗濯洗剤', '柔軟剤', '掃除用洗剤'],
+        },
+        {
+          slug: 'paper-goods-towels',
+          name: 'ペーパー類・タオル',
+          criteria: 'ティッシュペーパー、トイレットペーパー、ウェットティッシュ、バスタオル、フェイスタオル。',
+          legacy_names: ['ティッシュペーパー', 'トイレットペーパー', 'タオル'],
+        },
+        {
+          slug: 'bath-shower-toilets',
+          name: 'バス用品・シャワーヘッド',
+          criteria: '節水シャワーヘッド、風呂フタ、バスチェア、バスマット、トイレブラシ。',
+          legacy_names: ['シャワーヘッド', 'バスマット'],
+        },
+        {
+          slug: 'deodorant-insect-repellent',
+          name: '消臭・芳香・防虫剤',
+          criteria: 'ファブリーズ等の消臭スプレー、部屋用芳香剤、衣類防虫剤、殺虫剤、除湿剤。',
+          legacy_names: ['消臭剤', '芳香剤', '防虫剤'],
+        },
+        {
+          slug: 'trash-storage-cleaning-tools',
+          name: 'ゴミ箱・掃除用具・消耗品',
+          criteria: 'ゴミ箱、ゴミ袋、フローリングワイパー、粘着コロコロ、雑巾、スポンジ。',
+          legacy_names: ['ゴミ箱', 'フロアモップ', '粘着クリーナー'],
+        },
+        {
+          slug: 'zz-housewares-other',
+          name: 'その他日用品',
+          criteria: '傘立て、靴べら、ライター、上記以外の家庭用生活雑貨。',
+        },
+      ],
+    },
+    {
+      slug: 'furniture-storage',
+      name: '家具／収納／インテリア',
+      icon: '🛋️',
+      priority: 15,
+      legacy_slugs: [],
+      criteria: 'デスクチェア、ゲーミングチェア、机・テーブル、収納ラック、衣装ケース、寝具・マットレス、カーテン。',
+      children: [
+        {
+          slug: 'chairs-gaming-seats',
+          name: 'デスクチェア・椅子',
+          criteria: 'オフィスチェア、エルゴノミクスチェア、ゲーミングチェア、座椅子、スツール。',
+          legacy_names: ['オフィスチェア', 'デスクチェア', 'ゲーミングチェア'],
+        },
+        {
+          slug: 'desks-tables',
+          name: 'デスク・机・テーブル',
+          criteria: 'パソコンデスク、電動昇降デスク、ローテーブル、ダイニングテーブル。',
+          legacy_names: ['パソコンデスク', '昇降式デスク', 'テーブル'],
+        },
+        {
+          slug: 'storage-racks-boxes',
+          name: '収納ラック・ボックス・棚',
+          criteria: 'スチールラック、カラーボックス、本棚、衣装ケース・クローゼット収納ボックス、突っ張り棒。',
+          legacy_names: ['収納ラック', 'スチールラック', '収納ボックス'],
+        },
+        {
+          slug: 'bedding-mattresses-pillows',
+          name: 'マットレス・枕・寝具',
+          criteria: '高反発・低反発マットレス、快眠枕、掛け布団、毛布、ベッドパッド、シーツ。',
+          legacy_names: ['枕', 'マットレス', '掛け布団'],
+        },
+        {
+          slug: 'curtains-rugs-interior',
+          name: 'カーテン・ラグ・マット',
+          criteria: '遮光カーテン、レースカーテン、ラグマット、カーペット、クッション。',
+          legacy_names: ['カーテン', 'ラグ', 'カーペット'],
+        },
+        {
+          slug: 'zz-furniture-other',
+          name: 'その他家具・インテリア',
+          criteria: '姿見ミラー、時計、置物、上記以外の家具・室内装飾品。',
+        },
+      ],
+    },
+    {
+      slug: 'skincare-bodycare',
+      name: 'スキンケア／ボディケア',
+      icon: '🧴',
+      priority: 16,
+      legacy_slugs: [],
+      criteria:
+        '化粧水、美容液、乳液、洗顔料、クレンジング、パック、日焼け止め、入浴剤、ボディソープなど基礎化粧・身体ケア。',
+      children: [
+        {
+          slug: 'lotions-creams-serums',
+          name: '化粧水・美容液・乳液',
+          criteria: '化粧水、保湿美容液、導入液、乳液、保湿クリーム、オールインワンジェル。',
+          legacy_names: ['化粧水', '美容液', '乳液・クリーム'],
+        },
+        {
+          slug: 'cleansers-face-washes',
+          name: '洗顔料・クレンジング',
+          criteria: '洗顔フォーム、酵素洗顔パウダー、クレンジングオイル・バーム・ジェル。',
+          legacy_names: ['洗顔料', 'クレンジング'],
+        },
+        {
+          slug: 'sunscreen-uv-care',
+          name: '日焼け止め・UVケア',
+          criteria: '日焼け止めジェル・ミルク、日焼け止めスプレー、アフターサンケア。',
+          legacy_names: ['日焼け止め', 'UVケア'],
+        },
+        {
+          slug: 'face-masks-packs',
+          name: 'シートマスク・パック',
+          criteria: 'フェイスマスクシート、毛穴パック、スリーピングパック、ピーリング。',
+          legacy_names: ['フェイスパック', 'シートマスク'],
+        },
+        {
+          slug: 'body-soaps-bath-salts',
+          name: 'ボディソープ・入浴剤',
+          criteria: 'ボディソープ、固形石鹸、薬用入浴剤・バスソルト、ボディクリーム・ローション。',
+          legacy_names: ['ボディソープ', '入浴剤', 'ボディクリーム'],
+        },
+        {
+          slug: 'zz-skincare-other',
+          name: 'その他スキンケア品',
+          criteria: 'リップクリーム、ハンドクリーム、角質ケアなど上記以外の身体手入れ品。',
+        },
+      ],
+    },
+    {
+      slug: 'makeup-nail',
+      name: 'メイクアップ／ネイル',
+      icon: '💄',
+      priority: 17,
+      legacy_slugs: [],
+      criteria:
+        'ファンデーション、化粧下地、アイシャドウ、マスカラ、リップ、ネイル、香水などメイク・装飾コスメ。コンタクトはヘルスケアへ。',
+      children: [
+        {
+          slug: 'base-makeup-foundation',
+          name: '化粧下地・ファンデーション',
+          criteria: '化粧下地、BB/CCクリーム、リキッド・パウダーファンデーション、コンシーラー、フェイスパウダー。',
+          legacy_names: ['化粧下地', 'ファンデーション', 'コンシーラー'],
+        },
+        {
+          slug: 'eye-makeup',
+          name: 'アイシャドウ・マスカラ・眉',
+          criteria: 'アイシャドウパレット、アイライナー、マスカラ、アイブロウペンシル・パウダー。',
+          legacy_names: ['アイシャドウ', 'マスカラ', 'アイライナー'],
+        },
+        {
+          slug: 'lip-makeup',
+          name: '口紅・リップグロス・ティント',
+          criteria: '口紅、リップティント、リップグロス、リップライナー。無色の保湿用はスキンケアへ。',
+          legacy_names: ['口紅', 'リップグロス'],
+        },
+        {
+          slug: 'nail-fragrance',
+          name: 'ネイルケア・香水',
+          criteria: 'マニキュア、ジェルネイル、ネイルオイル、オードトワレ、香水、ボディミスト。',
+          legacy_names: ['マニキュア', '香水'],
+        },
+        {
+          slug: 'zz-makeup-other',
+          name: 'その他メイク用品',
+          criteria: 'メイクブラシ、パフ、チーク、ハイライト、上記以外の装飾コスメ用品。',
+        },
+      ],
+    },
+    {
+      slug: 'haircare-beauty',
+      name: 'ヘアケア／理美容',
+      icon: '💇',
+      priority: 18,
+      legacy_slugs: ['haircare', 'beauty-appliances'],
+      criteria:
+        'シャンプー、ヘアオイル、ドライヤー、ヘアアイロン、美顔器、電気シェーバー、電動歯ブラシなど髪と理美容機器。',
+      children: [
+        {
+          slug: 'shampoo-treatment',
+          name: 'シャンプー・トリートメント',
+          criteria: 'シャンプー、コンディショナー、ヘアトリートメント、ヘアマスク、スカルプケア。',
+          legacy_names: ['シャンプー', 'リンス・コンディショナー', 'ヘアトリートメント'],
+        },
+        {
+          slug: 'hair-styling-oils',
+          name: 'ヘアオイル・スタイリング',
+          criteria: 'ヘアオイル、ヘアミルク、ワックス、ヘアバーム、スプレー、白髪染め。',
+          legacy_names: ['ヘアオイル', 'ヘアワックス'],
+        },
+        {
+          slug: 'hair-dryers-irons',
+          name: 'ドライヤー・ヘアアイロン',
+          criteria: 'ヘアドライヤー、ストレートアイロン、カールアイロン、ホットカーラー。',
+          legacy_names: ['ヘアドライヤー', 'ヘアアイロン'],
+        },
+        {
+          slug: 'shavers-hair-clippers',
+          name: 'シェーバー・バリカン・脱毛',
+          criteria: 'メンズ電気シェーバー、鼻毛カッター、バリカン、光美容器・家庭用脱毛器。',
+          legacy_names: ['メンズシェーバー', 'バリカン', '脱毛器'],
+        },
+        {
+          slug: 'electric-toothbrushes-oral',
+          name: '電動歯ブラシ・口腔ケア',
+          criteria: '音波振動電動歯ブラシ、口腔洗浄器・ジェットウォッシャー、歯磨き粉。',
+          legacy_names: ['電動歯ブラシ', '口腔洗浄器'],
+        },
+        {
+          slug: 'facial-beauty-devices',
+          name: '美顔器・スチーマー',
+          criteria: 'RF美顔器、超音波美顔器、フェイススチーマー、毛穴吸引器。',
+          legacy_names: ['美顔器', 'フェイススチーマー'],
+        },
+        {
+          slug: 'zz-haircare-beauty-other',
+          name: 'その他理美容品',
+          criteria: 'ヘアブラシ、手動カミソリ替刃など上記以外の髪・理美容用品。',
+        },
+      ],
+    },
+    {
+      slug: 'fashion',
+      name: '服飾／シューズ／バッグ',
+      icon: '👟',
+      priority: 19,
+      legacy_slugs: ['apparel-clothing', 'shoes-bags-accessories'],
+      criteria:
+        'トップス、インナー、スニーカー、ビジネスシューズ、リュック、スーツケース、財布、腕時計など衣類・身の回り品。',
+      children: [
+        {
+          slug: 'clothing-tops-bottoms',
+          name: 'トップス・アウター・衣類',
+          criteria: 'Tシャツ、パーカー、ジャケット、コート、パンツ、コンプレッションウェア。',
+          legacy_names: ['Tシャツ・カットソー', 'ジャケット・コート', 'パンツ'],
+        },
+        {
+          slug: 'underwear-socks-loungewear',
+          name: '下着・靴下・インナー',
+          criteria: 'ボクサーパンツ、インナーシャツ、靴下、着圧ソックス、パジャマ・部屋着。',
+          legacy_names: ['インナーウェア', '靴下', 'パジャマ'],
+        },
+        {
+          slug: 'sneakers-athletic-shoes',
+          name: 'スニーカー・靴・サンダル',
+          criteria: 'スニーカー、ランニングシューズ、革靴、ブーツ、サンダル、中敷きインソール。',
+          legacy_names: ['スニーカー', 'ビジネスシューズ', 'サンダル', 'インソール'],
+        },
+        {
+          slug: 'backpacks-bags-luggage',
+          name: 'リュック・バッグ・スーツケース',
+          criteria: 'ビジネスリュック、トートバッグ、ボディバッグ、キャリーケース・スーツケース。',
+          legacy_names: ['リュック・バックパック', 'トートバッグ', 'スーツケース'],
+        },
+        {
+          slug: 'wallets-accessories-watches',
+          name: '財布・小物・アナログ時計',
+          criteria:
+            '二つ折り財布、長財布、キーケース、名刺入れ、ベルト、アナログ腕時計、折りたたみ傘。スマートウォッチは#4へ。',
+          legacy_names: ['財布', 'メンズ時計', '折りたたみ傘', 'ベルト'],
+        },
+        {
+          slug: 'zz-fashion-other',
+          name: 'その他服飾雑貨',
+          criteria: '帽子、マフラー、手袋、サングラスなど上記以外の衣類・装身具。',
+        },
+      ],
+    },
+    {
+      slug: 'baby',
+      name: 'ベビー',
+      icon: '👶',
+      priority: 20,
+      legacy_slugs: [],
+      criteria: 'おむつ、おしりふき、チャイルドシート、ベビーカー、抱っこひも、ベビーモニター、離乳食など乳幼児用品。',
+      children: [
+        {
+          slug: 'diapers-wipes',
+          name: 'おむつ・おしりふき',
+          criteria: 'テープ式・パンツ式紙おむつ、おしりふき、おむつ用ゴミ箱。',
+          legacy_names: ['紙おむつ', 'おしりふき'],
+        },
+        {
+          slug: 'strollers-car-seats-carriers',
+          name: 'ベビーカー・抱っこひも',
+          criteria: 'ベビーカー本体、チャイルドシート、ジュニアシート、抱っこひも、スリング。',
+          legacy_names: ['ベビーカー', 'チャイルドシート', '抱っこひも'],
+        },
+        {
+          slug: 'baby-nursing-food-bottles',
+          name: '哺乳瓶・授乳・離乳食',
+          criteria: '哺乳瓶、粉ミルク、離乳食、授乳ケープ、食事用エプロン、ベビーマグ。',
+          legacy_names: ['哺乳瓶', '粉ミルク', '離乳食'],
+        },
+        {
+          slug: 'baby-monitors-safety-care',
+          name: 'ベビーモニター・ケア用品',
+          criteria:
+            'ベビーカメラ・モニター、ベビーベッド、爪切り、ベビーソープ・ローション。一般防犯カメラはカメラへ。',
+          legacy_names: ['ベビーモニター', 'ベビーベッド', 'ベビーソープ'],
+        },
+        {
+          slug: 'zz-baby-other',
+          name: 'その他ベビー用品',
+          criteria: 'おもちゃ・知育以外の乳幼児用小物・安全グッズ。',
+        },
+      ],
+    },
+    {
+      slug: 'pet-supplies',
+      name: 'ペット用品',
+      icon: '🐶',
+      priority: 21,
+      legacy_slugs: [],
+      criteria: 'ドッグフード、キャットフード、ペットシーツ、猫砂、自動給餌器、ケージ、おもちゃなど飼育用品全般。',
+      children: [
+        {
+          slug: 'dog-food-snacks',
+          name: 'ドッグフード・犬おやつ',
+          criteria: 'ドライドッグフード、ウェットフード、犬用ガム・ジャーキー、療法食。',
+          legacy_names: ['ドッグフード', '犬用おやつ'],
+        },
+        {
+          slug: 'cat-food-snacks',
+          name: 'キャットフード・猫おやつ',
+          criteria: 'ドライキャットフード、猫缶・パウチ、ちゅ〜る等のおやつ、療法食。',
+          legacy_names: ['キャットフード', '猫用おやつ'],
+        },
+        {
+          slug: 'pet-toilets-sheets-litter',
+          name: 'トイレシート・猫砂・衛生',
+          criteria: 'ペットシーツ、システムトイレ用猫砂、マナーウェア、消臭スプレー。',
+          legacy_names: ['ペットシーツ', '猫砂'],
+        },
+        {
+          slug: 'pet-feeders-cages-beds',
+          name: '自動給水・給餌器・ケージ',
+          criteria: '自動給水器、自動給餌器、ペット用ベッド、ケージ・サークル、キャリーバッグ。',
+          legacy_names: ['自動給餌器', 'ペットサークル', 'キャットタワー'],
+        },
+        {
+          slug: 'pet-leashes-toys-care',
+          name: 'ハーネス・おもちゃ・ケア',
+          criteria: '犬用首輪・ハーネス・リード、ペット用おもちゃ、爪切り、ブラッシングブラシ。',
+          legacy_names: ['ハーネス', 'リード', 'ペット用ブラシ'],
+        },
+        {
+          slug: 'zz-pet-other',
+          name: 'その他ペット用品',
+          criteria: '水槽・魚用品、小動物用品、その他ペット関連グッズ。',
+        },
+      ],
+    },
+    {
+      slug: 'games-toys',
+      name: 'ゲーム／おもちゃ',
+      icon: '🎮',
+      priority: 22,
+      legacy_slugs: [],
+      criteria:
+        'Nintendo Switch/PS5本体、ゲームソフト、コントローラー、ブロック(LEGO等)、ボードゲーム、プラモデル、知育玩具。',
+      children: [
+        {
+          slug: 'video-game-consoles-accessories',
+          name: 'ゲーム機本体・周辺機器',
+          criteria: 'Switch/PS5本体、ワイヤレスコントローラー、充電スタンド、専用ケース。',
+          legacy_names: ['ゲーム機本体', '周辺機器・アクセサリ', 'コントローラー'],
+        },
+        {
+          slug: 'video-game-software',
+          name: 'ゲームソフト',
+          criteria: 'パッケージ版ゲームソフト、ダウンロードコード。',
+          legacy_names: ['Nintendo Switchゲームソフト', 'PlayStation 5ゲームソフト'],
+        },
+        {
+          slug: 'blocks-model-kits-figures',
+          name: 'ブロック・プラモ・フィギュア',
+          criteria: 'レゴ(LEGO)ブロック、ガンプラ・プラモデル、フィギュア、ラジコン。',
+          legacy_names: ['ブロック', 'プラモデル', 'フィギュア'],
+        },
+        {
+          slug: 'board-card-educational-toys',
+          name: 'ボードゲーム・知育玩具',
+          criteria: 'カードゲーム、ボードゲーム、知育パズル、幼児用知育トイ、ぬいぐるみ。',
+          legacy_names: ['ボードゲーム', '知育玩具', 'ぬいぐるみ'],
+        },
+        {
+          slug: 'zz-games-toys-other',
+          name: 'その他おもちゃ・ゲーム',
+          criteria: 'パーティーグッズ、モデルガン、上記以外の玩具類。',
+        },
+      ],
+    },
+    {
+      slug: 'books-media',
+      name: '本／音楽／エンタメ',
+      icon: '📚',
+      priority: 23,
+      legacy_slugs: ['books', 'music-entertainment'],
+      criteria: '書籍、コミック、ビジネス書、雑誌、音楽CD、映像DVD/Blu-ray、楽器など文化・エンタメソフト。',
+      children: [
+        {
+          slug: 'comics-manga',
+          name: 'コミック・マンガ',
+          criteria: 'コミック単行本、漫画全巻セット、ライトノベル。電子書籍端末はスマホ・タブレットへ。',
+          legacy_names: ['コミック', 'マンガ'],
+        },
+        {
+          slug: 'business-self-help-books',
+          name: 'ビジネス書・自己啓発',
+          criteria: '経済・経営書、自己啓発本、マネー・投資本、実用ビジネス書籍。',
+          legacy_names: ['ビジネス・経済', '自己啓発'],
+        },
+        {
+          slug: 'novels-literature-humanities',
+          name: '小説・文芸・人文',
+          criteria: '文芸書、ミステリー小説、エッセイ、歴史・心理学・人文書。',
+          legacy_names: ['小説・文芸', '文庫'],
+        },
+        {
+          slug: 'practical-it-educational-books',
+          name: 'IT・技術書・実用書・資格',
+          criteria: 'プログラミング・IT技術書、資格試験テキスト、料理本、趣味・健康実用書。',
+          legacy_names: ['コンピュータ・IT', '資格・検定'],
+        },
+        {
+          slug: 'music-dvd-instruments',
+          name: '音楽ソフト・映像・楽器',
+          criteria: '音楽CD、ライブBlu-ray/DVD、電子ピアノ、キーボード、ウクレレ、ギター弦。',
+          legacy_names: ['J-POP', 'ミュージック', '電子ピアノ'],
+        },
+        {
+          slug: 'zz-books-media-other',
+          name: 'その他書籍・メディア',
+          criteria: '雑誌、写真集、カレンダー、上記以外の印刷物・エンタメ品。',
+        },
+      ],
+    },
+    {
+      slug: 'stationery-office',
+      name: '文房具／オフィス用品',
+      icon: '✏️',
+      priority: 24,
+      legacy_slugs: [],
+      criteria: '筆記具、ノート、手帳、ファイル、接着剤、シュレッダー、ラベルライター、コピー用紙など事務文具。',
+      children: [
+        {
+          slug: 'pens-pencils-markers',
+          name: 'ボールペン・筆記具・修正',
+          criteria: 'ゲルインクボールペン、多機能ペン、万年筆、シャープペンシル、蛍光ペン、消しゴム、修正テープ。',
+          legacy_names: ['ボールペン', 'シャープペン', '蛍光ペン'],
+        },
+        {
+          slug: 'notebooks-binders-paper',
+          name: 'ノート・手帳・ファイル',
+          criteria: 'リングノート、ルーズリーフ、手帳・ダイアリー、クリアファイル、バインダー、コピー用紙。',
+          legacy_names: ['ノート', '手帳', 'クリアファイル'],
+        },
+        {
+          slug: 'tapes-adhesives-scissors',
+          name: 'テープ・はさみ・接着剤',
+          criteria: 'メンディングテープ、両面テープ、ハサミ、カッターナイフ、ステープラー・ホッチキス、接着剤。',
+          legacy_names: ['粘着テープ', 'はさみ', 'ホッチキス'],
+        },
+        {
+          slug: 'office-machines-labelers',
+          name: 'シュレッダー・事務機器',
+          criteria: '電動シュレッダー、テプラ等のラベルライター、金庫、タイムレコーダー、ホワイトボード。',
+          legacy_names: ['シュレッダー', 'ラベルライター'],
+        },
+        {
+          slug: 'zz-stationery-other',
+          name: 'その他文具・事務用品',
+          criteria: 'クリップ、ブックエンド、スタンプ、上記以外の事務文具。',
+        },
+      ],
+    },
+    {
+      slug: 'outdoor-sports',
+      name: 'アウトドア／スポーツ',
+      icon: '🏕️',
+      priority: 25,
+      legacy_slugs: [],
+      criteria:
+        'テント、寝袋、キャンプチェア、ランタン、クーラーボックス、ポータブル電源、筋トレ器具、ヨガマット、自転車用品。',
+      children: [
+        {
+          slug: 'tents-shelters-sleeping',
+          name: 'テント・寝袋・キャンプ寝具',
+          criteria: 'キャンプ用テント、タープ、マミー型・封筒型寝袋(シュラフ)、エアーマット、コット。',
+          legacy_names: ['テント', '寝袋・シュラフ', 'エアーマット'],
+        },
+        {
+          slug: 'camp-chairs-tables-cooking',
+          name: 'キャンプ椅子・焚き火・クッカー',
+          criteria: 'アウトドアチェア、折りたたみテーブル、焚き火台、シングルバーナー、メスティン、クーラーボックス。',
+          legacy_names: ['アウトドアチェア', '焚き火台', 'クーラーボックス'],
+        },
+        {
+          slug: 'lanterns-portable-power',
+          name: 'ランタン・ポータブル電源',
+          criteria:
+            'LEDキャンプランタン、大容量ポータブル電源(EcoFlow/Jackery等)、ソーラーパネル。小型モバイルバッテリーはスマホ周辺機器へ。',
+          legacy_names: ['ランタン', 'ポータブル電源'],
+        },
+        {
+          slug: 'fitness-training-gear',
+          name: '筋トレ器具・ヨガ・フィットネス',
+          criteria: 'ダンベル、プッシュアップバー、腹筋ローラー、ヨガマット、フォームローラー、エクササイズバンド。',
+          legacy_names: ['ダンベル', 'ヨガマット', 'トレーニングチューブ'],
+        },
+        {
+          slug: 'cycling-fishing-sports-gear',
+          name: '自転車用品・釣り・球技',
+          criteria: '自転車ライト、ヘルメット、空気入れ、サドル、釣竿・リール、ボール、ランニングポーチ。',
+          legacy_names: ['自転車ライト', 'フィッシング', 'ヘルメット'],
+        },
+        {
+          slug: 'zz-outdoor-sports-other',
+          name: 'その他アウトドア・スポーツ',
+          criteria: '登山ステッキ、水筒・ハイドレーション、上記以外のレジャー用品。',
+        },
+      ],
+    },
+    {
+      slug: 'car-diy',
+      name: 'カー用品／DIY／工具',
+      icon: '🛠️',
+      priority: 26,
+      legacy_slugs: [],
+      criteria: 'ドライブレコーダー、車載用品、洗車用品、電動インパクトドライバー、高圧洗浄機、工具セット、塗料など。',
+      children: [
+        {
+          slug: 'dash-cams-car-electronics',
+          name: 'ドラレコ・車載電装品',
+          criteria:
+            '前後2カメラドライブレコーダー、ディスプレイオーディオ、カーナビ、FMトランスミッター、シガーソケット急速充電器。',
+          legacy_names: ['ドライブレコーダー', 'カーナビ', 'シガーソケットチャージャー'],
+        },
+        {
+          slug: 'car-wash-coating-care',
+          name: '洗車・コーティング・ケミカル',
+          criteria:
+            'カーシャンプー、ガラスコーティング剤、拭き上げマイクロファイバークロス、タイヤワックス、車内クリーナー。',
+          legacy_names: ['洗車用品', 'カーシャンプー', 'コーティング剤'],
+        },
+        {
+          slug: 'car-interior-safety-accessories',
+          name: '車内アクセサリ・安全装備',
+          criteria: '車内クッション、サンシェード、シートカバー、ジャンプスターター、タイヤ空気圧計。',
+          legacy_names: ['車内アクセサリ', 'ジャンプスターター', 'サンシェード'],
+        },
+        {
+          slug: 'power-tools-washers',
+          name: '電動工具・高圧洗浄機',
+          criteria: '電動インパクトドライバー、振動ドリル、丸ノコ、サンダー、高圧洗浄機(ケルヒャー等)。',
+          legacy_names: ['インパクトドライバー', '高圧洗浄機', '電動工具'],
+        },
+        {
+          slug: 'hand-tools-hardware-diy',
+          name: '手動工具・DIY金物・部材',
+          criteria: 'レンチ、ドライバーセット、ペンチ、メジャー、作業用手袋、補修テープ、ボンド・塗料。',
+          legacy_names: ['工具セット', 'ドライバー', 'レンチ'],
+        },
+        {
+          slug: 'zz-car-diy-other',
+          name: 'その他車用品・作業工具',
+          criteria: 'レーザー墨出し器、トルクレンチ、足場、その他車・作業用消耗品。',
+        },
+      ],
+    },
+    {
+      slug: 'others',
+      name: 'その他／全般',
+      icon: '📦',
+      priority: 27,
+      legacy_slugs: [],
+      criteria:
+        '上記1〜26のいずれの定義にもどうしても該当しない例外的な商品（原則として使用せず、恒常的滞留を避ける）。',
+      children: [
+        {
+          slug: 'general-uncategorized',
+          name: '未分類・全般',
+          criteria: 'どの親・子カテゴリの定義にも当てはまらない例外アイテム。',
+          legacy_names: ['その他', 'その他・全般'],
+        },
+      ],
+    },
+  ],
+};
+
+function generate(): void {
+  const outputPath = path.resolve(process.cwd(), 'data/taxonomy-v2.json');
+  fs.writeFileSync(outputPath, `${JSON.stringify(taxonomy, null, 2)}\n`, 'utf8');
+
+  let totalChildren = 0;
+  for (const parent of taxonomy.parents) {
+    totalChildren += parent.children.length;
+  }
+
+  console.log(`[SUCCESS] taxonomy-v2.json を生成しました: ${outputPath}`);
+  console.log(`親カテゴリ数: ${taxonomy.parents.length}`);
+  console.log(`子カテゴリ総数: ${totalChildren}`);
+}
+
+generate();

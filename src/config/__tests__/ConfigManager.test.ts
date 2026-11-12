@@ -40,6 +40,7 @@ describe('ConfigManager Property-Based Tests', () => {
       'MIN_WORD_COUNT',
       'INCLUDE_IMAGES',
       'ARTICLE_OUTPUT_PATH',
+      'GEMINI_API_KEY',
     ];
     for (const envVar of configEnvVars) {
       delete process.env[envVar];
@@ -303,5 +304,19 @@ describe('ConfigManager Property-Based Tests', () => {
       ),
       { numRuns: 20 },
     );
+  });
+
+  describe('getGeminiApiKey', () => {
+    test('should return Gemini API key when set in environment', () => {
+      process.env.GEMINI_API_KEY = 'test-gemini-key-12345';
+      const configManager = ConfigManager.getInstance();
+      expect(configManager.getGeminiApiKey()).toBe('test-gemini-key-12345');
+    });
+
+    test('should throw error when GEMINI_API_KEY is not set', () => {
+      delete process.env.GEMINI_API_KEY;
+      const configManager = ConfigManager.getInstance();
+      expect(() => configManager.getGeminiApiKey()).toThrow('Required environment variable GEMINI_API_KEY is not set');
+    });
   });
 });
