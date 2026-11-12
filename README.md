@@ -51,7 +51,8 @@ Amazon Creators API と Antigravity CLI（`agy`）を活用した商品調査・
 │   └── js/                      # クライアントサイドJS（検索、フィルター、比較等）
 ├── data/                         # データソース・キャッシュ
 │   ├── investigations/          # AI調査結果データ（JSON）
-│   ├── categorygroups.json      # 親カテゴリグループ定義（手動管理）
+│   ├── taxonomy-v2.json         # 親・子タクソノミー定義（v2、手動管理）
+│   ├── product-categories.json  # 商品ASINと新カテゴリの分類マッピング（Git管理・自動分類永続化）
 │   ├── brandgroups.json         # ブランドグループ・マッチャー定義（手動管理）
 │   ├── categories.yml           # 自動生成カテゴリ階層
 │   └── cache/                   # APIレスポンス・商品情報キャッシュ
@@ -91,9 +92,10 @@ Amazon Creators API と Antigravity CLI（`agy`）を活用した商品調査・
 |---|---|
 | `src/api/CreatorsAPIClient.ts` | Amazon Creators API v1 通信クライアント。商品情報取得、レートリミット制御、署名検証を担当 |
 | `src/article/ArticleGenerator.ts` | 調査JSONデータからHugo用Markdown記事を生成。Front matter、スペック表、長所・短所を構成 |
+| `src/category/classifier/GeminiDecisionClassifier.ts` | Gemini Decision 1 による自前タクソノミーへの商品カテゴリ自動分類を担当 |
 | `src/prompts/InvestigationPromptBuilder.ts` | 商品調査プロンプトの構成を担当 |
-| `src/prompts/CategoryOrganizer.ts` | 未登録カテゴリの抽出とカテゴリ整理プロンプト生成を担当 |
-| `data/categorygroups.json` | 親カテゴリと子カテゴリのマッピング定義。14文字以内の親カテゴリ名規約に準拠 |
+| `data/taxonomy-v2.json` | 親カテゴリと子カテゴリのタクソノミー定義（v2）。UI文字数規約に準拠 |
+| `data/product-categories.json` | 各商品の新カテゴリ分類マッピング（コンパクトJSON、自動分類永続化） |
 | `data/brandgroups.json` | ブランド名マッチャー（正規表現）定義。単語境界（`\b`）によるブランド誤認防止を適用 |
 | `scripts/validate_artifact.py` | 調査成果物JSONの整合性検証（非メートル法表記の排除、URLリンク有効性チェック、スキーマ検証） |
 | `src/scripts/maintenance/prune-dead-products.ts` | Amazon上で取扱終了となったデッド商品の検出およびコンテンツ棚卸し |

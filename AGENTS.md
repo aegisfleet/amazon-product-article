@@ -65,7 +65,7 @@ Amazon Creators APIの認証情報の取り扱いには、最優先でセキュ�
 GitHub Actions CIはLintやBiomeのエラーがあると失敗するため、いかなるタスクも以下のコマンドが正常終了することを確認するまでは完了とみなしてはならない。
 
 - **Biome (コード・定義検証)**: `pnpm run biome:check`
-  - ソースコードおよび手動管理定義JSON（`brandgroups.json`, `categorygroups.json` 等）の構文・フォーマットエラーが0件であることを確認する。自動フォーマットを適用する場合は `pnpm run biome:fix` を使用すること。
+  - ソースコードおよび手動管理定義JSON（`brandgroups.json`, `taxonomy-v2.json` 等）の構文・フォーマットエラーが0件であることを確認する。自動フォーマットを適用する場合は `pnpm run biome:fix` を使用すること。
 - **Lint**: `pnpm run lint`
   - ESLintエラーが0件であることを確認する。
 - **ビルド**: `pnpm run build`
@@ -174,7 +174,7 @@ GitHub Actions CIはLintやBiomeのエラーがあると失敗するため、い
 本システムは、自律型AIエージェントやLLMによる高精度な商品情報調査および詳細レポート参照を支援するため、標準規格（llmstxt.org）に準拠した案内ファイルを運用している。
 
 - **案内ファイルの同期維持**:
-  親カテゴリ（`data/categorygroups.json`）の構成変更、主要パーマリンク規則の変更、または新しいデータ配信エンドポイント（軽量インデックス等）を追加した際は、必ず `static/llms.txt` および `static/llms-full.txt` の内容も同期して更新すること。
+  親カテゴリ（`data/taxonomy-v2.json`）の構成変更、主要パーマリンク規則の変更、または新しいデータ配信エンドポイント（軽量インデックス等）を追加した際は、必ず `static/llms.txt` および `static/llms-full.txt` の内容も同期して更新すること。
 - **自動発見（Auto-Discovery）設定の保護**:
   AIクローラが自律検知できるよう、`layouts/partials/head.html`（`<link rel="alternate" type="text/markdown" ...>`）および `layouts/home.robots.txt` に設定されている参照設定を破損・削除しないこと。
 - **詳細レポートURL案内（サイト送客）**:
@@ -202,14 +202,15 @@ SonarQube / SonarLint による Code Smell を防止し、高い保守性を維�
 
 ## 5. データ管理とキャッシュ操作
 
-### 5.1 カテゴリグループ管理
+### 5.1 カテゴリ・タクソノミー管理
 
-カテゴリを親グループに整理する際は、**`data/categorygroups.json` のみ編集する**こと。
+親・子カテゴリの定義を整理・更新する際は、**`data/taxonomy-v2.json` のみ編集する**こと。商品の所属は Gemini Decision 1 が判定し、`data/product-categories.json` に永続化される。
 
-- **文字数制限（14文字以内）**:
-  UI表示（ドロップダウンメニュー、ナビゲーション、ホーム画面一覧等）での見切れやレイアウト崩れを防ぐため、**親カテゴリ名は必ず14文字以内に収める**こと（15文字以上は禁止）。複合ジャンルを並べる場合も14文字以内となるよう簡潔に命名する。
-- **ソート順**: Unicodeコードポイント順（英数字 > ひらがな > カタカナ > 漢字）を維持すること。迷った場合は `pnpm run sort:categories` を実行すること。
-- **新規追加・編集後の手順**: `pnpm run prebuild:hugo` を実行し、`data/categories.yml` 等が自動生成・更新されることを確認すること。
+- **文字数制限**:
+  UI表示（ドロップダウンメニュー、ナビゲーション、ホーム画面一覧等）での見切れやレイアウト崩れを防ぐため、**親カテゴリ名は必ず14文字以内に収める**こと（15文字以上は禁止）。子カテゴリ名は16文字以内に収める。
+- **旧URL互換性（`legacy_slugs`）**:
+  親カテゴリの統合・名称変更時は、旧スラッグを `legacy_slugs` に必ず追加して404を防止すること（`aliases` リダイレクトが自動生成される）。
+- **新規追加・編集後の手順**: `pnpm run prebuild:hugo` を実行し、`data/categories.yml` / `static/data/categorygroups.json` / `content/parent-category/*.md` が自動生成・更新されることを確認すること。
 
 ### 5.2 ブランドグループ管理（`data/brandgroups.json`）
 
@@ -237,7 +238,7 @@ SonarQube / SonarLint による Code Smell を防止し、高い保守性を維�
 
 ### 5.4 定義ファイルのフォーマットと整合性
 
-手動で編集するカテゴリ定義（`data/categorygroups.json`）およびブランド定義（`data/brandgroups.json`）は、ネストが深く括弧の記述ミスが発生しやすい。
+手動で編集するタクソノミー定義（`data/taxonomy-v2.json`）およびブランド定義（`data/brandgroups.json`）は、ネストが深く括弧の記述ミスが発生しやすい。
 これらのファイルを編集した後は、必ず `pnpm run biome:check` を実行し、構文エラーがないことを検証すること。フォーマットの崩れは `pnpm run biome:fix` で自動整形できる。
 
 ---
