@@ -22,6 +22,15 @@ interface LegacyMapEntry {
 
 type LegacyCategoryMap = Record<string, LegacyMapEntry>;
 
+/**
+ * 分類入力（商品名・ブランド・仕様）のハッシュを算出する。
+ * 再調査で入力が変化したかどうかの検知に用いる。
+ */
+export function calculateClassificationInputHash(input: ProductClassificationInput): string {
+  const raw = `${input.title.trim()}|${(input.brand || '').trim()}|${(input.specsSummary || '').trim()}`;
+  return crypto.createHash('sha256').update(raw).digest('hex').slice(0, 16);
+}
+
 export class GeminiDecisionClassifier {
   private readonly client: GeminiDecisionClient;
   private readonly taxonomy: TaxonomyV2;
@@ -51,8 +60,7 @@ export class GeminiDecisionClassifier {
   }
 
   public calculateInputHash(input: ProductClassificationInput): string {
-    const raw = `${input.title.trim()}|${(input.brand || '').trim()}|${(input.specsSummary || '').trim()}`;
-    return crypto.createHash('sha256').update(raw).digest('hex').slice(0, 16);
+    return calculateClassificationInputHash(input);
   }
 
   private buildInputText(input: ProductClassificationInput): string {

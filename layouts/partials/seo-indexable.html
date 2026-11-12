@@ -5,8 +5,9 @@
   head.html の robots メタと sitemap.xml の両方から使う単一の判定ロジック。
 
   対象外（noindex, follow / sitemap 除外）:
-  - 商品数が Site.Params.seo.minCategoryProducts（既定5）未満のカテゴリページ（Kind = "term"）。
+  - 商品数が Site.Params.seo.minCategoryProducts（既定10）未満のカテゴリページ（Kind = "term"）。
     商品1〜2点だけの薄い分類ページが大量にあると、サイト全体の品質評価を下げるため。
+  - 「その他」受け皿ページ（親 others、子「その他〜」「未分類・全般」）。商品数に関わらず検索意図が曖昧なため。
   - カテゴリ一覧ページ（Kind = "taxonomy"、/categories/）。
     全タームをカード形式で描画すると巨大ページ化し、固有の検索意図も持たないため。
   - 全商品セクション一覧（Section = "articles" の Kind = "section"、/articles/）。
@@ -15,11 +16,13 @@
   それ以外（トップ、商品ページ、親カテゴリ、ブランド、特集ページ等）は対象とする。
 */ -}}
 {{- $indexable := true -}}
-{{- $minCategoryProducts := .Site.Params.seo.minCategoryProducts | default 5 -}}
+{{- $minCategoryProducts := .Site.Params.seo.minCategoryProducts | default 10 -}}
 {{- if eq .Kind "term" -}}
-  {{- if lt (len .Pages) $minCategoryProducts -}}
+  {{- if or (lt (len .Pages) $minCategoryProducts) (hasPrefix .Title "その他") (eq .Title "未分類・全般") -}}
     {{- $indexable = false -}}
   {{- end -}}
+{{- else if and (eq .Section "parent-category") .IsPage (eq .File.ContentBaseName "others") -}}
+  {{- $indexable = false -}}
 {{- else if eq .Kind "taxonomy" -}}
   {{- $indexable = false -}}
 {{- else if and (eq .Kind "section") (eq .Section "articles") -}}

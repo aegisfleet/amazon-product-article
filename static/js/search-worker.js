@@ -29,6 +29,7 @@ const FUSE_OPTIONS = {
         { name: "_norm_title", weight: 0.8 },
         { name: "_norm_summary", weight: 0.5 },
         { name: "_norm_categories", weight: 0.8 },
+        { name: "_norm_amazon_category", weight: 0.6 },
         { name: "_norm_specs", weight: 0.3 }
     ],
     threshold: 0.2,
@@ -228,6 +229,7 @@ async function handleInit(searchIndexUrl) {
             item._norm_categories = Array.isArray(item.categories)
                 ? item.categories.map(c => normalizeSearchText(c))
                 : [];
+            item._norm_amazon_category = normalizeSearchText(item.amazon_category || '');
             item._norm_specs = normalizeSearchText(item.specs);
 
             if (item.asin) {

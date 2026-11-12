@@ -2,13 +2,17 @@ import * as fs from 'node:fs';
 import * as path from 'node:path';
 import matter from '@11ty/gray-matter';
 import * as dotenv from 'dotenv';
-import { GeminiDecisionClassifier } from '../../category/classifier/GeminiDecisionClassifier';
+import {
+  calculateClassificationInputHash,
+  GeminiDecisionClassifier,
+} from '../../category/classifier/GeminiDecisionClassifier';
 import type { ClassificationResult } from '../../category/classifier/types';
 import {
   loadProductCategories,
   type ProductCategoryMap,
   saveProductCategories,
 } from '../../category/store/ProductCategoryStore';
+import { TaxonomyLookup } from '../../category/taxonomy/TaxonomyLookup';
 
 dotenv.config();
 
@@ -24,7 +28,7 @@ interface RunOptions {
   delayMs?: number;
   concurrency: number;
   dryRun: boolean;
-  asin?: string;
+  asins?: string[];
   resume: boolean;
   force: boolean;
 }
@@ -79,6 +83,16 @@ interface RawShardItem {
   };
 }
 
+/**
+ * カンマ区切りの ASIN 指定（例: B001,B002）を配列へ変換する
+ */
+function parseAsinList(value: string): string[] {
+  return value
+    .split(',')
+    .map((s) => s.trim())
+    .filter((s) => s.length > 0);
+}
+
 function parseArgs(): RunOptions {
   const args = process.argv.slice(2);
   const options: RunOptions = {
@@ -112,7 +126,7 @@ function parseArgs(): RunOptions {
         options.dryRun = true;
         break;
       case '--asin':
-        if (next) options.asin = next;
+        if (next) options.asins = parseAsinList(next);
         i++;
         break;
       case '--no-resume':
@@ -159,6 +173,19 @@ function ensureString(val: unknown, fallback = ''): string {
   return fallback;
 }
 
+/**
+ * 記事の旧（Amazon）カテゴリ名を解決する。退避済みの amazon_category を優先する。
+ */
+function resolveLegacyCategory(data: RawFrontmatter): string {
+  if (typeof data.amazon_category === 'string' && data.amazon_category) {
+    return data.amazon_category;
+  }
+  if (Array.isArray(data.categories) && data.categories.length > 0) {
+    return ensureString(data.categories[0]);
+  }
+  return ensureString(data.category);
+}
+
 function extractFromArticle(articlePath: string, asin: string): ProductInputData | undefined {
   try {
     const content = fs.readFileSync(articlePath, 'utf8');
@@ -167,10 +194,7 @@ function extractFromArticle(articlePath: string, asin: string): ProductInputData
 
     const title = ensureString(data.title) || ensureString(data.item_name) || asin;
     const brand = ensureString(data.brand) || ensureString(data.manufacturer);
-    const oldCat =
-      Array.isArray(data.categories) && data.categories.length > 0
-        ? ensureString(data.categories[0])
-        : ensureString(data.category);
+    const oldCat = resolveLegacyCategory(data);
 
     let specsSummary = '';
     if (data.specs && typeof data.specs === 'object') {
@@ -262,11 +286,12 @@ function updateArticleFrontmatter(articlePath: string, res: ClassificationResult
     data.taxonomy_version = 2;
     data.category_parent = res.parentSlug;
     data.category_child = res.childSlug;
-    const fallbackCategory =
-      Array.isArray(data.categories) && data.categories.length > 0
-        ? ensureString(data.categories[0])
-        : ensureString(data.category);
-    data.amazon_category = oldCat || fallbackCategory;
+    data.amazon_category = oldCat || resolveLegacyCategory(data);
+    const childName = TaxonomyLookup.load().getChildName(res.childSlug);
+    if (childName) {
+      data.category = childName;
+      data.categories = [childName];
+    }
     data.classification = {
       source: res.source,
       parent_confidence: res.parentConfidence,
@@ -293,8 +318,31 @@ function scanDirectoryForAsins(dirPath: string, extension: string): string[] {
   return files.filter((f) => f.endsWith(extension)).map((f) => path.basename(f, extension));
 }
 
+/**
+ * 登録済みの分類が最新の商品データに基づいているかを判定する。
+ * 再調査でタイトル・ブランド・スペックが変化し input_hash が一致しない場合は再分類対象とする。
+ */
+function isClassificationUpToDate(asin: string, articlesDir: string, categoryStore: ProductCategoryMap): boolean {
+  const stored = categoryStore[asin];
+  if (stored?.taxonomy_version !== 2) return false;
+
+  const storedHash = stored.classification?.input_hash;
+  if (!storedHash) return true;
+
+  const input = loadProductInput(asin, articlesDir);
+  if (!input) return true;
+
+  const currentHash = calculateClassificationInputHash({
+    title: input.title,
+    brand: input.brand,
+    ...(input.specsSummary ? { specsSummary: input.specsSummary } : {}),
+  });
+  return currentHash === storedHash;
+}
+
 function filterAsinsToProcess(
   allAsins: string[],
+  articlesDir: string,
   categoryStore: ProductCategoryMap,
   processedSet: Set<string>,
   options: RunOptions,
@@ -303,8 +351,7 @@ function filterAsinsToProcess(
 
   if (!options.force) {
     toProcess = allAsins.filter((asin) => {
-      const stored = categoryStore[asin];
-      if (stored?.taxonomy_version === 2) return false;
+      if (isClassificationUpToDate(asin, articlesDir, categoryStore)) return false;
       if (options.resume && processedSet.has(asin)) return false;
       return true;
     });
@@ -336,8 +383,10 @@ function collectTargetAsins(
 ): { allAsins: string[]; asinsToProcess: string[] } {
   const allAsinsSet = new Set<string>();
 
-  if (options.asin) {
-    allAsinsSet.add(options.asin);
+  if (options.asins && options.asins.length > 0) {
+    for (const asin of options.asins) {
+      allAsinsSet.add(asin);
+    }
   } else {
     for (const asin of scanDirectoryForAsins(investigationsDir, '.json')) {
       allAsinsSet.add(asin);
@@ -348,7 +397,7 @@ function collectTargetAsins(
   }
 
   const allAsins = Array.from(allAsinsSet).sort((a, b) => a.localeCompare(b));
-  const asinsToProcess = filterAsinsToProcess(allAsins, categoryStore, processedSet, options);
+  const asinsToProcess = filterAsinsToProcess(allAsins, articlesDir, categoryStore, processedSet, options);
 
   return { allAsins, asinsToProcess };
 }

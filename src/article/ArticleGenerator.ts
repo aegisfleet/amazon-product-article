@@ -11,6 +11,7 @@ import {
   type ProductCategoryMap,
   type StoredProductCategory,
 } from '../category/store/ProductCategoryStore';
+import { TaxonomyLookup } from '../category/taxonomy/TaxonomyLookup';
 import { InvestigationFileSchema } from '../schemas/InvestigationSchema';
 import type { AffiliateLink } from '../types/AffiliateTypes';
 import type {
@@ -62,6 +63,7 @@ export class ArticleGenerator {
   private readonly investigationCache: Map<string, InvestigationResult | null>;
   // 自前タクソノミー（Gemini Decision 1）の分類マッピングキャッシュ
   private productCategoryMap: ProductCategoryMap | null = null;
+  private taxonomyLookup: TaxonomyLookup | null = null;
 
   constructor() {
     this.logger = Logger.getInstance();
@@ -73,6 +75,11 @@ export class ArticleGenerator {
   private getProductCategoryData(asin: string): StoredProductCategory | undefined {
     this.productCategoryMap ??= loadProductCategories();
     return this.productCategoryMap[asin];
+  }
+
+  private getTaxonomyLookup(): TaxonomyLookup {
+    this.taxonomyLookup ??= TaxonomyLookup.load();
+    return this.taxonomyLookup;
   }
 
   /**
@@ -291,8 +298,15 @@ export class ArticleGenerator {
     metadata.taxonomy_version = catData.taxonomy_version;
     metadata.category_parent = catData.category_parent;
     metadata.category_child = catData.category_child;
-    if (catData.amazon_category) {
-      metadata.amazon_category = catData.amazon_category;
+
+    // 旧 Amazon カテゴリ名を退避し、表示用 category を新タクソノミーの子カテゴリ名へ切り替える
+    const amazonCategory = catData.amazon_category || metadata.amazon_category || metadata.category;
+    if (amazonCategory) {
+      metadata.amazon_category = amazonCategory;
+    }
+    const childName = this.getTaxonomyLookup().getChildName(catData.category_child);
+    if (childName) {
+      metadata.category = childName;
     }
     if (catData.classification) {
       metadata.classification = catData.classification;

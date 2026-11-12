@@ -68,4 +68,20 @@ describe('Taxonomy v2 Definition Validation', () => {
       expect(hasOther).toBe(true);
     }
   });
+
+  test('all legacy parent slugs in categorygroups.json are covered by slug or legacy_slugs (zero URL loss)', () => {
+    const legacyPath = path.resolve(process.cwd(), 'data/categorygroups.json');
+    const legacyGroups = JSON.parse(fs.readFileSync(legacyPath, 'utf8')) as Record<string, { slug: string }>;
+    const covered = new Set<string>();
+    for (const parent of taxonomy.parents) {
+      covered.add(parent.slug);
+      for (const legacySlug of parent.legacy_slugs ?? []) {
+        covered.add(legacySlug);
+      }
+    }
+    const missing = Object.values(legacyGroups)
+      .map((g) => g.slug)
+      .filter((slug) => !covered.has(slug));
+    expect(missing).toEqual([]);
+  });
 });

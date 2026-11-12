@@ -1,3 +1,4 @@
+import * as crypto from 'node:crypto';
 import axios, { type AxiosError, type AxiosInstance } from 'axios';
 import { Logger } from '../../utils/Logger';
 import type { DecisionRequest, DecisionResponse } from './types';
@@ -80,7 +81,7 @@ export class GeminiDecisionClient {
             }
           }
 
-          const jitter = Math.floor(Math.random() * 500);
+          const jitter = crypto.randomInt(0, 500);
           const finalDelay = delay + jitter;
 
           this.logger.warn(

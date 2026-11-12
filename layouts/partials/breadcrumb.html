@@ -38,6 +38,17 @@
         {{- end -}}
         {{- end -}}
 
+        {{- /* frontmatter の category_parent を最優先して親カテゴリを解決 */ -}}
+        {{- with .Params.category_parent -}}
+        {{- $categoryParentSlug := . -}}
+        {{- range $parent, $data := hugo.Data.categorygroups -}}
+        {{- if eq $data.slug $categoryParentSlug -}}
+        {{- $parentName = $parent -}}
+        {{- $parentSlug = $data.slug -}}
+        {{- end -}}
+        {{- end -}}
+        {{- end -}}
+
         {{- /* 親カテゴリ表示 */ -}}
         {{- if $parentName -}}
         <li class="breadcrumb-item">

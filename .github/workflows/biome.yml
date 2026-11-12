@@ -1,4 +1,4 @@
-name: Biome Check
+﻿name: Biome Check
 
 permissions:
   contents: write
@@ -10,6 +10,7 @@ on:
       - 'src/**/*.ts'
       - 'data/brandgroups.json'
       - 'data/categorygroups.json'
+      - 'data/taxonomy-v2.json'
       - 'package.json'
       - 'biome.json'
       - 'tsconfig.json'

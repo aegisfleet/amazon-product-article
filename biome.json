@@ -1,4 +1,4 @@
-{
+﻿{
   "$schema": "https://biomejs.dev/schemas/2.6.2/schema.json",
   "vcs": {
     "enabled": true,
@@ -10,6 +10,7 @@
       "src/**/*.ts",
       "data/brandgroups.json",
       "data/categorygroups.json",
+      "data/taxonomy-v2.json",
       "package.json",
       "biome.json",
       "tsconfig.json",

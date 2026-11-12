@@ -102,7 +102,7 @@ function matchesKeywords(p, keywords) {
   if (keywords.length === 0) return true;
   const specsText = p.specsHtml ? p.specsHtml.replace(/<[^>]{1,1024}>/g, ' ') : '';
   const searchableText = normalizeText(
-    [p.title, p.category, p.subcategory, p.brand, p.description, specsText].filter(Boolean).join(' ')
+    [p.title, p.category, p.subcategory, p.amazonCategory, p.brand, p.description, specsText].filter(Boolean).join(' ')
   );
   return keywords.every(keyword => searchableText.includes(keyword));
 }

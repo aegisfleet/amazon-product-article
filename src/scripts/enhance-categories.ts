@@ -7,7 +7,7 @@ import { ProductCounter } from '../category/ProductCounter';
 import { BrandCounter } from '../navigation/BrandCounter';
 import { type BrandEntry, BrandManager } from '../navigation/BrandManager';
 
-const categoryGroupsPath = path.resolve(process.cwd(), 'data/categorygroups.json');
+const categoryGroupsPath = path.resolve(process.cwd(), 'data/taxonomy-v2.json');
 const contentPath = path.resolve(process.cwd(), 'content');
 const outJsonPath = path.resolve(process.cwd(), 'static/data/categorygroups.json');
 const outYamlPath = path.resolve(process.cwd(), 'data/categories.yml');

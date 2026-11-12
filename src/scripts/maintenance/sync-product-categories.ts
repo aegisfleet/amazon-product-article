@@ -6,6 +6,7 @@ import {
   type StoredProductCategory,
   saveProductCategories,
 } from '../../category/store/ProductCategoryStore';
+import { TaxonomyLookup } from '../../category/taxonomy/TaxonomyLookup';
 
 interface RawClassification {
   source?: unknown;
@@ -87,9 +88,47 @@ function extractCategoryFromArticle(filePath: string): StoredProductCategory | n
 }
 
 /**
+ * 表示用 category / categories を新タクソノミーの子カテゴリ名へ切り替える。
+ * 旧 Amazon カテゴリ名は amazon_category へ退避する。
+ */
+function updateDisplayCategory(
+  d: RawArticleFrontmatter,
+  stored: StoredProductCategory,
+  lookup: TaxonomyLookup,
+): boolean {
+  const childName = lookup.getChildName(stored.category_child);
+  if (!childName) {
+    return false;
+  }
+
+  let changed = false;
+  if (!d.amazon_category && !stored.amazon_category) {
+    const legacy = resolveAmazonCategory(d);
+    if (legacy && legacy !== childName) {
+      d.amazon_category = legacy;
+      changed = true;
+    }
+  }
+  if (d.category !== childName) {
+    d.category = childName;
+    changed = true;
+  }
+  const currentCategories = Array.isArray(d.categories) ? d.categories : [];
+  if (currentCategories.length !== 1 || currentCategories[0] !== childName) {
+    d.categories = [childName];
+    changed = true;
+  }
+  return changed;
+}
+
+/**
  * frontmatter のフィールドを比較・更新し、変更があったかを判定する
  */
-function updateFrontmatterValues(d: RawArticleFrontmatter, stored: StoredProductCategory): boolean {
+function updateFrontmatterValues(
+  d: RawArticleFrontmatter,
+  stored: StoredProductCategory,
+  lookup: TaxonomyLookup,
+): boolean {
   let changed = false;
 
   if (d.taxonomy_version !== stored.taxonomy_version) {
@@ -112,6 +151,9 @@ function updateFrontmatterValues(d: RawArticleFrontmatter, stored: StoredProduct
     d.classification = stored.classification;
     changed = true;
   }
+  if (updateDisplayCategory(d, stored, lookup)) {
+    changed = true;
+  }
 
   return changed;
 }
@@ -119,13 +161,13 @@ function updateFrontmatterValues(d: RawArticleFrontmatter, stored: StoredProduct
 /**
  * 記事ファイルを読み込み、ストアのカテゴリ情報で更新する
  */
-function applyCategoryToArticle(filePath: string, stored: StoredProductCategory): boolean {
+function applyCategoryToArticle(filePath: string, stored: StoredProductCategory, lookup: TaxonomyLookup): boolean {
   try {
     const raw = fs.readFileSync(filePath, 'utf8');
     const parsed = matter(raw);
     const d = parsed.data as RawArticleFrontmatter;
 
-    const changed = updateFrontmatterValues(d, stored);
+    const changed = updateFrontmatterValues(d, stored, lookup);
     if (!changed) {
       return false;
     }
@@ -179,6 +221,7 @@ function syncToArticles(articlesDir: string, store: Record<string, StoredProduct
   }
 
   let updatedArticlesCount = 0;
+  const lookup = TaxonomyLookup.load();
   const files = fs.readdirSync(articlesDir);
 
   for (const file of files) {
@@ -188,7 +231,7 @@ function syncToArticles(articlesDir: string, store: Record<string, StoredProduct
     if (!stored) continue;
 
     const filePath = path.join(articlesDir, file);
-    if (applyCategoryToArticle(filePath, stored)) {
+    if (applyCategoryToArticle(filePath, stored, lookup)) {
       updatedArticlesCount++;
     }
   }
