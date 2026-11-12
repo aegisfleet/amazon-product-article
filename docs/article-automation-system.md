@@ -1,6 +1,6 @@
 # 自動記事更新・生成システムの仕組み
 
-本ドキュメントでは、Amazon Creators API と Google Jules（AIエージェント）を連携させ、商品の選定からAI調査、プルリクエスト（PR）の検証・自動マージ、記事生成、そしてGitHub Pagesへの公開・定期保守に至る**自律型記事更新パイプライン**の全体像と詳細仕様を解説する。
+本ドキュメントでは、Amazon Creators API と Antigravity CLI（AIエージェント）を連携させ、商品の選定からAI調査、プルリクエスト（PR）の検証・自動マージ、記事生成、そしてGitHub Pagesへの公開・定期保守に至る**自律型記事更新パイプライン**の全体像と詳細仕様を解説する。
 
 ---
 
@@ -20,9 +20,9 @@ flowchart TD
         T5["ユーザーリクエスト対応<br>(investigate-user-requests.yml)"]
     end
 
-    subgraph Investigation["2. AI商品調査 (Google Jules)"]
-        J1["Jules APIへタスク投入<br>(JulesInvestigator.ts)"]
-        J2["商品データ・競合情報取得<br>(scripts/creators_get_item.py)"]
+    subgraph Investigation["2. AI商品調査 (Antigravity CLI)"]
+        J1["プロンプト生成<br>(investigation-cli.ts)"]
+        J2["Antigravity CLI実行<br>(agy headless / creators_get_item.py)"]
         J3["調査結果JSON生成<br>(data/investigations/{ASIN}.json)"]
         J4["GitHub PRの自動作成"]
     end
@@ -65,20 +65,20 @@ flowchart TD
 
 ## 3. 各フェーズの詳細動作
 
-### 3.1 AI調査フェーズ（Google Jules）
+### 3.1 AI調査フェーズ（Antigravity CLI）
 
-1. **セッション投入**:
-   - トリガーワークフローから `src/scripts/jules-investigation-cli.ts` が起動される。
-   - `src/jules/JulesInvestigator.ts` が調査プロンプトを組み立て、Google Jules API にタスクを送信する。
-2. **自律的データ収集**:
-   - Jules は仮想環境内で `scripts/creators_get_item.py` や `scripts/creators_search_items.py` を実行し、Creators API から商品の正確な公式スペック、画像、価格、特徴を取得する。
+1. **プロンプト生成**:
+   - トリガーワークフローから `src/scripts/investigation-cli.ts` が起動され、調査対象商品の選定と調査プロンプト・マニフェスト（`data/prompts/`）が生成される。
+2. **Antigravity CLI による自律的データ収集**:
+   - セルフホストランナー上の Antigravity CLI（`agy`）がヘッドレスモードで起動される。
+   - エージェントが `scripts/creators_get_item.py` や `scripts/creators_search_items.py` を実行し、Creators API から商品の正確な公式スペック、画像、価格、特徴を取得する。
    - レビュー情報、競合商品（3〜5製品）の比較データ、メリット・デメリット、想定ターゲット層を多角的に分析する。
 3. **調査レポートPRの作成**:
-   - 調査成果物を `data/investigations/{ASIN}.json` としてリポジトリの新規ブランチに保存し、GitHub Pull Request を自律的に作成する。
+   - 調査成果物を `data/investigations/{ASIN}.json` としてリポジトリの新規ブランチに保存し、GitHub Pull Request を自律的に作成する（`.github/workflows/scripts/investigate-products.sh`）。
 
 ### 3.2 検証・自動マージフェーズ（`pr-auto-merge.yml`）
 
-Julesが作成したPRは、無条件にマージされるのではなく、厳格な品質・安全検証を通過した場合にのみマージされる。
+Antigravity CLIが作成したPRは、無条件にマージされるのではなく、厳格な品質・安全検証を通過した場合にのみマージされる。
 
 1. **差分解析**:
    - `gh pr diff` を使用して変更された調査ファイル（`data/investigations/*.json`）を特定する。
@@ -138,7 +138,7 @@ PRが `main` ブランチにマージされると、公開用パイプライン�
 - これにより、GitHub 100MB 制限を完全回避するとともに、Hugo ビルド時のマウントから除外して起動・ビルド時間を大幅に高速化している。
 
 ### 4.4 セキュリティ・機密情報の保護
-- Creators API の秘密鍵（`AMAZON_CREATORS_CREDENTIAL_SECRET`）や Jules APIキーは、GitHub Secrets および環境変数でのみ管理される。
+- Creators API の秘密鍵（`AMAZON_CREATORS_CREDENTIAL_SECRET`）や Antigravity 認証情報は、GitHub Secrets および環境変数でのみ管理される。
 - コンソールログやコミットメッセージ、生成記事本文への秘密情報の露出は徹底して排除されている。
 
 ### 4.5 複数PR同時マージ時のキャッシュ競合耐性と自動解決
@@ -152,8 +152,8 @@ PRが `main` ブランチにマージされると、公開用パイプライン�
 | ファイル | 役割 |
 |---|---|
 | `.github/workflows/deploy-articles.yml` | 記事生成・サイトビルド・デプロイのメインパイプライン |
-| `.github/workflows/pr-auto-merge.yml` | Jules PRの自動検証・シミュレーション・自動マージ |
-| `.github/workflows/product-research.yml` | 定期的な商品探索とJules調査依頼 |
+| `.github/workflows/pr-auto-merge.yml` | 調査PRの自動検証・シミュレーション・自動マージ |
+| `.github/workflows/product-research.yml` | 定期的な商品探索とAntigravity調査実行 |
 | `.github/workflows/maintenance.yml` | 最古記事の定期リフレッシュワークフロー |
 | `.github/workflows/scripts/git-commit-push.sh` | ビルド成果物・キャッシュの安全なプッシュ・リトライ・競合解消シェル |
 | `src/scripts/maintenance/merge-product-cache.ts` | Git競合時にキャッシュJSONをタイムスタンプベースで自動統合するマージスクリプト |

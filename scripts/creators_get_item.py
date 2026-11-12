@@ -3,7 +3,7 @@
 Creators API Product Information Retrieval Script
 
 This script retrieves product information from Amazon Creators API
-and saves it to a JSON file for use by Jules or other automated processes.
+and saves it to a JSON file for use by Antigravity CLI or other automated processes.
 
 Usage:
     uv run python scripts/creators_get_item.py B06WRS9737

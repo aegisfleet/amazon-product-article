@@ -59,5 +59,5 @@ $env:INVESTIGATED_PRICE_DISCREPANCY_THRESHOLD="50"; pnpm run investigate:price-d
 - **自動化フロー**:
   1. `findPriceDiscrepancy` により乖離商品（調査時価格乖離 & セール商品）を抽出
   2. Creators API（PA-API）から最新商品情報を取得
-  3. Google Jules により最新価格・最新カタログ情報に基づいた再調査セッションを発行
+  3. Antigravity CLI（agy）により最新価格・最新カタログ情報に基づいた再調査セッションを発行
   4. 完了後、PR が自動作成される

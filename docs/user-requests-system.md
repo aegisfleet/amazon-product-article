@@ -1,6 +1,6 @@
 # ユーザー商品調査リクエスト連携システム 仕様・運用ドキュメント
 
-本文書は、ユーザー（読者）からの商品調査リクエストをGoogleフォーム経由で匿名受付し、GitHub Actions、Creators API、および Jules AI と連携して自動で商品調査・記事生成・ステータス更新を行う「ユーザー商品調査リクエスト連携システム」のアーキテクチャ、データフロー、ステータス遷移、および運用保守手順を体系的にまとめたものである。
+本文書は、ユーザー（読者）からの商品調査リクエストをGoogleフォーム経由で匿名受付し、GitHub Actions、Creators API、および Antigravity CLI と連携して自動で商品調査・記事生成・ステータス更新を行う「ユーザー商品調査リクエスト連携システム」のアーキテクチャ、データフロー、ステータス遷移、および運用保守手順を体系的にまとめたものである。
 
 ---
 
@@ -17,7 +17,7 @@
 - **調査枠の確保（キャパシティ保証）**:
   調査済みスキップが発生しても、未調査の新規対象商品が最大3件集まるまで探索を継続する。
 - **障害耐性と自動リトライ**:
-  Julesセッションの失敗等により記事が生成されなかった場合、24時間のタイムアウト判定を経て自動的に再調査対象としてリカバリする。
+  Antigravity CLI調査セッションの失敗等により記事が生成されなかった場合、24時間のタイムアウト判定を経て自動的に再調査対象としてリカバリする。
 - **透明性の高いフィードバック（動的待ち件数・目安表示）**:
   フォーム送信完了画面（確認メッセージ）に、現在の調査待ち件数および調査開始までの目安時間をリアルタイムに動的表示する。
 - **多様なURL形式の柔軟なサポート**:
@@ -37,7 +37,7 @@ sequenceDiagram
     participant GHA as GitHub Actions (cron)
     participant CLI as 調査CLI (TypeScript)
     participant API as Creators API
-    participant Jules as Jules AI (調査・PR作成)
+    participant AGY as Antigravity CLI (調査・PR作成)
 
     User->>Form: 商品URLを入力・送信（完全匿名）
     Form->>GSS: 回答を自動記録（A列: タイムスタンプ, B列: URL）
@@ -56,7 +56,7 @@ sequenceDiagram
             CLI->>GAS: POST /exec (ステータスを「完了」に昇格更新)
         else 新規未調査商品
             alt ステータスが「セッション開始済」かつ24時間未満
-                Note over CLI: Jules作業中とみなして待機スキップ
+                Note over CLI: Antigravity作業中とみなして待機スキップ
             else 新規受付 または 24時間以上経過（失敗リカバリ）
                 CLI->>CLI: 調査対象バッチに追加
             end
@@ -67,10 +67,10 @@ sequenceDiagram
         CLI->>GAS: POST /exec (ステータスを「処理中」に更新)
         GHA->>CLI: pnpm run investigate:products (Creators API経由で商品情報取得)
         CLI->>API: 商品詳細・競合商品データ取得
-        GHA->>Jules: Julesセッション起動 (プロンプト・調査指示)
+        GHA->>AGY: Antigravity CLI起動 (プロンプト・調査指示)
         GHA->>CLI: pnpm run investigate:user-requests -- --update-status
         CLI->>GAS: POST /exec (ステータスを「セッション開始済」に更新)
-        Jules->>GHA: 調査結果JSON作成 & PR自動作成・マージ
+        AGY->>GHA: 調査結果JSON作成 & PR自動作成・マージ
     end
 ```
 
@@ -86,7 +86,7 @@ sequenceDiagram
 | **GAS Web API** | `gas/src/api.js` | GHAからのHTTPリクエスト（GET/POST）に応答し、セキュアにデータの抽出・更新を実施。 |
 | **調査ヘルパー** | `src/scripts/user-requests-helper.ts` | 短縮URL解決、ASIN抽出正規表現、既存調査チェック、GAS APIクライアント。 |
 | **調査連携 CLI** | `src/scripts/investigate-user-requests-cli.ts` | `--fetch-requests`（対象抽出・完了昇格）と `--update-status`（セッション更新）のバッチ制御。 |
-| **GHA ワークフロー** | `.github/workflows/investigate-user-requests.yml` | 3時間に1回の定期実行パイプライン。調査からJulesセッション起動までを一括オーケストレーション。 |
+| **GHA ワークフロー** | `.github/workflows/investigate-user-requests.yml` | 3時間に1回の定期実行パイプライン。調査からAntigravity CLI調査実行までを一括オーケストレーション。 |
 | **サイトUI導線** | `layouts/index.html`<br>`layouts/_default/single.html`<br>`layouts/partials/header.html` | トップページ、商品個別ページ、ドロワーメニューに設置されたフォームへのリンクボタン。 |
 
 ---
@@ -113,7 +113,7 @@ stateDiagram-v2
     未処理 --> 重複リクエスト: 同一バッチ内で重複
     未処理 --> 完了: 既に記事が存在する (即時完了)
     未処理 --> 処理中: 調査対象に選定
-    処理中 --> セッション開始済: Julesセッション起動完了
+    処理中 --> セッション開始済: Antigravity調査セッション起動完了
     セッション開始済 --> 完了: 次回以降のバッチで記事生成を検知
     セッション開始済 --> 処理中: 24時間以上経過（失敗時の自動リトライ）
     完了 --> [*]
@@ -130,7 +130,7 @@ stateDiagram-v2
 - **`処理中`**:
   GitHub Actionsの実行対象として選定され、商品情報取得が開始された状態。
 - **`セッション開始済`**:
-  Creators APIでのデータ収集が完了し、Jules AIによる調査・記事生成セッションが開始された状態。
+  Creators APIでのデータ収集が完了し、Antigravity CLIによる調査・記事生成セッションが開始された状態。
 - **`完了`**:
   サイト上に記事・調査結果ファイル（`data/investigations/<ASIN>.json`）が生成・公開されたことが確認された状態（終了ステータス）。
 
@@ -210,6 +210,6 @@ Googleフォームの説明文やURLバリデーションルール（新しい�
 - **原因**: `GAS_API_TOKEN` がスプレッドシート側のスクリプトプロパティ `API_TOKEN` と一致していない。
 - **対処**: GASエディタの「プロジェクトの設定」>「スクリプト プロパティ」にある `API_TOKEN` の値とGitHub Secretsの値を一致させる。
 
-#### Q3. Julesが失敗してリクエストが「セッション開始済」のまま放置されている
+#### Q3. Antigravity CLI調査が失敗してリクエストが「セッション開始済」のまま放置されている
 - **自動復旧**: 24時間以上経過すると、次回の定期実行（3時間に1回程度）で自動的にタイムアウト判定され、再調査対象としてリトライされる。
 - **手動復旧**: スプレッドシート上で該当行のステータス（C列）を `未処理` に手動変更すれば、次回の実行ですぐに再調査される。

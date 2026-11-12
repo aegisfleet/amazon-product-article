@@ -1,6 +1,6 @@
 # カテゴリ管理・整理システム仕様書
 
-本ドキュメントでは、本システムにおける商品カテゴリの階層構造、正規化アルゴリズム、AI（Google Jules）を活用した自動整理ワークフロー、親カテゴリの命名規約、およびトラブルシューティング手順を体系的に解説する。
+本ドキュメントでは、本システムにおける商品カテゴリの階層構造、正規化アルゴリズム、AI（Antigravity CLI）を活用した自動整理ワークフロー、親カテゴリの命名規約、およびトラブルシューティング手順を体系的に解説する。
 
 ---
 
@@ -85,16 +85,16 @@ sequenceDiagram
     autonumber
     actor Cron as GitHub Actions<br>(毎日 18:00 JST)
     participant Script as organize-categories-cli.ts
-    participant Jules as Google Jules API
+    participant AGY as Antigravity CLI (agy)
     participant PR as GitHub Pull Request
     participant AutoMerge as pr-auto-merge.yml
 
     Cron->>Script: 未登録カテゴリの存在確認
     Script->>Script: キャッシュ内の子カテゴリと categorygroups.json を照合
     alt 未登録カテゴリが存在する場合
-        Script->>Jules: カテゴリ整理タスクの投入 (JulesCategoryOrganizer)
-        Jules->>Jules: 14文字制限・既存グループ構造を考慮して分類案を作成
-        Jules->>PR: data/categorygroups.json を更新する PR を作成
+        Script->>AGY: プロンプト生成・タスク投入 (CategoryOrganizer)
+        AGY->>AGY: 14文字制限・既存グループ構造を考慮して分類案を作成
+        AGY->>PR: data/categorygroups.json を更新する PR を作成
         PR->>AutoMerge: 自動テスト・ビルド検証を経てマージ
     else 未登録なし
         Script-->>Cron: 正常終了 (何もしない)
@@ -103,11 +103,11 @@ sequenceDiagram
 
 1. **未登録カテゴリの検出**:
    - `data/cache/paapi-product-cache.json` に存在するカテゴリと、`data/categorygroups.json` の登録カテゴリを照合する。
-2. **Jules セッションの開始**:
-   - 未登録カテゴリがある場合、`src/scripts/organize-categories-cli.ts` を通じて Google Jules に整理セッションを投入する。
-   - Jules は親カテゴリの「14文字以内ルール」と既存の分類体系を学習した上で、最適な親カテゴリへの割り当て（または新規親カテゴリの策定）を行う。
+2. **Antigravity CLI による自動分類**:
+   - 未登録カテゴリがある場合、`src/scripts/organize-categories-cli.ts` を通じて Antigravity CLI 用のプロンプトを生成し、セルフホストランナー上で `agy` を実行する。
+   - Antigravity は親カテゴリの「14文字以内ルール」と既存の分類体系を学習した上で、最適な親カテゴリへの割り当て（または新規親カテゴリの策定）を行い、`data/categorygroups.json` を更新する。
 3. **PR作成とマージ**:
-   - Jules が更新後の `data/categorygroups.json` を含めた PR を自律的に作成し、`pr-auto-merge.yml` によって自動マージされる。
+   - 更新後の `data/categorygroups.json` を含めた PR が自動作成され、`pr-auto-merge.yml` によって自動マージされる。
 
 ---
 
@@ -233,7 +233,7 @@ Creators API のレスポンスには、キャンペーン用や社内管理用�
 
 | コマンド | 役割 |
 |---|---|
-| `pnpm run organize:categories` | 未登録カテゴリを検出し、Julesによる自動分類セッションを開始する |
+| `pnpm run organize:categories` | 未登録カテゴリを検出し、Antigravity CLI用の分類プロンプトを生成する |
 | `pnpm run sort:categories` | `data/categorygroups.json` の子カテゴリをUnicode順にソートする |
 | `pnpm run prebuild:hugo` | カテゴリ階層を拡張し、`categories.yml` や親カテゴリMarkdownを同期する |
 | `pnpm run biome:check` | `data/categorygroups.json` を含む定義JSONの構文妥当性を検証する |

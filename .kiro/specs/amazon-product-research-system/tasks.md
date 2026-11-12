@@ -2,7 +2,7 @@
 
 ## Overview
 
-Amazon PA-API v5とGoogle Jules APIを活用した商品調査記事の自動生成・公開システムの実装。GitHub Actionsによる自動化パイプライン、モバイルファーストのレスポンシブサイト、アフィリエイト収益システムを段階的に構築する。
+Amazon PA-API v5とGoogle Antigravity CLIを活用した商品調査記事の自動生成・公開システムの実装。GitHub Actionsによる自動化パイプライン、モバイルファーストのレスポンシブサイト、アフィリエイト収益システムを段階的に構築する。
 
 ## Tasks
 
@@ -39,14 +39,14 @@ Amazon PA-API v5とGoogle Jules APIを活用した商品調査記事の自動生
     - **Property 3: Comprehensive Error Handling and Retry Logic**
     - **Validates: Requirements 1.4, 2.5, 6.1, 6.2**
 
-- [x] 3. Google Jules API統合の実装
-  - [x] 3.1 Jules_Investigatorの基本実装
-    - Jules APIクライアントとセッション管理
+- [x] 3. Google Antigravity CLI統合の実装
+  - [x] 3.1 Antigravity_Investigatorの基本実装
+    - Antigravity CLIクライアントと実行管理
     - 調査プロンプト生成とレスポンス処理
     - _Requirements: 2.1, 2.2, 2.3_
 
-  - [x] 3.2 Jules調査リクエストのプロパティテスト
-    - **Property 4: Jules Investigation Request Formatting**
+  - [x] 3.2 Antigravity調査リクエストのプロパティテスト
+    - **Property 4: Antigravity Investigation Request Formatting**
     - **Validates: Requirements 2.1, 2.2, 2.4**
 
   - [x] 3.3 調査結果処理の実装
@@ -70,7 +70,7 @@ Amazon PA-API v5とGoogle Jules APIを活用した商品調査記事の自動生
 
   - [x] 4.3 Article_Quality_Managerの実装
     - 記事品質検証システムの開発
-    - Jules向け詳細プロンプトテンプレートの作成
+    - Antigravity向け詳細プロンプトテンプレートの作成
     - _Requirements: 3.5, 6.5_
 
   - [x] 4.4 レビュー分析のプロパティテスト
@@ -135,7 +135,7 @@ Amazon PA-API v5とGoogle Jules APIを活用した商品調査記事の自動生
     - _Requirements: 4.1, 4.2, 4.5_
 
   - [x] 9.2 Auto_Merge_Managerの実装
-    - Julesプルリクエストの条件付き自動マージ
+    - 調査プルリクエストの条件付き自動マージ
     - ファイルパス制限と安全性確保
     - _Requirements: 4.4_
 
@@ -149,8 +149,8 @@ Amazon PA-API v5とGoogle Jules APIを活用した商品調査記事の自動生
     - PA-API統合とデータ収集パイプライン
     - _Requirements: 4.1_
 
-  - [x] 10.2 Jules調査ワークフローの作成
-    - 商品データからJules調査セッション作成
+  - [x] 10.2 Antigravity調査ワークフローの作成
+    - 商品データからAntigravity調査セッション作成
     - 調査完了の監視と結果取得
     - _Requirements: 4.1_
 

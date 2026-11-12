@@ -2,12 +2,12 @@
 
 ## Introduction
 
-Amazon PA-API v5とGoogle Julesを活用した商品調査記事の自動生成・公開システム。ユーザーの購買判断を支援する詳細な商品分析記事を提供し、アフィリエイト収益を通じて運営される。GitHub Actionsを使用してAmazon商品を検索し、Julesによる詳細調査を経て、ユーザーレビューを基にした比較記事をMarkdown形式で作成し、GitHub Pagesで公開する。
+Amazon PA-API v5とGoogle Antigravityを活用した商品調査記事の自動生成・公開システム。ユーザーの購買判断を支援する詳細な商品分析記事を提供し、アフィリエイト収益を通じて運営される。GitHub Actionsを使用してAmazon商品を検索し、Antigravity CLIによる詳細調査を経て、ユーザーレビューを基にした比較記事をMarkdown形式で作成し、GitHub Pagesで公開する。
 
 ## Glossary
 
 - **PA_API_Client**: Amazon Product Advertising API v5を使用して商品情報を取得するクライアント
-- **Jules_Investigator**: Google Jules APIを使用して商品調査を実行するコンポーネント
+- **Antigravity_Investigator**: Google Antigravity CLIを使用して商品調査を実行するコンポーネント
 - **Article_Generator**: 調査結果をMarkdown記事として生成するコンポーネント
 - **Affiliate_Link_Manager**: Amazonアフィリエイトリンクの生成と管理を行うコンポーネント
 - **GitHub_Publisher**: GitHub Pagesへの記事公開を管理するコンポーネント
@@ -28,17 +28,17 @@ Amazon PA-API v5とGoogle Julesを活用した商品調査記事の自動生成�
 4. WHEN API rate limits are encountered, THE PA_API_Client SHALL implement proper throttling and retry mechanisms
 5. THE Product_Searcher SHALL store retrieved product information in a structured format for further processing
 
-### Requirement 2: Jules調査システム
+### Requirement 2: Antigravity調査システム
 
-**User Story:** As a researcher, I want to use Jules API to conduct detailed product investigations, so that I can generate comprehensive analysis articles.
+**User Story:** As a researcher, I want to use Antigravity CLI to conduct detailed product investigations, so that I can generate comprehensive analysis articles.
 
 #### Acceptance Criteria
 
-1. WHEN product investigation is initiated, THE Jules_Investigator SHALL send structured investigation requests to Jules API
-2. WHEN requesting Jules investigation, THE Jules_Investigator SHALL provide specific instructions for user review analysis and competitive comparison
-3. WHEN Jules completes investigation, THE Jules_Investigator SHALL retrieve detailed analysis results including pros/cons and competitive insights
-4. THE Jules_Investigator SHALL format investigation requests to focus on user experience, product strengths/weaknesses, and market positioning
-5. WHEN investigation fails, THE Jules_Investigator SHALL implement retry logic and error handling
+1. WHEN product investigation is initiated, THE Antigravity_Investigator SHALL send structured investigation requests to Antigravity CLI
+2. WHEN requesting Antigravity investigation, THE Antigravity_Investigator SHALL provide specific instructions for user review analysis and competitive comparison
+3. WHEN Antigravity completes investigation, THE Antigravity_Investigator SHALL retrieve detailed analysis results including pros/cons and competitive insights
+4. THE Antigravity_Investigator SHALL format investigation requests to focus on user experience, product strengths/weaknesses, and market positioning
+5. WHEN investigation fails, THE Antigravity_Investigator SHALL implement retry logic and error handling
 
 ### Requirement 3: 記事生成とコンテンツ管理
 
@@ -119,7 +119,7 @@ Amazon PA-API v5とGoogle Julesを活用した商品調査記事の自動生成�
 #### Acceptance Criteria
 
 1. THE system SHALL support configurable product categories and search parameters through configuration files
-2. WHEN customizing Jules instructions, THE system SHALL allow template-based investigation prompts
+2. WHEN customizing Antigravity instructions, THE system SHALL allow template-based investigation prompts
 3. THE Article_Generator SHALL support customizable article templates and formatting options
 4. THE system SHALL allow configuration of publication schedules and batch processing parameters
 5. WHEN updating configurations, THE system SHALL validate settings and provide clear error messages for invalid configurations

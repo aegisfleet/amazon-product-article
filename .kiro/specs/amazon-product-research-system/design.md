@@ -2,7 +2,7 @@
 
 ## Overview
 
-Amazon PA-API v5とGoogle Jules APIを活用した商品調査記事の自動生成・公開システムの設計。GitHub Actionsによる自動化パイプラインを通じて、商品検索から詳細調査、記事生成、公開まで一貫したワークフローを提供する。モバイルファーストのレスポンシブデザインでユーザーの購買判断を支援し、アフィリエイト収益を通じて持続可能な運営を実現する。
+Amazon PA-API v5とGoogle Antigravity CLIを活用した商品調査記事の自動生成・公開システムの設計。GitHub Actionsによる自動化パイプラインを通じて、商品検索から詳細調査、記事生成、公開まで一貫したワークフローを提供する。モバイルファーストのレスポンシブデザインでユーザーの購買判断を支援し、アフィリエイト収益を通じて持続可能な運営を実現する。
 
 ## Architecture
 
@@ -12,14 +12,14 @@ Amazon PA-API v5とGoogle Jules APIを活用した商品調査記事の自動生
 graph TB
     subgraph "GitHub Actions Pipeline"
         A[Scheduler/Manual Trigger] --> B[Product Search Job]
-        B --> C[Jules Investigation Job]
+        B --> C[Antigravity Investigation Job]
         C --> D[Article Generation Job]
         D --> E[GitHub Pages Deployment]
     end
     
-    subgraph "External APIs"
+    subgraph "External Tools & APIs"
         F[Amazon PA-API v5]
-        G[Google Jules API]
+        G[Google Antigravity CLI]
     end
     
     subgraph "Data Storage"
@@ -48,7 +48,7 @@ graph TB
 graph LR
     subgraph "Core Components"
         A[PA_API_Client]
-        B[Jules_Investigator]
+        B[Antigravity_Investigator]
         C[Article_Generator]
         D[GitHub_Publisher]
     end
@@ -87,13 +87,13 @@ interface PA_API_Client {
 - レート制限対応（1秒あたり1リクエスト）
 - エラーハンドリングと再試行ロジック
 
-### 2. Jules_Investigator
+### 2. Antigravity_Investigator
 
-**責任**: Google Jules APIを使用した商品調査の実行
+**責任**: Google Antigravity CLIを使用した商品調査の実行
 
 **主要メソッド**:
 ```typescript
-interface Jules_Investigator {
+interface Antigravity_Investigator {
   createSession(prompt: string, context: InvestigationContext): Promise<string>
   monitorSession(sessionId: string): Promise<SessionStatus>
   retrieveResults(sessionId: string): Promise<InvestigationResult>
@@ -206,19 +206,19 @@ interface ArticleTemplate {
 
 ### 7. Auto_Merge_Manager
 
-**責任**: Julesプルリクエストの条件付き自動マージ
+**責任**: 調査プルリクエストの条件付き自動マージ
 
 **主要メソッド**:
 ```typescript
 interface Auto_Merge_Manager {
   validatePullRequest(pr: PullRequest): MergeDecision
   checkFilePathRestrictions(changedFiles: string[]): boolean
-  verifyJulesAuthor(pr: PullRequest): boolean
+  verifyAuthor(pr: PullRequest): boolean
   executeMerge(prNumber: number): Promise<MergeResult>
 }
 ```
 
-**Jules記事作成プロンプトテンプレート**:
+**Antigravity記事作成プロンプトテンプレート**:
 ```
 以下のテンプレートに従って、商品「{product_name}」の詳細レビュー記事を作成してください：
 
@@ -256,10 +256,10 @@ Markdown形式で、指定されたセクション構造に従って作成して
 **自動マージ条件**:
 ```typescript
 interface MergeConditions {
-  allowedPaths: string[]        // ["articles/", "reviews/", "_posts/"]
-  requiredAuthor: string        // "jules[bot]"
+  allowedPaths: string[]        // ["data/"]
+  requiredAuthor: string        // "aegisfleet"
   requiredChecks: string[]      // ["quality-check", "format-validation"]
-  excludedPaths: string[]       // [".github/", "config/", "_config.yml"]
+  excludedPaths: string[]       // [".github/", "config/", "_config.yml", "src/"]
 }
 ```
 
@@ -528,12 +528,12 @@ interface ArticleMetadata {
 *For any* API failure scenario (rate limits, network errors, service unavailable), the system should implement appropriate retry strategies with exponential backoff and detailed error logging.
 **Validates: Requirements 1.4, 2.5, 6.1, 6.2**
 
-### Property 4: Jules Investigation Request Formatting
+### Property 4: Antigravity Investigation Request Formatting
 *For any* product investigation request, the generated prompt should contain all required elements (user review analysis instructions, competitive comparison requirements, market positioning focus) in the proper structured format.
 **Validates: Requirements 2.1, 2.2, 2.4**
 
 ### Property 5: Investigation Result Processing Completeness
-*For any* Jules investigation response, the system should successfully extract all required analysis components (pros/cons, competitive insights, user experiences) and structure them for article generation.
+*For any* Antigravity investigation response, the system should successfully extract all required analysis components (pros/cons, competitive insights, user experiences) and structure them for article generation.
 **Validates: Requirements 2.3, 5.3**
 
 ### Property 6: Article Structure and Content Completeness
@@ -580,7 +580,7 @@ interface ArticleMetadata {
 
 ### API Error Management
 - **PA-API v5エラー**: レート制限、認証失敗、無効なASINに対する適切なエラーレスポンス
-- **Jules APIエラー**: セッション作成失敗、調査タイムアウト、結果取得エラーの処理
+- **Antigravity CLIエラー**: 実行失敗、調査タイムアウト、結果取得エラーの処理
 - **GitHub APIエラー**: コミット失敗、Pages デプロイメントエラーの対応
 
 ### Retry Strategy
@@ -634,4 +634,4 @@ const defaultRetryConfig: RetryConfig = {
 ### Test Data Management
 - モックデータ生成器による一貫したテストデータ
 - PA-API v5レスポンスのモック化
-- Jules API調査結果のサンプルデータセット
+- Antigravity CLI調査結果のサンプルデータセット
