@@ -48,7 +48,9 @@ export class CategoryManager {
       } else if ('categoryGroups' in data && Array.isArray((data as { categoryGroups: unknown[] }).categoryGroups)) {
         this.parseStandardFormat((data as { categoryGroups: unknown[] }).categoryGroups, seenNames, seenSlugs);
       } else {
-        this.parseLegacyFormat(data as Record<string, unknown>, seenNames, seenSlugs);
+        throw new Error(
+          `Unsupported category format in ${this.categoryGroupsPath}: expected 'parents' or 'categoryGroups' array`,
+        );
       }
     }
   }
@@ -126,26 +128,6 @@ export class CategoryManager {
   private parseStandardFormat(groups: unknown[], seenNames: Set<string>, seenSlugs: Set<string>): void {
     for (const group of groups) {
       this.addGroup(group, seenNames, seenSlugs);
-    }
-  }
-
-  private parseLegacyFormat(data: Record<string, unknown>, seenNames: Set<string>, seenSlugs: Set<string>): void {
-    for (const [key, value] of Object.entries(data)) {
-      if (typeof value === 'object' && value !== null) {
-        const legacyGroup = value as Record<string, unknown>;
-        if (typeof legacyGroup.slug === 'string' && Array.isArray(legacyGroup.categories)) {
-          this.addGroup(
-            {
-              name: key,
-              slug: legacyGroup.slug,
-              icon: legacyGroup.icon as string | undefined,
-              children: legacyGroup.categories,
-            },
-            seenNames,
-            seenSlugs,
-          );
-        }
-      }
     }
   }
 

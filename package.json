@@ -30,8 +30,6 @@
     "extract:price-drops": "ts-node src/scripts/extract-price-drops.ts",
     "generate:articles": "ts-node src/scripts/article-generation-cli.ts",
     "merge:pr": "ts-node src/scripts/pr-merge-cli.ts",
-    "organize:categories": "ts-node src/scripts/organize-categories-cli.ts",
-    "sort:categories": "ts-node src/scripts/sort-categories.ts",
     "audit:dead": "ts-node src/scripts/maintenance/prune-dead-products.ts --audit --scope stale --stale-days 90",
     "prune:dead": "ts-node src/scripts/maintenance/prune-dead-products.ts --prune --scope stale --stale-days 90",
     "audit:score-discrepancy": "ts-node src/scripts/maintenance/find-score-discrepancy.ts",

@@ -116,7 +116,7 @@ pnpm run generate:articles
 
 ## 5. タクソノミー（親・子カテゴリ）の管理 (Taxonomy Management)
 
-親・子カテゴリの定義は `data/taxonomy-v2.json` を正本とする（旧 `data/categorygroups.json` は凍結。編集しない）。商品の所属は Gemini Decision 1 が判定し、`data/product-categories.json` に永続化される。
+親・子カテゴリの定義は `data/taxonomy-v2.json` を正本とする（旧 `categorygroups.json` は完全撤去済み）。商品の所属は Gemini Decision 1 が判定し、`data/product-categories.json` に永続化される。
 
 ### 5.1 命名規則と制約
 - **親カテゴリ名は14文字以内**、**子カテゴリ名は16文字以内**。各親は `zz-` 接頭辞の「その他」子を必ず持つ。

@@ -47,7 +47,6 @@ graph TD
 | `data/taxonomy-v2.json` | 親27・子カテゴリの定義（slug・日本語名・判定基準・`legacy_slugs`）。**正本** | 手動管理 |
 | `data/product-categories.json` | ASIN ごとの分類結果（`category_parent` / `category_child` / `classification`）。1商品1行 | 自動生成（`classify:products`） |
 | `data/legacy-category-map.json` | 旧 Amazon カテゴリ → 新カテゴリのフォールバック対応表（API 失敗・低確信度時に使用） | 手動管理 |
-| `data/categorygroups.json` | 旧カテゴリグループ定義。URL 互換性テスト（`legacy_slugs` の取りこぼし検知）の参照用であり、ビルドでは使用しない | 凍結 |
 | `data/categories.yml` | 記事数集計やスラッグ等が付加されたHugo用カテゴリ階層データ | 自動生成（`prebuild:hugo`） |
 | `static/data/categorygroups.json` | フロントエンドおよび Hugo テンプレート（`data/categorygroups.json` としてマウント）が参照するデータ | 自動生成（`prebuild:hugo`） |
 | `content/parent-category/*.md` | 親カテゴリごとの一覧表示用Markdownページ（旧スラッグは `aliases` でリダイレクト） | 自動生成（`prebuild:hugo`） |
@@ -67,7 +66,7 @@ graph TD
 
 ### 2.2 URL の後方互換（`legacy_slugs`）
 
-親カテゴリの統合・改名で旧スラッグが消える場合は、統合先親の `legacy_slugs` に旧スラッグを必ず追加する。`prebuild:hugo` が `aliases: ["/parent-category/<旧スラッグ>/"]` を自動生成し、既存の被リンクが 404 にならない。旧 `data/categorygroups.json` の全スラッグが新 `slug` または `legacy_slugs` に含まれることはテストで保証される。
+親カテゴリの統合・改名で旧スラッグが消える場合は、統合先親の `legacy_slugs` に旧スラッグを必ず追加する。`prebuild:hugo` が `aliases: ["/parent-category/<旧スラッグ>/"]` を自動生成し、既存の被リンクが 404 にならない。旧31親カテゴリスラッグの全件が新 `slug` または `legacy_slugs` に含まれることはテスト（`taxonomy-v2.test.ts`）で保証される。
 
 ### 2.3 構文検証と事前ビルド同期
 
@@ -247,8 +246,8 @@ Creators API のレスポンスには、キャンペーン用や社内管理用�
 
 | コマンド | 役割 |
 |---|---|
-| `pnpm run organize:categories` | 未登録カテゴリを検出し、Antigravity CLI用の分類プロンプトを生成する |
-| `pnpm run sort:categories` | `data/categorygroups.json` の子カテゴリをUnicode順にソートする |
+| `pnpm run classify:products` | Gemini Decision 1 により未分類・更新商品を新タクソノミーへ自動分類する |
+| `pnpm run sync:product-categories` | `data/product-categories.json` の分類結果を記事 Markdown の frontmatter に同期する |
 | `pnpm run prebuild:hugo` | カテゴリ階層を拡張し、`categories.yml` や親カテゴリMarkdownを同期する |
-| `pnpm run biome:check` | `data/categorygroups.json` を含む定義JSONの構文妥当性を検証する |
+| `pnpm run biome:check` | `data/taxonomy-v2.json` を含む定義JSONの構文妥当性を検証する |
 | `pnpm run reset:category-cache -- "<ワード>"` | 指定したカテゴリ名を含む商品のキャッシュタイムスタンプをリセットする |

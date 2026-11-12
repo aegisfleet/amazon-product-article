@@ -69,9 +69,42 @@ describe('Taxonomy v2 Definition Validation', () => {
     }
   });
 
-  test('all legacy parent slugs in categorygroups.json are covered by slug or legacy_slugs (zero URL loss)', () => {
-    const legacyPath = path.resolve(process.cwd(), 'data/categorygroups.json');
-    const legacyGroups = JSON.parse(fs.readFileSync(legacyPath, 'utf8')) as Record<string, { slug: string }>;
+  // 旧 categorygroups.json に存在した31親カテゴリスラッグ（URL互換性維持のため）
+  const LEGACY_PARENT_SLUGS = [
+    'apparel-clothing',
+    'audio-equipment',
+    'baby',
+    'beauty-appliances',
+    'beverage',
+    'books',
+    'camera-video',
+    'car-diy',
+    'food',
+    'furniture-storage',
+    'games-toys',
+    'haircare',
+    'healthcare-appliances',
+    'housewares',
+    'kitchen',
+    'kitchen-large-appliances',
+    'living-seasonal-appliances',
+    'makeup-nail',
+    'music-entertainment',
+    'others',
+    'outdoor-sports',
+    'pc-peripheral',
+    'pc-workstation',
+    'pet-supplies',
+    'shoes-bags-accessories',
+    'skincare-bodycare',
+    'smartphone-accessories',
+    'smartphone-tablet',
+    'smartwatch-wearables',
+    'stationery-office',
+    'supplements-medicine',
+  ];
+
+  test('all legacy parent slugs are covered by slug or legacy_slugs (zero URL loss)', () => {
     const covered = new Set<string>();
     for (const parent of taxonomy.parents) {
       covered.add(parent.slug);
@@ -79,9 +112,7 @@ describe('Taxonomy v2 Definition Validation', () => {
         covered.add(legacySlug);
       }
     }
-    const missing = Object.values(legacyGroups)
-      .map((g) => g.slug)
-      .filter((slug) => !covered.has(slug));
+    const missing = LEGACY_PARENT_SLUGS.filter((slug) => !covered.has(slug));
     expect(missing).toEqual([]);
   });
 });
