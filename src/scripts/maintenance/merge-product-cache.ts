@@ -1,6 +1,7 @@
 import { execSync } from 'node:child_process';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
+import { readConflictStages } from './git-conflict-utils';
 
 export interface CacheEntry {
   data: unknown;
@@ -107,20 +108,7 @@ export function mergeContent(
  */
 export function mergeGitConflictFile(filePath: string): boolean {
   try {
-    let oursContent = '';
-    let theirsContent = '';
-
-    try {
-      oursContent = execSync(`git show :2:"${filePath}"`, { encoding: 'utf-8', stdio: ['pipe', 'pipe', 'ignore'] });
-    } catch {
-      // ステージ2が存在しない場合は空
-    }
-
-    try {
-      theirsContent = execSync(`git show :3:"${filePath}"`, { encoding: 'utf-8', stdio: ['pipe', 'pipe', 'ignore'] });
-    } catch {
-      // ステージ3が存在しない場合は空
-    }
+    const { ours: oursContent, theirs: theirsContent } = readConflictStages(filePath);
 
     const { json, result } = mergeContent(oursContent, theirsContent);
 

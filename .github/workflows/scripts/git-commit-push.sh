@@ -69,16 +69,7 @@ git config --global core.bigFileThreshold 10m
 # shellcheck disable=SC2086
 git add $FILES
 
-# Check for changes
-if git diff --staged --quiet; then
-  echo "No changes to commit."
-  exit 0
-fi
-
-# Commit
-git commit -m "$MESSAGE"
-
-# Get current branch
+# Get current branch (resolved before the no-change check so we can detect pending pushes)
 CURRENT_BRANCH=$(git branch --show-current)
 if [ -z "$CURRENT_BRANCH" ] || [ "$CURRENT_BRANCH" = "HEAD" ]; then
   # If in detached HEAD (like PRs), try to get branch name from environment or rev-parse
@@ -94,6 +85,30 @@ fi
 if [ "$CURRENT_BRANCH" = "HEAD" ]; then
   echo "Error: Still in detached HEAD. Cannot push safely without a branch name."
   exit 1
+fi
+
+NEEDS_COMMIT=true
+
+# Check for changes
+if git diff --staged --quiet; then
+  NEEDS_COMMIT=false
+
+  # No new changes in this step, but a commit from a previous step (e.g. an earlier
+  # push that failed) may still be unpushed. Push it instead of silently dropping it
+  # when the job's workspace is discarded.
+  AHEAD_COUNT=$(git rev-list --count "origin/$CURRENT_BRANCH..HEAD" 2>/dev/null || echo "unknown")
+
+  if [ "$AHEAD_COUNT" = "0" ] || [ "$AHEAD_COUNT" = "unknown" ]; then
+    echo "No changes to commit."
+    exit 0
+  fi
+
+  echo "⚠️ No staged changes, but $AHEAD_COUNT unpushed commit(s) detected. Pushing existing commits without creating a new one..."
+fi
+
+# Commit
+if [ "$NEEDS_COMMIT" = "true" ]; then
+  git commit -m "$MESSAGE"
 fi
 
 echo "Pushing to branch: $CURRENT_BRANCH"
@@ -138,18 +153,23 @@ for i in 1 2 3; do
     fi
 
     if [ "$MERGE_SUCCESS" = "false" ]; then
-      echo "Merge conflict or error detected. Checking if conflicts are only in cache files..."
-      
+      echo "Merge conflict or error detected. Checking if conflicts are only in auto-mergeable generated data..."
+
       # Clean index.lock if merge crash left it
       rm -f .git/index.lock
 
-      # Check conflicted files
-      CONFLICTS=$(git status --porcelain | grep "^UU " | awk '{print $2}' || true)
-      NON_CACHE_CONFLICTS=$(echo "$CONFLICTS" | grep -v "^data/cache/" || true)
+      # Check conflicted files and classify them.
+      # - data/cache/**: 商品キャッシュのシャード (タイムスタンプ比較で自動マージ可能)
+      # - data/product-categories.json: ASIN別カテゴリ分類ストア (classified_at 比較で自動マージ可能)
+      # それ以外がコンフリクトした場合は、データ破損を避けるため手動対応に回す。
+      CONFLICTS=$(git diff --name-only --diff-filter=U || true)
+      CACHE_CONFLICTS=$(echo "$CONFLICTS" | grep "^data/cache/" || true)
+      CATEGORY_CONFLICTS=$(echo "$CONFLICTS" | grep -x "data/product-categories.json" || true)
+      OTHER_CONFLICTS=$(echo "$CONFLICTS" | grep -v "^data/cache/" | grep -v -x "data/product-categories.json" || true)
 
-      if [ -n "$NON_CACHE_CONFLICTS" ]; then
-        echo "Merge failed due to conflicts outside data/cache/:"
-        echo "$NON_CACHE_CONFLICTS"
+      if [ -n "$OTHER_CONFLICTS" ]; then
+        echo "Merge failed due to conflicts outside auto-mergeable generated data:"
+        echo "$OTHER_CONFLICTS"
         git merge --abort 2>/dev/null || true
         git reset --hard HEAD
         rm -f .git/index.lock
@@ -169,18 +189,52 @@ for i in 1 2 3; do
         continue
       fi
 
-      echo "Conflicts detected only in cache files. Attempting batch automatic merge..."
-      
+      echo "Conflicts detected only in auto-mergeable generated data. Attempting automatic merge..."
+
       # Determine fastest runner: compiled JS if available (~0.05s) or fallback to ts-node
-      MERGE_CMD=""
+      CACHE_MERGE_CMD=""
       if [ -f "dist/scripts/maintenance/merge-product-cache.js" ]; then
-        MERGE_CMD="node dist/scripts/maintenance/merge-product-cache.js"
+        CACHE_MERGE_CMD="node dist/scripts/maintenance/merge-product-cache.js"
       else
-        MERGE_CMD="pnpm exec ts-node src/scripts/maintenance/merge-product-cache.ts"
+        CACHE_MERGE_CMD="pnpm exec ts-node src/scripts/maintenance/merge-product-cache.ts"
       fi
 
-      # shellcheck disable=SC2086
-      if $MERGE_CMD --batch $CONFLICTS; then
+      CATEGORY_MERGE_CMD=""
+      if [ -f "dist/scripts/maintenance/merge-product-categories.js" ]; then
+        CATEGORY_MERGE_CMD="node dist/scripts/maintenance/merge-product-categories.js"
+      else
+        CATEGORY_MERGE_CMD="pnpm exec ts-node src/scripts/maintenance/merge-product-categories.ts"
+      fi
+
+      MERGE_FAILED=false
+
+      if [ -n "$CACHE_CONFLICTS" ]; then
+        # shellcheck disable=SC2086
+        if ! $CACHE_MERGE_CMD --batch $CACHE_CONFLICTS; then
+          echo "Cache auto-merge failed."
+          MERGE_FAILED=true
+        fi
+      fi
+
+      if [ "$MERGE_FAILED" = "false" ] && [ -n "$CATEGORY_CONFLICTS" ]; then
+        # shellcheck disable=SC2086
+        if ! $CATEGORY_MERGE_CMD --batch $CATEGORY_CONFLICTS; then
+          echo "Product category auto-merge failed."
+          MERGE_FAILED=true
+        fi
+      fi
+
+      # Verify that every conflict has been resolved before completing the merge
+      if [ "$MERGE_FAILED" = "false" ]; then
+        UNRESOLVED=$(git diff --name-only --diff-filter=U || true)
+        if [ -n "$UNRESOLVED" ]; then
+          echo "⚠️ Unresolved conflicts remain after auto-merge:"
+          echo "$UNRESOLVED"
+          MERGE_FAILED=true
+        fi
+      fi
+
+      if [ "$MERGE_FAILED" = "false" ]; then
         echo "Completing merge..."
         rm -f .git/index.lock
         if GIT_EDITOR=true git commit --no-edit; then
