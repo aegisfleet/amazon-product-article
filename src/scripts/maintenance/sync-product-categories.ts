@@ -23,7 +23,7 @@ interface RawArticleFrontmatter {
   amazon_category?: unknown;
   categories?: unknown;
   category?: unknown;
-  classification?: RawClassification | undefined;
+  classification?: RawClassification;
 }
 
 function ensureString(val: unknown, fallback = ''): string {
@@ -58,6 +58,142 @@ function resolveAmazonCategory(d: RawArticleFrontmatter): string | undefined {
 }
 
 /**
+ * 記事 frontmatter から分類情報を抽出する
+ */
+function extractCategoryFromArticle(filePath: string): StoredProductCategory | null {
+  try {
+    const raw = fs.readFileSync(filePath, 'utf8');
+    const parsed = matter(raw);
+    const d = parsed.data as RawArticleFrontmatter;
+
+    if (d.taxonomy_version !== 2 || !d.category_parent || !d.category_child) {
+      return null;
+    }
+
+    return {
+      taxonomy_version: 2,
+      category_parent: ensureString(d.category_parent),
+      category_child: ensureString(d.category_child),
+      amazon_category: resolveAmazonCategory(d),
+      classification: parseClassification(d.classification),
+    };
+  } catch (err) {
+    console.error(`Error reading ${filePath}:`, err);
+    return null;
+  }
+}
+
+/**
+ * frontmatter のフィールドを比較・更新し、変更があったかを判定する
+ */
+function updateFrontmatterValues(d: RawArticleFrontmatter, stored: StoredProductCategory): boolean {
+  let changed = false;
+
+  if (d.taxonomy_version !== stored.taxonomy_version) {
+    d.taxonomy_version = stored.taxonomy_version;
+    changed = true;
+  }
+  if (d.category_parent !== stored.category_parent) {
+    d.category_parent = stored.category_parent;
+    changed = true;
+  }
+  if (d.category_child !== stored.category_child) {
+    d.category_child = stored.category_child;
+    changed = true;
+  }
+  if (stored.amazon_category && d.amazon_category !== stored.amazon_category) {
+    d.amazon_category = stored.amazon_category;
+    changed = true;
+  }
+  if (stored.classification && JSON.stringify(d.classification) !== JSON.stringify(stored.classification)) {
+    d.classification = stored.classification;
+    changed = true;
+  }
+
+  return changed;
+}
+
+/**
+ * 記事ファイルを読み込み、ストアのカテゴリ情報で更新する
+ */
+function applyCategoryToArticle(filePath: string, stored: StoredProductCategory): boolean {
+  try {
+    const raw = fs.readFileSync(filePath, 'utf8');
+    const parsed = matter(raw);
+    const d = parsed.data as RawArticleFrontmatter;
+
+    const changed = updateFrontmatterValues(d, stored);
+    if (!changed) {
+      return false;
+    }
+
+    const updated = matter.stringify(parsed.content, d);
+    fs.writeFileSync(filePath, updated, 'utf8');
+    return true;
+  } catch (err) {
+    console.error(`Error updating article ${filePath}:`, err);
+    return false;
+  }
+}
+
+/**
+ * content/articles/*.md から分類結果を抽出してストアに保存する
+ */
+function syncFromArticles(articlesDir: string, store: Record<string, StoredProductCategory>): void {
+  console.log('[sync] content/articles/*.md から分類結果を抽出中...');
+  if (!fs.existsSync(articlesDir)) {
+    return;
+  }
+
+  let extractedCount = 0;
+  const files = fs.readdirSync(articlesDir);
+
+  for (const file of files) {
+    if (!file.endsWith('.md')) continue;
+    const asin = path.basename(file, '.md');
+    const filePath = path.join(articlesDir, file);
+
+    const extracted = extractCategoryFromArticle(filePath);
+    if (extracted) {
+      store[asin] = extracted;
+      extractedCount++;
+    }
+  }
+
+  saveProductCategories(store);
+  console.log(
+    `[sync] ${extractedCount} 件の分類結果を data/product-categories.json に保存完了 (総登録件数: ${Object.keys(store).length})`,
+  );
+}
+
+/**
+ * data/product-categories.json の内容を content/articles/*.md に反映する
+ */
+function syncToArticles(articlesDir: string, store: Record<string, StoredProductCategory>): void {
+  console.log('[sync] data/product-categories.json から content/articles/*.md へ反映中...');
+  if (!fs.existsSync(articlesDir)) {
+    return;
+  }
+
+  let updatedArticlesCount = 0;
+  const files = fs.readdirSync(articlesDir);
+
+  for (const file of files) {
+    if (!file.endsWith('.md')) continue;
+    const asin = path.basename(file, '.md');
+    const stored = store[asin];
+    if (!stored) continue;
+
+    const filePath = path.join(articlesDir, file);
+    if (applyCategoryToArticle(filePath, stored)) {
+      updatedArticlesCount++;
+    }
+  }
+
+  console.log(`[sync] ${updatedArticlesCount} 件の記事 frontmatter を更新完了`);
+}
+
+/**
  * Synchronizes category mappings between content/articles/*.md and data/product-categories.json.
  *
  * Usage:
@@ -70,93 +206,13 @@ function syncCategories(): void {
 
   const articlesDir = path.resolve(process.cwd(), 'content/articles');
   const store = loadProductCategories();
-  let extractedCount = 0;
-  let updatedArticlesCount = 0;
 
   if (fromArticles) {
-    console.log('[sync] content/articles/*.md から分類結果を抽出中...');
-    if (fs.existsSync(articlesDir)) {
-      const files = fs.readdirSync(articlesDir);
-      for (const file of files) {
-        if (!file.endsWith('.md')) continue;
-        const asin = path.basename(file, '.md');
-        const filePath = path.join(articlesDir, file);
-        try {
-          const raw = fs.readFileSync(filePath, 'utf8');
-          const parsed = matter(raw);
-          const d = parsed.data as RawArticleFrontmatter;
-
-          if (d.taxonomy_version === 2 && d.category_parent && d.category_child) {
-            store[asin] = {
-              taxonomy_version: 2,
-              category_parent: ensureString(d.category_parent),
-              category_child: ensureString(d.category_child),
-              amazon_category: resolveAmazonCategory(d),
-              classification: parseClassification(d.classification),
-            };
-            extractedCount++;
-          }
-        } catch (err) {
-          console.error(`Error reading ${file}:`, err);
-        }
-      }
-    }
-
-    saveProductCategories(store);
-    console.log(
-      `[sync] ${extractedCount} 件の分類結果を data/product-categories.json に保存完了 (総登録件数: ${Object.keys(store).length})`,
-    );
+    syncFromArticles(articlesDir, store);
   }
 
   if (toArticles) {
-    console.log('[sync] data/product-categories.json から content/articles/*.md へ反映中...');
-    if (fs.existsSync(articlesDir)) {
-      const files = fs.readdirSync(articlesDir);
-      for (const file of files) {
-        if (!file.endsWith('.md')) continue;
-        const asin = path.basename(file, '.md');
-        const stored = store[asin];
-        if (!stored) continue;
-
-        const filePath = path.join(articlesDir, file);
-        try {
-          const raw = fs.readFileSync(filePath, 'utf8');
-          const parsed = matter(raw);
-          const d = parsed.data as RawArticleFrontmatter;
-
-          let changed = false;
-          if (d.taxonomy_version !== stored.taxonomy_version) {
-            d.taxonomy_version = stored.taxonomy_version;
-            changed = true;
-          }
-          if (d.category_parent !== stored.category_parent) {
-            d.category_parent = stored.category_parent;
-            changed = true;
-          }
-          if (d.category_child !== stored.category_child) {
-            d.category_child = stored.category_child;
-            changed = true;
-          }
-          if (stored.amazon_category && d.amazon_category !== stored.amazon_category) {
-            d.amazon_category = stored.amazon_category;
-            changed = true;
-          }
-          if (stored.classification && JSON.stringify(d.classification) !== JSON.stringify(stored.classification)) {
-            d.classification = stored.classification;
-            changed = true;
-          }
-
-          if (changed) {
-            const updated = matter.stringify(parsed.content, d);
-            fs.writeFileSync(filePath, updated, 'utf8');
-            updatedArticlesCount++;
-          }
-        } catch (err) {
-          console.error(`Error updating article ${file}:`, err);
-        }
-      }
-      console.log(`[sync] ${updatedArticlesCount} 件の記事 frontmatter を更新完了`);
-    }
+    syncToArticles(articlesDir, store);
   }
 }
 
