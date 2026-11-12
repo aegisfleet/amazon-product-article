@@ -5,6 +5,27 @@ import { GeminiDecisionClient } from '../../category/classifier/GeminiDecisionCl
 dotenv.config();
 
 /**
+ * ログ出力用の文字列サニタイズ関数 (CWE-117 / S5145 対策)
+ * 外部入力やAPIレスポンスに含まれ得る改行文字・制御文字を無害化する
+ */
+function sanitizeLog(input: unknown): string {
+  if (input === null || input === undefined) {
+    return '';
+  }
+  let str: string;
+  if (typeof input === 'string') {
+    str = input;
+  } else if (input instanceof Error) {
+    str = input.message;
+  } else if (typeof input === 'number' || typeof input === 'boolean') {
+    str = String(input);
+  } else {
+    str = JSON.stringify(input);
+  }
+  return str.replace(/[\r\n]/g, '_');
+}
+
+/**
  * Gemini API Key Verification Script
  * Validates the registered GEMINI_API_KEY with Gemini Decision 1 (Decisions API)
  */
@@ -57,27 +78,30 @@ async function verify(): Promise<void> {
 
     const elapsedMs = Date.now() - startTime;
     const answer = response.answers?.parent_category;
+    const sanitizedChoice = sanitizeLog(answer?.choice);
 
     console.log(`\n✅ [SUCCESS] Decisions API との通信・認証に成功しました！ (${elapsedMs} ms)`);
     console.log(`------------------------------------------------------`);
     console.log(`テスト商品: ${testInput}`);
-    console.log(`判定結果: ${answer?.choice}`);
+    console.log(`判定結果: ${sanitizedChoice}`);
     console.log(`確信度 (Confidence): ${(answer?.confidence ?? 0).toFixed(4)}`);
 
     if (answer?.probabilities) {
       console.log(`確率分布:`);
       for (const [key, prob] of Object.entries(answer.probabilities)) {
+        const sanitizedKey = sanitizeLog(key);
         const barLength = Math.round(prob * 20);
         const bar = '█'.repeat(barLength).padEnd(20, ' ');
-        console.log(`  - ${key.padEnd(20, ' ')}: ${(prob * 100).toFixed(1).padStart(5, ' ')}% [${bar}]`);
+        console.log(`  - ${sanitizedKey.padEnd(20, ' ')}: ${(prob * 100).toFixed(1).padStart(5, ' ')}% [${bar}]`);
       }
     }
     console.log(`------------------------------------------------------\n`);
     console.log('Gemini Decision 1 は正常に稼働しており、カテゴリ再設計の検証を進める準備が整いました。\n');
   } catch (error) {
     const elapsedMs = Date.now() - startTime;
+    const errorMessage = sanitizeLog(error);
     console.error(`\n❌ [FAILED] Decisions API の検証に失敗しました (${elapsedMs} ms)`);
-    console.error('エラー詳細:', error instanceof Error ? error.message : error);
+    console.error(`エラー詳細: ${errorMessage}`);
     console.error('\n【確認事項】');
     console.error('1. APIキーが Google AI Studio で正しく発行されているか確認してください。');
     console.error('2. APIキーが「Generative Language API」へのアクセスを許可しているか確認してください。');
