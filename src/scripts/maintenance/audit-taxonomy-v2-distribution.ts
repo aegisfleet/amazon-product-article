@@ -52,7 +52,10 @@ function auditDistribution(): void {
       if (p === 'camera-video' && amazonCat.includes('ベビー')) {
         cameraFromBaby.push(`${d.asin}: ${d.title?.slice(0, 30)}`);
       }
-      if (p === 'healthcare-appliances' && (amazonCat.includes('メイク') || amazonCat.includes('ネイル') || c.includes('contact'))) {
+      if (
+        p === 'healthcare-appliances' &&
+        (amazonCat.includes('メイク') || amazonCat.includes('ネイル') || c.includes('contact'))
+      ) {
         contactFromMakeup.push(`${d.asin}: ${d.title?.slice(0, 30)}`);
       }
     }
@@ -65,8 +68,12 @@ function auditDistribution(): void {
   console.log(`新タクソノミー (v2) 付与率: ${v2Count} / ${total} 件 (100.0%)`);
   console.log(`自動確定率: ${(((v2Count - reviewCount) / v2Count) * 100).toFixed(1)}% (${v2Count - reviewCount} 件)`);
   console.log(`要確認 (needsReview) 率: ${((reviewCount / v2Count) * 100).toFixed(1)}% (${reviewCount} 件)`);
-  console.log(`親「その他／全般 (others)」滞留数: ${othersParentCount} 件 (${((othersParentCount / v2Count) * 100).toFixed(2)}%) [目標: 1.0%未満]`);
-  console.log(`子「各親のその他 (zz-*-other)」滞留数: ${othersChildCount} 件 (${((othersChildCount / v2Count) * 100).toFixed(1)}%)`);
+  console.log(
+    `親「その他／全般 (others)」滞留数: ${othersParentCount} 件 (${((othersParentCount / v2Count) * 100).toFixed(2)}%) [目標: 1.0%未満]`,
+  );
+  console.log(
+    `子「各親のその他 (zz-*-other)」滞留数: ${othersChildCount} 件 (${((othersChildCount / v2Count) * 100).toFixed(1)}%)`,
+  );
 
   console.log('\n------------------------------------------------------');
   console.log(' 親カテゴリ別 商品数 & 平均確信度 (全27グループ)');
@@ -93,4 +100,3 @@ function auditDistribution(): void {
 }
 
 auditDistribution();
-

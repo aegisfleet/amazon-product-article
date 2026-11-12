@@ -42,6 +42,7 @@
     "set:gemini-key": "ts-node src/scripts/maintenance/set-gemini-key.ts",
     "verify:gemini-key": "ts-node src/scripts/maintenance/verify-gemini-key.ts",
     "classify:products": "ts-node src/scripts/maintenance/classify-products-cli.ts",
+    "sync:product-categories": "ts-node src/scripts/maintenance/sync-product-categories.ts",
     "biome:check": "biome check .",
     "biome:fix": "biome check --write ."
   },

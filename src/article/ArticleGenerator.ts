@@ -6,6 +6,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { AffiliateLinkManager } from '../affiliate/AffiliateLinkManager';
 import type { ReviewAnalysisResult } from '../analysis/ReviewAnalyzer';
+import {
+  loadProductCategories,
+  type ProductCategoryMap,
+  type StoredProductCategory,
+} from '../category/store/ProductCategoryStore';
 import { InvestigationFileSchema } from '../schemas/InvestigationSchema';
 import type { AffiliateLink } from '../types/AffiliateTypes';
 import type {
@@ -55,12 +60,21 @@ export class ArticleGenerator {
   private readonly affiliateManager: AffiliateLinkManager;
   // 調査結果ファイルのキャッシュ（記事生成プロセス中、同じ競合商品が何度も参照されるのを防ぐ）
   private readonly investigationCache: Map<string, InvestigationResult | null>;
+  // 自前タクソノミー（Gemini Decision 1）の分類マッピングキャッシュ
+  private productCategoryMap: ProductCategoryMap | null = null;
 
   constructor() {
     this.logger = Logger.getInstance();
     this.defaultTemplate = DEFAULT_ARTICLE_TEMPLATE;
     this.affiliateManager = new AffiliateLinkManager();
     this.investigationCache = new Map();
+  }
+
+  private getProductCategoryData(asin: string): StoredProductCategory | undefined {
+    if (!this.productCategoryMap) {
+      this.productCategoryMap = loadProductCategories();
+    }
+    return this.productCategoryMap[asin];
   }
 
   /**
@@ -262,6 +276,20 @@ export class ArticleGenerator {
         summary: reviewSummary,
         ...(metadata.rating === undefined ? {} : { rating: metadata.rating }),
       };
+    }
+
+    // 自前タクソノミー（Gemini Decision 1）の分類結果を付与
+    const catData = this.getProductCategoryData(product.asin);
+    if (catData && catData.taxonomy_version === 2) {
+      metadata.taxonomy_version = catData.taxonomy_version;
+      metadata.category_parent = catData.category_parent;
+      metadata.category_child = catData.category_child;
+      if (catData.amazon_category) {
+        metadata.amazon_category = catData.amazon_category;
+      }
+      if (catData.classification) {
+        metadata.classification = catData.classification;
+      }
     }
 
     return metadata;
@@ -1422,9 +1450,11 @@ ${recommendationMessage}
       `categories: ["${this.escapeForFrontMatter(metadata.category)}"]`,
     );
     if (metadata.subcategory) lines.push(`subcategory: "${this.escapeForFrontMatter(metadata.subcategory)}"`);
-    if (metadata.amazon_category) lines.push(`amazon_category: "${this.escapeForFrontMatter(metadata.amazon_category)}"`);
+    if (metadata.amazon_category)
+      lines.push(`amazon_category: "${this.escapeForFrontMatter(metadata.amazon_category)}"`);
     if (metadata.taxonomy_version) lines.push(`taxonomy_version: ${metadata.taxonomy_version}`);
-    if (metadata.category_parent) lines.push(`category_parent: "${this.escapeForFrontMatter(metadata.category_parent)}"`);
+    if (metadata.category_parent)
+      lines.push(`category_parent: "${this.escapeForFrontMatter(metadata.category_parent)}"`);
     if (metadata.category_child) lines.push(`category_child: "${this.escapeForFrontMatter(metadata.category_child)}"`);
     if (metadata.classification) {
       lines.push(
