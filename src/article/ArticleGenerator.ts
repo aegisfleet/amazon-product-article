@@ -1422,6 +1422,21 @@ ${recommendationMessage}
       `categories: ["${this.escapeForFrontMatter(metadata.category)}"]`,
     );
     if (metadata.subcategory) lines.push(`subcategory: "${this.escapeForFrontMatter(metadata.subcategory)}"`);
+    if (metadata.amazon_category) lines.push(`amazon_category: "${this.escapeForFrontMatter(metadata.amazon_category)}"`);
+    if (metadata.taxonomy_version) lines.push(`taxonomy_version: ${metadata.taxonomy_version}`);
+    if (metadata.category_parent) lines.push(`category_parent: "${this.escapeForFrontMatter(metadata.category_parent)}"`);
+    if (metadata.category_child) lines.push(`category_child: "${this.escapeForFrontMatter(metadata.category_child)}"`);
+    if (metadata.classification) {
+      lines.push(
+        'classification:',
+        `  source: "${metadata.classification.source}"`,
+        `  parent_confidence: ${metadata.classification.parent_confidence}`,
+        `  child_confidence: ${metadata.classification.child_confidence}`,
+        `  classified_at: "${metadata.classification.classified_at}"`,
+        `  input_hash: "${metadata.classification.input_hash}"`,
+        `  needs_review: ${metadata.classification.needs_review}`,
+      );
+    }
     if (metadata.brand) lines.push(`brand: "${this.escapeForFrontMatter(metadata.brand)}"`);
     if (metadata.manufacturer) lines.push(`manufacturer: "${this.escapeForFrontMatter(metadata.manufacturer)}"`);
   }

@@ -9,25 +9,45 @@ dotenv.config();
 
 /**
  * CLI Tool for Product Classification with Gemini Decision 1
+ * Supports rate control, checkpoint resumption, dry-run, and batch reporting.
  */
 
 interface RunOptions {
   sampleSize?: number | undefined;
+  limit?: number | undefined;
+  delayMs?: number | undefined;
   dryRun: boolean;
   asin?: string | undefined;
+  resume: boolean;
+  force: boolean;
+}
+
+interface CheckpointData {
+  updatedAt: string;
+  processedAsins: string[];
 }
 
 function parseArgs(): RunOptions {
   const args = process.argv.slice(2);
   let sampleSize: number | undefined;
+  let limit: number | undefined;
+  let delayMs: number | undefined;
   let dryRun = true;
   let asin: string | undefined;
+  let resume = true;
+  let force = false;
 
   for (let i = 0; i < args.length; i++) {
     const arg = args[i];
     const nextArg = args[i + 1];
     if (arg === '--sample' && nextArg !== undefined) {
       sampleSize = Number.parseInt(nextArg, 10);
+      i++;
+    } else if (arg === '--limit' && nextArg !== undefined) {
+      limit = Number.parseInt(nextArg, 10);
+      i++;
+    } else if (arg === '--delay' && nextArg !== undefined) {
+      delayMs = Number.parseInt(nextArg, 10);
       i++;
     } else if (arg === '--apply') {
       dryRun = false;
@@ -36,15 +56,44 @@ function parseArgs(): RunOptions {
     } else if (arg === '--asin' && nextArg !== undefined) {
       asin = nextArg.trim();
       i++;
+    } else if (arg === '--no-resume') {
+      resume = false;
+    } else if (arg === '--force') {
+      force = true;
     }
   }
 
-  return { sampleSize, dryRun, asin };
+  return { sampleSize, limit, delayMs, dryRun, asin, resume, force };
+}
+
+function loadCheckpoint(checkpointPath: string): CheckpointData {
+  if (fs.existsSync(checkpointPath)) {
+    try {
+      return JSON.parse(fs.readFileSync(checkpointPath, 'utf8'));
+    } catch {
+      // ignore
+    }
+  }
+  return { updatedAt: new Date().toISOString(), processedAsins: [] };
+}
+
+function saveCheckpoint(checkpointPath: string, processedSet: Set<string>): void {
+  const dir = path.dirname(checkpointPath);
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
+  const data: CheckpointData = {
+    updatedAt: new Date().toISOString(),
+    processedAsins: Array.from(processedSet),
+  };
+  fs.writeFileSync(checkpointPath, `${JSON.stringify(data, null, 2)}\n`, 'utf8');
 }
 
 async function run(): Promise<void> {
   const options = parseArgs();
   const articlesDir = path.resolve(process.cwd(), 'content/articles');
+  const checkpointPath = path.resolve(process.cwd(), 'tmp/classification-checkpoint.json');
+  const reportPath = path.resolve(process.cwd(), 'tmp/classification-report.json');
 
   console.log('\n======================================================');
   console.log(' Gemini Decision 1 商品カテゴリ分類・検証 CLI');
@@ -54,9 +103,15 @@ async function run(): Promise<void> {
     console.log(`対象ASIN: ${options.asin}`);
   } else if (options.sampleSize) {
     console.log(`サンプル件数: ${options.sampleSize} 件`);
+  } else if (options.limit) {
+    console.log(`処理件数上限: ${options.limit} 件`);
   } else {
     console.log('対象: 全記事');
   }
+  if (options.delayMs) {
+    console.log(`リクエスト間インターバル: ${options.delayMs} ms`);
+  }
+  console.log(`チェックポイント再開: ${options.resume ? '有効' : '無効'}`);
   console.log('------------------------------------------------------\n');
 
   let targetFiles: string[] = [];
@@ -72,7 +127,6 @@ async function run(): Promise<void> {
   } else {
     const allFiles = fs.readdirSync(articlesDir).filter((f) => f.endsWith('.md'));
     if (options.sampleSize && options.sampleSize < allFiles.length) {
-      // 均等にサンプリング（頭ばかりに偏らないよう等間隔ステップで抽出）
       const step = Math.max(1, Math.floor(allFiles.length / options.sampleSize));
       for (let i = 0; i < allFiles.length && targetFiles.length < options.sampleSize; i += step) {
         const file = allFiles[i];
@@ -85,7 +139,37 @@ async function run(): Promise<void> {
     }
   }
 
-  console.log(`処理対象: ${targetFiles.length} 件の記事\n`);
+  const checkpoint = options.resume ? loadCheckpoint(checkpointPath) : { updatedAt: '', processedAsins: [] };
+  const processedSet = new Set<string>(checkpoint.processedAsins);
+
+  // 既に分類済みの記事をスキップ（--force 指定時はスキップしない）
+  let filesToProcess = targetFiles;
+  if (!options.force && options.resume) {
+    filesToProcess = targetFiles.filter((f) => {
+      const asin = path.basename(f, '.md');
+      if (processedSet.has(asin)) {
+        return false;
+      }
+      // frontmatter に既に taxonomy_version: 2 が入っているかも確認
+      const filePath = path.join(articlesDir, f);
+      const content = fs.readFileSync(filePath, 'utf8');
+      const parsed = matter(content);
+      return parsed.data.taxonomy_version !== 2;
+    });
+  }
+
+  if (options.limit && options.limit < filesToProcess.length) {
+    filesToProcess = filesToProcess.slice(0, options.limit);
+  }
+
+  console.log(
+    `全対象: ${targetFiles.length} 件 | 今回処理対象: ${filesToProcess.length} 件 (既処理スキップ: ${targetFiles.length - filesToProcess.length} 件)\n`,
+  );
+
+  if (filesToProcess.length === 0) {
+    console.log('すべての対象が既に処理済みです。再処理する場合は --force を指定してください。\n');
+    return;
+  }
 
   const classifier = new GeminiDecisionClassifier();
   const results: Array<{
@@ -99,7 +183,7 @@ async function run(): Promise<void> {
   let count = 0;
   const startTime = Date.now();
 
-  for (const file of targetFiles) {
+  for (const file of filesToProcess) {
     count++;
     const asin = path.basename(file, '.md');
     const filePath = path.join(articlesDir, file);
@@ -111,7 +195,6 @@ async function run(): Promise<void> {
     const brand = String(data.brand || data.manufacturer || '');
     const oldCat = Array.isArray(data.categories) ? data.categories[0] : String(data.category || '');
 
-    // specs や description の抽出
     let specsSummary = '';
     if (typeof data.specs === 'object' && data.specs !== null) {
       specsSummary = Object.entries(data.specs)
@@ -134,13 +217,14 @@ async function run(): Promise<void> {
 
       const durationMs = Date.now() - itemStartTime;
       results.push({ asin, title, oldCat, classification: res, durationMs });
+      processedSet.add(asin);
 
       const reviewMark = res.needsReview ? '⚠️ [要確認]' : '✅';
+      const sourceTag = res.source === 'fallback-map' ? '[FB]' : '';
       console.log(
-        `[${count}/${targetFiles.length}] ${asin} | ${reviewMark} ${res.parentSlug} › ${res.childSlug} | 親conf: ${(res.parentConfidence * 100).toFixed(0)}% 子conf: ${(res.childConfidence * 100).toFixed(0)}% (${durationMs}ms)`,
+        `[${count}/${filesToProcess.length}] ${asin} | ${reviewMark} ${sourceTag} ${res.parentSlug} › ${res.childSlug} | 親: ${(res.parentConfidence * 100).toFixed(0)}% 子: ${(res.childConfidence * 100).toFixed(0)}% (${durationMs}ms)`,
       );
 
-      // Applyモードの場合はfrontmatterを更新
       if (!options.dryRun) {
         data.taxonomy_version = 2;
         data.category_parent = res.parentSlug;
@@ -163,17 +247,28 @@ async function run(): Promise<void> {
         const newContent = matter.stringify(parsed.content, data);
         fs.writeFileSync(filePath, newContent, 'utf8');
       }
+
+      // 10件ごとにチェックポイント保存
+      if (count % 10 === 0) {
+        saveCheckpoint(checkpointPath, processedSet);
+      }
+
+      // インターバル待機（レート制御）
+      if (options.delayMs && options.delayMs > 0 && count < filesToProcess.length) {
+        await new Promise((resolve) => setTimeout(resolve, options.delayMs));
+      }
     } catch (err) {
-      console.error(`[${count}/${targetFiles.length}] ${asin} で分類エラー:`, err instanceof Error ? err.message : err);
+      console.error(`[${count}/${filesToProcess.length}] ${asin} でエラー:`, err instanceof Error ? err.message : err);
     }
   }
+
+  // 終了時チェックポイント保存
+  saveCheckpoint(checkpointPath, processedSet);
 
   const totalDuration = Date.now() - startTime;
   const avgMs = results.length > 0 ? (totalDuration / results.length).toFixed(0) : '0';
 
-  // ----------------------------------------------------
   // サマリー集計
-  // ----------------------------------------------------
   const reviewCount = results.filter((r) => r.classification.needsReview).length;
   const othersCount = results.filter(
     (r) => r.classification.parentSlug === 'others' || r.classification.childSlug.startsWith('zz-'),
@@ -192,9 +287,7 @@ async function run(): Promise<void> {
   console.log('\n======================================================');
   console.log(' 検証集計レポート');
   console.log('======================================================');
-  console.log(
-    `総処理数: ${results.length} 件 (所要時間: ${(totalDuration / 1000).toFixed(1)} 秒 / 平均 ${avgMs} ms/件)`,
-  );
+  console.log(`処理数: ${results.length} 件 (所要時間: ${(totalDuration / 1000).toFixed(1)} 秒 / 平均 ${avgMs} ms/件)`);
   console.log(`平均 親確信度 (Parent Confidence): ${avgParentConf.toFixed(1)}%`);
   console.log(`平均 子確信度 (Child Confidence): ${avgChildConf.toFixed(1)}%`);
   console.log(
@@ -205,18 +298,30 @@ async function run(): Promise<void> {
     `「その他」滞留率: ${((othersCount / results.length) * 100).toFixed(1)}% (${othersCount} 件) (目標: 5%以下)`,
   );
 
-  console.log('\n------------------------------------------------------');
-  console.log(' 親カテゴリ別 振り分け件数TOP 10');
-  console.log('------------------------------------------------------');
-  const parentCounts = new Map<string, number>();
-  for (const r of results) {
-    const p = r.classification.parentSlug;
-    parentCounts.set(p, (parentCounts.get(p) || 0) + 1);
+  // レポートファイル書き出し
+  const reportDir = path.dirname(reportPath);
+  if (!fs.existsSync(reportDir)) {
+    fs.mkdirSync(reportDir, { recursive: true });
   }
-  const sortedParents = Array.from(parentCounts.entries()).sort((a, b) => b[1] - a[1]);
-  for (const [p, c] of sortedParents.slice(0, 10)) {
-    console.log(`  - ${p.padEnd(28, ' ')}: ${c} 件`);
-  }
+  fs.writeFileSync(
+    reportPath,
+    `${JSON.stringify(
+      {
+        total: results.length,
+        durationSeconds: Number((totalDuration / 1000).toFixed(1)),
+        avgParentConfidence: Number(avgParentConf.toFixed(1)),
+        avgChildConfidence: Number(avgChildConf.toFixed(1)),
+        autoConfirmed: results.length - reviewCount,
+        needsReview: reviewCount,
+        othersCount,
+        results,
+      },
+      null,
+      2,
+    )}\n`,
+    'utf8',
+  );
+  console.log(`\nレポートを保存しました: ${reportPath}`);
   console.log('======================================================\n');
 }
 

@@ -26,7 +26,7 @@ export class GeminiDecisionClient {
     this.apiKey = options.apiKey.trim();
     this.baseUrl = options.baseUrl || 'https://generativelanguage.googleapis.com/v1beta';
     this.model = options.model || 'gemini-decision-1';
-    this.maxRetries = options.maxRetries ?? 3;
+    this.maxRetries = options.maxRetries ?? 5;
     this.initialDelayMs = options.initialDelayMs ?? 1000;
 
     this.client = axios.create({
@@ -59,12 +59,30 @@ export class GeminiDecisionClient {
         const isServerError = typeof status === 'number' && status >= 500 && status < 600;
 
         if ((isRateLimit || isServerError) && attempt <= this.maxRetries) {
-          const jitter = Math.floor(Math.random() * 200);
-          const delay = this.initialDelayMs * 2 ** (attempt - 1) + jitter;
+          let delay = this.initialDelayMs * 2 ** (attempt - 1);
+
+          // 429の場合: Retry-Afterヘッダーまたはエラー本文の「Please retry in Xs」を抽出
+          if (isRateLimit) {
+            const retryAfterHeader = axiosError.response?.headers?.['retry-after'];
+            const errorMsg = JSON.stringify(axiosError.response?.data || '');
+            const match = /retry in (\d+(?:\.\d+)?)s/i.exec(errorMsg);
+
+            if (retryAfterHeader && !Number.isNaN(Number(retryAfterHeader))) {
+              delay = Math.ceil(Number(retryAfterHeader) * 1000) + 1000;
+            } else if (match?.[1]) {
+              delay = Math.ceil(Number.parseFloat(match[1]) * 1000) + 1500;
+            } else {
+              delay = Math.max(delay, 5000); // 429は最低5秒待機
+            }
+          }
+
+          const jitter = Math.floor(Math.random() * 500);
+          const finalDelay = delay + jitter;
+
           this.logger.warn(
-            `Decisions API returned HTTP ${status}. Retrying attempt ${attempt}/${this.maxRetries} after ${delay}ms...`,
+            `Decisions API returned HTTP ${status}. Retrying attempt ${attempt}/${this.maxRetries} after ${finalDelay}ms...`,
           );
-          await new Promise((resolve) => setTimeout(resolve, delay));
+          await new Promise((resolve) => setTimeout(resolve, finalDelay));
           continue;
         }
 

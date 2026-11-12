@@ -9,6 +9,36 @@ export interface ArticleMetadata {
   description: string;
   category: string;
   subcategory?: string | undefined;
+  taxonomy_version?: number | undefined;
+  category_parent?: string | undefined;
+  category_child?: string | undefined;
+  amazon_category?: string | undefined;
+  classification?:
+    | {
+        source: string;
+        parent_confidence: number;
+        child_confidence: number;
+        classified_at: string;
+        input_hash: string;
+        needs_review: boolean;
+        parent_runner_up?: { slug: string; probability: number } | undefined;
+        child_runner_up?: { slug: string; probability: number } | undefined;
+      }
+    | undefined;
+  taxonomy_version?: number | undefined;
+  category_parent?: string | undefined;
+  category_child?: string | undefined;
+  amazon_category?: string | undefined;
+  classification?: {
+    source: string;
+    parent_confidence: number;
+    child_confidence: number;
+    classified_at: string;
+    input_hash: string;
+    needs_review: boolean;
+    parent_runner_up?: { slug: string; probability: number } | undefined;
+    child_runner_up?: { slug: string; probability: number } | undefined;
+  } | undefined;
   manufacturer?: string | undefined;
   tags: string[];
   publishDate: Date;

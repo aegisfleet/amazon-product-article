@@ -5,6 +5,7 @@ export interface CategoryGroup {
   description?: string | undefined;
   visible?: boolean | undefined;
   priority?: number | undefined;
+  legacySlugs?: string[] | undefined;
   children: string[];
 }
 

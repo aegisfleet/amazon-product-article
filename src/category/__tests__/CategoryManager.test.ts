@@ -160,4 +160,37 @@ describe('CategoryManager', () => {
     expect(jsonOutput['TestCat'].slug).toBe('test-cat');
     expect(jsonOutput['TestCat'].categories).toEqual(['ChildA']);
   });
+
+  test('should load taxonomy-v2.json format correctly', () => {
+    const v2Path = path.join(tempDir, 'taxonomy-v2.json');
+    const v2Data = {
+      version: 2,
+      updated_at: '2026-11-12',
+      parents: [
+        {
+          slug: 'pc-workstation',
+          name: 'パソコン／周辺機器',
+          icon: '💻',
+          priority: 1,
+          legacy_slugs: ['pc-peripheral'],
+          criteria: 'PC本体や周辺機器',
+          children: [
+            { slug: 'laptops', name: 'ノートパソコン', criteria: 'ノートPC本体' },
+            { slug: 'monitors', name: 'モニター', criteria: '液晶モニター' },
+          ],
+        },
+      ],
+    };
+
+    fs.writeFileSync(v2Path, JSON.stringify(v2Data));
+    const manager = new CategoryManager(v2Path);
+    manager.loadCategoryGroups();
+
+    const groups = manager.getCategoryGroups();
+    expect(groups.length).toBe(1);
+    expect(groups[0]?.name).toBe('パソコン／周辺機器');
+    expect(groups[0]?.slug).toBe('pc-workstation');
+    expect(groups[0]?.legacySlugs).toEqual(['pc-peripheral']);
+    expect(groups[0]?.children).toEqual(['ノートパソコン', 'モニター']);
+  });
 });
