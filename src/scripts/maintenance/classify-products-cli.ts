@@ -31,6 +31,7 @@ interface RunOptions {
   asins?: string[];
   resume: boolean;
   force: boolean;
+  checkHash: boolean;
 }
 
 interface CheckpointData {
@@ -100,6 +101,7 @@ function parseArgs(): RunOptions {
     dryRun: false,
     resume: true,
     force: false,
+    checkHash: false,
   };
 
   for (let i = 0; i < args.length; i++) {
@@ -134,6 +136,9 @@ function parseArgs(): RunOptions {
         break;
       case '--force':
         options.force = true;
+        break;
+      case '--check-hash':
+        options.checkHash = true;
         break;
       default:
         break;
@@ -320,11 +325,20 @@ function scanDirectoryForAsins(dirPath: string, extension: string): string[] {
 
 /**
  * 登録済みの分類が最新の商品データに基づいているかを判定する。
- * 再調査でタイトル・ブランド・スペックが変化し input_hash が一致しない場合は再分類対象とする。
+ * 通常実行時は登録済み（taxonomy_version === 2）であれば最新とみなしてスキップする。
+ * --check-hash 指定時のみ、タイトル・ブランド・スペックのハッシュ変化を検知して再分類対象とする。
  */
-function isClassificationUpToDate(asin: string, articlesDir: string, categoryStore: ProductCategoryMap): boolean {
+function isClassificationUpToDate(
+  asin: string,
+  articlesDir: string,
+  categoryStore: ProductCategoryMap,
+  checkHash: boolean,
+): boolean {
   const stored = categoryStore[asin];
   if (stored?.taxonomy_version !== 2) return false;
+
+  // ハッシュによる変更検知フラグが無効な通常実行時は、登録済みであればスキップ
+  if (!checkHash) return true;
 
   const storedHash = stored.classification?.input_hash;
   if (!storedHash) return true;
@@ -351,7 +365,7 @@ function filterAsinsToProcess(
 
   if (!options.force) {
     toProcess = allAsins.filter((asin) => {
-      if (isClassificationUpToDate(asin, articlesDir, categoryStore)) return false;
+      if (isClassificationUpToDate(asin, articlesDir, categoryStore, options.checkHash)) return false;
       if (options.resume && processedSet.has(asin)) return false;
       return true;
     });

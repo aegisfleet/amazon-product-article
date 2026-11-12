@@ -78,7 +78,7 @@ jobs:
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         MAX_FETCH_ASINS: '5000'
       run: |
-        pnpm run classify:products
+        pnpm run classify:products -- --limit 50 --concurrency 2
         pnpm run generate:articles
 
     - name: Commit fetched cache (early commit)

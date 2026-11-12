@@ -123,7 +123,7 @@ pnpm run generate:articles
 - 親の統合・改名で旧スラッグが消える場合は、統合先親の `legacy_slugs` に旧スラッグを追加する（`/parent-category/<旧スラッグ>/` が alias としてリダイレクトされる）。
 
 ### 5.2 商品の分類を修正・再実行する手順
-1. **ASIN 指定で再分類**: `pnpm run classify:products -- --force --asin <ASIN>[,<ASIN>...]`
+1. **新規商品の分類（増分）**: `pnpm run classify:products`（登録済み商品は自動スキップ、`--check-hash` で変更検知、`--force` で強制再分類）
 2. **記事へ反映**: `pnpm run sync:product-categories -- --to-articles`
 3. **事前ビルド同期**: `pnpm run prebuild:hugo` を実行し、`data/categories.yml` / `static/data/categorygroups.json` / `content/parent-category/*.md` を自動更新する。
 4. **検証**: `pnpm run biome:check` / `pnpm test`（`taxonomy-v2.test.ts` が命名規約と旧URL互換を検証する）。
