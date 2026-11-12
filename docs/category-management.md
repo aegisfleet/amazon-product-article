@@ -91,11 +91,14 @@ pnpm run prebuild:hugo
 ### 3.2 主要コマンド
 
 ```bash
-# 未分類・入力変更商品のみ分類（増分）
+# 未分類商品のみ増分分類（登録済み商品は自動スキップ）
 pnpm run classify:products
 
-# ASIN を指定して分類（カンマ区切りで複数指定可）
-pnpm run classify:products -- --asin B0XXXXXXXX,B0YYYYYYYY
+# 商品仕様・タイトルの変更（input_hash 不一致）を検知して再分類
+pnpm run classify:products -- --check-hash
+
+# ASIN を指定して分類（カンマ区切りで複数指定可、--force で強制再分類）
+pnpm run classify:products -- --asin B0XXXXXXXX,B0YYYYYYYY --force
 
 # ドライラン（保存しない）／レート制御
 pnpm run classify:products -- --dry-run --limit 20 --delay 500
