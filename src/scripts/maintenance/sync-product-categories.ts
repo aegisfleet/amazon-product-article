@@ -1,7 +1,10 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import matter from '@11ty/gray-matter';
-import { loadProductCategories, saveProductCategories } from '../../category/store/ProductCategoryStore';
+import {
+  loadProductCategories,
+  saveProductCategories,
+} from '../../category/store/ProductCategoryStore';
 
 /**
  * Synchronizes category mappings between content/articles/*.md and data/product-categories.json.

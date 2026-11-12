@@ -4,7 +4,10 @@ import matter from '@11ty/gray-matter';
 import * as dotenv from 'dotenv';
 import { GeminiDecisionClassifier } from '../../category/classifier/GeminiDecisionClassifier';
 import type { ClassificationResult } from '../../category/classifier/types';
-import { loadProductCategories, saveProductCategories } from '../../category/store/ProductCategoryStore';
+import {
+  loadProductCategories,
+  saveProductCategories,
+} from '../../category/store/ProductCategoryStore';
 
 dotenv.config();
 
