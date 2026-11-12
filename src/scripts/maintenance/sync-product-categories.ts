@@ -3,8 +3,59 @@ import * as path from 'node:path';
 import matter from '@11ty/gray-matter';
 import {
   loadProductCategories,
+  type StoredProductCategory,
   saveProductCategories,
 } from '../../category/store/ProductCategoryStore';
+
+interface RawClassification {
+  source?: unknown;
+  parent_confidence?: unknown;
+  child_confidence?: unknown;
+  classified_at?: unknown;
+  input_hash?: unknown;
+  needs_review?: unknown;
+}
+
+interface RawArticleFrontmatter {
+  taxonomy_version?: unknown;
+  category_parent?: unknown;
+  category_child?: unknown;
+  amazon_category?: unknown;
+  categories?: unknown;
+  category?: unknown;
+  classification?: RawClassification | undefined;
+}
+
+function ensureString(val: unknown, fallback = ''): string {
+  if (typeof val === 'string') return val;
+  if (typeof val === 'number' || typeof val === 'boolean') return String(val);
+  return fallback;
+}
+
+function parseClassification(raw: RawClassification | undefined): StoredProductCategory['classification'] {
+  if (!raw) return undefined;
+  return {
+    source: ensureString(raw.source, 'gemini-decision-1'),
+    parent_confidence: typeof raw.parent_confidence === 'number' ? raw.parent_confidence : 1.0,
+    child_confidence: typeof raw.child_confidence === 'number' ? raw.child_confidence : 1.0,
+    classified_at: ensureString(raw.classified_at, new Date().toISOString()),
+    input_hash: ensureString(raw.input_hash, ''),
+    needs_review: Boolean(raw.needs_review),
+  };
+}
+
+function resolveAmazonCategory(d: RawArticleFrontmatter): string | undefined {
+  if (typeof d.amazon_category === 'string') {
+    return d.amazon_category;
+  }
+  if (Array.isArray(d.categories) && d.categories.length > 0) {
+    return String(d.categories[0]);
+  }
+  if (typeof d.category === 'string') {
+    return d.category;
+  }
+  return undefined;
+}
 
 /**
  * Synchronizes category mappings between content/articles/*.md and data/product-categories.json.
@@ -12,7 +63,7 @@ import {
  * Usage:
  *   pnpm ts-node src/scripts/maintenance/sync-product-categories.ts [--from-articles] [--to-articles]
  */
-async function main(): Promise<void> {
+function syncCategories(): void {
   const args = process.argv.slice(2);
   const fromArticles = args.includes('--from-articles') || args.length === 0;
   const toArticles = args.includes('--to-articles');
@@ -23,7 +74,7 @@ async function main(): Promise<void> {
   let updatedArticlesCount = 0;
 
   if (fromArticles) {
-    console.log(`[sync] content/articles/*.md から分類結果を抽出中...`);
+    console.log('[sync] content/articles/*.md から分類結果を抽出中...');
     if (fs.existsSync(articlesDir)) {
       const files = fs.readdirSync(articlesDir);
       for (const file of files) {
@@ -33,30 +84,15 @@ async function main(): Promise<void> {
         try {
           const raw = fs.readFileSync(filePath, 'utf8');
           const parsed = matter(raw);
-          const d = parsed.data;
+          const d = parsed.data as RawArticleFrontmatter;
 
           if (d.taxonomy_version === 2 && d.category_parent && d.category_child) {
             store[asin] = {
               taxonomy_version: 2,
-              category_parent: String(d.category_parent),
-              category_child: String(d.category_child),
-              amazon_category: d.amazon_category
-                ? String(d.amazon_category)
-                : Array.isArray(d.categories)
-                  ? String(d.categories[0])
-                  : typeof d.category === 'string'
-                    ? d.category
-                    : undefined,
-              classification: d.classification
-                ? {
-                    source: String(d.classification.source || 'gemini-decision-1'),
-                    parent_confidence: Number(d.classification.parent_confidence || 1.0),
-                    child_confidence: Number(d.classification.child_confidence || 1.0),
-                    classified_at: String(d.classification.classified_at || new Date().toISOString()),
-                    input_hash: String(d.classification.input_hash || ''),
-                    needs_review: Boolean(d.classification.needs_review),
-                  }
-                : undefined,
+              category_parent: ensureString(d.category_parent),
+              category_child: ensureString(d.category_child),
+              amazon_category: resolveAmazonCategory(d),
+              classification: parseClassification(d.classification),
             };
             extractedCount++;
           }
@@ -73,7 +109,7 @@ async function main(): Promise<void> {
   }
 
   if (toArticles) {
-    console.log(`[sync] data/product-categories.json から content/articles/*.md へ反映中...`);
+    console.log('[sync] data/product-categories.json から content/articles/*.md へ反映中...');
     if (fs.existsSync(articlesDir)) {
       const files = fs.readdirSync(articlesDir);
       for (const file of files) {
@@ -86,7 +122,7 @@ async function main(): Promise<void> {
         try {
           const raw = fs.readFileSync(filePath, 'utf8');
           const parsed = matter(raw);
-          const d = parsed.data;
+          const d = parsed.data as RawArticleFrontmatter;
 
           let changed = false;
           if (d.taxonomy_version !== stored.taxonomy_version) {
@@ -124,7 +160,9 @@ async function main(): Promise<void> {
   }
 }
 
-main().catch((err) => {
+try {
+  syncCategories();
+} catch (err) {
   console.error('[sync] 致命的エラー:', err);
   process.exit(1);
-});
+}

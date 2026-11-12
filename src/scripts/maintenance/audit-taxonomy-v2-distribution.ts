@@ -2,6 +2,21 @@ import * as fs from 'node:fs';
 import * as path from 'node:path';
 import matter from '@11ty/gray-matter';
 
+interface AuditClassification {
+  needs_review?: boolean;
+  parent_confidence?: number;
+}
+
+interface AuditFrontmatter {
+  taxonomy_version?: number;
+  category_parent?: string;
+  category_child?: string;
+  amazon_category?: string;
+  classification?: AuditClassification;
+  asin?: string;
+  title?: string;
+}
+
 function auditDistribution(): void {
   const articlesDir = path.resolve(process.cwd(), 'content/articles');
   const files = fs.readdirSync(articlesDir).filter((f) => f.endsWith('.md'));
@@ -16,7 +31,7 @@ function auditDistribution(): void {
   const childDistribution = new Map<string, number>();
   const parentConfidenceSum = new Map<string, { sum: number; count: number }>();
 
-  // 補正確認用サンプル
+  // 既知のAmazon混入ケースの是正確認用トラッカー
   const cameraFromBaby: string[] = [];
   const contactFromMakeup: string[] = [];
 
@@ -24,13 +39,13 @@ function auditDistribution(): void {
     const filePath = path.join(articlesDir, file);
     const content = fs.readFileSync(filePath, 'utf8');
     const parsed = matter(content);
-    const d = parsed.data;
+    const d = parsed.data as AuditFrontmatter;
 
     if (d.taxonomy_version === 2) {
       v2Count++;
-      const p = String(d.category_parent || 'unknown');
-      const c = String(d.category_child || 'unknown');
-      const amazonCat = String(d.amazon_category || '');
+      const p = d.category_parent || 'unknown';
+      const c = d.category_child || 'unknown';
+      const amazonCat = d.amazon_category || '';
 
       parentDistribution.set(p, (parentDistribution.get(p) || 0) + 1);
       childDistribution.set(`${p} › ${c}`, (childDistribution.get(`${p} › ${c}`) || 0) + 1);
@@ -49,14 +64,17 @@ function auditDistribution(): void {
         parentConfidenceSum.set(p, current);
       }
 
+      const itemAsin = d.asin || path.basename(file, '.md');
+      const itemTitle = (d.title || itemAsin).slice(0, 30);
+
       if (p === 'camera-video' && amazonCat.includes('ベビー')) {
-        cameraFromBaby.push(`${d.asin}: ${d.title?.slice(0, 30)}`);
+        cameraFromBaby.push(`${itemAsin}: ${itemTitle}`);
       }
       if (
         p === 'healthcare-appliances' &&
         (amazonCat.includes('メイク') || amazonCat.includes('ネイル') || c.includes('contact'))
       ) {
-        contactFromMakeup.push(`${d.asin}: ${d.title?.slice(0, 30)}`);
+        contactFromMakeup.push(`${itemAsin}: ${itemTitle}`);
       }
     }
   }
@@ -80,22 +98,20 @@ function auditDistribution(): void {
   console.log('------------------------------------------------------');
   const sortedParents = Array.from(parentDistribution.entries()).sort((a, b) => b[1] - a[1]);
   for (const [p, count] of sortedParents) {
-    const stats = parentConfidenceSum.get(p);
-    const avgConf = stats && stats.count > 0 ? ((stats.sum / stats.count) * 100).toFixed(1) : '-';
-    console.log(`  - ${p.padEnd(28, ' ')}: ${String(count).padStart(4, ' ')} 件 (平均親conf: ${avgConf}%)`);
+    const confData = parentConfidenceSum.get(p);
+    const avgConf = confData && confData.count > 0 ? ((confData.sum / confData.count) * 100).toFixed(1) : 'N/A';
+    console.log(`- ${p.padEnd(28)}: ${String(count).padStart(4)} 件 (平均親確信度: ${avgConf}%)`);
   }
 
   console.log('\n------------------------------------------------------');
-  console.log(' 主な誤分類の自動矯正 サンプル実績');
+  console.log(' Amazon BrowseNode 由来の誤配是正 検証');
   console.log('------------------------------------------------------');
-  console.log(`旧ベビーから camera-video へ矯正されたカメラ: ${cameraFromBaby.length} 件`);
-  for (const item of cameraFromBaby.slice(0, 3)) {
-    console.log(`  * ${item}`);
-  }
-  console.log(`旧コスメ/Amazonから healthcare-appliances へ正しく移動したコンタクト等: ${contactFromMakeup.length} 件`);
-  for (const item of contactFromMakeup.slice(0, 3)) {
-    console.log(`  * ${item}`);
-  }
+  console.log(
+    `1. 旧「ベビー」等に誤配されていた防犯カメラ → camera-video 是正件数: ${cameraFromBaby.length} 件 (例: ${cameraFromBaby[0] || 'なし'})`,
+  );
+  console.log(
+    `2. 旧「メイクアップ／ネイル」等に誤配されていたコンタクト → healthcare-appliances 是正件数: ${contactFromMakeup.length} 件 (例: ${contactFromMakeup[0] || 'なし'})`,
+  );
   console.log('======================================================\n');
 }
 

@@ -63,7 +63,7 @@ export class GeminiDecisionClient {
 
           // 429の場合: Retry-Afterヘッダーまたはエラー本文の「Please retry in Xs」を抽出
           if (isRateLimit) {
-            const retryAfterHeader = axiosError.response?.headers?.['retry-after'];
+            const retryAfterHeader = String(axiosError.response?.headers?.['retry-after'] || '');
             const errorMsg = JSON.stringify(axiosError.response?.data || '');
             const match = /retry in (\d+(?:\.\d+)?)s/i.exec(errorMsg);
 

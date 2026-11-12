@@ -46,10 +46,7 @@ export function loadProductCategories(storePath: string = STORE_PATH): ProductCa
  * Each product entry is formatted as a single compact JSON line within the outer JSON object,
  * significantly compressing file size while preserving valid JSON and clean 1-line-per-entry Git diffs.
  */
-export function saveProductCategories(
-  map: ProductCategoryMap,
-  storePath: string = STORE_PATH,
-): void {
+export function saveProductCategories(map: ProductCategoryMap, storePath: string = STORE_PATH): void {
   const asins = Object.keys(map).sort();
   const lines: string[] = ['{'];
   for (let i = 0; i < asins.length; i++) {
@@ -68,10 +65,7 @@ export function saveProductCategories(
 /**
  * Retrieves the category mapping for a specific ASIN.
  */
-export function getProductCategory(
-  asin: string,
-  map?: ProductCategoryMap,
-): StoredProductCategory | undefined {
+export function getProductCategory(asin: string, map?: ProductCategoryMap): StoredProductCategory | undefined {
   const store = map || loadProductCategories();
   return store[asin];
 }

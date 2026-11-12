@@ -63,6 +63,7 @@ jobs:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PR_NUMBER: ${{ github.event.pull_request.number }}
         AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       run: |
         # GitHub APIからPRの変更ファイル一覧を取得（Git履歴の全フェッチを回避）
         ALL_CHANGED_FILES=$(gh pr diff "$PR_NUMBER" --name-only)
@@ -71,6 +72,7 @@ jobs:
         INVESTIGATION_FILES=$(echo "$ALL_CHANGED_FILES" | grep -E '^data/investigations/.+\.json$' | tr '\n' ' ' || true)
         if [ -n "$INVESTIGATION_FILES" ]; then
           echo "Found changed investigation files: $INVESTIGATION_FILES"
+          pnpm run classify:products
           pnpm exec ts-node src/scripts/article-generation-cli.ts --skip-paapi $INVESTIGATION_FILES
         else
           echo "No investigation files changed. Skipping article generation."

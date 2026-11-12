@@ -20,6 +20,8 @@ interface LegacyMapEntry {
   child_slug: string;
 }
 
+type LegacyCategoryMap = Record<string, LegacyMapEntry>;
+
 export class GeminiDecisionClassifier {
   private readonly client: GeminiDecisionClient;
   private readonly taxonomy: TaxonomyV2;
@@ -40,8 +42,8 @@ export class GeminiDecisionClassifier {
     const taxPath = options.taxonomyPath || path.resolve(process.cwd(), 'data/taxonomy-v2.json');
     const legPath = options.legacyMapPath || path.resolve(process.cwd(), 'data/legacy-category-map.json');
 
-    this.taxonomy = JSON.parse(fs.readFileSync(taxPath, 'utf8'));
-    this.legacyMap = fs.existsSync(legPath) ? JSON.parse(fs.readFileSync(legPath, 'utf8')) : {};
+    this.taxonomy = JSON.parse(fs.readFileSync(taxPath, 'utf8')) as TaxonomyV2;
+    this.legacyMap = (fs.existsSync(legPath) ? JSON.parse(fs.readFileSync(legPath, 'utf8')) : {}) as LegacyCategoryMap;
 
     this.parentThreshold = options.parentThreshold ?? 0.8;
     this.childThreshold = options.childThreshold ?? 0.7;

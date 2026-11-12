@@ -9,7 +9,7 @@ describe('Taxonomy v2 Definition Validation', () => {
   beforeAll(() => {
     expect(fs.existsSync(taxonomyPath)).toBe(true);
     const raw = fs.readFileSync(taxonomyPath, 'utf8');
-    taxonomy = JSON.parse(raw);
+    taxonomy = JSON.parse(raw) as TaxonomyV2;
   });
 
   test('should have valid version and parents array', () => {
