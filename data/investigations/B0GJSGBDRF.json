@@ -2,175 +2,305 @@
   "analysis": {
     "productName": "HUAWEI Band 11 Aluminum Edition",
     "parentAsin": "B0GJSGBDRF",
-    "productDescription": "薄型軽量17gのアルミニウムケースを採用し、快適な装着感と24時間睡眠管理を実現した最新スマートウォッチです。最大1500nitsの高輝度約41.1mm大画面を備えています。",
+    "productDescription": "厚さ約8.99mm・重さ約17g（ベルト除く）のCNC加工アルミニウム合金ケースに、最大1500nitsの高輝度1.62インチAMOLEDディスプレイを搭載した薄型軽量スマートバンドです。24時間睡眠モニタリング（HRV対応）や情緒モニタリング、通常使用約14日間のロングバッテリーを備えています。",
     "productUsage": [
-      "24時間の睡眠モニタリングと健康管理",
-      "情緒モニタリングによる気分の可視化",
-      "LINEやSMSの通知確認"
+      "24時間の睡眠モニタリング（HRV・心拍数・血中酸素レベル計測）と健康管理",
+      "12種類の花で気分の変化を可視化する情緒モニタリング",
+      "LINEやSMSの通知確認、ワークアウトや日常の活動量計測"
     ],
     "positivePoints": [
-      "約17gの軽量設計と約8.99mmの薄型アルミニウム合金ケースにより、睡眠中も快適な着け心地",
-      "約41.1mmAMOLEDで最大1500nitsという高輝度ディスプレイを搭載し、屋外での視認性が高い",
-      "睡眠中の平均心拍変動（HRV）による回復状況の把握など、高度な睡眠モニタリング機能を備える",
-      "フル充電で通常使用なら約14日間持続するロングバッテリー"
+      "約8.99mmの薄型設計と約17g（ベルト除く）の超軽量アルミニウム合金ケースにより、就寝中や長時間のPC作業でも装着感が軽い",
+      "前世代（Band 10）の1.47インチから約27%大型化した1.62インチAMOLED（286×482・60Hz）は最大1500nitsの高輝度で屋外の直射日光下でも視認性が高い",
+      "睡眠中の平均心拍変動（HRV）トラッキングを含む高度な睡眠分析や昼寝の自動検知に対応している",
+      "フル充電で通常使用約14日間（ヘビーユース約8日間）持続し、0→100%の充電も約65分で完了する",
+      "5ATM防水（50m耐水）に適合しており、プールでのスイミングや日常の水仕事でも外さずに使用できる"
     ],
     "negativePoints": [
-      "常時表示（AOD）を有効にするとバッテリー持続時間が約3日間に短縮される"
+      "常時表示（AOD）を有効にするとバッテリー持続時間が約3日間に短縮される",
+      "本体単体のGPS（GNSS）を非搭載のため、屋外ランニングのルート記録にはスマートフォンの携帯・連携が必要（単体GPSは上位のBand 11 Proのみ対応）",
+      "SuicaなどのFeliCa（おサイフケータイ）決済や本体でのBluetooth音声通話、自由文字入力によるメッセージ返信には非対応",
+      "5ATM防水は高温・高湿環境を想定していないため、サウナや温泉・温水シャワーでの着用は推奨されない"
     ],
     "useCases": [
-      "睡眠の質を記録・分析して改善したい就寝時",
-      "屋外の強い日差しの下でスポーツやランニングを行う時",
-      "仕事中や移動中にスマートフォンを取り出さずに通知を確認する時"
+      "就寝中も外さず睡眠スコアやHRV・昼寝を記録したい日常のヘルスケア",
+      "屋外の強い日差しの下でウォーキングやランニングの数値を確認する時",
+      "在宅ワークや移動中にスマートフォンを取り出さずLINEや着信の通知を確認する時"
     ],
-    "userStories": [],
-    "userImpression": "約17gの軽さと薄型アルミニウムケースによる快適な装着感が、睡眠時の使用に最適と高く評価されています。また、1500nitsの高輝度ディスプレイにより屋外での視認性も抜群で、日々の健康管理と通知確認をバランス良くこなせる実用的なスマートウォッチです。",
+    "userStories": [
+      {
+        "userType": "スマートバンド買い替えユーザー（デスクワーク中心）",
+        "scenario": "約6年間使用していた旧型スマートバンドからの買い替えで、寝るときも邪魔にならない軽量モデルを探していた",
+        "experience": "大きなスマートウォッチは就寝時やPC作業中に手首に当たって気になるため、薄くて軽いHUAWEI Band 11を選択。\n実際に着けてみると約17gの軽さと丸みを帯びた薄型形状のおかげで着けている感覚をほとんど意識せず、睡眠中もストレスがない。\nフル充電も約65分で完了するため、入浴中に充電するだけでバッテリー切れの心配なく使い続けられ、プールでの使用やLINE通知の確認も快適に行えている。",
+        "supportingSourceIds": [
+          "src-4"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "在宅ワーカー（健康管理・作業効率化目的）",
+        "scenario": "睡眠中の装着感に不安を感じつつも、日々の体調管理と通知確認を効率化するために1ヶ月間毎日着用",
+        "experience": "購入前は「寝るときまで時計を着けっぱなしにするのは気にならないか」と不安だったが、軽量スリムな設計により数日で違和感が消えた。\n毎晩充電が必要な高機能ウォッチと異なり、約2週間持つロングバッテリーのおかげで充電の手間から解放され、昼寝まで正確に検知される睡眠ログが体調管理に役立っている。\n一方で初回セットアップ時のHUAWEIアカウント連携や通知許可設定には少し戸惑う場面もあったが、一度設定すれば接続は安定している。",
+        "supportingSourceIds": [
+          "src-5"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "多くの実機レビューや購入者から「約17g・約8.99mmの薄型軽量ボディで着けていることを忘れる装着感」「1.62インチ・1500nitsの画面で屋外でも見やすい」「約2週間のバッテリー持ちと約65分の急速充電で入浴中の充電だけで運用できる」点が高く評価されています。一方で、単体GPSやSuica決済・音声通話が非対応である点や、AODオン時の電池持ち低下、サウナ非推奨、初回アプリ設定のわかりにくさについては割り切りが必要ですが、実売6,500円前後という価格を踏まえた満足度は非常に高い傾向にあります。",
     "sources": [
       {
         "id": "src-1",
-        "name": "Amazon商品ページ",
+        "name": "Amazon商品ページ (B0GJSGBDRF)",
         "url": "https://www.amazon.co.jp/dp/B0GJSGBDRF",
         "tier": "high",
         "evidenceType": "primary",
-        "publishedAt": "2026-04-06",
+        "publishedAt": "2026-03-13",
         "author": "HUAWEI",
         "conflictOfInterest": "none",
-        "notes": "製品の主な特徴やスペック、約41.1mm大画面、1500nits、重量約17g、14日間バッテリー等の記述を確認。"
+        "notes": "商品名、実売価格￥6,500（割引率14%）、1.62インチ60Hz AMOLED（最大1500nits）、約17g・8.99mmアルミニウムケース、HRV睡眠管理、12種類の情緒モニタリング、14日間バッテリー等を確認。"
+      },
+      {
+        "id": "src-2",
+        "name": "HUAWEI Band 11 スペック公式ページ - HUAWEI Japan",
+        "url": "https://consumer.huawei.com/jp/wearables/band11/specs/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-03-13",
+        "author": "HUAWEI Japan",
+        "conflictOfInterest": "none",
+        "notes": "公式寸法（約42.6×28.2×8.99mm）、重量（アルミニウム約17g/ベルトなし）、解像度（286×482・347 PPI）、9軸IMUセンサー、5ATM防水（温水シャワー・温泉・サウナ非推奨の注記）、通常約14日間/ヘビー約8日間/AOD約3日間の測定条件を確認。"
+      },
+      {
+        "id": "src-3",
+        "name": "明るくなった「HUAWEI Band 11」 6年ぶりProはGNSS搭載 - Impress Watch",
+        "url": "https://www.watch.impress.co.jp/docs/news/2088131.html",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-02-27",
+        "author": "Impress Watch",
+        "conflictOfInterest": "none",
+        "notes": "2026年3月13日発売、店頭予想価格8,580円（Proは11,880円）、前モデルBand 10（1.47インチ）から1.62インチへの拡大、丸みを帯びた形状変更、ProモデルのみGNSS搭載であることを確認。"
+      },
+      {
+        "id": "src-4",
+        "name": "HUAWEI Band 11レビュー｜充電65分。Mi Band 5から買い替え成功！｜シロクマ散歩",
+        "url": "https://shirokuma777.com/huawei-band-11-review",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-04-10",
+        "author": "シロクマ散歩",
+        "conflictOfInterest": "none",
+        "notes": "実機での0→100%充電時間（65分）、睡眠中の装着感、LINE通知・定型文返信、プールでの使用感、交換バンドや保護フィルムの注意点を確認。"
+      },
+      {
+        "id": "src-5",
+        "name": "HUAWEI Band 11を1ヶ月使ってみたレビュー！在宅ワークや日常生活が劇的に快適になった話｜ENOWL",
+        "url": "https://enowl.net/%E4%BD%9C%E6%A5%AD%E7%92%B0%E5%A2%83/1565/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-04-20",
+        "author": "ENOWL",
+        "conflictOfInterest": "none",
+        "notes": "1ヶ月間の継続利用レビュー。入浴中の短時間充電で運用可能なバッテリー持ち、昼寝検知を含む睡眠管理の精度、就寝中の違和感の少なさ、初回設定の注意点を確認。"
+      },
+      {
+        "id": "src-6",
+        "name": "HUAWEI Band 11 Aluminum Edition 価格比較 - 価格.com",
+        "url": "https://kakaku.com/item/J0000050021/",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-11-13",
+        "author": "価格.com",
+        "conflictOfInterest": "none",
+        "notes": "HUAWEI Band 11 Aluminum Editionの最安価格帯（約6,500円前後）およびカラー展開（ブラック、ベージュ、ホワイト、パープル、グリーン）を確認。"
       }
     ],
     "claims": [
       {
-        "claim": "重量わずか約17gで睡眠時も快適な装着感",
-        "category": "durability",
-        "confidence": "high",
-        "supportingSourceIds": [
-          "src-1"
-        ],
-        "crossChecked": false,
-        "notes": "公式情報として「わずか約17gの軽さ」との記載あり"
-      },
-      {
-        "claim": "最大1500nitsの高輝度ディスプレイ",
+        "claim": "約17g・8.99mmの薄型軽量ボディで睡眠中も着けていることを忘れるほど快適な装着感",
         "category": "quality",
         "confidence": "high",
         "supportingSourceIds": [
-          "src-1"
+          "src-1",
+          "src-2",
+          "src-4",
+          "src-5"
         ],
-        "crossChecked": false,
-        "notes": "「最大1500ニトという圧倒的な明るさ」との記載あり"
+        "crossChecked": true,
+        "notes": "メーカー公式スペック（約42.6×28.2×8.99mm、約17g）および複数の実機レビューで「寝るときも気にならない」「違和感が消えた」と一致して評価されている。"
+      },
+      {
+        "claim": "最大1500nitsの高輝度1.62インチディスプレイで強い日差しの下でもくっきり視認できる",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-3"
+        ],
+        "crossChecked": true,
+        "notes": "公式スペックの1500nits・1.62インチAMOLED（347 PPI）と専門メディア（Impress Watch）の記事で前モデルからの視認性向上が確認されている。"
+      },
+      {
+        "claim": "通常使用で約14日間持続し充電の手間が少ないロングバッテリー",
+        "category": "durability",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2",
+          "src-4",
+          "src-5"
+        ],
+        "crossChecked": true,
+        "notes": "公式ラボ条件での約14日間（ヘビーユース約8日間、AOD約3日間）の記載に対し、実機レビューでも入浴中の充電だけで継続運用できると一致確認済み。"
       }
     ],
-    "lastInvestigated": "2026-04-06",
+    "lastInvestigated": "2026-11-13",
+    "investigatedPrice": "￥6,500",
     "competitiveAnalysis": [
+      {
+        "name": "Xiaomi Smart Band 11",
+        "asin": "B0H86XV213",
+        "priceComparison": "Xiaomi Smart Band 11より低価格で購入でき、同世代のスマートバンドとしてコストパフォーマンスで優位に立っています。一方、Xiaomiは価格が高い分、さらに大型の画面と長いバッテリー持続時間を備えています。",
+        "featureComparison": [
+          "共通点：60Hz AMOLEDディスプレイ、アルミニウムフレーム採用、5ATM防水、充実した睡眠・健康管理機能",
+          "相違点：HUAWEI Band 11は約8.99mmの薄型1.62インチ画面（1500nits）・約14日間駆動・HUAWEIヘルスケア連携。Xiaomi Smart Band 11は1.72インチ画面（最大2000nits）・最大21日間駆動・Mi Fitness連携。"
+        ],
+        "differentiators": [
+          "HUAWEI Band 11 Aluminum Editionの利点：約8.99mmの薄さと価格の安さ、睡眠解析や情緒モニタリングに強いHUAWEIヘルスケアの分析力を重視するならこちら",
+          "Xiaomi Smart Band 11の利点：最大21日間のバッテリー持続時間と1.72インチ・2000nitsのさらに大きく明るい画面を求めるならこちら"
+        ]
+      },
       {
         "name": "Xiaomi Smart Band 10",
         "asin": "B0DYF82545",
-        "priceComparison": "Xiaomi製品はより低価格で提供されており、バッテリー持続時間も21日間と長いです。HUAWEI Band 11は価格が少し高い分、アルミニウムケースの質感や軽量な点に価値があります。",
+        "priceComparison": "実売価格はほぼ同水準の直接的なライバルです。本機は後発世代としてアルミケースの質感とスリムな装着感、HRV睡眠解析で競争力があります。",
         "featureComparison": [
-          "共通点：有機EL大画面、最大1500nitsの高輝度ディスプレイ、睡眠モニタリング、LINE通知対応",
-          "相違点：HUAWEI Band 11はアルミニウム合金ケースで約17g（ディスプレイ約41.1mm）、Xiaomiはバッテリー21日間持続で約43.7mm大画面。"
+          "共通点：最大1500nitsの60Hz AMOLEDディスプレイ、アルミニウム系フレーム、5ATM防水、24時間心拍・睡眠管理",
+          "相違点：HUAWEI Band 11は角丸の薄型8.99mmボディ・1.62インチ・約14日間持続・情緒モニタリング対応。Xiaomi Smart Band 10は楕円形ボディ・1.72インチ・最大21日間持続。"
         ],
         "differentiators": [
-          "HUAWEI Band 11 Aluminum Editionの利点：薄さ約8.99mm、軽量17gのアルミニウムケースで睡眠時の快適な着け心地に優れ、情緒モニタリングなどの独自機能がある",
-          "Xiaomi Smart Band 10の利点：最大21日間持続するバッテリーと、少し大きめの約43.7mm画面を搭載している"
+          "HUAWEI Band 11 Aluminum Editionの利点：腕時計に近い四角い表示レイアウトと薄型8.99mmのフィット感、睡眠精度と感情可視化機能を重視する人に適している",
+          "Xiaomi Smart Band 10の利点：細身のカプセル型デザインと最大21日間持つバッテリー、豊富な交換バンドアクセサリーを重視する人に適している"
         ]
       },
       {
-        "name": "LOVAME R68 スマートウォッチ",
-        "asin": "B0GPNKGSRX",
-        "priceComparison": "HUAWEI Band 11はLOVAME R68より価格が高いですが、ブランドの信頼性、睡眠管理の精度（HRV計測など）、ディスプレイの質（AMOLED 1500nits）において優れています。",
+        "name": "HUAWEI Band 11 Pro",
+        "asin": "B0GJSCGFTP",
+        "priceComparison": "Proモデルは本機より高価ですが、スマートフォンなしでの単体GPS測位と2000nitsディスプレイが追加されており、ランニング用途の明確な価格差があります。",
         "featureComparison": [
-          "共通点：睡眠モニタリング、多種運動モード、メッセージ通知対応",
-          "相違点：LOVAME R68はBluetooth通話機能（マイク・スピーカー内蔵）とAI音声アシスタント連携を備える一方、HUAWEI Band 11は通信機能は通知確認に留まるものの、睡眠解析の専門性が高い。"
+          "共通点：1.62インチAMOLEDディスプレイ、8.99mmの薄型設計、14日間バッテリー、HRV睡眠・情緒モニタリング",
+          "相違点：通常版Aluminum EditionはGPS非搭載・最大1500nits・約17g。ProモデルはGNSS単体GPS内蔵・最大2000nits・約18g・トラックラン対応。"
         ],
         "differentiators": [
-          "HUAWEI Band 11 Aluminum Editionの利点：科学的な睡眠モニタリング（HRV対応）と、17gという圧倒的な軽さ・薄さによる常時装着の快適性",
-          "LOVAME R68 スマートウォッチの利点：スマートウォッチ本体でのBluetoothハンズフリー通話とAI音声アシスタント機能が利用できる"
+          "HUAWEI Band 11 Aluminum Editionの利点：スマホを持ち歩くため単体GPSが不要で、日常の睡眠・健康管理と通知確認をお得な価格で始めたいならこちら",
+          "HUAWEI Band 11 Proの利点：スマホを持たずに手ぶらでランニングやウォーキングをして正確なGPSルートを記録したいならこちら"
         ]
       },
       {
-        "name": "covia FT02 スマートウォッチ",
-        "asin": "B0GH7PQBKY",
-        "priceComparison": "HUAWEI Band 11はcovia FT02より高価ですが、ディスプレイ品質（AMOLED）、軽量薄型アルミニウムボディ、バッテリー持続期間など総合的なスペックで大きく上回ります。",
+        "name": "HUAWEI Band 11（高耐久ポリマーケース）",
+        "asin": "B0GTMD7SSN",
+        "priceComparison": "ポリマーケース版よりわずかに高い程度の実売価格差に収まっており、アルミ合金の高級感を求める場合は本機の割安感が際立ちます。",
         "featureComparison": [
-          "共通点：活動量計、睡眠モニター、歩数計、着信通知",
-          "相違点：covia FT02はUSB直結充電方式でケーブル不要という特徴がありますが、バッテリー持続は約5.5日間。HUAWEIは通常使用で14日間持続し、ディスプレイも高輝度。"
+          "共通点：1.62インチAMOLED（1500nits）、8.99mm薄型形状、14日間バッテリー、睡眠・情緒・運動計測の基本性能は同一",
+          "相違点：Aluminum EditionはCNC加工アルミニウム合金ケース（約17g）でカラーバリエーションが豊富。ポリマー版は高耐久ポリマーケース（約16g）。"
         ],
         "differentiators": [
-          "HUAWEI Band 11 Aluminum Editionの利点：最大1500nitsの高精細ディスプレイと、長期間（約14日）充電不要なロングバッテリー",
-          "covia FT02 スマートウォッチの利点：充電ケーブルが不要なUSB直結充電方式を採用しており、出張や旅行での充電が手軽"
+          "HUAWEI Band 11 Aluminum Editionの利点：ビジネスや外出時にも安っぽく見えない金属ケースの質感と、ベージュやホワイト等の豊富なカラーから選びたいならこちら",
+          "HUAWEI Band 11（高耐久ポリマーケース）の利点：わずかな価格差でも最安に抑えつつ1gでも軽い着け心地を優先したいならこちら"
         ]
       },
       {
-        "name": "HOIBAI スマートウォッチ",
-        "asin": "B0DY7SZXXS",
-        "priceComparison": "HUAWEI Band 11はHOIBAI製品より価格が高いですが、怪しい高額な過去価格（二重価格）の疑いがなく、HUAWEIというメーカーによる品質とサポートの信頼性があります。",
+        "name": "HUAWEI Band 10 Aluminum Edition",
+        "asin": "B0DZHFRKQD",
+        "priceComparison": "旧世代のBand 10 Aluminum Editionと同等以下の実売価格になっており、今から購入するなら画面と輝度が進化したBand 11の方が圧倒的にお得です。",
         "featureComparison": [
-          "共通点：メッセージ通知、活動量計、スポーツモード",
-          "相違点：HOIBAIはBluetooth通話機能と約48.3mmの大画面を備えるが、HUAWEIは薄型17gのアルミニウムボディと高度な睡眠モニタリングに特化している。"
+          "共通点：8.99mmの薄型アルミニウム合金ケース、約14日間バッテリー、情緒モニタリング・HRV睡眠管理、5ATM防水",
+          "相違点：Band 11は1.62インチ・最大1500nitsの丸みを帯びた大画面へ刷新。Band 10は1.47インチ画面で角張ったエッジデザイン。"
         ],
         "differentiators": [
-          "HUAWEI Band 11 Aluminum Editionの利点：17gの超軽量とアルミニウムケースの質感、そして精度の高い睡眠解析技術",
-          "HOIBAI スマートウォッチの利点：本体での通話機能と、約48.3mmの大きめのディスプレイを搭載している"
+          "HUAWEI Band 11 Aluminum Editionの利点：同等の価格帯で画面が約27%大きく、直射日光下でも見やすい最新世代の快適な視認性を得られる",
+          "HUAWEI Band 10 Aluminum Editionの利点：旧来の1.47インチのコンパクトな幅とエッジの効いた角型デザインを好む場合にのみ選択肢となる"
         ]
       },
       {
-        "name": "Wuguny T77 スマートウォッチ",
-        "asin": "B0DLNQF2JM",
-        "priceComparison": "HUAWEI Band 11は価格設定が妥当であり、Wuguny T77のような異常な割引率（二重価格の疑い）を持つ製品と比べて、品質とブランドの信頼性で優れています。",
+        "name": "Xiaomi Smart Band 11 Active",
+        "asin": "B0FBWG7S2Y",
+        "priceComparison": "Activeモデルは大幅に安価なエントリー機ですが、アルミケースの質感や高輝度AMOLEDディスプレイを備える本機は価格差以上の見やすさと所有感を提供します。",
         "featureComparison": [
-          "共通点：IP68防水、メッセージ通知、多種運動モード",
-          "相違点：Wuguny T77は約50.8mm大画面とBluetooth通話機能を搭載。HUAWEI Band 11はスリムなバンド形状で、情緒モニタリングやHRV測定に対応。"
+          "共通点：5ATM防水、24時間心拍・睡眠トラッキング、着信・メッセージ通知、軽量なスマートバンド形状",
+          "相違点：HUAWEI Band 11は1.62インチ高輝度1500nits AMOLEDとアルミ合金ケースを採用。Xiaomi Band 11 Activeはエントリー仕様の樹脂ボディと液晶ディスプレイ（TFT）を採用。"
         ],
         "differentiators": [
-          "HUAWEI Band 11 Aluminum Editionの利点：コンパクトで邪魔にならないサイズ感と、正確で詳細なヘルスケア・睡眠モニタリング",
-          "Wuguny T77 スマートウォッチの利点：約50.8mmという大型ディスプレイと本体での通話応答機能"
+          "HUAWEI Band 11 Aluminum Editionの利点：屋外での画面の見やすさ、有機ELの発色、アルミの質感、高精度なHRV睡眠解析を求めるならこちら",
+          "Xiaomi Smart Band 11 Activeの利点：通知確認と歩数・基本計測ができれば十分で、とにかく予算を最優先に抑えたいならこちら"
         ]
       },
       {
-        "name": "SAIKATI IDW25 スマートウォッチ",
-        "asin": "B0GQZ2XVLS",
-        "priceComparison": "HUAWEI Band 11はSAIKATI製品より高価ですが、メーカー独自のアルゴリズムによる睡眠解析と高精細なAMOLEDディスプレイ（1500nits）の価値があります。",
+        "name": "Xiaomi REDMI Watch 6 Lite",
+        "asin": "B0H5KDLK7M",
+        "priceComparison": "REDMI Watch 6 Liteは少し高価ですが、単体GPSとBluetooth通話機能を備えており、バンド型とウォッチ型の機能差が価格に反映されています。",
         "featureComparison": [
-          "共通点：睡眠モニタリング、通知機能、スポーツモード",
-          "相違点：SAIKATIは約46.5mmHD大画面とBluetooth通話を搭載。HUAWEIはバンド型で17gという圧倒的な軽さを誇る。"
+          "共通点：最大1500nitsのAMOLEDディスプレイ、5ATM防水、24時間健康管理、1万円以下の高コスパモデル",
+          "相違点：HUAWEI Band 11は1.62インチ・約17g・8.99mmのスリムなバンド型で睡眠中の邪魔になりにくい。REDMI Watch 6 Liteは1.96インチの大画面ウォッチ型で5システムGNSSとBluetooth通話を搭載。"
         ],
         "differentiators": [
-          "HUAWEI Band 11 Aluminum Editionの利点：睡眠時にも全く気にならない約17gの軽量設計と、高輝度AMOLEDディスプレイ",
-          "SAIKATI IDW25 スマートウォッチの利点：通話機能が内蔵されており、時計側から直接電話の発着信が可能"
+          "HUAWEI Band 11 Aluminum Editionの利点：手首への負担が少ないスリムさと軽さにより、24時間着けっぱなしで睡眠管理を行いたいならこちら",
+          "Xiaomi REDMI Watch 6 Liteの利点：腕時計に近い大画面での情報量や、単体GPS・時計側でのBluetooth通話を重視するならこちら"
         ]
       }
     ],
     "recommendation": {
       "targetUsers": [
-        "睡眠の質を詳しく分析し改善したい人",
-        "重い時計が苦手で、軽く薄い装着感を求める人",
-        "屋外での活動が多く、明るい画面が必要な人"
+        "Apple Watch等の高機能ウォッチの重さや毎日の充電に疲れており、寝るときも邪魔にならない薄型軽量の睡眠トラッカーを求める人",
+        "前世代（Band 10）や廉価版ポリマーモデルと同等価格帯で、アルミケースの質感と屋外でも見やすい1500nits大画面を手に入れたい人",
+        "ランニング時はスマホを携帯するため単体GPSは不要で、コスパ良く正確なヘルスケア記録を始めたい人"
       ],
       "pros": [
-        "17gの超軽量と薄さ約8.99mmのアルミニウムケースで装着感が抜群",
-        "最大1500nitsの高輝度ディスプレイで屋外でも見やすい",
-        "HRV計測を含む進化した睡眠モニタリング機能を搭載"
+        "約17g・8.99mmのスリムなアルミケースにより、就寝中や長時間のデスクワークでも着けていることを忘れるほど快適に装着し続けられます",
+        "1.62インチ・最大1500nitsの有機EL画面により、夏の強い日差しの下でもウォーキング数値やLINE通知を一目で読み取れます",
+        "通常使用約14日間の電池持ちと約65分の高速充電により、毎日充電するストレスから解放され入浴中の短時間充電だけで運用できます",
+        "睡眠中のHRV計測や昼寝自動検知、情緒モニタリングにより、日々のコンディション変化を視覚的に把握しやすくなります"
       ],
       "cons": [
-        "常時表示機能（AOD）を使うとバッテリーが数日しか持たない"
+        "単体GPS非搭載のため、スマホを持たずにジョギングの走行ルートを記録したい人は上位の「HUAWEI Band 11 Pro」を検討してください",
+        "Suica等の電子マネー決済や音声通話、自由入力での返信には非対応のため、スマートウォッチに決済や通話機能を求める人には不向きです",
+        "常時表示（AOD）をオンにすると電池持ちが約3日間に短くなるため、ロングバッテリーを重視する場合は持ち上げて点灯の設定を推奨します",
+        "5ATM防水は温水や蒸気に非対応のため、サウナや温泉・熱いシャワーに入る際は必ず取り外す必要があります"
       ],
       "score": 85,
-      "scoreRationale": "[基本点: 70]\n[加点: +5] 17gの超軽量とアルミニウムケースの採用による高いデザイン・品質\n[加点: +5] 最大1500nitsの高輝度ディスプレイによる優れた視認性\n[加点: +5] HRV計測などを取り入れた高度な睡眠モニタリング性能\n[合計: 85]"
+      "scoreRationale": "[基本点: 70]\n[加点: +4] 約1.62インチAMOLED（最大1500nits・60Hz）による屋外でも見やすい大画面と視認性\n[加点: +4] 睡眠中HRVトラッキングや通常使用約14日間持続のバッテリー性能\n[加点: +5] アルミニウムケースと大画面有機ELを備えながら実売￥6,500前後の高いコストパフォーマンス\n[加点: +3] 約8.99mmの薄型設計・約17gの軽量アルミニウム合金ケースによる優れた装着感と質感\n[加点: +3] 大手メーカーHUAWEIによる安定したアプリ連携と睡眠計測の実績\n[加点: +2] 12種類の花で気分を可視化する独自の情緒モニタリング機能\n[減点: -4] 本体にGPS単体測位・FeliCa（電子マネー決済）・音声通話機能を非搭載\n[減点: -2] 常時表示（AOD）有効時はバッテリー持続時間が約3日間に短縮される点\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": {
-        "height": "約41mm",
-        "width": "約25mm",
-        "depth": "約8.99mm"
+      "display": {
+        "size": "1.62インチ",
+        "resolution": "286×482 (347 PPI)",
+        "type": "AMOLED (有機EL / 最大1500nits)",
+        "refreshRate": "60Hz"
       },
-      "weight": "約17g",
-      "display": "約41.1mm AMOLED（有機EL）最大1500nits 60Hz",
-      "material": "アルミニウム合金（ケース）",
-      "batteryLife": "通常使用約14日間、ヘビーユース約8日間、常時表示(AOD)約3日間",
+      "battery": {
+        "charging": "磁気充電ポート (0→100% 約65分)",
+        "playbackTime": "通常使用 約14日間 / ヘビーユース 約8日間 / 常時表示(AOD) 約3日間"
+      },
+      "dimensions": {
+        "height": "42.6mm",
+        "width": "28.2mm",
+        "depth": "8.99mm",
+        "weight": "約17g (ベルト除く)"
+      },
+      "weight": "約17g (ベルト除く)",
+      "material": "アルミニウム合金 (ケース)",
+      "connectivity": [
+        "Bluetooth",
+        "Android 9.0以上対応",
+        "iOS 13.0以上対応"
+      ],
       "other": [
-        "睡眠中HRVトラッキング",
-        "12種類の情緒モニタリング",
-        "LINE・SMS通知機能対応"
+        "防水: 5ATM (50m耐水 ※温泉・サウナ・温水シャワー非推奨)",
+        "センサー: 9軸IMUセンサー (加速度・ジャイロ・地磁気)、光学式心拍センサー、環境光センサー",
+        "健康管理: 24時間心拍数、血中酸素レベル(SpO2)、睡眠モニタリング(HRV対応)、12種類の情緒モニタリング",
+        "対応手首サイズ: 130-210mm (ブラック等) / 120-190mm (一部カラー)",
+        "※本体単体GPS (GNSS) 非搭載 (スマホGPS連携)",
+        "※FeliCa (Suica等おサイフケータイ)・Bluetooth通話機能非搭載"
       ]
     }
   }
