@@ -6,7 +6,7 @@
 set -euo pipefail
 
 # Antigravity CLI default parameters
-readonly AGY_DEFAULT_MODEL="gemini-3.8-flash-medium"
+readonly AGY_DEFAULT_MODEL="gemini-4-hydrogen-medium"
 readonly AGY_DEFAULT_EFFORT="medium"
 readonly AGY_DEFAULT_TIMEOUT="40m"
 
