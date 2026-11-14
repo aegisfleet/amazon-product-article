@@ -1,0 +1,273 @@
+{
+  "analysis": {
+    "productName": "Thetis Pro-C FIDO2 セキュリティキー (USB-C & NFC対応)",
+    "parentAsin": "B0D697PVTY",
+    "productDescription": "USB Type-CとNFCの両接続に対応し、FIDO2/パスキー・FIDO U2F・OATH（TOTP/HOTP）を1本に集約したハードウェアセキュリティキー。360度回転する金属製保護カバーを備え、バッテリー不要でPCからスマートフォンまでマルチデバイスで利用できる。",
+    "productUsage": [
+      "Google・Microsoft・GitHub・Dropbox等のFIDO2/パスキーによるパスワードレス認証および多要素認証（MFA）",
+      "NFC対応スマートフォン（iPhone・Android）にかざしてのモバイル認証",
+      "内蔵OATH（TOTP/HOTP）スロットと管理アプリを用いたワンタイムパスワード生成",
+      "企業・学校・個人アカウントのフィッシング耐性強化およびセキュリティキーのバックアップ運用"
+    ],
+    "positivePoints": [
+      "USB Type-CとNFCのデュアルインターフェースを備え、PC・Mac・iPhone・Android間でシームレスに認証可能",
+      "FIDO2/パスキーおよびFIDO U2Fに加え、OATH-TOTP/HOTP（最大200パスキー・50 OATHスロット）に対応した多機能設計",
+      "360度回転する金属製保護カバーと約8.5g（実測表記0.01875ポンド換算）の軽量ボディにより、端子保護とキーチェーン携帯性を両立",
+      "バッテリーやネットワーク接続が不要なパッシブ動作により、充電切れの心配なく常時利用可能",
+      "同等のUSB-C＋NFC＋TOTP対応セキュリティキー（YubiKey 5C NFC等）が1万円を超える中、￥4,647（公式直販$29.99相当）という高いコストパフォーマンス"
+    ],
+    "negativePoints": [
+      "モバイル版コンパニオンアプリ（iOS/Android）はTOTP機能のみ対応しており、FIDO/パスキーの初期設定やPIN管理にはPC用管理ツール（Thetis Key Manager等）が必要",
+      "IP68等の防水防塵規格や耐衝撃等級の公式明記がなく、一体成形の樹脂ボディを採用するYubiKeyシリーズと比較して回転カバー機構の長期的な耐久性に懸念がある",
+      "国内代理店による日本語サポートや日本語マニュアルの情報が限られており、トラブルシューティングは主に英語の公式ドキュメントに依存する"
+    ],
+    "useCases": [
+      "USB-Cポートを搭載したノートPC・MacでのパスワードレスログインおよびGitHub等の開発環境認証",
+      "外出先でスマートフォン（iPhone/Android）のNFCにかざして行うメールやSNSの2要素認証",
+      "パスキー対応サービスと従来のTOTP認証サービスを1本のハードウェアキーで一元管理する運用",
+      "高価なセキュリティキーを複数揃えるのが負担になる場合のメインキー兼バックアップキーとしての2本導入"
+    ],
+    "userStories": [
+      {
+        "userType": "フリーランスエンジニア・複数デバイス利用者",
+        "scenario": "MacBook Pro（USB-C）とiPhoneを併用しており、GitHubやGoogleアカウントのセキュリティ強化のためハードウェアキーの導入を検討していた。",
+        "experience": "当初は定番のYubiKey 5C NFCを検討したが1万4千円台と高額で、バックアップ用に2本揃えると約3万円になる点がネックだった。本製品はUSB-CとNFCの両対応かつTOTP/HOTPまで備えながら￥4,647と約3分の1の価格で購入でき、迷わず2本セットでの運用に切り替えた。約8.5gと非常に軽く、360度回転する金属カバーがUSB-C端子をしっかり守ってくれるため、鍵と一緒にキーホルダーに付けて持ち歩いても安心感がある。PCではUSB-Cに挿すだけ、スマホではNFCでかざすだけで認証が完了し、期待通りのシームレスな運用が実現できた。",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "パスキー移行中の一般ユーザー",
+        "scenario": "フィッシング対策としてパスキー対応サービスを増やしつつ、まだTOTP認証しか対応していないサービスもハードウェアキー側に移行しようとした。",
+        "experience": "安価なFIDO2専用キーではTOTP認証アプリ機能が省かれている製品が多い中、本製品は最大200件のパスキーに加えて50件のOATH-TOTPスロットを備えている点が購入の決め手になった。実際にPC用のThetis Key ManagerでPIN設定やTOTP登録を行えば問題なく運用できたが、スマートフォンのThetis AuthenticatorアプリがTOTP専用でFIDO/パスキー設定を操作できない仕様には少し戸惑った。初期設定をPCで済ませてしまえば日常のNFC認証は快適だが、スマホだけで完結させたい場合は注意が必要だと感じた。",
+        "supportingSourceIds": [
+          "src-2",
+          "src-3"
+        ],
+        "sentiment": "mixed"
+      },
+      {
+        "userType": "コスト重視の企業IT担当者・セキュリティ意識の高い個人",
+        "scenario": "複数アカウントやチーム導入にあたり、予算を抑えつつFIDO2認証（WebAuthn）準拠のハードウェアトークンを調達したいと考えていた。",
+        "experience": "USB-C専用の格安キー（約4,000円前後）も候補に挙がったが、社員や家族のスマートフォン利用を考えるとNFC非対応では利便性が大きく落ちるため却下した。本製品はわずかな価格差でNFCとTOTPの両方をカバーしており、予算内で必要な要件をすべて満たせた。一方で、一体成型でIP68防水を謳うYubico製品に比べると回転式金属カバーのヒンジ部分に若干のガタつきや隙間が気になり、過酷な現場や水濡れリスクが高い環境での長期耐久性については慎重に経過を見る必要があると感じた。",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2",
+          "src-4"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "全体として『YubiKey 5C NFCと同等のUSB-C＋NFC＋TOTP/HOTP機能を、半額以下の￥4,647で手に入れられる高コスパな実用モデル』として高く評価されている。セキュリティキーは紛失対策として2本持ちが推奨されるため、価格の安さは大きな魅力となっている。一方で、モバイルアプリがTOTP専用でありFIDO/パスキー管理にはPC用ソフトが必要な点や、防水防塵等級の明記がなく回転カバー機構の長期耐久性・英語中心のサポート体制は妥協点として受け止められている。堅牢性や充実した日本語サポートを最優先するユーザーはYubico製品を選ぶ傾向があるが、日常使いでコストを抑えつつマルチデバイス認証環境を整えたいユーザーからは高い満足度を得ている。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon.co.jp 商品公式ページ (B0D697PVTY)",
+        "url": "https://www.amazon.co.jp/dp/B0D697PVTY",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-10-06",
+        "author": "Amazon / Thetis",
+        "conflictOfInterest": "possible",
+        "notes": "公式価格￥4,647、18%割引表記、FIDO2/Passkey・TOTP/HOTP・USB-C/NFC対応、360度回転金属カバー、寸法・重量仕様（0.38×0.63×2.1インチ、0.01875ポンド）を確認。"
+      },
+      {
+        "id": "src-2",
+        "name": "Thetis公式製品ページ - Thetis PRO-C FIDO2 Security Key (MB000477)",
+        "url": "https://thetis.io/products/fido2-usb-c-nfc-totp-hotp-passkey",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-10-06",
+        "author": "Thetis",
+        "conflictOfInterest": "possible",
+        "notes": "メーカー公式製品ページにて型番MB000477、公式直販価格$29.99、AAGUID（a3975549-b191-fd67-b8fb-017e2917fdb3）、FIDO2/U2F/TOTP/HOTP対応、ロックアウト防止のため2本購入推奨であることを確認。"
+      },
+      {
+        "id": "src-3",
+        "name": "Thetis公式ソフトウェア・アプリダウンロードページ",
+        "url": "https://thetis.io/pages/downloads",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-11-14",
+        "author": "Thetis",
+        "conflictOfInterest": "none",
+        "notes": "iOS/Android向けアプリはTOTP機能のみサポートし、FIDOおよびパスキー機能には干渉・操作できない旨の公式注意事項を確認。FIDO/パスキー設定にはPC用管理ツール（Thetis Key Manager等）の利用が必要。"
+      },
+      {
+        "id": "src-4",
+        "name": "Thetis公式 FIDO2セキュリティキー総合ガイド",
+        "url": "https://thetis.io/pages/how-thetis-fido2-security-key-hardware-passkey-enhances-your-online-security-a-comprehensive-guide",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-11-14",
+        "author": "Thetis",
+        "conflictOfInterest": "possible",
+        "notes": "FIDO2/パスキーの仕組み、主要OS（Windows/macOS/Linux/iOS/Android）およびGmail・GitHub・Facebook・Dropbox等での活用方法を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "FIDO2/パスキー、FIDO U2F、OATH-TOTP/HOTPのマルチプロトコルに対応し、1本でパスワードレス認証と従来の2要素認証を両立できる",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "Amazon公式商品仕様およびThetisメーカー公式製品ページの両方で一致して記載されており、AAGUIDも公開されている。"
+      },
+      {
+        "claim": "USB-CとNFCの両対応により、PC・Mac・iPhone・Androidなどマルチデバイスでバッテリー不要かつシームレスに利用できる",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2",
+          "src-4"
+        ],
+        "crossChecked": true,
+        "notes": "USB-C直挿しとNFCタップの両方に対応するため、端子変換アダプタなしでPCとスマホを行き来できる。ただしモバイルアプリはTOTP専用でありFIDO管理はPC側で行う制約がある。"
+      },
+      {
+        "claim": "360度回転する金属カバーにより携帯時の耐久性を高めている",
+        "category": "durability",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "USB-Cコネクタを物理的に覆って保護できる点は確認済みだが、IP68等の防水防塵規格の明記はなく、一体成形ボディの競合機と比べると可動部の長期耐久性は使用環境に左右される。"
+      }
+    ],
+    "lastInvestigated": "2026-11-14",
+    "investigatedPrice": "￥4,647",
+    "competitiveAnalysis": [
+      {
+        "name": "Yubico セキュリティキー YubiKey 5C NFC",
+        "asin": "B08DHL1YDL",
+        "priceComparison": "本製品より大幅に高価（約3倍前後）なプレミアム価格帯だが、IP68相当の防水防塵やPIV/OpenPGP等の高度なプロトコル対応に価値を見出せるかが分かれ目となる。",
+        "featureComparison": [
+          "共通点：USB-CとNFCの両方に対応し、FIDO2/パスキー・FIDO U2F・OATH-TOTP/HOTPをサポートするマルチデバイス向けセキュリティキー。",
+          "相違点：YubiKey 5C NFCはPIV（スマートカード）やOpenPGPにも対応し、IP68防水・一体成形による高い堅牢性を持つ。Thetis Pro-Cは機能と耐久仕様を絞る代わりに約3分の1の価格を実現している。"
+        ],
+        "differentiators": [
+          "Thetis Pro-Cの利点：日常のFIDO2/パスキー・TOTP認証を低コストで導入したい場合や、紛失対策として予備を含め2本まとめて安く揃えたい場合に最適。",
+          "YubiKey 5C NFCの利点：水濡れや強い衝撃にも耐える最高峰の堅牢性、エンタープライズ向けのPIV/OpenPGP機能、豊富な日本語情報・サポートを重視するなら迷わずこちら。"
+        ]
+      },
+      {
+        "name": "Yubico FIDOセキュリティキー NFC (USB-A)",
+        "asin": "B0BVNPWPCN",
+        "priceComparison": "本製品より約1,100円ほど高い価格設定。Yubicoブランドのエントリーモデルだが、端子形状とTOTP対応の有無で明確な差がある。",
+        "featureComparison": [
+          "共通点：FIDO2/パスキー・U2FおよびNFCに対応し、PCとスマートフォンの両方でパスワードレス認証が可能。",
+          "相違点：YubicoのエントリーモデルはUSB-A接続かつTOTP/HOTP非対応。Thetis Pro-Cはより安価でありながらUSB-C接続とTOTP/HOTP機能の両方を備える。"
+        ],
+        "differentiators": [
+          "Thetis Pro-Cの利点：USB-Cポート主体の最新PC・Macを使っており、FIDO2だけでなくTOTPコードの保管機能も1本で済ませたい人に向いている。",
+          "Yubico FIDOセキュリティキー NFCの利点：USB-Aポートが中心のデスクトップ環境で、TOTPは不要かつYubicoの防水防塵・高耐久ボディを信頼して選びたい人に適している。"
+        ]
+      },
+      {
+        "name": "TrustKey FIDOセキュリティキー T120 (USB-C)",
+        "asin": "B08881651P",
+        "priceComparison": "本製品より約650円ほど安価で導入しやすいが、NFC非搭載であるためスマートフォンでの使い勝手を考慮すると価格差以上の機能差がある。",
+        "featureComparison": [
+          "共通点：USB-Cポートに直接挿して使えるコンパクトなFIDO2/U2F対応セキュリティキーであり、低価格帯に属する。",
+          "相違点：TrustKey T120はUSB-C有線接続専用でNFCおよびTOTP/HOTPに非対応。Thetis Pro-CはNFCタップ認証とTOTP/HOTPの両方を搭載している。"
+        ],
+        "differentiators": [
+          "Thetis Pro-Cの利点：PCだけでなくiPhoneやAndroidスマホでもNFCで手軽にかざして認証したい場合や、TOTP機能も活用したい場合はこちらが圧倒的に便利。",
+          "TrustKey T120の利点：スマートフォンでのNFC認証は一切使わず、USB-C接続のPC専用としてとにかく1円でも安くFIDO2キーを導入したい場合に適している。"
+        ]
+      },
+      {
+        "name": "Identiv uTrust FIDO2 NFC セキュリティキー USB-C",
+        "asin": "B0C6YRJ7Y7",
+        "priceComparison": "本製品より約2,100円ほど高い中価格帯モデル。PIV対応など企業向け機能が必要かどうかで価格差の妥当性が決まる。",
+        "featureComparison": [
+          "共通点：USB-CとNFCの両対応に加え、FIDO2・U2F・TOTP/HOTPを網羅している。",
+          "相違点：Identiv uTrustはPIV（スマートカード機能）にも対応するビジネス向け設計。Thetis Pro-CはPIVを省き、回転式金属カバーによる端子保護と低価格を優先している。"
+        ],
+        "differentiators": [
+          "Thetis Pro-Cの利点：個人利用や一般的なクラウドサービス（Google・GitHub等）のパスキー/2FAが目的で、PIV不要でコストを4千円台に抑えたい場合に最適。",
+          "Identiv uTrustの利点：社内システム等でPIVスマートカード認証が必須となっており、YubiKeyよりは抑えた価格で多機能キーを導入したい企業ユーザーに向いている。"
+        ]
+      },
+      {
+        "name": "FEITIAN ePass K40 Plus (USB-C & NFC)",
+        "asin": "B0B8L3ZSZC",
+        "priceComparison": "本製品の約2倍近い価格帯であり、一般的な個人向けパスキー用途では本製品の方がコストパフォーマンスに優れる。",
+        "featureComparison": [
+          "共通点：USB-C接続とNFCの両方を備え、FIDO2・U2Fによるハードウェア認証に対応する。",
+          "相違点：FEITIAN ePass K40 PlusはPIVにも対応する法人向け仕様で価格が高い。Thetis Pro-Cは個人〜一般ビジネス向けに特化し、回転カバー付きで半額近くで購入できる。"
+        ],
+        "differentiators": [
+          "Thetis Pro-Cの利点：個人アカウントの乗っ取り防止やパスキー移行のために、手頃な予算でUSB-C＋NFC対応キーを複数本揃えたい人におすすめ。",
+          "FEITIAN ePass K40 Plusの利点：企業のIT統制下でFEITIAN製トークンやPIV機能の互換性が指定されている環境に適している。"
+        ]
+      },
+      {
+        "name": "Swissbit iShield Key 2 FIDO2 USB-C NFC",
+        "asin": "B0GS9LN1GQ",
+        "priceComparison": "本製品より約1,700円ほど高いエンタープライズ向け価格帯。ブランド信頼性や堅牢性への投資と割り切れるかが判断基準になる。",
+        "featureComparison": [
+          "共通点：USB-CとNFCを搭載し、FIDO2/パスキーおよびU2Fのフィッシング耐性認証に対応する。",
+          "相違点：Swissbit iShield Key 2はスイス発ブランドの産業・エンタープライズ向け設計を特徴とする。Thetis Pro-CはTOTP/HOTP対応と￥4,647の低価格で個人ユーザーにも導入しやすい。"
+        ],
+        "differentiators": [
+          "Thetis Pro-Cの利点：TOTP/HOTP機能を含めて低価格で導入しやすく、回転カバーで端子を保護しながら日常的に持ち歩きたい個人ユーザーに最適。",
+          "Swissbit iShield Key 2の利点：産業用メモリ等を手掛けるSwissbitのエンタープライズ向け品質とセキュリティ要件を優先する法人導入に適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "YubiKey 5C NFC（1万円超）と同等のUSB-C＋NFC＋TOTP/HOTP機能を、半額以下の予算で手に入れたいコスト重視のユーザー",
+        "紛失・故障によるアカウントロックアウトを防ぐため、予備を含めた2本のセキュリティキーを無理のない価格で揃えたい人",
+        "USB-C搭載のPC・MacとNFC対応のiPhone・Androidを行き来し、パスキーとTOTP認証を1本に集約したいユーザー"
+      ],
+      "pros": [
+        "￥4,647の手頃な価格ながらUSB-C・NFC・FIDO2/パスキー・TOTP/HOTPを網羅しており、予備キーを含めた2本運用でも負担が少ない",
+        "約8.5gの軽量設計と360度回転する金属カバーにより、鍵束に付けて持ち運んでもUSB-C端子を傷めずサッと取り出して使える",
+        "バッテリー不要のパッシブ動作で充電切れの心配がなく、PCへの直挿しとスマホへのNFCかざしだけで快適に認証できる"
+      ],
+      "cons": [
+        "iOS/Android用アプリはTOTP専用でありFIDO/パスキー設定は操作できないため、初期設定やPIN管理用のPC環境（Windows/macOS/Linux）があることを事前に確認すること",
+        "IP68等の防水防塵等級の明記がなく回転カバーに可動部があるため、水濡れや過酷な環境での利用を想定する場合はYubiKey等の防水・一体成形モデルを検討すること",
+        "公式サポートや詳細マニュアルは英語中心となるため、日本語の手厚いサポートを必須とする初心者は導入前に留意すること"
+      ],
+      "score": 83,
+      "scoreRationale": "[基本点: 70]\n[加点: +6] (USB-CとNFCの両対応に加え、FIDO2/パスキー・U2F・TOTP/HOTPのマルチプロトコルをサポートする実用性の高さ)\n[加点: +8] (同等のUSB-C＋NFC＋TOTP対応競合機が1万円前後〜1.4万円台であるのに対し、￥4,647と非常に高いコストパフォーマンス)\n[加点: +2] (約8.5gの軽量設計と360度回転する金属カバーによる端子の保護性・携帯性)\n[減点: -4] (大手Yubico等と比較した際の長期的な可動部耐久性の懸念、および英語中心のサポート・ドキュメント体制)\n[減点: -2] (モバイルアプリがTOTP専用でFIDO管理にはPC版ツールが必要な点、および防水防塵等級の未明記)\n[加点: +3] (低価格帯ながら最大200件のパスキーと50件のOATH-TOTPスロットを保持できる拡張性)\n[合計: 83]"
+    },
+    "technicalSpecs": {
+      "model": "MB000477",
+      "dimensions": {
+        "height": "9.7mm",
+        "width": "16.0mm",
+        "length": "53.3mm",
+        "weight": "8.5g"
+      },
+      "weight": "8.5g",
+      "material": "アルミニウム（金属製360度回転カバー） / ポリカーボネート",
+      "connectivity": [
+        "USB Type-C",
+        "NFC (近距離無線通信)"
+      ],
+      "other": [
+        "対応プロトコル: FIDO2 / WebAuthn (パスキー), FIDO U2F, OATH-TOTP, OATH-HOTP",
+        "暗号アルゴリズム: ECDSA, SHA256",
+        "保存容量: 最大200パスキースロット / 最大50 OATH-TOTPスロット",
+        "対応OS: Windows, macOS, Linux, iOS, Android",
+        "電源: バッテリー不要（USBバスパワー / NFC給電）",
+        "AAGUID: a3975549-b191-fd67-b8fb-017e2917fdb3",
+        "※モバイルアプリ（iOS/Android）はTOTP機能のみ対応（FIDO/パスキー設定はPC用管理ツールが必要）",
+        "※防水防塵等級（IP規格）の公式記載なし"
+      ]
+    }
+  }
+}
