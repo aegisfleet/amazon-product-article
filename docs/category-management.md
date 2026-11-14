@@ -6,7 +6,7 @@
 
 ## 1. カテゴリシステムの構造
 
-本プラットフォームのカテゴリは、自前定義の **タクソノミー v2**（親27 × 子166）を正本とする。商品ごとの所属は Gemini Decision 1（Decisions API）で判定し、結果を `data/product-categories.json` に永続化する。Amazon Creators API 由来のカテゴリ名は `amazon_category` として退避され、検索ヒットや分類・再分類時の参考情報に用いる。
+本プラットフォームのカテゴリは、自前定義の **タクソノミー v2**（`data/taxonomy-v2.json`）を正本とする。商品ごとの所属は Gemini Decision 1（Decisions API）で判定し、結果を `data/product-categories.json` に永続化する。Amazon Creators API 由来のカテゴリ名は `amazon_category` として退避され、検索ヒットや分類・再分類時の参考情報に用いる。
 
 ```mermaid
 graph TD
@@ -15,7 +15,7 @@ graph TD
     end
 
     subgraph Classify["分類 (pnpm run classify:products)"]
-        Art --> G1["Stage 1: 親カテゴリ判定 (27択)"]
+        Art --> G1["Stage 1: 親カテゴリ判定"]
         G1 --> G2["Stage 2: 子カテゴリ判定 (親配下)"]
         G2 --> Gate["品質ゲート (確信度 / runner-up margin)"]
     end
@@ -44,7 +44,7 @@ graph TD
 
 | ファイル | 役割 | 管理形態 |
 |---|---|:---:|
-| `data/taxonomy-v2.json` | 親27・子166カテゴリの定義（slug・日本語名・判定基準・`legacy_slugs`）。**正本** | 手動管理 |
+| `data/taxonomy-v2.json` | 親・子カテゴリの定義（slug・日本語名・判定基準・`legacy_slugs`）。**正本** | 手動管理 |
 | `data/product-categories.json` | ASIN ごとの分類結果（`category_parent` / `category_child` / `classification`）。1商品1行 | 自動生成（`classify:products`） |
 | `data/legacy-category-map.json` | 旧 Amazon カテゴリ → 新カテゴリのフォールバック対応表（API 失敗時および Stage 1 が `others` となった際の親カテゴリ救済に使用） | 手動管理 |
 | `data/categories.yml` | 記事数集計やスラッグ等が付加されたHugo用カテゴリ階層データ | 自動生成（`prebuild:hugo`） |
@@ -68,7 +68,7 @@ graph TD
 
 ### 2.2 URL の後方互換（`legacy_slugs`）
 
-親カテゴリの統合・改名で旧スラッグが消える場合は、統合先親の `legacy_slugs` に旧スラッグを必ず追加する。`prebuild:hugo` が `aliases: ["/parent-category/<旧スラッグ>/"]` を自動生成し、既存の被リンクが 404 にならない。旧31親カテゴリスラッグの全件が新 `slug` または `legacy_slugs` に含まれることはテスト（`taxonomy-v2.test.ts`）で保証される。
+親カテゴリの統合・改名で旧スラッグが消える場合は、統合先親の `legacy_slugs` に旧スラッグを必ず追加する。`prebuild:hugo` が `aliases: ["/parent-category/<旧スラッグ>/"]` を自動生成し、既存の被リンクが 404 にならない。旧親カテゴリスラッグの全件が新 `slug` または `legacy_slugs` に含まれることはテスト（`src/category/taxonomy/__tests__/taxonomy-v2.test.ts`）で保証される。
 
 ### 2.3 構文検証と事前ビルド同期
 
@@ -91,8 +91,8 @@ pnpm run prebuild:hugo
 
 1. **対象抽出**: `content/articles`・`data/investigations` の ASIN のうち、未分類のもの、および登録済みでも `classification.input_hash`（タイトル・ブランド・スペックのハッシュ）が現在の商品データと異なるもの（再調査で内容が更新された商品）を再分類対象とする。また CLI オプションにより `zz-*` 滞留商品や特定の親・子カテゴリのみを抽出して部分再分類できる。
 2. **入力テキスト構築（`buildInputText`）**: 商品名・ブランド・仕様概要に加え、汎用ノイズカテゴリ（`ドラッグストア`、`ホーム＆キッチン` 等）と純粋な数値ノードIDを除外した有効な `amazon_category` を `参考カテゴリ:` として付与し、型番中心の商品でも高精度に分類できるようにする。
-3. **2段階判定**: 親（27択）→ 子（親配下）の順に Decisions API で判定する。Stage 2 では `zz-*` を「最終手段としてのみ選択」するよう指示する。Stage 1 が `'others'` を返した場合でも、`legacy-category-map.json` に有効な親カテゴリ（`others` 以外）が存在すればその親を採用して Stage 2 を実行する（API 通信失敗時のみ `legacy-category-map.json` による `fallback-map` へフォールバックする）。
-4. **品質ゲート（`evaluateQualityGate`）**: 親確信度 `< 0.80`、子確信度 `< 0.70`、または次点（runner-up）との確率マージン `< 0.10` の場合に `needs_review: true` を付与する。具体的な子カテゴリが選択されている場合は確率が競合してもそれを尊重し、子確信度 `< 0.40` の極低確信度時のみ `zz-*` へルーティングする。
+3. **2段階判定**: 親カテゴリ → 子カテゴリ（親配下）の順に Decisions API（`src/category/classifier/GeminiDecisionClassifier.ts`）で判定する。Stage 2 では `zz-*` を「最終手段としてのみ選択」するよう指示する。Stage 1 が `'others'` を返した場合でも、`legacy-category-map.json` に有効な親カテゴリ（`others` 以外）が存在すればその親を採用して Stage 2 を実行する（API 通信失敗時のみ `legacy-category-map.json` による `fallback-map` へフォールバックする）。
+4. **品質ゲート（`evaluateQualityGate`）**: 親確信度・子確信度・次点（runner-up）との確率マージンが基準値（`src/category/classifier/GeminiDecisionClassifier.ts` 内の定数定義を参照）を下回る場合に `needs_review: true` を付与する。具体的な子カテゴリが選択されている場合は確率が競合してもそれを尊重し、子確信度が極低確信度閾値を下回る場合のみ `zz-*` へルーティングする。
 5. **永続化**: 結果を `data/product-categories.json` に保存する。記事 frontmatter へは `category`（子カテゴリ日本語名）・`category_parent`・`category_child`・`classification` が反映され、旧 Amazon カテゴリ名は `amazon_category` に退避される。
 
 ### 3.2 主要コマンド
@@ -117,7 +117,7 @@ pnpm run classify:products -- --asin B0XXXXXXXX,B0YYYYYYYY --force
 # ドライラン（保存しない）／サンプル・レート制御
 pnpm run classify:products -- --reclassify-zz --dry-run --sample 30 --no-resume --concurrency 5
 
-# タクソノミー全体の分布・zz-* 率（群A/B/C内訳）・10件未満子カテゴリの監査
+# タクソノミー全体の分布・zz-* 率（群A/B/C内訳）・極小子カテゴリの監査
 pnpm exec ts-node src/scripts/maintenance/audit-taxonomy-v2-distribution.ts --out tmp/zz-audit.json
 
 # data/product-categories.json の内容を記事 frontmatter へ反映
@@ -136,7 +136,7 @@ pnpm run verify:gemini-key
 
 ### 3.4 SEO 上の扱い
 
-- 商品数が `minCategoryProducts`（現在 10）未満の子カテゴリページは `noindex` とする。
+- 商品数が `params.seo.minCategoryProducts`（`config.toml` で定義）未満の子カテゴリページは `noindex` とする。
 - 検索意図が曖昧な「その他」受け皿（親 `others`、子「その他〜」「未分類・全般」）は商品数に関わらず `noindex` とする。
 
 ---
