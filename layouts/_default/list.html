@@ -33,7 +33,20 @@
             </a>
             <span class="sibling-nav-divider" aria-hidden="true"></span>
             {{- $validSiblings := where $matchedParent.childrenWithCounts "productCount" "gt" 0 -}}
-            {{- $sortedSiblings := first 12 (sort $validSiblings "productCount" "desc") -}}
+            {{- $regularSiblings := slice -}}
+            {{- $otherSiblings := slice -}}
+            {{- range sort $validSiblings "productCount" "desc" -}}
+            {{- if or (hasPrefix .name "その他") (hasPrefix .name "未分類") -}}
+            {{- $otherSiblings = $otherSiblings | append . -}}
+            {{- else -}}
+            {{- $regularSiblings = $regularSiblings | append . -}}
+            {{- end -}}
+            {{- end -}}
+            {{- $combinedSiblings := $regularSiblings -}}
+            {{- range $otherSiblings -}}
+            {{- $combinedSiblings = $combinedSiblings | append . -}}
+            {{- end -}}
+            {{- $sortedSiblings := first 12 $combinedSiblings -}}
             {{- range $sortedSiblings -}}
             {{- $isCurrent := eq (lower .name) $lowerCurrent -}}
             {{- $sibUrl := printf "categories/%s/" (.name | urlize) | relURL -}}

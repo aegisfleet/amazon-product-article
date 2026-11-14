@@ -32,6 +32,10 @@ interface RunOptions {
   resume: boolean;
   force: boolean;
   checkHash: boolean;
+  reclassifyFallback: boolean;
+  reclassifyZz: boolean;
+  parents?: string[];
+  children?: string[];
 }
 
 interface CheckpointData {
@@ -102,6 +106,8 @@ function parseArgs(): RunOptions {
     resume: true,
     force: false,
     checkHash: false,
+    reclassifyFallback: false,
+    reclassifyZz: false,
   };
 
   for (let i = 0; i < args.length; i++) {
@@ -139,6 +145,20 @@ function parseArgs(): RunOptions {
         break;
       case '--check-hash':
         options.checkHash = true;
+        break;
+      case '--reclassify-fallback':
+        options.reclassifyFallback = true;
+        break;
+      case '--reclassify-zz':
+        options.reclassifyZz = true;
+        break;
+      case '--parent':
+        if (next) options.parents = parseAsinList(next);
+        i++;
+        break;
+      case '--child':
+        if (next) options.children = parseAsinList(next);
+        i++;
         break;
       default:
         break;
@@ -354,6 +374,33 @@ function isClassificationUpToDate(
   return currentHash === storedHash;
 }
 
+function matchesParentChildFilter(
+  stored: ProductCategoryMap[string] | undefined,
+  parentSet: Set<string> | null,
+  childSet: Set<string> | null,
+): boolean {
+  if (parentSet && !parentSet.has(stored?.category_parent ?? '')) {
+    return false;
+  }
+  if (childSet && !childSet.has(stored?.category_child ?? '')) {
+    return false;
+  }
+  return true;
+}
+
+function shouldReclassifyByTargetFlag(stored: ProductCategoryMap[string] | undefined, options: RunOptions): boolean {
+  if (stored?.taxonomy_version !== 2) {
+    return true;
+  }
+  if (options.reclassifyZz && stored.category_child.startsWith('zz-')) {
+    return true;
+  }
+  if (options.reclassifyFallback && stored.classification?.source === 'fallback-map') {
+    return true;
+  }
+  return false;
+}
+
 function filterAsinsToProcess(
   allAsins: string[],
   articlesDir: string,
@@ -361,15 +408,26 @@ function filterAsinsToProcess(
   processedSet: Set<string>,
   options: RunOptions,
 ): string[] {
-  let toProcess = allAsins;
+  const parentSet = options.parents?.length ? new Set(options.parents) : null;
+  const childSet = options.children?.length ? new Set(options.children) : null;
+  const hasReclassifyFlag = options.reclassifyZz || options.reclassifyFallback;
 
-  if (!options.force) {
-    toProcess = allAsins.filter((asin) => {
-      if (isClassificationUpToDate(asin, articlesDir, categoryStore, options.checkHash)) return false;
-      if (options.resume && processedSet.has(asin)) return false;
+  let toProcess = allAsins.filter((asin) => {
+    const stored = categoryStore[asin];
+    if (!matchesParentChildFilter(stored, parentSet, childSet)) {
+      return false;
+    }
+    if (options.resume && processedSet.has(asin)) {
+      return false;
+    }
+    if (options.force) {
       return true;
-    });
-  }
+    }
+    if (hasReclassifyFlag) {
+      return shouldReclassifyByTargetFlag(stored, options);
+    }
+    return !isClassificationUpToDate(asin, articlesDir, categoryStore, options.checkHash);
+  });
 
   if (options.sampleSize && options.sampleSize < toProcess.length) {
     const step = Math.max(1, Math.floor(toProcess.length / options.sampleSize));
@@ -512,6 +570,7 @@ async function run(): Promise<void> {
           brand: input.brand,
           specsSummary: input.specsSummary,
           description: input.description,
+          amazonCategory: input.oldCat,
         },
         input.oldCat,
       );

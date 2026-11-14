@@ -126,7 +126,19 @@
     {{- $childCatItems = $childCatItems | append (dict "name" $cat "count" $count "url" $permalink) -}}
     {{- end -}}
     {{- end -}}
-    {{- $sortedChildCats := sort $childCatItems "count" "desc" -}}
+    {{- $regularChildCats := slice -}}
+    {{- $otherChildCats := slice -}}
+    {{- range sort $childCatItems "count" "desc" -}}
+    {{- if or (hasPrefix .name "その他") (hasPrefix .name "未分類") -}}
+    {{- $otherChildCats = $otherChildCats | append . -}}
+    {{- else -}}
+    {{- $regularChildCats = $regularChildCats | append . -}}
+    {{- end -}}
+    {{- end -}}
+    {{- $sortedChildCats := $regularChildCats -}}
+    {{- range $otherChildCats -}}
+    {{- $sortedChildCats = $sortedChildCats | append . -}}
+    {{- end -}}
 
     {{- /* Filter Section */ -}}
     {{- /* Show child category pills (top 12 initially, collapsible rest) */ -}}

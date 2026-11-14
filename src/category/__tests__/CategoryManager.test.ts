@@ -193,4 +193,41 @@ describe('CategoryManager', () => {
     expect(groups[0]?.legacySlugs).toEqual(['pc-peripheral']);
     expect(groups[0]?.children).toEqual(['ノートパソコン', 'モニター']);
   });
+
+  test('その他／未分類で始まる子カテゴリが件数に関わらず常に末尾に配置されること', () => {
+    const jsonPath = path.join(tempDir, 'other_sort.json');
+    fs.writeFileSync(
+      jsonPath,
+      JSON.stringify({
+        categoryGroups: [
+          {
+            name: 'テスト親',
+            slug: 'test-parent',
+            children: ['その他テスト', '未分類テスト', '子カテゴリA', '子カテゴリB'],
+          },
+        ],
+      }),
+    );
+
+    const manager = new CategoryManager(jsonPath);
+    manager.loadCategoryGroups();
+
+    const mockCounter = new ProductCounter(tempDir);
+    jest.spyOn(mockCounter, 'getProductIds').mockImplementation((name: string) => {
+      if (name === 'その他テスト') return new Set(['p1', 'p2', 'p3', 'p4', 'p5']);
+      if (name === '未分類テスト') return new Set(['p6', 'p7', 'p8', 'p9']);
+      if (name === '子カテゴリA') return new Set(['p10']);
+      if (name === '子カテゴリB') return new Set(['p11', 'p12']);
+      return new Set<string>();
+    });
+
+    const enhanced = manager.enhanceCategoryGroups(mockCounter);
+    expect(enhanced[0]?.childrenWithCounts.map((c) => c.name)).toEqual([
+      '子カテゴリB',
+      '子カテゴリA',
+      'その他テスト',
+      '未分類テスト',
+    ]);
+    expect(enhanced[0]?.children).toEqual(['子カテゴリB', '子カテゴリA', 'その他テスト', '未分類テスト']);
+  });
 });

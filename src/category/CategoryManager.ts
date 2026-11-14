@@ -131,22 +131,35 @@ export class CategoryManager {
     }
   }
 
+  private isOtherCategoryName(name: string): boolean {
+    return name.startsWith('その他') || name.startsWith('未分類');
+  }
+
   public enhanceCategoryGroups(productCounter: ProductCounter): EnhancedCategoryGroup[] {
     // Clear previous results to ensure idempotency
     this.enhancedCategoryGroups = [];
     this.enhancedCategoryGroups = this.categoryGroups.map((group) => {
       const allProductIds = new Set<string>();
 
-      const childrenWithCounts = group.children.map((childName) => {
-        const ids = productCounter.getProductIds(childName);
-        ids.forEach((id) => {
-          allProductIds.add(id);
+      const childrenWithCounts = group.children
+        .map((childName) => {
+          const ids = productCounter.getProductIds(childName);
+          ids.forEach((id) => {
+            allProductIds.add(id);
+          });
+          return {
+            name: childName,
+            productCount: ids.size,
+          };
+        })
+        .sort((a, b) => {
+          const aIsOther = this.isOtherCategoryName(a.name);
+          const bIsOther = this.isOtherCategoryName(b.name);
+          if (aIsOther !== bIsOther) {
+            return aIsOther ? 1 : -1;
+          }
+          return b.productCount - a.productCount;
         });
-        return {
-          name: childName,
-          productCount: ids.size,
-        };
-      });
 
       const parentIds = productCounter.getProductIds(group.name);
       parentIds.forEach((id) => {
@@ -164,7 +177,7 @@ export class CategoryManager {
         icon: group.icon,
         visible,
         priority,
-        children: group.children,
+        children: childrenWithCounts.map((c) => c.name),
         productCount: totalProductCount,
         childrenWithCounts,
         isVisible,

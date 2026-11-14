@@ -63,10 +63,50 @@ export class GeminiDecisionClassifier {
     return calculateClassificationInputHash(input);
   }
 
+  private static readonly GENERIC_AMAZON_CATEGORIES = new Set([
+    'その他',
+    'その他／全般',
+    'その他・全般',
+    '未分類',
+    '未分類・全般',
+    '一般',
+    'ドラッグストア',
+    'Amazon Fashion',
+    'ファッション',
+    'ビューティー',
+    'ラグジュアリービューティー',
+    'ホーム＆キッチン',
+    '大型家電',
+    'ペット用品',
+    '文房具・オフィス用品',
+    'DIY・工具・ガーデン',
+    'スポーツ＆アウトドア',
+    '車＆バイク',
+    'おもちゃ',
+    'パソコン・周辺機器',
+    '家電＆カメラ',
+    '食品・飲料・お酒',
+    'ベビー＆マタニティ',
+  ]);
+
+  private isValidAmazonCategory(category?: string): category is string {
+    const trimmed = category?.trim();
+    if (!trimmed) {
+      return false;
+    }
+    if (/^\d+$/.test(trimmed)) {
+      return false;
+    }
+    return !GeminiDecisionClassifier.GENERIC_AMAZON_CATEGORIES.has(trimmed);
+  }
+
   private buildInputText(input: ProductClassificationInput): string {
     const parts: string[] = [`商品名: ${input.title.trim()}`];
     if (input.brand?.trim()) {
       parts.push(`ブランド: ${input.brand.trim()}`);
+    }
+    if (this.isValidAmazonCategory(input.amazonCategory)) {
+      parts.push(`参考カテゴリ: ${input.amazonCategory.trim()}`);
     }
     if (input.specsSummary?.trim()) {
       parts.push(`仕様・特徴: ${input.specsSummary.trim()}`);
@@ -167,7 +207,7 @@ export class GeminiDecisionClassifier {
       questions: {
         child_category: {
           type: 'choice',
-          instructions: `この商品が属する最も適切な「${targetParentDef.name}」配下の子カテゴリを選択してください。`,
+          instructions: `この商品が属する最も適切な「${targetParentDef.name}」配下の子カテゴリを選択してください。『その他（zz-*）』は、他のどの具体的な子カテゴリの定義にも当てはまらない場合の最終手段としてのみ選択してください。`,
           criteria: childCriteria,
         },
       },
@@ -207,9 +247,10 @@ export class GeminiDecisionClassifier {
       needsReview = true;
     }
 
+    const zzFallbackThreshold = Math.min(this.childThreshold, 0.4);
     if (childConfidence < this.childThreshold || childMargin < this.runnerUpMargin) {
       needsReview = true;
-      if (childConfidence < this.childThreshold) {
+      if (childConfidence < zzFallbackThreshold) {
         const otherChild = targetParentDef.children.find((c) => c.slug.startsWith('zz-'));
         if (otherChild) {
           finalChildSlug = otherChild.slug;
@@ -237,22 +278,19 @@ export class GeminiDecisionClassifier {
       const { selectedParentSlug, parentConfidence, parentRunnerUp, parentMargin, targetParentDef } =
         await this.executeStage1(inputText);
 
-      // 確信度が 0.60 未満ならフォールバックへ
-      if (parentConfidence < 0.6 && fallbackOldCategory && this.legacyMap[fallbackOldCategory]) {
-        const fb = this.legacyMap[fallbackOldCategory];
-        return {
-          parentSlug: fb.parent_slug,
-          parentConfidence,
-          childSlug: fb.child_slug,
-          childConfidence: 0.5,
-          needsReview: true,
-          inputHash,
-          source: 'fallback-map',
-          classifiedAt: now,
-        };
+      let resolvedParentSlug = selectedParentSlug;
+      let resolvedParentDef = targetParentDef;
+
+      const fb = fallbackOldCategory ? this.legacyMap[fallbackOldCategory] : undefined;
+      if ((!resolvedParentDef || resolvedParentDef.slug === 'others') && fb && fb.parent_slug !== 'others') {
+        const legacyParentDef = this.taxonomy.parents.find((p) => p.slug === fb.parent_slug);
+        if (legacyParentDef) {
+          resolvedParentDef = legacyParentDef;
+          resolvedParentSlug = legacyParentDef.slug;
+        }
       }
 
-      if (!targetParentDef || targetParentDef.slug === 'others') {
+      if (!resolvedParentDef || resolvedParentDef.slug === 'others') {
         return {
           parentSlug: 'others',
           parentConfidence,
@@ -269,7 +307,7 @@ export class GeminiDecisionClassifier {
       // Stage 2: 子カテゴリ判定
       const { childSlug, childConfidence, childRunnerUp, childMargin } = await this.executeStage2(
         inputText,
-        targetParentDef,
+        resolvedParentDef,
       );
 
       const { finalChildSlug, needsReview } = this.evaluateQualityGate(
@@ -278,12 +316,12 @@ export class GeminiDecisionClassifier {
         childConfidence,
         childMargin,
         childSlug,
-        selectedParentSlug,
-        targetParentDef,
+        resolvedParentSlug,
+        resolvedParentDef,
       );
 
       return {
-        parentSlug: selectedParentSlug,
+        parentSlug: resolvedParentSlug,
         parentConfidence,
         childSlug: finalChildSlug,
         childConfidence,

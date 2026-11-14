@@ -83,11 +83,20 @@
         });
     }
 
+    function isOtherCategoryName(name) {
+        return typeof name === 'string' && (name.startsWith('その他') || name.startsWith('未分類'));
+    }
+
     /**
-     * Sort child category names by product count descending, then Japanese locale name
+     * Sort child category names by product count descending, keeping "その他"/"未分類" at the end
      */
     function sortChildCategoryNames(categories, countsMap) {
         return [...categories].sort((a, b) => {
+            const aIsOther = isOtherCategoryName(a);
+            const bIsOther = isOtherCategoryName(b);
+            if (aIsOther !== bIsOther) {
+                return aIsOther ? 1 : -1;
+            }
             const countA = countsMap[a] || 0;
             const countB = countsMap[b] || 0;
             return countB - countA || a.localeCompare(b, 'ja');
@@ -148,7 +157,14 @@
                     const visibleChildren = group.childrenWithCounts
                         ? group.childrenWithCounts
                             .filter(child => child.productCount > 0)
-                            .sort((a, b) => b.productCount - a.productCount || a.name.localeCompare(b.name, 'ja'))
+                            .sort((a, b) => {
+                                const aIsOther = isOtherCategoryName(a.name);
+                                const bIsOther = isOtherCategoryName(b.name);
+                                if (aIsOther !== bIsOther) {
+                                    return aIsOther ? 1 : -1;
+                                }
+                                return b.productCount - a.productCount || a.name.localeCompare(b.name, 'ja');
+                            })
                         : [];
 
                     if (visibleChildren.length > 0 || group.name === 'その他／全般' || (group.productCount !== undefined && group.productCount > 0)) {

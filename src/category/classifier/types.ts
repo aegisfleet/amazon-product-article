@@ -43,6 +43,7 @@ export interface ProductClassificationInput {
   brand?: string | undefined;
   specsSummary?: string | undefined;
   description?: string | undefined;
+  amazonCategory?: string | undefined;
 }
 
 export interface ClassificationResult {
