@@ -134,3 +134,31 @@ pnpm run reset:cache-timestamp -- <ASIN>
 ```bash
 npx tsx src/scripts/maintenance/sort-cache-by-status.ts
 ```
+
+### 3.6 `classify-products-cli.ts`（Gemini Decision 1 商品分類）
+
+`data/taxonomy-v2.json` を参照し、Gemini Decision 1 によって商品を親・子カテゴリへ分類して `data/product-categories.json` を更新する。増分処理のほか、部分的再分類オプションに対応する。
+
+```bash
+# 未分類商品の増分分類
+pnpm run classify:products
+
+# zz-* または fallback-map 商品の部分的再分類（--parent / --child で絞り込み可）
+pnpm run classify:products -- --reclassify-zz --reclassify-fallback --limit 100
+```
+
+### 3.7 `sync-product-categories.ts`（カテゴリ結果の記事反映）
+
+`data/product-categories.json` の分類結果を `content/articles/*.md` の frontmatter（`parent_category` / `sub_category` 等）に同期する。
+
+```bash
+pnpm run sync:product-categories -- --to-articles
+```
+
+### 3.8 `audit-taxonomy-v2-distribution.ts`（タクソノミー v2 分布・KPI監査）
+
+`data/taxonomy-v2.json` と `data/product-categories.json`、記事・UI生成物を突合し、全体・親別の `zz-*` 率、`fallback-map` 残数、極小子カテゴリ、UI上の「その他／未分類」末尾配置違反の有無を監査する（`--json-out <path>` で JSON レポート出力可）。
+
+```bash
+npx tsx src/scripts/maintenance/audit-taxonomy-v2-distribution.ts
+```

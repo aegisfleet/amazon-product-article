@@ -112,7 +112,7 @@ PRが `main` ブランチにマージされると、公開用パイプライン�
      - 実際の利用シーンとおすすめの読者像
      - 調査の根拠（一次情報ソース一覧）
 3. **カテゴリ・ナビゲーションの同期（`pnpm run prebuild:hugo`）**:
-   - `data/categorygroups.json` および記事のFront matterをスキャンし、親子カテゴリ構造（`data/categories.yml`）とブランドマッピングを生成する。
+   - `data/taxonomy-v2.json`・`data/product-categories.json` および記事のFront matterをスキャンし、親子カテゴリ構造（`data/categories.yml` / `static/data/categorygroups.json`）・親カテゴリMarkdown（`content/parent-category/*.md`）・ブランドマッピングを生成する。
 4. **キャッシュの永続化**:
    - ビルド中に更新された最新の商品情報キャッシュ（`paapi-product-cache.json`）をGitコミット・プッシュ（`[skip ci]`）し、次回ビルドの高速化を図る。
 5. **Hugoビルド & GitHub Pagesデプロイ**:

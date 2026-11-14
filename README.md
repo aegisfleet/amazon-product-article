@@ -214,17 +214,20 @@ pnpm run merge:pr
 ### データ保守・カテゴリ管理 CLI
 
 ```bash
+# Gemini Decision 1 による未分類・対象商品のタクソノミー v2 分類（--reclassify-zz 等で絞り込み可）
+pnpm run classify:products
+
+# data/product-categories.json の分類結果を記事 frontmatter に同期
+pnpm run sync:product-categories -- --to-articles
+
+# タクソノミー v2 の分布・zz-* 率・UI末尾配置の監査
+npx tsx src/scripts/maintenance/audit-taxonomy-v2-distribution.ts
+
 # Hugoビルド前のカテゴリ階層補強処理（categories.yml等の自動生成）
 pnpm run prebuild:hugo
 
 # フロントマターのデータサニタイズ
 pnpm run sanitize:frontmatter
-
-# カテゴリの自動整理
-pnpm run organize:categories
-
-# カテゴリ定義のUnicodeコードポイント順ソート
-pnpm run sort:categories
 
 # 取扱終了（デッド）商品の監査
 pnpm run audit:dead
@@ -237,7 +240,7 @@ pnpm run audit:score-discrepancy
 ```
 
 > [!TIP]
-> カテゴリの階層構造、親カテゴリ命名規約（14文字以内）、AIによる自動整理、正規化ロジックの修正手順については、[docs/category-management.md](docs/category-management.md) を参照のこと。
+> タクソノミー v2 の階層構造、命名規約（親14文字・子16文字以内）、`zz-*` 設計指針、Gemini Decision 1 分類・正規化ロジックの修正手順については、[docs/category-management.md](docs/category-management.md) を参照のこと。
 
 ### Python 調査スクリプト（uv実行）
 

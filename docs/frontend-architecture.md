@@ -123,7 +123,7 @@
 | ファイル | 配置場所 | 役割 |
 |---|---|---|
 | `llms.txt` | `static/llms.txt` | サイト概要、データ取得エンドポイント（`index.json`等）、URL規則、Amazon購入リンクの取り扱いを案内する標準仕様ガイド |
-| `llms-full.txt` | `static/llms-full.txt` | 大規模コンテキスト対応の完全版。全親カテゴリ一覧（23ジャンル）や主要セクションの詳細リストを掲載 |
+| `llms-full.txt` | `static/llms-full.txt` | 大規模コンテキスト対応の完全版。全親カテゴリ一覧（27親カテゴリ・166子カテゴリ）や主要セクションの詳細リストを掲載 |
 | `products-summary.json` | `static/products-summary.json` | ブラウジング系AI向けの超軽量商品インデックス（約1.8MB、gzip時約380KB）。全商品の基本属性・スコア・アフィリエイトURLを1リクエストで取得可能 |
 
 ### 5.2 自動発見（Auto-Discovery）の仕組み

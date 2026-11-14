@@ -6,12 +6,12 @@
 
 ## 1. カテゴリシステムの構造
 
-本プラットフォームのカテゴリは、自前定義の **タクソノミー v2**（親27 × 子約250）を正本とする。商品ごとの所属は Gemini Decision 1（Decisions API）で判定し、結果を `data/product-categories.json` に永続化する。Amazon Creators API 由来のカテゴリ名は `amazon_category` として退避され、検索ヒットや再分類時の補助情報に用いる。
+本プラットフォームのカテゴリは、自前定義の **タクソノミー v2**（親27 × 子166）を正本とする。商品ごとの所属は Gemini Decision 1（Decisions API）で判定し、結果を `data/product-categories.json` に永続化する。Amazon Creators API 由来のカテゴリ名は `amazon_category` として退避され、検索ヒットや分類・再分類時の参考情報に用いる。
 
 ```mermaid
 graph TD
     subgraph Input["商品データ"]
-        Art["調査記事 / PA-API キャッシュ (title / brand / specs)"]
+        Art["調査記事 / PA-API キャッシュ (title / brand / specs / amazon_category)"]
     end
 
     subgraph Classify["分類 (pnpm run classify:products)"]
@@ -44,9 +44,9 @@ graph TD
 
 | ファイル | 役割 | 管理形態 |
 |---|---|:---:|
-| `data/taxonomy-v2.json` | 親27・子カテゴリの定義（slug・日本語名・判定基準・`legacy_slugs`）。**正本** | 手動管理 |
+| `data/taxonomy-v2.json` | 親27・子166カテゴリの定義（slug・日本語名・判定基準・`legacy_slugs`）。**正本** | 手動管理 |
 | `data/product-categories.json` | ASIN ごとの分類結果（`category_parent` / `category_child` / `classification`）。1商品1行 | 自動生成（`classify:products`） |
-| `data/legacy-category-map.json` | 旧 Amazon カテゴリ → 新カテゴリのフォールバック対応表（API 失敗・低確信度時に使用） | 手動管理 |
+| `data/legacy-category-map.json` | 旧 Amazon カテゴリ → 新カテゴリのフォールバック対応表（API 失敗時および Stage 1 が `others` となった際の親カテゴリ救済に使用） | 手動管理 |
 | `data/categories.yml` | 記事数集計やスラッグ等が付加されたHugo用カテゴリ階層データ | 自動生成（`prebuild:hugo`） |
 | `static/data/categorygroups.json` | フロントエンドおよび Hugo テンプレート（`data/categorygroups.json` としてマウント）が参照するデータ | 自動生成（`prebuild:hugo`） |
 | `content/parent-category/*.md` | 親カテゴリごとの一覧表示用Markdownページ（旧スラッグは `aliases` でリダイレクト） | 自動生成（`prebuild:hugo`） |
@@ -57,12 +57,14 @@ graph TD
 
 `data/taxonomy-v2.json` を編集（親・子の追加、名称変更、統合）する際は、サイトUIとURLの整合性を保つため以下のルールを遵守する。
 
-### 2.1 命名規則と文字数制限
+### 2.1 命名規則・`zz-*` 純化・バージョン管理
 
 - **親カテゴリ名は14文字以内**（15文字以上は禁止）。ドロップダウン・ホーム画面での見切れ防止のためである。
 - **子カテゴリ名は16文字以内**（カード・ピル表示の都合）。
-- 各親は、判定の受け皿として `zz-` 接頭辞の「その他」子カテゴリを必ず持つ。
-- これらは `src/category/taxonomy/__tests__/taxonomy-v2.test.ts` で検証される。
+- **`zz-*` 定義の純化**: 各親の受け皿となる `zz-` 接頭辞の「その他」子カテゴリは、`criteria` に具体的な商品名を列挙せず「`上記いずれの子カテゴリの定義にも当てはまらないその他の〇〇関連品。`」に統一し、`legacy_names` も設定しない（具体品名を含めると Decisions API Stage 2 が高確信度で `zz-*` を選択してしまうため）。
+- **UI・データ上の末尾配置**: `zz-*`（および「その他〜」「未分類〜」）は `taxonomy-v2.json` の各親 `children` 配列末尾に定義する。さらに `CategoryManager.ts`（`enhanceCategoryGroups`）、`static/js/category-dropdown.js`、一覧テンプレート（`layouts/_default/parent-category.html`, `layouts/_default/list.html`）においても、商品件数に関わらず常に各親カテゴリの**末尾**へ配置される。
+- **スキーマバージョン（`version: 2`）の維持**: `data/taxonomy-v2.json` の `"version": 2`（および各商品の `taxonomy_version: 2`）は記事生成・同期・監査スクリプト群で前提とされているため変更せず、改訂時は `updated_at` の更新で版管理を行う。
+- これらは `src/category/taxonomy/__tests__/taxonomy-v2.test.ts` および `src/category/__tests__/CategoryManager.test.ts` で検証される。
 
 ### 2.2 URL の後方互換（`legacy_slugs`）
 
@@ -78,15 +80,20 @@ pnpm run biome:check
 pnpm run prebuild:hugo
 ```
 
+> [!NOTE]
+> 親カテゴリや子カテゴリ構成を変更した際は、AIエージェント向け案内ファイル（`static/llms.txt`・`static/llms-full.txt`）の親カテゴリ別解説も同期して更新する。
+
 ---
 
 ## 3. Gemini Decision 1 による商品分類ワークフロー
 
 ### 3.1 分類の流れ
 
-1. **対象抽出**: `content/articles`・`data/investigations` の ASIN のうち、未分類のもの、および登録済みでも `classification.input_hash`（タイトル・ブランド・スペックのハッシュ）が現在の商品データと異なるもの（再調査で内容が更新された商品）を再分類対象とする。
-2. **2段階判定**: 親（27択）→ 子（親配下）の順に Decisions API で判定する。確信度が閾値未満の場合は `needs_review: true` を付与し、必要に応じて `legacy-category-map.json` へフォールバックする。
-3. **永続化**: 結果を `data/product-categories.json` に保存する。記事 frontmatter へは `category`（子カテゴリ日本語名）・`category_parent`・`category_child`・`classification` が反映され、旧 Amazon カテゴリ名は `amazon_category` に退避される。
+1. **対象抽出**: `content/articles`・`data/investigations` の ASIN のうち、未分類のもの、および登録済みでも `classification.input_hash`（タイトル・ブランド・スペックのハッシュ）が現在の商品データと異なるもの（再調査で内容が更新された商品）を再分類対象とする。また CLI オプションにより `zz-*` 滞留商品や特定の親・子カテゴリのみを抽出して部分再分類できる。
+2. **入力テキスト構築（`buildInputText`）**: 商品名・ブランド・仕様概要に加え、汎用ノイズカテゴリ（`ドラッグストア`、`ホーム＆キッチン` 等）と純粋な数値ノードIDを除外した有効な `amazon_category` を `参考カテゴリ:` として付与し、型番中心の商品でも高精度に分類できるようにする。
+3. **2段階判定**: 親（27択）→ 子（親配下）の順に Decisions API で判定する。Stage 2 では `zz-*` を「最終手段としてのみ選択」するよう指示する。Stage 1 が `'others'` を返した場合でも、`legacy-category-map.json` に有効な親カテゴリ（`others` 以外）が存在すればその親を採用して Stage 2 を実行する（API 通信失敗時のみ `legacy-category-map.json` による `fallback-map` へフォールバックする）。
+4. **品質ゲート（`evaluateQualityGate`）**: 親確信度 `< 0.80`、子確信度 `< 0.70`、または次点（runner-up）との確率マージン `< 0.10` の場合に `needs_review: true` を付与する。具体的な子カテゴリが選択されている場合は確率が競合してもそれを尊重し、子確信度 `< 0.40` の極低確信度時のみ `zz-*` へルーティングする。
+5. **永続化**: 結果を `data/product-categories.json` に保存する。記事 frontmatter へは `category`（子カテゴリ日本語名）・`category_parent`・`category_child`・`classification` が反映され、旧 Amazon カテゴリ名は `amazon_category` に退避される。
 
 ### 3.2 主要コマンド
 
@@ -97,11 +104,21 @@ pnpm run classify:products
 # 商品仕様・タイトルの変更（input_hash 不一致）を検知して再分類
 pnpm run classify:products -- --check-hash
 
+# zz-* 滞留商品・fallback-map 由来商品のみを対象に部分再分類
+pnpm run classify:products -- --reclassify-zz --reclassify-fallback --no-resume --concurrency 10
+
+# 特定の親・子カテゴリのみを対象に強制再分類（PowerShell ではカンマ区切りをクォートで囲む）
+pnpm run classify:products -- --parent 'stationery-office' --reclassify-zz --no-resume
+pnpm run classify:products -- --child 'child-a,child-b' --force --no-resume
+
 # ASIN を指定して分類（カンマ区切りで複数指定可、--force で強制再分類）
 pnpm run classify:products -- --asin B0XXXXXXXX,B0YYYYYYYY --force
 
-# ドライラン（保存しない）／レート制御
-pnpm run classify:products -- --dry-run --limit 20 --delay 500
+# ドライラン（保存しない）／サンプル・レート制御
+pnpm run classify:products -- --reclassify-zz --dry-run --sample 30 --no-resume --concurrency 5
+
+# タクソノミー全体の分布・zz-* 率（群A/B/C内訳）・10件未満子カテゴリの監査
+pnpm exec ts-node src/scripts/maintenance/audit-taxonomy-v2-distribution.ts --out tmp/zz-audit.json
 
 # data/product-categories.json の内容を記事 frontmatter へ反映
 pnpm run sync:product-categories -- --to-articles
@@ -184,8 +201,8 @@ Creators API のレスポンスには、キャンペーン用や社内管理用�
 
 1. **キャッシュ内の該当カテゴリ確認**:
    ```bash
-   # キャッシュ内のカテゴリ表記を検索
-   grep "対象キーワード" data/cache/paapi-product-cache.json
+   # シャード化キャッシュ内のカテゴリ表記を検索
+   rg "対象キーワード" data/cache/paapi/
    ```
 
 2. **Amazon API 生データの取得**:
@@ -249,8 +266,9 @@ Creators API のレスポンスには、キャンペーン用や社内管理用�
 
 | コマンド | 役割 |
 |---|---|
-| `pnpm run classify:products` | Gemini Decision 1 により未分類・更新商品を新タクソノミーへ自動分類する |
-| `pnpm run sync:product-categories` | `data/product-categories.json` の分類結果を記事 Markdown の frontmatter に同期する |
-| `pnpm run prebuild:hugo` | カテゴリ階層を拡張し、`categories.yml` や親カテゴリMarkdownを同期する |
+| `pnpm run classify:products` | Gemini Decision 1 により未分類・更新商品を新タクソノミーへ自動分類する（`--reclassify-zz` / `--reclassify-fallback` / `--parent <slug>` / `--child <slug>` による部分的再分類にも対応） |
+| `npx tsx src/scripts/maintenance/audit-taxonomy-v2-distribution.ts` | タクソノミー v2 の全体・親別 `zz-*` 率、`fallback-map` 残数、極小子カテゴリ、UI上の「その他／未分類」末尾配置を監査する |
+| `pnpm run sync:product-categories -- --to-articles` | `data/product-categories.json` の分類結果を記事 Markdown の frontmatter に同期する |
+| `pnpm run prebuild:hugo` | カテゴリ階層を拡張し、`categories.yml`・`static/data/categorygroups.json`・親カテゴリMarkdownを同期する |
 | `pnpm run biome:check` | `data/taxonomy-v2.json` を含む定義JSONの構文妥当性を検証する |
 | `pnpm run reset:category-cache -- "<ワード>"` | 指定したカテゴリ名を含む商品のキャッシュタイムスタンプをリセットする |

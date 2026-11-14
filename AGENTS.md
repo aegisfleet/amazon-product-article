@@ -208,9 +208,17 @@ SonarQube / SonarLint による Code Smell を防止し、高い保守性を維�
 
 - **文字数制限**:
   UI表示（ドロップダウンメニュー、ナビゲーション、ホーム画面一覧等）での見切れやレイアウト崩れを防ぐため、**親カテゴリ名は必ず14文字以内に収める**こと（15文字以上は禁止）。子カテゴリ名は16文字以内に収める。
+- **`version: 2` の維持**:
+  `data/taxonomy-v2.json` の `"version": 2`（および各商品の `taxonomy_version: 2`）は記事生成・同期・監査スクリプト群で前提としているため変更せず、改訂時は `updated_at` を更新すること。
+- **`zz-*`（その他）定義の純化と末尾配置**:
+  - 各親の `zz-*` 子カテゴリの `criteria` には具体的な品名を含めず「`上記いずれの子カテゴリの定義にも当てはまらないその他の〇〇関連品。`」に統一すること（具体品名があると Decisions API Stage 2 が高確信度で `zz-*` を選択してしまうため）。
+  - `zz-*`（および「その他〜」「未分類〜」）は `taxonomy-v2.json` の配列末尾に定義すること。UIおよび `CategoryManager.ts`（`enhanceCategoryGroups`）・`static/js/category-dropdown.js`・一覧テンプレートにおいても件数に関わらず常に各親の末尾に配置すること。
 - **旧URL互換性（`legacy_slugs`）**:
   親カテゴリの統合・名称変更時は、旧スラッグを `legacy_slugs` に必ず追加して404を防止すること（`aliases` リダイレクトが自動生成される）。
-- **新規追加・編集後の手順**: `pnpm run prebuild:hugo` を実行し、`data/categories.yml` / `static/data/categorygroups.json` / `content/parent-category/*.md` が自動生成・更新されることを確認すること。
+- **新規追加・編集後の再分類・同期・検証手順**:
+  1. `pnpm test src/category/taxonomy/__tests__/taxonomy-v2.test.ts` および `pnpm run biome:check` で定義の整合性を検証する。
+  2. 既存商品を再分類する場合は全件再分類せず、`pnpm run classify:products -- --reclassify-zz --reclassify-fallback --no-resume` や `--parent <slug>` / `--child <slug> --force` で対象サブセットのみ再分類する。
+  3. `pnpm run sync:product-categories -- --to-articles` で記事フロントマターへ反映し、`pnpm run prebuild:hugo` を実行して `data/categories.yml` / `static/data/categorygroups.json` / `content/parent-category/*.md` が自動生成・更新されることを確認する。必要に応じて `static/llms.txt`・`static/llms-full.txt` も同期し、`src/scripts/maintenance/audit-taxonomy-v2-distribution.ts` で分布・`zz-*` 率を監査する。
 
 ### 5.2 ブランドグループ管理（`data/brandgroups.json`）
 

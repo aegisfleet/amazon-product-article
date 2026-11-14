@@ -16,7 +16,7 @@ description: カテゴリの調査・除外・修正およびキャッシュリ�
 
 ```bash
 # Windows (PowerShell)
-grep "キーワード" data/cache/paapi-product-cache.json
+rg "キーワード" data/cache/paapi/
 ```
 
 ### 1.2 生データの取得
@@ -120,14 +120,20 @@ pnpm run generate:articles
 
 ### 5.1 命名規則と制約
 - **親カテゴリ名は14文字以内**、**子カテゴリ名は16文字以内**。各親は `zz-` 接頭辞の「その他」子を必ず持つ。
+- **`zz-*`（その他）カテゴリの `criteria` 純化**: `zz-*` の `criteria` に具体的な商品名・品目を列挙しない（Gemini Decision 1 の高確信度誤誘導を防ぐため、`「上記いずれの子カテゴリの定義にも当てはまらないその他の〇〇関連品。」` に統一し、個別品目は通常子の `criteria` へ記載する）。
+- **UI・データ生成上の「その他」末尾固定ルール**: 親カテゴリ内の子カテゴリ一覧では、件数に関わらず「その他」「未分類」（または `zz-` 接頭辞）は常に末尾に配置する。
+- **スキーマバージョンの維持**: `data/taxonomy-v2.json` の `"version": 2`（および `taxonomy_version: 2`）は既存パイプライン互換のため変更せず、改訂時は `"updated_at"` を更新する。
 - 親の統合・改名で旧スラッグが消える場合は、統合先親の `legacy_slugs` に旧スラッグを追加する（`/parent-category/<旧スラッグ>/` が alias としてリダイレクトされる）。
 
 ### 5.2 商品の分類を修正・再実行する手順
-1. **新規商品の分類（増分）**: `pnpm run classify:products`（登録済み商品は自動スキップ、`--check-hash` で変更検知、`--force` で強制再分類）
-2. **記事へ反映**: `pnpm run sync:product-categories -- --to-articles`
-3. **事前ビルド同期**: `pnpm run prebuild:hugo` を実行し、`data/categories.yml` / `static/data/categorygroups.json` / `content/parent-category/*.md` を自動更新する。
-4. **検証**: `pnpm run biome:check` / `pnpm test`（`taxonomy-v2.test.ts` が命名規約と旧URL互換を検証する）。
+1. **新規・対象商品の分類（増分・部分再分類）**:
+   - 増分分類: `pnpm run classify:products`（登録済み商品は自動スキップ、`--check-hash` で変更検知、`--force` で強制再分類）
+   - 部分再分類（例: `zz-*` や `fallback-map` の救済）: `pnpm run classify:products -- --reclassify-zz` / `--reclassify-fallback` / `--parent <slug>` / `--child <slug>`
+2. **分布・KPI監査**: `npx tsx src/scripts/maintenance/audit-taxonomy-v2-distribution.ts` で全体・親別 `zz-*` 率、極小子カテゴリ、UI末尾配置を確認する。
+3. **記事へ反映**: `pnpm run sync:product-categories -- --to-articles`
+4. **事前ビルド同期**: `pnpm run prebuild:hugo` を実行し、`data/categories.yml` / `static/data/categorygroups.json` / `content/parent-category/*.md` を自動更新する。親・子カテゴリの構成が変わった場合は `static/llms.txt` / `static/llms-full.txt` も同期更新する。
+5. **検証**: `pnpm run biome:check` / `pnpm run lint` / `pnpm run build` / `pnpm test`（`taxonomy-v2.test.ts` が命名規約と旧URL互換を検証する）。
 
 ### 5.3 注意事項
 - `GEMINI_API_KEY` は `.env`（ローカル）または GitHub Secrets（CI）で管理し、ログへ出力しない。
-- 分類 API の呼び出しと `data/product-categories.json` のコミットは `deploy-articles.yml` に一本化されている。
+- 通常運用における分類 API の呼び出しと `data/product-categories.json` のコミットは `deploy-articles.yml` に一本化されている。
