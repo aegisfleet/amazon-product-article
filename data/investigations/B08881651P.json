@@ -1,0 +1,303 @@
+{
+  "analysis": {
+    "productName": "TrustKey FIDOセキュリティキー T120 (USB-C)",
+    "parentAsin": "B08881651P",
+    "productDescription": "USB Type-C端子を採用し、PIN入力と本体のタッチセンサーによる2要素認証・パスキー（FIDO2/U2F）およびHOTP/TOTPに対応したハードウェアセキュリティキー。",
+    "productUsage": [
+      "Google・Microsoft・GitHub・SNS・金融サービス等のフィッシング耐性のある2要素認証（2FA）",
+      "FIDO2/WebAuthn対応サービスへのパスワードレス（パスキー）ログイン",
+      "Microsoft Azure AD（Entra ID）参加済みWindows PCへのサインイン",
+      "TOTP/HOTPによるワンタイムパスワード認証"
+    ],
+    "positivePoints": [
+      "実売￥4,000前後という手頃な価格帯でありながら、FIDO2/U2Fに加えてHOTP/TOTPのマルチプロトコルに対応している",
+      "メーカー公式製品ページにおいて、本体内に最大200個（※一部販売店情報では150個）のレジデントキー（パスキー）を保存可能な大容量仕様が確認できる",
+      "eWBM社のMS500セキュアマイクロプロセッサを採用し、上位のGシリーズと共通のセキュリティプラットフォームで設計されている",
+      "FIDO AllianceによるFIDO2 Level 1セキュリティ認証を取得しており、Microsoft Azure AD（Entra ID）のオンラインおよびオフラインサインインにも対応する",
+      "約41.7mm × 17.8mm × 4.6mm、重量約2.9gと超軽量・コンパクトでキーチェーンに取り付けて携帯しやすい"
+    ],
+    "negativePoints": [
+      "NFC（近距離無線通信）に非対応のため、スマートフォン等への無線かざし認証が行えずUSB-Cポートへの直接挿入が必要",
+      "指紋認証などの生体認証センサーを搭載していないため、利用時にはPIN入力と本体タッチの組み合わせが必要",
+      "メーカー公式スペック上でIP68などの防水・防塵保護等級が明記されていない",
+      "初期PIN設定時などに専用ユーティリティ（TrustKey Key Manager）の案内が英語中心であり、日本語の解説情報が大手メーカー製キーと比較して少ない"
+    ],
+    "useCases": [
+      "USB Type-Cポートを搭載したノートPC（MacBookやWindowsノート）での日常的なパスキー認証",
+      "多数のWebサービスや開発アカウント（GitHub等）の認証情報を1本の物理キーに集約したい場合",
+      "指紋認証機能までは不要で、コストを抑えつつメイン用とバックアップ用の複数本を導入したい場合",
+      "USB-C端子を持つAndroidスマートフォンやiPadでの有線接続による2要素認証"
+    ],
+    "userStories": [
+      {
+        "userType": "複数のクラウドサービスや開発環境を利用するエンジニア",
+        "scenario": "MacBookやUSB-C搭載ノートPCで多数のアカウントをパスキー管理したい場面",
+        "experience": "YubiKey 5C NFCなどの多機能モデルは1万円を超えるため複数本揃えるのが負担だったが、本機は4,000円前後と導入しやすくUSB-Cポートへ変換アダプターなしで直挿しできる点を決め手に選定。本体に最大200個のレジデントキーを保存できるため、仕事用・個人用・GitHubなど多くのサービスを1本に集約でき、接続後に静電容量センサーへ軽く触れるだけで認証が完了する取り回しの良さがある。",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2",
+          "src-4"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "Microsoft Azure AD（Entra ID）環境を運用するIT管理者・ビジネスユーザー",
+        "scenario": "社内のパスワードレス認証導入検証および日々のPCサインイン",
+        "experience": "FIDO2対応キーの検証にあたり、Gシリーズと同じMS500マイクロプロセッサ基盤を採用しつつコストを抑えられるTシリーズを選択。初期のPIN設定はTrustKey Key Managerユーティリティを使用してセットアップを行い、以降はAzure AD環境へのオンライン・オフラインサインインや主要ブラウザでの認証が安定して動作する一方、管理ツールやドキュメントが英語ベースである点は導入時に確認が必要だった。",
+        "supportingSourceIds": [
+          "src-1",
+          "src-3"
+        ],
+        "sentiment": "mixed"
+      },
+      {
+        "userType": "PCとスマートフォンの両方でパスキーを使いたい一般ユーザー",
+        "scenario": "外出先でスマートフォンから金融機関やSNSへログインする場面",
+        "experience": "PCのUSB-Cポートでは挿してPIN入力＋タッチするだけですぐに使え、約2.9gと非常に軽いため鍵束に付けても邪魔にならない点は満足度が高い。一方でNFCを搭載していないため、スマートフォンで認証する際はケースに干渉しないか確認しつつUSB-C端子へ直接差し込む必要があり、スマホ背面にワンタッチでかざす運用を想定している場合は注意が必要と感じる。",
+        "supportingSourceIds": [
+          "src-2",
+          "src-4"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "実売4,000円前後の低価格ながら、USB-C直挿し・FIDO2/U2F・TOTP/HOTP・最大200個のレジデントキー保存に対応したコストパフォーマンスの高いセキュリティキーとして評価されている。NFC非対応や指紋認証なしといった割り切りはあるものの、PC中心のユーザーやバックアップ用キーを増やしたい層からは『必要十分なセキュリティと大容量パスキー保存を手頃に導入できる』と好意的に受け止められており、逆にスマホでの無線（NFC）かざし認証や日本語の手厚いサポートを重視するユーザーには不向きという評価に落ち着いている。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "TrustKey Solutions 公式サイト 製品ページ",
+        "url": "https://www.trustkeysolutions.com/en/sub/product.form",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-11-14",
+        "author": "TrustKey Solutions, Inc.",
+        "conflictOfInterest": "none",
+        "notes": "T120がeWBM MS500マイクロプロセッサを採用しGシリーズと共通プラットフォームであること、FIDO2/U2F/HOTP/TOTPのマルチプロトコル対応、レジデントキー最大200個対応、USB-C接続、Microsoft Azure ADのオンライン/オフラインサインイン対応を確認。"
+      },
+      {
+        "id": "src-2",
+        "name": "Amazon.co.jp 商品ページ (B08881651P)",
+        "url": "https://www.amazon.co.jp/dp/B08881651P",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-11-14",
+        "author": "Trustkey / Amazon.co.jp",
+        "conflictOfInterest": "none",
+        "notes": "販売価格￥4,000、FIDO2 Level 1セキュリティ認証取得、PIN+タッチ認証方式、USB-C対応、寸法（約41.7×17.8×4.6mm）および重量（約2.9g）、Windows/macOS/Linuxおよび主要ブラウザ対応を確認。"
+      },
+      {
+        "id": "src-3",
+        "name": "FIDO TrustKey 実機検証記事 (AzureBlog.pl)",
+        "url": "https://www.azureblog.pl/2021/05/25/fido-trustkey/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2021-05-25",
+        "author": "Robert Przybylski",
+        "conflictOfInterest": "disclosed",
+        "notes": "2週間の実機テスト記事（メーカーからテスト機材提供の開示あり）。T120のAAGUID（e3512a8a-62ae-11ea-bc55-0242ac130003）、暗号アルゴリズム（SHA256, AES, HMAC, ECDH, ECDSA）、Azure ADとの連携動作、PIN設定にTrustKey Key Managerを使用する手順を確認。"
+      },
+      {
+        "id": "src-4",
+        "name": "パスワードレス用セキュリティキー（FIDO2）おすすめ8選｜初心者でも失敗しない選び方【2026年版】(note)",
+        "url": "https://note.com/tmg500/n/n6e6dd8e33b11",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-03-11",
+        "author": "tmg500",
+        "conflictOfInterest": "none",
+        "notes": "TrustKey T120が公式仕様でレジデントキー最大200個に対応しYubiKey FW5.7以降の100個より大容量である点、NFC非対応モデルはスマホ単体での利用に制約が出る点、FIDO2 L1とL2の違い、物理キーの2本運用（バックアップ）の重要性を確認。"
+      },
+      {
+        "id": "src-5",
+        "name": "Greenix SG 製品販売ページ (TrustKey T120)",
+        "url": "https://greenix.sg/shop/trustkey-t120/",
+        "tier": "low",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-11-14",
+        "author": "Greenix SG",
+        "conflictOfInterest": "none",
+        "notes": "海外流通価格の目安（$39.80）および一部販売店仕様におけるレジデントキー150個表記、主要Webサービス（Google, Dropbox, Facebook, Twitter, GitHub等）での動作を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "FIDO2規格およびU2F認証により、フィッシングやアカウント乗っ取りに対して強力な保護を提供する",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2",
+          "src-3"
+        ],
+        "crossChecked": true,
+        "notes": "メーカー公式仕様およびAzure AD環境での検証記事において、FIDO2/WebAuthnによる公開鍵暗号（ECDSA/ECDH等）とオリジン検証に基づくフィッシング耐性が一致して確認されている。"
+      },
+      {
+        "claim": "最大200個のレジデントキー（パスキー）を本体に保存できる",
+        "category": "comparativeAdvantage",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-1",
+          "src-4",
+          "src-5"
+        ],
+        "crossChecked": true,
+        "notes": "メーカー公式サイト（src-1）および2026年の解説記事（src-4）では最大200個と明記されている一方、一部販売店の旧表記（src-5）では150個となっている。"
+      },
+      {
+        "claim": "高価な上位モデル（Gシリーズ）と同じセキュリティプラットフォームを採用しつつ手頃な価格を実現している",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-3"
+        ],
+        "crossChecked": true,
+        "notes": "メーカー公式サイトにてeWBM MS500マイクロプロセッサとGシリーズ同一プラットフォームの採用が明記されており、実機検証でもAzure AD等で同等の基本認証動作が確認されている。"
+      }
+    ],
+    "lastInvestigated": "2026-11-14",
+    "investigatedPrice": "￥4,000",
+    "competitiveAnalysis": [
+      {
+        "name": "TrustKey T110 (USB-Aタイプ)",
+        "asin": "B086QTS5YM",
+        "priceComparison": "T120よりわずかに安価な価格設定で、接続端子の形状（USB-AかUSB-Cか）に応じた選択となる。",
+        "featureComparison": [
+          "共通点：FIDO2/U2F/HOTP/TOTP対応、PIN＋タッチ認証、eWBM MS500基盤、NFC非対応",
+          "相違点：T120はUSB Type-C端子、T110はUSB Type-A端子を採用"
+        ],
+        "differentiators": [
+          "TrustKey FIDOセキュリティキー T120 (USB-C)の利点：MacBookや最新のWindowsノートPC、USB-C搭載スマホなどUSB-Cポート中心の環境で変換アダプターなしに直挿ししたいならこちらが最適。",
+          "TrustKey T110 (USB-Aタイプ)の利点：デスクトップPCや従来のUSB-Aポートが余っている環境で、1円でもコストを抑えて導入したい場合に適している。"
+        ]
+      },
+      {
+        "name": "Yubico FIDOセキュリティキー NFC（黒）",
+        "asin": "B0BVNPWPCN",
+        "priceComparison": "対象商品より高価格帯だが、Yubicoブランドの信頼性とNFC・防水防塵性能が付加されたエントリーモデル。",
+        "featureComparison": [
+          "共通点：FIDO2/U2F対応、PIN＋タッチ認証、指紋認証非搭載",
+          "相違点：T120はUSB-C・TOTP/HOTP対応・FIDO2 L1・NFC非対応。YubicoはUSB-A＋NFC対応・IP68防水防塵・FIDO2 L2認証だがTOTP/HOTPは非対応"
+        ],
+        "differentiators": [
+          "TrustKey FIDOセキュリティキー T120 (USB-C)の利点：USB-C端子への直挿し、TOTP/HOTP対応、最大200個のパスキー保存数、そして導入コストの安さを重視するなら本機が有利。",
+          "Yubico FIDOセキュリティキー NFC（黒）の利点：スマホへNFCでかざして認証したい場合や、鍵束に付けて持ち歩くためのIP68防水防塵・FIDO2 Level 2の堅牢性を最優先する場合に適している。"
+        ]
+      },
+      {
+        "name": "Thetis Pro-C FIDO2 セキュリティキー (USB-C & NFC)",
+        "asin": "B0D697PVTY",
+        "priceComparison": "対象商品と近い手頃な価格帯で、わずかに高い分NFC機能を搭載している。",
+        "featureComparison": [
+          "共通点：USB Type-C端子、FIDO2/U2FおよびTOTP/HOTP対応、PIN＋タッチ式",
+          "相違点：Thetis Pro-CはNFC対応を備える一方、T120はNFC非対応だが最大200個のレジデントキー容量が公式に明記されている"
+        ],
+        "differentiators": [
+          "TrustKey FIDOセキュリティキー T120 (USB-C)の利点：NFCは不要で、少しでも安く購入しつつ多数のパスキー（最大200個）を1本に保存したいPC中心ユーザーにおすすめ。",
+          "Thetis Pro-C FIDO2 セキュリティキー (USB-C & NFC)の利点：4,000円台後半の予算感で、USB-C接続だけでなくスマートフォンでのNFC無線認証も両立したい場合に適している。"
+        ]
+      },
+      {
+        "name": "Thetis Pro-C FIDO2 (L2) セキュリティキー",
+        "asin": "B0FCVJKZT3",
+        "priceComparison": "対象商品よりやや高価だが、FIDO2 Level 2認証とNFC機能を備えた上位仕様モデル。",
+        "featureComparison": [
+          "共通点：USB Type-C端子、FIDO2/U2F/TOTP/HOTP対応、PIN＋タッチ認証",
+          "相違点：T120はFIDO2 Level 1かつNFC非対応。Thetis Pro-C (L2)はFIDO2 Level 2認証およびNFCに対応"
+        ],
+        "differentiators": [
+          "TrustKey FIDOセキュリティキー T120 (USB-C)の利点：一般的な個人アカウント保護や予備キーの複数本運用など、初期コストを4,000円程度に抑えたい場合に最適。",
+          "Thetis Pro-C FIDO2 (L2) セキュリティキーの利点：FIDO2 Level 2のより厳格なセキュリティ認証レベルとNFC対応を、YubiKey 5C NFCより安価に確保したい場合に適している。"
+        ]
+      },
+      {
+        "name": "Yubico YubiKey 5C NFC",
+        "asin": "B08DHL1YDL",
+        "priceComparison": "対象商品の3.5倍以上の高価格帯であり、多機能・高耐久を求めるプロ向けフラッグシップモデルとの比較になる。",
+        "featureComparison": [
+          "共通点：USB Type-C端子、FIDO2/U2F/HOTP/TOTP対応",
+          "相違点：YubiKey 5C NFCはNFC、PIV（スマートカード）、OpenPGP、IP68防水防塵、FIDO2 L2に対応。T120はそれらを省きFIDO2/U2F/OTPに特化"
+        ],
+        "differentiators": [
+          "TrustKey FIDOセキュリティキー T120 (USB-C)の利点：Webサービスのパスキーや2FA用途が中心で、OpenPGPやPIV等の高度な機能が不要なら圧倒的に低コストで導入でき、予備キーも買いやすい。",
+          "Yubico YubiKey 5C NFCの利点：OpenPGP鍵管理やPIVスマートカードログイン、NFC・IP68防水防塵などあらゆる認証要件を最高峰の信頼性で1本に集約したいプロフェッショナル向け。"
+        ]
+      },
+      {
+        "name": "Identiv uTrust FIDO2 NFC セキュリティキー USB-C",
+        "asin": "B0C6YRJ7Y7",
+        "priceComparison": "対象商品より2,800円ほど高い中価格帯で、PIVやNFCを追加したビジネス向け競合製品。",
+        "featureComparison": [
+          "共通点：USB Type-C端子、FIDO2/U2F/TOTP/HOTP対応、Microsoft環境との親和性",
+          "相違点：IdentivはNFCおよびPIV（スマートカード）機能を搭載。T120はNFC/PIV非対応だがより低価格で最大200個のレジデントキーに対応"
+        ],
+        "differentiators": [
+          "TrustKey FIDOセキュリティキー T120 (USB-C)の利点：個人利用やFIDO2/Azure AD認証に用途を絞り、価格を抑えて導入したい場合に適している。",
+          "Identiv uTrust FIDO2 NFC セキュリティキー USB-Cの利点：企業システム等でPIVスマートカード認証やNFCでのモバイル認証を併用する必要がある場合に適している。"
+        ]
+      },
+      {
+        "name": "TrustKey B220H 指紋セキュリティキー (USB-C)",
+        "asin": "B0GMDPPSS8",
+        "priceComparison": "同じTrustKey製のUSB-Cモデルだが、指紋センサーとWindows Hello対応により価格が約2.75倍となっている。",
+        "featureComparison": [
+          "共通点：TrustKey製、USB Type-C端子、FIDO2/U2F対応",
+          "相違点：T120はPIN＋タッチ認証（非生体認証）。B220Hは静電容量式指紋認証センサー搭載でWindows Hello認証に対応"
+        ],
+        "differentiators": [
+          "TrustKey FIDOセキュリティキー T120 (USB-C)の利点：ログイン時のPIN入力を手間に感じず、コストを3分の1近くに抑えて堅牢なFIDO2環境やバックアップキーを揃えたいならこちら。",
+          "TrustKey B220H 指紋セキュリティキー (USB-C)の利点：毎回PINを入力する手間を省き、指を触れるだけで生体認証とWindows Helloログインをシームレスに完了させたい場合に最適。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "YubiKey 5C NFCなどの高価なUSB-Cモデル（1万円超）ではなく、4,000円前後の低予算でUSB-C直挿しのFIDO2/パスキー環境を構築したい人",
+        "複数のWebサービスや開発アカウント（最大200個まで）のパスキーを1本の物理キーにまとめて管理したいPC中心のユーザー",
+        "物理セキュリティキーの紛失対策として、メインキーとは別に安価なUSB-C予備（バックアップ）キーを追加購入したい人"
+      ],
+      "pros": [
+        "USB Type-Cポートに直接挿して軽く触れるだけで、フィッシングサイトに騙されない強固な2要素認証・パスキーログインを手軽に実現できる",
+        "実売￥4,000という導入しやすい価格ながら最大200個のレジデントキーを保存でき、アカウントが増えても容量不足に悩みづらい",
+        "約2.9gの極小・軽量ボディでキーホルダーに付けたまま持ち運んでも負担にならず、必要な時にサッと取り出して使える"
+      ],
+      "cons": [
+        "NFCに非対応のため、スマートフォンへ無線でかざして認証したい場合は購入前にNFC対応モデル（YubicoやThetis Pro-C等）を検討すべきである",
+        "指紋認証センサーがないため、認証時には必ず事前に設定したPINコードの入力が必要になる（PIN入力を省きたい場合は上位のBシリーズ等が必要）",
+        "初期PIN設定ツールの案内やドキュメントが英語中心であり、公式の防水防塵等級（IP68等）の記載もないため、日本語での手厚いサポートや過酷な環境での耐久性を求める人は注意が必要"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70]\n[加点: +4] (性能・機能: FIDO2/U2Fに加えHOTP/TOTPのマルチプロトコルに対応し、主要OS・ブラウザで幅広く動作する実用性)\n[加点: +3] (性能・機能: レジデントキー（パスキー）を最大200個まで本体に保存でき、多数のアカウント管理に対応)\n[加点: +6] (コストパフォーマンス: 実売￥4,000の低価格ながらUSB-C直挿し・大容量パスキー保存・マルチプロトコルを備え、1万円超の多機能機より導入しやすい)\n[加点: +2] (品質・デザイン: 約2.9g・約41.7×17.8×4.6mmの超軽量コンパクト設計でキーホルダーに付けて携帯しやすい)\n[加点: +2] (独自の強み・先進性: FIDO2 Level 1認証取得およびMicrosoft Azure AD/Entra IDのオフライン含むサインイン対応)\n[減点: -4] (性能・機能: NFC非対応のためスマートフォンへのかざして認証ができず、利用端末がUSB-Cポート搭載機に限られる)\n[減点: -3] (ユーザー満足度: 日本語の設定ガイドやサポート情報がYubico等の大手と比較して少なく、初期PIN設定等で専用ツール案内が英語中心となる)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "os": "Windows 10 (v1809以降) / Windows 11 / macOS (Mojave以降) / Linux (Ubuntu 14.04以降等) / ChromeOS / Android (7以降) / iPadOS (13以降)",
+      "cpu": "eWBM MS500 セキュアマイクロプロセッサ",
+      "storage": "レジデントキー（パスキー）最大200個（※一部販売店仕様表記では150個）",
+      "dimensions": {
+        "height": "4.6mm",
+        "width": "17.8mm",
+        "depth": "41.7mm",
+        "weight": "2.9g"
+      },
+      "weight": "2.9g",
+      "connectivity": [
+        "USB Type-C",
+        "FIDO2 / WebAuthn",
+        "FIDO U2F",
+        "HOTP / TOTP",
+        "※NFC非対応"
+      ],
+      "other": [
+        "認証方式: PIN入力 ＋ 静電容量式タッチセンサー（※指紋認証非搭載）",
+        "認証レベル: FIDO Alliance FIDO2 Level 1 セキュリティ認証 / FIDO U2F認証",
+        "暗号アルゴリズム: ECDSA, ECDH, SHA-256, AES, HMAC",
+        "AAGUID: e3512a8a-62ae-11ea-bc55-0242ac130003",
+        "対応機能: Microsoft Azure AD（Entra ID）オンライン・オフラインサインイン対応",
+        "対応ブラウザ: Chrome, Edge, Firefox, Safari 等",
+        "カラー: ブラック",
+        "※公式スペック上、IP防水防塵等級の明記なし"
+      ]
+    }
+  }
+}
