@@ -20,6 +20,8 @@
 {{- end -}}
 
 <div class="container" style="padding-top: var(--spacing-xl);">
+    {{- partial "breadcrumb.html" . -}}
+
     <div class="article-header">
         <h1>{{ .Title }}</h1>
     </div>
@@ -107,18 +109,50 @@
     {{- end -}}
     {{- end -}}
 
+    {{- /* Build sorted child category list by count descending */ -}}
+    {{- $taxonomyUrls := dict -}}
+    {{- range $name, $taxonomy := $.Site.Taxonomies.categories -}}
+    {{- $catPage := $.Site.GetPage (printf "/categories/%s" $name) -}}
+    {{- if $catPage -}}
+    {{- $taxonomyUrls = merge $taxonomyUrls (dict $catPage.LinkTitle $catPage.RelPermalink) -}}
+    {{- end -}}
+    {{- end -}}
+    {{- $childCatItems := slice -}}
+    {{- range $displayCategories -}}
+    {{- $cat := . -}}
+    {{- $count := index $catCounts $cat | default 0 -}}
+    {{- $permalink := index $taxonomyUrls $cat | default "" -}}
+    {{- if and (gt $count 0) (ne $permalink "") -}}
+    {{- $childCatItems = $childCatItems | append (dict "name" $cat "count" $count "url" $permalink) -}}
+    {{- end -}}
+    {{- end -}}
+    {{- $regularChildCats := slice -}}
+    {{- $otherChildCats := slice -}}
+    {{- range sort $childCatItems "count" "desc" -}}
+    {{- if or (hasPrefix .name "その他") (hasPrefix .name "未分類") -}}
+    {{- $otherChildCats = $otherChildCats | append . -}}
+    {{- else -}}
+    {{- $regularChildCats = $regularChildCats | append . -}}
+    {{- end -}}
+    {{- end -}}
+    {{- $sortedChildCats := $regularChildCats -}}
+    {{- range $otherChildCats -}}
+    {{- $sortedChildCats = $sortedChildCats | append . -}}
+    {{- end -}}
+
     {{- /* Filter Section */ -}}
-    {{- /* Show child category pills */ -}}
+    {{- /* Show child category pills (top 12 initially, collapsible rest) */ -}}
     <div class="category-pills-container" style="margin-bottom: var(--spacing-lg);">
-        <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-sm);">
-            {{- range $displayCategories -}}
-            {{- $cat := . -}}
-            {{- range $name, $taxonomy := $.Site.Taxonomies.categories -}}
-            {{- $catPage := $.Site.GetPage (printf "/categories/%s" $name) -}}
-            {{- if and $catPage (eq $catPage.LinkTitle $cat) -}}
-            <a href="{{ $catPage.RelPermalink }}" class="category-pill">{{ $cat }}</a>
+        <div class="category-pills-list" style="display: flex; flex-wrap: wrap; gap: var(--spacing-sm); align-items: center;">
+            {{- range $idx, $item := $sortedChildCats -}}
+            {{- $extraClass := cond (ge $idx 12) " category-pill-extra category-pill-extra-hidden" "" -}}
+            <a href="{{ $item.url }}" class="category-pill{{ $extraClass }}" data-category="{{ $item.name }}">{{ $item.name }} <span class="category-pill-count">({{ $item.count }})</span></a>
             {{- end -}}
-            {{- end -}}
+            {{- if gt (len $sortedChildCats) 12 -}}
+            <button type="button" id="category-pills-toggle-btn" class="category-pills-toggle-btn"
+                data-total="{{ len $sortedChildCats }}" aria-expanded="false">
+                すべてのサブカテゴリを表示（全{{ len $sortedChildCats }}件）
+            </button>
             {{- end -}}
         </div>
     </div>
@@ -229,12 +263,8 @@
                     <select id="category-select" class="bargain-select"
                         style="width: 100%; max-width: 100%; min-width: 0;">
                         <option value="">すべてのカテゴリ</option>
-                        {{- range $displayCategories -}}
-                        {{- $cat := . -}}
-                        {{- $count := index $catCounts $cat | default 0 -}}
-                        {{- if gt $count 0 -}}
-                        <option value="{{ $cat }}">{{ $cat }} ({{ $count }})</option>
-                        {{- end -}}
+                        {{- range $sortedChildCats -}}
+                        <option value="{{ .name }}">{{ .name }} ({{ .count }})</option>
                         {{- end -}}
                     </select>
                     <button type="button" id="category-reset-btn" class="bargain-category-reset-btn" title="カテゴリ選択を解除"
@@ -428,6 +458,9 @@
                     </div>
                     {{- end -}}
                 </a>
+                {{- if not $inStock }}
+                <span class="card-image-stock-label" aria-hidden="true">在庫切れ</span>
+                {{- end }}
             </div>
             <div class="card-content">
                 <div class="card-header">
@@ -543,7 +576,7 @@
                             }}{{- else -}}{{ .Date.Format "2006年01月02日" }}{{- end -}}</span>
                         {{- if .Params.affiliate_url -}}
                         <a href="{{ .Params.affiliate_url }}" class="btn-amazon-small" target="_blank"
-                            rel="noopener noreferrer" data-track-product="1" data-asin="{{ .Params.asin }}"
+                            rel="noopener noreferrer" data-track-product="1" data-mall="amazon" data-position="card" data-asin="{{ .Params.asin }}" data-title="{{ .Title }}"
                             data-category="{{ $trackingCategory }}"
                             data-price-bucket="{{ partial `utils-price-bucket.html` .Params.price }}"
                             data-price="{{ .Params.price }}" data-score="{{ .Params.score | default 0 }}"><span
@@ -627,7 +660,7 @@
         font-size: 0.8125rem;
         color: var(--color-text-secondary);
         cursor: pointer;
-        transition: all 0.2s ease;
+        transition: background-color 0.2s ease, color 0.2s ease;
     }
 
     .filter-reset-btn:hover {
