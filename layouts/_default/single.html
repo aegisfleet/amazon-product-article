@@ -25,566 +25,662 @@
 <div id="product-tracking-info" data-asin="{{ .Params.asin }}" data-category="{{ $currentCategory }}"
     data-group="{{ $currentGroup }}" data-price-bucket="{{ $currentPriceBucket }}" data-price="{{ .Params.price }}" style="display: none;"></div>
 
-<div class="container" style="padding-top: var(--spacing-sm); padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px));">
+<div class="container article-page-container" style="padding-top: var(--spacing-sm); padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px));">
     <div class="ai-disclaimer">
         本サイトはAIによる商品の調査レポートを掲載しています。商品選びの参考情報としてご活用ください。
     </div>
-    {{- partial "breadcrumb.html" . -}}
 
-    <article class="article-content">
-        <header class="article-header">
-            {{- if and .Params.categories (gt (len .Params.categories) 0) -}}
-            {{- $category := index .Params.categories 0 -}}
-            <a href="{{ printf `categories/%s/` ($category | urlize) | relURL }}" class="card-tag">{{- $category -}}</a>
+    <div class="article-top-bar">
+        {{- partial "breadcrumb.html" . -}}
+        <div class="article-meta">
+            <div class="article-meta-info">
+                <span class="material-symbols-outlined article-meta-icon" aria-hidden="true">update</span>
+                <span>記事更新: {{ .Lastmod.Format "2006年01月02日" }}</span>
+                {{- with .Params.author -}}<span> / 著者: {{ . }}</span>{{- end -}}
+            </div>
+            <fieldset class="font-size-switcher" aria-label="文字サイズ変更">
+                <legend class="font-size-label">文字サイズ</legend>
+                <div class="font-size-btn-group">
+                    <button type="button" class="font-size-btn" data-size="sm" aria-label="文字サイズ小" title="文字サイズ小">小</button>
+                    <button type="button" class="font-size-btn is-active" data-size="md" aria-label="文字サイズ標準" title="文字サイズ標準">標準</button>
+                    <button type="button" class="font-size-btn" data-size="lg" aria-label="文字サイズ大" title="文字サイズ大">大</button>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+
+    <div class="article-layout-grid">
+        <article class="article-content">
+            <header class="article-header">
+                <div class="article-header-badges">
+                    {{- if and .Params.categories (gt (len .Params.categories) 0) -}}
+                    {{- $category := index .Params.categories 0 -}}
+                    <a href="{{ printf `categories/%s/` ($category | urlize) | relURL }}" class="card-tag hero-category-tag">
+                        <span class="material-symbols-outlined" aria-hidden="true">folder</span>
+                        <span>{{- $category -}}</span>
+                    </a>
+                    {{- else -}}
+                    {{- with .Params.category -}}
+                    <a href="{{ printf `categories/%s/` (. | urlize) | relURL }}" class="card-tag hero-category-tag">
+                        <span class="material-symbols-outlined" aria-hidden="true">folder</span>
+                        <span>{{ . }}</span>
+                    </a>
+                    {{- end -}}
+                    {{- end -}}
+                    {{- partialCached "product-brand-tag.html" (dict "brand" .Params.brand "class" "hero-tag hero-tag-brand") .Params.brand "hero-tag hero-tag-brand" -}}
+                </div>
+                <h1 class="hero-title">{{ .Title }}</h1>
+                {{- $leadDesc := .Params.description | default (.Params.summary | truncate 200) -}}
+                {{- if $leadDesc -}}
+                <p class="hero-description">{{ $leadDesc }}</p>
+                {{- end -}}
+            </header>
+
+            <!-- Product Hero Card (generated from Front Matter) -->
+            {{- if .Params.hero -}}
+            {{- partial "product-hero.html" . -}}
+            {{- end -}}
+
+            {{- /* Keepa Price History Graph */ -}}
+            {{- if .Params.asin -}}
+            <div id="keepa-graph-section" class="keepa-section">
+                <div class="keepa-section-header">
+                    <h3 class="keepa-section-title">
+                        <span class="material-symbols-outlined keepa-title-icon" aria-hidden="true">show_chart</span>
+                        <span>価格推移・買い時分析（Keepa）</span>
+                    </h3>
+                    <span class="keepa-period-badge">過去365日間追跡</span>
+                </div>
+                <div class="keepa-graph-container">
+                    <a href="https://keepa.com/#!product/5-{{ .Params.asin }}" target="_blank" rel="noopener noreferrer"
+                        aria-label="Keepaで価格推移を見る (新しいタブで開く)" title="Keepaで価格推移を見る">
+                        <img src="https://graph.keepa.com/pricehistory.png?asin={{ .Params.asin }}&domain=5&amazon=1&new=1&used=1&salesrank=1&bb=1&range=365&width=700&height=350"
+                            alt="{{ .Title }} の価格履歴グラフ" class="keepa-graph-image" width="700" height="350" loading="lazy" decoding="async"
+                            referrerpolicy="no-referrer">
+                    </a>
+                    <p class="keepa-note">※ グラフをクリックすると Keepa の詳細ページを新しいタブで開きます</p>
+                </div>
+            </div>
+            {{- end -}}
+
+            {{- if .TableOfContents -}}
+            <nav class="table-of-contents" id="toc">
+                <details open>
+                    <summary><span class="material-symbols-outlined" aria-hidden="true" style="vertical-align: middle;">format_list_bulleted</span> 目次</summary>
+                    {{ .TableOfContents }}
+                </details>
+            </nav>
+            {{- end -}}
+
+            <div class="content">
+                {{ .Content }}
+            </div>
+
+            {{- /* 同じカテゴリの記事 */ -}}
+            {{- $related := $allArticles -}}
+            {{- $firstCat := "" -}}
+            {{- if and $categories (gt (len $categories) 0) -}}
+            {{- $firstCat = index $categories 0 -}}
+            {{- if $firstCat -}}
+            {{- $relatedWithCats := where $related "Params.categories" "!=" nil -}}
+            {{- $related = where $relatedWithCats "Params.categories" "intersect" (slice $firstCat) -}}
             {{- else -}}
-            {{- with .Params.category -}}<a href="{{ printf `categories/%s/` (. | urlize) | relURL }}"
-                class="card-tag">{{
-                . }}</a>{{- end -}}
+            {{- $related = slice -}}
             {{- end -}}
-            {{- partialCached "product-brand-tag.html" (dict "brand" .Params.brand "class" "hero-tag hero-tag-brand") .Params.brand "hero-tag hero-tag-brand" -}}
-            <h1 class="hero-title" style="margin-top: var(--md-sys-spacing-2);">{{ .Title }}</h1>
-            <div class="article-meta">
-                <div class="article-meta-info">
-                    <span>記事更新: {{ .Lastmod.Format "2006年01月02日" }}</span>
-                    {{- with .Params.author -}}<span> / 著者: {{ . }}</span>{{- end -}}
-                </div>
-                <fieldset class="font-size-switcher" aria-label="文字サイズ変更">
-                    <legend class="font-size-label">文字サイズ:</legend>
-                    <div class="font-size-btn-group">
-                        <button type="button" class="font-size-btn" data-size="sm" aria-label="文字サイズ小" title="文字サイズ小">小</button>
-                        <button type="button" class="font-size-btn is-active" data-size="md" aria-label="文字サイズ標準" title="文字サイズ標準">標準</button>
-                        <button type="button" class="font-size-btn" data-size="lg" aria-label="文字サイズ大" title="文字サイズ大">大</button>
+            {{- else -}}
+            {{- $related = slice -}}
+            {{- end -}}
+
+            {{- /* 同ブランドの記事 */ -}}
+            {{- $currentBrand := .Params.brand -}}
+            {{- $sameBrand := slice -}}
+            {{- if $currentBrand -}}
+            {{- $sameBrand = where $allArticles "Params.brand" "==" $currentBrand -}}
+            {{- end -}}
+
+            <div id="related-products-section" class="related-products-wrapper">
+                {{- if gt (len $related) 0 -}}
+                <section class="related-section">
+                    <div class="related-section-header">
+                        <h3 class="related-section-title" style="margin-bottom: 0;">
+                            <span class="material-symbols-outlined" aria-hidden="true">folder</span>
+                            <span>同じカテゴリの比較候補</span>
+                        </h3>
+                        {{- if $firstCat -}}
+                        <a href="{{ printf `categories/%s/` ($firstCat | urlize) | relURL }}" class="brand-more-link">
+                            {{ $firstCat }} の一覧を見る →
+                        </a>
+                        {{- end -}}
                     </div>
-                </fieldset>
-            </div>
-        </header>
-
-        <!-- Product Hero Card (generated from Front Matter) -->
-        {{- if .Params.hero -}}
-        {{- partial "product-hero.html" . -}}
-        {{- end -}}
-
-        {{- /* Keepa Price History Graph */ -}}
-        {{- if .Params.asin -}}
-        <div id="keepa-graph-section" class="keepa-section" style="display: none;">
-            <h3 class="keepa-section-title"><span class="material-symbols-outlined" aria-hidden="true" style="vertical-align: middle;">show_chart</span> 価格推移（Keepa）</h3>
-            <div class="keepa-graph-container">
-                <a href="https://keepa.com/#!product/5-{{ .Params.asin }}" target="_blank" rel="noopener noreferrer"
-                    aria-label="Keepaで価格推移を見る (新しいタブで開く)" title="Keepaで価格推移を見る">
-                    <img src="https://graph.keepa.com/pricehistory.png?asin={{ .Params.asin }}&domain=5&amazon=1&new=1&used=1&salesrank=1&bb=1&range=365&width=700&height=350"
-                        alt="{{ .Title }} の価格履歴グラフ" class="keepa-graph-image" width="700" height="350" loading="lazy" decoding="async"
-                        referrerpolicy="no-referrer">
-                </a>
-                <p class="keepa-note">※ クリックで Keepa の詳細ページを開きます</p>
-            </div>
-        </div>
-        {{- end -}}
-
-        {{- /* Rakuten Affiliate Widget */ -}}
-        <div id="rakuten-affiliate-section" class="rakuten-section"
-            style="margin-bottom: var(--md-sys-spacing-6); text-align: center;">
-            <script
-                type="text/javascript">rakuten_design = "slide"; rakuten_affiliateId = "01080f82.44ae7157.08eb9599.98758834"; rakuten_items = "ctsmatch"; rakuten_genreId = "0"; rakuten_size = "336x280"; rakuten_target = "_blank"; rakuten_theme = "gray"; rakuten_border = "on"; rakuten_auto_mode = "on"; rakuten_genre_title = "off"; rakuten_recommend = "on"; rakuten_ts = "1773236296402";</script>
-            <script type="text/javascript"
-                src="https://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js?20230106"></script>
-        </div>
-
-        {{- /* 同じカテゴリの記事 */ -}}
-        {{- $related := $allArticles -}}
-        {{- if and $categories (gt (len $categories) 0) -}}
-        {{- $firstCat := index $categories 0 -}}
-        {{- if $firstCat -}}
-        {{- $relatedWithCats := where $related "Params.categories" "!=" nil -}}
-        {{- $related = where $relatedWithCats "Params.categories" "intersect" (slice $firstCat) -}}
-        {{- else -}}
-        {{- $related = slice -}}
-        {{- end -}}
-        {{- else -}}
-        {{- $related = slice -}}
-        {{- end -}}
-
-        {{- /* 同ブランドの記事 */ -}}
-        {{- $currentBrand := .Params.brand -}}
-        {{- $sameBrand := slice -}}
-        {{- if $currentBrand -}}
-        {{- $sameBrand = where $allArticles "Params.brand" "==" $currentBrand -}}
-        {{- end -}}
-
-        <div id="related-products-section" style="display: none;">
-            {{- if gt (len $related) 0 -}}
-            <section class="related-section">
-                <h3 class="related-section-title"><span class="material-symbols-outlined" aria-hidden="true" style="vertical-align: middle;">folder</span> 同じカテゴリの比較候補</h3>
-                <div class="related-grid">
-                    {{- $relatedExcluded := where $related "Params.asin" "not in" $shownAsins -}}
-                    {{- $rankedRelated := partial "product-composite-ranked-pages.html" (dict "pages" $relatedExcluded
-                    "randomize" true) -}}
-                    {{- range first 4 $rankedRelated -}}
-                    {{- $shownAsins = $shownAsins | append .Params.asin -}}
-                    {{- $itemPriceBucket := partial "utils-price-bucket.html" .Params.price -}}
-                    {{- $itemCategory := "" -}}
-                    {{- if .Params.categories -}}
-                    {{- $itemCategory = index .Params.categories 0 -}}
-                    {{- else if .Params.category -}}
-                    {{- $itemCategory = .Params.category -}}
-                    {{- end -}}
-                    <a href="{{ .RelPermalink }}" class="pickup-card" data-track-product="1"
-                        data-asin="{{ .Params.asin }}"
-                        data-category="{{ if .Params.categories }}{{ index .Params.categories 0 }}{{ else }}{{ .Params.category }}{{ end }}"
-                        data-price-bucket="{{ $itemPriceBucket }}" data-price="{{ .Params.price }}">
-                        <div class="pickup-card-image">
-                            {{- if .Params.images -}}
-                            <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy" decoding="async">
-                            {{- else -}}
-                            <div class="pickup-card-noimage">画像なし</div>
-                            {{- end -}}
-                        </div>
-                        <div class="pickup-card-content">
-                            {{- if $itemCategory -}}
-                            <span class="pickup-card-category-label">{{ $itemCategory }}</span>
-                            {{- end -}}
-                            <p class="pickup-card-title">{{ .Title | truncate 30 }}</p>
-                            <div class="pickup-card-meta">
-                                {{- if .Params.score -}}
-                                {{- $score := .Params.score | int -}}
-                                {{- $scoreClass := "score-caution" -}}
-                                {{- if ge $score 80 -}}
-                                {{- $scoreClass = "score-excellent" -}}
-                                {{- else if ge $score 70 -}}
-                                {{- $scoreClass = "score-good" -}}
-                                {{- else if ge $score 50 -}}
-                                {{- $scoreClass = "score-fair" -}}
+                    <div class="related-grid">
+                        {{- $relatedExcluded := where $related "Params.asin" "not in" $shownAsins -}}
+                        {{- $rankedRelated := partial "product-composite-ranked-pages.html" (dict "pages" $relatedExcluded
+                        "randomize" true) -}}
+                        {{- range first 4 $rankedRelated -}}
+                        {{- $shownAsins = $shownAsins | append .Params.asin -}}
+                        {{- $itemPriceBucket := partial "utils-price-bucket.html" .Params.price -}}
+                        {{- $itemCategory := "" -}}
+                        {{- if .Params.categories -}}
+                        {{- $itemCategory = index .Params.categories 0 -}}
+                        {{- else if .Params.category -}}
+                        {{- $itemCategory = .Params.category -}}
+                        {{- end -}}
+                        <a href="{{ .RelPermalink }}" class="pickup-card" data-track-product="1"
+                            data-asin="{{ .Params.asin }}"
+                            data-category="{{ if .Params.categories }}{{ index .Params.categories 0 }}{{ else }}{{ .Params.category }}{{ end }}"
+                            data-price-bucket="{{ $itemPriceBucket }}" data-price="{{ .Params.price }}">
+                            <div class="pickup-card-image">
+                                {{- if .Params.images -}}
+                                <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy" decoding="async">
+                                {{- else -}}
+                                <div class="pickup-card-noimage">画像なし</div>
                                 {{- end -}}
-                                <span class="pickup-card-score m3-badge m3-badge-score {{ $scoreClass }}">
-                                    <span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span> {{ .Params.score }}点
-                                </span>
-                                {{- end -}}
-                                {{- if .Params.price -}}<span class="pickup-card-price">{{ .Params.price }}</span>{{-
-                                end -}}
                             </div>
-                        </div>
-                    </a>
-                    {{- end -}}
-                </div>
-            </section>
-            {{- end -}}
-
-            {{- if and $currentBrand (gt (len $sameBrand) 0) -}}
-            {{- $sameBrandExcluded := where $sameBrand "Params.asin" "not in" $shownAsins -}}
-            {{- if gt (len $sameBrandExcluded) 0 -}}
-            {{- $info := partial "get-brand-info.html" $currentBrand -}}
-            {{- $brandSlug := $info.slug -}}
-            <section class="related-section" style="margin-top: var(--md-sys-spacing-6);">
-                <div
-                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--md-sys-spacing-2); flex-wrap: wrap; gap: var(--md-sys-spacing-2);">
-                    <h3 class="related-section-title" style="margin-bottom: 0;"><span class="material-symbols-outlined" aria-hidden="true" style="vertical-align: middle;">domain</span> 同ブランドの候補 ({{ $currentBrand }})</h3>
-                    {{- if $brandSlug -}}
-                    <a href="{{ printf `brand/%s/` $brandSlug | relURL }}" class="brand-more-link"
-                        style="font-size: 0.85rem; font-weight: 600; text-decoration: none; color: var(--color-primary);">
-                        {{ $currentBrand }} の全商品を見る →
-                    </a>
-                    {{- end -}}
-                </div>
-                <div class="related-grid">
-                    {{- $rankedSameBrand := partial "product-composite-ranked-pages.html" (dict "pages"
-                    $sameBrandExcluded
-                    "randomize" true) -}}
-                    {{- range first 4 $rankedSameBrand -}}
-                    {{- $shownAsins = $shownAsins | append .Params.asin -}}
-                    {{- $itemPriceBucket := partial "utils-price-bucket.html" .Params.price -}}
-                    {{- $itemCategory := "" -}}
-                    {{- if .Params.categories -}}
-                    {{- $itemCategory = index .Params.categories 0 -}}
-                    {{- else if .Params.category -}}
-                    {{- $itemCategory = .Params.category -}}
-                    {{- end -}}
-                    <a href="{{ .RelPermalink }}" class="pickup-card" data-track-product="1"
-                        data-asin="{{ .Params.asin }}"
-                        data-category="{{ if .Params.categories }}{{ index .Params.categories 0 }}{{ else }}{{ .Params.category }}{{ end }}"
-                        data-price-bucket="{{ $itemPriceBucket }}" data-price="{{ .Params.price }}">
-                        <div class="pickup-card-image">
-                            {{- if .Params.images -}}
-                            <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy" decoding="async">
-                            {{- else -}}
-                            <div class="pickup-card-noimage">画像なし</div>
-                            {{- end -}}
-                        </div>
-                        <div class="pickup-card-content">
-                            {{- if $itemCategory -}}
-                            <span class="pickup-card-category-label">{{ $itemCategory }}</span>
-                            {{- end -}}
-                            <p class="pickup-card-title">{{ .Title | truncate 30 }}</p>
-                            <div class="pickup-card-meta">
-                                {{- if .Params.score -}}
-                                {{- $score := .Params.score | int -}}
-                                {{- $scoreClass := "score-caution" -}}
-                                {{- if ge $score 80 -}}
-                                {{- $scoreClass = "score-excellent" -}}
-                                {{- else if ge $score 70 -}}
-                                {{- $scoreClass = "score-good" -}}
-                                {{- else if ge $score 50 -}}
-                                {{- $scoreClass = "score-fair" -}}
+                            <div class="pickup-card-content">
+                                {{- if $itemCategory -}}
+                                <span class="pickup-card-category-label">{{ $itemCategory }}</span>
                                 {{- end -}}
-                                <span class="pickup-card-score m3-badge m3-badge-score {{ $scoreClass }}">
-                                    <span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span> {{ .Params.score }}点
-                                </span>
-                                {{- end -}}
-                                {{- if .Params.price -}}<span class="pickup-card-price">{{ .Params.price }}</span>{{-
-                                end -}}
+                                <p class="pickup-card-title">{{ .Title | truncate 30 }}</p>
+                                <div class="pickup-card-meta">
+                                    {{- if .Params.score -}}
+                                    {{- $score := .Params.score | int -}}
+                                    {{- $scoreClass := "score-caution" -}}
+                                    {{- if ge $score 80 -}}
+                                    {{- $scoreClass = "score-excellent" -}}
+                                    {{- else if ge $score 70 -}}
+                                    {{- $scoreClass = "score-good" -}}
+                                    {{- else if ge $score 50 -}}
+                                    {{- $scoreClass = "score-fair" -}}
+                                    {{- end -}}
+                                    <span class="pickup-card-score m3-badge m3-badge-score {{ $scoreClass }}">
+                                        <span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span> {{ .Params.score }}点
+                                    </span>
+                                    {{- end -}}
+                                    {{- if .Params.price -}}<span class="pickup-card-price">{{ .Params.price }}</span>{{-
+                                    end -}}
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                    {{- end -}}
-                </div>
-            </section>
-            {{- end -}}
-            {{- end -}}
-        </div>
+                        </a>
+                        {{- end -}}
+                    </div>
+                </section>
+                {{- end -}}
 
-        {{- if .TableOfContents -}}
-        <nav class="table-of-contents" id="toc">
-            <details open>
-                <summary><span class="material-symbols-outlined" aria-hidden="true" style="vertical-align: middle;">format_list_bulleted</span> 目次</summary>
-                {{ .TableOfContents }}
-            </details>
-        </nav>
-        {{- end -}}
+                {{- if and $currentBrand (gt (len $sameBrand) 0) -}}
+                {{- $sameBrandExcluded := where $sameBrand "Params.asin" "not in" $shownAsins -}}
+                {{- if gt (len $sameBrandExcluded) 0 -}}
+                {{- $info := partial "get-brand-info.html" $currentBrand -}}
+                {{- $brandSlug := $info.slug -}}
+                <section class="related-section" style="margin-top: var(--md-sys-spacing-6);">
+                    <div class="related-section-header">
+                        <h3 class="related-section-title" style="margin-bottom: 0;">
+                            <span class="material-symbols-outlined" aria-hidden="true">domain</span>
+                            <span>同ブランドの候補 ({{ $currentBrand }})</span>
+                        </h3>
+                        {{- if $brandSlug -}}
+                        <a href="{{ printf `brand/%s/` $brandSlug | relURL }}" class="brand-more-link">
+                            {{ $currentBrand }} の全商品を見る →
+                        </a>
+                        {{- end -}}
+                    </div>
+                    <div class="related-grid">
+                        {{- $rankedSameBrand := partial "product-composite-ranked-pages.html" (dict "pages"
+                        $sameBrandExcluded
+                        "randomize" true) -}}
+                        {{- range first 4 $rankedSameBrand -}}
+                        {{- $shownAsins = $shownAsins | append .Params.asin -}}
+                        {{- $itemPriceBucket := partial "utils-price-bucket.html" .Params.price -}}
+                        {{- $itemCategory := "" -}}
+                        {{- if .Params.categories -}}
+                        {{- $itemCategory = index .Params.categories 0 -}}
+                        {{- else if .Params.category -}}
+                        {{- $itemCategory = .Params.category -}}
+                        {{- end -}}
+                        <a href="{{ .RelPermalink }}" class="pickup-card" data-track-product="1"
+                            data-asin="{{ .Params.asin }}"
+                            data-category="{{ if .Params.categories }}{{ index .Params.categories 0 }}{{ else }}{{ .Params.category }}{{ end }}"
+                            data-price-bucket="{{ $itemPriceBucket }}" data-price="{{ .Params.price }}">
+                            <div class="pickup-card-image">
+                                {{- if .Params.images -}}
+                                <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy" decoding="async">
+                                {{- else -}}
+                                <div class="pickup-card-noimage">画像なし</div>
+                                {{- end -}}
+                            </div>
+                            <div class="pickup-card-content">
+                                {{- if $itemCategory -}}
+                                <span class="pickup-card-category-label">{{ $itemCategory }}</span>
+                                {{- end -}}
+                                <p class="pickup-card-title">{{ .Title | truncate 30 }}</p>
+                                <div class="pickup-card-meta">
+                                    {{- if .Params.score -}}
+                                    {{- $score := .Params.score | int -}}
+                                    {{- $scoreClass := "score-caution" -}}
+                                    {{- if ge $score 80 -}}
+                                    {{- $scoreClass = "score-excellent" -}}
+                                    {{- else if ge $score 70 -}}
+                                    {{- $scoreClass = "score-good" -}}
+                                    {{- else if ge $score 50 -}}
+                                    {{- $scoreClass = "score-fair" -}}
+                                    {{- end -}}
+                                    <span class="pickup-card-score m3-badge m3-badge-score {{ $scoreClass }}">
+                                        <span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span> {{ .Params.score }}点
+                                    </span>
+                                    {{- end -}}
+                                    {{- if .Params.price -}}<span class="pickup-card-price">{{ .Params.price }}</span>{{-
+                                    end -}}
+                                </div>
+                            </div>
+                        </a>
+                        {{- end -}}
+                    </div>
+                </section>
+                {{- end -}}
+                {{- end -}}
+            </div>
 
-        <div class="content">
-            {{ .Content }}
-        </div>
+            {{- /* Rakuten Affiliate Widget */ -}}
+            <div id="rakuten-affiliate-section" class="rakuten-section"
+                style="margin-top: var(--md-sys-spacing-6); margin-bottom: var(--md-sys-spacing-6); text-align: center;">
+                <script
+                    type="text/javascript">rakuten_design = "slide"; rakuten_affiliateId = "01080f82.44ae7157.08eb9599.98758834"; rakuten_items = "ctsmatch"; rakuten_genreId = "0"; rakuten_size = "336x280"; rakuten_target = "_blank"; rakuten_theme = "gray"; rakuten_border = "on"; rakuten_auto_mode = "on"; rakuten_genre_title = "off"; rakuten_recommend = "on"; rakuten_ts = "1773236296402";</script>
+                <script type="text/javascript"
+                    src="https://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js?20230106"></script>
+            </div>
 
-        <div id="final-shop-buttons-container" style="display: none;">
-            {{- partial "product-shop-buttons.html" (dict "context" . "variant" "large") -}}
-        </div>
+            <div id="final-shop-buttons-container" style="display: none;">
+                {{- partial "product-shop-buttons.html" (dict "context" . "variant" "large") -}}
+            </div>
 
-        <script>
-            (() => {
-                var toc = document.getElementById('toc');
-                var relatedSection = document.getElementById('related-products-section');
-                var keepaSection = document.getElementById('keepa-graph-section');
-                var rakutenSection = document.getElementById('rakuten-affiliate-section');
-                var heroCard = document.querySelector('.product-hero-card');
-                var firstH2 = document.querySelector('.content h2');
+            <script>
+                (() => {
+                    var toc = document.getElementById('toc');
 
-                // Upgrade final recommendation action to multi-shop buttons
-                var finalButtons = document.getElementById('final-shop-buttons-container');
-                if (finalButtons) {
-                    var finalAction = document.querySelector('.content .final-recommendation-action');
-                    if (finalAction) {
-                        finalAction.innerHTML = finalButtons.innerHTML;
-                        finalButtons.remove();
+                    // Upgrade final recommendation action to multi-shop buttons
+                    var finalButtons = document.getElementById('final-shop-buttons-container');
+                    if (finalButtons) {
+                        var finalAction = document.querySelector('.content .final-recommendation-action');
+                        if (finalAction) {
+                            finalAction.innerHTML = finalButtons.innerHTML;
+                            finalButtons.remove();
+                        }
                     }
-                }
 
-                // Upgrade competitor cards to multi-shop buttons
-                var competitorCards = document.querySelectorAll('.competitor-card');
-                var moshimoRakutenAId = '{{ site.Params.affiliate.moshimo.rakuten_a_id | default "5756223" }}';
-                var moshimoRakutenPId = '{{ site.Params.affiliate.moshimo.rakuten_p_id | default "54" }}';
-                var moshimoRakutenPcId = '{{ site.Params.affiliate.moshimo.rakuten_pc_id | default "54" }}';
-                var moshimoRakutenPlId = '{{ site.Params.affiliate.moshimo.rakuten_pl_id | default "27059" }}';
+                    // Upgrade competitor cards to multi-shop buttons
+                    var competitorCards = document.querySelectorAll('.competitor-card');
+                    var moshimoRakutenAId = '{{ site.Params.affiliate.moshimo.rakuten_a_id | default "5756223" }}';
+                    var moshimoRakutenPId = '{{ site.Params.affiliate.moshimo.rakuten_p_id | default "54" }}';
+                    var moshimoRakutenPcId = '{{ site.Params.affiliate.moshimo.rakuten_pc_id | default "54" }}';
+                    var moshimoRakutenPlId = '{{ site.Params.affiliate.moshimo.rakuten_pl_id | default "27059" }}';
 
-                var moshimoYahooAId = '{{ site.Params.affiliate.moshimo.yahoo_a_id | default "5756224" }}';
-                var moshimoYahooPId = '{{ site.Params.affiliate.moshimo.yahoo_p_id | default "1225" }}';
-                var moshimoYahooPcId = '{{ site.Params.affiliate.moshimo.yahoo_pc_id | default "1925" }}';
-                var moshimoYahooPlId = '{{ site.Params.affiliate.moshimo.yahoo_pl_id | default "27061" }}';
+                    var moshimoYahooAId = '{{ site.Params.affiliate.moshimo.yahoo_a_id | default "5756224" }}';
+                    var moshimoYahooPId = '{{ site.Params.affiliate.moshimo.yahoo_p_id | default "1225" }}';
+                    var moshimoYahooPcId = '{{ site.Params.affiliate.moshimo.yahoo_pc_id | default "1925" }}';
+                    var moshimoYahooPlId = '{{ site.Params.affiliate.moshimo.yahoo_pl_id | default "27061" }}';
 
-                var productRequestFormUrl = '{{ site.Params.productRequestFormUrl }}';
-                var productRequestEntryId = '{{ site.Params.productRequestEntryId | default "entry.662198856" }}';
+                    var productRequestFormUrl = '{{ site.Params.productRequestFormUrl }}';
+                    var productRequestEntryId = '{{ site.Params.productRequestEntryId | default "entry.662198856" }}';
 
-                // Helper to update shop button link and accessibility label
-                function setupShopBtn(parent, selector, href, ariaLabel, mall, meta) {
-                    var btn = parent.querySelector(selector);
-                    if (!btn) return;
-                    btn.setAttribute('href', href);
-                    if (ariaLabel) {
-                        btn.setAttribute('aria-label', ariaLabel);
+                    // Helper to update shop button link and accessibility label
+                    function setupShopBtn(parent, selector, href, ariaLabel, mall, meta) {
+                        var btn = parent.querySelector(selector);
+                        if (!btn) return;
+                        btn.setAttribute('href', href);
+                        if (ariaLabel) {
+                            btn.setAttribute('aria-label', ariaLabel);
+                        }
+                        btn.dataset.trackProduct = '1';
+                        btn.dataset.mall = mall || '';
+                        btn.dataset.position = 'competitor';
+                        if (meta) {
+                            if (meta.asin) btn.dataset.asin = meta.asin;
+                            if (meta.title) btn.dataset.title = meta.title;
+                            if (meta.price) btn.dataset.price = meta.price;
+                            if (meta.score) btn.dataset.score = String(meta.score);
+                            if (meta.category) btn.dataset.category = meta.category;
+                        }
                     }
-                    btn.dataset.trackProduct = '1';
-                    btn.dataset.mall = mall || '';
-                    btn.dataset.position = 'competitor';
-                    if (meta) {
-                        if (meta.asin) btn.dataset.asin = meta.asin;
-                        if (meta.title) btn.dataset.title = meta.title;
-                        if (meta.price) btn.dataset.price = meta.price;
-                        if (meta.score) btn.dataset.score = String(meta.score);
-                        if (meta.category) btn.dataset.category = meta.category;
+
+                    // Helper to extract ASIN from URL or Title
+                    function extractCardAsin(amazonHref, title) {
+                        var urlMatch = amazonHref ? amazonHref.match(/\/dp\/([A-Z0-9]{10})/i) : null;
+                        if (urlMatch) return urlMatch[1];
+                        var titleMatch = title ? title.match(/\([A-Z0-9]{10}\)/i) : null;
+                        return titleMatch ? titleMatch[1] : '';
                     }
-                }
 
-                // Helper to extract ASIN from URL or Title
-                function extractCardAsin(amazonHref, title) {
-                    var urlMatch = amazonHref ? amazonHref.match(/\/dp\/([A-Z0-9]{10})/i) : null;
-                    if (urlMatch) return urlMatch[1];
-                    var titleMatch = title ? title.match(/\(([A-Z0-9]{10})\)/i) : null;
-                    return titleMatch ? titleMatch[1] : '';
-                }
+                    // Helper to build shop buttons HTML element for competitor card
+                    function buildCompetitorShopButtons(title, amazonHref, asin, meta) {
+                        var searchQuery = (title ? title.replace(/\([A-Z0-9]{10}\)/gi, '').trim() : '') || title;
+                        var encodedQuery = encodeURIComponent(searchQuery);
+                        var rakutenTarget = 'https://search.rakuten.co.jp/search/mall/' + encodedQuery + '/';
+                        var rakutenUrl = 'https://af.moshimo.com/af/c/click?a_id=' + moshimoRakutenAId + '&p_id=' + moshimoRakutenPId + '&pc_id=' + moshimoRakutenPcId + '&pl_id=' + moshimoRakutenPlId + '&url=' + encodeURIComponent(rakutenTarget);
 
-                // Helper to build shop buttons HTML element for competitor card
-                function buildCompetitorShopButtons(title, amazonHref, asin, meta) {
-                    var searchQuery = (title ? title.replace(/\([A-Z0-9]{10}\)/gi, '').trim() : '') || title;
-                    var encodedQuery = encodeURIComponent(searchQuery);
-                    var rakutenTarget = 'https://search.rakuten.co.jp/search/mall/' + encodedQuery + '/';
-                    var rakutenUrl = 'https://af.moshimo.com/af/c/click?a_id=' + moshimoRakutenAId + '&p_id=' + moshimoRakutenPId + '&pc_id=' + moshimoRakutenPcId + '&pl_id=' + moshimoRakutenPlId + '&url=' + encodeURIComponent(rakutenTarget);
+                        var yahooTarget = 'https://shopping.yahoo.co.jp/search?first=1&p=' + encodedQuery;
+                        var yahooUrl = 'https://af.moshimo.com/af/c/click?a_id=' + moshimoYahooAId + '&p_id=' + moshimoYahooPId + '&pc_id=' + moshimoYahooPcId + '&pl_id=' + moshimoYahooPlId + '&url=' + encodeURIComponent(yahooTarget);
 
-                    var yahooTarget = 'https://shopping.yahoo.co.jp/search?first=1&p=' + encodedQuery;
-                    var yahooUrl = 'https://af.moshimo.com/af/c/click?a_id=' + moshimoYahooAId + '&p_id=' + moshimoYahooPId + '&pc_id=' + moshimoYahooPcId + '&pl_id=' + moshimoYahooPlId + '&url=' + encodeURIComponent(yahooTarget);
+                        var shopButtonsDiv = document.createElement('div');
+                        shopButtonsDiv.className = 'product-shop-buttons product-shop-buttons--competitor';
+                        if (asin) shopButtonsDiv.dataset.asin = asin;
 
-                    var shopButtonsDiv = document.createElement('div');
-                    shopButtonsDiv.className = 'product-shop-buttons product-shop-buttons--competitor';
-                    if (asin) shopButtonsDiv.dataset.asin = asin;
+                        shopButtonsDiv.innerHTML =
+                            '<a class="btn-shop btn-shop-amazon btn-shop--competitor" target="_blank" rel="noopener noreferrer">' +
+                                '<span class="btn-shop-icon-wrapper">' +
+                                    '<svg class="btn-shop-svg btn-shop-svg-amazon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">' +
+                                        '<path d="M15.93 17.09c-2.73 2.01-6.73 3.09-10.12 3.09-4.76 0-9.04-1.78-12.28-4.76-.25-.23-.03-.54.27-.37 3.49 2.03 7.74 3.25 12.01 3.25 3.01 0 6.35-.74 9.42-2.28.47-.24.87.32.7.07zm1.34-1.37c-.35-.45-2.31-.21-3.19-.11-.27.03-.31-.19-.07-.36 1.57-1.1 4.14-.78 4.45-.39.31.4-.08 2.99-1.57 4.2-.23.19-.45.09-.35-.15.34-.84.97-2.74.73-3.19zm-3.05-6.6c0-1.42-.19-2.5-.96-3.41-.65-.77-1.63-1.14-2.82-1.14-2.02 0-3.56 1.25-4.22 3.05-.13.36.08.57.4.57h1.05c.29 0 .5-.19.61-.46.33-.82 1.05-1.37 2.06-1.37.9 0 1.5.42 1.76 1.15.15.42.18.98.18 1.48v.53c-.92.1-2.2.22-3.34.61-2.04.7-3.23 2.04-3.23 3.84 0 2.19 1.63 3.53 3.69 3.53 1.52 0 2.76-.66 3.41-1.83h.07v1.44c0 .32.22.52.54.52h1.61c.32 0 .54-.2.54-.52V9.12zm-2.27 4.79c0 .48-.09.92-.32 1.34-.41.77-1.19 1.21-2.05 1.21-.99 0-1.65-.63-1.65-1.67 0-1.37 1.06-2.05 2.65-2.23.63-.07 1.1-.11 1.37-.15v1.5z"/>' +
+                                    '</svg>' +
+                                '</span>' +
+                                '<span class="btn-shop-label">Amazon</span>' +
+                            '</a>' +
+                            '<a class="btn-shop btn-shop-rakuten btn-shop--competitor" target="_blank" rel="noopener noreferrer">' +
+                                '<span class="btn-shop-icon-wrapper">' +
+                                    '<span class="btn-shop-badge-icon">R</span>' +
+                                '</span>' +
+                                '<span class="btn-shop-label">楽天市場</span>' +
+                            '</a>' +
+                            '<a class="btn-shop btn-shop-yahoo btn-shop--competitor" target="_blank" rel="noopener noreferrer">' +
+                                '<span class="btn-shop-icon-wrapper">' +
+                                    '<span class="btn-shop-badge-icon">Y!</span>' +
+                                '</span>' +
+                                '<span class="btn-shop-label">Yahoo!</span>' +
+                            '</a>';
 
-                    shopButtonsDiv.innerHTML =
-                        '<a class="btn-shop btn-shop-amazon btn-shop--competitor" target="_blank" rel="noopener noreferrer">' +
-                            '<span class="btn-shop-icon-wrapper">' +
-                                '<svg class="btn-shop-svg btn-shop-svg-amazon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">' +
-                                    '<path d="M15.93 17.09c-2.73 2.01-6.73 3.09-10.12 3.09-4.76 0-9.04-1.78-12.28-4.76-.25-.23-.03-.54.27-.37 3.49 2.03 7.74 3.25 12.01 3.25 3.01 0 6.35-.74 9.42-2.28.47-.24.87.32.7.07zm1.34-1.37c-.35-.45-2.31-.21-3.19-.11-.27.03-.31-.19-.07-.36 1.57-1.1 4.14-.78 4.45-.39.31.4-.08 2.99-1.57 4.2-.23.19-.45.09-.35-.15.34-.84.97-2.74.73-3.19zm-3.05-6.6c0-1.42-.19-2.5-.96-3.41-.65-.77-1.63-1.14-2.82-1.14-2.02 0-3.56 1.25-4.22 3.05-.13.36.08.57.4.57h1.05c.29 0 .5-.19.61-.46.33-.82 1.05-1.37 2.06-1.37.9 0 1.5.42 1.76 1.15.15.42.18.98.18 1.48v.53c-.92.1-2.2.22-3.34.61-2.04.7-3.23 2.04-3.23 3.84 0 2.19 1.63 3.53 3.69 3.53 1.52 0 2.76-.66 3.41-1.83h.07v1.44c0 .32.22.52.54.52h1.61c.32 0 .54-.2.54-.52V9.12zm-2.27 4.79c0 .48-.09.92-.32 1.34-.41.77-1.19 1.21-2.05 1.21-.99 0-1.65-.63-1.65-1.67 0-1.37 1.06-2.05 2.65-2.23.63-.07 1.1-.11 1.37-.15v1.5z"/>' +
-                                '</svg>' +
-                            '</span>' +
-                            '<span class="btn-shop-label">Amazon</span>' +
-                        '</a>' +
-                        '<a class="btn-shop btn-shop-rakuten btn-shop--competitor" target="_blank" rel="noopener noreferrer">' +
-                            '<span class="btn-shop-icon-wrapper">' +
-                                '<span class="btn-shop-badge-icon">R</span>' +
-                            '</span>' +
-                            '<span class="btn-shop-label">楽天市場</span>' +
-                        '</a>' +
-                        '<a class="btn-shop btn-shop-yahoo btn-shop--competitor" target="_blank" rel="noopener noreferrer">' +
-                            '<span class="btn-shop-icon-wrapper">' +
-                                '<span class="btn-shop-badge-icon">Y!</span>' +
-                            '</span>' +
-                            '<span class="btn-shop-label">Yahoo!</span>' +
-                        '</a>';
+                        setupShopBtn(shopButtonsDiv, '.btn-shop-amazon', amazonHref, title ? title + 'をAmazonで見る' : '', 'amazon', meta);
+                        setupShopBtn(shopButtonsDiv, '.btn-shop-rakuten', rakutenUrl, title ? title + 'を楽天市場で見る' : '', 'rakuten', meta);
+                        setupShopBtn(shopButtonsDiv, '.btn-shop-yahoo', yahooUrl, title ? title + 'をYahoo!ショッピングで見る' : '', 'yahoo', meta);
 
-                    setupShopBtn(shopButtonsDiv, '.btn-shop-amazon', amazonHref, title ? title + 'をAmazonで見る' : '', 'amazon', meta);
-                    setupShopBtn(shopButtonsDiv, '.btn-shop-rakuten', rakutenUrl, title ? title + 'を楽天市場で見る' : '', 'rakuten', meta);
-                    setupShopBtn(shopButtonsDiv, '.btn-shop-yahoo', yahooUrl, title ? title + 'をYahoo!ショッピングで見る' : '', 'yahoo', meta);
+                        return shopButtonsDiv;
+                    }
 
-                    return shopButtonsDiv;
-                }
-
-                function extractCompetitorSpecs(card) {
-                    var tagElems = card.querySelectorAll('.competitor-preview-tags .hero-tag');
-                    var specs = {};
-                    tagElems.forEach(function (tag) {
-                        var text = tag.textContent.trim();
-                        var colonIdx = text.indexOf(':');
-                        if (colonIdx > -1) {
-                            var key = text.substring(0, colonIdx).trim();
-                            var val = text.substring(colonIdx + 1).trim();
-                            if (key && val) {
-                                specs[key] = val;
+                    function extractCompetitorSpecs(card) {
+                        var tagElems = card.querySelectorAll('.competitor-preview-tags .hero-tag');
+                        var specs = {};
+                        tagElems.forEach(function (tag) {
+                            var text = tag.textContent.trim();
+                            var colonIdx = text.indexOf(':');
+                            if (colonIdx > -1) {
+                                var key = text.substring(0, colonIdx).trim();
+                                var val = text.substring(colonIdx + 1).trim();
+                                if (key && val) {
+                                    specs[key] = val;
+                                }
+                            } else if (text) {
+                                specs[text] = '○';
                             }
-                        } else if (text) {
-                            specs[text] = '○';
-                        }
-                    });
-                    return JSON.stringify(specs);
-                }
-
-                function buildCompetitorCompareButton(item) {
-                    var btn = document.createElement('button');
-                    btn.type = 'button';
-                    btn.className = 'btn-compare-card';
-                    btn.dataset.compareBtn = '1';
-                    btn.dataset.asin = item.asin || '';
-                    btn.dataset.title = item.title || '';
-                    btn.dataset.url = item.internalHref || '';
-                    btn.dataset.affiliateUrl = item.amazonHref || '';
-                    btn.dataset.image = item.image || '';
-                    btn.dataset.price = item.price || '';
-                    btn.dataset.score = String(item.score || 0);
-                    btn.dataset.category = item.category || '';
-                    btn.dataset.specs = item.specsJson || '{}';
-                    btn.setAttribute('aria-pressed', 'false');
-                    var titlePrefix = item.title ? item.title + 'を' : '';
-                    btn.setAttribute('aria-label', titlePrefix + '比較に追加');
-
-                    var isCompared = globalThis.Compare && typeof globalThis.Compare.isCompared === 'function' && globalThis.Compare.isCompared(item.asin);
-                    if (isCompared) {
-                        btn.classList.add('is-compared');
-                        btn.setAttribute('aria-pressed', 'true');
-                        btn.setAttribute('aria-label', titlePrefix + '比較から削除');
+                        });
+                        return JSON.stringify(specs);
                     }
 
-                    var iconSpan = document.createElement('span');
-                    iconSpan.className = 'material-symbols-outlined compare-icon';
-                    iconSpan.setAttribute('aria-hidden', 'true');
-                    iconSpan.textContent = isCompared ? 'check_circle' : 'balance';
+                    function buildCompetitorCompareButton(item) {
+                        var btn = document.createElement('button');
+                        btn.type = 'button';
+                        btn.className = 'btn-compare-card';
+                        btn.dataset.compareBtn = '1';
+                        btn.dataset.asin = item.asin || '';
+                        btn.dataset.title = item.title || '';
+                        btn.dataset.url = item.internalHref || '';
+                        btn.dataset.affiliateUrl = item.amazonHref || '';
+                        btn.dataset.image = item.image || '';
+                        btn.dataset.price = item.price || '';
+                        btn.dataset.score = String(item.score || 0);
+                        btn.dataset.category = item.category || '';
+                        btn.dataset.specs = item.specsJson || '{}';
+                        btn.setAttribute('aria-pressed', 'false');
+                        var titlePrefix = item.title ? item.title + 'を' : '';
+                        btn.setAttribute('aria-label', titlePrefix + '比較に追加');
 
-                    var labelSpan = document.createElement('span');
-                    labelSpan.className = 'compare-label';
-                    labelSpan.textContent = isCompared ? '比較中' : '比較';
-
-                    btn.appendChild(iconSpan);
-                    btn.appendChild(labelSpan);
-                    return btn;
-                }
-
-                function extractCompetitorPrice(card) {
-                    var priceElem = card.querySelector('.competitor-actual-price') || card.querySelector('.competitor-price');
-                    if (!priceElem) return '';
-                    var clone = priceElem.cloneNode(true);
-                    var subSpans = clone.querySelectorAll('.competitor-price-diff, .hero-points, .m3-badge');
-                    subSpans.forEach(function (s) { s.remove(); });
-                    var priceMatch = clone.textContent.match(/[￥¥]?\s*[\d,]+/);
-                    return priceMatch ? priceMatch[0].trim() : clone.textContent.trim();
-                }
-
-                function extractCompetitorScore(card) {
-                    var scoreElem = card.querySelector('.competitor-score-container, .pickup-card-score, .competitor-preview-score');
-                    if (!scoreElem) return 0;
-                    var scoreMatch = scoreElem.textContent.match(/(\d+)\s*点?/);
-                    return scoreMatch ? Number.parseInt(scoreMatch[1], 10) : 0;
-                }
-
-                function buildCompetitorRequestButton(title, asin) {
-                    var targetAmazonUrl = 'https://www.amazon.co.jp/dp/' + asin;
-                    var reqUrl = productRequestFormUrl + '?usp=pp_url&' + encodeURIComponent(productRequestEntryId) + '=' + encodeURIComponent(targetAmazonUrl);
-
-                    var reqBtn = document.createElement('a');
-                    reqBtn.href = reqUrl;
-                    reqBtn.target = '_blank';
-                    reqBtn.rel = 'noopener noreferrer';
-                    reqBtn.className = 'btn-internal-small btn-request-small';
-                    reqBtn.setAttribute('aria-label', (title ? title + 'の' : '') + '調査リクエストを送信（Googleフォームを新しいタブで開く）');
-
-                    var reqIcon = document.createElement('span');
-                    reqIcon.className = 'material-symbols-outlined';
-                    reqIcon.setAttribute('aria-hidden', 'true');
-                    reqIcon.style.fontSize = '0.95rem';
-                    reqIcon.style.verticalAlign = 'middle';
-                    reqIcon.textContent = 'rate_review';
-
-                    var reqLabel = document.createElement('span');
-                    reqLabel.textContent = ' 調査リクエスト';
-
-                    var extIcon = document.createElement('span');
-                    extIcon.className = 'external-icon';
-                    extIcon.setAttribute('aria-hidden', 'true');
-                    extIcon.textContent = ' ↗';
-
-                    reqBtn.appendChild(reqIcon);
-                    reqBtn.appendChild(reqLabel);
-                    reqBtn.appendChild(extIcon);
-                    return reqBtn;
-                }
-
-                function upgradeCompetitorCard(card) {
-                    var linksContainer = card.querySelector('.competitor-links');
-                    if (!linksContainer) return;
-
-                    var amazonLink = linksContainer.querySelector('a.btn-amazon-small');
-                    if (!amazonLink) return;
-
-                    var amazonHref = amazonLink.getAttribute('href') || '';
-                    var internalLink = linksContainer.querySelector('a.btn-internal-small');
-                    var internalHref = internalLink ? (internalLink.getAttribute('href') || '') : '';
-
-                    var h4 = card.querySelector('h4');
-                    var title = h4 ? h4.textContent.trim() : '';
-                    var asin = extractCardAsin(amazonHref, title);
-
-                    var price = extractCompetitorPrice(card);
-                    var imgElem = card.querySelector('.competitor-preview-img, img');
-                    var image = imgElem ? imgElem.getAttribute('src') : '';
-                    var score = extractCompetitorScore(card);
-                    var specsJson = extractCompetitorSpecs(card);
-                    var competitorMeta = { asin: asin, title: title, price: price, score: score, category: '{{ $currentCategory }}' };
-                    var shopButtonsDiv = buildCompetitorShopButtons(title, amazonHref, asin, competitorMeta);
-
-                    // Upgrade preview container to link to Amazon if there is no internal review
-                    var previewElem = card.querySelector('.competitor-preview');
-                    if (previewElem && previewElem.tagName === 'DIV' && amazonHref) {
-                        var a = document.createElement('a');
-                        a.className = previewElem.className;
-                        a.href = amazonHref;
-                        a.target = '_blank';
-                        a.rel = 'noopener noreferrer';
-                        while (previewElem.firstChild) {
-                            a.appendChild(previewElem.firstChild);
-                        }
-                        previewElem.parentNode.replaceChild(a, previewElem);
-                    }
-
-                    linksContainer.innerHTML = '';
-                    linksContainer.appendChild(shopButtonsDiv);
-                    if (internalLink) {
-                        var actionRow = document.createElement('div');
-                        actionRow.className = 'competitor-action-row';
-
-                        if (asin) {
-                            var compareBtn = buildCompetitorCompareButton({
-                                title: title,
-                                amazonHref: amazonHref,
-                                asin: asin,
-                                internalHref: internalHref,
-                                score: score,
-                                price: price,
-                                image: image,
-                                category: '{{ $currentCategory }}',
-                                specsJson: specsJson
-                            });
-                            actionRow.appendChild(compareBtn);
+                        var isCompared = globalThis.Compare && typeof globalThis.Compare.isCompared === 'function' && globalThis.Compare.isCompared(item.asin);
+                        if (isCompared) {
+                            btn.classList.add('is-compared');
+                            btn.setAttribute('aria-pressed', 'true');
+                            btn.setAttribute('aria-label', titlePrefix + '比較から削除');
                         }
 
-                        internalLink.className = 'btn-internal-small';
-                        actionRow.appendChild(internalLink);
-                        linksContainer.appendChild(actionRow);
-                    } else if (asin && productRequestFormUrl) {
-                        var reqActionRow = document.createElement('div');
-                        reqActionRow.className = 'competitor-action-row';
-                        reqActionRow.appendChild(buildCompetitorRequestButton(title, asin));
-                        linksContainer.appendChild(reqActionRow);
+                        var iconSpan = document.createElement('span');
+                        iconSpan.className = 'material-symbols-outlined compare-icon';
+                        iconSpan.setAttribute('aria-hidden', 'true');
+                        iconSpan.textContent = isCompared ? 'check_circle' : 'balance';
+
+                        var labelSpan = document.createElement('span');
+                        labelSpan.className = 'compare-label';
+                        labelSpan.textContent = isCompared ? '比較中' : '比較';
+
+                        btn.appendChild(iconSpan);
+                        btn.appendChild(labelSpan);
+                        return btn;
                     }
-                }
 
-                competitorCards.forEach(upgradeCompetitorCard);
-
-                // Move TOC to before first H2
-                if (toc) {
-                    firstH2 = document.querySelector('.content h2');
-                    if (firstH2) {
-                        firstH2.parentNode.insertBefore(toc, firstH2);
+                    function extractCompetitorPrice(card) {
+                        var priceElem = card.querySelector('.competitor-actual-price') || card.querySelector('.competitor-price');
+                        if (!priceElem) return '';
+                        var clone = priceElem.cloneNode(true);
+                        var subSpans = clone.querySelectorAll('.competitor-price-diff, .hero-points, .m3-badge');
+                        subSpans.forEach(function (s) { s.remove(); });
+                        var priceMatch = clone.textContent.match(/[￥¥]?\s*[\d,]+/);
+                        return priceMatch ? priceMatch[0].trim() : clone.textContent.trim();
                     }
-                    toc.classList.add('is-ready');
-                }
 
-                // Helper to insert an element after another, or before a fallback
-                function insertElement(elem, prevSibling, fallbackElem) {
-                    if (!elem) return;
-                    if (prevSibling?.parentNode) {
-                        prevSibling.parentNode.insertBefore(elem, prevSibling.nextSibling);
-                    } else if (fallbackElem?.parentNode) {
-                        fallbackElem.parentNode.insertBefore(elem, fallbackElem);
-                    } else {
-                        var h2 = document.querySelector('.content h2');
-                        if (h2?.parentNode) {
-                            h2.parentNode.insertBefore(elem, h2);
+                    function extractCompetitorScore(card) {
+                        var scoreElem = card.querySelector('.competitor-score-container, .pickup-card-score, .competitor-preview-score');
+                        if (!scoreElem) return 0;
+                        var scoreMatch = scoreElem.textContent.match(/(\d+)\s*点?/);
+                        return scoreMatch ? Number.parseInt(scoreMatch[1], 10) : 0;
+                    }
+
+                    function buildCompetitorRequestButton(title, asin) {
+                        var targetAmazonUrl = 'https://www.amazon.co.jp/dp/' + asin;
+                        var reqUrl = productRequestFormUrl + '?usp=pp_url&' + encodeURIComponent(productRequestEntryId) + '=' + encodeURIComponent(targetAmazonUrl);
+
+                        var reqBtn = document.createElement('a');
+                        reqBtn.href = reqUrl;
+                        reqBtn.target = '_blank';
+                        reqBtn.rel = 'noopener noreferrer';
+                        reqBtn.className = 'btn-internal-small btn-request-small';
+                        reqBtn.setAttribute('aria-label', (title ? title + 'の' : '') + '調査リクエストを送信（Googleフォームを新しいタブで開く）');
+
+                        var reqIcon = document.createElement('span');
+                        reqIcon.className = 'material-symbols-outlined';
+                        reqIcon.setAttribute('aria-hidden', 'true');
+                        reqIcon.style.fontSize = '0.95rem';
+                        reqIcon.style.verticalAlign = 'middle';
+                        reqIcon.textContent = 'rate_review';
+
+                        var reqLabel = document.createElement('span');
+                        reqLabel.textContent = ' 調査リクエスト';
+
+                        var extIcon = document.createElement('span');
+                        extIcon.className = 'external-icon';
+                        extIcon.setAttribute('aria-hidden', 'true');
+                        extIcon.textContent = ' ↗';
+
+                        reqBtn.appendChild(reqIcon);
+                        reqBtn.appendChild(reqLabel);
+                        reqBtn.appendChild(extIcon);
+                        return reqBtn;
+                    }
+
+                    function upgradeCompetitorCard(card) {
+                        var linksContainer = card.querySelector('.competitor-links');
+                        if (!linksContainer) return;
+
+                        var amazonLink = linksContainer.querySelector('a.btn-amazon-small');
+                        if (!amazonLink) return;
+
+                        var amazonHref = amazonLink.getAttribute('href') || '';
+                        var internalLink = linksContainer.querySelector('a.btn-internal-small');
+                        var internalHref = internalLink ? (internalLink.getAttribute('href') || '') : '';
+
+                        var h4 = card.querySelector('h4');
+                        var title = h4 ? h4.textContent.trim() : '';
+                        var asin = extractCardAsin(amazonHref, title);
+
+                        var price = extractCompetitorPrice(card);
+                        var imgElem = card.querySelector('.competitor-preview-img, img');
+                        var image = imgElem ? imgElem.getAttribute('src') : '';
+                        var score = extractCompetitorScore(card);
+                        var specsJson = extractCompetitorSpecs(card);
+                        var competitorMeta = { asin: asin, title: title, price: price, score: score, category: '{{ $currentCategory }}' };
+                        var shopButtonsDiv = buildCompetitorShopButtons(title, amazonHref, asin, competitorMeta);
+
+                        // Upgrade preview container to link to Amazon if there is no internal review
+                        var previewElem = card.querySelector('.competitor-preview');
+                        if (previewElem && previewElem.tagName === 'DIV' && amazonHref) {
+                            var a = document.createElement('a');
+                            a.className = previewElem.className;
+                            a.href = amazonHref;
+                            a.target = '_blank';
+                            a.rel = 'noopener noreferrer';
+                            while (previewElem.firstChild) {
+                                a.appendChild(previewElem.firstChild);
+                            }
+                            previewElem.parentNode.replaceChild(a, previewElem);
+                        }
+
+                        linksContainer.innerHTML = '';
+                        linksContainer.appendChild(shopButtonsDiv);
+                        if (internalLink) {
+                            var actionRow = document.createElement('div');
+                            actionRow.className = 'competitor-action-row';
+
+                            if (asin) {
+                                var compareBtn = buildCompetitorCompareButton({
+                                    title: title,
+                                    amazonHref: amazonHref,
+                                    asin: asin,
+                                    internalHref: internalHref,
+                                    score: score,
+                                    price: price,
+                                    image: image,
+                                    category: '{{ $currentCategory }}',
+                                    specsJson: specsJson
+                                });
+                                actionRow.appendChild(compareBtn);
+                            }
+
+                            internalLink.className = 'btn-internal-small';
+                            actionRow.appendChild(internalLink);
+                            linksContainer.appendChild(actionRow);
+                        } else if (asin && productRequestFormUrl) {
+                            var reqActionRow = document.createElement('div');
+                            reqActionRow.className = 'competitor-action-row';
+                            reqActionRow.appendChild(buildCompetitorRequestButton(title, asin));
+                            linksContainer.appendChild(reqActionRow);
                         }
                     }
-                    elem.style.display = 'block';
-                }
 
-                // Sequence of insertions
-                var contentDiv = document.querySelector('.content');
-                insertElement(keepaSection, heroCard, toc);
-                insertElement(relatedSection, contentDiv, null);
-                insertElement(rakutenSection, relatedSection || contentDiv, null);
-            })();
-        </script>
+                    competitorCards.forEach(upgradeCompetitorCard);
 
-    </article>
+                    // Move TOC to before first H2 for mobile/tablet inline reading
+                    if (toc) {
+                        var firstH2 = document.querySelector('.content h2');
+                        if (firstH2?.parentNode) {
+                            firstH2.parentNode.insertBefore(toc, firstH2);
+                        }
+                        toc.classList.add('is-ready');
+                    }
+                })();
+            </script>
+        </article>
 
-    {{- if .TableOfContents -}}
-    <aside class="article-sidebar" aria-label="記事の目次（サイドバー）">
-        <div class="toc-sidebar-container">
-            <h3 class="toc-sidebar-title"><span class="material-symbols-outlined" aria-hidden="true" style="vertical-align: middle;">format_list_bulleted</span> 目次</h3>
-            <div class="toc-sidebar-body" id="toc-sidebar-body">
-                <!-- TOC contents cloned by JS -->
+        <aside class="article-sidebar" aria-label="記事の目次・クイックナビ">
+            <div class="article-sidebar-sticky">
+                {{- if and .Params.asin .Params.affiliate_url -}}
+                <div class="sidebar-quick-buy-card">
+                    <div class="sidebar-product-summary">
+                        <div class="sidebar-product-thumb">
+                            {{- if .Params.images -}}
+                            <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" width="56" height="56" loading="lazy" decoding="async">
+                            {{- else -}}
+                            <div class="sidebar-product-noimage">画像なし</div>
+                            {{- end -}}
+                        </div>
+                        <div class="sidebar-product-meta">
+                            <p class="sidebar-product-title">{{ .Title }}</p>
+                            <div class="sidebar-product-price-row">
+                                {{- if .Params.price -}}
+                                <span class="sidebar-product-price">{{ partial "utils-price-format.html" .Params.price }}</span>
+                                {{- end -}}
+                                {{- if .Params.score -}}
+                                {{- $sScore := .Params.score | int -}}
+                                {{- $sClass := "score-caution" -}}
+                                {{- if ge $sScore 80 -}}{{- $sClass = "score-excellent" -}}
+                                {{- else if ge $sScore 70 -}}{{- $sClass = "score-good" -}}
+                                {{- else if ge $sScore 50 -}}{{- $sClass = "score-fair" -}}{{- end -}}
+                                <span class="sidebar-product-score m3-badge m3-badge-score {{ $sClass }}">
+                                    <span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span>{{ .Params.score }}点
+                                </span>
+                                {{- end -}}
+                            </div>
+                        </div>
+                    </div>
+                    <a href="{{ .Params.affiliate_url }}" class="btn-amazon-hero sidebar-amazon-btn" target="_blank"
+                        rel="noopener noreferrer" data-track-product="1" data-mall="amazon" data-asin="{{ .Params.asin }}"
+                        data-title="{{ .Title }}" data-category="{{ $currentCategory }}" data-price-bucket="{{ $currentPriceBucket }}"
+                        data-price="{{ .Params.price }}" data-score="{{ $currentScore }}" data-position="sidebar"
+                        aria-label="{{ .Title }}をAmazonで在庫・価格を見る">
+                        <span class="material-symbols-outlined" aria-hidden="true">shopping_cart</span>
+                        <span>Amazonで在庫を見る</span>
+                    </a>
+                    <div class="sidebar-sub-actions">
+                        <button type="button" class="btn-compare-card sidebar-action-btn" data-compare-btn="1" data-asin="{{ .Params.asin }}"
+                            data-title="{{ .Title }}" data-url="{{ .RelPermalink }}"
+                            data-affiliate-url="{{ .Params.affiliate_url }}"
+                            data-image="{{ if .Params.images }}{{ index .Params.images 0 }}{{ end }}"
+                            data-price="{{ .Params.price }}" data-score="{{ $currentScore }}"
+                            data-savings="{{ .Params.savings_percentage | default 0 }}"
+                            data-category="{{ $currentCategory }}"
+                            data-specs='{{ partial "product-specs-json.html" .Params.specs }}'
+                            aria-pressed="false" aria-label="{{ .Title }}を比較に追加">
+                            <span class="material-symbols-outlined compare-icon" aria-hidden="true">balance</span>
+                            <span class="compare-label">比較</span>
+                        </button>
+                        <button type="button" class="btn-favorite-card sidebar-action-btn" data-favorite-btn="1" data-asin="{{ .Params.asin }}"
+                            data-title="{{ .Title }}" data-url="{{ .RelPermalink }}"
+                            data-affiliate-url="{{ .Params.affiliate_url }}"
+                            data-image="{{ if .Params.images }}{{ index .Params.images 0 }}{{ end }}"
+                            data-price="{{ .Params.price }}" data-score="{{ $currentScore }}"
+                            data-category="{{ $currentCategory }}" aria-pressed="false" aria-label="{{ .Title }}をお気に入りに追加">
+                            <span class="material-symbols-outlined fav-icon" aria-hidden="true">favorite_border</span>
+                            <span class="fav-label">保存</span>
+                        </button>
+                    </div>
+                </div>
+                {{- end -}}
+
+                {{- if .TableOfContents -}}
+                <div class="toc-sidebar-container">
+                    <h3 class="toc-sidebar-title">
+                        <span class="material-symbols-outlined" aria-hidden="true">format_list_bulleted</span>
+                        <span>目次ナビ</span>
+                    </h3>
+                    <div class="toc-sidebar-body" id="toc-sidebar-body">
+                        <!-- TOC contents cloned by JS -->
+                    </div>
+                </div>
+                {{- end -}}
+
+                <div class="sidebar-search-widget">
+                    <h4 class="sidebar-widget-title">
+                        <span class="material-symbols-outlined" aria-hidden="true">manage_search</span>
+                        <span>条件を変えて探す</span>
+                    </h4>
+                    <div class="sidebar-widget-links">
+                        {{- if $currentCategory -}}
+                        <a href="{{ printf `categories/%s/` ($currentCategory | urlize) | relURL }}" class="sidebar-widget-link">
+                            <span class="material-symbols-outlined" aria-hidden="true">folder</span>
+                            <span class="sidebar-widget-link-text">{{ $currentCategory }}の一覧</span>
+                            <span class="material-symbols-outlined sidebar-widget-arrow" aria-hidden="true">chevron_right</span>
+                        </a>
+                        {{- end -}}
+                        <button type="button" class="sidebar-widget-search-btn" onclick="document.getElementById('search-modal-trigger')?.click()">
+                            <span class="material-symbols-outlined" aria-hidden="true">search</span>
+                            <span>キーワード・スペック検索</span>
+                        </button>
+                    </div>
+                </div>
             </div>
-        </div>
-    </aside>
-    {{- end -}}
+        </aside>
+    </div>
 
     {{- partial "toc-floating.html" . -}}
 

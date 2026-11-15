@@ -74,165 +74,6 @@
             <div class="carousel-dots"></div>
             {{- end -}}
         </div>
-    </div>
-
-    <div class="product-hero-info">
-        <p class="hero-description">
-            {{- /* Description logic needs to be handled in front matter or passed directly */ -}}
-            {{- $product.description | default ($product.summary | truncate 200) -}}
-        </p>
-
-        {{- $score := $product.score | int -}}
-        {{- $scoreClass := "score-caution" -}}
-        {{- $scoreIcon := "warning" -}}
-        {{- $scoreText := "注意" -}}
-
-        {{- if ge $score 90 -}}
-        {{- $scoreClass = "score-excellent" -}}
-        {{- $scoreIcon = "trophy" -}}
-        {{- $scoreText = "最高" -}}
-        {{- else if ge $score 80 -}}
-        {{- $scoreClass = "score-excellent" -}}
-        {{- $scoreIcon = "star" -}}
-        {{- $scoreText = "優秀" -}}
-        {{- else if ge $score 70 -}}
-        {{- $scoreClass = "score-good" -}}
-        {{- $scoreIcon = "thumb_up" -}}
-        {{- $scoreText = "良好" -}}
-        {{- else if ge $score 50 -}}
-        {{- $scoreClass = "score-fair" -}}
-        {{- $scoreIcon = "sentiment_neutral" -}}
-        {{- $scoreText = "普通" -}}
-        {{- end -}}
-
-        <div class="hero-score-bar {{ $scoreClass }}">
-            <div class="hero-score-main">
-                <span class="material-symbols-outlined hero-score-icon" aria-hidden="true">{{- $scoreIcon -}}</span>
-                <span class="hero-score-number">{{- $score -}}</span>
-                <span class="hero-score-unit">点</span>
-                <span class="hero-score-text">{{- $scoreText -}}</span>
-            </div>
-            <div class="hero-score-rationale">
-                {{- range $hero.score_rationale.plus -}}
-                <div class="hero-score-item hero-score-plus">
-                    <span class="hero-score-item-points">+{{ .points }}</span>
-                    <span class="hero-score-item-desc">{{ .desc }}</span>
-                </div>
-                {{- end -}}
-
-                {{- range $hero.score_rationale.minus -}}
-                <div class="hero-score-item hero-score-minus">
-                    <span class="hero-score-item-points">-{{ .points }}</span>
-                    <span class="hero-score-item-desc">{{ .desc }}</span>
-                </div>
-                {{- end -}}
-            </div>
-        </div>
-
-        <div class="hero-price-bar">
-            <div class="hero-price-group">
-                <div class="hero-price-main">
-                    <span class="hero-price">{{ partial "utils-price-format.html" $product.price }}</span>
-                    {{- if $isDiscounted -}}
-                    <span class="m3-badge m3-badge-price-diff m3-badge-price-down" title="調査時より ¥{{ lang.FormatNumber 0 $diffAbs }} 値下げ">
-                        <span class="material-symbols-outlined icon-diff" aria-hidden="true">trending_down</span> -¥{{ lang.FormatNumber 0 $diffAbs }}{{ if gt $diffRate 0 }} ({{ printf "%.0f" $diffRate }}% OFF){{ end }}
-                    </span>
-                    {{- else if $isPriceUp -}}
-                    <span class="m3-badge m3-badge-price-diff m3-badge-price-up" title="調査時より ¥{{ lang.FormatNumber 0 $diffAbs }} 値上げ">
-                        <span class="material-symbols-outlined icon-diff" aria-hidden="true">trending_up</span> +¥{{ lang.FormatNumber 0 $diffAbs }}
-                    </span>
-                    {{- end -}}
-                    {{- if $product.loyalty_points -}}
-                    <span class="hero-points m3-badge m3-badge-points"><span class="material-symbols-outlined icon-points" aria-hidden="true">card_giftcard</span> {{- $product.loyalty_points -}}pt還元</span>
-                    {{- end -}}
-                </div>
-                {{- if or $isDiscounted $isPriceUp -}}
-                <div class="hero-investigated-price-row">
-                    <span class="hero-investigated-price-label">調査時:</span>
-                    {{- if $isDiscounted -}}
-                    <span class="hero-investigated-price-del">{{ partial "utils-price-format.html" $product.investigated_price }}</span>
-                    {{- else -}}
-                    <span class="hero-investigated-price-val">{{ partial "utils-price-format.html" $product.investigated_price }}</span>
-                    {{- end -}}
-                </div>
-                {{- end -}}
-            </div>
-            <div class="hero-price-info">
-                {{- if .Params.is_amazon_direct -}}
-                <span class="badge-amazon-direct m3-badge m3-badge-primary">Amazon直販</span>
-                {{- end -}}
-                {{- if .Params.is_amazon_haul -}}
-                <span class="badge-amazon-haul m3-badge m3-badge-secondary">Amazon Haul</span>
-                {{- end -}}
-                {{- if .Params.is_furusato -}}
-                <span class="badge-furusato m3-badge m3-badge-furusato">ふるさと納税</span>
-                {{- end -}}
-                {{- with .Params.deal_badge -}}
-                {{- $dealClass := "deal-standard" -}}
-                {{- if or (eq $.Params.deal_access_type "PRIME_EXCLUSIVE") (eq $.Params.deal_access_type
-                "PRIME_EARLY_ACCESS") -}}
-                {{- $dealClass = "deal-prime" -}}
-                {{- end -}}
-                <span class="badge-deal m3-badge m3-badge-deal {{ $dealClass }}">{{ . }}</span>
-                {{- end -}}
-                {{- if .Params.savings_percentage -}}
-                <span class="badge-savings m3-badge m3-badge-sale">{{ .Params.savings_percentage }}% OFF</span>
-                {{- end -}}
-                {{- if and $product.price $product.loyalty_points -}}
-                {{- $priceNum := index (findRE "[0-9]+" (replace $product.price "," "")) 0 | default 0 | int -}}
-                {{- if gt $priceNum 0 -}}
-                {{- $rate := mul (div (float $product.loyalty_points) (float $priceNum)) 100 -}}
-                {{- if ge $rate 10.0 -}}
-                <span class="badge-points-rate m3-badge m3-badge-points">ポイント還元率 {{- printf "%.0f" $rate -}}%</span>
-                {{- end -}}
-                {{- end -}}
-                {{- end -}}
-                {{- $isHeroOutOfStock := not (partial "utils-in-stock.html" .) -}}
-                {{- with or $hero.availability .Params.availability -}}<span class="badge-availability m3-badge {{ if $isHeroOutOfStock }}badge-out-of-stock m3-badge-error{{ else }}m3-badge-tertiary{{ end }}">{{ . }}</span>{{- end -}}
-            </div>
-        </div>
-
-        <div class="hero-actions-main">
-            <div class="hero-price-freshness-note">
-                <span class="material-symbols-outlined icon-freshness" aria-hidden="true">schedule</span>
-                <span>{{- with .Params.price_updated_at -}}{{ time . | dateFormat "2006年01月02日 15:04" }}時点のAmazon価格・セール情報（リアルタイムの在庫・クーポンはAmazonでご確認ください）{{- else -}}{{- with .Params.last_investigated -}}{{ time . | dateFormat "2006年01月02日" }}{{- else -}}{{ .Lastmod.Format "2006年01月02日" }}{{- end -}}時点の参考価格（最新のセール・在庫・クーポンはAmazonでご確認ください）{{- end -}}</span>
-            </div>
-            {{- partial "product-shop-buttons.html" (dict "context" . "variant" "hero" "position" "hero") -}}
-        </div>
-    </div>
-
-    {{- if or $hero.target_users $hero.warnings -}}
-    <div class="hero-evaluation-section">
-        {{- if $hero.target_users -}}
-        <div class="hero-eval-block hero-eval-pros">
-            <span class="hero-eval-title"><span class="material-symbols-outlined" aria-hidden="true">thumb_up</span> こんな方におすすめ</span>
-            <ul>
-                {{- range $hero.target_users -}}
-                <li>{{ . }}</li>
-                {{- end -}}
-            </ul>
-        </div>
-        {{- end -}}
-
-        {{- if $hero.warnings -}}
-        <div class="hero-eval-block hero-eval-cons">
-            <span class="hero-eval-title"><span class="material-symbols-outlined" aria-hidden="true">warning</span> 購入時の注意点</span>
-            <ul>
-                {{- range $hero.warnings -}}
-                <li>{{ . }}</li>
-                {{- end -}}
-            </ul>
-        </div>
-        {{- end -}}
-    </div>
-    {{- end -}}
-
-    <div class="product-hero-footer">
-        {{- if $product.specs -}}
-        <div class="hero-meta-tags">
-            {{- partial "product-spec-tags.html" (dict "specs" $product.specs "tagClass" "hero-tag") -}}
-        </div>
-        {{- end -}}
 
         <div class="hero-actions">
             <button type="button" class="btn-compare-hero" data-compare-btn="1" data-asin="{{ $product.asin }}"
@@ -259,4 +100,170 @@
             </button>
         </div>
     </div>
+
+    <div class="product-hero-info">
+        {{- $score := $product.score | int -}}
+        {{- $scoreClass := "score-caution" -}}
+        {{- $scoreIcon := "warning" -}}
+        {{- $scoreText := "注意" -}}
+
+        {{- if ge $score 90 -}}
+        {{- $scoreClass = "score-excellent" -}}
+        {{- $scoreIcon = "trophy" -}}
+        {{- $scoreText = "最高評価" -}}
+        {{- else if ge $score 80 -}}
+        {{- $scoreClass = "score-excellent" -}}
+        {{- $scoreIcon = "star" -}}
+        {{- $scoreText = "優秀評価" -}}
+        {{- else if ge $score 70 -}}
+        {{- $scoreClass = "score-good" -}}
+        {{- $scoreIcon = "thumb_up" -}}
+        {{- $scoreText = "良好評価" -}}
+        {{- else if ge $score 50 -}}
+        {{- $scoreClass = "score-fair" -}}
+        {{- $scoreIcon = "sentiment_neutral" -}}
+        {{- $scoreText = "標準評価" -}}
+        {{- end -}}
+
+        <div class="hero-summary-header">
+            <div class="hero-score-bar {{ $scoreClass }}">
+                <div class="hero-score-main">
+                    <div class="hero-score-value-row">
+                        <span class="hero-score-number">{{- $score -}}</span>
+                        <span class="hero-score-unit">点</span>
+                    </div>
+                    <div class="hero-score-rank-badge">
+                        <span class="material-symbols-outlined hero-score-icon" aria-hidden="true">{{- $scoreIcon -}}</span>
+                        <span class="hero-score-text">{{- $scoreText -}}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-price-bar">
+                <div class="hero-price-info">
+                    {{- $isHeroOutOfStock := not (partial "utils-in-stock.html" .) -}}
+                    {{- with or $hero.availability .Params.availability -}}<span class="badge-availability m3-badge {{ if $isHeroOutOfStock }}badge-out-of-stock m3-badge-error{{ else }}m3-badge-tertiary{{ end }}">{{ . }}</span>{{- end -}}
+                    {{- if .Params.is_amazon_direct -}}
+                    <span class="badge-amazon-direct m3-badge m3-badge-primary">Amazon直販</span>
+                    {{- end -}}
+                    {{- if .Params.is_amazon_haul -}}
+                    <span class="badge-amazon-haul m3-badge m3-badge-secondary">Amazon Haul</span>
+                    {{- end -}}
+                    {{- if .Params.is_furusato -}}
+                    <span class="badge-furusato m3-badge m3-badge-furusato">ふるさと納税</span>
+                    {{- end -}}
+                    {{- with .Params.deal_badge -}}
+                    {{- $dealClass := "deal-standard" -}}
+                    {{- if or (eq $.Params.deal_access_type "PRIME_EXCLUSIVE") (eq $.Params.deal_access_type
+                    "PRIME_EARLY_ACCESS") -}}
+                    {{- $dealClass = "deal-prime" -}}
+                    {{- end -}}
+                    <span class="badge-deal m3-badge m3-badge-deal {{ $dealClass }}">{{ . }}</span>
+                    {{- end -}}
+                    {{- if .Params.savings_percentage -}}
+                    <span class="badge-savings m3-badge m3-badge-sale">{{ .Params.savings_percentage }}% OFF</span>
+                    {{- end -}}
+                    {{- if and $product.price $product.loyalty_points -}}
+                    {{- $priceNum := index (findRE "[0-9]+" (replace $product.price "," "")) 0 | default 0 | int -}}
+                    {{- if gt $priceNum 0 -}}
+                    {{- $rate := mul (div (float $product.loyalty_points) (float $priceNum)) 100 -}}
+                    {{- if ge $rate 10.0 -}}
+                    <span class="badge-points-rate m3-badge m3-badge-points">ポイント還元率 {{- printf "%.0f" $rate -}}%</span>
+                    {{- end -}}
+                    {{- end -}}
+                    {{- end -}}
+                </div>
+                <div class="hero-price-group">
+                    <div class="hero-price-main">
+                        <span class="hero-price">{{ partial "utils-price-format.html" $product.price }}</span>
+                        {{- if $product.price -}}
+                        <span class="hero-price-tax">税込</span>
+                        {{- end -}}
+                        {{- if $isDiscounted -}}
+                        <span class="m3-badge m3-badge-price-diff m3-badge-price-down" title="調査時より ¥{{ lang.FormatNumber 0 $diffAbs }} 値下げ">
+                            <span class="material-symbols-outlined icon-diff" aria-hidden="true">trending_down</span> -¥{{ lang.FormatNumber 0 $diffAbs }}{{ if gt $diffRate 0 }} ({{ printf "%.0f" $diffRate }}% OFF){{ end }}
+                        </span>
+                        {{- else if $isPriceUp -}}
+                        <span class="m3-badge m3-badge-price-diff m3-badge-price-up" title="調査時より ¥{{ lang.FormatNumber 0 $diffAbs }} 値上げ">
+                            <span class="material-symbols-outlined icon-diff" aria-hidden="true">trending_up</span> +¥{{ lang.FormatNumber 0 $diffAbs }}
+                        </span>
+                        {{- end -}}
+                        {{- if $product.loyalty_points -}}
+                        <span class="hero-points m3-badge m3-badge-points"><span class="material-symbols-outlined icon-points" aria-hidden="true">card_giftcard</span> {{- $product.loyalty_points -}}pt還元</span>
+                        {{- end -}}
+                    </div>
+                    {{- if or $isDiscounted $isPriceUp -}}
+                    <div class="hero-investigated-price-row">
+                        <span class="hero-investigated-price-label">調査時価格:</span>
+                        {{- if $isDiscounted -}}
+                        <span class="hero-investigated-price-del">{{ partial "utils-price-format.html" $product.investigated_price }}</span>
+                        {{- else -}}
+                        <span class="hero-investigated-price-val">{{ partial "utils-price-format.html" $product.investigated_price }}</span>
+                        {{- end -}}
+                    </div>
+                    {{- end -}}
+                </div>
+            </div>
+        </div>
+
+        {{- if or $hero.score_rationale.plus $hero.score_rationale.minus -}}
+        <div class="hero-score-rationale">
+            {{- range $hero.score_rationale.plus -}}
+            <div class="hero-score-item hero-score-plus">
+                <span class="hero-score-item-points">+{{ .points }}</span>
+                <span class="hero-score-item-desc">{{ .desc }}</span>
+            </div>
+            {{- end -}}
+
+            {{- range $hero.score_rationale.minus -}}
+            <div class="hero-score-item hero-score-minus">
+                <span class="hero-score-item-points">-{{ .points }}</span>
+                <span class="hero-score-item-desc">{{ .desc }}</span>
+            </div>
+            {{- end -}}
+        </div>
+        {{- end -}}
+
+        <div class="hero-actions-main">
+            {{- partial "product-shop-buttons.html" (dict "context" . "variant" "hero" "position" "hero") -}}
+            <div class="hero-price-freshness-note">
+                <span class="material-symbols-outlined icon-freshness" aria-hidden="true">schedule</span>
+                <span>{{- with .Params.price_updated_at -}}{{ time . | dateFormat "2006年01月02日 15:04" }}時点のAmazon価格・セール情報（リアルタイムの在庫・クーポンはAmazonでご確認ください）{{- else -}}{{- with .Params.last_investigated -}}{{ time . | dateFormat "2006年01月02日" }}{{- else -}}{{ .Lastmod.Format "2006年01月02日" }}{{- end -}}時点の参考価格（最新のセール・在庫・クーポンはAmazonでご確認ください）{{- end -}}</span>
+            </div>
+        </div>
+    </div>
+
+    {{- if or $hero.target_users $hero.warnings -}}
+    <div class="hero-evaluation-section">
+        {{- if $hero.target_users -}}
+        <div class="hero-eval-block hero-eval-pros">
+            <span class="hero-eval-title"><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> こんな方におすすめ</span>
+            <ul>
+                {{- range $hero.target_users -}}
+                <li>{{ . }}</li>
+                {{- end -}}
+            </ul>
+        </div>
+        {{- end -}}
+
+        {{- if $hero.warnings -}}
+        <div class="hero-eval-block hero-eval-cons">
+            <span class="hero-eval-title"><span class="material-symbols-outlined" aria-hidden="true">warning</span> 購入時の注意点</span>
+            <ul>
+                {{- range $hero.warnings -}}
+                <li>{{ . }}</li>
+                {{- end -}}
+            </ul>
+        </div>
+        {{- end -}}
+    </div>
+    {{- end -}}
+
+    {{- if $product.specs -}}
+    <div class="product-hero-footer">
+        <div class="hero-meta-tags">
+            {{- partial "product-spec-tags.html" (dict "specs" $product.specs "tagClass" "hero-tag") -}}
+        </div>
+    </div>
+    {{- end -}}
 </div>

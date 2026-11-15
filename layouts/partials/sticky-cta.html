@@ -24,21 +24,37 @@
                 <div class="sticky-cta-title">{{ .Title }}</div>
                 <div class="sticky-cta-meta-row">
                     <span class="sticky-cta-price">{{ partial "utils-price-format.html" $product.price }}</span>
+                    {{- if $product.savings_percentage -}}
+                    <span class="sticky-cta-savings">-{{ $product.savings_percentage }}%</span>
+                    {{- end -}}
                     {{- if $product.score -}}
                     <span class="sticky-cta-score"><span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span>{{ $product.score }}点</span>
                     {{- end -}}
                 </div>
             </div>
         </div>
-        <a href="{{ $product.affiliate_url }}" class="sticky-cta-btn btn-amazon-small" target="_blank"
-            rel="noopener noreferrer" data-track-product="1" data-mall="amazon" data-asin="{{ $product.asin }}"
-            data-title="{{ .Title }}" data-category="{{ $trackingCategory }}" data-price-bucket="{{ $priceBucket }}"
-            data-price="{{ $product.price }}" data-score="{{ $product.score | default 0 }}" data-position="sticky"
-            aria-label="{{ .Title }}をAmazonで詳細を見る">
-            <span class="material-symbols-outlined" aria-hidden="true">shopping_cart</span>
-            <span class="sticky-cta-btn-label-full">Amazonで最新価格・在庫を見る</span>
-            <span class="sticky-cta-btn-label-short">Amazonで見る</span>
-        </a>
+        <div class="sticky-cta-actions">
+            <button type="button" class="sticky-cta-compare-btn" data-compare-btn="1" data-asin="{{ $product.asin }}"
+                data-title="{{ .Title }}" data-url="{{ .RelPermalink }}"
+                data-affiliate-url="{{ $product.affiliate_url }}"
+                data-image="{{ if $product.images }}{{ index $product.images 0 }}{{ end }}"
+                data-price="{{ $product.price }}" data-score="{{ $product.score | default 0 }}"
+                data-savings="{{ $product.savings_percentage | default 0 }}"
+                data-category="{{ $trackingCategory }}"
+                data-specs='{{ partial "product-specs-json.html" $product.specs }}'
+                aria-pressed="false" aria-label="{{ .Title }}を比較に追加" title="比較に追加">
+                <span class="material-symbols-outlined compare-icon" aria-hidden="true">balance</span>
+            </button>
+            <a href="{{ $product.affiliate_url }}" class="sticky-cta-btn btn-amazon-small" target="_blank"
+                rel="noopener noreferrer" data-track-product="1" data-mall="amazon" data-asin="{{ $product.asin }}"
+                data-title="{{ .Title }}" data-category="{{ $trackingCategory }}" data-price-bucket="{{ $priceBucket }}"
+                data-price="{{ $product.price }}" data-score="{{ $product.score | default 0 }}" data-position="sticky"
+                aria-label="{{ .Title }}をAmazonで詳細を見る">
+                <span class="material-symbols-outlined" aria-hidden="true">shopping_cart</span>
+                <span class="sticky-cta-btn-label-full">Amazonで最新価格・在庫を見る</span>
+                <span class="sticky-cta-btn-label-short">Amazonで見る</span>
+            </a>
+        </div>
     </div>
 </div>
 {{- end -}}
