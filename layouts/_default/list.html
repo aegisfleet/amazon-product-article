@@ -1,7 +1,5 @@
 {{- define "main" -}}
-{{- if or (eq .Kind "taxonomy") (and (eq .Kind "section") (eq .Section "articles")) -}}
-{{- partial "simple-index.html" . -}}
-{{- else if and (eq .Section "brand") (not .Params.brand_name) -}}
+{{- if and (eq .Section "brand") (not .Params.brand_name) -}}
 {{- partial "brand-index-content.html" . -}}
 {{- else -}}
 <div class="container" style="padding-top: var(--spacing-xl);">
@@ -11,57 +9,6 @@
         <h1>{{ .Title }}</h1>
         {{- with .Description -}}<p class="article-meta">{{ . }}</p>{{- end -}}
     </div>
-
-    {{- if eq .Kind "term" -}}
-    {{- $currentCategory := .Title -}}
-    {{- $lowerCurrent := lower $currentCategory -}}
-    {{- $matchedParent := "" -}}
-    {{- range $parentName, $parentData := hugo.Data.categories.parents -}}
-    {{- range $parentData.childrenWithCounts -}}
-    {{- if eq (lower .name) $lowerCurrent -}}
-    {{- $matchedParent = $parentData -}}
-    {{- end -}}
-    {{- end -}}
-    {{- end -}}
-    {{- if $matchedParent -}}
-    <nav class="sibling-category-nav" aria-label="同グループの関連カテゴリ">
-        <div class="sibling-category-scroll">
-            <a href="{{ printf `parent-category/%s/` $matchedParent.slug | relURL }}" class="sibling-parent-badge">
-                <span aria-hidden="true">{{ $matchedParent.icon | default "📁" }}</span>
-                <span>{{ $matchedParent.name }}</span>
-                <span class="sibling-badge-count">({{ $matchedParent.productCount }})</span>
-            </a>
-            <span class="sibling-nav-divider" aria-hidden="true"></span>
-            {{- $validSiblings := where $matchedParent.childrenWithCounts "productCount" "gt" 0 -}}
-            {{- $regularSiblings := slice -}}
-            {{- $otherSiblings := slice -}}
-            {{- range sort $validSiblings "productCount" "desc" -}}
-            {{- if or (hasPrefix .name "その他") (hasPrefix .name "未分類") -}}
-            {{- $otherSiblings = $otherSiblings | append . -}}
-            {{- else -}}
-            {{- $regularSiblings = $regularSiblings | append . -}}
-            {{- end -}}
-            {{- end -}}
-            {{- $combinedSiblings := $regularSiblings -}}
-            {{- range $otherSiblings -}}
-            {{- $combinedSiblings = $combinedSiblings | append . -}}
-            {{- end -}}
-            {{- $sortedSiblings := first 12 $combinedSiblings -}}
-            {{- range $sortedSiblings -}}
-            {{- $isCurrent := eq (lower .name) $lowerCurrent -}}
-            {{- $sibUrl := printf "categories/%s/" (.name | urlize) | relURL -}}
-            {{- with $.Site.GetPage (printf "/categories/%s" (.name | urlize)) -}}
-            {{- $sibUrl = .RelPermalink -}}
-            {{- end -}}
-            <a href="{{ $sibUrl }}" class="sibling-category-pill{{ if $isCurrent }} active{{ end }}"{{ if $isCurrent }} aria-current="page"{{ end }}>
-                <span>{{ .name }}</span>
-                <span class="sibling-pill-count">({{ .productCount }})</span>
-            </a>
-            {{- end -}}
-        </div>
-    </nav>
-    {{- end -}}
-    {{- end -}}
 
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-sm);">
         <h2 style="font-size: 1.1rem; font-weight: bold; margin: 0; color: var(--color-text-main);">商品絞り込み</h2>
@@ -286,9 +233,6 @@
                     </div>
                     {{- end -}}
                 </a>
-                {{- if not $inStock }}
-                <span class="card-image-stock-label" aria-hidden="true">在庫切れ</span>
-                {{- end }}
             </div>
             <div class="card-content">
                 <div class="card-header">
@@ -404,7 +348,7 @@
                             }}{{- else -}}{{ .Date.Format "2006年01月02日" }}{{- end -}}</span>
                         {{- if .Params.affiliate_url -}}
                         <a href="{{ .Params.affiliate_url }}" class="btn-amazon-small" target="_blank"
-                            rel="noopener noreferrer" data-track-product="1" data-mall="amazon" data-position="card" data-asin="{{ .Params.asin }}" data-title="{{ .Title }}"
+                            rel="noopener noreferrer" data-track-product="1" data-asin="{{ .Params.asin }}"
                             data-category="{{ $trackingCategory }}"
                             data-price-bucket="{{ partial `utils-price-bucket.html` .Params.price }}"
                             data-price="{{ .Params.price }}" data-score="{{ .Params.score | default 0 }}"><span
@@ -422,6 +366,7 @@
     </div>
 
     <!-- Load More Container -->
+    {{- partial "ad-unit.html" "7273134053" -}}
     <div class="load-more-container" id="category-load-more-container" style="display: none;">
         <button type="button" class="btn-load-more" id="category-load-more-btn">
             さらに読み込む
@@ -487,7 +432,7 @@
         font-size: 0.8125rem;
         color: var(--color-text-secondary);
         cursor: pointer;
-        transition: background-color 0.2s ease, color 0.2s ease;
+        transition: all 0.2s ease;
     }
 
     .filter-reset-btn:hover {
