@@ -568,7 +568,295 @@
                         }
                     }
 
-                    competitorCards.forEach(upgradeCompetitorCard);
+                    function enhanceCompetitorPoints(card) {
+                        var featureItems = card.querySelectorAll('.competitor-features li');
+                        featureItems.forEach(function (li) {
+                            var text = li.textContent.trim();
+                            var commonMatch = text.match(/^共通点[：:]\s*(.+)$/);
+                            if (commonMatch) {
+                                li.className = 'comp-point-item comp-point-item--common';
+                                li.innerHTML = '<span class="comp-point-tag comp-point-common">共通点</span><span class="comp-point-body">' + commonMatch[1] + '</span>';
+                                return;
+                            }
+                            var diffMatch = text.match(/^相違点[：:]\s*(.+)$/);
+                            if (diffMatch) {
+                                li.className = 'comp-point-item comp-point-item--diff';
+                                li.innerHTML = '<span class="comp-point-tag comp-point-diff">相違点</span><span class="comp-point-body">' + diffMatch[1] + '</span>';
+                            }
+                        });
+
+                        var diffItems = card.querySelectorAll('.competitor-diff li');
+                        diffItems.forEach(function (li, idx) {
+                            var text = li.textContent.trim();
+                            var advMatch = text.match(/^(.+?の利点)[：:]\s*(.+)$/);
+                            if (advMatch) {
+                                li.className = 'comp-adv-item ' + (idx === 0 ? 'comp-adv-item--primary' : 'comp-adv-item--secondary');
+                                var iconName = idx === 0 ? 'check_circle' : 'change_circle';
+                                li.innerHTML =
+                                    '<span class="material-symbols-outlined comp-adv-icon" aria-hidden="true">' + iconName + '</span>' +
+                                    '<div class="comp-adv-content"><strong class="comp-adv-label">' + advMatch[1] + ':</strong> <span>' + advMatch[2] + '</span></div>';
+                            }
+                        });
+                    }
+
+                    competitorCards.forEach(function (card) {
+                        upgradeCompetitorCard(card);
+                        enhanceCompetitorPoints(card);
+                    });
+
+                    var EMOJI_ICON_MAP = [
+                        { emoji: '📦', icon: 'package_2', tone: 'tone-primary' },
+                        { emoji: '📊', icon: 'bar_chart', tone: 'tone-secondary' },
+                        { emoji: '🛒', icon: 'list_alt', tone: 'tone-primary' },
+                        { emoji: '🎯', icon: 'task_alt', tone: 'tone-secondary' },
+                        { emoji: '🔗', icon: 'link', tone: 'tone-muted' },
+                        { emoji: '💡', icon: 'lightbulb', tone: 'tone-primary' },
+                        { emoji: '🔧', icon: 'build', tone: 'tone-tertiary' },
+                        { emoji: '⚔️', icon: 'swords', tone: 'tone-primary' },
+                        { emoji: '⚔', icon: 'swords', tone: 'tone-primary' },
+                        { emoji: '👍', icon: 'thumb_up', tone: 'tone-pros' },
+                        { emoji: '👎', icon: 'thumb_down', tone: 'tone-cons' },
+                        { emoji: '🗣️', icon: 'record_voice_over', tone: 'tone-primary' },
+                        { emoji: '🗣', icon: 'record_voice_over', tone: 'tone-primary' }
+                    ];
+
+                    function upgradeElementLeadingEmoji(el, isTocLink) {
+                        if (!el?.firstChild) return;
+                        var firstNode = el.firstChild;
+                        if (firstNode.nodeType !== Node.TEXT_NODE) return;
+                        var text = firstNode.nodeValue || '';
+                        var trimmed = text.trimStart();
+                        for (var i = 0; i < EMOJI_ICON_MAP.length; i++) {
+                            var entry = EMOJI_ICON_MAP[i];
+                            if (trimmed.indexOf(entry.emoji) === 0) {
+                                firstNode.nodeValue = trimmed.slice(entry.emoji.length).replace(/^\s+/, '');
+                                var span = document.createElement('span');
+                                span.className = 'material-symbols-outlined ' + (isTocLink ? 'toc-mat-icon ' : 'heading-mat-icon ') + entry.tone;
+                                span.setAttribute('aria-hidden', 'true');
+                                span.textContent = entry.icon;
+                                el.insertBefore(span, firstNode);
+                                return;
+                            }
+                        }
+                    }
+
+                    function enhanceFeatureCards(contentRoot) {
+                        var featureIcons = ['wb_sunny', 'task_alt', 'auto_awesome', 'build'];
+                        var cards = contentRoot.querySelectorAll('.feature-card');
+                        cards.forEach(function (card, idx) {
+                            var iconEl = card.querySelector('.feature-icon');
+                            if (!iconEl) return;
+                            var iconName = featureIcons[idx % featureIcons.length];
+                            iconEl.className = 'feature-icon feature-icon-tone-' + ((idx % 4) + 1);
+                            iconEl.innerHTML = '<span class="material-symbols-outlined" aria-hidden="true">' + iconName + '</span>';
+                        });
+                    }
+
+                    function wrapProsConsPair(h3First, ulFirst, h3Second, ulSecond, gridClass) {
+                        var grid = document.createElement('div');
+                        grid.className = gridClass;
+
+                        var prosBox = document.createElement('div');
+                        prosBox.className = 'review-point-box review-point-box--pros';
+                        ulFirst.classList.add('semantic-list', 'semantic-list--pros');
+
+                        var consBox = document.createElement('div');
+                        consBox.className = 'review-point-box review-point-box--cons';
+                        ulSecond.classList.add('semantic-list', 'semantic-list--cons');
+
+                        ulSecond.querySelectorAll('li').forEach(function (li) {
+                            var inner = li.querySelector('.mobile-list-item') || li;
+                            inner.textContent = inner.textContent.replace(/^⚠️?\s*/, '');
+                        });
+
+                        h3First.parentNode.insertBefore(grid, h3First);
+                        prosBox.appendChild(h3First);
+                        prosBox.appendChild(ulFirst);
+                        consBox.appendChild(h3Second);
+                        consBox.appendChild(ulSecond);
+                        grid.appendChild(prosBox);
+                        grid.appendChild(consBox);
+                    }
+
+                    function getHeadingPureText(el) {
+                        if (!el) return '';
+                        var text = '';
+                        el.childNodes.forEach(function (node) {
+                            if (node.nodeType === Node.TEXT_NODE) {
+                                text += node.nodeValue;
+                            } else if (node.nodeType === Node.ELEMENT_NODE && !node.classList.contains('material-symbols-outlined')) {
+                                text += node.textContent;
+                            }
+                        });
+                        return text.trim();
+                    }
+
+                    function enhancePersonaStories(contentRoot) {
+                        var h4List = Array.prototype.slice.call(contentRoot.querySelectorAll('h4'));
+                        var storyPairs = [];
+                        h4List.forEach(function (h4) {
+                            var text = getHeadingPureText(h4);
+                            if (text.indexOf('の体験談') === -1) return;
+                            var nextEl = h4.nextElementSibling;
+                            if (nextEl && nextEl.tagName === 'BLOCKQUOTE') {
+                                storyPairs.push({ h4: h4, bq: nextEl, titleText: text });
+                            }
+                        });
+                        if (storyPairs.length === 0) return;
+
+                        var grid = document.createElement('div');
+                        grid.className = 'persona-stories-grid' + (storyPairs.length === 1 ? ' persona-stories-grid--single' : '');
+                        var firstH4 = storyPairs[0].h4;
+                        firstH4.parentNode.insertBefore(grid, firstH4);
+
+                        storyPairs.forEach(function (pair) {
+                            var titleMatch = pair.titleText.match(/^(.+?の体験談)\s*(?:\((.+)\))?$/);
+                            var personaTitle = titleMatch ? titleMatch[1] : pair.titleText;
+                            var scenario = titleMatch?.[2] ? titleMatch[2] : '';
+
+                            var rawQuote = pair.bq.textContent.trim();
+                            var sentimentMatch = rawQuote.match(/\(評価[：:]\s*([^)]+)\)\s*$/);
+                            var sentiment = sentimentMatch ? sentimentMatch[1].trim() : '満足';
+                            var cleanQuote = rawQuote.replace(/\(評価[：:]\s*[^)]+\)\s*$/, '').trim();
+
+                            var sentimentClass = 'sentiment-positive';
+                            if (sentiment.indexOf('不満') !== -1) sentimentClass = 'sentiment-negative';
+                            else if (sentiment.indexOf('普通') !== -1) sentimentClass = 'sentiment-neutral';
+
+                            var card = document.createElement('div');
+                            card.className = 'persona-story-card';
+
+                            var header = document.createElement('div');
+                            header.className = 'persona-story-header';
+
+                            var titleSpan = document.createElement('span');
+                            titleSpan.className = 'persona-story-title';
+                            titleSpan.textContent = personaTitle;
+
+                            var badgeSpan = document.createElement('span');
+                            badgeSpan.className = 'persona-sentiment-badge ' + sentimentClass;
+                            badgeSpan.textContent = '評価: ' + sentiment;
+
+                            header.appendChild(titleSpan);
+                            header.appendChild(badgeSpan);
+                            card.appendChild(header);
+
+                            if (scenario) {
+                                var scenarioDiv = document.createElement('div');
+                                scenarioDiv.className = 'persona-story-scenario';
+                                scenarioDiv.textContent = 'シチュエーション：' + scenario;
+                                card.appendChild(scenarioDiv);
+                            }
+
+                            var bodyP = document.createElement('p');
+                            bodyP.className = 'persona-story-body';
+                            bodyP.textContent = '“' + cleanQuote + '”';
+                            card.appendChild(bodyP);
+
+                            var footer = document.createElement('div');
+                            footer.className = 'persona-story-footer';
+                            footer.innerHTML = '<span class="material-symbols-outlined" aria-hidden="true">verified_user</span><span>実購入者レビュー・体験談</span>';
+                            card.appendChild(footer);
+
+                            grid.appendChild(card);
+                            pair.h4.remove();
+                            pair.bq.remove();
+                        });
+                    }
+
+                    function enhanceContentStructure() {
+                        var contentRoot = document.querySelector('.article-content .content');
+                        if (!contentRoot) return;
+
+                        enhanceFeatureCards(contentRoot);
+
+                        // Upgrade headings and TOC emojis to Material Symbols
+                        contentRoot.querySelectorAll('h2, h3, h4').forEach(function (h) {
+                            upgradeElementLeadingEmoji(h, false);
+                        });
+                        if (toc) {
+                            toc.querySelectorAll('a').forEach(function (a) {
+                                upgradeElementLeadingEmoji(a, true);
+                            });
+                        }
+
+                        // Group Pros/Cons H3+UL pairs in User Reviews and Summary sections
+                        var h3List = Array.prototype.slice.call(contentRoot.querySelectorAll('h3'));
+                        h3List.forEach(function (h3) {
+                            if (!h3.parentNode) return;
+                            var label = getHeadingPureText(h3);
+                            var next1 = h3.nextElementSibling;
+
+                            if (label === 'こんな方におすすめ' && !h3.querySelector('.heading-mat-icon')) {
+                                var recIcon = document.createElement('span');
+                                recIcon.className = 'material-symbols-outlined heading-mat-icon tone-pros';
+                                recIcon.setAttribute('aria-hidden', 'true');
+                                recIcon.textContent = 'thumb_up';
+                                h3.insertBefore(recIcon, h3.firstChild);
+                            }
+
+                            if ((label === '良い点' || label === 'こんな方におすすめ') && next1 && next1.tagName === 'UL') {
+                                var next2 = next1.nextElementSibling;
+                                var next3 = next2 ? next2.nextElementSibling : null;
+                                var next2Label = getHeadingPureText(next2);
+                                if (next2 && next2.tagName === 'H3' && (next2Label === '気になる点' || next2Label === '注意点') && next3 && next3.tagName === 'UL') {
+                                    if (next2Label === '注意点' && !next2.querySelector('.heading-mat-icon')) {
+                                        var warnIcon = document.createElement('span');
+                                        warnIcon.className = 'material-symbols-outlined heading-mat-icon tone-cons';
+                                        warnIcon.setAttribute('aria-hidden', 'true');
+                                        warnIcon.textContent = 'warning';
+                                        next2.insertBefore(warnIcon, next2.firstChild);
+                                    }
+                                    wrapProsConsPair(h3, next1, next2, next3, 'review-points-grid');
+                                }
+                            } else if (label === '使用シーン' && next1 && next1.tagName === 'UL') {
+                                next1.classList.add('semantic-list', 'semantic-list--scenes');
+                            } else if (label === '購入者の声' && next1 && next1.tagName === 'BLOCKQUOTE') {
+                                next1.classList.add('review-summary-quote');
+                            } else if (label === 'コスパ評価') {
+                                var verdictBox = document.createElement('div');
+                                verdictBox.className = 'verdict-summary-box';
+                                if (!h3.querySelector('.heading-mat-icon')) {
+                                    var vIcon = document.createElement('span');
+                                    vIcon.className = 'material-symbols-outlined heading-mat-icon tone-pros';
+                                    vIcon.setAttribute('aria-hidden', 'true');
+                                    vIcon.textContent = 'verified';
+                                    h3.insertBefore(vIcon, h3.firstChild);
+                                }
+                                h3.parentNode.insertBefore(verdictBox, h3);
+                                verdictBox.appendChild(h3);
+                                var cursor = verdictBox.nextElementSibling;
+                                while (cursor && cursor.tagName === 'P') {
+                                    var nextCursor = cursor.nextElementSibling;
+                                    verdictBox.appendChild(cursor);
+                                    cursor = nextCursor;
+                                }
+                            }
+                        });
+
+                        // Enhance Persona Case Studies
+                        enhancePersonaStories(contentRoot);
+
+                        // Enhance Reference Sources section
+                        var h2List = Array.prototype.slice.call(contentRoot.querySelectorAll('h2'));
+                        h2List.forEach(function (h2) {
+                            if (h2.textContent.indexOf('参考情報ソース') !== -1) {
+                                var sib = h2.nextElementSibling;
+                                while (sib && sib.tagName !== 'H2') {
+                                    if (sib.tagName === 'UL') {
+                                        sib.classList.add('semantic-list', 'semantic-list--sources');
+                                        sib.querySelectorAll('li').forEach(function (li) {
+                                            var inner = li.querySelector('.mobile-list-item') || li;
+                                            inner.innerHTML = inner.innerHTML.replace(/\s*（(信頼度[：:][\s\S]+?)）\s*$/, '<span class="source-meta-badge">$1</span>');
+                                        });
+                                    }
+                                    sib = sib.nextElementSibling;
+                                }
+                            }
+                        });
+                    }
+
+                    enhanceContentStructure();
 
                     // Move TOC to before first H2 for mobile/tablet inline reading
                     if (toc) {
