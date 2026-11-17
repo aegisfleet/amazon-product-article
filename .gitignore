@@ -147,3 +147,7 @@ data/cache/**/*.tmp
 !/DESIGN.md
 !/SECURITY.md
 patch.diff
+
+# Patch leftovers
+*.orig
+*.rej
