@@ -78,8 +78,8 @@
 
     {{- $uniqueArticles := $articles -}}
 
-    {{- /* Sort by last_investigated desc */ -}}
-    {{- $sorted := sort $uniqueArticles ".Params.last_investigated" "desc" -}}
+    {{- /* Sort by score desc to match the default client-side sort order (avoids reorder flicker) */ -}}
+    {{- $sorted := sort $uniqueArticles ".Params.score" "desc" -}}
 
     {{- /* For "その他", collect categories from displayed articles instead of just predefined list */ -}}
     {{- $displayCategories := $childCategories -}}

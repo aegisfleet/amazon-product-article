@@ -188,7 +188,8 @@
     </div>
 
     <div id="product-grid" class="card-grid">
-        {{- range .Pages -}}
+        {{- /* Sort by score desc to match the default client-side sort order (avoids reorder flicker) */ -}}
+        {{- range sort .Pages ".Params.score" "desc" -}}
         {{- /* Get price as number */ -}}
         {{- $priceRaw := 0 -}}
         {{- if .Params.price -}}
