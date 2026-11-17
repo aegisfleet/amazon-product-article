@@ -568,20 +568,33 @@
                         }
                     }
 
+                    function createTextElement(tagName, className, text) {
+                        var node = document.createElement(tagName);
+                        if (className) node.className = className;
+                        node.textContent = text;
+                        return node;
+                    }
+
+                    function renderComparisonPoint(li, modifier, label, body) {
+                        li.className = 'comp-point-item comp-point-item--' + modifier;
+                        li.replaceChildren(
+                            createTextElement('span', 'comp-point-tag comp-point-' + modifier, label),
+                            createTextElement('span', 'comp-point-body', body)
+                        );
+                    }
+
                     function enhanceCompetitorPoints(card) {
                         var featureItems = card.querySelectorAll('.competitor-features li');
                         featureItems.forEach(function (li) {
                             var text = li.textContent.trim();
                             var commonMatch = text.match(/^共通点[：:]\s*(.+)$/);
                             if (commonMatch) {
-                                li.className = 'comp-point-item comp-point-item--common';
-                                li.innerHTML = '<span class="comp-point-tag comp-point-common">共通点</span><span class="comp-point-body">' + commonMatch[1] + '</span>';
+                                renderComparisonPoint(li, 'common', '共通点', commonMatch[1]);
                                 return;
                             }
                             var diffMatch = text.match(/^相違点[：:]\s*(.+)$/);
                             if (diffMatch) {
-                                li.className = 'comp-point-item comp-point-item--diff';
-                                li.innerHTML = '<span class="comp-point-tag comp-point-diff">相違点</span><span class="comp-point-body">' + diffMatch[1] + '</span>';
+                                renderComparisonPoint(li, 'diff', '相違点', diffMatch[1]);
                             }
                         });
 
@@ -591,10 +604,16 @@
                             var advMatch = text.match(/^(.+?の利点)[：:]\s*(.+)$/);
                             if (advMatch) {
                                 li.className = 'comp-adv-item ' + (idx === 0 ? 'comp-adv-item--primary' : 'comp-adv-item--secondary');
-                                var iconName = idx === 0 ? 'check_circle' : 'change_circle';
-                                li.innerHTML =
-                                    '<span class="material-symbols-outlined comp-adv-icon" aria-hidden="true">' + iconName + '</span>' +
-                                    '<div class="comp-adv-content"><strong class="comp-adv-label">' + advMatch[1] + ':</strong> <span>' + advMatch[2] + '</span></div>';
+                                var icon = createTextElement('span', 'material-symbols-outlined comp-adv-icon', idx === 0 ? 'check_circle' : 'change_circle');
+                                icon.setAttribute('aria-hidden', 'true');
+                                var content = document.createElement('div');
+                                content.className = 'comp-adv-content';
+                                content.append(
+                                    createTextElement('strong', 'comp-adv-label', advMatch[1] + ':'),
+                                    ' ',
+                                    createTextElement('span', '', advMatch[2])
+                                );
+                                li.replaceChildren(icon, content);
                             }
                         });
                     }
