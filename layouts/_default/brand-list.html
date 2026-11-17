@@ -48,8 +48,8 @@
         <h1>{{ .Title }}</h1>
     </div>
 
-    {{- /* Sort by last_investigated desc */ -}}
-    {{- $sorted := sort $articles ".Params.last_investigated" "desc" -}}
+    {{- /* Sort by score desc to match the default client-side sort order (avoids reorder flicker) */ -}}
+    {{- $sorted := sort $articles ".Params.score" "desc" -}}
 
     {{- /* Collect categories from brand articles */ -}}
     {{- $scratch.Set "brandCats" slice -}}
