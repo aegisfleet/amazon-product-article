@@ -9,5 +9,6 @@
 *.yaml text eol=lf
 *.md text eol=lf
 
-# Auto-generated data: excluded from Devin Review (CodeRabbit excludes via .coderabbit.yaml)
+# Product research results: their content cannot be validated by code review,
+# so exclude them from Devin Review (CodeRabbit excludes data/** via .coderabbit.yaml)
 data/**/*.json linguist-generated
