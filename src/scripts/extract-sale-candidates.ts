@@ -1,7 +1,7 @@
 #!/usr/bin/env ts-node
 /**
  * Extract Sale Candidates Script
- * data/cache/paapi-product-cache.json および content/articles/*.md から
+ * 商品キャッシュ（data/cache/paapi/<shard>.json）および content/articles/*.md から
  * 調査済み高スコア（75点以上）のタイムセール中・注目商品を抽出する
  */
 

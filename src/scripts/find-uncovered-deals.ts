@@ -1,7 +1,7 @@
 #!/usr/bin/env ts-node
 /**
  * Find Uncovered Deals Script (案4)
- * data/cache/paapi-product-cache.json のセール商品のうち、
+ * 商品キャッシュ（data/cache/paapi/<shard>.json）のセール商品のうち、
  * まだ調査レポート（content/articles/ASIN.md）が存在しない商品を抽出する。
  *
  * 環境変数:

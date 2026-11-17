@@ -20,7 +20,7 @@ description: 同一商品・バリエーション間でのスコア乖離の調�
 - **対象ファイル**:
   - `data/investigations/<ASIN>.json`（調査レポート）
   - `content/articles/<ASIN>.md`（生成済み記事）
-  - `data/cache/paapi-product-cache.json`（商品キャッシュ）
+  - `data/cache/paapi/<shard>.json`（商品キャッシュ）
 
 ---
 
@@ -52,7 +52,7 @@ pnpm tsx src/scripts/maintenance/find-score-discrepancy.ts --asin <ASIN> -v
 `find-score-discrepancy.ts` で同一親ASINグループとして検出されない場合でも、以下のケースがあるため注意が必要です。
 
 - **PAAPIキャッシュとの親ASIN不一致**:
-  調査データ（`data/investigations/<ASIN>.json`）の `parentAsin` と商品キャッシュ（`data/cache/paapi-product-cache.json`）の `parentAsin` が異なっている場合、同一グループとして正しく紐付かない。
+  調査データ（`data/investigations/<ASIN>.json`）の `parentAsin` と商品キャッシュ（`data/cache/paapi/<shard>.json`）の `parentAsin` が異なっている場合、同一グループとして正しく紐付かない。
 - **単体調査での過大評価・減点見落とし**:
   減点が0点で90点以上の極端な高スコアがついている無名ブランド品や、異常な割引率（80%〜90%OFFなど）が設定されている商品は、AI調査時のファクトチェック見落とし・過大評価の可能性が高い。
 

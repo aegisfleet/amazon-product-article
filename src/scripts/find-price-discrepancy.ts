@@ -2,7 +2,7 @@
 /**
  * Find Price Discrepancy Script (案5)
  * 調査済み商品（data/investigations/{ASIN}.json）の中から、
- * data/cache/paapi-product-cache.json でセールバッジが付与されている、
+ * 商品キャッシュ（data/cache/paapi/<shard>.json）でセールバッジが付与されている、
  * または割引率（savingsPercentage）が閾値（デフォルト15%）以上の「価格乖離（値下げ・セール化）商品」を抽出する。
  *
  * 環境変数:

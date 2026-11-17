@@ -17,7 +17,7 @@ description: 調査時価格と現在価格の乖離、またはAmazonセール�
      生産終了や在庫僅少により、調査時の適正価格から倍以上の高値に跳ね上がったケース。
 - **対象ファイル**:
   - `data/investigations/<ASIN>.json`（調査レポート・`investigatedPrice`）
-  - `data/cache/paapi-product-cache.json`（最新キャッシュデータ・価格・セールバッジ）
+  - `data/cache/paapi/<shard>.json`（最新キャッシュデータ・価格・セールバッジ）
   - `content/articles/<ASIN>.md`（公開記事）
 
 ---

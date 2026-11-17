@@ -72,9 +72,7 @@ Hugoテンプレート（`layouts/`）側でのキャッシュ直接依存を廃
 
 GitHub Actions の `deploy-articles.yml` では、記事生成中に最新化されたキャッシュデータをGitへ自動コミット・プッシュする仕組みが備わっている。
 
-1. **整合性チェック**:
-   - `data/cache/paapi-product-cache.json` が壊れていないか `node -e "JSON.parse(...)"` で構文チェック。
-2. **自動コミット & プッシュ**:
+1. **自動コミット & プッシュ**:
    - `.github/workflows/scripts/git-commit-push.sh` を使用し、`[skip ci]` タグを付与してリポジトリにプッシュする。
    - CIの無限ループを防止しつつ、最新のAPI取得成果を次回ビルドへ引き継ぐ。
 
@@ -88,7 +86,7 @@ GitHub Actions の `deploy-articles.yml` では、記事生成中に最新化さ
    - キャッシュのプッシュ時にリモート（`main` ブランチ）が進んでいた場合、最大3回のリトライループを実行する。
    - 単純な再試行だけでなく、リモートの最新状態を `git fetch` し、現在のキャッシュ変更と `git merge` を試みる。
 3. **スマートキャッシュ自動マージ (`merge-product-cache.ts`)**:
-   - 複数PRが同時にキャッシュを更新したことで `data/cache/paapi-product-cache.json` にGitコンフリクト（競合）が発生した場合、スクリプトが自動介入する。
+   - 複数PRが同時にキャッシュを更新したことで 同一シャード（`data/cache/paapi/<shard>.json`）にGitコンフリクト（競合）が発生した場合、スクリプトが自動介入する。
    - Gitインデックスから自ブランチ（`ours`）とリモートブランチ（`theirs`）の両方のキャッシュJSONを取り出し、`src/scripts/maintenance/merge-product-cache.ts` を実行する。
    - **ASIN単位のタイムスタンプ比較マージ**:
      - 片方にのみ存在するASIN: そのまま新規追加。

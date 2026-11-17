@@ -19,7 +19,6 @@ export interface CacheStore {
 export class CreatorsAPICache {
   private readonly cacheDir: string;
   private readonly shardsDir: string;
-  private readonly legacyCachePath: string;
   private cache: CacheStore = {};
   private readonly loadedShards = new Set<string>();
   private readonly dirtyShards = new Set<string>();
@@ -43,7 +42,6 @@ export class CreatorsAPICache {
     this.permanentInvalidTtl = permanentInvalidTtlDays * 24 * 60 * 60 * 1000; // 1週間
     this.cacheDir = path.isAbsolute(cacheDir) ? cacheDir : path.join(process.cwd(), cacheDir);
     this.shardsDir = path.join(this.cacheDir, 'paapi');
-    this.legacyCachePath = path.join(this.cacheDir, 'paapi-product-cache.json');
   }
 
   /**
@@ -116,34 +114,12 @@ export class CreatorsAPICache {
             this.cache[key] = CreatorsAPICache.normalizeCacheEntry(entry as Partial<CacheEntry>);
           }
         }
-      } else if (fs.existsSync(this.legacyCachePath) && !fs.existsSync(this.shardsDir)) {
-        // Fallback to legacy single file if shards directory doesn't exist
-        this.loadLegacyCache();
       }
     } catch (error) {
       this.logger.warn(`Failed to load cache shard ${shardKey}:`, error);
     }
 
     this.loadedShards.add(shardKey);
-  }
-
-  /**
-   * Load entire legacy cache file into memory (fallback)
-   */
-  private loadLegacyCache(): void {
-    try {
-      if (!fs.existsSync(this.legacyCachePath)) return;
-      const rawData = fs.readFileSync(this.legacyCachePath, 'utf-8');
-      const parsed = JSON.parse(rawData) as Record<string, unknown>;
-      for (const [key, entry] of Object.entries(parsed)) {
-        if (entry && typeof entry === 'object') {
-          this.cache[key] = CreatorsAPICache.normalizeCacheEntry(entry as Partial<CacheEntry>);
-        }
-      }
-      this.logger.info(`Loaded legacy cache: ${Object.keys(this.cache).length} entries`);
-    } catch (error) {
-      this.logger.warn('Failed to load legacy Creators API Cache:', error);
-    }
   }
 
   /**
@@ -193,22 +169,15 @@ export class CreatorsAPICache {
   }
 
   /**
-   * Static helper: Load all cache entries from shards (or legacy fallback)
+   * Static helper: Load all cache entries from shards
    */
   public static loadAll(cacheDir: string = 'data/cache'): CacheStore {
     const resolvedDir = path.isAbsolute(cacheDir) ? cacheDir : path.join(process.cwd(), cacheDir);
     const shardsDir = path.join(resolvedDir, 'paapi');
-    if (fs.existsSync(shardsDir)) {
-      return CreatorsAPICache.loadFromShards(shardsDir);
+    if (!fs.existsSync(shardsDir)) {
+      return {};
     }
-
-    const legacyPath = path.join(resolvedDir, 'paapi-product-cache.json');
-    const store: CacheStore = {};
-    if (fs.existsSync(legacyPath)) {
-      CreatorsAPICache.loadEntriesFromFile(legacyPath, store);
-    }
-
-    return store;
+    return CreatorsAPICache.loadFromShards(shardsDir);
   }
 
   private static async writeShardFile(shardPath: string, shardEntries: CacheStore): Promise<void> {

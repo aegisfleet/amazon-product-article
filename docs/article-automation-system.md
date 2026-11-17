@@ -36,7 +36,7 @@ flowchart TD
 
     subgraph Deploy["4. 記事生成 & デプロイ (deploy-articles.yml)"]
         D1["Creators API バッチ取得<br>(最新価格・画像・在庫・競合)"]
-        D2["キャッシュ更新<br>(paapi-product-cache.json)"]
+        D2["キャッシュ更新<br>(data/cache/paapi/*.json)"]
         D3["Hugo記事 Markdown生成<br>(content/articles/{ASIN}.md)"]
         D4["カテゴリ階層補強<br>(prebuild:hugo)"]
         D5["Hugo静的ビルド & Pages公開"]
@@ -101,7 +101,7 @@ PRが `main` ブランチにマージされると、公開用パイプライン�
 1. **最新商品データのバッチ取得（`pnpm run generate:articles`）**:
    - `src/scripts/article-generation-cli.ts` が `data/investigations/` 配下の全JSON（または差分対象）を読み込む。
    - 主商品および競合商品のASINを抽出し、Amazon Creators API v1 を通じて最新の価格、ポイント還元、画像URL、在庫状況、セール情報を一括取得する。
-   - レートリミット（0.8 req/sec）を遵守しつつ、APIレスポンスを `data/cache/paapi-product-cache.json` に保存・更新する。
+   - レートリミット（0.8 req/sec）を遵守しつつ、APIレスポンスをASIN末尾2文字ごとのシャード（`data/cache/paapi/<shard>.json`）に保存・更新する。
 2. **Markdown記事の生成（`ArticleGenerator.ts`）**:
    - **初回公開日（date）の保護**: 既存記事（`content/articles/{ASIN}.md`）が存在する場合はその初出日時を維持し、SEO評価やURLパーマリンクの永続性を確保する。
    - **Front matter の構築**: タイトル、カテゴリ、タグ、価格、評価スコア、割引情報、M3バッジ種別をメタデータとして設定する。
@@ -114,7 +114,7 @@ PRが `main` ブランチにマージされると、公開用パイプライン�
 3. **カテゴリ・ナビゲーションの同期（`pnpm run prebuild:hugo`）**:
    - `data/taxonomy-v2.json`・`data/product-categories.json` および記事のFront matterをスキャンし、親子カテゴリ構造（`data/categories.yml` / `static/data/categorygroups.json`）・親カテゴリMarkdown（`content/parent-category/*.md`）・ブランドマッピングを生成する。
 4. **キャッシュの永続化**:
-   - ビルド中に更新された最新の商品情報キャッシュ（`paapi-product-cache.json`）をGitコミット・プッシュ（`[skip ci]`）し、次回ビルドの高速化を図る。
+   - ビルド中に更新された最新の商品情報キャッシュ（`data/cache/paapi/`）をGitコミット・プッシュ（`[skip ci]`）し、次回ビルドの高速化を図る。
 5. **Hugoビルド & GitHub Pagesデプロイ**:
    - `hugo --minify` でHTML/CSS/JSを静的コンパイルする。
    - `actions/deploy-pages` によりGitHub Pagesへ即時配信される。
