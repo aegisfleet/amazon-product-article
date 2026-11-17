@@ -4,7 +4,6 @@ import path from 'node:path';
 // Cache directories
 const CACHE_DIR = path.resolve(__dirname, '../../../data/cache');
 const SHARDS_DIR = path.join(CACHE_DIR, 'paapi');
-const LEGACY_CACHE_FILE = path.join(CACHE_DIR, 'paapi-product-cache.json');
 
 // Define status order
 const STATUS_ORDER = ['valid', 'invalid', 'permanent_invalid'];
@@ -77,38 +76,7 @@ function sortCacheByStatus() {
     return;
   }
 
-  if (fs.existsSync(LEGACY_CACHE_FILE)) {
-    const rawData = fs.readFileSync(LEGACY_CACHE_FILE, 'utf-8');
-    let cache: CacheFile;
-
-    try {
-      cache = JSON.parse(rawData);
-    } catch (error) {
-      console.error('❌ Failed to parse cache file JSON.', error);
-      process.exit(1);
-    }
-
-    const entries = Object.entries(cache);
-    console.log(`📊 Total entries: ${entries.length}`);
-
-    const counts: Record<string, number> = {};
-    entries.forEach(([_, value]) => {
-      const status = value.status || 'unknown';
-      counts[status] = (counts[status] || 0) + 1;
-    });
-
-    console.log('📈 Status counts:', counts);
-
-    const sorted = sortEntries(entries);
-    console.log('💾 Writing sorted cache to file...');
-    const lines = sorted.map(([key, value]) => `  "${key}": ${JSON.stringify(value)}`);
-    const jsonContent = `{\n${lines.join(',\n')}\n}\n`;
-    fs.writeFileSync(LEGACY_CACHE_FILE, jsonContent, 'utf-8');
-    console.log('✅ Cache sorted successfully.');
-    return;
-  }
-
-  console.error(`❌ Cache not found at: ${SHARDS_DIR} or ${LEGACY_CACHE_FILE}`);
+  console.error(`❌ Cache shards not found at: ${SHARDS_DIR}`);
   process.exit(1);
 }
 

@@ -73,7 +73,6 @@ export const ARTICLES_DIR = path.join(ROOT_DIR, 'content/articles');
 export const INVESTIGATIONS_DIR = path.join(ROOT_DIR, 'data/investigations');
 export const CACHE_DIR = path.join(ROOT_DIR, 'data/cache');
 export const SHARDS_DIR = path.join(CACHE_DIR, 'paapi');
-export const CACHE_PATH = path.join(CACHE_DIR, 'paapi-product-cache.json');
 const TITLE_REGEX = /<title>([^<]*)<\/title>/i;
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
 
@@ -474,13 +473,6 @@ function saveCache(cache: Record<string, any>): void {
       }
     }
   }
-
-  if (fs.existsSync(CACHE_PATH)) {
-    const sortedKeys = Object.keys(cache).sort((a, b) => a.localeCompare(b));
-    const lines = sortedKeys.map((key) => `  "${key}": ${JSON.stringify(cache[key])}`);
-    const jsonContent = `{\n${lines.join(',\n')}\n}\n`;
-    fs.writeFileSync(CACHE_PATH, jsonContent, 'utf8');
-  }
 }
 
 // 1商品分の棚卸し処理
@@ -686,7 +678,7 @@ export function executePruning(
 
   if (!dryRun && deletedCacheEntries > 0) {
     saveCache(cache);
-    console.log(`[Updated Cache] Removed ${deletedCacheEntries} dead entries from paapi-product-cache.json`);
+    console.log(`[Updated Cache] Removed ${deletedCacheEntries} dead entries from cache shards (data/cache/paapi)`);
   }
 
   const { cleanedFiles, cleanedEntries } = cleanReferences

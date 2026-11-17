@@ -114,17 +114,9 @@ function syncBrandData(): void {
 /**
  * PAAPIキャッシュからバリエーションマッピングを抽出
  */
-function extractPaapiVariations(cachePath: string): Record<string, string> {
+function extractPaapiVariations(cacheDir: string): Record<string, string> {
   try {
-    let cache: Record<string, { data?: { parentAsin?: string; asin?: string } }> = {};
-    if (fs.existsSync(cachePath) && fs.statSync(cachePath).isFile()) {
-      const raw = fs.readFileSync(cachePath, 'utf-8');
-      cache = JSON.parse(raw);
-    } else {
-      const cacheDir =
-        fs.existsSync(cachePath) && fs.statSync(cachePath).isDirectory() ? cachePath : path.dirname(cachePath);
-      cache = CreatorsAPICache.loadAll(cacheDir) as any;
-    }
+    const cache = CreatorsAPICache.loadAll(cacheDir);
 
     const result: Record<string, string> = {};
     for (const [asin, item] of Object.entries(cache)) {
@@ -169,11 +161,11 @@ function mergeVariationsCache(variationsCachePath: string, targetMap: Record<str
  */
 function generateAsinVariationsMap(): void {
   console.log('--- ASIN Variations Map Generation ---');
-  const cachePath = path.resolve(process.cwd(), 'data/cache/paapi-product-cache.json');
+  const cacheDir = path.resolve(process.cwd(), 'data/cache');
   const outPath = path.resolve(process.cwd(), 'static/data/asin-variations.json');
   const variationsCachePath = path.resolve(process.cwd(), 'data/cache/variations-cache.json');
 
-  const childToParent = extractPaapiVariations(cachePath);
+  const childToParent = extractPaapiVariations(cacheDir);
   mergeVariationsCache(variationsCachePath, childToParent);
 
   if (Object.keys(childToParent).length === 0) {

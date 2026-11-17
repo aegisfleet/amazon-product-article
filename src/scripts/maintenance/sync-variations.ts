@@ -58,7 +58,7 @@ function findParentAsinLocally(asin: string): string | null {
     }
   }
 
-  // 2. data/cache/paapi/<shard>.json or legacy fallback
+  // 2. data/cache/paapi/<shard>.json
   try {
     const shardKey = CreatorsAPICache.getShardKey(asin);
     const shardPath = path.resolve(process.cwd(), 'data/cache/paapi', `${shardKey}.json`);
@@ -66,13 +66,6 @@ function findParentAsinLocally(asin: string): string | null {
       const cache = JSON.parse(fs.readFileSync(shardPath, 'utf-8'));
       const p = cache[asin]?.data?.parentAsin;
       if (p) return p.toUpperCase();
-    } else {
-      const cachePath = path.resolve(process.cwd(), 'data/cache/paapi-product-cache.json');
-      if (fs.existsSync(cachePath)) {
-        const cache = JSON.parse(fs.readFileSync(cachePath, 'utf-8'));
-        const p = cache[asin]?.data?.parentAsin;
-        if (p) return p.toUpperCase();
-      }
     }
   } catch {
     // キャッシュ解析エラー時は無視してフォールバック

@@ -17,7 +17,7 @@ Amazon上で出品終了や商品削除等によりページ（`https://www.amaz
 - **棚卸し時の整合性管理対象**:
   1. `content/articles/<ASIN>.md`（記事ページ本体の削除）
   2. `data/investigations/<ASIN>.json`（調査データ本体の削除）
-  3. `data/cache/paapi-product-cache.json`（APIキャッシュエントリの削除）
+  3. `data/cache/paapi/<shard>.json`（APIキャッシュエントリの削除）
   4. **他商品の競合データ参照（自動クリーンアップ）**:
      削除対象ASINが他商品の調査JSON（`data/investigations/*.json`）の `competitiveAnalysis`（ライバル比較）に含まれている場合、該当エントリを自動的に除外・更新し、壊れたリンクや存在しない商品の比較表示を防ぐ。
   5. **孤立ファイル（Orphan Files）の検知**:

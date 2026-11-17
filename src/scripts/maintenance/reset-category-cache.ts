@@ -11,7 +11,6 @@ if (!targetCategory) {
 
 const cacheDir = path.resolve(__dirname, '../../../data/cache');
 const shardsDir = path.join(cacheDir, 'paapi');
-const legacyCachePath = path.join(cacheDir, 'paapi-product-cache.json');
 const articlesDir = path.resolve(__dirname, '../../../content/articles');
 
 try {
@@ -80,38 +79,8 @@ try {
     console.log(
       `Successfully reset timestamp for ${resetCount} items across ${updatedShards} shards matching category "${targetCategory}".`,
     );
-  } else if (fs.existsSync(legacyCachePath)) {
-    const cache = JSON.parse(fs.readFileSync(legacyCachePath, 'utf8'));
-
-    for (const asin in cache) {
-      const item = cache[asin];
-      const data = item?.data;
-      const fromArticle = targetAsinsFromArticles.has(asin);
-
-      const category = data?.category?.toLowerCase() || '';
-      const mainCat = data?.categoryInfo?.main?.toLowerCase() || '';
-      const subCat = data?.categoryInfo?.sub?.toLowerCase() || '';
-      const matchesCat =
-        category.includes(targetLower) || mainCat.includes(targetLower) || subCat.includes(targetLower);
-
-      if ((fromArticle || matchesCat) && item.timestamp !== 0) {
-        item.timestamp = 0;
-        console.log(`Reset cache for ASIN: ${asin}`);
-        resetCount++;
-      }
-    }
-
-    if (resetCount > 0) {
-      const sortedKeys = Object.keys(cache).sort((a, b) => a.localeCompare(b));
-      const lines = sortedKeys.map((key) => `  "${key}": ${JSON.stringify(cache[key])}`);
-      const jsonContent = `{\n${lines.join(',\n')}\n}\n`;
-      fs.writeFileSync(legacyCachePath, jsonContent, 'utf8');
-      console.log(`Successfully reset timestamp for ${resetCount} items matching category "${targetCategory}".`);
-    } else {
-      console.log(`No items found with category "${targetCategory}" to reset.`);
-    }
   } else {
-    console.error(`Cache not found at: ${shardsDir} or ${legacyCachePath}`);
+    console.error(`Cache shards not found at: ${shardsDir}`);
   }
 } catch (error) {
   console.error('Error processing cache:', error);
