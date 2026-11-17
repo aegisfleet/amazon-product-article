@@ -76,6 +76,8 @@ GitHub Actions CIはLintやBiomeのエラーがあると失敗するため、い
   - 調査結果（JSONファイル）の新規作成や更新を行った際は、**修正した対象ファイルに対して必ず実行**すること。
   - 全ファイルを対象にすると数千件のURL検証で時間がかかるため、**変更した対象ファイル（または `git diff` で差分のあるファイル）のみを指定して実行**する。
   - JSON構造、非メートル法（不適切なインチ・ポンド表記等）の排除、採点根拠の整合性に加え、記述されているURLリンクの有効性（リンク切れ・Soft-404）が自動検証される。
+- **Hugoテンプレート変更時のクリーンビルド検証**:
+  Hugoはレンダリング結果が既存ファイルと同一の場合 `public/` への再書き込みをスキップするため、`layouts/` 配下のテンプレートを変更した際のローカル検証では `hugo --minify --cleanDestinationDir`（または `public/` 削除後の `pnpm run build:hugo`）でクリーンビルドを行うこと。通常ビルドでは変更が反映されない stale な `index.html` が残り、誤判定の原因となる。また、カテゴリ再編等で消滅したタクソノミータームの古い `index.html` も `public/` に残存し得る点に注意（`public/` はGit管理外のビルド成果物）。
 
 ### 3.2 テスト駆動開発 (TDD) の推奨
 
@@ -168,6 +170,10 @@ GitHub Actions CIはLintやBiomeのエラーがあると失敗するため、い
   フィルターパネルには適用中条件を動的表示するコンテナ（`<div id="...-active-chips" class="m3-active-chips-container">`）を必ず配置し、ユーザーがワンタップ（✕ボタン）で個別および一括クリアできるよう `renderActiveFilterChips` に適切な `onRemove` / `resetAll` ハンドラを登録すること。
 - **入力要素のレスポンシブ・はみ出し防止**:
   セレクトボックスやテキスト入力領域、範囲指定スライダーは、どの画面幅でも見切れや画面外へのはみ出しが発生しないよう、`width: 100%`, `max-width: 100%`, `min-width: 0` のスタイル指定を統一維持すること。
+- **デフォルトソート順とサーバー側出力順の一致（ちらつき防止）**:
+  カテゴリ・ブランド一覧ページ（`layouts/_default/list.html`, `parent-category.html`, `brand-list.html`）は `static/js/category-features.js` によりクライアント側でソート・フィルタされる。HTML側のカード出力順がJSのデフォルトソート（現在は `score-desc`＝`.Params.score` 降順）と一致していないと、初期表示→JS初期化時の `sortCards()` によるDOM並べ替えでちらつきが発生する。
+  - **JS側のデフォルトソート（`sortButtons` の `active` な `data-sort`、および `currentSort` のフォールバック値）を変更する場合は、必ず対応するHugoテンプレートの `sort` キー（`.Params.score` 等）と `data-*` 属性の算出ロジックも同時に同期すること**。
+  - 現在の対応関係: `score-desc` → `.Params.score` 降順、`date-desc` → `.Params.last_investigated` 降順、`price-asc/desc` → `data-price`、`savings-desc` → `data-savings-percentage`、`points-desc` → `data-points-rate`。
 
 ### 4.5 AI・LLMエージェント案内ファイル（`llms.txt`）の管理規約
 
