@@ -12,6 +12,7 @@
 
 - **ビルド時レンダリング**: 記事詳細ページ、カテゴリ一覧、トップページの初回表示分は Hugo が静的HTMLとして生成。
 - **動的フィルタ・無限ロード**: セール一覧（`/deals/`）、あともう一品（`/bargain/`）、ワーストバイ（`/low-scores/`）、トップページの「もっと見る」等は クライアントサイドJS でJSONデータから動的描画。
+- **カテゴリ・ブランド一覧のソート**: 子カテゴリ（`/categories/<term>/`）、親カテゴリ（`/parent-category/<parent>/`）、ブランド一覧（`/brand/<brand>/`）は Hugo がカードを静的出力した上で `static/js/category-features.js` がソート・フィルタを適用する。ちらつき防止のため、Hugo側の出力順はJSのデフォルトソート（`score-desc`＝`.Params.score` 降順）に一致させる規約とする（詳細は `AGENTS.md` 4.4 参照）。
 - **高速バックグラウンド検索**: 検索ワーカー（`search-worker.js`）により、UIスレッドをブロックせずに数千件の商品インデックスを瞬時にインクリメンタル検索。
 - **軽量・ノーフレームワーク**: React/Vue等の重量フレームワークは使わず、Vanilla JS と CSSカスタムプロパティ（CSS変数）により極限まで軽量化。
 
@@ -100,6 +101,7 @@
 | スクリプト | 役割 |
 |---|---|
 | `static/js/filter-common.js` | フィルタ・ソート・アクティブチップ描画、商品カード動的レンダリングの共通基盤 |
+| `static/js/category-features.js` | カテゴリ・ブランド一覧ページ（`/categories/`, `/parent-category/`, `/brand/`）のソート・フィルタ・無限スクロール。Hugo側のカード出力順はデフォルトソート（`score-desc`）と一致させること |
 | `static/js/search-worker.js` | バックグラウンドで検索インデックスを高速走査するWeb Worker |
 | `static/js/search.js` | リアルタイム検索モーダル・サジェスト・キーボードナビゲーション |
 | `static/js/compare.js` | 複数商品を選択してスペック・価格・評価を横並び比較するモーダルUI |
