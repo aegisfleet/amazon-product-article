@@ -178,4 +178,83 @@ describe('ProductPersonalization logic', () => {
       expect(ranked[3].asin).toBe('B0MYPHONE01');
     });
   });
+
+  describe('extended history metadata & recommendation reason', () => {
+    it('saveEvent で title と image が保存され、getPreferences から recentEvent および recentDistinctEvents が取得できること', () => {
+      Personalization.saveEvent({
+        asin: 'B0CHARGER1',
+        title: 'Anker Nano II 65W 充電器',
+        image: 'https://example.com/charger.jpg',
+        category: 'USB充電器',
+        group: 'モバイルバッテリー／充電器',
+        priceBucket: '3000-6999',
+      });
+      Personalization.saveEvent({
+        asin: 'B0CABLE001',
+        title: 'Anker PowerLine III Flow',
+        image: 'https://example.com/cable.jpg',
+        category: 'USBケーブル',
+        group: 'モバイルバッテリー／充電器',
+        priceBucket: 'under-3000',
+      });
+
+      const prefs = Personalization.getPreferences(10);
+      expect(prefs.recentEvent).toBeDefined();
+      expect(prefs.recentEvent.asin).toBe('B0CABLE001');
+      expect(prefs.recentEvent.title).toBe('Anker PowerLine III Flow');
+      expect(prefs.recentEvent.image).toBe('https://example.com/cable.jpg');
+      expect(prefs.recentDistinctEvents).toHaveLength(2);
+      expect(prefs.recentDistinctEvents[0].asin).toBe('B0CABLE001');
+      expect(prefs.recentDistinctEvents[1].asin).toBe('B0CHARGER1');
+    });
+
+    it('getRecommendationReason が履歴と商品属性に基づき事実ベースの推薦理由を返すこと', () => {
+      Personalization.saveEvent({
+        asin: 'B0CHARGER1',
+        title: 'Anker Nano II 65W 充電器',
+        category: 'USB充電器',
+        group: 'モバイルバッテリー／充電器',
+        priceBucket: '3000-6999',
+      });
+      const prefs = Personalization.getPreferences(10);
+
+      // 1. 直近と同一子カテゴリ
+      const tier1Reason = Personalization.getRecommendationReason(
+        { asin: 'B0OTHER1', category: 'USB充電器', group: 'モバイルバッテリー／充電器', score: 88, price: '￥3,990' },
+        prefs,
+      );
+      expect(tier1Reason.type).toBe('recent-category');
+      expect(tier1Reason.label).toContain('閲覧中カテゴリで高評価');
+
+      // 2. 直近と同一親グループ
+      const tier15Reason = Personalization.getRecommendationReason(
+        {
+          asin: 'B0OTHER2',
+          category: 'モバイルバッテリー',
+          group: 'モバイルバッテリー／充電器',
+          score: 91,
+          price: '￥4,990',
+        },
+        prefs,
+      );
+      expect(tier15Reason.type).toBe('recent-group');
+      expect(tier15Reason.label).toContain('関連ジャンルの人気品');
+
+      // 3. 無関係だが90点以上の殿堂入り
+      const highScoreReason = Personalization.getRecommendationReason(
+        { asin: 'B0FOOD01', category: '非常食', group: '食品／飲料／お酒', score: 95, price: '￥2,500' },
+        prefs,
+      );
+      expect(highScoreReason.type).toBe('hall-of-fame');
+      expect(highScoreReason.label).toContain('殿堂入り');
+
+      // 4. 無関係で80点台かつ1,500円以下のまとめ買い候補
+      const bargainReason = Personalization.getRecommendationReason(
+        { asin: 'B0SNACK1', category: 'スナック菓子', group: '食品／飲料／お酒', score: 85, price: '￥624' },
+        prefs,
+      );
+      expect(bargainReason.type).toBe('bargain');
+      expect(bargainReason.label).toContain('まとめ買い候補');
+    });
+  });
 });

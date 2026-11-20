@@ -22,8 +22,10 @@
     <div id="scroll-progress-bar" class="scroll-progress-bar"></div>
 </div>
 
-<div id="product-tracking-info" data-asin="{{ .Params.asin }}" data-category="{{ $currentCategory }}"
-    data-group="{{ $currentGroup }}" data-price-bucket="{{ $currentPriceBucket }}" data-price="{{ .Params.price }}" style="display: none;"></div>
+<div id="product-tracking-info" data-asin="{{ .Params.asin }}" data-title="{{ .Title }}"
+    data-image="{{ if and .Params.images (gt (len .Params.images) 0) }}{{ index .Params.images 0 }}{{ end }}"
+    data-category="{{ $currentCategory }}" data-group="{{ $currentGroup }}" data-price-bucket="{{ $currentPriceBucket }}"
+    data-price="{{ .Params.price }}" style="display: none;"></div>
 
 <div class="container article-page-container" style="padding-top: var(--spacing-sm); padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px));">
     <div class="ai-disclaimer">
@@ -645,15 +647,14 @@
                         if (firstNode.nodeType !== Node.TEXT_NODE) return;
                         var text = firstNode.nodeValue || '';
                         var trimmed = text.trimStart();
-                        for (var i = 0; i < EMOJI_ICON_MAP.length; i++) {
-                            var entry = EMOJI_ICON_MAP[i];
+                        for (var entry of EMOJI_ICON_MAP) {
                             if (trimmed.indexOf(entry.emoji) === 0) {
                                 firstNode.nodeValue = trimmed.slice(entry.emoji.length).replace(/^\s+/, '');
                                 var span = document.createElement('span');
                                 span.className = 'material-symbols-outlined ' + (isTocLink ? 'toc-mat-icon ' : 'heading-mat-icon ') + entry.tone;
                                 span.setAttribute('aria-hidden', 'true');
                                 span.textContent = entry.icon;
-                                el.insertBefore(span, firstNode);
+                                firstNode.before(span);
                                 return;
                             }
                         }
@@ -799,59 +800,71 @@
                             });
                         }
 
-                        // Group Pros/Cons H3+UL pairs in User Reviews and Summary sections
-                        var h3List = Array.prototype.slice.call(contentRoot.querySelectorAll('h3'));
-                        h3List.forEach(function (h3) {
+                        function prependHeadingIconIfMissing(h3El, iconName, toneClass) {
+                            if (!h3El || h3El.querySelector('.heading-mat-icon')) return;
+                            var iconEl = document.createElement('span');
+                            iconEl.className = 'material-symbols-outlined heading-mat-icon ' + toneClass;
+                            iconEl.setAttribute('aria-hidden', 'true');
+                            iconEl.textContent = iconName;
+                            h3El.insertBefore(iconEl, h3El.firstChild);
+                        }
+
+                        function tryGroupProsConsHeading(h3, label, next1) {
+                            if ((label !== '良い点' && label !== 'こんな方におすすめ') || next1?.tagName !== 'UL') {
+                                return false;
+                            }
+                            var next2 = next1.nextElementSibling;
+                            var next3 = next2?.nextElementSibling || null;
+                            var next2Label = getHeadingPureText(next2);
+                            var isTargetPair = next2?.tagName === 'H3' &&
+                                (next2Label === '気になる点' || next2Label === '注意点') &&
+                                next3?.tagName === 'UL';
+                            if (!isTargetPair) return false;
+
+                            if (next2Label === '注意点') {
+                                prependHeadingIconIfMissing(next2, 'warning', 'tone-cons');
+                            }
+                            wrapProsConsPair(h3, next1, next2, next3, 'review-points-grid');
+                            return true;
+                        }
+
+                        function enhanceVerdictBox(h3) {
+                            var verdictBox = document.createElement('div');
+                            verdictBox.className = 'verdict-summary-box';
+                            prependHeadingIconIfMissing(h3, 'verified', 'tone-pros');
+                            h3.parentNode.insertBefore(verdictBox, h3);
+                            verdictBox.appendChild(h3);
+                            var cursor = verdictBox.nextElementSibling;
+                            while (cursor?.tagName === 'P') {
+                                var nextCursor = cursor.nextElementSibling;
+                                verdictBox.appendChild(cursor);
+                                cursor = nextCursor;
+                            }
+                        }
+
+                        function processContentH3(h3) {
                             if (!h3.parentNode) return;
                             var label = getHeadingPureText(h3);
                             var next1 = h3.nextElementSibling;
 
-                            if (label === 'こんな方におすすめ' && !h3.querySelector('.heading-mat-icon')) {
-                                var recIcon = document.createElement('span');
-                                recIcon.className = 'material-symbols-outlined heading-mat-icon tone-pros';
-                                recIcon.setAttribute('aria-hidden', 'true');
-                                recIcon.textContent = 'thumb_up';
-                                h3.insertBefore(recIcon, h3.firstChild);
+                            if (label === 'こんな方におすすめ') {
+                                prependHeadingIconIfMissing(h3, 'thumb_up', 'tone-pros');
                             }
 
-                            if ((label === '良い点' || label === 'こんな方におすすめ') && next1 && next1.tagName === 'UL') {
-                                var next2 = next1.nextElementSibling;
-                                var next3 = next2 ? next2.nextElementSibling : null;
-                                var next2Label = getHeadingPureText(next2);
-                                if (next2 && next2.tagName === 'H3' && (next2Label === '気になる点' || next2Label === '注意点') && next3 && next3.tagName === 'UL') {
-                                    if (next2Label === '注意点' && !next2.querySelector('.heading-mat-icon')) {
-                                        var warnIcon = document.createElement('span');
-                                        warnIcon.className = 'material-symbols-outlined heading-mat-icon tone-cons';
-                                        warnIcon.setAttribute('aria-hidden', 'true');
-                                        warnIcon.textContent = 'warning';
-                                        next2.insertBefore(warnIcon, next2.firstChild);
-                                    }
-                                    wrapProsConsPair(h3, next1, next2, next3, 'review-points-grid');
-                                }
-                            } else if (label === '使用シーン' && next1 && next1.tagName === 'UL') {
+                            if (tryGroupProsConsHeading(h3, label, next1)) return;
+
+                            if (label === '使用シーン' && next1?.tagName === 'UL') {
                                 next1.classList.add('semantic-list', 'semantic-list--scenes');
-                            } else if (label === '購入者の声' && next1 && next1.tagName === 'BLOCKQUOTE') {
+                            } else if (label === '購入者の声' && next1?.tagName === 'BLOCKQUOTE') {
                                 next1.classList.add('review-summary-quote');
                             } else if (label === 'コスパ評価') {
-                                var verdictBox = document.createElement('div');
-                                verdictBox.className = 'verdict-summary-box';
-                                if (!h3.querySelector('.heading-mat-icon')) {
-                                    var vIcon = document.createElement('span');
-                                    vIcon.className = 'material-symbols-outlined heading-mat-icon tone-pros';
-                                    vIcon.setAttribute('aria-hidden', 'true');
-                                    vIcon.textContent = 'verified';
-                                    h3.insertBefore(vIcon, h3.firstChild);
-                                }
-                                h3.parentNode.insertBefore(verdictBox, h3);
-                                verdictBox.appendChild(h3);
-                                var cursor = verdictBox.nextElementSibling;
-                                while (cursor && cursor.tagName === 'P') {
-                                    var nextCursor = cursor.nextElementSibling;
-                                    verdictBox.appendChild(cursor);
-                                    cursor = nextCursor;
-                                }
+                                enhanceVerdictBox(h3);
                             }
-                        });
+                        }
+
+                        // Group Pros/Cons H3+UL pairs in User Reviews and Summary sections
+                        var h3List = Array.prototype.slice.call(contentRoot.querySelectorAll('h3'));
+                        h3List.forEach(processContentH3);
 
                         // Enhance Persona Case Studies
                         enhancePersonaStories(contentRoot);
