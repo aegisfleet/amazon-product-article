@@ -243,16 +243,16 @@
         const price = parsePrice(item.price);
         const itemScore = Number(item.score || 0);
 
-        if (preferences && preferences.recentCategory && category === preferences.recentCategory) {
+        if (preferences?.recentCategory && category === preferences.recentCategory) {
             return { type: 'recent-category', icon: '🎯', label: '閲覧中カテゴリで高評価' };
         }
-        if (preferences && preferences.recentGroup && group && group === preferences.recentGroup) {
+        if (preferences?.recentGroup && group && group === preferences.recentGroup) {
             return { type: 'recent-group', icon: '💡', label: '関連ジャンルの人気品' };
         }
-        if (preferences && preferences.categoryHistory?.has(category)) {
+        if (preferences?.categoryHistory?.has(category)) {
             return { type: 'history-category', icon: '🕒', label: 'チェックしたカテゴリ' };
         }
-        if (preferences && group && preferences.groupHistory?.has(group)) {
+        if (group && preferences?.groupHistory?.has(group)) {
             return { type: 'history-group', icon: '🔍', label: '興味ジャンルで高評価' };
         }
         if (itemScore >= 90) {
