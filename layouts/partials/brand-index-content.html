@@ -1,14 +1,10 @@
 <div class="container" style="padding-top: var(--spacing-xl);">
     {{- partial "breadcrumb.html" . -}}
 
-    <div class="article-header">
-        <h1>{{ if or (eq .Title "Brands") (not .Title) }}ブランド一覧{{ else }}{{ .Title }}{{ end }}</h1>
-        {{- with .Description -}}<p class="article-meta">{{ . }}</p>{{- end -}}
-    </div>
-
     {{- $brandData := hugo.Data.brandgroups -}}
     {{- if $brandData -}}
     {{- $brandList := slice -}}
+    {{- $totalBrandItems := 0 -}}
     {{- range $brandName, $brand := $brandData -}}
     {{- $brandCount := 0 -}}
     {{- $matcherType := "title_prefix" -}}
@@ -42,26 +38,78 @@
     {{- end -}}
     {{- end -}}
     {{- if ge $brandCount 1 -}}
+    {{- $totalBrandItems = add $totalBrandItems $brandCount -}}
     {{- $brandList = $brandList | append (dict "name" $brandName "slug" $brand.slug "icon" ($brand.icon | default "🏷️")
     "count" $brandCount "description" ($brand.description | default "") "sort_key" ($brandName | lower)) -}}
     {{- end -}}
     {{- end -}}
+    {{- $topFeaturedBrands := first 8 (sort $brandList "count" "desc") -}}
 
-    <div class="header-content" style="margin-bottom: var(--spacing-md);">
-        <p style="color: var(--color-text-muted); font-size: 0.95rem;">
-            全 <strong>{{ len $brandList }}</strong> ブランドの調査レポート
-        </p>
-    </div>
-
-    <!-- Keyword Filter -->
-    <div class="brand-filter-container">
-        <div class="brand-search-wrapper">
-            <span class="material-symbols-outlined brand-search-icon" aria-hidden="true">search</span>
-            <input type="text" id="brand-search-input" class="brand-search-input" placeholder="ブランド名で絞り込み..." aria-label="ブランド名で絞り込み">
-            <button type="button" id="brand-search-clear" class="brand-search-clear-btn" style="display: none;" title="検索をクリア" aria-label="検索をクリア"><span class="material-symbols-outlined" style="font-size: 1rem; line-height: 1;">close</span></button>
+    <!-- Redesigned Slate Navy Brand Showcase Hero -->
+    <div class="showcase-hero showcase-hero--brands">
+        <div class="showcase-hero-glow showcase-hero-glow--slate" aria-hidden="true"></div>
+        <div class="showcase-brands-top">
+            <div class="showcase-hero-copy">
+                <div class="showcase-hero-badges">
+                    <span class="showcase-sub-badge showcase-sub-badge--slate">
+                        <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 0.95rem;">corporate_fare</span>
+                        <span>仕様・競合コスパ・ユーザー評価をメーカー別に集約</span>
+                    </span>
+                </div>
+                <h1 class="showcase-hero-title">全 {{ len $brandList }} ブランド徹底調査レポート</h1>
+                <p class="showcase-hero-desc">
+                    有名大手メーカーから高コスパな新興ブランドまで。製品スペック・競合との価格差・サポート体制・購入者レビューをもとに中立に評価したブランド別データベースです。
+                </p>
+            </div>
+            <!-- Total Counters -->
+            <div class="showcase-telemetry-group">
+                <div class="showcase-telemetry-card">
+                    <div>
+                        <div class="showcase-telemetry-label">登録ブランド総数</div>
+                        <div class="showcase-telemetry-val showcase-telemetry-val--emerald">{{ len $brandList }} <span class="showcase-telemetry-unit">Brands</span></div>
+                    </div>
+                </div>
+                <div class="showcase-telemetry-card">
+                    <div>
+                        <div class="showcase-telemetry-label">ブランド別掲載延べ件数</div>
+                        <div class="showcase-telemetry-val showcase-telemetry-val--amber">{{ lang.FormatNumberCustom 0 $totalBrandItems }}+ <span class="showcase-telemetry-unit">Items</span></div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="brand-search-status" class="brand-search-status" style="display: none;">
-            該当ブランド: <strong id="filtered-brand-count">0</strong> 件 / 全 {{ len $brandList }} 件
+
+        <!-- Integrated Brand Search Bar Inside Hero -->
+        <div class="showcase-brand-search-box">
+            <div class="showcase-brand-input-wrap">
+                <span class="material-symbols-outlined showcase-brand-search-icon" aria-hidden="true">search</span>
+                <input type="text" id="brand-search-input" class="showcase-brand-input"
+                    placeholder="ブランド名・メーカー名を入力して絞り込み (例: Anker, Dyson, アイリスオーヤマ)..."
+                    aria-label="ブランド名で絞り込み">
+                <button type="button" id="brand-search-clear" class="showcase-brand-clear-btn" style="display: none;"
+                    title="検索をクリア" aria-label="検索をクリア">
+                    <span class="material-symbols-outlined" style="font-size: 1.05rem; line-height: 1;">close</span>
+                </button>
+            </div>
+            <div id="brand-search-status" class="showcase-brand-search-status" style="display: none;">
+                該当ブランド: <strong id="filtered-brand-count">0</strong> 件 / 全 {{ len $brandList }} 件
+            </div>
+        </div>
+
+        <!-- Popular Brands Quick Jump Cloud -->
+        <div class="showcase-brand-cloud">
+            <div class="showcase-brand-cloud-label">
+                <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 0.95rem; color: #f59e0b;">star</span>
+                <span>注目の主要ブランド・直行リンク:</span>
+            </div>
+            <div class="showcase-brand-cloud-list">
+                {{- range $topFeaturedBrands -}}
+                <a href="{{ `brand/` | relURL }}{{ .slug }}/" class="showcase-brand-pill">
+                    <span class="showcase-brand-pill-icon" aria-hidden="true">{{ .icon }}</span>
+                    <span class="showcase-brand-pill-name">{{ .name }}</span>
+                    <span class="showcase-brand-pill-count">{{ .count }}商品</span>
+                </a>
+                {{- end -}}
+            </div>
         </div>
     </div>
 
@@ -90,7 +138,7 @@
         var clearBtn = document.getElementById('brand-search-clear');
         var searchStatus = document.getElementById('brand-search-status');
         var filteredCountEl = document.getElementById('filtered-brand-count');
-        var brandCards = document.querySelectorAll('.brand-grid .brand-card');
+        var brandCards = document.querySelectorAll('#brand-grid .brand-card');
         var noResults = document.getElementById('brand-no-results');
 
         if (!searchInput || brandCards.length === 0) return;

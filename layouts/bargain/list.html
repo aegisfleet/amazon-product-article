@@ -2,15 +2,71 @@
 <div class="container" style="padding-top: var(--md-sys-spacing-8);">
     {{- partial "breadcrumb.html" . -}}
 
-    <!-- Page Header -->
-    <div class="bargain-hero">
-        <div class="bargain-hero-icon"><span class="material-symbols-outlined" style="font-size: 2.5rem;" aria-hidden="true">redeem</span></div>
-        <h1 class="bargain-hero-title">あともう一品</h1>
-        <p class="bargain-hero-subtitle">高評価 × お手頃価格の厳選商品</p>
-        <p class="bargain-hero-desc">
-            スコア <strong>80点以上</strong> の高評価商品を <strong>¥2,000以下</strong> で厳選。
-            カテゴリや価格帯で絞り込んで、お気に入りの一品を見つけましょう。
-        </p>
+    <!-- Page Header (Redesigned Emerald Trust Showcase Hero) -->
+    <div class="showcase-hero showcase-hero--bargain">
+        <div class="showcase-hero-glow showcase-hero-glow--emerald" aria-hidden="true"></div>
+        <div class="showcase-bargain-layout">
+            <div class="showcase-bargain-main">
+                <div class="showcase-hero-badges">
+                    <span class="showcase-sub-badge showcase-sub-badge--emerald">
+                        <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 0.95rem;">redeem</span>
+                        <span>送料無料ライン(¥2,000)や買い回りキャンペーンの達成に</span>
+                    </span>
+                </div>
+                <div class="showcase-hero-copy">
+                    <h1 class="showcase-hero-title">
+                        <span>あともう一品</span>
+                        <span class="showcase-hero-title-accent">× 高評価お手頃アイテム</span>
+                    </h1>
+                    <p class="showcase-hero-desc">
+                        「あと少しで送料無料なのに欲しいものが見つからない」を解決。安価でも品質に妥協しない、スコア<strong>80点以上</strong>のハイコスパ日用品・ガジェット小物を即座にピックアップできます。
+                    </p>
+                </div>
+                <!-- Integrated Budget Chips -->
+                <div class="showcase-budget-picker">
+                    <div class="showcase-budget-label">予算からワンタップ選択：</div>
+                    <div class="showcase-budget-chips" id="bargain-hero-budget-chips">
+                        <button type="button" class="showcase-budget-chip" data-max-price="500" aria-pressed="false">
+                            <span>〜 ¥500 (超手軽)</span>
+                        </button>
+                        <button type="button" class="showcase-budget-chip" data-max-price="1000" aria-pressed="false">
+                            <span>〜 ¥1,000 (定番小物)</span>
+                        </button>
+                        <button type="button" class="showcase-budget-chip is-active" data-max-price="2000" aria-pressed="true">
+                            <span class="material-symbols-outlined showcase-budget-check" aria-hidden="true">check</span>
+                            <span>〜 ¥2,000 (人気No.1)</span>
+                        </button>
+                        <button type="button" class="showcase-budget-chip" data-max-price="3000" aria-pressed="false">
+                            <span>〜 ¥3,000 (高品質)</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trust Badges & Score Guarantee Cluster -->
+            <div class="showcase-trust-cluster">
+                <div class="showcase-trust-head">
+                    <span class="material-symbols-outlined showcase-trust-icon" aria-hidden="true">verified_user</span>
+                    <div>
+                        <div class="showcase-trust-kicker">掲載基準</div>
+                        <div class="showcase-trust-title">二重価格排除・80点以上厳選</div>
+                    </div>
+                </div>
+                <div class="showcase-trust-meter-box">
+                    <div class="showcase-trust-meter-row">
+                        <span class="showcase-trust-meter-label">平均評価スコア</span>
+                        <span class="showcase-trust-meter-val" id="bargain-hero-avg-score">-- / 100</span>
+                    </div>
+                    <div class="showcase-trust-bar-bg">
+                        <div class="showcase-trust-bar-fill" id="bargain-hero-avg-bar" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="showcase-trust-count-row">
+                    <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 0.95rem; color: #f59e0b;">inventory_2</span>
+                    <span>該当商品: <strong id="bargain-hero-hit-count">--</strong> 件</span>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Filter Panel -->

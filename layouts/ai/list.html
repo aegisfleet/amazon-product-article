@@ -2,46 +2,93 @@
 <div class="container ai-guide-container">
     {{- partial "breadcrumb.html" . -}}
 
-    <!-- Hero Header -->
-    <header class="ai-guide-hero">
-        <div class="ai-guide-badge">
-            <span class="material-symbols-outlined ai-badge-icon" aria-hidden="true">smart_toy</span>
-            <span>AIリサーチ連携</span>
-        </div>
-        <h1 class="ai-guide-title">ChatGPTやGrokを、あなたの「専属Amazon商品リサーチャー」にする方法</h1>
-        <p class="ai-guide-subtitle">
-            面倒なAPIキーの登録やリモートMCPサーバーの設定は<strong>一切不要</strong>。<br>
-            以下のプロンプトをお使いのAIツールにコピー＆ペーストするだけで、当サイトに蓄積された数千点の独自調査データベースから、あなたに最適な商品を瞬時に調査・比較・抽出します。
-        </p>
-    </header>
+    <!-- Hero Header (Redesigned Cyber Violet Showcase Hero) -->
+    <div class="showcase-hero showcase-hero--ai">
+        <div class="showcase-hero-glow showcase-hero-glow--violet" aria-hidden="true"></div>
+        <div class="showcase-ai-grid">
+            <!-- Left Column: Copy & Value Proposition -->
+            <div class="showcase-ai-main">
+                <div class="showcase-hero-badges">
+                    <span class="showcase-sub-badge showcase-sub-badge--violet">
+                        <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 0.95rem;">smart_toy</span>
+                        <span>ChatGPT / Grok / Claude 直接連動プロンプト</span>
+                    </span>
+                </div>
+                <div class="showcase-hero-copy">
+                    <h1 class="showcase-hero-title">
+                        AIを、あなたの<br><span class="showcase-hero-title-violet">「専属Amazon商品リサーチャー」</span>にする
+                    </h1>
+                    <p class="showcase-hero-desc">
+                        面倒なAPIキー登録やリモートMCPサーバーの設定は<strong>一切不要</strong>。右のプロンプトをお好みのAIチャット欄に貼り付けるだけで、当サイトのデータベース（<code>llms.txt</code>）から客観スコア・スペック・長所短所を自律抽出します。
+                    </p>
+                </div>
+                <!-- 3 Highlights Pills -->
+                <div class="showcase-ai-pillars" aria-label="AIリサーチの3大メリット">
+                    <div class="showcase-ai-pillar">
+                        <span class="material-symbols-outlined showcase-ai-pillar-icon showcase-ai-pillar-icon--emerald" aria-hidden="true">bolt</span>
+                        <div class="showcase-ai-pillar-title">即座に実行</div>
+                        <div class="showcase-ai-pillar-sub">環境構築ゼロ</div>
+                    </div>
+                    <div class="showcase-ai-pillar">
+                        <span class="material-symbols-outlined showcase-ai-pillar-icon showcase-ai-pillar-icon--amber" aria-hidden="true">query_stats</span>
+                        <div class="showcase-ai-pillar-title">客観スコア</div>
+                        <div class="showcase-ai-pillar-sub">独自調査データ連動</div>
+                    </div>
+                    <div class="showcase-ai-pillar">
+                        <span class="material-symbols-outlined showcase-ai-pillar-icon showcase-ai-pillar-icon--violet" aria-hidden="true">open_in_new</span>
+                        <div class="showcase-ai-pillar-title">レポート直行</div>
+                        <div class="showcase-ai-pillar-sub">個別URL付き出力</div>
+                    </div>
+                </div>
+            </div>
 
-    <!-- 3つのメリット / 特徴 -->
-    <section class="ai-features-grid" aria-label="AIリサーチの3大メリット">
-        <div class="ai-feature-card">
-            <div class="ai-feature-icon-wrapper icon-bolt">
-                <span class="material-symbols-outlined" aria-hidden="true">bolt</span>
+            <!-- Right Column: Interactive Prompt Codebox UI -->
+            <div class="showcase-ai-codebox">
+                <div class="showcase-ai-codebox-header">
+                    <div class="showcase-ai-tabs" id="ai-hero-prompt-tabs" role="tablist" aria-label="クイックプロンプト切り替え">
+                        <button type="button" class="showcase-ai-tab is-active" role="tab" aria-selected="true"
+                            data-prompt="https://www.amazon-hikaku.com/llms.txt を参照して、評価の高いおすすめの「タブレット」を調査・比較して（各商品の詳細レポートリンク付きで）。">
+                            ① 高評価比較
+                        </button>
+                        <button type="button" class="showcase-ai-tab" role="tab" aria-selected="false"
+                            data-prompt="https://www.amazon-hikaku.com/llms.txt を参照して、現在セール中で割引率が高く、かつスコア80点以上のお買い得商品を調査して（詳細レポートリンク付きで）。">
+                            ② セール狙い撃ち
+                        </button>
+                        <button type="button" class="showcase-ai-tab" role="tab" aria-selected="false"
+                            data-prompt="https://www.amazon-hikaku.com/llms.txt を参照して、「予算5,000円以内」で買える高コスパ商品を調査して（各商品の詳細レポートリンク付きで）。">
+                            ③ コスパ重視
+                        </button>
+                    </div>
+                    <button type="button" class="ai-copy-btn showcase-ai-copy-btn" data-target="ai-hero-prompt-code" aria-label="表示中のプロンプトをコピー">
+                        <span class="material-symbols-outlined ai-copy-icon" aria-hidden="true">content_copy</span>
+                        <span class="ai-copy-text">コピーする</span>
+                    </button>
+                </div>
+                <div class="showcase-ai-terminal">
+                    <div class="showcase-ai-terminal-bar" aria-hidden="true">
+                        <span class="showcase-term-dot showcase-term-dot--red"></span>
+                        <span class="showcase-term-dot showcase-term-dot--amber"></span>
+                        <span class="showcase-term-dot showcase-term-dot--green"></span>
+                        <span class="showcase-term-label">PROMPT TEMPLATE (llms.txt 連動)</span>
+                    </div>
+                    <pre class="showcase-ai-pre"><code id="ai-hero-prompt-code">https://www.amazon-hikaku.com/llms.txt を参照して、評価の高いおすすめの「タブレット」を調査・比較して（各商品の詳細レポートリンク付きで）。</code></pre>
+                </div>
+                <div class="showcase-ai-codebox-footer">
+                    <span class="showcase-ai-verified">
+                        <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 0.95rem; color: #10b981;">check_circle</span>
+                        <span>ChatGPT / Claude / Grok 動作確認済</span>
+                    </span>
+                    <a href="#ai-prompts-catalog" class="showcase-ai-more-link">
+                        <span>全7種の目的別プロンプトを見る</span>
+                        <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 0.9rem;">south</span>
+                    </a>
+                </div>
             </div>
-            <h2 class="ai-feature-title">インストール不要・即座に実行</h2>
-            <p class="ai-feature-desc">お使いのChatGPT、Grok、Muse、Claudeのチャット欄にプロンプトを貼るだけ。AIが自律的にサイト内データを解析します。</p>
         </div>
-        <div class="ai-feature-card">
-            <div class="ai-feature-icon-wrapper icon-check">
-                <span class="material-symbols-outlined" aria-hidden="true">fact_check</span>
-            </div>
-            <h2 class="ai-feature-title">客観的スコア＆スペック比較</h2>
-            <p class="ai-feature-desc">当サイト独自調査による客観スコア（0〜100点）、詳細スペック、長所・短所、Keepa価格推移などを元に、AIが偏りのない比較表を作成します。</p>
-        </div>
-        <div class="ai-feature-card">
-            <div class="ai-feature-icon-wrapper icon-cart">
-                <span class="material-symbols-outlined" aria-hidden="true">shopping_cart_checkout</span>
-            </div>
-            <h2 class="ai-feature-title">詳細レポートへ直行</h2>
-            <p class="ai-feature-desc">AIが推薦した各商品には当サイトの詳細レポートURLが付くため、客観スコアや長所短所、最新価格・在庫・購入リンクをワンタップで確認できます。</p>
-        </div>
-    </section>
+    </div>
 
     <!-- コピペで使えるプロンプト集 -->
-    <section class="ai-prompts-section" aria-label="目的別プロンプト集">
+    <section class="ai-prompts-section" id="ai-prompts-catalog" aria-label="目的別プロンプト集" style="scroll-margin-top: 80px;">
         <div class="ai-section-header">
             <h2 class="ai-section-title">
                 <span class="material-symbols-outlined ai-section-icon" aria-hidden="true">content_paste</span>
@@ -289,6 +336,21 @@
         copyButtons.forEach(function(btn) {
             btn.addEventListener('click', handleCopyButtonClick);
         });
+
+        const tabContainer = document.getElementById('ai-hero-prompt-tabs');
+        const heroCodeEl = document.getElementById('ai-hero-prompt-code');
+        if (tabContainer && heroCodeEl) {
+            tabContainer.addEventListener('click', function(event) {
+                const tabBtn = event.target.closest('.showcase-ai-tab');
+                if (!tabBtn?.dataset.prompt) return;
+                heroCodeEl.textContent = tabBtn.dataset.prompt;
+                for (const b of tabContainer.querySelectorAll('.showcase-ai-tab')) {
+                    const active = b === tabBtn;
+                    b.classList.toggle('is-active', active);
+                    b.setAttribute('aria-selected', String(active));
+                }
+            });
+        }
     }
 
     if (document.readyState === 'loading') {

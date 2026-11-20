@@ -607,30 +607,103 @@
 
     {{- $todayData := hugo.Data.recommendations.today | default hugo.Data.recommendations -}}
     {{- $priceDropsData := index hugo.Data.recommendations "price-drops" | default hugo.Data.recommendations.price_drops -}}
+    {{- $heroHighlights := slice -}}
+    {{- if and $todayData $todayData.recommendations -}}
+      {{- $heroHighlights = first 2 $todayData.recommendations -}}
+    {{- end -}}
 
-    <!-- Page Header (Unified Hero Style) -->
-    <div class="bargain-hero recommendations-hero">
-        <div class="bargain-hero-icon"><span class="material-symbols-outlined" style="font-size:2.5rem;" aria-hidden="true">ads_click</span></div>
-        <h1 class="bargain-hero-title">{{ .Title }}</h1>
-        <p class="bargain-hero-subtitle">調査日: {{- with $todayData.date -}}{{ time . | dateFormat "2006年01月02日" }}{{- end -}}</p>
-        <p class="bargain-hero-desc">
-            <strong>{{- $todayData.headline -}}</strong>
-            <br>
-            {{- $todayData.searchContext.todayOverview -}}
-        </p>
+    <!-- Page Header (Redesigned Amber Sunset Showcase Hero) -->
+    <div class="showcase-hero showcase-hero--featured">
+        <div class="showcase-hero-glow showcase-hero-glow--1" aria-hidden="true"></div>
+        <div class="showcase-hero-glow showcase-hero-glow--2" aria-hidden="true"></div>
+        <div class="showcase-hero-grid{{ if not $heroHighlights }} showcase-hero-grid--single{{ end }}">
+            <!-- Left Column: Editorial & Quick Jump -->
+            <div class="showcase-hero-main">
+                <div class="showcase-hero-badges">
+                    <span class="showcase-live-badge">
+                        <span class="showcase-live-dot" aria-hidden="true"></span>
+                        <span class="showcase-live-label">調査日:</span>
+                        <strong>{{- with $todayData.date -}}{{ time . | dateFormat "2006年01月02日" }}{{- end -}} 最新照合</strong>
+                    </span>
+                    <span class="showcase-sub-badge showcase-sub-badge--amber">
+                        <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 0.9rem;">verified</span>
+                        <span>API自動整合・在庫確認済</span>
+                    </span>
+                </div>
+                <div class="showcase-hero-copy">
+                    <h1 class="showcase-hero-title">
+                        <span>{{ .Title }}</span>
+                        <span class="material-symbols-outlined showcase-hero-title-icon" aria-hidden="true">trending_up</span>
+                    </h1>
+                    <p class="showcase-hero-headline">{{- $todayData.headline -}}</p>
+                    <p class="showcase-hero-desc">{{- $todayData.searchContext.todayOverview -}}</p>
+                </div>
+                <!-- Quick Action Jumps -->
+                <nav class="showcase-hero-actions" aria-label="ページ内ナビゲーション">
+                    {{- if and $priceDropsData $priceDropsData.drops -}}
+                    <a href="#section-price-drops" class="showcase-action-btn showcase-action-btn--primary-amber">
+                        <span class="material-symbols-outlined" aria-hidden="true">bolt</span>
+                        <span>本日の値下がり目玉 ({{ len $priceDropsData.drops }}件)</span>
+                        <span class="material-symbols-outlined showcase-action-arrow" aria-hidden="true">arrow_forward</span>
+                    </a>
+                    {{- end -}}
+                    <a href="#section-ai-recommendations" class="showcase-action-btn showcase-action-btn--secondary">
+                        <span class="material-symbols-outlined" aria-hidden="true">auto_awesome</span>
+                        <span>AI厳選10選 (独自スコア付)</span>
+                    </a>
+                </nav>
+            </div>
+
+            {{- if $heroHighlights -}}
+            <!-- Right Column: Floating AI Recommended Product Highlight Duo -->
+            <div class="showcase-hero-duo" aria-label="本日のAI厳選ピックアップ上位ハイライト">
+                {{- range $idx, $rec := $heroHighlights -}}
+                {{- $articlePage := site.GetPage (printf "/articles/%s" (lower $rec.asin)) -}}
+                {{- $score := 0 -}}
+                {{- if $articlePage -}}{{- $score = $articlePage.Params.score | default 0 -}}{{- end -}}
+                {{- $imageUrl := $rec.imageUrl -}}
+                {{- if and (not $imageUrl) $articlePage -}}
+                  {{- if and $articlePage.Params.images (gt (len $articlePage.Params.images) 0) -}}
+                    {{- $imageUrl = index $articlePage.Params.images 0 -}}
+                  {{- else -}}
+                    {{- $imageUrl = $articlePage.Params.image -}}
+                  {{- end -}}
+                {{- end -}}
+                <a href="#rec-pick-{{ add $idx 1 }}" class="showcase-mini-card{{ if eq $idx 1 }} showcase-mini-card--offset{{ end }}">
+                    <span class="showcase-mini-rank">
+                        <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 0.8rem;">award_star</span>
+                        AI厳選 #{{- add $idx 1 -}}
+                    </span>
+                    <div class="showcase-mini-img-wrap">
+                        {{- if $imageUrl -}}
+                        <img src="{{ $imageUrl }}" alt="{{ $rec.title }}" loading="lazy" decoding="async">
+                        {{- else -}}
+                        <div class="card-image-noimage" style="font-size:0.75rem;">No Image</div>
+                        {{- end -}}
+                    </div>
+                    <div class="showcase-mini-body">
+                        <div class="showcase-mini-meta">
+                            <span class="showcase-mini-cat">{{ $rec.category }}</span>
+                            {{- if $score -}}
+                            <span class="showcase-mini-score">
+                                <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 0.8rem;">military_tech</span>{{- $score -}}点
+                            </span>
+                            {{- end -}}
+                        </div>
+                        <p class="showcase-mini-title">{{ $rec.title }}</p>
+                        <div class="showcase-mini-price-row">
+                            <span class="showcase-mini-price">{{ partial "utils-price-format.html" $rec.price }}</span>
+                            {{- if and $articlePage $articlePage.Params.savings_percentage -}}
+                            <span class="showcase-mini-saving">-{{ $articlePage.Params.savings_percentage }}%</span>
+                            {{- end -}}
+                        </div>
+                    </div>
+                </a>
+                {{- end -}}
+            </div>
+            {{- end -}}
+        </div>
     </div>
-
-    <!-- Section Navigation -->
-    <nav class="rec-section-nav" aria-label="ページ内ナビゲーション">
-        {{- if and $priceDropsData $priceDropsData.drops -}}
-        <a href="#section-price-drops" class="rec-nav-btn">
-            <span class="material-symbols-outlined" aria-hidden="true">trending_down</span> 本日の値下がり目玉 ({{ len $priceDropsData.drops }})
-        </a>
-        {{- end -}}
-        <a href="#section-ai-recommendations" class="rec-nav-btn">
-            <span class="material-symbols-outlined" aria-hidden="true">award_star</span> 本日の厳選10選（AI調査）
-        </a>
-    </nav>
 
     <!-- Section: Price Drops (値下がり目玉商品) -->
     {{- if and $priceDropsData $priceDropsData.drops -}}
@@ -883,7 +956,7 @@
         {{- if and (not $imageUrl) $articlePage -}}
         {{- $imageUrl = $articlePage.Params.image -}}
         {{- end -}}
-        <div class="competitor-card" data-category="{{ $rec.category }}">
+        <div class="competitor-card" id="rec-pick-{{ add $index 1 }}" data-category="{{ $rec.category }}" style="scroll-margin-top: 84px;">
             <!-- Rank Badge -->
             <div class="rank-badge">
                 {{ add $index 1 }}

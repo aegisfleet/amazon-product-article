@@ -67,6 +67,18 @@ document.addEventListener('DOMContentLoaded', async () => {
   const minPriceValueEl = document.getElementById('deals-min-price-value');
   const priceValueEl = document.getElementById('deals-price-value');
   const discountValueEl = document.getElementById('deals-discount-value');
+  const heroTotalCountEl = document.getElementById('deals-hero-total-count');
+  const heroHitCountEl = document.getElementById('deals-hero-hit-count');
+  const heroMaxDiscountEl = document.getElementById('deals-hero-max-discount');
+  const heroPresetsContainer = document.getElementById('deals-hero-presets');
+
+  if (heroTotalCountEl) {
+    heroTotalCountEl.textContent = allProducts.length.toLocaleString();
+  }
+  if (heroMaxDiscountEl) {
+    const maxDisc = allProducts.reduce((acc, p) => Math.max(acc, Number(p.savingsPercentage) || 0), 0);
+    heroMaxDiscountEl.innerHTML = `${maxDisc}<span class="showcase-telemetry-unit">% OFF</span>`;
+  }
 
   if (!scoreSlider || !priceSlider || !gridEl) return;
 
@@ -288,6 +300,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
       }
       statsEl.textContent = String(filtered.length);
+      if (heroHitCountEl) {
+        heroHitCountEl.textContent = filtered.length.toLocaleString();
+      }
+      syncHeroPresetsState();
 
       if (categoryResetBtn && categorySelect) {
         const hasCategory = categorySelect.value !== '';
@@ -516,8 +532,59 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 
+  function syncHeroPresetsState() {
+    if (!heroPresetsContainer) return;
+    const minScore = Number.parseInt(scoreSlider.value, 10);
+    const minDiscount = Number.parseInt(discountSlider.value, 10);
+    const maxPrice = valueToPrice(Number.parseInt(priceSlider.value, 10));
+    const inStock = Boolean(inStockFilter?.checked);
+
+    const activeMap = {
+      score80: minScore >= 80,
+      discount30: minDiscount >= 30,
+      under5000: maxPrice <= 5000,
+      instock: inStock
+    };
+
+    for (const btn of heroPresetsContainer.querySelectorAll('.showcase-preset-btn')) {
+      const key = btn.dataset.preset;
+      const isActive = Boolean(activeMap[key]);
+      btn.classList.toggle('is-active', isActive);
+      btn.setAttribute('aria-pressed', String(isActive));
+      const iconEl = btn.querySelector('.showcase-preset-icon');
+      if (iconEl) {
+        iconEl.textContent = isActive ? 'check_circle' : 'chevron_right';
+      }
+    }
+  }
+
+  function handleHeroPresetClick(presetKey) {
+    if (presetKey === 'score80') {
+      const cur = Number.parseInt(scoreSlider.value, 10);
+      scoreSlider.value = cur >= 80 ? '0' : '80';
+    } else if (presetKey === 'discount30') {
+      const cur = Number.parseInt(discountSlider.value, 10);
+      discountSlider.value = cur >= 30 ? '0' : '30';
+    } else if (presetKey === 'under5000') {
+      const curPrice = valueToPrice(Number.parseInt(priceSlider.value, 10));
+      priceSlider.value = curPrice <= 5000 ? '1000' : String(Math.round(priceToValue(5000)));
+    } else if (presetKey === 'instock' && inStockFilter) {
+      inStockFilter.checked = !inStockFilter.checked;
+    }
+    applyFilters();
+  }
+
+  if (heroPresetsContainer) {
+    heroPresetsContainer.addEventListener('click', (e) => {
+      const btn = e.target.closest('.showcase-preset-btn');
+      if (!btn?.dataset.preset) return;
+      handleHeroPresetClick(btn.dataset.preset);
+    });
+  }
+
   // --- Init ---
   readUrlParams();
   updateSortButtons();
+  syncHeroPresetsState();
   applyFilters();
 });

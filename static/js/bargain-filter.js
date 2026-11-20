@@ -56,6 +56,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   const noResultsActionsEl = document.getElementById('bargain-no-results-actions');
   const loadMoreContainer = document.getElementById('bargain-load-more-container');
   const loadMoreBtn = document.getElementById('bargain-load-more-btn');
+  const heroBudgetChips = document.getElementById('bargain-hero-budget-chips');
+  const heroAvgScoreEl = document.getElementById('bargain-hero-avg-score');
+  const heroAvgBarEl = document.getElementById('bargain-hero-avg-bar');
+  const heroHitCountEl = document.getElementById('bargain-hero-hit-count');
 
   if (!scoreSlider || !priceSlider || !gridEl) return;
 
@@ -211,6 +215,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
       }
       statsEl.textContent = String(filtered.length);
+      updateHeroStatsAndChips(filtered);
 
       if (categoryResetBtn && categorySelect) {
         const hasCategory = categorySelect.value !== '';
@@ -444,6 +449,50 @@ document.addEventListener('DOMContentLoaded', async () => {
           }
           applyFilters();
         }
+      }
+    });
+  }
+
+  function updateHeroStatsAndChips(filtered) {
+    if (heroHitCountEl) {
+      heroHitCountEl.textContent = filtered.length.toLocaleString();
+    }
+    if (heroAvgScoreEl && heroAvgBarEl) {
+      const source = filtered.length > 0 ? filtered : allProducts;
+      const sum = source.reduce((acc, p) => acc + (Number(p.score) || 0), 0);
+      const avg = source.length > 0 ? (sum / source.length).toFixed(1) : '85.0';
+      heroAvgScoreEl.textContent = `${avg} / 100`;
+      heroAvgBarEl.style.width = `${Math.min(100, Number(avg))}%`;
+    }
+    if (heroBudgetChips) {
+      const curMaxPrice = valueToPrice(Number.parseInt(priceSlider.value, 10));
+      for (const btn of heroBudgetChips.querySelectorAll('.showcase-budget-chip')) {
+        const targetPrice = Number.parseInt(btn.dataset.maxPrice, 10);
+        const isActive = Math.abs(curMaxPrice - targetPrice) < 50;
+        btn.classList.toggle('is-active', isActive);
+        btn.setAttribute('aria-pressed', String(isActive));
+        let checkEl = btn.querySelector('.showcase-budget-check');
+        if (isActive && !checkEl) {
+          checkEl = document.createElement('span');
+          checkEl.className = 'material-symbols-outlined showcase-budget-check';
+          checkEl.setAttribute('aria-hidden', 'true');
+          checkEl.textContent = 'check';
+          btn.prepend(checkEl);
+        } else if (!isActive && checkEl) {
+          checkEl.remove();
+        }
+      }
+    }
+  }
+
+  if (heroBudgetChips) {
+    heroBudgetChips.addEventListener('click', (e) => {
+      const btn = e.target.closest('.showcase-budget-chip');
+      if (!btn?.dataset.maxPrice) return;
+      const targetPrice = Number.parseInt(btn.dataset.maxPrice, 10);
+      if (Number.isFinite(targetPrice)) {
+        priceSlider.value = String(Math.round(priceToValue(targetPrice)));
+        applyFilters();
       }
     });
   }

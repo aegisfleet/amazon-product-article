@@ -2,16 +2,93 @@
 <div class="container" style="padding-top: var(--md-sys-spacing-8);">
     {{- partial "breadcrumb.html" . -}}
 
-    <!-- Page Header -->
-    <div class="bargain-hero deals-hero"
-        style="background: linear-gradient(135deg, #e11d48 0%, #d97706 100%); color: #ffffff;">
-        <div class="bargain-hero-icon"><span class="material-symbols-outlined" style="font-size: 2.5rem;" aria-hidden="true">local_offer</span></div>
-        <h1 class="bargain-hero-title" style="color: #ffffff;">セール対象商品一覧</h1>
-        <p class="bargain-hero-subtitle" style="color: rgba(255, 255, 255, 0.95);">お得なタイムセール & 限定セール開催中</p>
-        <p class="bargain-hero-desc" style="color: rgba(255, 255, 255, 0.9); max-width: 700px; margin: 0 auto;">
-            現在Amazonでセール対象になっている商品を一覧表示。
-            割引率やスコア、価格帯で絞り込んで、本当にお得な厳選商品を見つけましょう。
-        </p>
+    <!-- Page Header (Redesigned Coral Flare Showcase Hero) -->
+    <div class="showcase-hero showcase-hero--deals">
+        <div class="showcase-hero-glow showcase-hero-glow--deals" aria-hidden="true"></div>
+        <div class="showcase-deals-top">
+            <div class="showcase-hero-copy">
+                <div class="showcase-hero-badges">
+                    <span class="showcase-sub-badge showcase-sub-badge--rose">
+                        <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 0.95rem;">local_offer</span>
+                        <span>タイムセール &amp; 限定セール集中解析</span>
+                    </span>
+                </div>
+                <h1 class="showcase-hero-title">セール対象商品一覧</h1>
+                <p class="showcase-hero-desc">
+                    現在Amazonでセール対象になっている商品を一覧表示。見せかけの二重価格を排除し、割引率・独自スコア・価格帯から本当にお得な値下げアイテムだけを絞り込めます。
+                </p>
+            </div>
+            <!-- Telemetry Counters -->
+            <div class="showcase-telemetry-group">
+                <div class="showcase-telemetry-card">
+                    <span class="material-symbols-outlined showcase-telemetry-icon showcase-telemetry-icon--rose" aria-hidden="true">percent</span>
+                    <div>
+                        <div class="showcase-telemetry-label">最大割引率</div>
+                        <div class="showcase-telemetry-val" id="deals-hero-max-discount">--<span class="showcase-telemetry-unit">% OFF</span></div>
+                    </div>
+                </div>
+                <div class="showcase-telemetry-card">
+                    <span class="material-symbols-outlined showcase-telemetry-icon showcase-telemetry-icon--rose" aria-hidden="true">inventory_2</span>
+                    <div>
+                        <div class="showcase-telemetry-label">現在表示 / 総検知件数</div>
+                        <div class="showcase-telemetry-val"><span id="deals-hero-hit-count">--</span><span class="showcase-telemetry-unit"> / <span id="deals-hero-total-count">--</span> 件</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Integrated Quick Filter Dock Inside Hero -->
+        <div class="showcase-filter-dock">
+            <div class="showcase-dock-header">
+                <span class="showcase-dock-title">
+                    <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 1rem;">tune</span>
+                    <span>クイック条件絞り込み</span>
+                </span>
+                <span class="showcase-dock-hint">ワンタップで下のフィルターと連動して結果が切り替わります</span>
+            </div>
+            <div class="showcase-preset-grid" id="deals-hero-presets">
+                <button type="button" class="showcase-preset-btn is-active" data-preset="score80" aria-pressed="true">
+                    <div>
+                        <div class="showcase-preset-kicker">独自スコア</div>
+                        <div class="showcase-preset-label showcase-preset-label--rose">
+                            <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 0.95rem;">trophy</span>
+                            <span>80点以上のみ</span>
+                        </div>
+                    </div>
+                    <span class="material-symbols-outlined showcase-preset-icon" aria-hidden="true">check_circle</span>
+                </button>
+                <button type="button" class="showcase-preset-btn" data-preset="discount30" aria-pressed="false">
+                    <div>
+                        <div class="showcase-preset-kicker">割引率レンジ</div>
+                        <div class="showcase-preset-label showcase-preset-label--amber">
+                            <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 0.95rem;">percent</span>
+                            <span>30%以上 OFF</span>
+                        </div>
+                    </div>
+                    <span class="material-symbols-outlined showcase-preset-icon" aria-hidden="true">chevron_right</span>
+                </button>
+                <button type="button" class="showcase-preset-btn" data-preset="under5000" aria-pressed="false">
+                    <div>
+                        <div class="showcase-preset-kicker">価格帯</div>
+                        <div class="showcase-preset-label">
+                            <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 0.95rem;">payments</span>
+                            <span>5,000円以内</span>
+                        </div>
+                    </div>
+                    <span class="material-symbols-outlined showcase-preset-icon" aria-hidden="true">chevron_right</span>
+                </button>
+                <button type="button" class="showcase-preset-btn" data-preset="instock" aria-pressed="false">
+                    <div>
+                        <div class="showcase-preset-kicker">在庫ステータス</div>
+                        <div class="showcase-preset-label showcase-preset-label--rose">
+                            <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 0.95rem;">inventory</span>
+                            <span>在庫あり即納品</span>
+                        </div>
+                    </div>
+                    <span class="material-symbols-outlined showcase-preset-icon" aria-hidden="true">chevron_right</span>
+                </button>
+            </div>
+        </div>
     </div>
 
     <!-- Filter Panel -->
