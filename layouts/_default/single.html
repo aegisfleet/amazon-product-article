@@ -654,7 +654,7 @@
                                 span.className = 'material-symbols-outlined ' + (isTocLink ? 'toc-mat-icon ' : 'heading-mat-icon ') + entry.tone;
                                 span.setAttribute('aria-hidden', 'true');
                                 span.textContent = entry.icon;
-                                el.insertBefore(span, firstNode);
+                                firstNode.before(span);
                                 return;
                             }
                         }

@@ -88,22 +88,27 @@
         return parts.length > 0 ? { label: 'サイズ', value: parts.join(' × ') } : null;
     }
 
-    function extractStructuredSpecs(item, maxRows) {
-        const limit = typeof maxRows === 'number' && maxRows > 0 ? maxRows : 3;
-        if (!item?.specs || typeof item.specs !== 'object') return [];
-
+    function collectMappedSpecs(specs, limit) {
         const rows = [];
         const usedLabels = new Set();
 
         for (const spec of SPEC_MAP) {
             if (rows.length >= limit) break;
             if (usedLabels.has(spec.label)) continue;
-            const valStr = getValidSpecValue(item.specs[spec.key], spec.skipZero);
+            const valStr = getValidSpecValue(specs[spec.key], spec.skipZero);
             if (!valStr) continue;
 
             usedLabels.add(spec.label);
             rows.push({ label: spec.label, value: valStr });
         }
+        return rows;
+    }
+
+    function extractStructuredSpecs(item, maxRows) {
+        const limit = typeof maxRows === 'number' && maxRows > 0 ? maxRows : 3;
+        if (!item?.specs || typeof item.specs !== 'object') return [];
+
+        const rows = collectMappedSpecs(item.specs, limit);
 
         if (rows.length < limit && typeof item.specs.material === 'string') {
             const mat = getValidSpecValue(item.specs.material, true);
