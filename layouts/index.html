@@ -110,7 +110,7 @@
     {{- $targetHighScoreArticles := cond (gt (len $inStockHighScoreArticles) 0) $inStockHighScoreArticles $highScoreArticles -}}
     {{- if gt (len $targetHighScoreArticles) 0 -}}
     {{- $rankedHighScoreArticles := partial "product-composite-ranked-pages.html" (dict "pages" $targetHighScoreArticles) -}}
-    {{- $pickupItems := first 6 $rankedHighScoreArticles -}}
+    {{- $pickupItems := first 10 $rankedHighScoreArticles -}}
     {{- $pickupData := index hugo.Data.recommendations "pickup-pool" | default hugo.Data.recommendations.pickup_pool -}}
     {{- if not $pickupData -}}
     {{- $pickupCandidates := first 100 $rankedHighScoreArticles -}}
@@ -135,59 +135,115 @@
     ) -}}
     {{- end -}}
     {{- end -}}
-    <div class="pickup-section">
+    <div class="pickup-section" data-purpose="high-rated-showcase">
+        <div class="pickup-ambient-glow pickup-ambient-glow-1" aria-hidden="true"></div>
+        <div class="pickup-ambient-glow pickup-ambient-glow-2" aria-hidden="true"></div>
         <div class="pickup-header">
-            <h3 class="pickup-title"><span class="material-symbols-outlined" aria-hidden="true" style="vertical-align: middle;">trophy</span> 高評価おすすめ</h3>
-            <span class="pickup-subtitle">80点以上の厳選商品</span>
+            <div class="pickup-header-main">
+                <div class="pickup-title-icon" aria-hidden="true">🏆</div>
+                <div class="pickup-title-group">
+                    <div class="pickup-title-row">
+                        <h3 class="pickup-title">高評価おすすめ商品</h3>
+                        <span class="pickup-subtitle"><span class="pickup-subtitle-dot" aria-hidden="true"></span>80点以上の厳選商品</span>
+                    </div>
+                </div>
+            </div>
             <button type="button" class="shuffle-btn" data-reset-history="1">
-                <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 0.9rem; vertical-align: middle;">cleaning_services</span> 閲覧履歴をリセット
+                <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 0.95rem; vertical-align: middle;">delete_sweep</span>
+                <span class="reset-btn-label">閲覧履歴リセット</span>
             </button>
         </div>
+
+        <!-- Personalization Context Bar (Shown when viewing history exists) -->
+        <div id="pickup-history-context" class="pickup-history-context" hidden></div>
+
+        <!-- Quick Category Filter Tabs -->
+        <div id="pickup-category-tabs" class="pickup-category-tabs" role="toolbar" aria-label="高評価おすすめのカテゴリ絞り込み"></div>
+
         <div class="pickup-grid" id="pickup-grid">
-            {{- range $pickupItems -}}
+            {{- range $idx, $item := $pickupItems -}}
             {{- $pickupCategory := "" -}}
             {{- if .Params.categories -}}{{- $pickupCategory = index .Params.categories 0 -}}{{- else if
             .Params.category -}}{{- $pickupCategory = .Params.category -}}{{- end -}}
             {{- $pickupGroup := partial "utils-parent-category.html" $pickupCategory -}}
             {{- $pickupPriceBucket := partial "utils-price-bucket.html" .Params.price -}}
-            <a href="{{ .RelPermalink }}" class="pickup-card" data-score="{{ .Params.score }}"
-                data-price="{{ .Params.price }}" data-track-product="1" data-asin="{{ .Params.asin }}"
+            {{- $firstImg := "" -}}
+            {{- if and .Params.images (gt (len .Params.images) 0) -}}{{- $firstImg = index .Params.images 0 -}}{{- end -}}
+            <article class="pickup-card{{ if eq $idx 0 }} is-top-pick{{ end }}" data-score="{{ .Params.score }}"
+                data-price="{{ .Params.price }}" data-asin="{{ .Params.asin }}"
                 data-category="{{ $pickupCategory }}" data-group="{{ $pickupGroup }}" data-price-bucket="{{ $pickupPriceBucket }}">
-                <div class="pickup-card-image">
-                    {{- if .Params.images -}}
-                    <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy" decoding="async">
-                    {{- else -}}
-                    <div class="pickup-card-noimage">画像なし</div>
+                {{- if eq $idx 0 -}}
+                <div class="pickup-top-ribbon"><span aria-hidden="true">👑</span> スコア第1位</div>
+                {{- end -}}
+                <div class="pickup-card-image-wrap">
+                    <span class="pickup-rank-badge{{ if eq $idx 0 }} is-rank-1{{ end }}">#{{ add $idx 1 }}</span>
+                    {{- if $pickupCategory -}}
+                    <span class="pickup-category-chip">{{ $pickupCategory }}</span>
                     {{- end -}}
+                    <button type="button" class="pickup-fav-btn" data-favorite-btn="1" data-asin="{{ .Params.asin }}"
+                        data-title="{{ .Title }}" data-url="{{ .RelPermalink }}" data-image="{{ $firstImg }}"
+                        data-price="{{ .Params.price }}" data-score="{{ .Params.score | default 0 }}"
+                        data-category="{{ $pickupCategory }}" aria-pressed="false" aria-label="{{ .Title }}をお気に入りに追加">
+                        <span class="material-symbols-outlined fav-icon" aria-hidden="true">favorite_border</span>
+                    </button>
+                    <a href="{{ .RelPermalink }}" class="pickup-card-image" data-track-product="1" data-asin="{{ .Params.asin }}"
+                        data-title="{{ .Title }}" data-image="{{ $firstImg }}" data-category="{{ $pickupCategory }}"
+                        data-group="{{ $pickupGroup }}" data-price-bucket="{{ $pickupPriceBucket }}" data-price="{{ .Params.price }}">
+                        {{- if $firstImg -}}
+                        <img src="{{ $firstImg }}" alt="{{ .Title }}" loading="lazy" decoding="async">
+                        {{- else -}}
+                        <div class="pickup-card-noimage">画像なし</div>
+                        {{- end -}}
+                    </a>
                 </div>
                 <div class="pickup-card-content">
-                    <p class="pickup-card-title">{{ .Title | truncate 30 }}</p>
-                    {{- if .Params.specs -}}
-                    <div class="card-specs">
-                        {{- partial "product-spec-tags.html" (dict "specs" .Params.specs "tagClass" "card-spec-tag") -}}
+                    <div class="pickup-card-body-upper">
+                        <div class="pickup-card-reason-row">
+                            <span class="pickup-reason-badge pickup-reason-hall-of-fame">👑 90点超えの殿堂入り</span>
+                        </div>
+                        <h4 class="pickup-card-title">
+                            <a href="{{ .RelPermalink }}" class="pickup-card-title-link" data-track-product="1"
+                                data-asin="{{ .Params.asin }}" data-title="{{ .Title }}" data-image="{{ $firstImg }}"
+                                data-category="{{ $pickupCategory }}" data-group="{{ $pickupGroup }}"
+                                data-price-bucket="{{ $pickupPriceBucket }}" data-price="{{ .Params.price }}">{{ .Title }}</a>
+                        </h4>
                     </div>
-                    {{- end -}}
-                    <div class="pickup-card-meta">
-                        {{- $score := .Params.score | int -}}
-                        {{- $scoreClass := "score-caution" -}}
-                        {{- if ge $score 80 -}}
-                        {{- $scoreClass = "score-excellent" -}}
-                        {{- else if ge $score 70 -}}
-                        {{- $scoreClass = "score-good" -}}
-                        {{- else if ge $score 50 -}}
-                        {{- $scoreClass = "score-fair" -}}
-                        {{- end -}}
-                        {{- if .Params.price -}}
-                        <span class="pickup-card-price">{{ .Params.price }}</span>
-                        {{- end -}}
-                        <span class="pickup-card-score m3-badge m3-badge-score {{ $scoreClass }}">
-                            <span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span> {{ .Params.score }}点
-                        </span>
+                    <div class="pickup-card-footer">
+                        <div class="pickup-card-meta">
+                            {{- $score := .Params.score | int -}}
+                            {{- $scoreClass := "score-caution" -}}
+                            {{- if ge $score 80 -}}
+                            {{- $scoreClass = "score-excellent" -}}
+                            {{- else if ge $score 70 -}}
+                            {{- $scoreClass = "score-good" -}}
+                            {{- else if ge $score 50 -}}
+                            {{- $scoreClass = "score-fair" -}}
+                            {{- end -}}
+                            <div class="pickup-price-block">
+                                <span class="pickup-price-label">Amazon価格(税込)</span>
+                                <span class="pickup-card-price">{{ .Params.price | default "価格を確認" }}</span>
+                            </div>
+                            <span class="pickup-card-score m3-badge m3-badge-score {{ $scoreClass }}">
+                                <span class="material-symbols-outlined icon-score" aria-hidden="true">trophy</span> {{ .Params.score }}<span class="pickup-score-unit">点</span>
+                            </span>
+                        </div>
+                        <a href="{{ .RelPermalink }}" class="pickup-card-cta" data-track-product="1"
+                            data-asin="{{ .Params.asin }}" data-title="{{ .Title }}" data-image="{{ $firstImg }}"
+                            data-category="{{ $pickupCategory }}" data-group="{{ $pickupGroup }}"
+                            data-price-bucket="{{ $pickupPriceBucket }}" data-price="{{ .Params.price }}">詳細スペック比較 →</a>
                     </div>
                 </div>
-            </a>
+            </article>
             {{- end -}}
         </div>
+
+        <div class="pickup-section-footer">
+            <button type="button" id="pickup-more-btn" class="pickup-more-btn" hidden>
+                <span>高評価アイテムをもっと見る</span>
+                <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 1rem;">expand_more</span>
+            </button>
+        </div>
+
         <script id="pickup-data" type="application/json">{{- $pickupData | jsonify | safeJS -}}</script>
         <script src="{{ `js/personalization.js` | relURL }}"></script>
         <script src="{{ `js/home-pickup.js` | relURL }}"></script>

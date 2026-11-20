@@ -22,8 +22,10 @@
     <div id="scroll-progress-bar" class="scroll-progress-bar"></div>
 </div>
 
-<div id="product-tracking-info" data-asin="{{ .Params.asin }}" data-category="{{ $currentCategory }}"
-    data-group="{{ $currentGroup }}" data-price-bucket="{{ $currentPriceBucket }}" data-price="{{ .Params.price }}" style="display: none;"></div>
+<div id="product-tracking-info" data-asin="{{ .Params.asin }}" data-title="{{ .Title }}"
+    data-image="{{ if and .Params.images (gt (len .Params.images) 0) }}{{ index .Params.images 0 }}{{ end }}"
+    data-category="{{ $currentCategory }}" data-group="{{ $currentGroup }}" data-price-bucket="{{ $currentPriceBucket }}"
+    data-price="{{ .Params.price }}" style="display: none;"></div>
 
 <div class="container article-page-container" style="padding-top: var(--spacing-sm); padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px));">
     <div class="ai-disclaimer">
