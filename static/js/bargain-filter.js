@@ -465,10 +465,12 @@ document.addEventListener('DOMContentLoaded', async () => {
       heroAvgBarEl.style.width = `${Math.min(100, Number(avg))}%`;
     }
     if (heroBudgetChips) {
+      const curMinPrice = valueToPrice(Number.parseInt(minPriceSlider.value, 10));
       const curMaxPrice = valueToPrice(Number.parseInt(priceSlider.value, 10));
       for (const btn of heroBudgetChips.querySelectorAll('.showcase-budget-chip')) {
-        const targetPrice = Number.parseInt(btn.dataset.maxPrice, 10);
-        const isActive = Math.abs(curMaxPrice - targetPrice) < 50;
+        const targetMin = Number.parseInt(btn.dataset.minPrice || '100', 10);
+        const targetMax = Number.parseInt(btn.dataset.maxPrice, 10);
+        const isActive = Math.abs(curMinPrice - targetMin) < 50 && Math.abs(curMaxPrice - targetMax) < 50;
         btn.classList.toggle('is-active', isActive);
         btn.setAttribute('aria-pressed', String(isActive));
         let checkEl = btn.querySelector('.showcase-budget-check');
@@ -489,9 +491,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     heroBudgetChips.addEventListener('click', (e) => {
       const btn = e.target.closest('.showcase-budget-chip');
       if (!btn?.dataset.maxPrice) return;
-      const targetPrice = Number.parseInt(btn.dataset.maxPrice, 10);
-      if (Number.isFinite(targetPrice)) {
-        priceSlider.value = String(Math.round(priceToValue(targetPrice)));
+      const targetMin = Number.parseInt(btn.dataset.minPrice || '100', 10);
+      const targetMax = Number.parseInt(btn.dataset.maxPrice, 10);
+      if (Number.isFinite(targetMin) && Number.isFinite(targetMax)) {
+        minPriceSlider.value = String(Math.round(priceToValue(targetMin)));
+        priceSlider.value = String(Math.round(priceToValue(targetMax)));
         applyFilters();
       }
     });
