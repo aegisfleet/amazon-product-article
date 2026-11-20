@@ -75,10 +75,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (heroTotalCountEl) {
     heroTotalCountEl.textContent = allProducts.length.toLocaleString();
   }
-  if (heroMaxDiscountEl) {
-    const maxDisc = allProducts.reduce((acc, p) => Math.max(acc, Number(p.savingsPercentage) || 0), 0);
-    heroMaxDiscountEl.innerHTML = `${maxDisc}<span class="showcase-telemetry-unit">% OFF</span>`;
-  }
 
   if (!scoreSlider || !priceSlider || !gridEl) return;
 
@@ -302,6 +298,12 @@ document.addEventListener('DOMContentLoaded', async () => {
       statsEl.textContent = String(filtered.length);
       if (heroHitCountEl) {
         heroHitCountEl.textContent = filtered.length.toLocaleString();
+      }
+      if (heroMaxDiscountEl) {
+        const maxDisc = filtered.length > 0
+          ? filtered.reduce((acc, p) => Math.max(acc, Number(p.savingsPercentage) || 0), 0)
+          : 0;
+        heroMaxDiscountEl.innerHTML = `${maxDisc}<span class="showcase-telemetry-unit">% OFF</span>`;
       }
       syncHeroPresetsState();
 
