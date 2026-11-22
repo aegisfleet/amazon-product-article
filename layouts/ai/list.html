@@ -337,12 +337,12 @@
         <div class="ai-tool-notice">
             <span class="material-symbols-outlined ai-tool-notice-icon" aria-hidden="true">verified</span>
             <div class="ai-tool-notice-text">
-                <strong>データについて:</strong>
+                <strong>データと安全性について:</strong>
                 <ul style="margin: 0.35rem 0 0; padding-left: 1.25rem;">
                     <li>データは当サイト（amazon-hikaku.com）の調査結果そのもので、サーバー側で<strong>1時間ごと</strong>に最新の公開データへ更新されます。</li>
                     <li>価格は各商品の<strong>「調査時点の参考価格」</strong>です。最新の価格や在庫状況はリンク先の商品詳細ページでご確認ください。</li>
                     <li>スコアはサイト独自の採点（基本点＋加点・減点）で、各商品の <code>score_rationale</code> に採点根拠が入っています。</li>
-                    <li>書き込み機能はありません。検索と参照だけの読み取り専用です。</li>
+                    <li><strong>完全読み取り専用・オープンソース公開</strong>: 書き込み機能はなく、アカウント情報や会話履歴も保存しません。サーバーのソースコードは <a href="https://github.com/aegisfleet/amazon-hikaku-mcp" target="_blank" rel="noopener noreferrer">GitHub（aegisfleet/amazon-hikaku-mcp）</a> で公開しています。</li>
                 </ul>
             </div>
         </div>
@@ -351,7 +351,7 @@
         <details class="ai-tech-details" id="mcp-tools-list">
             <summary class="ai-tech-summary">
                 <span class="material-symbols-outlined ai-section-icon" aria-hidden="true">build</span>
-                <span>技術情報：搭載ツール（9種）と相談プロンプト（2種）</span>
+                <span>技術情報：搭載ツール（9種）・相談プロンプト（2種）・セキュリティ設計とソースコード</span>
                 <span class="ai-tech-summary-hint">普段はAIが自動選択するため意識不要です（クリックで詳細）</span>
             </summary>
 
@@ -408,7 +408,7 @@
                 </table>
             </div>
 
-            <div class="ai-tools-grid">
+            <div class="ai-tools-grid" style="margin-bottom: var(--spacing-lg);">
                 <div class="ai-tool-card">
                     <div class="ai-tool-header">
                         <h3 class="ai-tool-name">MCP Prompt: <code>shopping_consultation</code></h3>
@@ -429,6 +429,27 @@
                     </p>
                 </div>
             </div>
+
+            <!-- セキュリティ設計とオープンソース公開 -->
+            <article class="ai-prompt-card" id="mcp-security-info">
+                <div class="ai-prompt-card-header">
+                    <div class="ai-prompt-meta">
+                        <span class="ai-prompt-tag tag-success">透明性と安全策</span>
+                        <h3 class="ai-prompt-name">ソースコード公開とセキュリティ設計（MIT License）</h3>
+                    </div>
+                </div>
+                <p class="ai-prompt-explanation">
+                    リモート MCP サーバーをお使いの AI アシスタントに安心して接続いただけるよう、サーバー実装・プロンプト定義・テストコード一式を GitHub で完全公開し、以下の安全策を講じています。
+                </p>
+                <ul class="ai-mcp-steps" style="list-style-type: disc;">
+                    <li><strong>オープンソース公開（GitHub）</strong>: <a href="https://github.com/aegisfleet/amazon-hikaku-mcp" target="_blank" rel="noopener noreferrer"><code>https://github.com/aegisfleet/amazon-hikaku-mcp</code></a>（MIT License / <a href="https://github.com/aegisfleet/amazon-hikaku-mcp/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer">SECURITY.md</a>）にて全コードとセキュリティポリシーを公開しています。</li>
+                    <li><strong>完全読み取り専用（副作用なし）</strong>: 公開している全9ツールに MCP 標準アノテーション <code>ToolAnnotations(readOnlyHint=True, destructiveHint=False, idempotentHint=True)</code> を設定しており、外部データの書き換えや注文・決済などの操作は一切行いません。</li>
+                    <li><strong>ステートレス設計・個人情報の非保持</strong>: Streamable HTTP のステートレスモード（<code>stateless_http=True</code>）で稼働し、API キー・OAuth トークン・アカウント情報・会話セッション履歴を保持しません。</li>
+                    <li><strong>データソースの限定</strong>: サーバーが参照するのは当サイト（<code>amazon-hikaku.com</code>）で公開配信している調査 JSON のみ（1時間キャッシュ）であり、任意の外部 URL へアクセスする機能（SSRF リスク）は持ちません。</li>
+                    <li><strong>通信保護・過負荷防止ガード</strong>: リクエストサイズ上限（64KB、ヘッダー検査およびストリーム実測）と IP 単位のレート制限（240 req/min）、各種セキュリティヘッダー（<code>X-Content-Type-Options: nosniff</code>、<code>Cache-Control: no-store</code> 等）を適用しています。</li>
+                    <li><strong>コンテナとサプライチェーン保護</strong>: <code>uv.lock</code> による依存パッケージの固定ビルド、非特権ユーザー（non-root）でのコンテナ実行、GitHub Actions（<code>pip-audit</code>）および Dependabot による継続的な脆弱性スキャンを実施しています。</li>
+                </ul>
+            </article>
         </details>
     </section>
 </div>

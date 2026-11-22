@@ -5,7 +5,7 @@
 
 ## 1. データ取得と参照指針 (Data Ingestion & Priority)
 - **Tier 1 — 推奨（MCP対応AI）**:
-  - [リモートMCPサーバー](https://mcp.amazon-hikaku.com/mcp)（Streamable HTTP、認証不要・読み取り専用）を最優先でご利用ください。
+  - [リモートMCPサーバー](https://mcp.amazon-hikaku.com/mcp)（Streamable HTTP、認証不要・ステートレス・完全読み取り専用、ソースコード: [GitHub (`aegisfleet/amazon-hikaku-mcp`, MIT)](https://github.com/aegisfleet/amazon-hikaku-mcp)）を最優先でご利用ください。
   - 数MBのJSONを毎回取得せず、日英ブランド表記ゆれ（ソニー/Sony等）・略語展開（ノイキャン、Type-C等）・構造化比較・代替品提案・0件時の緩和サジェストに対応した対話的調査が可能です。
 - **Tier 2 — フォールバック（MCP非対応AI / コード実行環境）**:
   - 全商品調査は [軽量商品サマリー (`products-summary.json`)](https://www.amazon-hikaku.com/products-summary.json)（約1.7MB、スコア降順）を参照してください。

@@ -8,7 +8,7 @@ AIアシスタントや自律型エージェントがユーザーの商品選び
 
 ### 利用優先度（Tier 1 / Tier 2）
 - **Tier 1 — 推奨（MCP対応AI環境）**:
-  - リモートMCPサーバー（`https://mcp.amazon-hikaku.com/mcp`、Streamable HTTP・認証不要・読み取り専用）を第一優先でご利用ください。
+  - リモートMCPサーバー（`https://mcp.amazon-hikaku.com/mcp`、Streamable HTTP・認証不要・ステートレス・完全読み取り専用、ソースコード: [GitHub (`aegisfleet/amazon-hikaku-mcp`, MIT License)](https://github.com/aegisfleet/amazon-hikaku-mcp)）を第一優先でご利用ください。
   - 数MBのJSONをダウンロード・解析する必要がなく、日英ブランド表記ゆれ（ソニー/Sony、ロジクール/Logicool等）・略語や同義語展開（ノイキャン、Type-C/USB-C等）・構造化比較・代替品提案・少数ヒット時の条件緩和サジェスト（`suggestions`）・絞り込みファセット（`facets`）に対応しています。
 - **Tier 2 — フォールバック（MCP非対応AI / コード実行環境）**:
   - 全商品やカテゴリ別の調査時は、[軽量商品サマリー (`products-summary.json`)](https://www.amazon-hikaku.com/products-summary.json)（約1.7MB、独自スコア降順）を参照してください。
@@ -17,7 +17,7 @@ AIアシスタントや自律型エージェントがユーザーの商品選び
   - ※ChatGPT等のコード実行機能を持つAIツールは、ブラウザ直接フェッチによる通信タイムアウトを防ぐため、Python環境（`urllib` / `pandas` 等）を用いてJSONをダウンロード・解析することを推奨します。
 
 ### リモートMCPサーバー 提供ツール詳細（全9ツール）
-エンドポイント: `https://mcp.amazon-hikaku.com/mcp`
+エンドポイント: `https://mcp.amazon-hikaku.com/mcp` （ソースコード・セキュリティポリシー: [`https://github.com/aegisfleet/amazon-hikaku-mcp`](https://github.com/aegisfleet/amazon-hikaku-mcp)、全ツール `readOnlyHint=True`・ステートレス・64KBボディ上限・240 req/min レート制限）
 1. `search_products`:
    - 条件・価格帯・スコア・調査鮮度・並び替えによる商品検索。
    - 主な引数: `query`（空白区切りAND、同義語展開対応）、`category`（子カテゴリ名・親カテゴリ名・親スラッグ）、`brand`（日英表記ゆれ自動吸収）、`exclude_brand`（特定ブランド除外）、`min_score`（既定80）、`min_price` / `max_price`、`in_stock_only`（既定true）、`sort`（`score` / `price_asc` / `price_desc` / `relevance` / `newest`）、`updated_within_days`（直近N日以内調査）、`limit` / `offset`。
