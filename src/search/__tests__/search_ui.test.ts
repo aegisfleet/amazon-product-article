@@ -151,7 +151,8 @@ describe('Search UI XSS Protection', () => {
 
   test('static/js/search.js and search-worker.js should support score bypass for ASIN and score relaxation suggestion for keywords', () => {
     const workerPath = path.join(__dirname, '../../../static/js/search-worker.js');
-    const workerContent = fs.readFileSync(workerPath, 'utf8');
+    const corePath = path.join(__dirname, '../../../static/js/search-core.js');
+    const workerContent = fs.readFileSync(workerPath, 'utf8') + '\n' + fs.readFileSync(corePath, 'utf8');
 
     expect(workerContent).toContain('isAsinQuery');
     expect(workerContent).toContain('unfilteredScoreCount');
@@ -178,7 +179,8 @@ describe('Search UI XSS Protection', () => {
 
   test('static/js/search.js and search-worker.js should support hiragana and katakana normalization', () => {
     const workerPath = path.join(__dirname, '../../../static/js/search-worker.js');
-    const workerContent = fs.readFileSync(workerPath, 'utf8');
+    const corePath = path.join(__dirname, '../../../static/js/search-core.js');
+    const workerContent = fs.readFileSync(workerPath, 'utf8') + '\n' + fs.readFileSync(corePath, 'utf8');
 
     expect(searchJsContent).toContain('normalizeSearchText');
     expect(workerContent).toContain('normalizeSearchText');

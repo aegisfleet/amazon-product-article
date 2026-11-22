@@ -46,6 +46,18 @@
                         <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </button>
+                <div class="search-sort-wrapper">
+                    <label for="search-sort-select" class="search-sort-label">
+                        <span class="material-symbols-outlined" aria-hidden="true">sort</span>
+                        <span class="search-sort-label-text">並び替え</span>
+                    </label>
+                    <select id="search-sort-select" class="search-sort-select" aria-label="検索結果の並び替え">
+                        <option value="relevance" selected>関連度順</option>
+                        <option value="score">スコア順</option>
+                        <option value="price-asc">価格が安い順</option>
+                        <option value="newest">新着順</option>
+                    </select>
+                </div>
             </div>
 
             <div class="search-filters-wrapper" id="search-filters-wrapper">
