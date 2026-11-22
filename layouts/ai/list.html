@@ -11,7 +11,7 @@
                 <div class="showcase-hero-badges">
                     <span class="showcase-sub-badge showcase-sub-badge--violet">
                         <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 0.95rem;">hub</span>
-                        <span>ChatGPT / Claude / Grok / Gemini / Muse 対応</span>
+                        <span>ChatGPT / Gemini / Claude / Grok / Muse 対応</span>
                     </span>
                 </div>
                 <div class="showcase-hero-copy">
@@ -76,7 +76,7 @@
                 <div class="showcase-ai-codebox-footer">
                     <span class="showcase-ai-verified">
                         <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 0.95rem; color: #10b981;">check_circle</span>
-                        <span>ChatGPT / Claude / Grok / Gemini / Muse 対応</span>
+                        <span>ChatGPT / Gemini / Claude / Grok / Muse 対応</span>
                     </span>
                     <a href="#mcp-connection-guide" class="showcase-ai-more-link">
                         <span>MCPサーバーの接続方法へ進む</span>
@@ -160,87 +160,7 @@
         </div>
     </section>
 
-    <!-- 3. 使えるツール（8種）＆ 相談プロンプト（2種） -->
-    <section class="ai-endpoints-section" id="mcp-tools-list" aria-label="使えるツールと相談プロンプト">
-        <div class="ai-section-header">
-            <h2 class="ai-section-title">
-                <span class="material-symbols-outlined ai-section-icon" aria-hidden="true">build</span>
-                搭載されているツール（8種）と相談プロンプト（2種）
-            </h2>
-            <p class="ai-section-desc">
-                AIアシスタントが質問内容に応じて自動で呼び出す8つの検索・比較ツールと、相談の進め方をAIに渡す2つのテンプレート（MCP Prompts）を備えています。
-            </p>
-        </div>
-
-        <div class="ai-endpoints-table-wrapper" style="margin-bottom: var(--spacing-lg);">
-            <table class="ai-endpoints-table">
-                <thead>
-                    <tr>
-                        <th scope="col">ツール名</th>
-                        <th scope="col">内容</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><code>search_products</code></td>
-                        <td>キーワード／カテゴリ／ブランド／価格／スコアで商品を検索</td>
-                    </tr>
-                    <tr>
-                        <td><code>get_product</code></td>
-                        <td>1商品の詳細（スペック、在庫、調査日、スコアの採点根拠）</td>
-                    </tr>
-                    <tr>
-                        <td><code>compare_products</code></td>
-                        <td>2〜5商品の横並び比較</td>
-                    </tr>
-                    <tr>
-                        <td><code>list_categories</code></td>
-                        <td>カテゴリ一覧（親→子の階層と件数）</td>
-                    </tr>
-                    <tr>
-                        <td><code>list_brands</code></td>
-                        <td>ブランド検索（表記揺れにも対応）</td>
-                    </tr>
-                    <tr>
-                        <td><code>get_deals</code></td>
-                        <td>セール中の商品（割引率順。低スコア品を避けるため既定でスコア70点以上。セール種別での絞り込みも可）</td>
-                    </tr>
-                    <tr>
-                        <td><code>get_bargain</code></td>
-                        <td>目標金額以下の「あともう一品」候補</td>
-                    </tr>
-                    <tr>
-                        <td><code>get_recommendations</code></td>
-                        <td>スコア90点以上の高評価商品</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="ai-tools-grid">
-            <div class="ai-tool-card">
-                <div class="ai-tool-header">
-                    <h3 class="ai-tool-name">MCP Prompt: <code>shopping_consultation</code></h3>
-                    <span class="ai-tool-badge">引数: topic</span>
-                </div>
-                <p class="ai-tool-desc">
-                    <strong>買い物相談用。</strong>まず候補を調べ、予算・用途などが曖昧なら実際の選択肢で最大3点まで聞き返し、回答に合わせて再検索して比較と推奨まで進めます。引数 <code>topic</code> にテーマ（例: ワイヤレスイヤホン）を渡せます（※MCP Prompts 対応クライアントで選択可）。
-                </p>
-            </div>
-
-            <div class="ai-tool-card">
-                <div class="ai-tool-header">
-                    <h3 class="ai-tool-name">MCP Prompt: <code>bargain_hunting</code></h3>
-                    <span class="ai-tool-badge">引数: occasion</span>
-                </div>
-                <p class="ai-tool-desc">
-                    <strong>セール・買い合わせ相談用。</strong>セール商品と「あと一品」候補を、割引率だけでなくスコアも見て絞り込みます。引数 <code>occasion</code> に用途を渡せます（※MCP Prompts 対応クライアントで選択可）。
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. 接続方法（設定方法まとめ） -->
+    <!-- 3. 接続方法（設定方法まとめ） -->
     <section class="ai-prompts-section" id="mcp-connection-guide" aria-label="MCPサーバーの接続方法" style="scroll-margin-top: 80px;">
         <div class="ai-section-header">
             <h2 class="ai-section-title">
@@ -253,7 +173,7 @@
         </div>
 
         <!-- 共通エンドポイントコピーカード -->
-        <article class="ai-prompt-card" style="margin-bottom: var(--spacing-lg);">
+        <article class="ai-prompt-card" style="margin-bottom: var(--spacing-md);">
             <div class="ai-prompt-card-header">
                 <div class="ai-prompt-meta">
                     <span class="ai-prompt-tag tag-primary">共通エンドポイント</span>
@@ -270,9 +190,19 @@
             </div>
         </article>
 
+        <!-- AIツール別 クイックジャンプ -->
+        <nav class="ai-client-jump-nav" aria-label="AIツール別設定手順へのジャンプ">
+            <a href="#mcp-setup-chatgpt" class="ai-client-jump-link">ChatGPT</a>
+            <a href="#mcp-setup-gemini" class="ai-client-jump-link">Gemini</a>
+            <a href="#mcp-setup-claude" class="ai-client-jump-link">Claude</a>
+            <a href="#mcp-setup-grok" class="ai-client-jump-link">Grok</a>
+            <a href="#mcp-setup-muse" class="ai-client-jump-link">Muse</a>
+            <a href="#mcp-setup-json" class="ai-client-jump-link">JSON設定 (Claude Code / Cursor等)</a>
+        </nav>
+
         <div class="ai-prompts-list">
             <!-- ChatGPT (Web版) -->
-            <article class="ai-prompt-card">
+            <article class="ai-prompt-card" id="mcp-setup-chatgpt" style="scroll-margin-top: 80px;">
                 <div class="ai-prompt-card-header">
                     <div class="ai-prompt-meta">
                         <span class="ai-prompt-tag tag-success">ChatGPT</span>
@@ -295,8 +225,29 @@
                 </div>
             </article>
 
+            <!-- Gemini -->
+            <article class="ai-prompt-card" id="mcp-setup-gemini" style="scroll-margin-top: 80px;">
+                <div class="ai-prompt-card-header">
+                    <div class="ai-prompt-meta">
+                        <span class="ai-prompt-tag tag-primary">Gemini</span>
+                        <h3 class="ai-prompt-name">Gemini</h3>
+                    </div>
+                </div>
+                <ol class="ai-mcp-steps">
+                    <li>左メニューの「<strong>カスタマイズ</strong>」を開き、「<strong>連携サービス</strong>」タブで「<strong>カスタム</strong>」を選ぶ</li>
+                    <li>「<strong>MCP サーバーに接続</strong>」ダイアログで、サーバーの URL に <code>https://mcp.amazon-hikaku.com/mcp</code> を入力し、「<strong>次へ</strong>」</li>
+                    <li>カスタム接続済みアプリについての注意を確認して接続を完了する（認証は不要です）</li>
+                </ol>
+                <div class="ai-mcp-screenshots">
+                    <figure class="ai-mcp-screenshot-fig">
+                        <img src="{{ `images/ai/gemini-add-mcp-server.png` | relURL }}" alt="Gemini の MCP サーバー接続画面" loading="lazy">
+                        <figcaption class="ai-mcp-screenshot-caption">Gemini の MCP サーバー接続画面</figcaption>
+                    </figure>
+                </div>
+            </article>
+
             <!-- Claude -->
-            <article class="ai-prompt-card">
+            <article class="ai-prompt-card" id="mcp-setup-claude" style="scroll-margin-top: 80px;">
                 <div class="ai-prompt-card-header">
                     <div class="ai-prompt-meta">
                         <span class="ai-prompt-tag tag-primary">Claude</span>
@@ -323,7 +274,7 @@
             </article>
 
             <!-- Grok -->
-            <article class="ai-prompt-card">
+            <article class="ai-prompt-card" id="mcp-setup-grok" style="scroll-margin-top: 80px;">
                 <div class="ai-prompt-card-header">
                     <div class="ai-prompt-meta">
                         <span class="ai-prompt-tag tag-info">Grok</span>
@@ -343,29 +294,8 @@
                 </div>
             </article>
 
-            <!-- Gemini -->
-            <article class="ai-prompt-card">
-                <div class="ai-prompt-card-header">
-                    <div class="ai-prompt-meta">
-                        <span class="ai-prompt-tag tag-primary">Gemini</span>
-                        <h3 class="ai-prompt-name">Gemini</h3>
-                    </div>
-                </div>
-                <ol class="ai-mcp-steps">
-                    <li>左メニューの「<strong>カスタマイズ</strong>」を開き、「<strong>連携サービス</strong>」タブで「<strong>カスタム</strong>」を選ぶ</li>
-                    <li>「<strong>MCP サーバーに接続</strong>」ダイアログで、サーバーの URL に <code>https://mcp.amazon-hikaku.com/mcp</code> を入力し、「<strong>次へ</strong>」</li>
-                    <li>カスタム接続済みアプリについての注意を確認して接続を完了する（認証は不要です）</li>
-                </ol>
-                <div class="ai-mcp-screenshots">
-                    <figure class="ai-mcp-screenshot-fig">
-                        <img src="{{ `images/ai/gemini-add-mcp-server.png` | relURL }}" alt="Gemini の MCP サーバー接続画面" loading="lazy">
-                        <figcaption class="ai-mcp-screenshot-caption">Gemini の MCP サーバー接続画面</figcaption>
-                    </figure>
-                </div>
-            </article>
-
             <!-- Muse -->
-            <article class="ai-prompt-card">
+            <article class="ai-prompt-card" id="mcp-setup-muse" style="scroll-margin-top: 80px;">
                 <div class="ai-prompt-card-header">
                     <div class="ai-prompt-meta">
                         <span class="ai-prompt-tag tag-success">Muse</span>
@@ -378,7 +308,7 @@
             </article>
 
             <!-- MCP 対応クライアント全般 -->
-            <article class="ai-prompt-card">
+            <article class="ai-prompt-card" id="mcp-setup-json" style="scroll-margin-top: 80px;">
                 <div class="ai-prompt-card-header">
                     <div class="ai-prompt-meta">
                         <span class="ai-prompt-tag tag-warning">Claude Code / Cursor 等</span>
@@ -415,6 +345,86 @@
                 </ul>
             </div>
         </div>
+
+        <!-- 4. 技術説明（普段は意識不要・折りたたみ） -->
+        <details class="ai-tech-details" id="mcp-tools-list">
+            <summary class="ai-tech-summary">
+                <span class="material-symbols-outlined ai-section-icon" aria-hidden="true">build</span>
+                <span>技術情報：搭載ツール（8種）と相談プロンプト（2種）</span>
+                <span class="ai-tech-summary-hint">普段はAIが自動選択するため意識不要です（クリックで詳細）</span>
+            </summary>
+
+            <p class="ai-section-desc" style="margin-bottom: var(--spacing-md);">
+                MCP サーバーには以下の8つのツールと2つの相談用テンプレート（MCP Prompts）が搭載されており、質問内容に応じて AI が自動的に呼び出します。
+            </p>
+
+            <div class="ai-endpoints-table-wrapper" style="margin-bottom: var(--spacing-lg);">
+                <table class="ai-endpoints-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ツール名</th>
+                            <th scope="col">内容</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>search_products</code></td>
+                            <td>キーワード／カテゴリ／ブランド／価格／スコアで商品を検索</td>
+                        </tr>
+                        <tr>
+                            <td><code>get_product</code></td>
+                            <td>1商品の詳細（スペック、在庫、調査日、スコアの採点根拠）</td>
+                        </tr>
+                        <tr>
+                            <td><code>compare_products</code></td>
+                            <td>2〜5商品の横並び比較</td>
+                        </tr>
+                        <tr>
+                            <td><code>list_categories</code></td>
+                            <td>カテゴリ一覧（親→子の階層と件数）</td>
+                        </tr>
+                        <tr>
+                            <td><code>list_brands</code></td>
+                            <td>ブランド検索（表記揺れにも対応）</td>
+                        </tr>
+                        <tr>
+                            <td><code>get_deals</code></td>
+                            <td>セール中の商品（割引率順。低スコア品を避けるため既定でスコア70点以上。セール種別での絞り込みも可）</td>
+                        </tr>
+                        <tr>
+                            <td><code>get_bargain</code></td>
+                            <td>目標金額以下の「あともう一品」候補</td>
+                        </tr>
+                        <tr>
+                            <td><code>get_recommendations</code></td>
+                            <td>スコア90点以上の高評価商品</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="ai-tools-grid">
+                <div class="ai-tool-card">
+                    <div class="ai-tool-header">
+                        <h3 class="ai-tool-name">MCP Prompt: <code>shopping_consultation</code></h3>
+                        <span class="ai-tool-badge">引数: topic</span>
+                    </div>
+                    <p class="ai-tool-desc">
+                        <strong>買い物相談用。</strong>まず候補を調べ、予算・用途などが曖昧なら実際の選択肢で最大3点まで聞き返し、回答に合わせて再検索して比較と推奨まで進めます。引数 <code>topic</code> にテーマ（例: ワイヤレスイヤホン）を渡せます（※MCP Prompts 対応クライアントで選択可）。
+                    </p>
+                </div>
+
+                <div class="ai-tool-card">
+                    <div class="ai-tool-header">
+                        <h3 class="ai-tool-name">MCP Prompt: <code>bargain_hunting</code></h3>
+                        <span class="ai-tool-badge">引数: occasion</span>
+                    </div>
+                    <p class="ai-tool-desc">
+                        <strong>セール・買い合わせ相談用。</strong>セール商品と「あと一品」候補を、割引率だけでなくスコアも見て絞り込みます。引数 <code>occasion</code> に用途を渡せます（※MCP Prompts 対応クライアントで選択可）。
+                    </p>
+                </div>
+            </div>
+        </details>
     </section>
 </div>
 
