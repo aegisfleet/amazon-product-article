@@ -2289,27 +2289,27 @@ a.competitor-preview:hover {
 [data-theme="dark"] .rec-card-actions .btn-compare-card,
 [data-theme="dark"] .competitor-action-row .btn-compare-card,
 [data-theme="dark"] .rec-action-row .btn-compare-card {
-  background-color: var(--color-bg-secondary, #1e293b);
-  color: var(--color-text-main, #f1f5f9);
-  border-color: var(--color-border, #334155);
+  background-color: var(--color-bg-secondary, #374151);
+  color: var(--color-text-main, #f3f4f6);
+  border-color: var(--color-border, #4b5563);
 }
 
 [data-theme="dark"] .competitor-links .btn-compare-card:hover,
 [data-theme="dark"] .rec-card-actions .btn-compare-card:hover,
 [data-theme="dark"] .competitor-action-row .btn-compare-card:hover,
 [data-theme="dark"] .rec-action-row .btn-compare-card:hover {
-  background-color: var(--color-bg-hover, #334155);
-  color: var(--color-primary, #60a5fa);
-  border-color: var(--color-primary, #60a5fa);
+  background-color: var(--color-bg-hover, #4b5563);
+  color: #60a5fa;
+  border-color: #60a5fa;
 }
 
 [data-theme="dark"] .competitor-links .btn-compare-card.is-compared,
 [data-theme="dark"] .rec-card-actions .btn-compare-card.is-compared,
 [data-theme="dark"] .competitor-action-row .btn-compare-card.is-compared,
 [data-theme="dark"] .rec-action-row .btn-compare-card.is-compared {
-  background-color: rgba(96, 165, 250, 0.15);
-  color: var(--color-primary, #60a5fa);
-  border-color: var(--color-primary, #60a5fa);
+  background-color: #1e3a8a;
+  color: #93c5fd;
+  border-color: #3b82f6;
 }
 
 [data-theme="dark"] .competitor-links .btn-internal-small,
@@ -8386,50 +8386,6 @@ body:has(.sticky-cta) .favorite-toast {
 }
 
 /* -------------------------------------------------- */
-/* カード用ハートボタン (小)                             */
-/* -------------------------------------------------- */
-.btn-favorite-card {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  border: 1px solid var(--color-border);
-  border-radius: 50%;
-  background: var(--color-bg-card);
-  cursor: pointer;
-  font-size: 1rem;
-  line-height: 1;
-  transition: all 0.2s ease;
-  flex-shrink: 0;
-}
-
-.btn-favorite-card:hover {
-  border-color: #e11d48;
-  background: #fef2f2;
-  transform: scale(1.15);
-}
-
-[data-theme="dark"] .btn-favorite-card:hover {
-  border-color: #fda4af;
-  background: rgba(225, 29, 72, 0.15);
-}
-
-.btn-favorite-card.is-favorited {
-  border-color: #be123c;
-  background-color: #ffe4e6;
-  color: #9f1239;
-  font-weight: 700;
-}
-
-[data-theme="dark"] .btn-favorite-card.is-favorited {
-  border-color: #f43f5e;
-  background-color: #881337;
-  color: #ffffff;
-  font-weight: 700;
-}
-
-/* -------------------------------------------------- */
 /* ヒーローアクションコンテナ & レスポンシブ配置 */
 /* -------------------------------------------------- */
 .hero-actions {
@@ -8458,53 +8414,6 @@ body:has(.sticky-cta) .favorite-toast {
 .hero-actions-main .btn-amazon-hero {
   width: 100%;
   margin-top: 0;
-}
-
-.btn-favorite-hero {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-xs);
-  padding: 0.65rem var(--spacing-sm);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  background: var(--color-bg-card);
-  color: var(--color-text-main);
-  cursor: pointer;
-  font-size: 0.95rem;
-  font-weight: 700;
-  font-family: inherit;
-  transition: all 0.2s ease;
-  min-height: 48px;
-  box-sizing: border-box;
-  text-decoration: none;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-.btn-favorite-hero:hover {
-  border-color: #be123c;
-  background: #fef2f2;
-  color: #be123c;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(190, 18, 60, 0.2);
-}
-
-[data-theme="dark"] .btn-favorite-hero:hover {
-  border-color: #fda4af;
-  background: #3c273a;
-  color: #fda4af;
-}
-
-.btn-favorite-hero.is-favorited {
-  border-color: #be123c;
-  background: linear-gradient(135deg, #fff1f2, #fce7f3);
-  color: #be123c;
-}
-
-[data-theme="dark"] .btn-favorite-hero.is-favorited {
-  border-color: #fda4af;
-  background: #46273a;
-  color: #fda4af;
 }
 
 .btn-favorite-hero .fav-icon {
@@ -9358,17 +9267,34 @@ body.menu-open .nav-menu-floating-toggle {
 }
 
 .btn-compare-card:hover,
-.btn-favorite-card:hover {
+.btn-compare-hero:hover {
   background-color: var(--color-bg-hover, #e5e7eb);
   color: var(--color-primary, #2563eb);
   border-color: var(--color-primary, #2563eb);
   transform: translateY(-1px);
 }
 
-.btn-compare-card.is-compared {
+.btn-favorite-card:hover,
+.btn-favorite-hero:hover {
+  background-color: #fef2f2;
+  color: #be123c;
+  border-color: #e11d48;
+  transform: translateY(-1px);
+}
+
+.btn-compare-card.is-compared,
+.btn-compare-hero.is-compared {
   background-color: rgba(37, 99, 235, 0.1);
   color: var(--color-primary, #2563eb);
   border-color: var(--color-primary, #2563eb);
+  font-weight: 700;
+}
+
+.btn-favorite-card.is-favorited,
+.btn-favorite-hero.is-favorited {
+  background-color: #ffe4e6;
+  color: #9f1239;
+  border-color: #be123c;
   font-weight: 700;
 }
 
@@ -10118,14 +10044,7 @@ body.compare-modal-open {
   font-size: 0.9375rem;
 }
 
-/* Dark Theme Overrides for Compare Feature */
-[data-theme="dark"] .btn-compare-card,
-[data-theme="dark"] .btn-compare-hero {
-  background-color: var(--color-bg-secondary, #374151);
-  color: var(--color-text-main, #f3f4f6);
-  border-color: var(--color-border, #4b5563);
-}
-
+/* Dark Theme Overrides for Compare & Favorite Buttons */
 [data-theme="dark"] .btn-compare-card,
 [data-theme="dark"] .btn-compare-hero,
 [data-theme="dark"] .btn-favorite-card,
@@ -10150,7 +10069,8 @@ body.compare-modal-open {
 }
 
 [data-theme="dark"] .btn-compare-card.is-compared,
-[data-theme="dark"] .btn-compare-hero.is-compared {
+[data-theme="dark"] .btn-compare-hero.is-compared,
+[data-theme="dark"] .sticky-cta-compare-btn.is-compared {
   background-color: #1e3a8a;
   color: #93c5fd;
   border-color: #3b82f6;
@@ -13002,25 +12922,6 @@ legend.font-size-label {
   border-radius: var(--radius-md, 8px);
 }
 
-[data-theme="dark"] .article-content .product-hero-image .btn-compare-hero,
-[data-theme="dark"] .article-content .product-hero-image .btn-favorite-hero {
-  background-color: var(--md-sys-color-surface-2, #1e293b);
-  border-color: var(--color-border, #334155);
-  color: var(--color-text-main, #f1f5f9);
-}
-
-.article-content .product-hero-image .btn-compare-hero:hover,
-.article-content .product-hero-image .btn-favorite-hero:hover {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-}
-
-.article-content .product-hero-image .btn-compare-hero.is-compared {
-  background-color: rgba(37, 99, 235, 0.12);
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-}
-
 /* 統合スコア＆価格サマリーヘッダー (.hero-summary-header) */
 .hero-summary-header {
   display: flex;
@@ -14214,9 +14115,9 @@ legend.font-size-label {
 }
 
 [data-theme="dark"] .sticky-cta-compare-btn {
-  background: var(--md-sys-color-surface-2, #1e293b);
-  border-color: var(--color-border, #334155);
-  color: var(--color-text-main, #f1f5f9);
+  background: var(--color-bg-secondary, #374151);
+  border-color: var(--color-border, #4b5563);
+  color: var(--color-text-main, #f3f4f6);
 }
 
 .sticky-cta-compare-btn:hover,
@@ -14224,6 +14125,12 @@ legend.font-size-label {
   border-color: var(--color-primary);
   color: var(--color-primary);
   background: rgba(37, 99, 235, 0.12);
+}
+
+[data-theme="dark"] .sticky-cta-compare-btn:hover {
+  background-color: var(--color-bg-hover, #4b5563);
+  color: #60a5fa;
+  border-color: #60a5fa;
 }
 
 .sticky-cta-compare-btn .compare-icon {
