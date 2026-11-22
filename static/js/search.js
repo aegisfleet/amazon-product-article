@@ -184,6 +184,9 @@ function normalizeSearchText(text) {
 }
 
 function normalizeSearchItems(items) {
+    if (globalThis.SearchCore?.prepareSearchIndex) {
+        return globalThis.SearchCore.prepareSearchIndex(items);
+    }
     if (!Array.isArray(items)) return [];
     for (const item of items) {
         item._norm_title = normalizeSearchText(item.title);
@@ -265,12 +268,29 @@ function debounce(func, wait) {
     };
 }
 
+function readUiFilterValues() {
+    return {
+        scoreMin: document.getElementById('filter-score-min')?.value || '',
+        scoreMax: document.getElementById('filter-score-max')?.value || '',
+        priceMin: document.getElementById('filter-price-min')?.value || '',
+        priceMax: document.getElementById('filter-price-max')?.value || '',
+        sort: document.getElementById('search-sort-select')?.value || 'relevance'
+    };
+}
+
 function rerankResults(results, query) {
-    if (!Array.isArray(results) || results.length === 0) return { results: [], unfilteredScoreCount: 0 };
+    if (globalThis.SearchCore?.rerankResults) {
+        return globalThis.SearchCore.rerankResults(results, query, readUiFilterValues());
+    }
+    if (!Array.isArray(results) || results.length === 0) {
+        return { results: [], unfilteredScoreCount: 0, unfilteredPriceCount: 0 };
+    }
 
     // Fuse.jsのスコアが0.85より悪い（一致度が極めて低い）ものは除外
     const validResults = results.filter(r => !Number.isFinite(r.score) || r.score <= 0.85);
-    if (validResults.length === 0) return { results: [], unfilteredScoreCount: 0 };
+    if (validResults.length === 0) {
+        return { results: [], unfilteredScoreCount: 0, unfilteredPriceCount: 0 };
+    }
 
     const queryLength = query.trim().length;
     const queryTerms = query.trim().split(/\s+/).filter(Boolean).length;
@@ -349,13 +369,19 @@ function rerankResults(results, query) {
         freshness: 0.05 + (0.05 * intentStrength)
     };
 
+    const uiFilters = readUiFilterValues();
     const isAsinQuery = isAsin(query);
-    const scoreMin = isAsinQuery ? 0 : (Number.parseFloat(document.getElementById('filter-score-min')?.value) || 0);
-    const scoreMax = !isAsinQuery && document.getElementById('filter-score-max')?.value !== '' ? (Number.parseFloat(document.getElementById('filter-score-max')?.value) || 100) : Number.MAX_SAFE_INTEGER;
-    const priceMin = Number.parseFloat(document.getElementById('filter-price-min')?.value) || 0;
-    const priceMax = document.getElementById('filter-price-max')?.value !== '' ? (Number.parseFloat(document.getElementById('filter-price-max')?.value) || Number.MAX_SAFE_INTEGER) : Number.MAX_SAFE_INTEGER;
+    const scoreMin = isAsinQuery ? 0 : (Number.parseFloat(uiFilters.scoreMin) || 0);
+    const scoreMaxRaw = uiFilters.scoreMax !== '' ? Number.parseFloat(uiFilters.scoreMax) : Number.NaN;
+    const scoreMax = !isAsinQuery && Number.isFinite(scoreMaxRaw) ? scoreMaxRaw : Number.MAX_SAFE_INTEGER;
+    const priceMinRaw = uiFilters.priceMin !== '' ? Number.parseFloat(uiFilters.priceMin) : Number.NaN;
+    const priceMaxRaw = uiFilters.priceMax !== '' ? Number.parseFloat(uiFilters.priceMax) : Number.NaN;
+    const priceMin = Number.isFinite(priceMinRaw) ? priceMinRaw : null;
+    const priceMax = Number.isFinite(priceMaxRaw) ? priceMaxRaw : null;
+    const hasPriceFilter = priceMin !== null || priceMax !== null;
 
     let unfilteredScoreCount = 0;
+    let unfilteredPriceCount = 0;
 
     const rerankedList = validResults
         .map(result => {
@@ -379,27 +405,33 @@ function rerankResults(results, query) {
             };
         })
         .filter(result => {
-            // Apply UI filters during reranking
             const item = result.item || {};
             const score = Number.parseFloat(item.score) || 0;
-            const price = Number.parseFloat(item.price_value) || 0;
+            const rawPrice = Number.parseFloat(item.price_value);
+            const validPrice = Number.isFinite(rawPrice) && rawPrice > 0 ? rawPrice : null;
 
-            if (price < priceMin) return false;
-            if (Number.isFinite(priceMax) && price > priceMax) return false;
+            const passesScore = score >= scoreMin && score <= scoreMax;
+            let passesPrice = true;
+            if (hasPriceFilter) {
+                if (validPrice === null) {
+                    passesPrice = false;
+                } else {
+                    if (priceMin !== null && validPrice < priceMin) passesPrice = false;
+                    if (priceMax !== null && validPrice > priceMax) passesPrice = false;
+                }
+            }
 
-            // 価格条件を満たす全スコア候補数をカウント
-            unfilteredScoreCount++;
+            if (passesPrice) unfilteredScoreCount++;
+            if (passesScore) unfilteredPriceCount++;
 
-            if (score < scoreMin) return false;
-            if (Number.isFinite(scoreMax) && score > scoreMax) return false;
-
-            return true;
+            return passesPrice && passesScore;
         })
         .sort((a, b) => b.rerankScore - a.rerankScore);
 
     return {
         results: rerankedList,
-        unfilteredScoreCount
+        unfilteredScoreCount,
+        unfilteredPriceCount
     };
 }
 
@@ -422,9 +454,10 @@ async function getAsinVariations() {
 
 let asinMapFallback = new Map();
 let parentAsinMapFallback = new Map();
+let searchIndexFallback = [];
 
 function searchWithRerank(fuseInstance, query) {
-    if (!fuseInstance) return { results: [], unfilteredScoreCount: 0 };
+    if (!fuseInstance) return { results: [], unfilteredScoreCount: 0, unfilteredPriceCount: 0 };
     const trimmed = query.trim().toUpperCase();
 
     // クエリがASIN形式の場合、O(1) 直接引き
@@ -434,17 +467,23 @@ function searchWithRerank(fuseInstance, query) {
         if (directItem) {
             return {
                 results: [{ item: directItem, score: 0, rerankScore: 1 }],
-                unfilteredScoreCount: 1
+                unfilteredScoreCount: 1,
+                unfilteredPriceCount: 1
             };
         }
         const parentItems = parentAsinMapFallback.get(targetAsin) || parentAsinMapFallback.get(trimmed);
         if (parentItems && parentItems.length > 0) {
             return {
                 results: parentItems.map(item => ({ item, score: 0, rerankScore: 1 })),
-                unfilteredScoreCount: parentItems.length
+                unfilteredScoreCount: parentItems.length,
+                unfilteredPriceCount: parentItems.length
             };
         }
-        return { results: [], unfilteredScoreCount: 0 };
+        return { results: [], unfilteredScoreCount: 0, unfilteredPriceCount: 0 };
+    }
+
+    if (globalThis.SearchCore?.searchWithCore) {
+        return globalThis.SearchCore.searchWithCore(searchIndexFallback, fuseInstance, query, readUiFilterValues());
     }
 
     const normalizedQuery = normalizeSearchText(query);
@@ -458,7 +497,8 @@ function isStateEqual(state1, state2) {
            state1.scoreMin === state2.scoreMin &&
            state1.scoreMax === state2.scoreMax &&
            state1.priceMin === state2.priceMin &&
-           state1.priceMax === state2.priceMax;
+           state1.priceMax === state2.priceMax &&
+           state1.sort === state2.sort;
 }
 
 function isSearchHotkey(event) {
@@ -494,7 +534,8 @@ document.addEventListener('DOMContentLoaded', function () {
             scoreMin: document.getElementById('filter-score-min')?.value || '',
             scoreMax: document.getElementById('filter-score-max')?.value || '',
             priceMin: document.getElementById('filter-price-min')?.value || '',
-            priceMax: document.getElementById('filter-price-max')?.value || ''
+            priceMax: document.getElementById('filter-price-max')?.value || '',
+            sort: document.getElementById('search-sort-select')?.value || 'relevance'
         };
     }
 
@@ -1002,7 +1043,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 scoreMin: document.getElementById('filter-score-min')?.value || '',
                 scoreMax: document.getElementById('filter-score-max')?.value || '',
                 priceMin: document.getElementById('filter-price-min')?.value || '',
-                priceMax: document.getElementById('filter-price-max')?.value || ''
+                priceMax: document.getElementById('filter-price-max')?.value || '',
+                sort: document.getElementById('search-sort-select')?.value || 'relevance'
             };
         }
 
@@ -1031,6 +1073,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         }
                     }
                     const searchIndex = normalizeSearchItems(data);
+                    searchIndexFallback = searchIndex;
                     fuse = new Fuse(searchIndex, {
                         keys: [
                             { name: "asin", weight: 1 },
@@ -1074,7 +1117,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     const data = e.data || {};
                     if (data.type === 'SEARCH_RESULTS') {
                         if (data.searchId === latestSearchId) {
-                            displayResults(data.results, data.unfilteredScoreCount || 0);
+                            displayResults(
+                                data.results,
+                                data.unfilteredScoreCount || 0,
+                                data.unfilteredPriceCount || 0
+                            );
                             if (searchInputWrapper) searchInputWrapper.classList.remove('is-loading');
                             if (searchResults) searchResults.classList.remove('is-searching');
                         }
@@ -1154,8 +1201,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function executeFallbackSearch(query) {
             if (!fuse) return;
-            const { results, unfilteredScoreCount } = searchWithRerank(fuse, query);
-            displayResults(results, unfilteredScoreCount);
+            const { results, unfilteredScoreCount, unfilteredPriceCount } = searchWithRerank(fuse, query);
+            displayResults(results, unfilteredScoreCount, unfilteredPriceCount);
             stopSearchLoading();
         }
 
@@ -1340,6 +1387,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             }
         });
+
+        const sortSelectEl = document.getElementById('search-sort-select');
+        if (sortSelectEl) {
+            sortSelectEl.addEventListener('change', () => {
+                const query = searchInput.value.replaceAll('　', ' ');
+                if (isValidQuery(query)) {
+                    if (searchInputWrapper) searchInputWrapper.classList.add('is-loading');
+                    handleSearch(query, true);
+                }
+            });
+        }
 
         // === スクロール関連の状態管理 ===
         let isSearchInputMouseDown = false;
@@ -1644,6 +1702,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if (scoreMaxEl) scoreMaxEl.value = '';
         if (priceMinEl) priceMinEl.value = '';
         if (priceMaxEl) priceMaxEl.value = '';
+        const sortEl = document.getElementById('search-sort-select');
+        if (sortEl) sortEl.value = 'relevance';
         updateFilterBadge();
         updateSearchActiveChips();
         displaySearchTips();
@@ -1866,7 +1926,50 @@ document.addEventListener('DOMContentLoaded', function () {
         return requestBox;
     }
 
-    function renderEmptyState(unfilteredScoreCount = 0) {
+    function createPriceRelaxBox(unfilteredPriceCount, onRelax) {
+        const relaxBox = document.createElement('div');
+        relaxBox.className = 'empty-score-relax-box empty-price-relax-box';
+
+        const relaxHeader = document.createElement('div');
+        relaxHeader.className = 'empty-score-relax-header';
+
+        const relaxIcon = document.createElement('span');
+        relaxIcon.className = 'empty-score-relax-icon';
+        relaxIcon.setAttribute('aria-hidden', 'true');
+        relaxIcon.textContent = '💰';
+        relaxHeader.appendChild(relaxIcon);
+
+        const relaxTitle = document.createElement('span');
+        relaxTitle.className = 'empty-score-relax-title';
+        relaxTitle.textContent = `価格条件を外すと ${unfilteredPriceCount}件 の商品が見つかりました`;
+        relaxHeader.appendChild(relaxTitle);
+        relaxBox.appendChild(relaxHeader);
+
+        const relaxBtn = document.createElement('button');
+        relaxBtn.type = 'button';
+        relaxBtn.className = 'empty-score-relax-btn empty-price-relax-btn';
+        relaxBtn.setAttribute('aria-label', `価格条件を外して ${unfilteredPriceCount}件を表示する`);
+
+        const btnText = document.createElement('span');
+        btnText.textContent = `価格条件を外して ${unfilteredPriceCount}件を表示する`;
+        relaxBtn.appendChild(btnText);
+
+        const arrowIcon = document.createElement('span');
+        arrowIcon.className = 'empty-score-relax-arrow';
+        arrowIcon.setAttribute('aria-hidden', 'true');
+        arrowIcon.textContent = ' →';
+        relaxBtn.appendChild(arrowIcon);
+
+        relaxBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            onRelax();
+        });
+
+        relaxBox.appendChild(relaxBtn);
+        return relaxBox;
+    }
+
+    function renderEmptyState(unfilteredScoreCount = 0, unfilteredPriceCount = 0) {
         const query = searchInput ? searchInput.value.replaceAll('　', ' ').trim() : '';
         const emptyState = document.createElement('div');
         emptyState.className = 'search-empty-state';
@@ -1875,23 +1978,50 @@ document.addEventListener('DOMContentLoaded', function () {
         renderResultHeader(0, emptyState);
 
         const scoreMinEl = document.getElementById('filter-score-min');
+        const priceMinEl = document.getElementById('filter-price-min');
+        const priceMaxEl = document.getElementById('filter-price-max');
         const isScoreFiltered = scoreMinEl && Number.parseFloat(scoreMinEl.value) > 0;
+        const isPriceFiltered = Boolean(priceMinEl?.value?.trim() || priceMaxEl?.value?.trim());
         const isAsinOrUrl = isAsin(query) || Boolean(extractAsinFromUrl(query)) || isShortAmazonUrl(query);
         const hasScoreRelaxationCandidates = !isAsinOrUrl && isScoreFiltered && unfilteredScoreCount > 0;
+        const hasPriceRelaxationCandidates = !isAsinOrUrl && isPriceFiltered && unfilteredPriceCount > 0;
 
         emptyState.appendChild(createEmptyStateIcon());
 
         const title = document.createElement('span');
         title.className = 'empty-title';
-        title.textContent = hasScoreRelaxationCandidates ? 'スコア条件に合う商品は見つかりませんでした' : '見つかりませんでした';
+        if (hasPriceRelaxationCandidates) {
+            title.textContent = '価格条件に合う商品は見つかりませんでした';
+        } else if (hasScoreRelaxationCandidates) {
+            title.textContent = 'スコア条件に合う商品は見つかりませんでした';
+        } else {
+            title.textContent = '見つかりませんでした';
+        }
         emptyState.appendChild(title);
 
         const desc = document.createElement('span');
         desc.className = 'empty-desc';
-        desc.textContent = hasScoreRelaxationCandidates
-            ? `全スコア（70点未満を含む）対象では ${unfilteredScoreCount}件 の商品があります。`
-            : '条件を変えて再度お試しください。';
+        if (hasPriceRelaxationCandidates) {
+            desc.textContent = `価格条件を外すと ${unfilteredPriceCount}件 の商品があります。`;
+        } else if (hasScoreRelaxationCandidates) {
+            desc.textContent = `全スコア（70点未満を含む）対象では ${unfilteredScoreCount}件 の商品があります。`;
+        } else {
+            desc.textContent = '条件を変えて再度お試しください。';
+        }
         emptyState.appendChild(desc);
+
+        // 価格緩和提案ボックス（価格条件を外せば該当商品がある場合）
+        if (hasPriceRelaxationCandidates) {
+            const priceRelaxBox = createPriceRelaxBox(unfilteredPriceCount, () => {
+                if (priceMinEl) priceMinEl.value = '';
+                if (priceMaxEl) priceMaxEl.value = '';
+                updateFilterBadge();
+                updateSearchActiveChips();
+                const q = searchInput.value.replaceAll('　', ' ');
+                if (isValidQuery(q)) handleSearch(q, true);
+            });
+            emptyState.appendChild(priceRelaxBox);
+        }
 
         // スコア緩和提案ボックス（全スコアなら該当商品がある場合）
         if (hasScoreRelaxationCandidates) {
@@ -1900,7 +2030,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 updateFilterBadge();
                 updateSearchActiveChips();
                 const q = searchInput.value.replaceAll('　', ' ');
-                if (isValidQuery(q)) handleSearch(q);
+                if (isValidQuery(q)) handleSearch(q, true);
             });
             emptyState.appendChild(relaxBox);
         }
@@ -2206,12 +2336,12 @@ document.addEventListener('DOMContentLoaded', function () {
         return resultItem;
     }
 
-    function displayResults(results, unfilteredScoreCount = 0) {
+    function displayResults(results, unfilteredScoreCount = 0, unfilteredPriceCount = 0) {
         selectedResultIndex = -1;
         searchResults.textContent = '';
 
         if (results.length === 0) {
-            renderEmptyState(unfilteredScoreCount);
+            renderEmptyState(unfilteredScoreCount, unfilteredPriceCount);
             return;
         }
 
