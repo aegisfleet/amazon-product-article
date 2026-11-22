@@ -11,7 +11,7 @@
                 <div class="showcase-hero-badges">
                     <span class="showcase-sub-badge showcase-sub-badge--violet">
                         <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 0.95rem;">hub</span>
-                        <span>ChatGPT / Claude / Grok 公式MCPサーバー公開</span>
+                        <span>ChatGPT / Claude / Grok / Gemini 公式MCPサーバー公開</span>
                     </span>
                 </div>
                 <div class="showcase-hero-copy">
@@ -76,7 +76,7 @@
                 <div class="showcase-ai-codebox-footer">
                     <span class="showcase-ai-verified">
                         <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 0.95rem; color: #10b981;">check_circle</span>
-                        <span>ChatGPT / Claude / Grok 接続対応</span>
+                        <span>ChatGPT / Claude / Grok / Gemini 接続対応</span>
                     </span>
                     <a href="#mcp-connection-guide" class="showcase-ai-more-link">
                         <span>1分で完了するMCP接続手順を見る</span>
@@ -186,6 +186,27 @@
                     <figure class="ai-mcp-screenshot-fig">
                         <img src="{{ `images/ai/grok-add-mcp-server.png` | relURL }}" alt="Grok の MCP サーバー追加画面" loading="lazy">
                         <figcaption class="ai-mcp-screenshot-caption">Grok の MCP サーバー追加画面（名前は任意です）</figcaption>
+                    </figure>
+                </div>
+            </article>
+
+            <!-- Gemini -->
+            <article class="ai-prompt-card">
+                <div class="ai-prompt-card-header">
+                    <div class="ai-prompt-meta">
+                        <span class="ai-prompt-tag tag-primary">Gemini</span>
+                        <h3 class="ai-prompt-name">Gemini での接続手順</h3>
+                    </div>
+                </div>
+                <ol class="ai-mcp-steps">
+                    <li>左メニューの「<strong>カスタマイズ</strong>」を開き、「<strong>連携サービス</strong>」タブで「<strong>カスタム</strong>」を選ぶ</li>
+                    <li>「<strong>MCP サーバーに接続</strong>」ダイアログで、サーバーの URL に <code>https://mcp.amazon-hikaku.com/mcp</code> を入力し、「<strong>次へ</strong>」を選択</li>
+                    <li>カスタム接続済みアプリについての注意を確認して接続を完了する（認証は不要です）</li>
+                </ol>
+                <div class="ai-mcp-screenshots">
+                    <figure class="ai-mcp-screenshot-fig">
+                        <img src="{{ `images/ai/gemini-add-mcp-server.png` | relURL }}" alt="Gemini の MCP サーバー接続画面" loading="lazy">
+                        <figcaption class="ai-mcp-screenshot-caption">Gemini の MCP サーバー接続画面</figcaption>
                     </figure>
                 </div>
             </article>
@@ -468,7 +489,7 @@
                 <span class="material-symbols-outlined ai-section-icon" aria-hidden="true">psychology</span>
                 各AIツールでの使い分け・おすすめ機能
             </h2>
-            <p class="ai-section-desc">ChatGPT・Claude・Grokでは公式MCPサーバー接続でダイレクトに検索でき、MCP未接続の環境でも<code>llms.txt</code>経由で調査データを活用できます。</p>
+            <p class="ai-section-desc">ChatGPT・Claude・Grok・Geminiでは公式MCPサーバー接続でダイレクトに検索でき、MCP未接続の環境でも<code>llms.txt</code>経由で調査データを活用できます。</p>
         </div>
 
         <div class="ai-tools-grid">
@@ -504,6 +525,16 @@
 
             <div class="ai-tool-card">
                 <div class="ai-tool-header">
+                    <h3 class="ai-tool-name">Gemini (Google)</h3>
+                    <span class="ai-tool-badge">連携サービス (MCP対応)</span>
+                </div>
+                <p class="ai-tool-desc">
+                    「カスタマイズ」→「連携サービス」の「カスタム」からMCPサーバーURLを登録することで、Gemini上からも当サイトの調査データを直接検索・比較できるようになります（※外部URLの直接読み取り制限を受けずに利用可能です）。
+                </p>
+            </div>
+
+            <div class="ai-tool-card">
+                <div class="ai-tool-header">
                     <h3 class="ai-tool-name">Muse (Meta)</h3>
                     <span class="ai-tool-badge">llms.txt 方式で利用</span>
                 </div>
@@ -516,8 +547,8 @@
         <div class="ai-tool-notice">
             <span class="material-symbols-outlined ai-tool-notice-icon" aria-hidden="true">info</span>
             <p class="ai-tool-notice-text">
-                <strong>llms.txt 方式（URL直接参照）での Google Gemini のご利用について:</strong>
-                Geminiのチャット画面で外部URL（<code>llms.txt</code>）を直接読み取らせる方式は、Google検索キャッシュ経由の仕様により取得エラーとなるため非推奨です。<code>llms.txt</code> のコピペプロンプトを使う場合は <strong>ChatGPT、Grok、Claude、または Muse</strong> をご利用ください（一番確実で高速な方法は上記の <strong>MCPサーバー接続</strong> です）。
+                <strong>Google Gemini でご利用の際のワンポイント（MCP接続を推奨）:</strong>
+                Geminiの通常チャットで外部URL（<code>llms.txt</code>）を直接読み取らせるコピペプロンプト方式は、Google検索キャッシュ経由の仕様により取得エラーとなります。Geminiをご利用の場合は、上記の<strong>「カスタマイズ → 連携サービス → カスタム」から公式MCPサーバー（<code>https://mcp.amazon-hikaku.com/mcp</code>）を接続</strong>してご利用ください。
             </p>
         </div>
     </section>
