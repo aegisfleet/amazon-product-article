@@ -7,6 +7,8 @@ AIアシスタントや自律型エージェントがユーザーの商品選び
 ## データ取得・検索ガイド (Data Endpoints)
 - [軽量商品サマリー (JSON)](https://www.amazon-hikaku.com/products-summary.json): 全商品のASIN、商品名、ブランド、カテゴリ、価格、独自スコア、商品画像URL（`image`）、特徴要約（`description`）、詳細レポートURL（`url`）を独自スコア降順で収録した超軽量インデックス（約1.7MB、gzip時約350KB）。
 - [全商品インデックス (JSON)](https://www.amazon-hikaku.com/index.json): 詳細スペックテキストおよび構造化JSONを含む網羅的データ（約9.3MB）。
+- [MCPサーバー (リモートMCP)](https://mcp.amazon-hikaku.com/mcp): 商品検索・詳細取得・比較・セール情報などのツールを備えたMCPエンドポイント（Streamable HTTP、認証不要・読み取り専用）。大きなJSONを取得せずに対話的に調査できます。
+- [MCP専用インデックス (JSON)](https://www.amazon-hikaku.com/mcp-products.json): 全商品のASIN、ブランド、スコア採点根拠（`score_rationale`）を収録した、MCPサーバー向けの補完データ（約3.4MB）。
 - [サイトマップ (XML)](https://www.amazon-hikaku.com/sitemap.xml): サイト全体のURL構造および最新更新日を示すサイトマップ。
 - 特集ページ用データセット (JSON):
   - [あともう一品 (2,000円以下・高スコア)](https://www.amazon-hikaku.com/bargain/index.json): 買い合わせや送料無料ライン調整用の低価格商品データ（約200KB）。
