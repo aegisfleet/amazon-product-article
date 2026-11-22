@@ -108,6 +108,7 @@
             </div>
             <ul class="ai-mcp-examples-list">
                 <li><strong>「3万円以下で評価の高いワイヤレスイヤホンを探して」</strong></li>
+                <li><strong>「ソニーのノイキャンイヤホンでおすすめは？」</strong>（ブランドのカタカナ表記や略語でも探せます）</li>
                 <li><strong>「Anker のモバイルバッテリーで一番おすすめはどれ？」</strong></li>
                 <li><strong>「この2つの商品（ASIN: B0… と B0…）を比較して」</strong></li>
                 <li><strong>「今セールで30%以上安くなっている商品を教えて」</strong></li>
@@ -350,12 +351,12 @@
         <details class="ai-tech-details" id="mcp-tools-list">
             <summary class="ai-tech-summary">
                 <span class="material-symbols-outlined ai-section-icon" aria-hidden="true">build</span>
-                <span>技術情報：搭載ツール（8種）と相談プロンプト（2種）</span>
+                <span>技術情報：搭載ツール（9種）と相談プロンプト（2種）</span>
                 <span class="ai-tech-summary-hint">普段はAIが自動選択するため意識不要です（クリックで詳細）</span>
             </summary>
 
             <p class="ai-section-desc" style="margin-bottom: var(--spacing-md);">
-                MCP サーバーには以下の8つのツールと2つの相談用テンプレート（MCP Prompts）が搭載されており、質問内容に応じて AI が自動的に呼び出します。
+                MCP サーバーには以下の9つのツールと2つの相談用テンプレート（MCP Prompts）が搭載されており、質問内容に応じて AI が自動的に呼び出します。
             </p>
 
             <div class="ai-endpoints-table-wrapper" style="margin-bottom: var(--spacing-lg);">
@@ -369,7 +370,7 @@
                     <tbody>
                         <tr>
                             <td><code>search_products</code></td>
-                            <td>キーワード／カテゴリ／ブランド／価格／スコアで商品を検索</td>
+                            <td>キーワード／カテゴリ／ブランド／価格／スコアで商品を検索。ブランドの日英表記ゆれ（ソニー／Sony 等）や略語・同義語（ノイキャン、USB-C／Type-C 等）も自動で吸収</td>
                         </tr>
                         <tr>
                             <td><code>get_product</code></td>
@@ -377,7 +378,11 @@
                         </tr>
                         <tr>
                             <td><code>compare_products</code></td>
-                            <td>2〜5商品の横並び比較</td>
+                            <td>2〜5商品の横並び比較（最安・最高スコア・価格差などの要約と、長所・短所リストつき）</td>
+                        </tr>
+                        <tr>
+                            <td><code>find_similar_products</code></td>
+                            <td>指定商品と同カテゴリの代替候補（在庫切れ・予算超過のときに）</td>
                         </tr>
                         <tr>
                             <td><code>list_categories</code></td>
@@ -389,11 +394,11 @@
                         </tr>
                         <tr>
                             <td><code>get_deals</code></td>
-                            <td>セール中の商品（割引率順。低スコア品を避けるため既定でスコア70点以上。セール種別での絞り込みも可）</td>
+                            <td>セール中の商品（既定はスコアと割引率のバランス順。低スコア品を避けるため既定でスコア70点以上。セール種別での絞り込みも可）</td>
                         </tr>
                         <tr>
                             <td><code>get_bargain</code></td>
-                            <td>目標金額以下の「あともう一品」候補</td>
+                            <td>目標金額以下の「あともう一品」候補（下限金額の指定も可）</td>
                         </tr>
                         <tr>
                             <td><code>get_recommendations</code></td>
