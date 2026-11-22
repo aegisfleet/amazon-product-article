@@ -180,7 +180,10 @@ GitHub Actions CIはLintやBiomeのエラーがあると失敗するため、い
 本システムは、自律型AIエージェントやLLMによる高精度な商品情報調査および詳細レポート参照を支援するため、標準規格（llmstxt.org）に準拠した案内ファイルを運用している。
 
 - **案内ファイルの同期維持**:
-  親カテゴリ（`data/taxonomy-v2.json`）の構成変更、主要パーマリンク規則の変更、または新しいデータ配信エンドポイント（軽量インデックス等）を追加した際は、必ず `static/llms.txt` および `static/llms-full.txt` の内容も同期して更新すること。
+  親カテゴリ（`data/taxonomy-v2.json`）の構成変更、主要パーマリンク規則・URLクエリ仕様の変更、新しいデータ配信エンドポイント（軽量インデックス等）の追加、またはリモートMCPサーバー（`https://mcp.amazon-hikaku.com/mcp`）のツール一覧・検索仕様・出力品質ガードレールを変更した際は、必ず `static/llms.txt` および `static/llms-full.txt` の内容も同期して更新すること。
+- **`llms.txt` と `llms-full.txt` の役割分担**:
+  - `static/llms.txt`（軽量インデックス、目安 5〜8KB）: サイト概要、MCP優先導線（Tier 1）＋全9ツール要約、回答品質ガードレール、公開データエンドポイント一覧、主要セクションURL、および `llms-full.txt` への案内を収録する。
+  - `static/llms-full.txt`（詳細版ガイド）: 上記に加え、全27親カテゴリ品目一覧、JSONフィールド詳細スキーマとエッジケース注意点（価格 `null`/`0` 除外等）、URLクエリパラメータ仕様、出力フォーマット例（パターンA/B/C）を網羅する。`llms.txt` のサイズが `llms-full.txt` を上回らないようスリムに保つこと。
 - **自動発見（Auto-Discovery）設定の保護**:
   AIクローラが自律検知できるよう、`layouts/partials/head.html`（`<link rel="alternate" type="text/markdown" ...>`）および `layouts/home.robots.txt` に設定されている参照設定を破損・削除しないこと。
 - **詳細レポートURL案内（サイト送客）**:
