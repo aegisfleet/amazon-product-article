@@ -12011,6 +12011,95 @@ legend.font-size-label {
   color: var(--color-text-main);
 }
 
+/* MCP Guide Specific Helpers */
+.ai-mcp-steps {
+  margin: 0.5rem 0 0;
+  padding-left: 1.35rem;
+  font-size: 0.9rem;
+  color: var(--color-text-main);
+  line-height: 1.7;
+}
+
+.ai-mcp-steps li {
+  margin-bottom: 0.35rem;
+}
+
+.ai-mcp-steps code,
+.ai-tool-desc code,
+.ai-prompt-explanation code,
+.ai-section-desc code {
+  background: rgba(124, 58, 237, 0.08);
+  color: #6d28d9;
+  padding: 0.12rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-family: var(--font-mono, Consolas, Monaco, monospace);
+}
+
+[data-theme="dark"] .ai-mcp-steps code,
+[data-theme="dark"] .ai-tool-desc code,
+[data-theme="dark"] .ai-prompt-explanation code,
+[data-theme="dark"] .ai-section-desc code {
+  background: #261b40;
+  color: #ddd6fe;
+}
+
+.ai-mcp-screenshots {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .ai-mcp-screenshots--two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.ai-mcp-screenshot-fig {
+  margin: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+.ai-mcp-screenshot-fig img {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.ai-mcp-screenshot-caption {
+  padding: 0.45rem 0.75rem;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg-card);
+  text-align: center;
+}
+
+.ai-mcp-examples-list {
+  margin: 0;
+  padding-left: 1.35rem;
+  font-size: 0.925rem;
+  color: var(--color-text-main);
+  line-height: 1.75;
+}
+
+.ai-mcp-examples-list li {
+  margin-bottom: 0.45rem;
+}
+
+.ai-endpoints-note {
+  margin-top: 0.6rem;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
 
 /* ==========================================================================
    CRO Improvements: Hero Primary CTA, Price Freshness, Desktop Sticky CTA,

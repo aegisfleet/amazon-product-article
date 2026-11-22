@@ -2,7 +2,7 @@
 <div class="container ai-guide-container">
     {{- partial "breadcrumb.html" . -}}
 
-    <!-- Hero Header (Redesigned Cyber Violet Showcase Hero) -->
+    <!-- 1. Hero Header (Redesigned Cyber Violet Showcase Hero - MCP First) -->
     <div class="showcase-hero showcase-hero--ai">
         <div class="showcase-hero-glow showcase-hero-glow--violet" aria-hidden="true"></div>
         <div class="showcase-ai-grid">
@@ -10,8 +10,8 @@
             <div class="showcase-ai-main">
                 <div class="showcase-hero-badges">
                     <span class="showcase-sub-badge showcase-sub-badge--violet">
-                        <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 0.95rem;">smart_toy</span>
-                        <span>ChatGPT / Grok / Claude 直接連動プロンプト</span>
+                        <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 0.95rem;">hub</span>
+                        <span>ChatGPT / Claude / Grok 公式MCPサーバー公開</span>
                     </span>
                 </div>
                 <div class="showcase-hero-copy">
@@ -19,47 +19,47 @@
                         AIを、あなたの<br><span class="showcase-hero-title-violet">「専属Amazon商品リサーチャー」</span>にする
                     </h1>
                     <p class="showcase-hero-desc">
-                        面倒なAPIキー登録やリモートMCPサーバーの設定は<strong>一切不要</strong>。右のプロンプトをお好みのAIチャット欄に貼り付けるだけで、当サイトのデータベース（<code>llms.txt</code>）から客観スコア・スペック・長所短所を自律抽出します。
+                        お使いのAIアシスタントに当サイトの公式MCPサーバー（<code>https://mcp.amazon-hikaku.com/mcp</code>）を接続すると、調査済みの<strong>約7,400商品</strong>（2026-11-22時点）の独自スコア・採点根拠・スペックから直接検索・比較して回答します。<strong>認証不要・APIキー登録不要</strong>でどなたでもすぐにご利用いただけます。
                     </p>
                 </div>
                 <!-- 3 Highlights Pills -->
-                <div class="showcase-ai-pillars" aria-label="AIリサーチの3大メリット">
+                <div class="showcase-ai-pillars" aria-label="MCP連携の3大メリット">
                     <div class="showcase-ai-pillar">
-                        <span class="material-symbols-outlined showcase-ai-pillar-icon showcase-ai-pillar-icon--emerald" aria-hidden="true">bolt</span>
-                        <div class="showcase-ai-pillar-title">即座に実行</div>
-                        <div class="showcase-ai-pillar-sub">環境構築ゼロ</div>
+                        <span class="material-symbols-outlined showcase-ai-pillar-icon showcase-ai-pillar-icon--emerald" aria-hidden="true">lock_open</span>
+                        <div class="showcase-ai-pillar-title">認証不要・公開</div>
+                        <div class="showcase-ai-pillar-sub">APIキー登録なし</div>
                     </div>
                     <div class="showcase-ai-pillar">
                         <span class="material-symbols-outlined showcase-ai-pillar-icon showcase-ai-pillar-icon--amber" aria-hidden="true">query_stats</span>
-                        <div class="showcase-ai-pillar-title">客観スコア</div>
-                        <div class="showcase-ai-pillar-sub">独自調査データ連動</div>
+                        <div class="showcase-ai-pillar-title">採点根拠つき</div>
+                        <div class="showcase-ai-pillar-sub">1時間ごとに最新更新</div>
                     </div>
                     <div class="showcase-ai-pillar">
                         <span class="material-symbols-outlined showcase-ai-pillar-icon showcase-ai-pillar-icon--violet" aria-hidden="true">open_in_new</span>
                         <div class="showcase-ai-pillar-title">レポート直行</div>
-                        <div class="showcase-ai-pillar-sub">個別URL付き出力</div>
+                        <div class="showcase-ai-pillar-sub">出典URL付きで回答</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Right Column: Interactive Prompt Codebox UI -->
+            <!-- Right Column: Interactive Question Example Codebox UI -->
             <div class="showcase-ai-codebox">
                 <div class="showcase-ai-codebox-header">
-                    <div class="showcase-ai-tabs" id="ai-hero-prompt-tabs" role="tablist" aria-label="クイックプロンプト切り替え">
+                    <div class="showcase-ai-tabs" id="ai-hero-prompt-tabs" role="tablist" aria-label="MCP接続後の質問例切り替え">
                         <button type="button" class="showcase-ai-tab is-active" role="tab" aria-selected="true"
-                            data-prompt="https://www.amazon-hikaku.com/llms.txt を参照して、評価の高いおすすめの「タブレット」を調査・比較して（各商品の詳細レポートリンク付きで）。">
+                            data-prompt="3万円以下で評価の高いワイヤレスイヤホンを探して。上位候補を比較して教えて。">
                             ① 高評価比較
                         </button>
                         <button type="button" class="showcase-ai-tab" role="tab" aria-selected="false"
-                            data-prompt="https://www.amazon-hikaku.com/llms.txt を参照して、現在セール中で割引率が高く、かつスコア80点以上のお買い得商品を調査して（詳細レポートリンク付きで）。">
+                            data-prompt="今セールで30%以上安くなっている高評価のおすすめ商品を教えて。">
                             ② セール狙い撃ち
                         </button>
                         <button type="button" class="showcase-ai-tab" role="tab" aria-selected="false"
-                            data-prompt="https://www.amazon-hikaku.com/llms.txt を参照して、「予算5,000円以内」で買える高コスパ商品を調査して（各商品の詳細レポートリンク付きで）。">
+                            data-prompt="送料無料まであと少し。2,000円以下で評価の高い日用品やガジェットはある？">
                             ③ コスパ重視
                         </button>
                     </div>
-                    <button type="button" class="ai-copy-btn showcase-ai-copy-btn" data-target="ai-hero-prompt-code" aria-label="表示中のプロンプトをコピー">
+                    <button type="button" class="ai-copy-btn showcase-ai-copy-btn" data-target="ai-hero-prompt-code" aria-label="表示中の質問例をコピー">
                         <span class="material-symbols-outlined ai-copy-icon" aria-hidden="true">content_copy</span>
                         <span class="ai-copy-text">コピーする</span>
                     </button>
@@ -69,17 +69,17 @@
                         <span class="showcase-term-dot showcase-term-dot--red"></span>
                         <span class="showcase-term-dot showcase-term-dot--amber"></span>
                         <span class="showcase-term-dot showcase-term-dot--green"></span>
-                        <span class="showcase-term-label">PROMPT TEMPLATE (llms.txt 連動)</span>
+                        <span class="showcase-term-label">EXAMPLE QUESTION (MCP 接続後)</span>
                     </div>
-                    <pre class="showcase-ai-pre"><code id="ai-hero-prompt-code">https://www.amazon-hikaku.com/llms.txt を参照して、評価の高いおすすめの「タブレット」を調査・比較して（各商品の詳細レポートリンク付きで）。</code></pre>
+                    <pre class="showcase-ai-pre"><code id="ai-hero-prompt-code">3万円以下で評価の高いワイヤレスイヤホンを探して。上位候補を比較して教えて。</code></pre>
                 </div>
                 <div class="showcase-ai-codebox-footer">
                     <span class="showcase-ai-verified">
                         <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 0.95rem; color: #10b981;">check_circle</span>
-                        <span>ChatGPT / Claude / Grok 動作確認済</span>
+                        <span>ChatGPT / Claude / Grok 接続対応</span>
                     </span>
-                    <a href="#ai-prompts-catalog" class="showcase-ai-more-link">
-                        <span>全5種の目的別プロンプトを見る</span>
+                    <a href="#mcp-connection-guide" class="showcase-ai-more-link">
+                        <span>1分で完了するMCP接続手順を見る</span>
                         <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 0.9rem;">south</span>
                     </a>
                 </div>
@@ -87,14 +87,285 @@
         </div>
     </div>
 
-    <!-- コピペで使えるプロンプト集 -->
-    <section class="ai-prompts-section" id="ai-prompts-catalog" aria-label="目的別プロンプト集" style="scroll-margin-top: 80px;">
+    <!-- 2. 接続方法（新規・最重要セクション） -->
+    <section class="ai-prompts-section" id="mcp-connection-guide" aria-label="MCPサーバーの接続方法" style="scroll-margin-top: 80px;">
+        <div class="ai-section-header">
+            <h2 class="ai-section-title">
+                <span class="material-symbols-outlined ai-section-icon" aria-hidden="true">power</span>
+                1分で完了！公式MCPサーバーの接続方法（認証不要）
+            </h2>
+            <p class="ai-section-desc">
+                初回のみ以下のURLをAIクライアントに登録すると、以降は自然な会話だけで商品検索・スペック取得・複数商品の横並び比較ができるようになります。認証やAPIキーの取得は不要です（公開・読み取り専用、方式: MCP / Streamable HTTP）。
+            </p>
+        </div>
+
+        <!-- 共通エンドポイントコピーカード -->
+        <article class="ai-prompt-card" style="margin-bottom: var(--spacing-lg);">
+            <div class="ai-prompt-card-header">
+                <div class="ai-prompt-meta">
+                    <span class="ai-prompt-tag tag-primary">共通エンドポイント</span>
+                    <h3 class="ai-prompt-name">MCP サーバー URL（コネクタ名の例: Amazon商品検索）</h3>
+                </div>
+                <button type="button" class="ai-copy-btn" data-target="mcp-endpoint-url" aria-label="MCPサーバーURLをコピー">
+                    <span class="material-symbols-outlined ai-copy-icon" aria-hidden="true">content_copy</span>
+                    <span class="ai-copy-text">URLをコピー</span>
+                </button>
+            </div>
+            <p class="ai-prompt-explanation">各AIツールのコネクタ・プラグイン設定画面で、以下のサーバーURLを貼り付けてください（名前は任意ですが、例として「<code>Amazon商品検索</code>」に統一しています）。</p>
+            <div class="ai-prompt-code-container">
+                <pre><code id="mcp-endpoint-url">https://mcp.amazon-hikaku.com/mcp</code></pre>
+            </div>
+        </article>
+
+        <div class="ai-prompts-list">
+            <!-- ChatGPT (Web版) -->
+            <article class="ai-prompt-card">
+                <div class="ai-prompt-card-header">
+                    <div class="ai-prompt-meta">
+                        <span class="ai-prompt-tag tag-success">ChatGPT</span>
+                        <h3 class="ai-prompt-name">ChatGPT（Web版）での接続手順</h3>
+                    </div>
+                </div>
+                <ol class="ai-mcp-steps">
+                    <li>左メニューの「<strong>プラグイン</strong>」を開く</li>
+                    <li>「<strong>追加</strong>」（＋ボタン）→「<strong>カスタム MCP サーバーを追加</strong>」を選択</li>
+                    <li>名前（例: <code>Amazon商品検索</code>）を入力し、「接続」のサーバー URL に <code>https://mcp.amazon-hikaku.com/mcp</code> を入力。認証は「<strong>認証なし</strong>」を選ぶ</li>
+                    <li>リスクに関する警告を確認し、「<strong>内容を理解したうえで続行</strong>」を選択</li>
+                    <li>「<strong>プラグインとして作成</strong>」→ 検出されたツールを確認してインストール</li>
+                    <li>チャットで入力欄に <code>@</code> と入力し、このプラグインを選んで質問する</li>
+                </ol>
+                <div class="ai-mcp-screenshots">
+                    <figure class="ai-mcp-screenshot-fig">
+                        <img src="{{ `images/ai/chatgpt-add-mcp-server.png` | relURL }}" alt="ChatGPT のカスタム MCP サーバー追加画面" loading="lazy">
+                        <figcaption class="ai-mcp-screenshot-caption">ChatGPT のカスタム MCP サーバー追加画面（名前は任意です）</figcaption>
+                    </figure>
+                </div>
+            </article>
+
+            <!-- Claude -->
+            <article class="ai-prompt-card">
+                <div class="ai-prompt-card-header">
+                    <div class="ai-prompt-meta">
+                        <span class="ai-prompt-tag tag-primary">Claude</span>
+                        <h3 class="ai-prompt-name">Claude での接続手順</h3>
+                    </div>
+                </div>
+                <ol class="ai-mcp-steps">
+                    <li>左メニューの「<strong>プラグイン</strong>」を開く</li>
+                    <li>「<strong>追加</strong>」→「<strong>カスタムコネクタを追加</strong>」を選択</li>
+                    <li>名前（例: <code>Amazon商品検索</code>）と MCP サーバー URL <code>https://mcp.amazon-hikaku.com/mcp</code> を入力</li>
+                    <li>認証は「<strong>サインインなし</strong>」を選んで追加</li>
+                    <li>チャットで「<strong>+</strong>」→「<strong>コネクタ</strong>」から有効にして質問する</li>
+                </ol>
+                <div class="ai-mcp-screenshots ai-mcp-screenshots--two">
+                    <figure class="ai-mcp-screenshot-fig">
+                        <img src="{{ `images/ai/claude-add-connector-1.png` | relURL }}" alt="Claude のカスタムコネクタ追加画面（名前と URL の入力）" loading="lazy">
+                        <figcaption class="ai-mcp-screenshot-caption">1. 名前と MCP サーバー URL の入力</figcaption>
+                    </figure>
+                    <figure class="ai-mcp-screenshot-fig">
+                        <img src="{{ `images/ai/claude-add-connector-2.png` | relURL }}" alt="Claude のカスタムコネクタ追加画面（認証は「サインインなし」）" loading="lazy">
+                        <figcaption class="ai-mcp-screenshot-caption">2. 認証は「サインインなし」を選択して追加</figcaption>
+                    </figure>
+                </div>
+            </article>
+
+            <!-- Grok -->
+            <article class="ai-prompt-card">
+                <div class="ai-prompt-card-header">
+                    <div class="ai-prompt-meta">
+                        <span class="ai-prompt-tag tag-info">Grok</span>
+                        <h3 class="ai-prompt-name">Grok での接続手順</h3>
+                    </div>
+                </div>
+                <ol class="ai-mcp-steps">
+                    <li>設定 →「<strong>Connect Apps</strong>」を開き、下の方にある「<strong>Add a custom connector</strong>」を選ぶ</li>
+                    <li>名前（例: <code>Amazon商品検索</code>）とサーバー URL <code>https://mcp.amazon-hikaku.com/mcp</code> を入力（ヘッダーは空で構いません）</li>
+                    <li>「<strong>MCPを追加</strong>」を選択</li>
+                </ol>
+                <div class="ai-mcp-screenshots">
+                    <figure class="ai-mcp-screenshot-fig">
+                        <img src="{{ `images/ai/grok-add-mcp-server.png` | relURL }}" alt="Grok の MCP サーバー追加画面" loading="lazy">
+                        <figcaption class="ai-mcp-screenshot-caption">Grok の MCP サーバー追加画面（名前は任意です）</figcaption>
+                    </figure>
+                </div>
+            </article>
+
+            <!-- MCP 対応クライアント全般 -->
+            <article class="ai-prompt-card">
+                <div class="ai-prompt-card-header">
+                    <div class="ai-prompt-meta">
+                        <span class="ai-prompt-tag tag-warning">Claude Code / Cursor 等</span>
+                        <h3 class="ai-prompt-name">MCP 対応クライアント全般（JSON 設定）</h3>
+                    </div>
+                    <button type="button" class="ai-copy-btn" data-target="mcp-json-config" aria-label="MCP JSON設定をコピー">
+                        <span class="material-symbols-outlined ai-copy-icon" aria-hidden="true">content_copy</span>
+                        <span class="ai-copy-text">コピー</span>
+                    </button>
+                </div>
+                <p class="ai-prompt-explanation">Claude Code や Cursor など、設定ファイル（<code>mcpServers</code>）で管理するクライアントでは以下を追加してください。</p>
+                <div class="ai-prompt-code-container">
+                    <pre><code id="mcp-json-config">{
+  "mcpServers": {
+    "amazon-hikaku": {
+      "url": "https://mcp.amazon-hikaku.com/mcp"
+    }
+  }
+}</code></pre>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 3. 使い方の例 -->
+    <section class="ai-tools-guide-section" id="mcp-usage-examples" aria-label="MCP接続後の使い方の例" style="scroll-margin-top: 80px;">
+        <div class="ai-section-header">
+            <h2 class="ai-section-title">
+                <span class="material-symbols-outlined ai-section-icon" aria-hidden="true">chat</span>
+                使い方の例（接続したAIへの質問例）
+            </h2>
+            <p class="ai-section-desc">
+                MCPサーバーを接続したあとは、URLや特別な命令文を貼る必要はありません。普段の言葉でAIに質問するだけで、該当するツールが自動で呼び出されます。
+            </p>
+        </div>
+
+        <article class="ai-prompt-card" style="margin-bottom: var(--spacing-md);">
+            <ul class="ai-mcp-examples-list">
+                <li><strong>「3万円以下で評価の高いワイヤレスイヤホンを探して」</strong></li>
+                <li><strong>「Anker のモバイルバッテリーで一番おすすめはどれ？」</strong></li>
+                <li><strong>「この2つの商品（ASIN: B0… と B0…）を比較して」</strong></li>
+                <li><strong>「今セールで30%以上安くなっている商品を教えて」</strong></li>
+                <li><strong>「ブラックフライデーのセールでおすすめはある？」</strong>（セールの種類は商品ごとのバッジで区別されます。開催前など該当がない時期は、その旨と現在開催中のセール種別一覧が返ります）</li>
+                <li><strong>「送料無料まであと少し。2,000円以下で良いものある？」</strong></li>
+                <li><strong>「スコア90点以上の商品だけ見せて」</strong></li>
+            </ul>
+        </article>
+
+        <div class="ai-tools-grid">
+            <div class="ai-tool-card">
+                <div class="ai-tool-header">
+                    <h3 class="ai-tool-name">セール種別を指定した絞り込み</h3>
+                    <span class="ai-tool-badge">バッジ自動判別</span>
+                </div>
+                <p class="ai-tool-desc">
+                    セールの種類は商品ごとのバッジ（タイムセール／プライム会員限定セール／限定タイムセール／限定プライムセール／ブラックフライデー等）で区別されます。「ブラックフライデーのセールでおすすめは？」のように種別を指定でき、指定した種別が開催されていない時期は該当なしと現在開催中の種別一覧が返ります。
+                </p>
+            </div>
+
+            <div class="ai-tool-card">
+                <div class="ai-tool-header">
+                    <h3 class="ai-tool-name">候補データに基づく聞き返しと出典リンク</h3>
+                    <span class="ai-tool-badge">対話型リサーチ</span>
+                </div>
+                <p class="ai-tool-desc">
+                    条件が曖昧な相談では、AIが候補データの実際の内訳（ブランド・カテゴリ・価格帯）をもとに予算や用途を聞き返すことがあります。回答には出典として当サイトの<strong>商品詳細レポートページへのリンク</strong>が添えられ、詳しいスペック表や価格推移（Keepa）をすぐ確認できます。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 相談プロンプト（MCP Prompts） -->
+    <section class="ai-tools-guide-section" id="mcp-prompts-guide" aria-label="相談プロンプト（MCP Prompts）">
+        <div class="ai-section-header">
+            <h2 class="ai-section-title">
+                <span class="material-symbols-outlined ai-section-icon" aria-hidden="true">assistant</span>
+                相談プロンプト（MCP Prompts・2種）
+            </h2>
+            <p class="ai-section-desc">
+                検索ツールのほかに、相談の進め方をAIに渡すテンプレート（MCP Prompts）を2件用意しています。MCP Prompts に対応したクライアントでは、コマンドやテンプレートとして選択できます（対応状況はクライアントによります）。
+            </p>
+        </div>
+
+        <div class="ai-tools-grid">
+            <div class="ai-tool-card">
+                <div class="ai-tool-header">
+                    <h3 class="ai-tool-name"><code>shopping_consultation</code></h3>
+                    <span class="ai-tool-badge">引数: topic</span>
+                </div>
+                <p class="ai-tool-desc">
+                    <strong>買い物相談用テンプレート。</strong>まず候補を調べ、予算・用途などが曖昧なら実際の選択肢で最大3点まで聞き返し、回答に合わせて再検索して比較と推奨まで進めます。引数 <code>topic</code> にテーマ（例: ワイヤレスイヤホン）を渡せます。
+                </p>
+            </div>
+
+            <div class="ai-tool-card">
+                <div class="ai-tool-header">
+                    <h3 class="ai-tool-name"><code>bargain_hunting</code></h3>
+                    <span class="ai-tool-badge">引数: occasion</span>
+                </div>
+                <p class="ai-tool-desc">
+                    <strong>セール・買い合わせ相談用テンプレート。</strong>セール商品と「あともう一品」候補を、割引率だけでなく独自スコアも見て絞り込みます。引数 <code>occasion</code> に用途を渡せます。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 使えるツール一覧（8件） -->
+    <section class="ai-endpoints-section" id="mcp-tools-list" aria-label="MCPサーバーで使えるツール一覧">
+        <div class="ai-section-header">
+            <h2 class="ai-section-title">
+                <span class="material-symbols-outlined ai-section-icon" aria-hidden="true">build</span>
+                MCPサーバーで使えるツール一覧（全8種）
+            </h2>
+            <p class="ai-section-desc">
+                AIアシスタントは以下の8つのツールを質問内容に応じて自動的に組み合わせて呼び出し、調査データを取得します。
+            </p>
+        </div>
+
+        <div class="ai-endpoints-table-wrapper">
+            <table class="ai-endpoints-table">
+                <thead>
+                    <tr>
+                        <th scope="col">ツール名</th>
+                        <th scope="col">機能・できること</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>search_products</code></td>
+                        <td>キーワード／カテゴリ／ブランド／価格／スコアで商品を検索</td>
+                    </tr>
+                    <tr>
+                        <td><code>get_product</code></td>
+                        <td>1商品の詳細（スペック、在庫、調査日、スコアの採点根拠）</td>
+                    </tr>
+                    <tr>
+                        <td><code>compare_products</code></td>
+                        <td>2〜5商品の横並び比較</td>
+                    </tr>
+                    <tr>
+                        <td><code>list_categories</code></td>
+                        <td>カテゴリ一覧（親→子の階層と件数）</td>
+                    </tr>
+                    <tr>
+                        <td><code>list_brands</code></td>
+                        <td>ブランド検索（表記揺れにも対応）</td>
+                    </tr>
+                    <tr>
+                        <td><code>get_deals</code></td>
+                        <td>セール中の商品（割引率順。低スコア品を避けるため既定でスコア70点以上。セール種別での絞り込みも可）</td>
+                    </tr>
+                    <tr>
+                        <td><code>get_bargain</code></td>
+                        <td>目標金額以下の「あともう一品」候補</td>
+                    </tr>
+                    <tr>
+                        <td><code>get_recommendations</code></td>
+                        <td>スコア90点以上の高評価商品</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- 6. 従来方式（llms.txt コピペプロンプト集：代替手段） -->
+    <section class="ai-prompts-section" id="ai-prompts-catalog" aria-label="代替手段：llms.txt コピペプロンプト集" style="scroll-margin-top: 80px;">
         <div class="ai-section-header">
             <h2 class="ai-section-title">
                 <span class="material-symbols-outlined ai-section-icon" aria-hidden="true">content_paste</span>
-                コピペで即使える！目的別プロンプト集
+                代替手段：MCPを接続できない環境向け コピペプロンプト集（llms.txt方式）
             </h2>
-            <p class="ai-section-desc">複雑な指示は不要です。プロンプト右上の「コピー」ボタンを押し、お使いのAIツールの入力欄にそのまま貼り付けるだけで、AIが<code>llms.txt</code>を読み込み、<strong>本サイトの詳細レポートリンクが付いた比較表</strong>を自律的に作成します。「タブレット」などのキーワードはお好みの商品ジャンルに自由に書き換えてご利用いただけます。</p>
+            <p class="ai-section-desc">
+                カスタムMCPサーバーの接続に対応していないプラン・アプリ環境では、以下のプロンプトをコピーして貼り付けることで、当サイトの標準案内ファイル（<code>llms.txt</code>）を経由して商品データを参照させることができます。「タブレット」などのキーワードはお好みの商品ジャンルに書き換えてご利用ください。
+            </p>
         </div>
 
         <div class="ai-prompts-list">
@@ -190,56 +461,54 @@
         </div>
     </section>
 
-    <!-- 各AIツール別のワンポイント・動作メカニズム -->
-    <section class="ai-tools-guide-section" aria-label="各AIツール別の特徴とおすすめ設定">
+    <!-- 7. 各AIツールでの使い分け -->
+    <section class="ai-tools-guide-section" aria-label="各AIツールでの使い分け・おすすめ機能">
         <div class="ai-section-header">
             <h2 class="ai-section-title">
                 <span class="material-symbols-outlined ai-section-icon" aria-hidden="true">psychology</span>
                 各AIツールでの使い分け・おすすめ機能
             </h2>
-            <p class="ai-section-desc">本サイトのデータは標準的なJSONおよびllms.txt形式で公開されているため、主要なAIツールすべてでご利用いただけます。</p>
+            <p class="ai-section-desc">ChatGPT・Claude・Grokでは公式MCPサーバー接続でダイレクトに検索でき、MCP未接続の環境でも<code>llms.txt</code>経由で調査データを活用できます。</p>
         </div>
 
         <div class="ai-tools-grid">
             <div class="ai-tool-card">
                 <div class="ai-tool-header">
                     <h3 class="ai-tool-name">ChatGPT (OpenAI)</h3>
-                    <span class="ai-tool-badge">最も高速・おすすめ</span>
+                    <span class="ai-tool-badge">カスタムMCPプラグイン対応</span>
                 </div>
                 <p class="ai-tool-desc">
-                    ChatGPTでは、プロンプトを貼ると自動的に<strong>Pythonデータ解析（Advanced Data Analysis）</strong>が作動します。
-                    1.8MBの全商品データを数秒でメモリ解析するため、スコア順ソートや価格絞り込み、比較表の生成が最も正確に行われます。
-                </p>
-            </div>
-
-            <div class="ai-tool-card">
-                <div class="ai-tool-header">
-                    <h3 class="ai-tool-name">Grok (xAI)</h3>
-                    <span class="ai-tool-badge">リアルタイム探索</span>
-                </div>
-                <p class="ai-tool-desc">
-                    GrokのリアルタイムWebアクセス機能により、llms.txtや各商品ページを直接巡回して情報を整理します。
-                    最新のトレンドや実用的な視点を交えた回答が得られます。
+                    「プラグイン」からカスタムMCPサーバーを追加し、チャット入力欄で <code>@Amazon商品検索</code> を選ぶだけで、大きなJSONファイルを読み込ませることなく必要な商品だけを高速に検索・比較できます。
                 </p>
             </div>
 
             <div class="ai-tool-card">
                 <div class="ai-tool-header">
                     <h3 class="ai-tool-name">Claude (Anthropic)</h3>
-                    <span class="ai-tool-badge">Artifacts活用で画像表示</span>
+                    <span class="ai-tool-badge">カスタムコネクタ / Artifacts</span>
                 </div>
                 <p class="ai-tool-desc">
-                    Claudeの通常チャット本文では画像の自動展開が無効化されていますが、プロンプトに<strong>「HTML（Artifacts）形式で商品カードUIを出力して」</strong>と付け加えることで、写真付きの綺麗な商品カードが画面右側にプレビュー表示されます。
+                    「カスタムコネクタ」にMCPサーバーを登録して対話的に商品検索・採点根拠の参照が可能です。また、<code>llms.txt</code> 方式や検索結果の表示時に<strong>「HTML（Artifacts）形式で商品カードUIを出力して」</strong>と指示すると、写真付きの商品カードをプレビュー表示できます。
+                </p>
+            </div>
+
+            <div class="ai-tool-card">
+                <div class="ai-tool-header">
+                    <h3 class="ai-tool-name">Grok (xAI)</h3>
+                    <span class="ai-tool-badge">Connect Apps (MCP対応)</span>
+                </div>
+                <p class="ai-tool-desc">
+                    設定の「Connect Apps」→「Add a custom connector」からMCPサーバーを直接接続できます。Grok上で当サイトの独自スコアやセール情報、採点根拠を呼び出しながらスピーディーに比較検討できます。
                 </p>
             </div>
 
             <div class="ai-tool-card">
                 <div class="ai-tool-header">
                     <h3 class="ai-tool-name">Muse (Meta)</h3>
-                    <span class="ai-tool-badge">自律型リサーチ</span>
+                    <span class="ai-tool-badge">llms.txt 方式で利用</span>
                 </div>
                 <p class="ai-tool-desc">
-                    Metaの自律型パーソナルAI「Muse」の高度なWebブラウジング機能を活用し、llms.txtの指定だけで条件に合致する商品を自律的に調査・比較させることができます。
+                    Metaの自律型パーソナルAI「Muse」では（MCP接続は未確認）、Webブラウジング機能を活用して上記の「<code>llms.txt</code> コピペプロンプト集」を貼り付けることで、条件に合致する商品を自律的に調査・比較させることができます。
                 </p>
             </div>
         </div>
@@ -247,20 +516,20 @@
         <div class="ai-tool-notice">
             <span class="material-symbols-outlined ai-tool-notice-icon" aria-hidden="true">info</span>
             <p class="ai-tool-notice-text">
-                <strong>Google Gemini のご利用について（非推奨）:</strong>
-                GeminiはGoogle検索キャッシュ経由でのみWebを参照する仕様上、外部URL（<code>llms.txt</code>）の直接読み取りに対応しておらず取得エラーとなります。URLから直接自動調査・比較を行う場合は、<strong>ChatGPT、Grok、または Muse</strong> のご利用を推奨します。
+                <strong>llms.txt 方式（URL直接参照）での Google Gemini のご利用について:</strong>
+                Geminiのチャット画面で外部URL（<code>llms.txt</code>）を直接読み取らせる方式は、Google検索キャッシュ経由の仕様により取得エラーとなるため非推奨です。<code>llms.txt</code> のコピペプロンプトを使う場合は <strong>ChatGPT、Grok、Claude、または Muse</strong> をご利用ください（一番確実で高速な方法は上記の <strong>MCPサーバー接続</strong> です）。
             </p>
         </div>
     </section>
 
-    <!-- 開発者・AIエージェント向け案内 -->
-    <section class="ai-endpoints-section" aria-label="開発者・AIエージェント向け仕様">
+    <!-- 8. データエンドポイント・AIエージェント向け仕様 -->
+    <section class="ai-endpoints-section" aria-label="データエンドポイント・AIエージェント向け仕様">
         <div class="ai-section-header">
             <h2 class="ai-section-title">
                 <span class="material-symbols-outlined ai-section-icon" aria-hidden="true">terminal</span>
                 データエンドポイント・AIエージェント向け仕様
             </h2>
-            <p class="ai-section-desc">自律型AIエージェントや開発者の方は、以下のエンドポイントを直接参照・クエリしていただけます。</p>
+            <p class="ai-section-desc">自律型AIエージェントや開発者の方は、公式MCPサーバーまたは以下の公開データエンドポイントを直接参照・クエリしていただけます。</p>
         </div>
 
         <div class="ai-endpoints-table-wrapper">
@@ -269,37 +538,66 @@
                     <tr>
                         <th scope="col">ファイル / エンドポイント</th>
                         <th scope="col">説明・用途</th>
-                        <th scope="col">ファイルサイズ</th>
+                        <th scope="col">種別 / サイズ</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
+                        <td><a href="https://mcp.amazon-hikaku.com/mcp" target="_blank" rel="noopener noreferrer"><code>https://mcp.amazon-hikaku.com/mcp</code></a></td>
+                        <td>公式MCPサーバー（商品検索・詳細取得・比較・セール情報など全8ツール・2プロンプトを提供。認証不要・読み取り専用）</td>
+                        <td>Streamable HTTP (MCP)</td>
+                    </tr>
+                    <tr>
                         <td><a href="{{ `llms.txt` | relURL }}" target="_blank" rel="noopener noreferrer"><code>/llms.txt</code></a></td>
                         <td>LLM・AIエージェント向けの標準案内ファイル（llmstxt.org準拠）</td>
-                        <td>約6 KB</td>
+                        <td>約16.7 KB</td>
                     </tr>
                     <tr>
                         <td><a href="{{ `products-summary.json` | relURL }}" target="_blank" rel="noopener noreferrer"><code>/products-summary.json</code></a></td>
-                        <td>全商品のASIN・商品名・ブランド・カテゴリ・価格・スコア・商品画像・購入リンクを収録した超軽量JSON</td>
-                        <td>約2.1 MB (gzip約420KB)</td>
+                        <td>全商品のASIN・商品名・ブランド・カテゴリ・価格・スコア・商品画像・詳細レポートURLをスコア降順で収録したサマリーJSON</td>
+                        <td>約4.0 MB</td>
+                    </tr>
+                    <tr>
+                        <td><a href="{{ `mcp-products.json` | relURL }}" target="_blank" rel="noopener noreferrer"><code>/mcp-products.json</code></a></td>
+                        <td>MCP専用データ（全商品のASIN・ブランド・スコア採点根拠 <code>score_rationale</code> を収録）</td>
+                        <td>約3.5 MB</td>
+                    </tr>
+                    <tr>
+                        <td><a href="{{ `index.json` | relURL }}" target="_blank" rel="noopener noreferrer"><code>/index.json</code></a></td>
+                        <td>全商品の詳細データ（スペックテキストおよび構造化JSONを含む網羅的インデックス）</td>
+                        <td>約13.4 MB</td>
                     </tr>
                     <tr>
                         <td><a href="{{ `bargain/index.json` | relURL }}" target="_blank" rel="noopener noreferrer"><code>/bargain/index.json</code></a></td>
-                        <td>「あともう一品（2,000円以下・高スコア）」特集専用の軽量データセット</td>
-                        <td>約200 KB</td>
+                        <td>「あともう一品（2,000円以下・高スコア）」特集用の商品データセット</td>
+                        <td>約12.2 MB</td>
                     </tr>
                     <tr>
                         <td><a href="{{ `deals/index.json` | relURL }}" target="_blank" rel="noopener noreferrer"><code>/deals/index.json</code></a></td>
-                        <td>「セール対象商品」特集専用の軽量データセット</td>
-                        <td>約250 KB</td>
+                        <td>「セール対象商品」特集用の商品データセット</td>
+                        <td>約1.1 MB</td>
                     </tr>
                     <tr>
                         <td><a href="{{ `llms-full.txt` | relURL }}" target="_blank" rel="noopener noreferrer"><code>/llms-full.txt</code></a></td>
                         <td>全カテゴリ・全ブランドの多言語対訳を含む詳細版AIガイド</td>
-                        <td>約14 KB</td>
+                        <td>約16.1 KB</td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+        <p class="ai-endpoints-note">※ 各ファイルのサイズは 2026-11-22 時点の概数です（調査商品の追加・更新に伴い日々変動します）。</p>
+
+        <!-- 9. 注意書き（データの鮮度・参考価格・スコア採点根拠） -->
+        <div class="ai-tool-notice">
+            <span class="material-symbols-outlined ai-tool-notice-icon" aria-hidden="true">verified</span>
+            <div class="ai-tool-notice-text">
+                <strong>データの更新頻度・価格・独自スコアに関するご注意:</strong>
+                <ul style="margin: 0.35rem 0 0; padding-left: 1.25rem;">
+                    <li>MCPサーバーのデータは当サイトの調査結果そのもので、サーバー側で<strong>1時間ごと</strong>に最新の公開データへ自動更新されます（読み取り専用）。</li>
+                    <li>返される価格は各商品の<strong>「調査時点の参考価格」</strong>です。リアルタイムの最新価格や在庫状況、タイムセール状況は、回答に添えられる<strong>当サイトの商品詳細レポートページ</strong>にて必ずご確認ください。</li>
+                    <li>独自スコア（0〜100点）は当サイト独自の客観採点（基本点＋加点・減点）であり、各商品の採点根拠（<code>score_rationale</code>）もMCP経由で参照できます。</li>
+                </ul>
+            </div>
         </div>
     </section>
 </div>
