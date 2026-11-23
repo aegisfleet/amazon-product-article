@@ -74,10 +74,20 @@
     };
 
     /**
-     * Sort category groups by priority
+     * Sort category groups by product count descending (keeping "その他"/"未分類" at the end, priority as tie-breaker)
      */
     function sortCategoriesByPriority(groups) {
         return [...groups].sort((a, b) => {
+            const aIsOther = isOtherCategoryName(a.name);
+            const bIsOther = isOtherCategoryName(b.name);
+            if (aIsOther !== bIsOther) {
+                return aIsOther ? 1 : -1;
+            }
+            const countA = a.productCount || 0;
+            const countB = b.productCount || 0;
+            if (countB !== countA) {
+                return countB - countA;
+            }
             const priorityA = a.priority !== undefined ? a.priority : 999;
             const priorityB = b.priority !== undefined ? b.priority : 999;
             return priorityA - priorityB;
@@ -295,10 +305,22 @@
                 groupCounts['その他／全般'] = (groupCounts['その他／全般'] || 0) + othersCount;
             }
 
-            // Sort child categories within every parent group by product count descending
-            for (const group of Object.keys(filteredGroups)) {
-                filteredGroups[group] = sortChildCategoryNames(filteredGroups[group], childCounts);
+            // Sort parent groups and child categories within every parent group by product count descending
+            const sortedGroupNames = Object.keys(filteredGroups).sort((a, b) => {
+                const aIsOther = isOtherCategoryName(a);
+                const bIsOther = isOtherCategoryName(b);
+                if (aIsOther !== bIsOther) {
+                    return aIsOther ? 1 : -1;
+                }
+                const countA = groupCounts[a] || 0;
+                const countB = groupCounts[b] || 0;
+                return countB - countA;
+            });
+            const sortedFilteredGroups = {};
+            for (const group of sortedGroupNames) {
+                sortedFilteredGroups[group] = sortChildCategoryNames(filteredGroups[group], childCounts);
             }
+            filteredGroups = sortedFilteredGroups;
         }
         return filteredGroups;
     }
