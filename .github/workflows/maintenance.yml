@@ -2,8 +2,8 @@ name: Daily Maintenance
 
 on:
   schedule:
-    # 1日1回（13:17 JST = 04:17 UTC）に3件ずつ実行
-    - cron: '17 4 * * *'
+    # 1日3回（05:17 / 13:17 / 21:17 JST = 20:17 / 04:17 / 12:17 UTC）に3件ずつ実行
+    - cron: '17 4,12,20 * * *'
   workflow_dispatch:
 
 permissions:
