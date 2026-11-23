@@ -21,12 +21,16 @@
             <div class="card-meta-ext">
                 <div class="meta-main-row">
                     <div class="meta-price-block" data-slot="price-block">
-                        <span class="card-price" data-slot="price">
-                            <span class="material-symbols-outlined icon-price" aria-hidden="true">payments</span> <span data-slot="price-text"></span>
-                        </span>
-                        <span class="card-points m3-badge m3-badge-points" data-slot="points" style="display:none;">
-                            <span class="material-symbols-outlined icon-points" aria-hidden="true">card_giftcard</span> <span data-slot="points-text"></span>
-                        </span>
+                        <div class="meta-price-main" data-slot="price-main">
+                            <span class="card-price" data-slot="price">
+                                <span class="material-symbols-outlined icon-price" aria-hidden="true">payments</span> <span data-slot="price-text"></span>
+                            </span>
+                            <span class="m3-badge m3-badge-price-diff" data-slot="price-diff" style="display:none;"></span>
+                            <span class="card-points m3-badge m3-badge-points" data-slot="points" style="display:none;">
+                                <span class="material-symbols-outlined icon-points" aria-hidden="true">card_giftcard</span> <span data-slot="points-text"></span>
+                            </span>
+                        </div>
+                        <div class="card-investigated-price" data-slot="investigated-price" style="display:none;"></div>
                     </div>
                     <div class="meta-score-block" data-slot="score-block" style="display:none;">
                         <span class="card-score m3-badge m3-badge-score" data-slot="score">

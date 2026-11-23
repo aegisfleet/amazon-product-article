@@ -369,6 +369,69 @@ function bindCardBody(article, p) {
   }
 }
 
+function parsePriceNumeric(priceStr) {
+  if (!priceStr) return 0;
+  const cleaned = String(priceStr).replaceAll(',', '');
+  const match = /\d+/.exec(cleaned);
+  return match ? Number.parseInt(match[0], 10) : 0;
+}
+
+function createPriceDiffBadgeContent(iconName, labelText) {
+  const icon = document.createElement('span');
+  icon.className = 'material-symbols-outlined icon-diff';
+  icon.setAttribute('aria-hidden', 'true');
+  icon.textContent = iconName;
+  const text = document.createTextNode(` ${labelText}`);
+  return [icon, text];
+}
+
+function bindCardPriceDiff(article, p) {
+  const diffBadge = article.querySelector('[data-slot="price-diff"]');
+  const invPriceEl = article.querySelector('[data-slot="investigated-price"]');
+
+  const currentRaw = Number(p.priceRaw) || parsePriceNumeric(p.price);
+  const invRaw = Number(p.investigatedPriceRaw) || parsePriceNumeric(p.investigatedPrice);
+
+  if (!p.price || currentRaw <= 0 || invRaw <= 0 || currentRaw === invRaw) {
+    diffBadge?.remove();
+    invPriceEl?.remove();
+    return;
+  }
+
+  const diff = currentRaw - invRaw;
+  const diffAbs = Math.abs(diff);
+  const invFormatted = p.investigatedPrice || `￥${invRaw.toLocaleString()}`;
+
+  if (diff < 0) {
+    const rate = Math.round((diffAbs / invRaw) * 100);
+    const rateText = rate > 0 ? ` (${rate}% OFF)` : '';
+    if (diffBadge) {
+      diffBadge.className = 'm3-badge m3-badge-price-diff m3-badge-price-down';
+      diffBadge.title = `調査時より ¥${diffAbs.toLocaleString()} 値下げ`;
+      diffBadge.replaceChildren(...createPriceDiffBadgeContent('trending_down', `-¥${diffAbs.toLocaleString()}${rateText}`));
+      diffBadge.style.display = '';
+    }
+    if (invPriceEl) {
+      const delSpan = document.createElement('span');
+      delSpan.className = 'card-investigated-price-del';
+      delSpan.textContent = invFormatted;
+      invPriceEl.replaceChildren(document.createTextNode('調査時: '), delSpan);
+      invPriceEl.style.display = '';
+    }
+  } else {
+    if (diffBadge) {
+      diffBadge.className = 'm3-badge m3-badge-price-diff m3-badge-price-up';
+      diffBadge.title = `調査時より ¥${diffAbs.toLocaleString()} 値上げ`;
+      diffBadge.replaceChildren(...createPriceDiffBadgeContent('trending_up', `+¥${diffAbs.toLocaleString()}`));
+      diffBadge.style.display = '';
+    }
+    if (invPriceEl) {
+      invPriceEl.textContent = `調査時: ${invFormatted}`;
+      invPriceEl.style.display = '';
+    }
+  }
+}
+
 function bindCardPrices(article, p) {
   const priceText = article.querySelector('[data-slot="price-text"]');
   const priceSlot = article.querySelector('[data-slot="price"]');
@@ -377,6 +440,8 @@ function bindCardPrices(article, p) {
   } else if (priceSlot) {
     priceSlot.remove();
   }
+
+  bindCardPriceDiff(article, p);
 
   const pointsSlot = article.querySelector('[data-slot="points"]');
   const pointsText = article.querySelector('[data-slot="points-text"]');

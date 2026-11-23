@@ -50,6 +50,7 @@
       "image" $image
       "price" .Params.price
       "price_value" $priceValue
+      "investigated_price" (.Params.investigated_price | default "")
       "score" .Params.score
       "last_investigated" .Params.last_investigated
       "specs" $spec_text
