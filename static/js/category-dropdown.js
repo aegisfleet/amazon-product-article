@@ -16,7 +16,8 @@
 
     const PRIMARY_LIMIT = 10;
     const MIN_PRIMARY_COUNT = 5;
-    const POPULAR_TILE_LIMIT = 12;
+    const POPULAR_TILE_LIMIT = 14;
+    const INITIAL_VISIBLE_GROUPS = 12;
 
     const SUBCATEGORY_ICON_MAP = {
         イヤホン: '🎧',
@@ -504,70 +505,172 @@
         });
     }
 
+    function setGroupExpandedState(section, groupName, subCount, expand) {
+        section.classList.toggle('category-collapsed', !expand);
+        const toggleBtn = section.querySelector('.category-sub-toggle-btn');
+        if (toggleBtn) {
+            toggleBtn.setAttribute('aria-expanded', expand ? 'true' : 'false');
+            toggleBtn.setAttribute(
+                'aria-label',
+                expand
+                    ? `${groupName}の子カテゴリを折り畳む`
+                    : `${groupName}の子カテゴリ（${subCount}件）を展開`
+            );
+        }
+    }
+
+    function createGroupHeadingRow(groupName, parentUrl, parentCount, subCount) {
+        const headingWrapper = document.createElement('div');
+        headingWrapper.className = 'category-heading-wrapper';
+
+        const mainLink = document.createElement(parentUrl ? 'a' : 'div');
+        mainLink.className = 'category-group-main-link';
+        if (parentUrl) {
+            mainLink.href = safeCategoryUrl(parentUrl);
+        }
+
+        const icon = categoryIcons[groupName];
+        if (icon) {
+            const iconSpan = document.createElement('span');
+            iconSpan.className = 'category-group-icon';
+            iconSpan.setAttribute('aria-hidden', 'true');
+            iconSpan.textContent = icon;
+            mainLink.appendChild(iconSpan);
+        }
+
+        const heading = document.createElement('h3');
+        heading.className = 'category-group-heading';
+        heading.textContent = groupName;
+        mainLink.appendChild(heading);
+
+        if (parentCount !== undefined) {
+            const countBadge = document.createElement('span');
+            countBadge.className = 'category-group-count';
+            countBadge.textContent = `${parentCount}件`;
+            mainLink.appendChild(countBadge);
+        }
+
+        headingWrapper.appendChild(mainLink);
+
+        if (subCount > 0) {
+            const toggleBtn = document.createElement('button');
+            toggleBtn.type = 'button';
+            toggleBtn.className = 'category-sub-toggle-btn';
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            toggleBtn.setAttribute('aria-label', `${groupName}の子カテゴリ（${subCount}件）を展開`);
+
+            const labelSpan = document.createElement('span');
+            labelSpan.className = 'category-sub-toggle-label';
+            labelSpan.textContent = `子カテゴリ (${subCount})`;
+
+            const toggleIcon = document.createElement('span');
+            toggleIcon.className = 'category-toggle-icon';
+            toggleIcon.setAttribute('aria-hidden', 'true');
+            toggleIcon.textContent = '▾';
+
+            toggleBtn.appendChild(labelSpan);
+            toggleBtn.appendChild(toggleIcon);
+
+            const handleToggle = function () {
+                const section = headingWrapper.closest('.category-group-section');
+                if (!section) return;
+                const willExpand = section.classList.contains('category-collapsed');
+                setGroupExpandedState(section, groupName, subCount, willExpand);
+            };
+
+            toggleBtn.addEventListener('click', handleToggle);
+            if (!parentUrl) {
+                mainLink.style.cursor = 'pointer';
+                mainLink.addEventListener('click', handleToggle);
+            }
+
+            headingWrapper.appendChild(toggleBtn);
+        }
+
+        return headingWrapper;
+    }
+
+    function createAllGroupsToggle(groupedView, totalGroups, extraGroupsCount) {
+        const existingContainer = document.getElementById('category-groups-more-container');
+        if (existingContainer) {
+            existingContainer.remove();
+        }
+        if (extraGroupsCount <= 0) return;
+
+        const container = document.createElement('div');
+        container.id = 'category-groups-more-container';
+        container.className = 'category-groups-more-container';
+
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.id = 'category-groups-toggle-btn';
+        btn.className = 'category-groups-toggle-btn';
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = `＋ すべてのカテゴリを表示（全${totalGroups}カテゴリ・他${extraGroupsCount}件）`;
+
+        btn.addEventListener('click', function () {
+            const isExpanded = groupedView.classList.toggle('category-groups-all-expanded');
+            const extraSections = groupedView.querySelectorAll('.category-group-extra');
+            extraSections.forEach(sec => {
+                sec.classList.toggle('category-group-extra-hidden', !isExpanded);
+            });
+            this.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+            this.textContent = isExpanded
+                ? `－ 主要${INITIAL_VISIBLE_GROUPS}カテゴリのみに折りたたむ`
+                : `＋ すべてのカテゴリを表示（全${totalGroups}カテゴリ・他${extraGroupsCount}件）`;
+        });
+
+        container.appendChild(btn);
+        groupedView.after(container);
+    }
+
     function populateGroupedView() {
         const groupedView = document.getElementById('category-grouped-view');
         if (!groupedView) return;
 
         const groups = getFilteredGroups();
         const urls = getCategoryUrls();
+        const groupEntries = Object.entries(groups);
 
         groupedView.innerHTML = '';
+        groupedView.classList.remove('category-groups-all-expanded');
 
-        Object.entries(groups).forEach(([groupName, categories]) => {
+        const basePathMatch = window.location.pathname.match(/^(\/[^/]+\/)?/);
+        const basePath = basePathMatch ? basePathMatch[0] : '/';
+
+        groupEntries.forEach(([groupName, categories], groupIdx) => {
+            const isExtraGroup = groupIdx >= INITIAL_VISIBLE_GROUPS;
             const groupSection = document.createElement('div');
-            groupSection.className = 'category-group-section category-collapsed';
+            groupSection.className = isExtraGroup
+                ? 'category-group-section category-collapsed category-group-extra category-group-extra-hidden'
+                : 'category-group-section category-collapsed';
             groupSection.dataset.groupName = groupName;
+            groupSection.dataset.subCount = String(categories.length);
 
-            // Build parent category URL
             const slug = parentCategoryUrls[groupName];
-            const basePathMatch = window.location.pathname.match(/^(\/[^/]+\/)?/);
-            const basePath = basePathMatch ? basePathMatch[0] : '/';
             const parentUrl = slug ? `${basePath}parent-category/${slug}/` : null;
+            const parentCount = groupCounts[groupName];
 
-            // Create heading wrapper (clickable to toggle)
-            const headingWrapper = document.createElement('div');
-            headingWrapper.className = 'category-heading-wrapper';
-            headingWrapper.style.cursor = 'pointer';
-            headingWrapper.setAttribute('role', 'button');
-            headingWrapper.setAttribute('aria-expanded', 'false');
-            headingWrapper.setAttribute('aria-label', `${groupName}を展開`);
-            headingWrapper.addEventListener('click', function () {
-                const section = this.closest('.category-group-section');
-                const isCollapsed = section.classList.contains('category-collapsed');
-                section.classList.toggle('category-collapsed');
-                this.setAttribute('aria-expanded', isCollapsed ? 'true' : 'false');
-                this.setAttribute('aria-label', isCollapsed ? `${groupName}を折り畳む` : `${groupName}を展開`);
-            });
-
-            // Create toggle icon
-            const toggleIcon = document.createElement('span');
-            toggleIcon.className = 'category-toggle-icon';
-            toggleIcon.textContent = '▶';
-
-            // Create heading (display only, not a link)
-            const heading = document.createElement('h3');
-            heading.className = 'category-group-heading';
-            const icon = categoryIcons[groupName];
-            heading.textContent = icon ? `${icon} ${groupName}` : groupName;
-
-            headingWrapper.appendChild(toggleIcon);
-            headingWrapper.appendChild(heading);
+            const headingWrapper = createGroupHeadingRow(
+                groupName,
+                parentUrl,
+                parentCount,
+                categories.length
+            );
             groupSection.appendChild(headingWrapper);
-
-            // Add "View All" link at the top of child categories (Moved outside tagsContainer to be always visible)
-            if (parentUrl) {
-                const viewAllTag = document.createElement('a');
-                viewAllTag.href = parentUrl;
-                viewAllTag.className = 'category-tag-link category-view-all';
-                const parentCount = groupCounts[groupName];
-                viewAllTag.textContent = parentCount !== undefined
-                    ? `📁 ${groupName}のすべて (${parentCount})`
-                    : `📁 ${groupName}のすべて`;
-                groupSection.appendChild(viewAllTag);
-            }
 
             const tagsContainer = document.createElement('div');
             tagsContainer.className = 'category-tags-container';
+
+            if (parentUrl) {
+                const viewAllTag = document.createElement('a');
+                viewAllTag.href = safeCategoryUrl(parentUrl);
+                viewAllTag.className = 'category-tag-link category-view-all';
+                viewAllTag.textContent = parentCount !== undefined
+                    ? `📁 ${groupName}のすべてを見る (${parentCount}) →`
+                    : `📁 ${groupName}のすべてを見る →`;
+                tagsContainer.appendChild(viewAllTag);
+            }
 
             const primaryChildren = categories.filter((cat, idx) => {
                 const count = categoryCounts[cat] || 0;
@@ -589,34 +692,51 @@
             groupSection.appendChild(tagsContainer);
             groupedView.appendChild(groupSection);
         });
+
+        const extraGroupsCount = Math.max(0, groupEntries.length - INITIAL_VISIBLE_GROUPS);
+        createAllGroupsToggle(groupedView, groupEntries.length, extraGroupsCount);
     }
 
-    function applyGroupFilterState(section, normalizedQuery) {
+    function resetGroupFilterState(section, isAllGroupsExpanded) {
         const groupName = section.dataset.groupName || '';
-        const headingWrapper = section.querySelector('.category-heading-wrapper');
+        const subCount = Number.parseInt(section.dataset.subCount || '0', 10);
         const tagsContainer = section.querySelector('.category-tags-container');
-        const childTags = tagsContainer ? Array.from(tagsContainer.querySelectorAll('.category-tag-link')) : [];
+        const childTags = tagsContainer
+            ? Array.from(tagsContainer.querySelectorAll('.category-tag-link:not(.category-view-all)'))
+            : [];
         const moreBtn = tagsContainer ? tagsContainer.querySelector('.category-more-toggle-btn') : null;
 
+        section.hidden = false;
+        if (section.classList.contains('category-group-extra')) {
+            section.classList.toggle('category-group-extra-hidden', !isAllGroupsExpanded);
+        }
+        setGroupExpandedState(section, groupName, subCount, false);
+
+        const isExpanded = tagsContainer?.classList.contains('category-tags-expanded') || false;
+        childTags.forEach(tag => {
+            tag.classList.remove('category-tag-highlight', 'category-tag-filter-hidden');
+            if (tag.classList.contains('category-tag-extra')) {
+                tag.classList.toggle('category-tag-extra-hidden', !isExpanded);
+            }
+        });
+        if (moreBtn) {
+            moreBtn.hidden = false;
+        }
+    }
+
+    function applyGroupFilterState(section, normalizedQuery, isAllGroupsExpanded) {
         if (!normalizedQuery) {
-            section.hidden = false;
-            section.classList.add('category-collapsed');
-            if (headingWrapper) {
-                headingWrapper.setAttribute('aria-expanded', 'false');
-                headingWrapper.setAttribute('aria-label', `${groupName}を展開`);
-            }
-            const isExpanded = tagsContainer?.classList.contains('category-tags-expanded') || false;
-            childTags.forEach(tag => {
-                tag.classList.remove('category-tag-highlight', 'category-tag-filter-hidden');
-                if (tag.classList.contains('category-tag-extra')) {
-                    tag.classList.toggle('category-tag-extra-hidden', !isExpanded);
-                }
-            });
-            if (moreBtn) {
-                moreBtn.hidden = false;
-            }
+            resetGroupFilterState(section, isAllGroupsExpanded);
             return true;
         }
+
+        const groupName = section.dataset.groupName || '';
+        const subCount = Number.parseInt(section.dataset.subCount || '0', 10);
+        const tagsContainer = section.querySelector('.category-tags-container');
+        const childTags = tagsContainer
+            ? Array.from(tagsContainer.querySelectorAll('.category-tag-link:not(.category-view-all)'))
+            : [];
+        const moreBtn = tagsContainer ? tagsContainer.querySelector('.category-more-toggle-btn') : null;
 
         const groupMatches = normalizeSearchText(groupName).includes(normalizedQuery);
         let matchingChildrenCount = 0;
@@ -637,13 +757,10 @@
 
         const hasMatch = groupMatches || matchingChildrenCount > 0;
         section.hidden = !hasMatch;
+        section.classList.remove('category-group-extra-hidden');
 
         if (hasMatch) {
-            section.classList.remove('category-collapsed');
-            if (headingWrapper) {
-                headingWrapper.setAttribute('aria-expanded', 'true');
-                headingWrapper.setAttribute('aria-label', `${groupName}を折り畳む`);
-            }
+            setGroupExpandedState(section, groupName, subCount, true);
             if (moreBtn) {
                 moreBtn.hidden = !groupMatches;
             }
@@ -667,10 +784,16 @@
                 clearBtn.hidden = normalizedQuery.length === 0;
             }
 
+            const moreGroupsContainer = document.getElementById('category-groups-more-container');
+            if (moreGroupsContainer) {
+                moreGroupsContainer.hidden = normalizedQuery.length > 0;
+            }
+
+            const isAllGroupsExpanded = groupedView.classList.contains('category-groups-all-expanded');
             const sections = groupedView.querySelectorAll('.category-group-section');
             let matchedSections = 0;
             sections.forEach(section => {
-                if (applyGroupFilterState(section, normalizedQuery)) {
+                if (applyGroupFilterState(section, normalizedQuery, isAllGroupsExpanded)) {
                     matchedSections += 1;
                 }
             });
