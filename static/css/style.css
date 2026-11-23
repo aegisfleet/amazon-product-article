@@ -168,22 +168,22 @@ a:hover {
     gap: 0.35rem;
   }
 
+  .brand-icon {
+    width: 24px;
+    height: 24px;
+  }
+
   .header-content {
     gap: 0.5rem;
   }
 }
 
 .brand-icon {
-  color: #c2410c;
   flex-shrink: 0;
-  font-size: 1.35rem;
-  line-height: 1;
-  display: inline-flex;
-  align-items: center;
-}
-
-[data-theme="dark"] .brand-icon {
-  color: var(--color-amazon-orange, #ff9900);
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
 }
 
 /* --- Header Actions (Search, Favorites, Theme) --- */
