@@ -7,10 +7,15 @@ export interface ConflictStages {
   theirs: string;
 }
 
+// 既定の maxBuffer (1MB) を超える大容量ファイル (product-categories.json 等) が
+// ENOBUFS で空文字扱いになりマージが失敗する問題を防ぐため、十分大きな上限を指定する。
+const MAX_STAGE_BUFFER_BYTES = 256 * 1024 * 1024;
+
 function readStage(stage: 2 | 3, filePath: string): string {
   try {
     return execSync(`git show :${stage}:"${filePath}"`, {
       encoding: 'utf-8',
+      maxBuffer: MAX_STAGE_BUFFER_BYTES,
       stdio: ['pipe', 'pipe', 'ignore'],
     });
   } catch {
