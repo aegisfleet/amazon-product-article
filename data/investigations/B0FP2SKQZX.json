@@ -28,14 +28,18 @@
         "userType": "スマホゲーマー",
         "scenario": "イベントに合わせてゲーム内課金が必要になった時",
         "experience": "クレジットカードを登録したくなかったため、AmazonでEメールタイプのコードを購入。決済後すぐにメールでコードが届き、スムーズにゲーム内でチャージできた。手数料や有効期限を気にする必要がないのも安心。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ギフトの贈り主",
         "scenario": "友人の誕生日に遠方からプレゼントを贈る時",
         "experience": "物理的なカードを郵送する手間がなく、Eメールで直接送れたため当日に間に合った。相手もAndroidユーザーだったので、好きなアプリやゲームに使えると喜ばれた。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -69,7 +73,9 @@
         "claim": "有効期限や手数料がない",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "Amazonの商品ページの特徴欄に明記されている"
       },
@@ -77,7 +83,9 @@
         "claim": "前回の購入から24時間以内は5万円までの購入制限がある",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "Amazon独自の制限として商品ページに記載あり"
       }
@@ -148,6 +156,7 @@
       "redemptionPlatform": "Google Play ストア (日本版), YouTube",
       "validityPeriod": "無期限",
       "purchaseLimit": "前回購入から24時間以内で50,000円まで"
-    }
+    },
+    "investigatedPrice": "￥5,000"
   }
 }

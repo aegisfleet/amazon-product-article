@@ -34,21 +34,27 @@
         "userType": "お風呂で動画を楽しむユーザー",
         "scenario": "毎日の入浴時にリラックスしながらYouTubeや映画を視聴するため",
         "experience": "以前使っていた防水ケースは音がこもって聞こえづらかったが、このケースは側面に音孔があるおかげでシャワー中でもはっきりと音が聞こえるようになった。伸縮アームと360度回転機能で、湯船の縁に座っても寝そべっても、ちょうどいい角度に画面を調整できるのが素晴らしい。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "大型スマホユーザー",
         "scenario": "iPhone Pro Maxなどの大型サイズのスマホをお風呂に持ち込むため",
         "experience": "第2世代でサイズが大きくなり、カバーを付けたままでもiPhone Pro Maxがすっぽり収まるようになった。出し入れ口が60度で止まる設計のおかげで、濡れた手で開けてもスマホが滑り落ちる心配がないのが安心。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "賃貸住まいのユーザー",
         "scenario": "壁に穴を開けずにお風呂や洗面所でスマホを使用するため",
         "experience": "強力な粘着シールでしっかり固定され、お風呂のタイルにも問題なく貼り付いた。3枚シールが付いているので、お風呂だけでなく洗面台用にも設置でき、付け替えも簡単。ただ、マグネット式のように自由に場所を変えることはできない点は注意が必要。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -71,7 +77,9 @@
         "claim": "第１世代製品より、スピーカーの音の聞こえが断然良くなりました。",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "メーカーの仕様説明に基づく。左右に防水音孔を追加したことによる物理的な改善"
       },
@@ -79,7 +87,9 @@
         "claim": "ケースに入れたまま顔認証に対応できます。タッチスクリーンの操作性も抜群です。",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "高透過率PVC素材の採用による効果として記載"
       }
@@ -175,6 +185,7 @@
         "顔認証・タッチ操作対応",
         "厚さ約2mm以上のケース装着時は使用不可"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,899"
   }
 }

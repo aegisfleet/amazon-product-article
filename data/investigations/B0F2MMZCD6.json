@@ -28,7 +28,9 @@
         "userType": "小型犬の飼い主",
         "scenario": "室内でのストレス解消と歯磨きのために購入",
         "experience": "色々な形が入っているので毎日違うおもちゃで遊べて飽きずに楽しんでいます。ロープの繊維が歯の間にフィットして歯垢が取れている気がします。汚れても洗えるので衛生的です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -51,7 +53,9 @@
         "claim": "100%洗える天然綿を採用しており無毒無害である",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品仕様に明記されている"
       },
@@ -59,7 +63,9 @@
         "claim": "噛むことで歯垢や歯石の蓄積を防ぎ、歯茎をマッサージする効果がある",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "ロープおもちゃ全般に共通する物理的な摩擦による歯磨き効果"
       }
@@ -177,6 +183,7 @@
       "target": "小型犬、中型犬、仔犬",
       "origin": "不明",
       "color": "ブルーセット（混色）"
-    }
+    },
+    "investigatedPrice": "￥1,899"
   }
 }

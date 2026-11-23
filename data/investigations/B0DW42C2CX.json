@@ -28,14 +28,18 @@
         "userType": "コストを抑えたいファミリー層",
         "scenario": "リビングの古いテレビからの買い替え",
         "experience": "以前のテレビが壊れたため、安くて大画面のものを探してこのモデルを選びました。6万円台で55インチの4Kテレビが買えることに驚きです。画質も日常的にYouTubeやプライムビデオを見る分には十分綺麗で、Google TVの操作感もサクサクしていて満足しています。倍速パネルではないのでスポーツ番組では少し残像を感じることもありますが、価格を考えれば許容範囲です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ネット動画をよく見る単身者",
         "scenario": "動画配信サービス中心の視聴環境構築",
         "experience": "テレビ番組よりもNetflixやYouTubeを見ることが多いため、最初からGoogle TVが入っている本機を選びました。リモコンに各サービスのダイレクトボタンがあり、スマホからのキャストも簡単なので非常に使い勝手が良いです。音質はやや平坦に感じたので、後から手持ちのサウンドバーをeARCで繋いで使っています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -58,7 +62,9 @@
         "claim": "画質をピクセルレベルで調整する優れた映像エンジン「AiPQプロセッサ」を搭載",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "TCLの現行エントリー～ミドルクラス製品に共通して搭載されているエンジンであり事実"
       }
@@ -192,6 +198,7 @@
         "ベゼルレスデザイン",
         "壁掛け対応"
       ]
-    }
+    },
+    "investigatedPrice": "￥76,800"
   }
 }

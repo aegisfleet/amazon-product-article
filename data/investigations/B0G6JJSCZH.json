@@ -3,7 +3,11 @@
     "productName": "アイリスオーヤマ サーキュレーター 8畳 マカロン PCF-MKM15EC-H グレー",
     "parentAsin": "B0H6ZP5LFD",
     "productDescription": "お手入れが簡単な工具不要の全分解構造を採用した、8畳対応のコンパクトなサーキュレーターです。",
-    "productUsage": ["室内の空気循環", "洗濯物の部屋干し", "冷暖房の効率向上"],
+    "productUsage": [
+      "室内の空気循環",
+      "洗濯物の部屋干し",
+      "冷暖房の効率向上"
+    ],
     "positivePoints": [
       "前面・背面ガードと羽根が工具なしで全分解でき、丸洗いが可能であること",
       "コンパクトサイズでありながら8畳までの広さに対応する送風力があること",
@@ -15,27 +19,37 @@
       "風量の調節が3段階のみで、微細な調整ができないこと",
       "リモコンやタイマー機能などの付加機能が搭載されていないシンプルな設計であること"
     ],
-    "useCases": ["梅雨時の部屋干し用として", "エアコンと併用する空気循環用として", "コンパクトなため省スペースでの設置"],
+    "useCases": [
+      "梅雨時の部屋干し用として",
+      "エアコンと併用する空気循環用として",
+      "コンパクトなため省スペースでの設置"
+    ],
     "userStories": [
       {
         "userType": "日常使いのユーザー",
         "scenario": "手軽なお手入れを重視",
         "experience": "形状的にホコリが溜まりやすいサーキュレーターにおいて、前面・背面のガードから羽根まで工具なしで全分解して清掃できる点が大きな決め手となりました。機能がシンプルで物理スイッチであることも、長期的な動作の安定感につながると評価しています。",
-        "supportingSourceIds": ["src-amazon-review-1"],
+        "supportingSourceIds": [
+          "src-amazon-review-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "寝室用として検討したユーザー",
         "scenario": "就寝時の利用",
         "experience": "風力は強く部屋干しの衣類乾燥には効果的ですが、駆動音がそれなりに大きく、寝室での利用には適さないと感じました。",
-        "supportingSourceIds": ["src-amazon-review-2"],
+        "supportingSourceIds": [
+          "src-amazon-review-2"
+        ],
         "sentiment": "mixed"
       },
       {
         "userType": "一人暮らしの学生の家族",
         "scenario": "寮での部屋干し用",
         "experience": "寮生活で洗濯物を部屋干しするために購入しました。コンパクトながら風量はしっかりあり、余計な機能がないシンプルさが決め手となり、手軽に扱える点で満足しています。",
-        "supportingSourceIds": ["src-amazon-review-3"],
+        "supportingSourceIds": [
+          "src-amazon-review-3"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -91,7 +105,9 @@
         "claim": "工具不要の全分解でお手入れ簡単",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-review-1"],
+        "supportingSourceIds": [
+          "src-amazon-review-1"
+        ],
         "crossChecked": true,
         "notes": "実際のユーザーレビューでも前面・背面ガードや羽根の分解が容易で手入れしやすいことが高く評価されており、メーカーの主張と一致している。"
       }
@@ -208,6 +224,7 @@
         "上下角度手動調節機能（上約90°～下約15°まで6段階）",
         "風量調節3段階"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,490"
   }
 }

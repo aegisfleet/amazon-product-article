@@ -42,7 +42,9 @@
         "claim": "Netflix実写ドラマ『ONE PIECE』のゴーイングメリー号を再現している",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "商品情報に明記されている"
       },
@@ -50,7 +52,9 @@
         "claim": "主要キャラクター5人のミニフィグが付属する",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "ルフィ、ゾロ、ナミ、ウソップ、サンジが付属すると明記"
       }
@@ -113,6 +117,7 @@
       "targetAge": "10歳以上",
       "releaseDate": "2025-08-01",
       "minifigures": "ルフィ、ゾロ、ナミ、ウソップ、サンジ"
-    }
+    },
+    "investigatedPrice": "￥16,444"
   }
 }

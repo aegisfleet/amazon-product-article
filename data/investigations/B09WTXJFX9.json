@@ -28,14 +28,18 @@
         "userType": "子供のいる親",
         "scenario": "子供の初めての腕時計として購入",
         "experience": "少し小さめで腕回り14cmから対応しているので、子供の腕にもぴったりフィットしました。10気圧防水なので、手を洗う時や遊んでいる時に水に濡れても安心なのが選んだ決め手です。ソーラーと電池のデュアルパワーで電池切れの心配が少ないのも嬉しいポイントです。",
-        "supportingSourceIds": ["src-spec-1"],
+        "supportingSourceIds": [
+          "src-spec-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "手首が細めの男性",
         "scenario": "仕事用の普段使い時計として",
         "experience": "手首が細いため、一般的なメンズサイズの時計だと大きすぎることが多いのですが、これは少し小さめのケース（縦48×横41mm）で違和感なく着けられます。電波時計なので時刻合わせの手間がなく、仕事用として重宝しています。",
-        "supportingSourceIds": ["src-spec-1"],
+        "supportingSourceIds": [
+          "src-spec-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -58,7 +62,9 @@
         "claim": "ソーラーパワーとリチウム電池のデュアルパワー駆動(自動切替)",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-spec-1"],
+        "supportingSourceIds": [
+          "src-spec-1"
+        ],
         "crossChecked": true,
         "notes": "商品仕様として明記。安定した稼働に貢献する機能。"
       }
@@ -120,6 +126,7 @@
       "other": [
         "電波時計(手動受信可/電波受信状況表示)"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,124"
   }
 }

@@ -3,30 +3,53 @@
     "productName": "無印良品 ポリエステルガジェットポーチ",
     "parentAsin": "B097RYF9RY",
     "productDescription": "無印良品のシンプルなデザインのポリエステル製ガジェットポーチ。PC周辺機器やモバイルバッテリー、ケーブルなどをコンパクトに収納できます。",
-    "productUsage": ["PC周辺機器の収納", "モバイルバッテリーやケーブルの持ち運び", "小物入れ", "トラベルポーチ"],
-    "positivePoints": ["シンプルなデザイン", "無駄のない収納スペース", "バッグの隙間に収まりやすいコンパクトなサイズ感", "大きく開くダブルジッパーで出し入れがしやすい"],
-    "negativePoints": ["ノートPCのACアダプターやマウスなど厚みのあるものを入れると容量不足になる", "持ち手がないため単体での持ち運びやカバンからの取り出しにやや不便"],
-    "useCases": ["通勤や出張でのPC周辺機器の持ち運び", "旅行時のアメニティやケーブルの整理", "日常の小物の整理"],
+    "productUsage": [
+      "PC周辺機器の収納",
+      "モバイルバッテリーやケーブルの持ち運び",
+      "小物入れ",
+      "トラベルポーチ"
+    ],
+    "positivePoints": [
+      "シンプルなデザイン",
+      "無駄のない収納スペース",
+      "バッグの隙間に収まりやすいコンパクトなサイズ感",
+      "大きく開くダブルジッパーで出し入れがしやすい"
+    ],
+    "negativePoints": [
+      "ノートPCのACアダプターやマウスなど厚みのあるものを入れると容量不足になる",
+      "持ち手がないため単体での持ち運びやカバンからの取り出しにやや不便"
+    ],
+    "useCases": [
+      "通勤や出張でのPC周辺機器の持ち運び",
+      "旅行時のアメニティやケーブルの整理",
+      "日常の小物の整理"
+    ],
     "userStories": [
       {
         "userType": "ビジネスマン",
         "scenario": "出張時のノートPC周辺機器の整理",
         "experience": "ThinkpadのACアダプターとマウスを一緒に入れるとパンパンになってしまい、押し込んでチャックを閉める必要があります。もう少し容量があればよかったと感じました。",
-        "supportingSourceIds": ["src-amazon-review-1"],
+        "supportingSourceIds": [
+          "src-amazon-review-1"
+        ],
         "sentiment": "mixed"
       },
       {
         "userType": "一般ユーザー",
         "scenario": "カバン内の小物整理",
         "experience": "パソコンやスマホの周辺グッズ、ボールペンを入れて使っています。薄型でカバンの中の隙間にすっきりとハマるのがとても良いです。",
-        "supportingSourceIds": ["src-amazon-review-2"],
+        "supportingSourceIds": [
+          "src-amazon-review-2"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "一般ユーザー",
         "scenario": "日常的なガジェット収納",
         "experience": "シンプルで収納が多く、間口も広いです。数ヶ月使ってもへたっていません。ただ、ハンドキャリー用の持ち手がないため少し不便に感じます。",
-        "supportingSourceIds": ["src-amazon-review-3"],
+        "supportingSourceIds": [
+          "src-amazon-review-3"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -71,7 +94,9 @@
         "claim": "厚みのある大型ACアダプターやマウスの同時収納には容量が不足する",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-review-1"],
+        "supportingSourceIds": [
+          "src-amazon-review-1"
+        ],
         "crossChecked": false,
         "notes": "レビューから確認された物理的な制約。"
       },
@@ -79,7 +104,9 @@
         "claim": "カバンの隙間に収納しやすいスリムでコンパクトなサイズ",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-review-2"],
+        "supportingSourceIds": [
+          "src-amazon-review-2"
+        ],
         "crossChecked": false,
         "notes": "複数のレビューで言及されている本商品の最大のメリット。"
       }
@@ -166,19 +193,39 @@
       }
     ],
     "recommendation": {
-      "targetUsers": ["無印良品のデザインが好きな方", "カバンの中でかさばらないスリムなポーチを探している方", "必要最低限の充電器とケーブルだけを持ち歩きたい方"],
-      "pros": ["飽きのこない究極にシンプルなデザイン", "カバンの隙間に収まるスリムな形状", "開口部が広く出し入れが容易"],
-      "cons": ["大型のACアダプタや厚みのあるマウスには適さない", "持ち手がないためカバンから引っ張り出しにくい", "衝撃からガジェットを守るクッション性は高くない"],
+      "targetUsers": [
+        "無印良品のデザインが好きな方",
+        "カバンの中でかさばらないスリムなポーチを探している方",
+        "必要最低限の充電器とケーブルだけを持ち歩きたい方"
+      ],
+      "pros": [
+        "飽きのこない究極にシンプルなデザイン",
+        "カバンの隙間に収まるスリムな形状",
+        "開口部が広く出し入れが容易"
+      ],
+      "cons": [
+        "大型のACアダプタや厚みのあるマウスには適さない",
+        "持ち手がないためカバンから引っ張り出しにくい",
+        "衝撃からガジェットを守るクッション性は高くない"
+      ],
       "score": 78,
       "scoreRationale": "[基本点: 70]\n[加点: +5] (無印良品ならではの無駄のないシンプルなデザイン)\n[加点: +5] (カバンの隙間に収まりやすいスリムでコンパクトなサイズ感)\n[加点: +5] (ダブルジッパーと広く開く間口による使い勝手の良さ)\n[減点: -5] (大型のACアダプターやマウスなど厚みのあるものを入れると容量が不足する点)\n[減点: -2] (持ち手やストラップがないため、カバンからの取り出しや単体での持ち運びにやや不便な点)\n[合計: 78]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "90mm", "width": "200mm", "depth": "60mm" },
+      "dimensions": {
+        "height": "90mm",
+        "width": "200mm",
+        "depth": "60mm"
+      },
       "weight": "不明",
       "capacity": "不明",
       "material": "表地: ポリエステル、裏地: ポリエステル",
       "origin": "不明",
-      "other": ["カラー: 黒", "ポケット数: 2"]
-    }
+      "other": [
+        "カラー: 黒",
+        "ポケット数: 2"
+      ]
+    },
+    "investigatedPrice": "￥991"
   }
 }

@@ -42,7 +42,9 @@
         "claim": "保存料・着色料・アミノ酸系調味料無添加",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品ページの特徴欄に明記。"
       },
@@ -50,7 +52,9 @@
         "claim": "常温で保存が可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "高温殺菌により無菌状態にすることで、保存料無添加でも常温保存を実現していると記載。"
       }
@@ -158,6 +162,7 @@
       "content": "7品目（牛すじこん煮110g、豚の角煮120g、照り焼きチキン約95g、煮込みハンバーグ1個、鮭の塩焼き約75g、さばの煮つけ約95g、牛丼の具120g）",
       "preservation": "常温保存",
       "additives": "保存料、着色料、アミノ酸系調味料不使用"
-    }
+    },
+    "investigatedPrice": "￥4,500"
   }
 }

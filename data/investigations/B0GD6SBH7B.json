@@ -32,14 +32,18 @@
         "userType": "在宅ワーカー",
         "scenario": "マルチディスプレイ環境での日常的な業務",
         "experience": "以前使用していたノートPCではブラウザを多数開くと動作が重くなっていましたが、32GBメモリのおかげで動作が非常に軽快です。USB4を含め3画面出力がケーブル1本で簡単に構築でき、デスク上がすっきりしました。冷却音も通常時は静かで全く気になりません。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ガジェット愛好家",
         "scenario": "ホームサーバーとしての活用と軽めのゲーム",
         "experience": "デュアル2.5GbE LANがあるためNASや簡易サーバーとしても優秀です。Radeon 760Mのグラフィック性能も高く、設定を調整すればFF14などのゲームも十分遊べました。ただ、ストレージが512GBなのですぐに容量が足りなくなり、M.2 SSDを増設して対応しました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -62,7 +66,9 @@
         "claim": "独立GPUのGTX 1650 Tiクラスに匹敵するRadeon 760Mグラフィックス性能",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "Radeon 760Mはベンチマーク上でGTX 1650 Max-Q/Tiに近いスコアを出すことが知られており、内蔵GPUとしては非常に優秀であることは事実"
       }
@@ -173,6 +179,7 @@
         "VESAマウント対応",
         "デュアルファン＆全周エアフロー設計"
       ]
-    }
+    },
+    "investigatedPrice": "￥103,527"
   }
 }

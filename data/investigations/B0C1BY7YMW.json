@@ -3,7 +3,11 @@
     "productName": "水想い ナチュラルミネラルウォーター ラベルレス 500ml × 42本",
     "parentAsin": "B0C1BY7YMW",
     "productDescription": "蔵王連峰の雪どけ天然水を使用した軟水（硬度50mg/L）。ラベルレスでゴミの分別が簡単。",
-    "productUsage": ["日常の水分補給", "備蓄用", "料理や炊飯"],
+    "productUsage": [
+      "日常の水分補給",
+      "備蓄用",
+      "料理や炊飯"
+    ],
     "positivePoints": [
       "1本あたり約54円（2280円/42本）と非常にコストパフォーマンスが高い",
       "ラベルレスボトルにより、廃棄時のゴミ分別の手間が省ける",
@@ -13,20 +17,28 @@
     "negativePoints": [
       "500mlの42本セットのため、一度に届く際の重量と保管スペースが必要"
     ],
-    "useCases": ["家庭での日常的な飲用水", "職場への持ち運び", "災害時の備蓄水"],
+    "useCases": [
+      "家庭での日常的な飲用水",
+      "職場への持ち運び",
+      "災害時の備蓄水"
+    ],
     "userStories": [
       {
         "userType": "一般ユーザー",
         "scenario": "毎日の水分補給",
         "experience": "味にクセがなく普通に美味しい。硬度50で飲みやすく、丸みを帯びた角型のボトルが握りやすく転がらないためリピート購入を決めた。",
-        "supportingSourceIds": ["src-amazon-review"],
+        "supportingSourceIds": [
+          "src-amazon-review"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "定期購入者",
         "scenario": "日常の飲料水と備蓄を兼ねて購入",
         "experience": "毎日飲む水として愛用している。蔵王連峰の雪どけ水が原料でまろやかな口当たりが気に入っている。ラベルレスなのでゴミ分別が楽で環境にも優しく、コスパも良いため定期購入している。",
-        "supportingSourceIds": ["src-amazon-review"],
+        "supportingSourceIds": [
+          "src-amazon-review"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -49,7 +61,9 @@
         "claim": "1本あたり約54円の高コストパフォーマンス",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-review"],
+        "supportingSourceIds": [
+          "src-amazon-review"
+        ],
         "crossChecked": true,
         "notes": "商品価格2280円と42本入りという仕様から算出"
       },
@@ -57,7 +71,9 @@
         "claim": "丸みを帯びた角型のボトルが握りやすい",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-review"],
+        "supportingSourceIds": [
+          "src-amazon-review"
+        ],
         "crossChecked": true,
         "notes": "複数のレビューにて言及あり"
       }
@@ -174,7 +190,10 @@
         "depth": "65mm",
         "height": "210mm"
       },
-      "other": ["丸みを帯びた角型ボトル"]
-    }
+      "other": [
+        "丸みを帯びた角型ボトル"
+      ]
+    },
+    "investigatedPrice": "￥2,078"
   }
 }

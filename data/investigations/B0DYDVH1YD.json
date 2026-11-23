@@ -82,7 +82,9 @@
         "claim": "片足140～155gの超軽量設計である",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-api"],
+        "supportingSourceIds": [
+          "src-amazon-api"
+        ],
         "crossChecked": false,
         "notes": "公式情報に基づく仕様"
       },
@@ -90,7 +92,9 @@
         "claim": "3Dメッシュパネルにより高い通気性を備える",
         "category": "durability",
         "confidence": "medium",
-        "supportingSourceIds": ["src-amazon-api"],
+        "supportingSourceIds": [
+          "src-amazon-api"
+        ],
         "crossChecked": false,
         "notes": "公式情報に基づく仕様"
       },
@@ -98,7 +102,11 @@
         "claim": "有名ブランド(PUMA, adidas)のエントリーモデルよりもさらに安価である",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-api", "src-amazon-api-puma", "src-amazon-api-adidas"],
+        "supportingSourceIds": [
+          "src-amazon-api",
+          "src-amazon-api-puma",
+          "src-amazon-api-adidas"
+        ],
         "crossChecked": true,
         "notes": "PUMA(3300円)、adidas(3915円)に対して、本商品は1997円である"
       }
@@ -173,7 +181,13 @@
       "size": "27.5cm",
       "color": "ブラック",
       "material": "アッパー：3Dメッシュ、ミッドソール：高反発EVA",
-      "features": ["超軽量設計", "サイドベンチレーション", "滑り止めソール", "アーチサポート"]
-    }
+      "features": [
+        "超軽量設計",
+        "サイドベンチレーション",
+        "滑り止めソール",
+        "アーチサポート"
+      ]
+    },
+    "investigatedPrice": "￥2,098"
   }
 }

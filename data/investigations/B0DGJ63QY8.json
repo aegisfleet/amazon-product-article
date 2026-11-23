@@ -3,7 +3,11 @@
     "productName": "AirPods 4",
     "parentAsin": "B0FY2Q16HD",
     "productDescription": "再設計された快適なフィット感とH2チップによる優れた音質を備えた、Appleの最新スタンダードワイヤレスイヤホン。USB-C充電に対応したコンパクトなケースを採用。",
-    "productUsage": ["音楽・ポッドキャストのリスニング", "ハンズフリー通話", "Appleデバイス間のシームレスな切り替え"],
+    "productUsage": [
+      "音楽・ポッドキャストのリスニング",
+      "ハンズフリー通話",
+      "Appleデバイス間のシームレスな切り替え"
+    ],
     "positivePoints": [
       "H2チップ搭載による音質と通話品質の向上",
       "前モデル比で体積が10%以上小さくなったUSB-C対応充電ケース",
@@ -15,7 +19,11 @@
       "充電ケースがワイヤレス充電（Qi / MagSafe）に非対応",
       "オープンイヤー型のため、遮音性が低く周囲の音が入りやすい"
     ],
-    "useCases": ["静かな室内での音楽鑑賞", "長時間のオンライン会議", "周囲の音を聞きながらのウォーキング"],
+    "useCases": [
+      "静かな室内での音楽鑑賞",
+      "長時間のオンライン会議",
+      "周囲の音を聞きながらのウォーキング"
+    ],
     "userStories": [],
     "userImpression": "カナル型が苦手なユーザーにとって、オープンイヤー型の最高峰として高い評価を得ている。フィット感が改善され、ケースが小型化された点も好評。一方で、価格差が比較的小さいため、ANCやワイヤレス充電を求めるなら上位モデル（ANC搭載版）を選ぶべきだという意見も多い。",
     "sources": [
@@ -47,7 +55,10 @@
         "claim": "一世代前のモデルよりも体積比で10%以上小さくなった充電ケース",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-apple-specs", "src-amazon"],
+        "supportingSourceIds": [
+          "src-apple-specs",
+          "src-amazon"
+        ],
         "crossChecked": true,
         "notes": "公式の寸法データとAmazonの記載で一致"
       }
@@ -116,7 +127,11 @@
       "batteryLife": "最大5時間 (充電ケース使用で最大30時間)",
       "waterResistance": "IP54 (防塵・耐汗耐水性能)",
       "charging": "USB-C",
-      "other": ["パーソナライズされた空間オーディオ", "「探す」対応"]
-    }
+      "other": [
+        "パーソナライズされた空間オーディオ",
+        "「探す」対応"
+      ]
+    },
+    "investigatedPrice": "￥19,800"
   }
 }

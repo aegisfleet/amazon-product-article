@@ -43,7 +43,9 @@
         "claim": "無添加で、厳選された原材料のみを使用している",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式の商品説明に記載あり"
       },
@@ -51,7 +53,9 @@
         "claim": "急速冷凍技術により、揚げたての風味や食感が長期間保たれる",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式の商品説明に記載あり"
       }
@@ -163,6 +167,7 @@
         "無添加",
         "加熱解凍専用（自然解凍不可）"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,680"
   }
 }

@@ -27,21 +27,27 @@
         "userType": "一般ドライバー",
         "scenario": "数年間手入れをしておらず、黄ばみやくすみが酷くなったヘッドライトのケア",
         "experience": "しばらく磨いていなかったため、黄ばみやクスミが酷くて夜間のライトが暗く感じていました。そこで本製品を使ってみたところ、下地クリーナーで驚くほど汚れが落ち、コート剤を塗ることで見違えるような透明感が甦りました。",
-        "supportingSourceIds": ["src-minkara"],
+        "supportingSourceIds": [
+          "src-minkara"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "リピーター",
         "scenario": "定期的なヘッドライトのメンテナンス",
         "experience": "毎年恒例で使っています。今年はもう手入れを辞めようかと思いましたが、ヘッドライトが真っ黄色でガサガサになってしまったため、結局本製品をリピート購入しました。黄ばみ予防に効果的だと感じています。",
-        "supportingSourceIds": ["src-minkara"],
+        "supportingSourceIds": [
+          "src-minkara"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "DIYユーザー",
         "scenario": "初めての2液式コーティング剤の使用",
         "experience": "ヘッドライト磨きは経験がありましたが、コート剤との2液式は初めてでした。下地クリーナーしか使っていない段階でも、自分の研磨した箇所からは黄ばみは出ませんでした。必要なものが全て箱に入っているので作業しやすかったです。",
-        "supportingSourceIds": ["src-minkara"],
+        "supportingSourceIds": [
+          "src-minkara"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -75,7 +81,9 @@
         "claim": "透明感が約12ヶ月持続する",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-prostaff"],
+        "supportingSourceIds": [
+          "src-prostaff"
+        ],
         "crossChecked": false,
         "notes": "メーカーの公式情報に基づく。"
       },
@@ -83,7 +91,9 @@
         "claim": "下地処理剤の研磨剤は6000〜8000番相当である",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-prostaff"],
+        "supportingSourceIds": [
+          "src-prostaff"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式サイトのFAQに基づく。"
       }
@@ -202,6 +212,7 @@
         "持続期間: 約12ヶ月",
         "コンパウンド粒度: 6000〜8000番相当"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,155"
   }
 }

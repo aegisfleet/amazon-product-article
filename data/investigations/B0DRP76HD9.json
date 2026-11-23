@@ -28,14 +28,18 @@
         "userType": "乾燥肌の女性",
         "scenario": "一日中空調の効いたオフィスでの仕事",
         "experience": "保湿力が高いおかげで、夕方になっても目元や口元の乾燥が気になりませんでした。これまで使っていたファンデーションは夕方に毛穴落ちしていましたが、これはピタッと密着して崩れにくいので重宝しています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "時短メイクをしたい主婦",
         "scenario": "忙しい朝のメイク時間",
         "experience": "SPF50+なので、日焼け止めを別に塗る手間が省けて助かっています。伸びが良く、肌にサッとなじむので急いでいる時でもきれいに仕上がるのが決め手になりました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -58,7 +62,9 @@
         "claim": "13時間化粧もち（毛穴の目立ちのなさ・毛穴落ちのなさ・つや・透明感・カバー力・よれのなさ・うすれのなさ・皮脂崩れのなさ）",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカー調べのデータとして明記されており、過去モデルでも同様の実績があるため一定の信頼性がある"
       }
@@ -178,6 +184,7 @@
         "カラー：オークル10",
         "13時間化粧もちデータ取得済み（メーカー調べ）"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,740"
   }
 }

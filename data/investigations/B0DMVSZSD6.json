@@ -27,7 +27,9 @@
         "userType": "スマートフォン・タブレットユーザー",
         "scenario": "充電しながらのゲームや動画視聴",
         "experience": "L字型かつ回転するコネクタ設計により、充電しながらゲームをプレイしたり動画を視聴したりしてもケーブルが手に干渉しにくく、快適に操作できます。また、マグネット式のため、万が一ケーブルに足を引っ掛けてもすぐに外れ、デバイスの落下を防ぐことができます。端子部分は防塵キャップとしても機能し便利です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -50,7 +52,9 @@
         "claim": "最大240WのPD急速充電に対応",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "公式ページの機能説明に記載あり"
       },
@@ -58,7 +62,9 @@
         "claim": "映像出力非対応、データ転送はUSB 2.0（480Mbps）",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "公式ページのご注意欄に明確な記載あり"
       }
@@ -180,6 +186,7 @@
         "端子仕様: 9Pin マグネット",
         "機能: 540度回転（180度+360度）、防塵機能"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,599"
   }
 }

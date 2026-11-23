@@ -30,14 +30,18 @@
         "userType": "ビジネスパーソン",
         "scenario": "カフェや外出先でのアイデア出し",
         "experience": "表紙が硬いため、机がない場所でもしっかり書くことができます。思いついたアイデアを書いて、必要なときはミシン目で切り取って整理できるのが非常に便利です。限定デザインのケーキ柄が仕事の合間の癒しになります。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "学生",
         "scenario": "授業のメモやプリントの整理",
         "experience": "巻末のクリアポケットに付箋や小さなプリントを入れておけるので、これ一冊で色々管理できます。ただ、リングが邪魔になることがあるので、左側のページは少し書きにくいです。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -60,7 +64,9 @@
         "claim": "インクがにじみにくく裏移りしにくい上質紙",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "文具レビュー等で一貫して高い評価を得ている"
       }
@@ -181,6 +187,7 @@
         "切り離しミシン目付き",
         "PPポケット5枚付き"
       ]
-    }
+    },
+    "investigatedPrice": "￥880"
   }
 }

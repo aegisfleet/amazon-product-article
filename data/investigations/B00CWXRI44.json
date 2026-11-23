@@ -3,7 +3,11 @@
     "productName": "Pixio PS1S Wave Black モニターアーム シングル",
     "parentAsin": "B00CWXRI44",
     "productDescription": "Pixioが展開する「Wave」シリーズのシングルモニターアーム。デスク周りのカラーコーディネートに最適な7色展開の一つであるブラックカラー。",
-    "productUsage": ["PCモニターの設置", "デスクスペースの有効活用", "ゲーム部屋のカラーコーディネート"],
+    "productUsage": [
+      "PCモニターの設置",
+      "デスクスペースの有効活用",
+      "ゲーム部屋のカラーコーディネート"
+    ],
     "positivePoints": [
       "カラーバリエーションが豊富でインテリアやゲーミングデバイスと合わせやすい",
       "最大対角約81cm (32型相当)、9kgまでのモニターに対応する高い耐荷重",
@@ -15,20 +19,28 @@
       "同等スペックの安価な製品と比べると価格がやや高い",
       "多関節で細かい調整ができる分、初めての設置では水平調整のネジ回しなどに少しコツがいる場合がある"
     ],
-    "useCases": ["ゲーミング環境の構築", "テレワーク・在宅勤務でのデュアルモニター化（2つ使用時）", "デスクを広く使いたい場合"],
+    "useCases": [
+      "ゲーミング環境の構築",
+      "テレワーク・在宅勤務でのデュアルモニター化（2つ使用時）",
+      "デスクを広く使いたい場合"
+    ],
     "userStories": [
       {
         "userType": "ゲーマー",
         "scenario": "ゲーム部屋のデスク環境を構築する際",
         "experience": "ブラックカラーでデスク周りを統一したかったので購入。Pixioのゲーミングモニターと合わせて使っており、統一感が出て非常に満足。動きもスムーズでゲームプレイ時の微調整がしやすい。",
-        "supportingSourceIds": ["src-amazon-1"],
+        "supportingSourceIds": [
+          "src-amazon-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "在宅勤務者",
         "scenario": "デスクスペースを広げるために導入",
         "experience": "これまでモニタースタンドでスペースが取られていたが、アームに変えてデスクの下がスッキリした。クランプ式で机にしっかり固定でき、安定感も申し分ない。",
-        "supportingSourceIds": ["src-amazon-1"],
+        "supportingSourceIds": [
+          "src-amazon-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -51,7 +63,9 @@
         "claim": "対角約43cm～81cm (17-32型相当)、重量1～9kgのモニターに対応",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-1"],
+        "supportingSourceIds": [
+          "src-amazon-1"
+        ],
         "crossChecked": false,
         "notes": "商品ページの仕様に明記されている"
       },
@@ -59,7 +73,9 @@
         "claim": "上向き90°、下向き45°、左右90°、回転360°の多角度調節が可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-1"],
+        "supportingSourceIds": [
+          "src-amazon-1"
+        ],
         "crossChecked": false,
         "notes": "商品ページの特徴に明記されている"
       }
@@ -176,6 +192,7 @@
       "swivel": "左右90度",
       "rotation": "360度",
       "installation": "クランプ固定、グロメット固定"
-    }
+    },
+    "investigatedPrice": "￥8,980"
   }
 }

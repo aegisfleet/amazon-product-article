@@ -30,14 +30,18 @@
         "userType": "デスクワーカー",
         "scenario": "日々の長時間のパソコン作業により、首から肩にかけての慢性的なこりに悩んでいる状況",
         "experience": "手で強く揉みほぐされているような立体的なもみ玉の動きが心地よく、26度の傾斜が首のカーブにしっかりフィットする。価格も高額なプレミアムモデルに比べて手頃でありながら、強さを2段階で調整できるため、その日の疲れ具合に合わせてほぐせる点が購入の決め手となった。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "主婦",
         "scenario": "家事の合間に手軽に体の疲れを取りたい状況",
         "experience": "首や肩だけでなく、腰や太ももなど様々な部位に当てて使えるのが便利。直接肌に触れるカバー部分をファスナーで簡単に外して水洗いできるため、家族と共有しても清潔に保てる点が気に入っている。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -60,7 +64,9 @@
         "claim": "手揉みのような感覚の3D設計",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "もみ玉と可動式ボールによる物理的な構造と、26度傾斜設計により手揉みの感覚を再現している。医療機器認証取得済みであり、信頼性は高い。"
       },
@@ -68,7 +74,9 @@
         "claim": "体のあらゆる部位の疲れを回復",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "マッサージ幅が66～105mmと広く設計されており、首だけでなく太ももや肩甲骨などへの適用が可能であることが確認できる。"
       }
@@ -173,7 +181,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +4] (手揉みを再現する3Dもみ玉設計と幅広い部位への対応)\n[加点: +4] (洗えるカバーによる実用性の高さ)\n[加点: +5] (本格的なもみ心地を1万円台前半で提供するコストパフォーマンスの良さ)\n[加点: +5] (医療機器認証取得済みであることによる安全性と信頼性の高さ)\n[減点: -2] (コードレス仕様の有無が不明確であり、取り回しに制約がある可能性)\n[合計: 86]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "150mm", "width": "450mm", "depth": "310mm" },
+      "dimensions": {
+        "height": "150mm",
+        "width": "450mm",
+        "depth": "310mm"
+      },
       "weight": "不明",
       "material": "PUレザー、布（カバー部分）",
       "medicalDeviceCertification": "取得済み",
@@ -183,6 +195,7 @@
         "洗えるファスナー付き布カバー",
         "人間工学に基づいた26度傾斜設計"
       ]
-    }
+    },
+    "investigatedPrice": "￥9,948"
   }
 }

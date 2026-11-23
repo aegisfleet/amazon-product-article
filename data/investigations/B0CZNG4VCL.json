@@ -43,7 +43,9 @@
         "claim": "240Wの急速充電に対応している",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式スペックに記載あり"
       },
@@ -51,7 +53,9 @@
         "claim": "40Gbpsのデータ転送に対応している",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式スペックに記載あり"
       },
@@ -59,7 +63,9 @@
         "claim": "8K@60Hzおよびデュアル4K@60Hzの映像出力に対応している",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式スペックに記載あり"
       }
@@ -165,7 +171,11 @@
       "powerDelivery": "最大240W (48V/5A)",
       "dataTransferSpeed": "最大40Gbps",
       "videoOutput": "単8K@60Hz / デュアル4K@60Hz",
-      "features": ["E-markerチップ内蔵", "DP Altモード対応"]
-    }
+      "features": [
+        "E-markerチップ内蔵",
+        "DP Altモード対応"
+      ]
+    },
+    "investigatedPrice": "￥949"
   }
 }

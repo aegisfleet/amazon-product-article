@@ -3,7 +3,11 @@
     "productName": "COMFEE' 電気ケトル 1.0L MK-08D03A",
     "parentAsin": "B07M9K4ZL4",
     "productDescription": "1L容量で一人暮らしに最適なコンパクトサイズの電気ケトル。急速沸騰や空焚き防止機能を備え、シンプルな操作でお手入れも簡単なスタンダードモデルです。",
-    "productUsage": ["お湯の沸かし込み", "カップ麺やコーヒー等の調製", "一人暮らしの日常的な湯沸かし"],
+    "productUsage": [
+      "お湯の沸かし込み",
+      "カップ麺やコーヒー等の調製",
+      "一人暮らしの日常的な湯沸かし"
+    ],
     "positivePoints": [
       "約120秒でコーヒー1杯分（140ml）が沸騰する急速沸騰機能",
       "水がない状態で自動的に電源が切れる空焚き防止機能と沸騰自動OFFで安全",
@@ -39,7 +43,9 @@
         "claim": "コーヒー1杯分（140ml）が約120秒で沸騰する",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式の仕様として記載されている"
       },
@@ -47,7 +53,9 @@
         "claim": "空焚き防止と沸騰自動OFF機能を搭載している",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式の仕様として記載されている"
       }
@@ -134,19 +142,40 @@
       }
     ],
     "recommendation": {
-      "targetUsers": ["初めての一人暮らしで手頃なケトルを探している人", "シンプルな機能で手入れがしやすいケトルを求める人"],
-      "pros": ["お手頃な価格", "コンパクトで設置しやすい", "間口が広くお手入れが簡単", "空焚き防止や自動OFFなど必要十分な安全機能"],
-      "cons": ["転倒時のお湯漏れ防止機能はない", "温度調節機能はない"],
+      "targetUsers": [
+        "初めての一人暮らしで手頃なケトルを探している人",
+        "シンプルな機能で手入れがしやすいケトルを求める人"
+      ],
+      "pros": [
+        "お手頃な価格",
+        "コンパクトで設置しやすい",
+        "間口が広くお手入れが簡単",
+        "空焚き防止や自動OFFなど必要十分な安全機能"
+      ],
+      "cons": [
+        "転倒時のお湯漏れ防止機能はない",
+        "温度調節機能はない"
+      ],
       "score": 80,
       "scoreRationale": "[基本点: 70]\n[加点: +5] (基本機能が充実しており実用性が高い)\n[加点: +5] (安価でありながら必要十分な機能を持ちコスパが良い)\n[合計: 80]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "141.9mm", "width": "165.0mm", "depth": "207.0mm" },
+      "dimensions": {
+        "height": "141.9mm",
+        "width": "165.0mm",
+        "depth": "207.0mm"
+      },
       "weight": "830g",
       "capacity": "1.0L",
       "material": "不明",
       "origin": "不明",
-      "other": ["メーカー保証1年間", "空焚き防止機能", "沸騰自動OFF機能", "水量目盛り付き"]
-    }
+      "other": [
+        "メーカー保証1年間",
+        "空焚き防止機能",
+        "沸騰自動OFF機能",
+        "水量目盛り付き"
+      ]
+    },
+    "investigatedPrice": "￥2,500"
   }
 }

@@ -27,14 +27,20 @@
         "userType": "ダイエット目的の女性",
         "scenario": "子育てや家事の合間に自宅で運動したいとき",
         "experience": "最初は負荷が強めでスネや太ももにしっかり効いているのを感じました。毎日5〜10分テレビを見ながら踏むだけで汗ばむほどで、夜に子どもが寝た後でも音が静かなので安心して使えています。",
-        "supportingSourceIds": ["src-mikenekosensei", "src-note"],
+        "supportingSourceIds": [
+          "src-mikenekosensei",
+          "src-note"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "賃貸マンションにお住まいの方",
         "scenario": "騒音を気にせず夜間にトレーニングしたいとき",
         "experience": "一番心配だった騒音ですが、プシュッという空気音はするものの非常に静かでした。ステップが下につく前に切り替えるよう意識すればゴツゴツ音も鳴らず、近所迷惑を気にせず運動できます。ただし重いので床を保護するマットは必須です。",
-        "supportingSourceIds": ["src-note", "src-mikenekosensei"],
+        "supportingSourceIds": [
+          "src-note",
+          "src-mikenekosensei"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -68,7 +74,10 @@
         "claim": "油圧シリンダーにより高い静音性を実現している",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-mikenekosensei", "src-note"],
+        "supportingSourceIds": [
+          "src-mikenekosensei",
+          "src-note"
+        ],
         "crossChecked": true,
         "notes": "複数のレビューで夜間でも使用できる静かさと評価されている"
       },
@@ -76,7 +85,9 @@
         "claim": "使用開始時はシリンダーの負荷が重い",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-mikenekosensei"],
+        "supportingSourceIds": [
+          "src-mikenekosensei"
+        ],
         "crossChecked": false,
         "notes": "公式情報およびレビューで使用開始直後は重く感じる点に言及されている"
       }
@@ -196,6 +207,7 @@
         "カウンターメーター付き (ステップ回数、使用時間、消費カロリー、カウント/分)",
         "商品保証期間: 5年"
       ]
-    }
+    },
+    "investigatedPrice": "￥19,990"
   }
 }

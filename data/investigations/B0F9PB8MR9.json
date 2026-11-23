@@ -44,7 +44,9 @@
         "claim": "重量は約440gで軽量",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "Amazon商品ページの重量データ（0.97ポンド）から換算"
       },
@@ -52,7 +54,9 @@
         "claim": "Type-C充電対応でモバイルバッテリーからも充電可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "Amazon商品ページの特徴から確認"
       }
@@ -166,6 +170,7 @@
       "other": [
         "モバイルバッテリーからの充電に対応"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,888"
   }
 }

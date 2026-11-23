@@ -53,7 +53,9 @@
         "claim": "1箱200組の仕様で、一般的な150組ティッシュよりも長持ちする",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": true,
         "notes": "Amazonの商品仕様にて「200組」であることを確認"
       }
@@ -164,6 +166,7 @@
       "other": [
         "ケース販売"
       ]
-    }
+    },
+    "investigatedPrice": "￥5,280"
   }
 }

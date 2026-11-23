@@ -27,7 +27,9 @@
         "userType": "パサつきや広がりが気になる方",
         "scenario": "入浴後や朝のスタイリング時に",
         "experience": "髪のパサつき、広がり、枝毛、ツヤ不足などの悩みを解決する洗い流さないトリートメントやヘアウォーターが含まれており、ライン使いすることでツヤのある質感に導いてくれます。ヘアミルクは詰め替え用も付いており、たっぷり使える点が嬉しいポイントです。",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -50,7 +52,9 @@
         "claim": "無香料・無着色・アルコールフリー処方（ヘアミルクなど一部製品）",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "商品仕様より"
       },
@@ -58,7 +62,9 @@
         "claim": "限定1000個の数量限定セット",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "商品特徴より"
       }
@@ -172,6 +178,7 @@
         "アルコールフリー（ヘアミルク等）",
         "医薬部外品（オルビスユードット エッセンスローション）"
       ]
-    }
+    },
+    "investigatedPrice": "￥5,060"
   }
 }

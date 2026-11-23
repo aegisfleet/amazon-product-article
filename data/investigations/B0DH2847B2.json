@@ -29,21 +29,27 @@
         "userType": "デスクワーカー",
         "scenario": "狭小なテーブルでノートPCを使用する",
         "experience": "L字型コネクタをPC側に挿すことで、ケーブルの取り回しが非常に楽になり、限られたスペースを有効に使えるようになりました。無理にケーブルを曲げる必要がないので、ポートの保護にも役立っています。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "一般ユーザー",
         "scenario": "周辺機器の接続と取り外しを行う",
         "experience": "ケーブルの接続部が硬めで、さらにL字型なので、ポートから抜きにくいと感じました。ケーブル自体も硬いため、もう少し柔らかいと扱いやすいです。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "negative"
       },
       {
         "userType": "周辺機器ユーザー",
         "scenario": "ハブやドッキングステーションと接続する",
         "experience": "PCへの直つなぎや特定のドッキングステーションでの給電は問題ありませんでしたが、一部のSSD・HDD接続用ハブやTB4ドックでは認識しなかったり、頻繁に接続が切れたりする不安定な動作が見られました。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -66,7 +72,9 @@
         "claim": "L字型設計によりポートの負担を軽減し、省スペースで利用可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "crossChecked": false,
         "notes": "複数のレビューでL字型のメリットが言及されている。"
       },
@@ -74,7 +82,9 @@
         "claim": "一部のハブやドッキングステーションとの接続で不安定になる場合がある",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "crossChecked": false,
         "notes": "特定のハブで認識しない、接続が切れるという報告が複数存在する。"
       }
@@ -195,6 +205,7 @@
       "other": [
         "L字型コネクタ"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,299"
   }
 }

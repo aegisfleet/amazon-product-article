@@ -29,14 +29,18 @@
         "userType": "食いしばり癖のある人",
         "scenario": "朝起きた時に咬筋や頭のコリをほぐしたい時",
         "experience": "咬筋にはソフトで、側頭筋や首などにはハードに切り替えてポスポスと刺激することで、手軽にスッキリとほぐすことができた。本体とケースがスタイリッシュなのも良いが、ポスポスする時のバネ音が少し気になった。",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "エイジングケアに関心のある女性",
         "scenario": "口角や目の周りの気になる部分のケアをしたい時",
         "experience": "指圧力がピンポイントで気持ちよく、さらにマイクロカレントの面でカッサのように押し流すケアも心地よかった。胸鎖乳突筋への刺激も効果的で、毎日のケアが楽しみになった。",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -70,7 +74,9 @@
         "claim": "業務用の美容機器と同クラスの500μAのマイクロカレントを搭載",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式の仕様・アピールポイントとして確認。"
       },
@@ -78,7 +84,9 @@
         "claim": "ソーラーパネル搭載により充電不要でマイクロカレントケアが可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "電源や充電ケーブルが不要であることを確認。"
       }
@@ -191,7 +199,12 @@
       "power": "ソーラーパネル搭載(充電不要)",
       "current": "マイクロカレント(500μA)",
       "usageEnvironment": "温度：5℃～40℃、 相対湿度：≤85%RH",
-      "contents": ["本体 ×1", "携帯用ケース ×1", "取扱説明書 ×1"]
-    }
+      "contents": [
+        "本体 ×1",
+        "携帯用ケース ×1",
+        "取扱説明書 ×1"
+      ]
+    },
+    "investigatedPrice": "￥12,980"
   }
 }

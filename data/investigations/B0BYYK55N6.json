@@ -56,7 +56,10 @@
         "claim": "1本あたり約460円のコストパフォーマンス",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "競合の単体バンド（約500円〜1500円）と比較して非常に安価"
       }
@@ -177,8 +180,12 @@
         "Xiaomi Watch S1 Active",
         "その他22mmラグ幅のスマートウォッチ"
       ],
-      "features": ["クイックリリース式", "10色セット"],
+      "features": [
+        "クイックリリース式",
+        "10色セット"
+      ],
       "packageContents": "交換用バンド10本"
-    }
+    },
+    "investigatedPrice": "￥4,521"
   }
 }

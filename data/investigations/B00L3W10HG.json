@@ -32,14 +32,18 @@
         "userType": "作り置きをするユーザー",
         "scenario": "週末の常備菜作り",
         "experience": "プラスチック容器のヌルヌルや色移りにうんざりして購入しました。ガラス製は油汚れもスッキリ落ちて気持ちいいです。透明なので冷蔵庫を開けた時に何が入っているかすぐわかり、使い忘れが減りました。そのまま食卓に出しても手抜きに見えないのが嬉しいです。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "一人暮らしのユーザー",
         "scenario": "毎日の食事の保存",
         "experience": "サイズがちょうど良く、残ったおかずを入れて翌日レンジで温めてそのまま食べています。洗い物が減って助かります。ただ、密閉ではないので汁気のある煮物などを入れる時は傾けないように気をつけています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -62,7 +66,9 @@
         "claim": "フタをしたまま電子レンジ加熱ができる",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "公式の商品仕様として明記されている"
       },
@@ -70,7 +76,9 @@
         "claim": "フタを外せばオーブン調理も可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "公式の商品仕様として明記されている"
       }
@@ -196,6 +204,7 @@
       ],
       "origin": "中国",
       "color": "グリーン"
-    }
+    },
+    "investigatedPrice": "￥2,332"
   }
 }

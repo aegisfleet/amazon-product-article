@@ -29,14 +29,18 @@
         "userType": "0歳児の母親",
         "scenario": "別室での寝かしつけ後の家事・自由時間の確保",
         "experience": "以前は音声のみのモニターを使っていましたが、不安で何度も寝室に確認に行っていました。このカメラは400万画素と画質が非常に良く、真っ暗な部屋でも赤ちゃんの表情までくっきり見えます。Sense-Uの体動センサーも持っていたので、一つのアプリで映像と呼吸（体動）の両方を確認できるのが決め手になりました。",
-        "supportingSourceIds": ["src-amazon-listing"],
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "1歳児の父親",
         "scenario": "子供が寝返りやハイハイで活発に動く時期のモニタリング",
         "experience": "子供が活発に動くようになり、すぐにカメラの画角から外れてしまうのが悩みでした。この商品はオートトラッキング機能があるため、子供が寝返りでベッドの端に移動しても自動で追いかけてくれて安心です。ただ、WiFiが2.4GHzのみの対応なので、初期設定時にルーターの設定を確認する手間がありました。",
-        "supportingSourceIds": ["src-amazon-listing"],
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -59,7 +63,9 @@
         "claim": "企業レベルのセキュリティと同じ標準であるAES 128ビット暗号化技術を搭載",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-listing"],
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
         "crossChecked": true,
         "notes": "メーカー公式の仕様として明記されており、見守りカメラにおいて重要なプライバシー保護対策として機能している。"
       },
@@ -67,7 +73,9 @@
         "claim": "Sense-U体動センサと連動し、一つのアプリで映像・体動・温度をモニタリング可能",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-listing"],
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
         "crossChecked": true,
         "notes": "同社独自のエコシステムであり、一般的なスマートカメラにはない強力な差別化要素となっている。"
       }
@@ -188,6 +196,7 @@
       ],
       "color": "ホワイト",
       "warranty": "1年間"
-    }
+    },
+    "investigatedPrice": "￥17,860"
   }
 }

@@ -28,14 +28,18 @@
         "userType": "一人暮らしの社会人",
         "scenario": "帰宅後や休日のちょっとした掃除",
         "experience": "充電スタンドに置いておけるので、気になった時にすぐに手に取れるのが最大の魅力です。以前はキャニスター型を出してくるのが面倒でしたが、これに変えてからはこまめに掃除するようになりました。ハンディへの切り替えも簡単で便利です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ファミリー層のサブ機ユーザー",
         "scenario": "リビングのちょっとしたゴミや髪の毛の掃除",
         "experience": "メインの掃除機は別にあるのですが、手軽に使えるサブ機として購入しました。軽量なので子供が食べこぼした際にもサッと出せて重宝しています。ただ、ゴミ受けが小さいので、こまめなゴミ捨ては必要です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -58,7 +62,9 @@
         "claim": "置くだけで充電スタンド付きで手軽に使える",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "製品仕様としてスタンドが付属し、置く接点で充電できる構造であることを確認"
       }
@@ -161,13 +167,23 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (スタンド付属による収納・充電の利便性)\n[加点: +5] (スティックとハンディの2WAYの使い勝手)\n[減点: -5] (集じん容量の少なさと充電時間の長さ)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "1045mm", "width": "235mm", "depth": "163mm" },
+      "dimensions": {
+        "height": "1045mm",
+        "width": "235mm",
+        "depth": "163mm"
+      },
       "weight": "1700g",
       "capacity": "0.2L",
       "powerSupply": "充電式 (リチウムイオン 1900mAh)",
       "chargingTime": "約4時間",
       "operatingTime": "スティック: 標準約20分/ターボ約10分、ハンディ: 標準約23分/ターボ約12分",
-      "accessories": ["充電アダプター", "充電スタンド", "すき間ノズル", "クリーニングブラシ"]
-    }
+      "accessories": [
+        "充電アダプター",
+        "充電スタンド",
+        "すき間ノズル",
+        "クリーニングブラシ"
+      ]
+    },
+    "investigatedPrice": "￥13,800"
   }
 }

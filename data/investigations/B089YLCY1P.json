@@ -29,7 +29,9 @@
         "userType": "乳幼児の保護者",
         "scenario": "自宅でのトイレトレーニングやおむつ替え",
         "experience": "うんちの拭き取り後にそのままトイレに流せるのが非常に便利です。ゴミ箱のニオイも気にならなくなり、後処理の手間が大きく減りました。大容量でコスパが良いのも助かります。",
-        "supportingSourceIds": ["src-amazon-official"],
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -52,7 +54,9 @@
         "claim": "トイレにそのまま流せる",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-official"],
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
         "crossChecked": true,
         "notes": "製品名および特徴説明に明記"
       },
@@ -60,7 +64,9 @@
         "claim": "成分の99%以上が純水でパラベンフリー",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-official"],
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
         "crossChecked": true,
         "notes": "製品名および成分表示で確認"
       }
@@ -180,6 +186,7 @@
         "無香料",
         "成分の99%以上が純水"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,600"
   }
 }

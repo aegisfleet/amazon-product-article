@@ -44,7 +44,9 @@
         "claim": "Apple Pencil、キャップ、USB-Cアダプタの収納が可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "公式の商品説明に記載あり"
       },
@@ -52,7 +54,9 @@
         "claim": "背面が全面TPU素材で耐衝撃性が高い",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "公式の製品仕様より"
       }
@@ -170,6 +174,7 @@
         "ペン収納部サイズ: 直径約9mm × 長さ183mm (円形なし175mm)",
         "機能: オートスリープ対応、マグネット開閉、スタンド機能"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,999"
   }
 }

@@ -56,7 +56,10 @@
         "claim": "ミルクを入れてもコクが増し、ミルクティーやチャイにぴったりである。",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "商品情報の特徴として明記されている"
       },
@@ -64,7 +67,9 @@
         "claim": "個包装で香りが飛びにくく、オフィスや旅行などへの持ち運びにも便利である。",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "Amazon商品ページの仕様説明に基づく"
       }
@@ -131,7 +136,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (コストパフォーマンス: 100袋入りで日常使いに最適なコスパ)\n[加点: +5] (性能・機能: アルミ個包装により香りが保たれ持ち運びも容易)\n[加点: +3] (品質・デザイン: ミルクティーに特化したしっかりとしたコクとブレンド品質)\n[減点: -3] (品質・デザイン: 100袋の保管スペースが必要であり、単身者には量が多すぎる場合がある)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "63.5mm", "width": "167.6mm", "depth": "149.9mm" },
+      "dimensions": {
+        "height": "63.5mm",
+        "width": "167.6mm",
+        "depth": "149.9mm"
+      },
       "weight": "198.4g",
       "capacity": "100袋",
       "material": "ティーバッグ (アルミ個包装)",
@@ -140,6 +149,7 @@
         "内容量: 346g",
         "メーカー: 富永貿易"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,607"
   }
 }

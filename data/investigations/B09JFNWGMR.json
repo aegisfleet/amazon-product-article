@@ -3,7 +3,14 @@
     "productName": "DAISSHO ニトリル手袋 パウダーフリー ホワイト Lサイズ 100枚入",
     "parentAsin": "B09SWQ5K1P",
     "productDescription": "食品衛生法に適合した、調理・清掃・介護など幅広い用途に使える粉なしタイプのニトリル手袋です。指先のエンボス加工で細かい作業もしやすく、伸縮性に優れています。",
-    "productUsage": ["調理・盛り付け", "掃除", "毛染め", "介護", "園芸", "オイル交換などのメンテナンス"],
+    "productUsage": [
+      "調理・盛り付け",
+      "掃除",
+      "毛染め",
+      "介護",
+      "園芸",
+      "オイル交換などのメンテナンス"
+    ],
     "positivePoints": [
       "食品衛生法適合で食材に直接触れる料理にも安心して使用できる",
       "指先のエンボス加工により、小さなものや滑りやすいものもしっかりと掴める",
@@ -38,7 +45,9 @@
         "claim": "食品衛生法に適合しており、料理用に最適",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式の商品仕様として記載されている。"
       },
@@ -46,7 +55,9 @@
         "claim": "天然ゴム（ラテックス）アレルギーの代替品として使用可能",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "ニトリル素材かつパウダーフリーであるため。"
       }
@@ -166,6 +177,7 @@
         "加工: 指先エンボス加工",
         "規格: 食品衛生法適合"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,536"
   }
 }

@@ -46,7 +46,9 @@
         "claim": "天板はリアルな木目柄のPVC化粧板で汚れをサッと拭き取れる",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-product-page"],
+        "supportingSourceIds": [
+          "src-amazon-product-page"
+        ],
         "crossChecked": false,
         "notes": "商品ページの特徴欄より"
       },
@@ -54,7 +56,9 @@
         "claim": "天板がセンターで2分割されている",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-product-page"],
+        "supportingSourceIds": [
+          "src-amazon-product-page"
+        ],
         "crossChecked": false,
         "notes": "商品ページの特徴欄より。使用感や見た目に影響する重要な仕様"
       }
@@ -175,6 +179,7 @@
         "オープン収納棚付き",
         "高さ調整用アジャスター付き"
       ]
-    }
+    },
+    "investigatedPrice": "￥7,980"
   }
 }

@@ -35,21 +35,27 @@
         "userType": "一般ユーザー",
         "scenario": "シーソー型の壁スイッチに設置",
         "experience": "浴室の換気扇スイッチに設置。正回転0.4秒、逆回転0.3秒と異なる時間設定にすることで、スイッチの押しすぎを防ぎスムーズに操作できた。細かい設定ができる点が便利だった。",
-        "supportingSourceIds": ["src-review-65dbed49"],
+        "supportingSourceIds": [
+          "src-review-65dbed49"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "一般ユーザー",
         "scenario": "隣接する2つのスイッチを同時に操作",
         "experience": "2連のダウンライトスイッチに設置。1つのボットで右回転と左回転を組み合わせて、2つのスイッチを1度に操作できるように設定した。Alexa経由での操作もスムーズで非常に便利になった。",
-        "supportingSourceIds": ["src-review-370d326f"],
+        "supportingSourceIds": [
+          "src-review-370d326f"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "一般ユーザー",
         "scenario": "PCや入力機器の切り替えに利用",
         "experience": "複数台のPCの入力切り替えスイッチや電源ボタンにボットを設置。これまでは手探りでスイッチを押していたが、Alexaの音声操作で一発で切り替えや電源のオンオフができるようになり、非常に快適になった。",
-        "supportingSourceIds": ["src-review-6a9961d8"],
+        "supportingSourceIds": [
+          "src-review-6a9961d8"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -116,7 +122,10 @@
         "claim": "最大10個の台本設定と、1台本あたり最大20個の動作設定が可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon", "src-candyhouse"],
+        "supportingSourceIds": [
+          "src-amazon",
+          "src-candyhouse"
+        ],
         "crossChecked": true,
         "notes": "Amazonと公式サイトの両方で確認"
       },
@@ -124,7 +133,10 @@
         "claim": "0.1秒単位で動作時間を設定可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-candyhouse", "src-review-65dbed49"],
+        "supportingSourceIds": [
+          "src-candyhouse",
+          "src-review-65dbed49"
+        ],
         "crossChecked": true,
         "notes": "公式サイトの記述とユーザーレビューでの実例を確認"
       },
@@ -132,7 +144,9 @@
         "claim": "CR2電池1本で約600日の電池寿命",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-candyhouse"],
+        "supportingSourceIds": [
+          "src-candyhouse"
+        ],
         "crossChecked": false,
         "notes": "公式サイトの仕様表で確認"
       }
@@ -214,7 +228,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (競合と比較して安価でコストパフォーマンスが高い)\n[加点: +5] (独自機能の台本により複雑な動作設定や0.1秒単位の調整が可能で汎用性が高い)\n[加点: +5] (Matter対応ハブとの連携により、高速なレスポンスと高い拡張性を持つ)\n[加点: +5] (CR2電池1本で約600日の長寿命)\n[減点: -5] (遠隔操作や音声操作に別売りハブが必要で、完全なスマート化には追加コストがかかる)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "21mm", "width": "37mm", "depth": "37mm" },
+      "dimensions": {
+        "height": "21mm",
+        "width": "37mm",
+        "depth": "37mm"
+      },
       "weight": "42g",
       "os": "SesameOS 3",
       "batteryLife": "約600日",
@@ -232,6 +250,7 @@
         "Remote・Remote nanoとの連携可能",
         "ボット1/ボット2両対応のアームセット（別売）取り付け可能"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,480"
   }
 }

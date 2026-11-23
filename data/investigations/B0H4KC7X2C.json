@@ -28,14 +28,18 @@
         "userType": "乾燥・パサつきに悩む20代女性",
         "scenario": "毎日のヘアセット時に髪がパサついてまとまらない状況",
         "experience": "オルビスの大人気ヘアミルクのシリーズからオイルが出たということで購入しました。無香料なのでお気に入りの香水やボディクリームの香りを邪魔しないのがとても嬉しいです。毛先に馴染ませるとツヤがしっかり出て、夕方になってもパサパサ感が抑えられていました。",
-        "supportingSourceIds": ["src-amazon-page"],
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "強い香りが苦手な30代主婦",
         "scenario": "香料の強いヘアケア製品で頭痛がしてしまうため無香料のものを探している状況",
         "experience": "本当に無香料で匂いが気になりません。オイルですがベタベタしすぎず、髪の内部までしっかり保湿されている感覚があります。ただ、容量が70mlと少し少なめなので、髪が長いとすぐになくなってしまうのが難点です。",
-        "supportingSourceIds": ["src-amazon-page"],
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -58,7 +62,9 @@
         "claim": "ナノサイズの美容成分で髪の隙間を満たしてリッチなツヤ髪を維持する“超音波トリートメント”発想",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-page"],
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
         "crossChecked": false,
         "notes": "メーカーのコンセプト・処方設計としての主張であり、独自の技術によるツヤ感の向上を訴求している。"
       },
@@ -66,7 +72,9 @@
         "claim": "毎朝手ぐしでツヤが整うほどの美しい素髪へ導く",
         "category": "comparativeAdvantage",
         "confidence": "medium",
-        "supportingSourceIds": ["src-amazon-page"],
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
         "crossChecked": false,
         "notes": "キューティクルリペア成分による効果だが、実際のまとまりやすさは個人の髪質やダメージ具合により変動する可能性がある。"
       }
@@ -173,13 +181,28 @@
     "technicalSpecs": {
       "capacity": "70mL",
       "color": "クリア",
-      "ingredients": ["Wビタミン", "11種のアミノ酸", "タンパク質補給成分", "コレステロール", "ツヤ記憶マグネット成分", "キューティクルリペア成分"],
+      "ingredients": [
+        "Wビタミン",
+        "11種のアミノ酸",
+        "タンパク質補給成分",
+        "コレステロール",
+        "ツヤ記憶マグネット成分",
+        "キューティクルリペア成分"
+      ],
       "fragrance": "無香料",
-      "targetAge": ["10代", "20代", "30代", "40代", "50代", "60代"],
+      "targetAge": [
+        "10代",
+        "20代",
+        "30代",
+        "40代",
+        "50代",
+        "60代"
+      ],
       "other": [
         "洗い流さないトリートメント",
         "超音波トリートメント発想"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,430"
   }
 }

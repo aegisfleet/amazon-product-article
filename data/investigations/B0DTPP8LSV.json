@@ -3,10 +3,27 @@
     "productName": "富士通 LIFEBOOK MU937 Celeron 8GB 256GB",
     "parentAsin": "B0DTPP8LSV",
     "productDescription": "13.3インチの軽量薄型ボディに第7世代Celeron、8GBメモリ、256GB SSDを搭載した整備済みの富士通製ノートパソコンです。Windows 11 ProとMicrosoft Office H&B 2019がインストールされています。",
-    "productUsage": ["一般的な事務作業", "Webブラウジング", "メールの送受信", "Office文書の作成・編集"],
-    "positivePoints": ["約0.8kg（1.76ポンド）という軽量設計で持ち運びに便利", "Microsoft Office Home & Business 2019が付属しており初期コストを抑えられる", "フルHD（1920x1080）解像度で画面が広く使える"],
-    "negativePoints": ["CPUがCeleron 3865Uと非力で、重い処理には向かない", "本体カラーが赤と黒のランダム発送で選べない", "中古・整備済み品のためバッテリーの劣化が懸念される（公称目安でYouTube再生約1.5時間）"],
-    "useCases": ["外出先での資料作成", "自宅でのオンライン学習", "サブPCとしての利用"],
+    "productUsage": [
+      "一般的な事務作業",
+      "Webブラウジング",
+      "メールの送受信",
+      "Office文書の作成・編集"
+    ],
+    "positivePoints": [
+      "約0.8kg（1.76ポンド）という軽量設計で持ち運びに便利",
+      "Microsoft Office Home & Business 2019が付属しており初期コストを抑えられる",
+      "フルHD（1920x1080）解像度で画面が広く使える"
+    ],
+    "negativePoints": [
+      "CPUがCeleron 3865Uと非力で、重い処理には向かない",
+      "本体カラーが赤と黒のランダム発送で選べない",
+      "中古・整備済み品のためバッテリーの劣化が懸念される（公称目安でYouTube再生約1.5時間）"
+    ],
+    "useCases": [
+      "外出先での資料作成",
+      "自宅でのオンライン学習",
+      "サブPCとしての利用"
+    ],
     "userStories": [],
     "userImpression": "価格が安くOfficeも付いているためコスパが良い反面、CPU性能が低いためWeb閲覧や軽いOffice作業など用途を限定して使うサブPCとして評価されています。",
     "sources": [
@@ -27,7 +44,9 @@
         "claim": "Microsoft Office Home & Business 2019がインストールされている",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品詳細ページに記載あり"
       },
@@ -35,7 +54,9 @@
         "claim": "重量が1.76ポンド（約0.8kg）",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品詳細ページに記載あり"
       }
@@ -122,9 +143,18 @@
       }
     ],
     "recommendation": {
-      "targetUsers": ["サブPCを探している人", "できるだけ安くOffice搭載の軽量PCが欲しい人"],
-      "pros": ["軽量で持ち運びに便利", "Office付きで低価格"],
-      "cons": ["CPU性能が低く重い処理には不向き", "色が選べない"],
+      "targetUsers": [
+        "サブPCを探している人",
+        "できるだけ安くOffice搭載の軽量PCが欲しい人"
+      ],
+      "pros": [
+        "軽量で持ち運びに便利",
+        "Office付きで低価格"
+      ],
+      "cons": [
+        "CPU性能が低く重い処理には不向き",
+        "色が選べない"
+      ],
       "score": 75,
       "scoreRationale": "[基本点: 70]\n[加点: +5] (重量約0.8kgと軽量で取り回しが良い)\n[加点: +5] (1万円台でOffice 2019が付属しておりコスパが良い)\n[減点: -5] (Celeron 3865U搭載で基本性能が低い)\n[合計: 75]"
     },
@@ -141,7 +171,14 @@
       "storage": "256GB SSD",
       "os": "Windows 11 Pro",
       "software": "Microsoft Office Home & Business 2019",
-      "other": ["Webカメラ", "無線LAN", "HDMI", "USB-C", "USB-A 3.0"]
-    }
+      "other": [
+        "Webカメラ",
+        "無線LAN",
+        "HDMI",
+        "USB-C",
+        "USB-A 3.0"
+      ]
+    },
+    "investigatedPrice": "￥19,800"
   }
 }

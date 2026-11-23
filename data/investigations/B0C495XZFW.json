@@ -29,14 +29,20 @@
         "userType": "ショートヘアの男性",
         "scenario": "毎朝のヘアセット",
         "experience": "幅15mmのスリムプレートとスリムヘッドのおかげで、短い髪や根元の立ち上げも簡単にセットできます。両面フロートプレートで少ない毛束もしっかり掴めるため、細かい束感を作るのに最適です。",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "美容師・スタイリスト",
         "scenario": "サロンワークでの使用",
         "experience": "施術中の温度低下を防ぐPOWERモードや、ラク抜きプラグ、3mのロングコードなど、プロ目線の機能が使いやすいです。また、細かな温度調整ができるのでお客様の髪質に合わせやすいです。",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -70,7 +76,10 @@
         "claim": "15mmのスリムプレートとスリムヘッドにより、短い髪や根元でも施術しやすい",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "公式サイトの製品特長およびAmazon商品ページの特徴説明で確認。"
       },
@@ -78,7 +87,10 @@
         "claim": "60～200℃まで5℃刻みで温度調整が可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "公式サイトの仕様表にて確認。"
       }
@@ -176,6 +188,7 @@
         "温度表示：LCD表示",
         "付属品：クイックコードバンド"
       ]
-    }
+    },
+    "investigatedPrice": "￥7,207"
   }
 }

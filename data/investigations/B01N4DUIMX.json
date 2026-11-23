@@ -29,7 +29,9 @@
         "userType": "健康志向の女性",
         "scenario": "毎日の水分補給として、安全で美味しいノンカフェインのお茶を探していた",
         "experience": "オーガニックで生分解性フィルターを使用している点に惹かれて購入。エクストラファインというだけあって、ルイボス特有のクセや雑味が全くなく、非常にスッキリしていて飲みやすいです。1包でたっぷり作れるのも嬉しいですが、味が薄めなので濃いルイボスティーが好きな人には物足りないかもしれません。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -52,7 +54,9 @@
         "claim": "廉価品のルイボスと比べて2ランク上となるエクストラファイン等級",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "メーカーが品質の指標として明記。これにより雑味が少なく上品な香りが実現されているとしている。"
       },
@@ -60,7 +64,9 @@
         "claim": "マイクロプラスチック問題にも配慮した環境循環型フィルター（生分解性バイオマス素材 ソイロン）を使用",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "熱湯抽出時の有害物質排出リスクがなく、環境・健康配慮のアピールポイントとなっている。"
       }
@@ -176,6 +182,7 @@
         "有機JAS認定",
         "ノンカフェイン"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,399"
   }
 }

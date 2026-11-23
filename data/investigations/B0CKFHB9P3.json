@@ -3,7 +3,11 @@
     "productName": "ソニー ゲーミングイヤホン INZONE Buds",
     "parentAsin": "B0CKFHB9P3",
     "productDescription": "Fnatic監修の完全ワイヤレスゲーミングイヤホン。低遅延の2.4GHz接続とアクティブノイズキャンセリング、長時間のバッテリーを備える。",
-    "productUsage": ["PCゲーム", "PS5ゲーム", "モバイルゲーム"],
+    "productUsage": [
+      "PCゲーム",
+      "PS5ゲーム",
+      "モバイルゲーム"
+    ],
     "positivePoints": [
       "2.4GHzワイヤレス接続とLC3による低遅延",
       "アクティブノイズキャンセリング(ANC)搭載",
@@ -15,20 +19,28 @@
       "LE Audio非対応のスマートフォンやタブレットとは直接Bluetooth接続不可",
       "一部環境でPC起動時にレシーバーの挿し直しが必要になる不具合報告あり"
     ],
-    "useCases": ["FPSなどの競技ゲーム", "長時間のゲーム配信・プレイ", "周囲の雑音が気になる環境でのゲームプレイ"],
+    "useCases": [
+      "FPSなどの競技ゲーム",
+      "長時間のゲーム配信・プレイ",
+      "周囲の雑音が気になる環境でのゲームプレイ"
+    ],
     "userStories": [
       {
         "userType": "PCゲーマー",
         "scenario": "Dolby Atmosを利用しようとした",
         "experience": "プレイしているゲームの都合で、立体音響をDolby Atmos for Headphonesで利用したいと考えていました。しかし、この製品で専用アプリ(INZONE Hub)を入れるとDolby Atmosが選択できず、アプリをアンインストールする必要がありました。アプリなしだとマイクの音量調整などができず、非常に不便に感じました。",
-        "supportingSourceIds": ["kakaku-bbs-1"],
+        "supportingSourceIds": [
+          "kakaku-bbs-1"
+        ],
         "sentiment": "mixed"
       },
       {
         "userType": "PCゲーマー",
         "scenario": "PC起動時の利用",
         "experience": "Windows 11のPCに付属のレシーバーを使って接続しています。しかし、PC起動後に毎回レシーバーを挿し直さないとINZONE Hubでイヤホンが認識されず、音が出ない現象が発生しました。初期化やリセットを試しても改善せず、非常に困っています。",
-        "supportingSourceIds": ["kakaku-bbs-1"],
+        "supportingSourceIds": [
+          "kakaku-bbs-1"
+        ],
         "sentiment": "negative"
       }
     ],
@@ -51,7 +63,9 @@
         "claim": "通常のBluetooth（SBC、AACなど）では接続できず、LE Audio対応機器またはUSBレシーバーが必要",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["kakaku-bbs-1"],
+        "supportingSourceIds": [
+          "kakaku-bbs-1"
+        ],
         "crossChecked": false,
         "notes": "Amazonの商品説明にも明記されている"
       }
@@ -160,6 +174,7 @@
         "ノイズキャンセリング: アクティブノイズキャンセリング搭載",
         "対応コーデック: LC3 (SBC、AAC、aptX、LDACには非対応)"
       ]
-    }
+    },
+    "investigatedPrice": "￥26,000"
   }
 }

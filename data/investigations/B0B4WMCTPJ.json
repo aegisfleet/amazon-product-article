@@ -29,7 +29,9 @@
         "userType": "毎日の通勤で車を使用するドライバー",
         "scenario": "夏場のダッシュボードに設置してナビとして使用",
         "experience": "以前使っていた吸盤式のホルダーは夏場の熱でゲルが溶けて脱落してしまったため、耐熱性を重視してこの製品を選びました。-40℃から101℃まで対応するという吸盤は本当に強力で、真夏の炎天下に駐車していても全く外れる気配がありません。エアコン吹き出し口用のクリップも付属しているので、冬場は暖房の風を避けるためにダッシュボードに、夏場はスマホを冷やすために吹き出し口にと、季節によって使い分けられるのが最大のメリットです。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -52,7 +54,9 @@
         "claim": "耐荷重25KG、-40℃〜101℃の高温・低温に耐える超強真空ゲル吸盤",
         "category": "durability",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーの仕様説明に基づく。実際の耐荷重25kgは車のダッシュボードの材質にも依存するため参考値。"
       },
@@ -60,7 +64,9 @@
         "claim": "ワンタッチでわずか0.1秒でサイドアームが開く片手操作",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "リリースボタンの機械的構造によるもので、一般的なワンタッチホルダーと同等のレスポンス。"
       }
@@ -181,6 +187,7 @@
         "吸着力: 耐荷重25kg",
         "角度調整: 360度回転ボールジョイント搭載"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,796"
   }
 }

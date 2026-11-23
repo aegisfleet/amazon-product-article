@@ -58,7 +58,10 @@
         "claim": "112言語に対応した高精度な文字起こしと話者ラベル機能",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "メーカー公式の仕様として記載。2系統の一次ソース（Amazonと公式サイト）で一致を確認。"
       }
@@ -163,7 +166,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (4種類のアクセサリーによる画期的なウェアラブル設計)\n[加点: +5] (重量23gの超軽量ボディ)\n[加点: +8] (最先端AIモデルによる精度の高い文字起こし・要約機能)\n[加点: +5] (Web会議から対面商談まで幅広い利用シーンに対応する利便性)\n[減点: -5] (長時間の利用において無料枠（月300分）の制限がネックになる可能性)\n[合計: 88]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "51mm", "width": "21mm", "depth": "11mm" },
+      "dimensions": {
+        "height": "51mm",
+        "width": "21mm",
+        "depth": "11mm"
+      },
       "weight": "23g",
       "capacity": "64GB",
       "material": "アルミニウム合金（一部樹脂）",
@@ -176,6 +183,7 @@
         "マルチモーダル入力対応",
         "マルチAIモデル対応（GPT-5.5、Claude Sonnet 4.6、Gemini 3.1 Pro等）"
       ]
-    }
+    },
+    "investigatedPrice": "￥28,600"
   }
 }

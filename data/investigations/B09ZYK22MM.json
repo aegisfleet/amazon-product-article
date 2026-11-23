@@ -3,7 +3,11 @@
     "productName": "富士通 LIFEBOOK U937 13.3型 整備済み品",
     "parentAsin": "B09ZYK22MM",
     "productDescription": "厚さ約15.5mm、質量約799gの超薄型軽量筐体に第7世代Core i5プロセッサを搭載した13.3型モバイルノートパソコンの整備済み品。",
-    "productUsage": ["外出先での業務", "リモートワーク", "学習やレポート作成"],
+    "productUsage": [
+      "外出先での業務",
+      "リモートワーク",
+      "学習やレポート作成"
+    ],
     "positivePoints": [
       "約799g（標準バッテリー時）と非常に軽量で持ち運びに便利",
       "MS Office H&B 2019搭載でビジネスや学習に即戦力",
@@ -41,7 +45,9 @@
         "claim": "標準バッテリー搭載時の質量は約799g",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品仕様欄に記載"
       }
@@ -131,11 +137,18 @@
       "cpu": "Intel Core i5-7300U 2.6GHz",
       "memory": "8GB",
       "os": "Windows 11 Pro 64bit",
-      "interfaces": ["USB3.0", "HDMI", "無線LAN", "Bluetooth", "Webカメラ"],
+      "interfaces": [
+        "USB3.0",
+        "HDMI",
+        "無線LAN",
+        "Bluetooth",
+        "Webカメラ"
+      ],
       "other": [
         "Kingsoft Internet Security無期限版付属",
         "MS Office H&B 2019付属"
       ]
-    }
+    },
+    "investigatedPrice": "￥39,800"
   }
 }

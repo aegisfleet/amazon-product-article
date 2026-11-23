@@ -33,14 +33,18 @@
         "userType": "古い車の所有者",
         "scenario": "純正のナビが古く、エンターテインメント機能がない車をアップデートしたい",
         "experience": "11インチ（約28cm）の大画面は非常に見やすく、CarPlayとAndroid Autoのワイヤレス接続がスムーズ。AndroidとApple両方のユーザーがいる家族にとって非常に便利。バックカメラ機能も追加できて満足している。",
-        "supportingSourceIds": ["src-amazon-review-1"],
+        "supportingSourceIds": [
+          "src-amazon-review-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "動画視聴を重視するユーザー",
         "scenario": "助手席の同乗者のためにYouTubeやNetflixを見たい",
         "experience": "ナビとしてだけでなく、動画視聴用としても活躍。画面も大きく画質も良いため、同乗者が退屈しない。ただ、本体のボリュームが少し小さく感じることがあった。",
-        "supportingSourceIds": ["src-amazon-review-2"],
+        "supportingSourceIds": [
+          "src-amazon-review-2"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -74,7 +78,9 @@
         "claim": "8コアCPU+4GB RAMの高性能セットにより、マルチタスク運用や高清動画再生もカクツキなく流暢",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-review-1"],
+        "supportingSourceIds": [
+          "src-amazon-review-1"
+        ],
         "crossChecked": true,
         "notes": "レビューでもレスポンスが良く動作がスムーズであると評価されている"
       }
@@ -160,6 +166,7 @@
         "対応電圧: 12V～24V",
         "認証: 日本技術基準認証（技適マーク）取得済み"
       ]
-    }
+    },
+    "investigatedPrice": "￥19,998"
   }
 }

@@ -28,7 +28,9 @@
         "userType": "ジム通いの会社員",
         "scenario": "仕事終わりにジムでプロテインを飲む際",
         "experience": "通常のシェイカーは大きくてカバンの中でかさばっていましたが、この300mlサイズはコンパクトで持ち運びに便利です。口が広いので職場の給湯室でも粉をこぼさずに入れやすく、一部が平面になっているおかげでしっかり握って振ることができます。食洗機対応なので帰宅後の洗い物の手間が省けたのが最大の決め手でした。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -51,7 +53,9 @@
         "claim": "独自の形（一部平面）で持ちやすさを追求",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品仕様として明記されており、円筒形よりもグリップ力が高まることは物理的に妥当"
       },
@@ -59,7 +63,9 @@
         "claim": "ストレートな形で洗いやすさを追求",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "底の角に粉が溜まりにくい構造であることが確認できる"
       }
@@ -174,6 +180,7 @@
       "temperatureResistance": "耐熱温度90度、耐冷温度0度",
       "color": "ホワイト",
       "careInstructions": "食洗機対応"
-    }
+    },
+    "investigatedPrice": "￥498"
   }
 }

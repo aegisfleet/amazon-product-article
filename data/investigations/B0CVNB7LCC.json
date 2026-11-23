@@ -27,14 +27,18 @@
         "userType": "デスクワーカー",
         "scenario": "職場のデスクでの日常的な充電",
         "experience": "スタンド式なので、充電中も画面が見やすく、Face IDのロック解除や通知の確認がスムーズに行えます。横置きにも対応しているため、休憩中の動画視聴にも便利です。手頃な価格でありながら、質感も悪くなく、デスクに馴染むデザインも気に入っています。",
-        "supportingSourceIds": ["src-b0cvnb7lcc"],
+        "supportingSourceIds": [
+          "src-b0cvnb7lcc"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "一般ユーザー",
         "scenario": "就寝時のベッドサイドでの利用",
         "experience": "充電完了後にLEDライトの色が変わる仕様ですが、輝度が抑えられているため、夜間でも眩しさを感じずに使用できました。充電中に熱くなることもなく、安心してスマートフォンを一晩置いたまま充電できるので、ベッドサイド用の充電器として重宝しています。",
-        "supportingSourceIds": ["src-b0cvnb7lcc"],
+        "supportingSourceIds": [
+          "src-b0cvnb7lcc"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -57,7 +61,9 @@
         "claim": "最大15Wの急速充電に対応",
         "category": "comparativeAdvantage",
         "confidence": "medium",
-        "supportingSourceIds": ["src-b0cvnb7lcc"],
+        "supportingSourceIds": [
+          "src-b0cvnb7lcc"
+        ],
         "crossChecked": false,
         "notes": "公式情報に基づく主張。QC2.0/3.0アダプタ使用時にGalaxy等の対応機種で実現可能。"
       },
@@ -65,7 +71,9 @@
         "claim": "就寝時も気にならないLEDライト",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-b0cvnb7lcc"],
+        "supportingSourceIds": [
+          "src-b0cvnb7lcc"
+        ],
         "crossChecked": false,
         "notes": "公式情報に基づく主張。睡眠に影響しない輝度に調整されていると明記。"
       }
@@ -186,6 +194,7 @@
         "インテリジェントLEDライト搭載",
         "18ヶ月保証付き"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,899"
   }
 }

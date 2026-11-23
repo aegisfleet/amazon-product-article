@@ -29,7 +29,9 @@
         "userType": "共働き世帯",
         "scenario": "忙しい平日の夕食",
         "experience": "帰宅が遅くなり夕食を作る時間がない時に、電子レンジで温めるだけですぐに本格的な牛丼ができるため非常に助かっています。味も美味しく、家族にも好評です。ただ、30食まとめ買いなので冷凍庫を事前に空けておく必要があります。",
-        "supportingSourceIds": ["src-amazon-listing"],
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -52,7 +54,9 @@
         "claim": "甘味料・保存料未使用の特製プレミアムタレを使用している。",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-listing"],
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
         "crossChecked": true,
         "notes": "公式の商品特徴に明記されている。"
       },
@@ -60,7 +64,9 @@
         "claim": "うまみアミノ酸の含有量が多いとされるアメリカ産牛肉を5割以上使用している。",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-listing"],
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
         "crossChecked": true,
         "notes": "公式の商品特徴に明記されている。"
       }
@@ -146,6 +152,7 @@
       "beefOrigin": "アメリカ産牛肉5割以上使用",
       "additives": "甘味料・保存料未使用",
       "weight": "約4.2kg"
-    }
+    },
+    "investigatedPrice": "￥8,980"
   }
 }

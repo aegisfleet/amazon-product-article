@@ -27,7 +27,11 @@
         "userType": "SNSユーザー",
         "scenario": "香りを重視した毎日の洗濯",
         "experience": "SNSで話題になっていた組み合わせを試したところ、上品なフローラルと爽やかなホワイトティーの香りが絶妙にマッチし、香水いらずで清潔感のある香りが長続きしました。ただ、セット価格が割高なので、次回はそれぞれ単品で購入しようと思います。",
-        "supportingSourceIds": ["src-1", "src-2", "src-3"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2",
+          "src-3"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -72,7 +76,11 @@
         "claim": "セット価格が個別に購入するよりも割高である",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2", "src-3"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2",
+          "src-3"
+        ],
         "crossChecked": true,
         "notes": "Calculated based on current Amazon pricing for B0DMPB4BGK vs B00CJRFFH0 + B0DTH9HG7B"
       }
@@ -187,6 +195,7 @@
         "柔軟剤は赤ちゃん用衣類にも使用可能",
         "ビーズは柔軟剤と併用して使用"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,690"
   }
 }

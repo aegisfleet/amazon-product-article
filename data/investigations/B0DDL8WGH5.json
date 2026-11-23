@@ -30,7 +30,9 @@
         "userType": "iPhoneでの動画撮影ユーザー",
         "scenario": "iPhoneにレシーバーを装着しての動画撮影",
         "experience": "マイク（トランスミッター）の音質は非常に良く、小さくてシンプルなので使いやすいです。ウィンドジャマーもワンタッチで付けられて便利ですが、紛失には注意が必要です。iPhoneにレシーバーを直接装着して動きの多い撮影をすると、少し重みで脱落しそうになるので、接続方法には工夫が必要かもしれません。",
-        "supportingSourceIds": ["src-kakaku-review-1"],
+        "supportingSourceIds": [
+          "src-kakaku-review-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -64,7 +66,9 @@
         "claim": "トランスミッターの重さはわずか10gと超軽量である",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-official"],
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
         "crossChecked": false,
         "notes": "公式ページの仕様として明記"
       },
@@ -72,7 +76,9 @@
         "claim": "最大伝送距離は400mに達する",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-official"],
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
         "crossChecked": false,
         "notes": "公式の性能仕様"
       },
@@ -80,7 +86,9 @@
         "claim": "充電ケース併用で最大48時間のバッテリー駆動を実現",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-official"],
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
         "crossChecked": false,
         "notes": "公式の性能仕様"
       }
@@ -200,6 +208,7 @@
         "ノイズキャンセリング: 2段階（ベーシックレベル、強レベル）",
         "自動音量制限機能搭載"
       ]
-    }
+    },
+    "investigatedPrice": "￥14,520"
   }
 }

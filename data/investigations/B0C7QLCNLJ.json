@@ -43,7 +43,9 @@
         "claim": "1食でたんぱく質と食物繊維を豊富に摂取可能（たんぱく質17.4g～19.0g、食物繊維9.6g～15.0g）",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "Amazon商品ページの栄養成分表示に基づく"
       },
@@ -51,7 +53,9 @@
         "claim": "黄えんどう豆100%使用でグルテンフリー",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "Amazon商品ページの商品説明に基づく"
       }
@@ -119,6 +123,7 @@
       "shelfLife": "16ヵ月",
       "weight": "663g",
       "origin": "日本"
-    }
+    },
+    "investigatedPrice": "￥3,180"
   }
 }

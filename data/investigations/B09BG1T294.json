@@ -3,7 +3,11 @@
     "productName": "ALIOBC 伸縮自在 ブックエンド",
     "parentAsin": "B09BG1T294",
     "productDescription": "金属製で倒れにくく、収納量に合わせて幅を最大48cmまで伸縮できる多機能ブックエンドです。",
-    "productUsage": ["本・雑誌・新聞・CDなどの整理", "デスク周りの省スペース化", "ファイルや書類の分類収納"],
+    "productUsage": [
+      "本・雑誌・新聞・CDなどの整理",
+      "デスク周りの省スペース化",
+      "ファイルや書類の分類収納"
+    ],
     "positivePoints": [
       "最大48cmまで幅を調整できる伸縮機能を備えている",
       "厚さ1cmの本なら約47冊収納可能な容量がある",
@@ -15,20 +19,28 @@
       "金属製であるため、本を勢いよく出し入れすると音が鳴る可能性がある",
       "デザインがシンプルであり、装飾性を求める用途には向かない場合がある"
     ],
-    "useCases": ["オフィスでの書類整理", "子供部屋での教科書や辞書の収納", "リビングでの雑誌やCDの保管"],
+    "useCases": [
+      "オフィスでの書類整理",
+      "子供部屋での教科書や辞書の収納",
+      "リビングでの雑誌やCDの保管"
+    ],
     "userStories": [
       {
         "userType": "デスクワーカー",
         "scenario": "オフィスで増え続ける書類や参考書を整理したい",
         "experience": "本の量に合わせて幅を調整できるため、デスクの限られたスペースを有効活用できました。金属製で頑丈な上、底面のシリコンパッドのおかげで、重い参考書を立てかけても倒れたり滑ったりせず、安定感があります。",
-        "supportingSourceIds": ["amazon-product-page"],
+        "supportingSourceIds": [
+          "amazon-product-page"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "学生の親",
         "scenario": "子供部屋の机の上を整理整頓させたい",
         "experience": "教科書から辞書まで様々なサイズの本がありますが、仕切りがあるおかげで倒れることなくスッキリと収納できました。角が丸く加工されているので、子供が手を怪我する心配も少なく安心です。",
-        "supportingSourceIds": ["amazon-product-page"],
+        "supportingSourceIds": [
+          "amazon-product-page"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -51,7 +63,9 @@
         "claim": "厚さが1cmの本なら約47冊ほど収納できる計算です",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-product-page"],
+        "supportingSourceIds": [
+          "amazon-product-page"
+        ],
         "crossChecked": true,
         "notes": "最大幅48cmであることから、物理的に妥当な主張である。"
       }
@@ -122,7 +136,11 @@
       "weight": "770g",
       "material": "金属",
       "color": "ブラック",
-      "other": ["最大伸長幅: 480mm", "滑り止めシリコン足付き"]
-    }
+      "other": [
+        "最大伸長幅: 480mm",
+        "滑り止めシリコン足付き"
+      ]
+    },
+    "investigatedPrice": "￥1,599"
   }
 }

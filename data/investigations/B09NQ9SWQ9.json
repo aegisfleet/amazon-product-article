@@ -26,14 +26,18 @@
         "userType": "保護者",
         "scenario": "子供へのプレゼントとして購入",
         "experience": "子供がRobloxにハマっており、クレジットカードを直接登録するのは不安だったため、ギフトカードを購入しました。購入後すぐにコードが発行され、簡単にアカウントにチャージできたので安心です。子供も限定アイテムをもらえて喜んでいました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ゲーマー",
         "scenario": "自分用の課金として利用",
         "experience": "ゲーム内の特定のアバターアイテムがどうしても欲しくて、2,000Robuxを購入しました。オンラインコード版なので、コンビニ等へ買いに行く手間がなく、すぐにチャージしてアイテムを購入できたので便利でした。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -56,7 +60,9 @@
         "claim": "Robloxカタログのアイテムや追加コンテンツのアンロックに利用可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "公式サイトにて機能として記載されていることを確認。"
       },
@@ -64,7 +70,9 @@
         "claim": "限定バーチャルアイテムを引き換えることができる",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "公式サイトおよび商品ページの特徴に記載されていることを確認。"
       }
@@ -169,12 +177,21 @@
     },
     "technicalSpecs": {
       "format": "オンラインゲームコード（デジタルダウンロード）",
-      "platform": ["Windows", "Mac", "iOS", "Android", "Xbox One", "Oculus Rift", "HTC Vive"],
+      "platform": [
+        "Windows",
+        "Mac",
+        "iOS",
+        "Android",
+        "Xbox One",
+        "Oculus Rift",
+        "HTC Vive"
+      ],
       "region": "日本国内のアカウント向け",
       "other": [
         "Robuxの補充専用であり、Roblox Premiumの購入には使用不可",
         "購入後、Amazonの「ゲーム&PCソフトダウンロードライブラリ」からコードを確認可能"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,200"
   }
 }

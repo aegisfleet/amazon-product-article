@@ -26,7 +26,9 @@
         "userType": "DIYでタイヤ交換を行う一般ライダー",
         "scenario": "ツーリング先でのパンクに備え、車載工具と一緒に持ち運ぶ",
         "experience": "大容量のビードクリームは持ち運びができず、また何年も使い切れずに劣化させてしまっていましたが、この40gサイズは車載工具用ポーチにも収まるため、林道でのトラブル用として非常に重宝しています。スポンジ付きなのも出先で助かりました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -49,7 +51,9 @@
         "claim": "ビードに塗布することでタイヤの組付け作業がスムーズになる",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "ビードクリームとしての基本性能に関する主張"
       },
@@ -57,7 +61,9 @@
         "claim": "伸びが良く、程よい乾き加減のクリームはビードを傷めない",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "製品特性についてのメーカー説明"
       }
@@ -172,6 +178,7 @@
         "ブランド: ディーアールシー(DRC)",
         "用途: タイヤ交換用潤滑剤"
       ]
-    }
+    },
+    "investigatedPrice": "￥467"
   }
 }

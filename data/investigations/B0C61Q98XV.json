@@ -3,7 +3,11 @@
     "productName": "富士の源水 非加熱製法 富士山天然水 500ml 48本",
     "parentAsin": "B0C61Q98XV",
     "productDescription": "非加熱無菌充填により天然の溶存酸素やミネラルを保った富士山の伏流水。シリカや炭酸水素イオンを含み、日常の水分補給から備蓄まで幅広く活用できる。",
-    "productUsage": ["日常の水分補給", "美容習慣としてのシリカ水摂取", "防災用備蓄水"],
+    "productUsage": [
+      "日常の水分補給",
+      "美容習慣としてのシリカ水摂取",
+      "防災用備蓄水"
+    ],
     "positivePoints": [
       "非加熱無菌充填で天然のミネラル成分（シリカ17mg/Lなど）をそのまま摂取できる",
       "PFAS不検出・ISO22000認証取得により安全性が高い",
@@ -37,7 +41,9 @@
         "claim": "非加熱無菌充填により、天然の溶存酸素・炭酸ガス・ミネラルがそのまま残る製法を採用している。",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーの商品説明より確認。"
       },
@@ -45,7 +51,9 @@
         "claim": "PFOS・PFOAいずれも0.5ng/L未満で不検出であり、ISO22000:2018認証を取得している。",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "品質管理基準について商品説明にて確認。"
       }
@@ -159,8 +167,12 @@
       "waterHardness": "38.8mg/L（軟水）",
       "silicaContent": "17mg/L",
       "manufacturingMethod": "非加熱無菌充填",
-      "certifications": ["ISO22000:2018認証取得", "PFAS（PFOS・PFOA）不検出（0.5ng/L未満）"],
+      "certifications": [
+        "ISO22000:2018認証取得",
+        "PFAS（PFOS・PFOA）不検出（0.5ng/L未満）"
+      ],
       "awards": "ジャパンフードセレクション 第96回 食品・飲料部門グランプリ受賞"
-    }
+    },
+    "investigatedPrice": "￥3,090"
   }
 }

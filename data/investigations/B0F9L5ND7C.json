@@ -31,14 +31,18 @@
         "userType": "一人暮らしの社会人",
         "scenario": "休日のリラックスタイム",
         "experience": "スタンドが一体型になっており、角度調整だけで簡単に天井投影ができるのが便利です。自動台形補正もあるため、面倒な設定なしにベッドで寝転びながら動画を楽しめました。Android TV内蔵なのでスマホを接続する必要がないのも嬉しいポイントです。",
-        "supportingSourceIds": ["src-amazon-listing"],
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "映画好きの家族",
         "scenario": "リビングでの映画鑑賞",
         "experience": "価格の割に映像が鮮明で、27000ルーメンの明るさのおかげで少し照明を落とすだけで十分楽しめました。ただ、内蔵スピーカーの音量は出ますが、映画館のような臨場感を求めるならBluetoothスピーカーを繋いだ方が良いと感じました。",
-        "supportingSourceIds": ["src-amazon-listing"],
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -61,7 +65,9 @@
         "claim": "Android TV 13を搭載し、単体でYouTubeやNetflixなどの視聴が可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-listing"],
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
         "crossChecked": false,
         "notes": "商品仕様欄にて確認（他ソース未確認のためcrossCheckedはfalse）"
       },
@@ -69,7 +75,9 @@
         "claim": "一体型270°回転スタンドを備え、天井投影に対応",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-listing"],
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
         "crossChecked": false,
         "notes": "商品画像および説明にて確認"
       },
@@ -77,7 +85,9 @@
         "claim": "27000ルーメンの高輝度と15000:1の高コントラスト比を実現",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-amazon-listing"],
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
         "crossChecked": false,
         "notes": "メーカー公称値に基づく"
       }
@@ -185,7 +195,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (1万円以下の価格帯による高いコストパフォーマンス)\n[加点: +5] (Android TV内蔵による単体での動画視聴の利便性)\n[加点: +5] (天井投影可能な270°回転スタンドの搭載)\n[加点: +3] (Wi-Fi 6対応による安定した通信機能)\n[加点: +2] (自動台形補正による設置のしやすさ)\n[減点: -2] (カタログスペックの輝度表記がANSI基準ではない点)\n[減点: -3] (オートフォーカスが非搭載である点)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "不明", "width": "不明", "depth": "不明" },
+      "dimensions": {
+        "height": "不明",
+        "width": "不明",
+        "depth": "不明"
+      },
       "weight": "不明",
       "resolution": "ネイティブ1080P（1920x1080）、4K対応",
       "brightness": "27000LM",
@@ -199,6 +213,7 @@
       "features": "270°回転スタンド, 自動台形補正, ズーム機能, HDR対応",
       "color": "ホワイト",
       "size": "PJ400"
-    }
+    },
+    "investigatedPrice": "￥11,909"
   }
 }

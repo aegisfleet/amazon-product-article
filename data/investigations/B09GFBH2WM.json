@@ -3,7 +3,13 @@
     "productName": "YOPIN 吸音材 30×30×5cm 極厚",
     "parentAsin": "B09GFBH2WM",
     "productDescription": "厚さ5cm、密度25kg/m³の高密度ウレタンフォームを採用したピラミッド形の吸音材。強力な両面テープが付属し、部屋やスタジオの防音・吸音対策に適している。",
-    "productUsage": ["防音対策", "吸音対策", "室内装飾", "楽器・ピアノ室の消音", "録音スタジオでのエコー低減"],
+    "productUsage": [
+      "防音対策",
+      "吸音対策",
+      "室内装飾",
+      "楽器・ピアノ室の消音",
+      "録音スタジオでのエコー低減"
+    ],
     "positivePoints": [
       "厚さ5cm、密度25kg/m³の高密度スポンジを採用",
       "ウェッジ形・ピラミッド形構造で反響音・残響音を減少",
@@ -14,7 +20,15 @@
     "negativePoints": [
       "特筆すべき欠点は見当たらないが、同価格帯の競合製品には難燃性能の認証（B1級等）を明記しているものがある"
     ],
-    "useCases": ["お部屋", "ピアノ室", "オーディオルーム", "録音スタジオ", "視聴室", "オフィス", "会議室"],
+    "useCases": [
+      "お部屋",
+      "ピアノ室",
+      "オーディオルーム",
+      "録音スタジオ",
+      "視聴室",
+      "オフィス",
+      "会議室"
+    ],
     "userStories": [],
     "userImpression": "（具体的なユーザーレビューが取得できなかったため評価を保留。ただし、スペックからは高密度・極厚仕様による安定した吸音効果が期待できる。）",
     "sources": [
@@ -35,7 +49,9 @@
         "claim": "防音効率が倍増する",
         "category": "comparativeAdvantage",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーの主張。高密度（25kg/m³）および極厚（5cm）であることは事実だが、「倍増」の根拠は他社比較において明示されていない。"
       }
@@ -137,12 +153,22 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (5cmの厚さと25kg/m³の高密度による高い基本性能)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "50mm", "width": "300mm", "depth": "300mm" },
+      "dimensions": {
+        "height": "50mm",
+        "width": "300mm",
+        "depth": "300mm"
+      },
       "weight": "不明",
       "capacity": "1.08㎡（12枚）",
       "material": "高密度ウレタンフォーム",
       "origin": "不明",
-      "other": ["厚さ: 5cm", "密度: 25kg/m³", "形状: ピラミッド形", "付属品: 強力両面テープ"]
-    }
+      "other": [
+        "厚さ: 5cm",
+        "密度: 25kg/m³",
+        "形状: ピラミッド形",
+        "付属品: 強力両面テープ"
+      ]
+    },
+    "investigatedPrice": "￥2,880"
   }
 }

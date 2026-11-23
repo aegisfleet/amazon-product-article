@@ -26,7 +26,10 @@
         "userType": "G-SHOCK愛好家・ファッションユーザー",
         "scenario": "日常のアクセサリーとして使用",
         "experience": "ケースの表側はピカピカのステンレスで、想像以上に質感が高いです。ただし反転液晶の文字は角度によって見えにくかったりします。小ぶりなサイズなので女性の腕にもよく合い、バンドの着け心地も優しいです。",
-        "supportingSourceIds": ["src-kakaku-1", "src-blog-1"],
+        "supportingSourceIds": [
+          "src-kakaku-1",
+          "src-blog-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -71,7 +74,9 @@
         "claim": "XGコラボレーションによる限定仕様で、レインボー蒸着ガラスとオリジナルロゴが施されている",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-impress-1"],
+        "supportingSourceIds": [
+          "src-impress-1"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式情報の報道"
       },
@@ -79,7 +84,10 @@
         "claim": "女性の腕にフィットするミッドサイズ（43.8×38.4×10.9mm、50g）である",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-impress-1", "src-blog-1"],
+        "supportingSourceIds": [
+          "src-impress-1",
+          "src-blog-1"
+        ],
         "crossChecked": true,
         "notes": "仕様と実機レビューで一致"
       }
@@ -184,7 +192,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +8] (XGコラボの独自性とデザイン性の高さ)\n[加点: +5] (メタルベゼルの質感とコンパクトな着け心地の良さ)\n[減点: -5] (ベースモデルと比較した際の割高な価格設定)\n[減点: -3] (反転液晶による視認性の課題)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "43.8mm", "width": "38.4mm", "depth": "10.9mm" },
+      "dimensions": {
+        "height": "43.8mm",
+        "width": "38.4mm",
+        "depth": "10.9mm"
+      },
       "weight": "50g",
       "material": "ステンレススチール/樹脂",
       "waterResistance": "20気圧防水",
@@ -194,6 +206,7 @@
         "ストップウオッチ、タイマー、アラーム",
         "無機ガラス（レインボー蒸着）"
       ]
-    }
+    },
+    "investigatedPrice": "￥36,300"
   }
 }

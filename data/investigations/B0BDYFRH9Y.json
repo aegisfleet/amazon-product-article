@@ -28,14 +28,18 @@
         "userType": "会社員",
         "scenario": "外出先でのスマートフォンの充電",
         "experience": "以前使っていたモバイルバッテリーよりも軽く、ズボンのポケットにもすんなり入るサイズ感に満足しています。充電速度も速く、短時間のカフェ休憩でもしっかり充電できるため、プレミアムブランドの高価なモデルではなくこちらを選んで正解でした。",
-        "supportingSourceIds": ["amazon-reviews"],
+        "supportingSourceIds": [
+          "amazon-reviews"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "旅行者",
         "scenario": "旅行先での複数デバイスの充電",
         "experience": "スマホとイヤホンを同時に充電できるのが便利です。付属のトラベルポーチに本体とケーブルを一緒に収納できるため、カバンの中で散らからず取り回しが良いです。3年保証がある点も安心して使い倒せる決め手になりました。",
-        "supportingSourceIds": ["amazon-reviews"],
+        "supportingSourceIds": [
+          "amazon-reviews"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -58,7 +62,9 @@
         "claim": "わずか30分でiPhone 14を61％まで充電可能",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-reviews"],
+        "supportingSourceIds": [
+          "amazon-reviews"
+        ],
         "crossChecked": true,
         "notes": "22.5W出力およびPD3.0対応のスペックから理論上可能であり、ユーザーレビューでも充電の速さが体感として報告されている。"
       }
@@ -183,6 +189,7 @@
         "過充電保護・過放電保護・過熱防止・漏電保護",
         "3年間品質保証"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,899"
   }
 }

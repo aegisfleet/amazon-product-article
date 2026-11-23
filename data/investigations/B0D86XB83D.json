@@ -28,14 +28,18 @@
         "userType": "50代の女性",
         "scenario": "エイジングケアを意識してお風呂で体を洗う前に使用",
         "experience": "昔のピーリング特有のヒリヒリして乾燥するイメージがありましたが、お風呂上りもしっとりしていて、頬のたるみ毛穴も少し目立たなくなったように感じました。ただ、顔周りの産毛に付いたポロポロが落としにくかったです。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "定期的に角質ケアを行うユーザー",
         "scenario": "週1〜2回、洗顔時にざらつきが気になるときに使用",
         "experience": "ついこすりすぎてしまいますが、ヒリヒリせず流した後はツルツルになります。香りも良く、濡れたままでも使えるのが便利でリピートしています。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -69,7 +73,10 @@
         "claim": "濡れた手や顔でも使用可能でお風呂で使える",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-official", "src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-official",
+          "src-amazon-reviews"
+        ],
         "crossChecked": true,
         "notes": "公式情報とユーザーレビューの双方で言及あり"
       },
@@ -77,7 +84,9 @@
         "claim": "使用後に肌が乾燥しにくく、しっとりとした仕上がりになる",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "crossChecked": false,
         "notes": "複数のレビューで言及されている"
       }
@@ -202,6 +211,7 @@
       "other": [
         "濡れた手や顔での使用可能"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,064"
   }
 }

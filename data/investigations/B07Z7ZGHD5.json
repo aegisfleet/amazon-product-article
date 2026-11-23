@@ -30,14 +30,18 @@
         "userType": "在宅勤務の会社員",
         "scenario": "テレワーク用のデスク環境改善のため",
         "experience": "これまで備え付けのスタンドを使っていましたが、デスクが狭く感じたため購入しました。組み立ては説明書を見ながら30分程度で完了しました。一度高さを決めてしまえば動かすことはほとんどないため、ポール式の本製品で十分でした。モニター下がスッキリして作業効率が上がりました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "PCゲーマー",
         "scenario": "デュアルモニター環境の構築",
         "experience": "メインは別のモニターアームを使い、サブモニター（27インチ）を縦置きにするために購入。5年保証があるのが決め手でした。しっかり固定されており、タイピングしても画面が揺れることはありません。ただ、頻繁に高さを変えたい人には向かないと思います。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -71,7 +75,9 @@
         "claim": "6000回の動作試験をクリアした高い強度",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーの仕様・品質基準としての主張。構造がシンプルなポール式・鉄材であるため、耐久性が高いことは合理的と判断。"
       }
@@ -192,6 +198,7 @@
         "可動範囲: チルト(上90°/下45°)、パン(±90°)、回転(360°)",
         "カラー: ブラック"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,699"
   }
 }

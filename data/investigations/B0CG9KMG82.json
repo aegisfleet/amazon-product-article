@@ -3,7 +3,11 @@
     "productName": "INNOCN 49インチ ウルトラワイド湾曲ゲーミングモニター 49C1G",
     "parentAsin": "B0D4ZCB5G4",
     "productDescription": "アスペクト比32:9の49インチウルトラワイド湾曲ディスプレイ。144Hzの高リフレッシュレートと65W給電対応のUSB Type-C、LANポート(RJ45)を搭載し、ゲームからビジネスユースまで幅広く対応する。",
-    "productUsage": ["PCゲームプレイ", "動画編集・クリエイティブ作業", "複数ウィンドウを並べる事務作業・プログラミング"],
+    "productUsage": [
+      "PCゲームプレイ",
+      "動画編集・クリエイティブ作業",
+      "複数ウィンドウを並べる事務作業・プログラミング"
+    ],
     "positivePoints": [
       "49インチのアスペクト比32:9ウルトラワイド曲面スクリーンを搭載",
       "144Hzの高リフレッシュレートで滑らかなゲーム体験が可能",
@@ -15,13 +19,18 @@
       "解像度はDFHD(3840x1080)であり、DQHD(5120x1440)ではない",
       "本体重量が11.5kgと重く、設置やモニターアーム選びには注意が必要"
     ],
-    "useCases": ["ノートPCをUSB Type-Cケーブル1本で接続し、広い画面で効率的に在宅ワークを行う", "レーシングゲームやフライトシミュレーターで没入感のあるプレイを楽しむ"],
+    "useCases": [
+      "ノートPCをUSB Type-Cケーブル1本で接続し、広い画面で効率的に在宅ワークを行う",
+      "レーシングゲームやフライトシミュレーターで没入感のあるプレイを楽しむ"
+    ],
     "userStories": [
       {
         "userType": "在宅勤務の会社員",
         "scenario": "デュアルモニター環境からの移行",
         "experience": "これまで27インチモニターを2枚並べて使っていましたが、中央のベゼルが邪魔で49インチのウルトラワイドに買い替えました。Type-Cケーブル1本でノートPCに給電しながら有線LANも使えるため、デスク周りの配線が非常にスッキリしました。解像度はフルHD2枚分ですが、文字サイズも適切で仕事用には十分すぎるほど快適です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -44,7 +53,9 @@
         "claim": "Type-Cケーブル1本で映像出力、給電、ネットワーク接続が完結する",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "スペックシートに65W Type-CとRJ45ポートの記載があり、USBハブ機能とあわせてドッキングステーション的に動作する"
       }
@@ -131,7 +142,10 @@
       }
     ],
     "recommendation": {
-      "targetUsers": ["ノートPCを中心に仕事をしており、Type-Cケーブル1本で給電と映像出力、有線LAN接続を完結させたい在宅勤務ワーカー", "フルHDモニター2枚並べの環境から、ベゼルのない広大な1枚の画面に移行して没入感を得たいゲーマー"],
+      "targetUsers": [
+        "ノートPCを中心に仕事をしており、Type-Cケーブル1本で給電と映像出力、有線LAN接続を完結させたい在宅勤務ワーカー",
+        "フルHDモニター2枚並べの環境から、ベゼルのない広大な1枚の画面に移行して没入感を得たいゲーマー"
+      ],
       "pros": [
         "Type-C 65W給電とLANポート(RJ45)を内蔵しているため、高価なドッキングステーションを別途購入する必要がなく、デスク上がケーブルで散らからない",
         "49インチという超巨大な画面でありながら7万円を切る価格を実現しており、デュアルモニター環境を手軽にアップグレードできる"
@@ -144,12 +158,34 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] 65W Type-C給電とLANポート搭載による高い利便性と実用性\n[加点: +10] 49インチウルトラワイドとして7万円を切る圧倒的なコストパフォーマンス\n[減点: -5] 解像度が3840x1080にとどまり、高精細表示には非対応\n[合計: 85]"
     },
     "technicalSpecs": {
-      "display": { "size": "49インチ", "resolution": "3840x1080 (DFHD)", "refreshRate": "144Hz", "aspectRatio": "32:9", "panelType": "VA曲面" },
-      "dimensions": { "width": "1200mm", "height": "570mm", "depth": "290mm" },
+      "display": {
+        "size": "49インチ",
+        "resolution": "3840x1080 (DFHD)",
+        "refreshRate": "144Hz",
+        "aspectRatio": "32:9",
+        "panelType": "VA曲面"
+      },
+      "dimensions": {
+        "width": "1200mm",
+        "height": "570mm",
+        "depth": "290mm"
+      },
       "weight": "11.5kg",
-      "interfaces": ["HDMI 2.1", "DisplayPort 1.4", "USB Type-C (65W給電対応)", "USB A", "USB B", "LANポート(RJ45)"],
+      "interfaces": [
+        "HDMI 2.1",
+        "DisplayPort 1.4",
+        "USB Type-C (65W給電対応)",
+        "USB A",
+        "USB B",
+        "LANポート(RJ45)"
+      ],
       "audio": "スピーカー内蔵",
-      "other": ["HDR400対応", "DCI-P3 95%", "高さ調整スタンド(最大95mm)"]
-    }
+      "other": [
+        "HDR400対応",
+        "DCI-P3 95%",
+        "高さ調整スタンド(最大95mm)"
+      ]
+    },
+    "investigatedPrice": "￥69,980"
   }
 }

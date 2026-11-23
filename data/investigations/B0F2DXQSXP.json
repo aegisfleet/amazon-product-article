@@ -28,14 +28,18 @@
         "userType": "一般ユーザー",
         "scenario": "日常のメイク前",
         "experience": "肌の凸凹に合わせてヘッドが動く「密着スイングヘッド」のおかげで、力を入れなくても綺麗に産毛が剃れます。刃先が丸く、剃った後の肌がヒリヒリしないので、メイクのノリも良くなります。",
-        "supportingSourceIds": ["src-panasonic-official"],
+        "supportingSourceIds": [
+          "src-panasonic-official"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "出張・旅行者",
         "scenario": "外出先",
         "experience": "単4乾電池1本で動くので、旅行や出張先でも手軽に使えて便利です。キャップ付きでスリムなため、ポーチに入れても邪魔になりません。",
-        "supportingSourceIds": ["src-panasonic-official"],
+        "supportingSourceIds": [
+          "src-panasonic-official"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -58,7 +62,9 @@
         "claim": "約0.12mmのうす刃で肌を傷つけずに剃れる",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-panasonic-official"],
+        "supportingSourceIds": [
+          "src-panasonic-official"
+        ],
         "crossChecked": false,
         "notes": "公式サイトの仕様で確認"
       },
@@ -66,7 +72,9 @@
         "claim": "密着スイングヘッドで肌の凹凸にフィットする",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-panasonic-official"],
+        "supportingSourceIds": [
+          "src-panasonic-official"
+        ],
         "crossChecked": false,
         "notes": "公式サイトの仕様で確認"
       }
@@ -171,6 +179,7 @@
         "約0.12mmのうす刃",
         "丸い刃先"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,018"
   }
 }

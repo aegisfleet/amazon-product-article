@@ -27,7 +27,9 @@
         "userType": "家族連れのドライバー",
         "scenario": "休日の長距離ドライブ",
         "experience": "後部座席の真ん中にタブレットを伸ばして設置できるため、子供2人が同時に画面を見ることができ、ドライブ中も静かに楽しんでくれました。使わない時はコンパクトに折りたためるので、乗り降りの邪魔にもなりません。",
-        "supportingSourceIds": ["src-amazon-listing"],
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -50,7 +52,9 @@
         "claim": "プラスチック製よりも耐久性に優れたアルミニウム製アームを採用",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-listing"],
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式の説明に基づく"
       },
@@ -58,7 +62,9 @@
         "claim": "厚さ26mmまでのケース付きデバイスに対応",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-listing"],
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
         "crossChecked": false,
         "notes": "公式スペック"
       }
@@ -165,6 +171,7 @@
         "対応デバイス厚: 最大26mmまで",
         "カラー: ブラック"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,499"
   }
 }

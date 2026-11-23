@@ -43,7 +43,9 @@
         "claim": "棚合計で340kgの耐荷重を持つ",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式商品ページのスペックより確認"
       },
@@ -51,7 +53,9 @@
         "claim": "2.5cm単位で棚の高さ調節が可能であり、組み立てに道具が不要",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式商品ページの仕様より確認"
       }
@@ -170,6 +174,7 @@
         "2.5cm単位での高さ調整可能",
         "組み立て工具不要"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,491"
   }
 }

@@ -27,7 +27,9 @@
         "userType": "寒がりなユーザー",
         "scenario": "冬場の就寝時、既存の敷きパッドでは足元が冷えるため、より厚手で温かいものを求めて購入",
         "experience": "リバーシブル仕様であり、冬はマイクロフランネル面で非常に暖かく眠ることができた。吸湿発熱素材のおかげか、布団に入った瞬間のひんやり感がなくなり快適。価格は他社より高めだったが、肌触りの良さと暖かさには満足している。",
-        "supportingSourceIds": ["src-amazon-gokumin"],
+        "supportingSourceIds": [
+          "src-amazon-gokumin"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -61,7 +63,9 @@
         "claim": "未加工品と比較した場合、最大で＋2.5度の暖かさ",
         "category": "comparativeAdvantage",
         "confidence": "medium",
-        "supportingSourceIds": ["src-amazon-gokumin"],
+        "supportingSourceIds": [
+          "src-amazon-gokumin"
+        ],
         "crossChecked": false,
         "notes": "メーカーの独自試験結果に基づく主張"
       },
@@ -69,7 +73,9 @@
         "claim": "一般的なフランネル敷きパッドの1.4倍の綿密度",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-gokumin"],
+        "supportingSourceIds": [
+          "src-amazon-gokumin"
+        ],
         "crossChecked": false,
         "notes": "仕様としての明確な設計事実"
       }
@@ -187,6 +193,7 @@
         "構造: ボリューム三層構造、キルトパターン",
         "機能: 吸湿発熱(Fabwarm)、抗菌防臭加工、静電気防止加工、リバーシブル対応(マイクロフランネル面/ピーチスキン面)"
       ]
-    }
+    },
+    "investigatedPrice": "￥5,298"
   }
 }

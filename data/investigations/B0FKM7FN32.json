@@ -28,14 +28,18 @@
         "userType": "共働き世帯",
         "scenario": "日中は仕事で不在が多く、再配達の手配にストレスを感じていた。",
         "experience": "ポスト一体型で上下段に分かれているため、郵便物と宅配便が別々に収納され、大きな荷物もスッポリ入ります。ワンプッシュ施錠はドライバーさんにも好評で、再配達の手間が完全に無くなりました。組み立ても比較的簡単でしたが、しっかり自立するので安心感があります。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "戸建て住宅の住人",
         "scenario": "玄関先に置く宅配ボックスを探していたが、防犯面と雨濡れが心配だった。",
         "experience": "アンカーボルトや付属のワイヤーで物理的に固定できるため、盗難の不安が和らぎました。屋根の防水設計もしっかりしており、雨の翌日に開けても中の荷物は濡れていませんでした。下段の内側に印鑑を置けるスペースがあり、気の利いた設計に満足しています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -58,7 +62,9 @@
         "claim": "扉に防水溝があり、荷物や手紙等、雨水に濡れることがない",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "屋根部分の防水素材と防水溝の構造により、実際の屋外使用でも浸水しにくいとユーザーからも支持されている。"
       },
@@ -66,7 +72,9 @@
         "claim": "耐久重量：約30kg",
         "category": "durability",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーの仕様値。一般的な飲料水ケース（約24kg）等を入れても問題なく耐えられる構造として妥当な数値である。"
       }
@@ -145,6 +153,7 @@
         "ロック機構: ワンプッシュシリンダー錠、ダイヤル式南京錠対応（2重ロック）",
         "その他: アンカーボルト対応、騒音防止クッション、配達員向け説明シール付属"
       ]
-    }
+    },
+    "investigatedPrice": "￥12,980"
   }
 }

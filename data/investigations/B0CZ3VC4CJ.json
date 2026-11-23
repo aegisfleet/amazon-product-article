@@ -29,7 +29,9 @@
         "userType": "ペットを飼っている家庭",
         "scenario": "日々の床の汚れとニオイが気になる",
         "experience": "約40秒ですぐにスチームが出るので、気になった時にサッと床掃除ができます。洗剤を使わずに高温スチームだけで除菌・消臭ができ、ペットが床を舐めても安心なのが最大のメリットです。アップライト型なので腰への負担も少なく、毎日手軽に使えます。",
-        "supportingSourceIds": ["src-amazon-page"],
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -63,7 +65,10 @@
         "claim": "ウイルスを最大99.999%、バクテリアを最大99.999%除去可能",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-kaercher-official", "src-amazon-page"],
+        "supportingSourceIds": [
+          "src-kaercher-official",
+          "src-amazon-page"
+        ],
         "crossChecked": true,
         "notes": "ケルヒャー公式の試験結果として記載されている"
       },
@@ -71,7 +76,10 @@
         "claim": "約40秒でスチーム準備が完了するフローヒーター式",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-kaercher-official", "src-amazon-page"],
+        "supportingSourceIds": [
+          "src-kaercher-official",
+          "src-amazon-page"
+        ],
         "crossChecked": true,
         "notes": "製品仕様のヒートアップタイムとして明記"
       }
@@ -186,6 +194,7 @@
         "バクテリアを最大99.999%除去",
         "清掃面積（給水タンク満水で清掃できる面積）: 約50m²"
       ]
-    }
+    },
+    "investigatedPrice": "￥19,800"
   }
 }

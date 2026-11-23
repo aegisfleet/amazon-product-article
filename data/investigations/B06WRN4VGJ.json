@@ -30,7 +30,9 @@
         "userType": "会社員",
         "scenario": "オフィスやカフェでのリモートワーク",
         "experience": "クリック音だけでなくサイドボタンやホイールも静かなので、静かなオフィスやカフェでも周りを気にせず使えます。BlueLEDのおかげでマウスパッドがなくても反応が良く、手頃な価格で5ボタンというコスパの良さが決め手になりました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -64,7 +66,9 @@
         "claim": "アルカリ乾電池を使用時の目安 最大140日",
         "category": "durability",
         "confidence": "medium",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "crossChecked": false,
         "notes": "メーカーの想定使用可能時間。1日8時間のパソコン操作の5%をマウスに割り当てた場合の計算値。"
       },
@@ -72,7 +76,10 @@
         "claim": "クリック音が静かな場所でも気にならない静音設計",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "左右ボタンだけでなく、ホイールやサイドボタンも静音仕様であることがメーカーページで明記されている。"
       }
@@ -198,6 +205,7 @@
         "電波到達距離: 非磁性体 約10m / 磁性体 約3m",
         "レシーバー寸法: 約15×5×19mm、約1g"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,680"
   }
 }

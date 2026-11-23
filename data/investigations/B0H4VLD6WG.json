@@ -31,14 +31,20 @@
         "userType": "夜間走行の多いドライバー",
         "scenario": "通勤や夜間のドライブで利用",
         "experience": "夜間でもナンバープレートの文字や周囲の状況が驚くほど鮮明に映るため安心感があります。直接配線コードが付属しているおかげで、シガーソケットを塞ぐことなくスマートに設置できたのが決め手でした。",
-        "supportingSourceIds": ["src-comtec-official", "src-amazon-azdr65"],
+        "supportingSourceIds": [
+          "src-comtec-official",
+          "src-amazon-azdr65"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "あおり運転を警戒するドライバー",
         "scenario": "長距離運転や高速道路での走行時",
         "experience": "後続車が異常に接近してきた際に音声で知らせてくれる機能が非常に役立ちます。また、STARVIS 2のおかげで、スモークガラス越しでも後方の映像が明るく撮れる点に満足しています。説明書がダウンロードのみなのは少し不便に感じました。",
-        "supportingSourceIds": ["src-comtec-official", "src-amazon-azdr65"],
+        "supportingSourceIds": [
+          "src-comtec-official",
+          "src-amazon-azdr65"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -72,7 +78,10 @@
         "claim": "Full HDより約1.8倍高精細な映像で周囲の状況を鮮明に記録",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-comtec-official", "src-amazon-azdr65"],
+        "supportingSourceIds": [
+          "src-comtec-official",
+          "src-amazon-azdr65"
+        ],
         "crossChecked": true,
         "notes": "フロントカメラがWQHD（2560×1440）であり、フルHD（1920×1080）に対して画素数比で約1.77倍となるため事実に基づく。"
       },
@@ -80,7 +89,9 @@
         "claim": "前後ともにSTARVIS 2搭載で夜間撮影性能が向上。低ノイズ・高鮮明な映像が記録可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-comtec-official"],
+        "supportingSourceIds": [
+          "src-comtec-official"
+        ],
         "crossChecked": true,
         "notes": "ソニー製センサー「STARVIS 2」の採用が公式スペックで明記されており、夜間の視認性向上は技術的にも裏付けられている。"
       }
@@ -202,6 +213,7 @@
         "電源電圧: DC12V対応",
         "運転支援機能搭載 (後続車接近お知らせ、先行車発進お知らせ 等)"
       ]
-    }
+    },
+    "investigatedPrice": "￥26,400"
   }
 }

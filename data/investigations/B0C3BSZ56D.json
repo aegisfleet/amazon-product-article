@@ -3,7 +3,10 @@
     "productName": "HyperX Cloud III ゲーミングヘッドセット",
     "parentAsin": "B0FGCLSFSJ",
     "productDescription": "耐久性のあるアルミフレームと、高い快適性を提供する低反発素材を採用した有線ゲーミングヘッドセットです。斜め配置の53mmドライバーによる優れた定位感と、クリアな音質のノイズキャンセリングマイクを備えています。",
-    "productUsage": ["PCゲーム、コンシューマーゲーム（PS5/PS4、Switch、Xbox等）での音声チャットやプレイ", "テレワークでのWeb会議や通話"],
+    "productUsage": [
+      "PCゲーム、コンシューマーゲーム（PS5/PS4、Switch、Xbox等）での音声チャットやプレイ",
+      "テレワークでのWeb会議や通話"
+    ],
     "positivePoints": [
       "低反発素材のイヤーパッドとヘッドバンドによる圧倒的な装着感で、長時間の使用でも疲れにくい。",
       "3.5mm端子、USB Type-A、USB Type-Cの3種類の接続に対応しており、PCから各種ゲーム機、スマホまでマルチに使える取り回しの良さ。",
@@ -25,21 +28,29 @@
         "userType": "ゲーマー・レビューワー",
         "scenario": "FPSゲーム（VALORANTなど）のプレイ",
         "experience": "音が過度にドンシャリではないため環境音が埋もれず、足音や銃声の定位感がとても自然です。DTS Headphone:Xを有効にすると位置関係がさらに立体的になり、敵の正確な位置を把握しやすくなりました。",
-        "supportingSourceIds": ["src-note", "src-realsound"],
+        "supportingSourceIds": [
+          "src-note",
+          "src-realsound"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "マルチプラットフォームのゲーマー",
         "scenario": "複数のゲーム機とPCを行き来する日常",
         "experience": "USB Type-A、Type-C、3.5mmの3種類の端子が使えるため、仕事中はPC、遊ぶ時はPS5やSwitchにと、複数のハードで物理的に差し替えるだけで快適に取り回すことができる点が非常に便利でした。",
-        "supportingSourceIds": ["src-ascii"],
+        "supportingSourceIds": [
+          "src-ascii"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "長時間ゲーマー",
         "scenario": "夏の長時間のゲームプレイ",
         "experience": "装着感は素晴らしく頭が痛くなることはありませんが、密閉型のレザーレット素材なので夏場に数時間プレイしているとさすがに蒸れが気になり、定期的に外して休憩したくなりました。",
-        "supportingSourceIds": ["src-ascii", "src-realsound"],
+        "supportingSourceIds": [
+          "src-ascii",
+          "src-realsound"
+        ],
         "sentiment": "negative"
       }
     ],
@@ -84,7 +95,11 @@
         "claim": "低反発クッションと軽量設計により圧倒的に快適な装着感を実現している",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-ascii", "src-realsound", "src-note"],
+        "supportingSourceIds": [
+          "src-ascii",
+          "src-realsound",
+          "src-note"
+        ],
         "crossChecked": true,
         "notes": "3つのレビューすべてで長時間でも疲れにくい装着感の良さが評価されている。"
       },
@@ -92,7 +107,10 @@
         "claim": "FPSゲームで重要な足音の定位感が良く、環境音が埋もれにくいバランスの取れた音質である",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-realsound", "src-note"],
+        "supportingSourceIds": [
+          "src-realsound",
+          "src-note"
+        ],
         "crossChecked": true,
         "notes": "過度な低音を抑え、足音などの聞き分けがしやすいという点が共通して指摘されている。"
       },
@@ -100,7 +118,9 @@
         "claim": "3.5mm、USB Type-A、Type-Cの3種類の接続に対応し、多くのデバイスで使い回せる",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-ascii"],
+        "supportingSourceIds": [
+          "src-ascii"
+        ],
         "crossChecked": true,
         "notes": "レビュー内でマルチプラットフォーム対応の取り回しの良さとして強調されている。"
       }
@@ -156,7 +176,11 @@
     },
     "technicalSpecs": {
       "// 注意": "調査で判明した仕様情報をここに網羅的に記載する（サイズはメートル法のみ、インチ不要）",
-      "dimensions": { "height": "190mm", "width": "155mm", "depth": "87mm" },
+      "dimensions": {
+        "height": "190mm",
+        "width": "155mm",
+        "depth": "87mm"
+      },
       "weight": "308g",
       "driver": "53mmダイナミックドライバー",
       "connection": "3.5mmプラグ, USB Type-A, USB Type-C",
@@ -164,6 +188,7 @@
       "audioFeatures": "DTS Headphone:X 空間オーディオ対応",
       "microphone": "ノイズキャンセリング対応、LEDミュートインジケーター付き、着脱可能",
       "material": "アルミフレーム、低反発クッション、レザーレット素材"
-    }
+    },
+    "investigatedPrice": "￥12,980"
   }
 }

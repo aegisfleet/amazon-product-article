@@ -29,14 +29,18 @@
         "userType": "一人暮らしの学生",
         "scenario": "初めての自炊生活に向けて電気ケトルを購入",
         "experience": "以前は鍋でお湯を沸かしていましたが、このケトルに変えてから朝のコーヒー作りが格段に早くなりました。デザインもマットな黒でかっこよく、部屋に置いても浮きません。安価だったのが決め手でしたが、お湯もれロックもついていて大満足です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "小さな子供がいる家庭",
         "scenario": "安全性を重視して買い替え",
         "experience": "子供がコードを引っ掛けて倒すのが怖かったため、転倒お湯もれロック付きのこちらを選びました。実際に少し傾けてしまってもお湯がこぼれず安心しました。ただ、温度調節はできないのでミルク作りには別の工夫が必要です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -59,7 +63,9 @@
         "claim": "コップ一杯なら約1分で沸騰",
         "category": "performance",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "1250Wクラスの電気ケトルにおける一般的な沸騰速度と一致"
       }
@@ -125,7 +131,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (わずか750gの軽量設計と1分沸騰の実用性)\n[加点: +5] (3000円前後で転倒お湯もれロックを搭載する高いコストパフォーマンス)\n[加点: +5] (マットな質感でインテリアに馴染むデザイン)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "180mm", "width": "220mm", "depth": "160mm" },
+      "dimensions": {
+        "height": "180mm",
+        "width": "220mm",
+        "depth": "160mm"
+      },
       "weight": "750g",
       "capacity": "0.8L",
       "power": "1250W",
@@ -135,6 +145,7 @@
         "空焚き防止機能",
         "自動電源OFF機能"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,580"
   }
 }

@@ -30,14 +30,18 @@
         "userType": "美容意識の高い30代女性",
         "scenario": "エイジングケアを目的とした高用量ビタミンCの摂取",
         "experience": "以前は安価なタブレットタイプのビタミンCを飲んでいましたが、添加物が多いことが気になり、純度の高いこちらに乗り換えました。イギリス産原料で余計なものが入っていない安心感が決め手です。かなり酸っぱいので最初は驚きましたが、今は炭酸水やスムージーに混ぜて飲むのが毎朝のルーティンになっています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "健康維持を重視する40代男性",
         "scenario": "日々の疲労感軽減のための栄養補給",
         "experience": "一度にしっかりビタミンCを摂りたくて、1包2,000mgという含有量の多さで選びました。品質は確かなのだと思いますが、そのまま水で飲むと強烈な酸味でむせてしまいます。また、毎月続けるには少しコストがかかるため、他の安いサプリと併用するようになりました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -60,7 +64,9 @@
         "claim": "1包中のビタミンC含有率は96％である",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "公式サイトの仕様および成分表示（1包2.08g中ビタミンC 2.00g）から事実であることを確認。"
       }
@@ -177,6 +183,7 @@
         "栄養成分(1包2.08g当たり): エネルギー8.3kcal、たんぱく質0g、脂質0g、炭水化物2.08g、食塩相当量0g、ビタミンC 2000mg",
         "製造工場: 国内健康食品GMP認定工場"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,240"
   }
 }

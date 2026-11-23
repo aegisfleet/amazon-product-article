@@ -29,14 +29,18 @@
         "userType": "子犬を飼い始めた家庭",
         "scenario": "離乳期からドライフードへの移行",
         "experience": "お湯で簡単にふやけるため、離乳食づくりがスムーズにできました。子犬も喜んで食べており、消化不良によるお腹の不調も見られません。ラム肉ベースなので食いつきも非常に良く、安心して与えられます。以前のフードで気になっていた便の緩さも解消されました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "アレルギーが心配な飼い主",
         "scenario": "チキン以外のタンパク源を探している",
         "experience": "以前与えていたチキンベースのフードで少し皮膚を痒がる様子があったため、こちらに切り替えました。切り替え後は被毛のツヤも良くなり、痒がる仕草も減ったように感じます。粒が小さめで食べやすそうです。鶏肉アレルギーのリスクを避けられるのが決め手です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -59,7 +63,9 @@
         "claim": "ニュートロの高い製造技術により、芯までふやけやすい粒設計を実現",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "商品仕様として明記されており、離乳期の使用を前提とした設計"
       },
@@ -67,7 +73,9 @@
         "claim": "アレルゲンとなりにくいといわれる原材料を使用",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "ラム肉と玄米を主原料としており、一般的なアレルゲンである小麦やビーフを避けている"
       }
@@ -186,6 +194,7 @@
         "対象犬種: 全犬種",
         "主原料: ラム肉・玄米"
       ]
-    }
+    },
+    "investigatedPrice": "￥5,693"
   }
 }

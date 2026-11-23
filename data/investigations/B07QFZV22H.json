@@ -26,7 +26,10 @@
         "userType": "一般家庭のユーザー",
         "scenario": "ウイルス対策としてエアコンに設置",
         "experience": "シールタイプなので脚立に乗っての作業でも簡単に貼り付けることができました。ウイルス除去の効果は目に見えませんが、ホコリはしっかり取れており、エアコン内部の掃除が格段に楽になりました。通常版より割高ですが、安心感があります。",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -60,7 +63,9 @@
         "claim": "抗菌ウイルス加工ポリエステル繊維により、浮遊ウイルスをキャッチする",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "公式サイトにて機能の記載を確認。"
       },
@@ -68,7 +73,10 @@
         "claim": "シール加工でパッと貼るだけで簡単に取り付け可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "公式サイトおよび商品情報にて確認。"
       }
@@ -186,6 +194,7 @@
         "取替え目安: 1～2カ月",
         "シール加工（粘着タイプ）"
       ]
-    }
+    },
+    "investigatedPrice": "￥376"
   }
 }

@@ -26,7 +26,9 @@
         "userType": "筋トレ愛好家",
         "scenario": "ジムでのトレーニング中の水分補給",
         "experience": "筋トレで約1時間半から2時間ほど使用していますが、その間ずっと冷えた状態をキープしてくれます。キャリーループがついているので、マシンからマシンへ移動する時に持ち運びやすくとても便利です。また、キャップ式でジムの水素水サーバーにも対応しており、飲み口を外して洗えるので手入れも簡単です。重さも400g程度と軽く、予想以上に使い勝手が良いです。",
-        "supportingSourceIds": ["src-kakaku-review"],
+        "supportingSourceIds": [
+          "src-kakaku-review"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -60,7 +62,9 @@
         "claim": "保冷効力は9℃以下を6時間キープする",
         "category": "performance",
         "confidence": "high",
-        "supportingSourceIds": ["src-thermos-official"],
+        "supportingSourceIds": [
+          "src-thermos-official"
+        ],
         "crossChecked": true,
         "notes": "メーカー公式スペックにて明記。"
       },
@@ -68,7 +72,10 @@
         "claim": "キャリーループ付きで持ち運びが容易である",
         "category": "design",
         "confidence": "high",
-        "supportingSourceIds": ["src-thermos-official", "src-kakaku-review"],
+        "supportingSourceIds": [
+          "src-thermos-official",
+          "src-kakaku-review"
+        ],
         "crossChecked": true,
         "notes": "公式サイトの特徴及びユーザーレビューでその有用性が確認された。"
       }
@@ -189,6 +196,7 @@
         "食洗機対応",
         "キャリーループ付き"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,293"
   }
 }

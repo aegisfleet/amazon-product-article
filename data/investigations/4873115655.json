@@ -29,14 +29,18 @@
         "userType": "駆け出しエンジニア",
         "scenario": "自身の書いたコードの可読性に不安を感じた時",
         "experience": "学んだことで、ちょっと疑問に思いながら書いていたコードを自信をもって書くことができ、勘違いしていた部分（たとえばコメントの書き方や命名など）に気づくことができました。短いコメントで明確な単語を選ぶことの重要性を実感しました。",
-        "supportingSourceIds": ["qiita-review-1"],
+        "supportingSourceIds": [
+          "qiita-review-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "中堅エンジニア",
         "scenario": "他人が書いたコードや、過去の自分のコードを読むのに苦労した時",
         "experience": "読みやすい変数名の付け方や関数の書き方など、迷った時に立ち返るべき指針が書かれています。『半年後の自分も他人』という言葉にハッとさせられ、それ以来名前だけで情報を読み取れるよう意識するようになりました。",
-        "supportingSourceIds": ["qiita-review-2"],
+        "supportingSourceIds": [
+          "qiita-review-2"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -70,7 +74,10 @@
         "claim": "「読みやすいコード」を「他人が最短時間で理解できるコード」と定義し、そのための実践的テクニックを提供している。",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["qiita-review-1", "qiita-review-2"],
+        "supportingSourceIds": [
+          "qiita-review-1",
+          "qiita-review-2"
+        ],
         "crossChecked": true,
         "notes": "複数のレビュー記事でこの定義の重要性が言及されている。"
       }
@@ -188,6 +195,7 @@
         "出版社: オライリージャパン",
         "ページ数: 約264ページ (A5判変形に相当)"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,640"
   }
 }

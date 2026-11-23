@@ -30,7 +30,9 @@
         "userType": "ノートPCユーザー",
         "scenario": "内蔵ストレージの容量が不足したため、データの退避先として購入",
         "experience": "コンパクトなサイズと丸みを帯びたデザインで持ち運びに便利です。ACアダプターがいらず、USBケーブルを繋ぐだけですぐに認識して使える手軽さが気に入っています。速度もUSB 3.0接続で十分速く、大容量の動画データの移動もストレスなく完了しました。",
-        "supportingSourceIds": ["src-kakaku-review"],
+        "supportingSourceIds": [
+          "src-kakaku-review"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -53,7 +55,9 @@
         "claim": "小さなボディに大容量",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-kakaku-review"],
+        "supportingSourceIds": [
+          "src-kakaku-review"
+        ],
         "crossChecked": true,
         "notes": "4TBの容量を持ちながら、82x110.5mmというコンパクトなサイズを実現していることをスペックとレビューから確認"
       }
@@ -176,6 +180,7 @@
         "※Macで使用する場合は再フォーマットが必要",
         "付属品: USBケーブル (A-Micro B:長さ46cm)"
       ]
-    }
+    },
+    "investigatedPrice": "￥35,029"
   }
 }

@@ -29,14 +29,18 @@
         "userType": "主婦",
         "scenario": "家族のための夕食やお弁当作り",
         "experience": "スーパーで買ってきたお惣菜のコロッケなどはサクッと仕上がり、フライドポテトや唐揚げも油なしで充分美味しくできます。油もしっかりと落ちるため、揚げたてに近い食感が味わえます。カロリーを抑えつつヘルシーな食生活が送れるようになり、買ってよかったと感じています。",
-        "supportingSourceIds": ["src-mybest"],
+        "supportingSourceIds": [
+          "src-mybest"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "一人暮らし",
         "scenario": "冷凍食品の調理や惣菜のあたため",
         "experience": "冷凍ポテトをレシピ通りに調理すると、水分が飛んでカリカリとしたスナックのような食感になってしまい、ホクホク感がなくて残念でした。油で揚げたフライドポテトとは別物の食感になります。少し加熱時間や温度設定の工夫が必要かもしれません。",
-        "supportingSourceIds": ["src-mybest"],
+        "supportingSourceIds": [
+          "src-mybest"
+        ],
         "sentiment": "negative"
       }
     ],
@@ -59,7 +63,9 @@
         "claim": "あたため直しの仕上がりが非常に良く、揚げたてのようにサクサクしている",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-mybest"],
+        "supportingSourceIds": [
+          "src-mybest"
+        ],
         "crossChecked": false,
         "notes": "マイベストの検証で「あたため直しの仕上がり」が4.55/5.00と高く評価されている。"
       },
@@ -67,7 +73,9 @@
         "claim": "冷凍ポテトは水分が飛びすぎてカサカサになりやすい",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-mybest"],
+        "supportingSourceIds": [
+          "src-mybest"
+        ],
         "crossChecked": false,
         "notes": "検証や口コミで共通して指摘されている。"
       }
@@ -189,6 +197,7 @@
         "プリセットメニュー: 9種類",
         "お手入れ: 食洗機対応（バスケット）"
       ]
-    }
+    },
+    "investigatedPrice": "￥13,980"
   }
 }

@@ -42,7 +42,9 @@
         "claim": "サージカルステンレス(316L)を使用",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品ページに明記されている"
       },
@@ -50,7 +52,9 @@
         "claim": "工具不要でサイズ調整可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品ページで説明されている特徴"
       }
@@ -161,6 +165,7 @@
       "compatibleSeries": "Series 11 10 9 8 7 6 5 4 SE Ultra",
       "adjustment": "工具不要 (コマを引っ張って捻るだけで調整可能)",
       "buckleType": "バタフライバックル"
-    }
+    },
+    "investigatedPrice": "￥6,980"
   }
 }

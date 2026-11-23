@@ -44,7 +44,9 @@
         "claim": "気管に優しく引っ張り防止のX型構造を採用している。",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-mirupochi"],
+        "supportingSourceIds": [
+          "src-amazon-mirupochi"
+        ],
         "crossChecked": false,
         "notes": "Amazonの商品説明から確認"
       },
@@ -52,7 +54,9 @@
         "claim": "GPS機器やAirTagを収納できるポケットが付いている。",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-mirupochi"],
+        "supportingSourceIds": [
+          "src-amazon-mirupochi"
+        ],
         "crossChecked": false,
         "notes": "Amazonの商品説明から確認"
       }
@@ -166,6 +170,7 @@
         "構造：X型（クロス型）構造",
         "機能：GPS機器・AirTag収納ポケット付き、反射材付き"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,699"
   }
 }

@@ -25,7 +25,9 @@
         "userType": "戸建てに住む家族",
         "scenario": "日々の階段掃除",
         "experience": "階段に溜まるホコリをサッと掃除したくて購入しました。最大の決め手は、ケースに通すだけでモップのホコリが落ちる機能です。手でゴミをむしり取る不満が解消され、手を汚さずに済むのが快適です。自立ケース付きなので階段の隅に置いておけ、気になった時にすぐ使えるのも便利です。ただ、あくまで乾拭き用なので、こびりついた汚れには別の掃除具が必要です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -48,7 +50,9 @@
         "claim": "ケースに通すだけでモップがキレイになる",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "製品のメイン機能として公式情報に記載されている事実に基づく。"
       }
@@ -126,6 +130,7 @@
         "自立式収納ケース付属",
         "ショート柄タイプ"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,489"
   }
 }

@@ -29,21 +29,27 @@
         "userType": "40代女性",
         "scenario": "日差しが強い日の外出時やレジャー",
         "experience": "色々な日焼け止めを試しましたが、結局アネッサに戻ってきます。サラッとしたミルクで伸びが良く、顔には化粧下地として使っていますが、白浮きせずにファンデーションとの相性も良いです。石鹸で落とせるのも手軽で助かります。",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "30代女性",
         "scenario": "海やプールなどの夏のレジャー",
         "experience": "絶対に焼けたくない日に一番リピートしています。2層式なので振る手間はありますが、汗・水・熱でUVブロック膜が強くなるおかげで、海やプールに入っても落ちにくく、日焼けを防げていると実感しています。",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "年代不明・女性",
         "scenario": "スポーツなどのアクティブな活動時",
         "experience": "スポーツなどのアクティブな活動をする時や、特に日差しが強い日に使っています。ファンデの前に塗っても伸びを邪魔しないので使いやすいです。塗り直しをせず何時間も日差しの中にいても焼けませんでした。",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -88,7 +94,10 @@
         "claim": "国内最高レベルのSPF50+・PA++++で、強力な紫外線から肌を守る",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-3"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-3"
+        ],
         "crossChecked": true,
         "notes": "公式情報および複数のレビューメディアで共通して記載"
       },
@@ -96,7 +105,10 @@
         "claim": "汗・水・熱でUVブロック膜が強くなる技術を搭載",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-3"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-3"
+        ],
         "crossChecked": true,
         "notes": "オートブースター技術として公式およびメディアで言及"
       },
@@ -104,7 +116,11 @@
         "claim": "スーパーウォータープルーフでありながら、石けんで落とせる",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2", "src-3"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2",
+          "src-3"
+        ],
         "crossChecked": true,
         "notes": "公式情報に加え、ユーザーの口コミでも手軽さが評価されている"
       },
@@ -112,7 +128,10 @@
         "claim": "スキンケア成分を50%配合し、保湿効果がある",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-3"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-3"
+        ],
         "crossChecked": true,
         "notes": "公式およびメディア記事で配合成分について言及"
       }
@@ -234,6 +253,7 @@
         "シトラスソープの香り",
         "顔・からだ用"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,800"
   }
 }

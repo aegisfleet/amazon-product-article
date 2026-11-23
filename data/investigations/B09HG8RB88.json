@@ -27,7 +27,9 @@
         "userType": "日常的なスキンケア重視のユーザー",
         "scenario": "メイク前やディープクレンジング時に使用",
         "experience": "化粧前にパックする時に使用すると化粧ノリが良くなる実感がある。また、難しい操作が不要なため、使いたい時にすぐに使えて面倒に感じることがなく、乾燥しやすい季節でも乾燥を感じにくくなった。",
-        "supportingSourceIds": ["src-kakaku-review"],
+        "supportingSourceIds": [
+          "src-kakaku-review"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -61,7 +63,9 @@
         "claim": "ナノサイズの温スチームが角質層まで浸透し、肌にうるおいとハリ感を与える",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-panasonic-spec"],
+        "supportingSourceIds": [
+          "src-panasonic-spec"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式の仕様・特徴に基づく"
       }
@@ -182,6 +186,7 @@
         "スチーム発生時間: 約12分（タンク満水時）",
         "消費電力: 約290W"
       ]
-    }
+    },
+    "investigatedPrice": "￥17,000"
   }
 }

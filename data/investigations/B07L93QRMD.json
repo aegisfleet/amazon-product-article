@@ -29,7 +29,9 @@
         "userType": "店舗運営者",
         "scenario": "スーパーの青果コーナーの什器にロールタイプのポリ袋を設置する",
         "experience": "これまで据え置きタイプのスタンドを使用していたが、倒れやすく場所を取るのが不満だった。本製品は什器に直接引っ掛けて設置できるため、省スペースで安定感があり、お客様が袋を1枚ずつスムーズに切り取れるようになり、店舗の利便性が向上した。業務用の頑丈な作りも安心できる。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -52,7 +54,9 @@
         "claim": "1枚ずつ取れて経済的でスムーズに取り出せる",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "ロールを回転させて取り出す構造上、引き出しやすさは仕様から妥当と判断できる。"
       }
@@ -127,6 +131,7 @@
         "対応ポリ袋サイズ: ロール寸法 幅260mm以下、直径130mm以下",
         "※ポリ袋は別売り"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,190"
   }
 }

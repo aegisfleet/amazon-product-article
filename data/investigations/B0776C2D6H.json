@@ -31,14 +31,18 @@
         "userType": "DIY・自転車メンテ愛好者",
         "scenario": "海外製の自転車パーツと国内製の部品を両方調整する状況",
         "experience": "インチ規格とミリ規格が混ざっていても、このセット1つで完結するのが最大の決め手でした。ボールエンドのおかげで、サドル下などの狭い隙間でも斜めからしっかり六角穴を捉えて回せるので作業効率が格段に上がりました。ケース付きで紛失しにくいのも助かっています。",
-        "supportingSourceIds": ["amazon-specs"],
+        "supportingSourceIds": [
+          "amazon-specs"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "家庭の備品管理者",
         "scenario": "組み立て家具やドアノブの緩みを直す状況",
         "experience": "とにかくサイズが豊富なので「どのレンチが合うか分からない」というストレスから解放されました。ただ、全部で26本あるため、たまにしか使わない一般家庭の工具箱に入れるには少し重くて場所を取るのが難点です。",
-        "supportingSourceIds": ["amazon-specs"],
+        "supportingSourceIds": [
+          "amazon-specs"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -83,7 +87,9 @@
         "claim": "周囲に障害物がある場合でも、ボールエンドにより最大で25度の角度からネジ穴に差し込むことができる",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-specs"],
+        "supportingSourceIds": [
+          "amazon-specs"
+        ],
         "crossChecked": true,
         "notes": "ボールポイント六角レンチの一般的な仕様（約20〜25度）と合致しており、物理的にも妥当な主張。"
       }
@@ -195,6 +201,7 @@
       "material": "クロムバナジウム鋼（黒色酸化物仕上げ）",
       "setContents": "26本セット（メートル法13本、インチ法13本）、収納用折り畳み式ケース2個付き",
       "feature": "ロングアーム仕様、ボールエンド仕様（最大傾き角度約25度）"
-    }
+    },
+    "investigatedPrice": "￥2,083"
   }
 }

@@ -32,14 +32,18 @@
         "userType": "子育て中の親",
         "scenario": "子どもの泥遊び後の服や靴の洗濯",
         "experience": "週末、泥だらけになった子どものスニーカーや体操服を洗うのが面倒でしたが、40〜50度のお湯にオキシクリーンを溶かして一晩「オキシ漬け」するだけで、翌日軽くこするだけで泥汚れがスッキリ落ちました。ゴシゴシ洗う手間が省け、週末の家事負担が大きく減りました。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "主婦",
         "scenario": "キッチン周りの頑固な汚れと茶渋の掃除",
         "experience": "マグカップの底にこびりついた茶渋や、換気扇の油汚れが気になっていました。シンクにお湯を張り、オキシクリーンを溶かして食器や換気扇のパーツをまとめて漬けおき洗いしました。数時間後、軽くスポンジでこするだけで茶渋も油汚れもツルンと落ち、無香料なので食器に使っても洗剤の匂いが残らないのが嬉しいです。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -62,7 +66,9 @@
         "claim": "お湯（40～60℃）で溶かして使用することで、酸素の力で強力な漂白・洗浄効果を発揮する",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "crossChecked": true,
         "notes": "公式の使用方法およびユーザーレビューで共通して言及されている。"
       },
@@ -70,7 +76,9 @@
         "claim": "界面活性剤や香料不使用で、色柄物や食器・キッチン周りにも使える",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "crossChecked": true,
         "notes": "商品の主要な特徴として記載されており、無香料による使いやすさが評価されている。"
       }
@@ -179,14 +187,22 @@
     },
     "technicalSpecs": {
       "capacity": "1.5kg",
-      "ingredients": ["過炭酸ナトリウム（酸素系）", "アルカリ剤（炭酸ナトリウム）"],
+      "ingredients": [
+        "過炭酸ナトリウム（酸素系）",
+        "アルカリ剤（炭酸ナトリウム）"
+      ],
       "liquidType": "弱アルカリ性",
       "fragrance": "無香料",
       "surfactant": "不使用",
-      "dimensions": { "height": "170mm", "width": "140mm", "depth": "140mm" },
+      "dimensions": {
+        "height": "170mm",
+        "width": "140mm",
+        "depth": "140mm"
+      },
       "weight": "1.58kg",
       "countryOfOrigin": "中国",
       "energyEfficiencyClass": "Standard Efficiency"
-    }
+    },
+    "investigatedPrice": "￥1,173"
   }
 }

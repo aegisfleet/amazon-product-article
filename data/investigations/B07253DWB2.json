@@ -28,21 +28,27 @@
         "userType": "乾燥肌の30代女性",
         "scenario": "子供が好きな入浴剤を入れた後、自分の入浴時にエプソムソルトを追加して使用",
         "experience": "慣れれば使い方は簡単で、香りは無臭です。お湯に浸かって5分ほどで汗がダラダラ出てきて、老廃物が出ている実感がありました。長時間の半身浴より、短時間で効果的に温まれるので時間短縮になり助かっています。",
-        "supportingSourceIds": ["src-cosme-1"],
+        "supportingSourceIds": [
+          "src-cosme-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "敏感肌の20代女性",
         "scenario": "ダイエットと温活を目的にネットで購入し、毎日の入浴に使用",
         "experience": "白いサラサラの顆粒ですぐにお湯に溶け、透明・無香料なので入れているのを忘れるほどです。付属のスプーンで計量でき、じんわり身体が温まり、少しむくみも改善された気がします。",
-        "supportingSourceIds": ["src-cosme-2"],
+        "supportingSourceIds": [
+          "src-cosme-2"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "普通肌の20代女性",
         "scenario": "マグネシウム不足対策として、足湯や入浴時に使用",
         "experience": "以前使っていた海外産のものより粒子が細かくて溶けやすいのが良かったです。足湯や入浴に使うことで、マグネシウム不足による夜中のこむら返りやまぶたの痙攣といった不調が減ってきたように感じます。",
-        "supportingSourceIds": ["src-cosme-3"],
+        "supportingSourceIds": [
+          "src-cosme-3"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -98,7 +104,9 @@
         "claim": "合成香料、着色料、防腐剤無添加で、国産最上級グレードの100%エプソムソルトである",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-1"],
+        "supportingSourceIds": [
+          "src-amazon-1"
+        ],
         "crossChecked": false,
         "notes": "公式の商品仕様に基づく"
       },
@@ -106,7 +114,9 @@
         "claim": "風呂釜を傷める成分が入っておらず、追い焚きが可能である",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-1"],
+        "supportingSourceIds": [
+          "src-amazon-1"
+        ],
         "crossChecked": false,
         "notes": "公式の商品仕様に基づく"
       },
@@ -114,7 +124,10 @@
         "claim": "短時間の入浴でも高い発汗効果があり、体が芯から温まる",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-cosme-1", "src-cosme-2"],
+        "supportingSourceIds": [
+          "src-cosme-1",
+          "src-cosme-2"
+        ],
         "crossChecked": true,
         "notes": "複数のユーザーレビューで発汗や温浴効果が報告されている"
       }
@@ -180,7 +193,11 @@
     },
     "technicalSpecs": {
       "// 注意": "調査で判明した仕様情報をここに網羅的に記載する（サイズはメートル法のみ、インチ不要）",
-      "dimensions": { "height": "310mm", "width": "110mm", "depth": "197mm" },
+      "dimensions": {
+        "height": "310mm",
+        "width": "110mm",
+        "depth": "197mm"
+      },
       "weight": "2kg",
       "capacity": "2kg (約20回分)",
       "material": "硫酸マグネシウム",
@@ -191,6 +208,7 @@
         "パッケージ: チャック付きスタンドパック入り",
         "販売区分: 浴用化粧品"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,480"
   }
 }

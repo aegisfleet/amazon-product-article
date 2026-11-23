@@ -75,7 +75,9 @@
         "claim": "一度着用すると、もうそのことに気づきません",
         "category": "durability",
         "confidence": "medium",
-        "supportingSourceIds": ["src-amazon-agu"],
+        "supportingSourceIds": [
+          "src-amazon-agu"
+        ],
         "crossChecked": false,
         "notes": "メーカーの主張。伸縮性素材と細かい調整が可能なため圧迫感が少ないと思われる。"
       }
@@ -150,6 +152,7 @@
         "留め具: ステンレススチールバックル (無段階調整)",
         "着脱方式: クイックリリースピン"
       ]
-    }
+    },
+    "investigatedPrice": "￥999"
   }
 }

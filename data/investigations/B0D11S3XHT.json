@@ -3,7 +3,15 @@
     "productName": "単3形 USB充電式リチウムイオンバッテリー 4本セット",
     "parentAsin": "B0DFG9FNH9",
     "productDescription": "USB-Cポートから直接充電できる1.5Vの単3形リチウムイオンバッテリー4本セット。2600mWhの大容量と約1200回の繰り返し充電が可能。",
-    "productUsage": ["子供のおもちゃ", "リモコン", "ワイヤレスマウス", "ワイヤレスキーボード", "ドアロック", "電動歯ブラシ", "美容機器"],
+    "productUsage": [
+      "子供のおもちゃ",
+      "リモコン",
+      "ワイヤレスマウス",
+      "ワイヤレスキーボード",
+      "ドアロック",
+      "電動歯ブラシ",
+      "美容機器"
+    ],
     "positivePoints": [
       "専用の充電器が不要で、付属のUSB-Cケーブルで直接充電可能",
       "2600mWhの大容量で長時間使用が可能",
@@ -40,7 +48,9 @@
         "claim": "2時間でフル充電可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品仕様に記載"
       },
@@ -48,7 +58,9 @@
         "claim": "1200回循環使用可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品仕様に記載"
       }
@@ -160,7 +172,10 @@
       "chargingTime": "約2時間",
       "cycleLife": "約1200回",
       "packageContents": "単3形充電池4本、4 in 1 USB-TypeCケーブル",
-      "other": ["水銀、カドミウム、鉛不使用"]
-    }
+      "other": [
+        "水銀、カドミウム、鉛不使用"
+      ]
+    },
+    "investigatedPrice": "￥2,380"
   }
 }

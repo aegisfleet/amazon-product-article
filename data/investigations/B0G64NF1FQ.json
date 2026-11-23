@@ -29,14 +29,18 @@
         "userType": "出張が多いビジネスマン",
         "scenario": "ホテルや新幹線のコンセントでノートPCとスマホを充電する",
         "experience": "以前はキューブ型の充電器を使っていましたが、壁のコンセントに挿すと出っ張りが気になっていました。この充電器は厚さ12.4mmと非常に薄く、狭い隙間にもすっと挿せます。約53gと軽いのでカバンに入れても重さを感じず、45W出力でノートPCも十分に充電できるのが決め手でした。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ガジェット好きのユーザー",
         "scenario": "カフェでの作業中に電源を確保する",
         "experience": "薄型でデザインが良い充電器を探していました。金属コーティングとフロスト加工の質感が良く、安っぽさがありません。ただ、モバイルバッテリーを充電しようとした際に少し挙動が不安定になることがあり、その点は公式の注意書き通りでした。スマホやPCの直接充電には全く問題ありません。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -59,7 +63,9 @@
         "claim": "当社比67%小型化を実現",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "一般的な45W充電器と比較しても12.4mm / 約53gは間違いなく世界最小・最薄クラスである。"
       }
@@ -139,15 +145,30 @@
     },
     "technicalSpecs": {
       "// 注意": "調査で判明した仕様情報をここに網羅的に記載する",
-      "dimensions": { "height": "12.4mm", "width": "62.2mm", "depth": "42.7mm" },
+      "dimensions": {
+        "height": "12.4mm",
+        "width": "62.2mm",
+        "depth": "42.7mm"
+      },
       "weight": "53.3g",
       "power": "45W",
       "ports": "USB Type-C × 1",
       "plugType": "折りたたみ式",
-      "features": ["GaNInfinityチップ搭載", "Airpyra積層構造", "自動トリクル充電", "サーマルガード温度管理"],
-      "supportedProtocols": ["PD3.0", "QC4+", "PPS", "SCP"],
+      "features": [
+        "GaNInfinityチップ搭載",
+        "Airpyra積層構造",
+        "自動トリクル充電",
+        "サーマルガード温度管理"
+      ],
+      "supportedProtocols": [
+        "PD3.0",
+        "QC4+",
+        "PPS",
+        "SCP"
+      ],
       "certification": "PSE認証済",
       "material": "難燃性シリコン、金属コーティングシェル、フロスト加工アクリル"
-    }
+    },
+    "investigatedPrice": "￥3,350"
   }
 }

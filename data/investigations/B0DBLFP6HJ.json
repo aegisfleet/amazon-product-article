@@ -3,10 +3,24 @@
     "productName": "OAproda iPhone 16 Pro用 ガラスフィルム",
     "parentAsin": "B0FNMNSTXQ",
     "productDescription": "硬度9Hを超える強化ガラスを採用し、極細の黒縁と一体式防塵設計で全面を保護するiPhone 16 Pro用ガラスフィルム。新世代のガイド枠により2ステップで簡単に貼り付け可能。",
-    "productUsage": ["iPhone 16 Proの画面保護", "受話口へのホコリ侵入防止"],
-    "positivePoints": ["ガイド枠で素人でも簡単に貼り付け可能", "一体化した防塵機能で受話口を保護", "極細黒縁で曲面までカバーし、耐衝撃性が高い", "防汚コーティングで指紋が付きにくく、サラサラな手触り"],
-    "negativePoints": ["ガラスフィルム特有の厚みにより、一部のケースと干渉する可能性がある"],
-    "useCases": ["日常的なスマートフォンの使用における画面保護", "ゲームやメッセージ入力など、滑りやすさが求められる操作", "屋外やホコリの多い環境での使用"],
+    "productUsage": [
+      "iPhone 16 Proの画面保護",
+      "受話口へのホコリ侵入防止"
+    ],
+    "positivePoints": [
+      "ガイド枠で素人でも簡単に貼り付け可能",
+      "一体化した防塵機能で受話口を保護",
+      "極細黒縁で曲面までカバーし、耐衝撃性が高い",
+      "防汚コーティングで指紋が付きにくく、サラサラな手触り"
+    ],
+    "negativePoints": [
+      "ガラスフィルム特有の厚みにより、一部のケースと干渉する可能性がある"
+    ],
+    "useCases": [
+      "日常的なスマートフォンの使用における画面保護",
+      "ゲームやメッセージ入力など、滑りやすさが求められる操作",
+      "屋外やホコリの多い環境での使用"
+    ],
     "userStories": [],
     "userImpression": "ガイド枠の使いやすさと、受話口の防塵設計に対する評価が高い。サラサラとした触り心地もゲーム操作などに適している。",
     "sources": [
@@ -27,7 +41,9 @@
         "claim": "1枚が3枚に匹敵する耐衝撃性と耐傷性",
         "category": "durability",
         "confidence": "medium",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "メーカーの主張"
       },
@@ -35,7 +51,9 @@
         "claim": "受話口防塵設計で音質を損なわずにホコリを防ぐ",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "製品の仕様として明記"
       }
@@ -155,6 +173,7 @@
         "硬度: 9H超え",
         "機能: 受話口防塵、AR指紋防止、防汚コーティング、飛散防止"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,287"
   }
 }

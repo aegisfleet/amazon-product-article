@@ -31,14 +31,19 @@
         "userType": "音楽・動画クリエイター",
         "scenario": "DTMや動画編集でのタイムライン移動",
         "experience": "Pro Toolsでの音楽制作において、範囲の選択やポインタの移動が多く重宝しています。ただ、約7ヶ月でホイールが逆回転するような不具合が発生し、耐久性には不満が残りました。",
-        "supportingSourceIds": ["src-2", "src-1"],
+        "supportingSourceIds": [
+          "src-2",
+          "src-1"
+        ],
         "sentiment": "mixed"
       },
       {
         "userType": "一般PCユーザー",
         "scenario": "普通のマウスからの乗り換え",
         "experience": "普通のマウスを使用中に手首が痛くなったため購入しました。手のひらをゆっくりと載せて操作できるパームレストが非常に快適で、手首の痛みが軽減されました。ただ、ボール左のボタンが少し遠く感じます。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -72,7 +77,9 @@
         "claim": "究極のポインタ追従性能を実現",
         "category": "performance",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "ゲーミングセンサー搭載により精度は高いと評価されているが、『究極』という表現は主観的であり、またホイールの耐久性問題等の報告もあるため中程度の信頼性とする。"
       }
@@ -191,6 +198,7 @@
         "ゲーミンググレード光学式センサー搭載",
         "大型人工ルビー支持球(直径2.5mm)"
       ]
-    }
+    },
+    "investigatedPrice": "￥5,499"
   }
 }

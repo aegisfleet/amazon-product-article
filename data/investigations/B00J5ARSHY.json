@@ -30,14 +30,20 @@
         "userType": "共働き世帯",
         "scenario": "忙しい平日の朝食",
         "experience": "朝の準備で忙しく味噌汁を作る時間がない中、お湯を注ぐだけで本格的な味になるのが助かっています。特になすは自分で調理すると手間がかかりますが、これはフリーズドライとは思えないほどなすがとろっとしていて美味しく、ペーストタイプと違って手も汚れないため、毎朝の定番になっています。",
-        "supportingSourceIds": ["src-1", "src-3"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-3"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "単身赴任中の会社員",
         "scenario": "職場でのお弁当のお供",
         "experience": "会社でお弁当を食べる時に、手軽に温かい汁物が欲しくて購入しました。粉末タイプより本格的で美味しいですが、10食すべてがなすなので、毎日同じものを飲んでいると少し飽きてきます。ただ、なす自体のクオリティは高いので、他の味とローテーションで楽しんでいます。",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -82,7 +88,10 @@
         "claim": "とろっとしたなすの食感が楽しめる",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-3"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-3"
+        ],
         "crossChecked": true,
         "notes": "メーカーの主張であり、ユーザーレビューでも「なすに味わいがある」「ボリューム感がある」と高く評価され一致している。"
       },
@@ -90,7 +99,10 @@
         "claim": "まろやかな合わせみそとかつおと昆布だしで飲みやすい定番の味わい",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-3"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-3"
+        ],
         "crossChecked": true,
         "notes": "ユーザーレビューでも「甘みがありちょうどよい」と飲みやすさが評価されている。"
       }
@@ -211,6 +223,7 @@
         "食塩相当量: 1.5g",
         "原材料: 揚げなす（外国製造）、米みそ、調合みそ、ねぎ、風味調味料、でん粉・デキストリン混合物、みりん、乾燥わかめ、オニオンエキスパウダー、酵母エキスパウダー、こんぶエキスパウダー／調味料（アミノ酸等）、酸化防止剤（ビタミンＥ）、酸味料、（一部にさば・大豆・鶏肉・魚醤（魚介類）を含む）"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,011"
   }
 }

@@ -30,7 +30,9 @@
         "userType": "出張が多いビジネスマン",
         "scenario": "宿泊先のホテルでノートPCとスマートフォン、ワイヤレスイヤホンを同時に充電する",
         "experience": "これまでPC用のアダプタとスマホ用の充電器を別々に持ち歩いていましたが、これ1つにまとめられたことで荷物が大幅に減りました。3ポート同時に使ってもノートPCにしっかり給電されつつスマホも充電できるので、限られたコンセントを有効活用できます。付属のケーブルが少し短く感じることがありましたが、デスクの上で使う分には十分でした。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -53,7 +55,9 @@
         "claim": "一般的な60W出力以上の充電器と比較して約55%小さいコンパクトサイズ",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "メーカー公称値であり、GaN II技術による小型化の恩恵として妥当"
       }
@@ -172,6 +176,7 @@
         "PowerIQ 3.0 (Gen 2)",
         "折りたたみ式プラグ採用"
       ]
-    }
+    },
+    "investigatedPrice": "￥6,790"
   }
 }

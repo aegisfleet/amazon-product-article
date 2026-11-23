@@ -41,7 +41,9 @@
         "claim": "1枚あたり約9.46円の高いコストパフォーマンス",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "販売価格1892円と容量200枚から算出"
       },
@@ -49,7 +51,9 @@
         "claim": "厚さ0.01mmの薄手仕様",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "商品仕様に明記されている"
       }
@@ -171,6 +175,7 @@
         "耐冷温度: -30℃",
         "形状: 平袋タイプ、全面エンボス加工、ボックスタイプ"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,892"
   }
 }

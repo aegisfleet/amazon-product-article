@@ -28,14 +28,18 @@
         "userType": "プレゼントを探している人",
         "scenario": "友人の誕生日プレゼントとして購入",
         "experience": "ギフトボックスに入っているのでそのまま渡すことができ、オーガニック製品で肌に優しい点も喜ばれました。自分ではなかなか買わない価格帯のヘアケアセットなので、特別感のある贈り物として最適でした。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ダメージヘアに悩む女性",
         "scenario": "毎日のヘアケアに使用",
         "experience": "シャンプーの泡立ちが良く、トリートメントとヘアオイルを併用することで、パサついていた髪がしっとりまとまるようになりました。アロマの香りも毎日のバスタイムのリラックスに繋がっています。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -58,7 +62,9 @@
         "claim": "サロン品質の美容成分を贅沢に配合",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "crossChecked": true,
         "notes": "ヒアルロン酸、コラーゲン等の成分表示があり、レビューでも髪のまとまりなど実感する声がある"
       },
@@ -66,7 +72,9 @@
         "claim": "子供でも使える無添加処方",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "crossChecked": true,
         "notes": "成分表示で無添加であることが確認でき、地肌への優しさが支持されている"
       }
@@ -179,6 +187,7 @@
       "fragrance": "植物アロマの香り (ティーツリー葉油、ラベンダー油、オレンジ果皮油)",
       "features": "ヒアルロン酸・コラーゲン・セラミド・ビタミンC誘導体配合, 7〜8種の無添加",
       "origin": "日本製"
-    }
+    },
+    "investigatedPrice": "￥6,480"
   }
 }

@@ -30,14 +30,18 @@
         "userType": "スマートウォッチ初心者",
         "scenario": "初めてのスマートウォッチとして購入",
         "experience": "初めてApple Watchを購入しました。決め手はSE3から常時表示ディスプレイに対応したことと、上位モデルと同じ最新チップが載っているのに価格が3万円台だったことです。画面が常に点灯しているので、仕事中もわざわざ腕を上げずに時間が確認できて非常に便利です。心電図などの機能はありませんが、日常的な通知確認やSuicaでの支払いなど、使いたい機能はすべて揃っていて大満足です。",
-        "supportingSourceIds": ["src-apple-official"],
+        "supportingSourceIds": [
+          "src-apple-official"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "旧機種からの買い替えユーザー",
         "scenario": "古いApple Watchからバッテリー寿命を理由に買い替え",
         "experience": "バッテリーが持たなくなったため買い替えました。価格を抑えるためにSE3を選びましたが、高速充電に対応したのが非常に助かります。お風呂に入っている間の短い時間で充電が完了し、睡眠トラッキングのために一晩中着けていても翌日安心です。睡眠時無呼吸の通知機能が追加されたので、いびきが気になる自分の健康管理のモチベーションになっています。",
-        "supportingSourceIds": ["src-apple-official"],
+        "supportingSourceIds": [
+          "src-apple-official"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -60,7 +64,9 @@
         "claim": "SE 2 と比べて最大2倍速く充電でき、わずか15分の充電で最大8時間駆動する",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-apple-official"],
+        "supportingSourceIds": [
+          "src-apple-official"
+        ],
         "crossChecked": true,
         "notes": "Appleの製品仕様ページで明確に言及されている。"
       },
@@ -68,7 +74,9 @@
         "claim": "エントリーモデルながら睡眠時無呼吸の兆候を検出可能",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-apple-official"],
+        "supportingSourceIds": [
+          "src-apple-official"
+        ],
         "crossChecked": true,
         "notes": "医療機器プログラムとしての承認も含め、公式仕様で対応が明記されている。"
       }
@@ -153,6 +161,7 @@
         "耐水性能: 50メートルの耐水性能 (泳げる耐水性能)、IP6X等級の防塵性能",
         "安全機能: 転倒検出、衝突事故検出、緊急SOS"
       ]
-    }
+    },
+    "investigatedPrice": "￥41,800"
   }
 }

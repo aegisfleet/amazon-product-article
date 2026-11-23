@@ -25,7 +25,9 @@
         "userType": "賃貸住宅に住むファミリー層",
         "scenario": "地震対策として大型の食器棚を固定するために設置",
         "experience": "賃貸なので壁に穴を開けられないため、この突っ張り棒を選びました。天井と家具の間に設置するだけで工具も不要なので、女性一人でも簡単に取り付けできました。圧着面が広くしっかり固定されている安心感があり、他の競合品よりも手頃な価格だった点が決め手です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -59,7 +61,9 @@
         "claim": "耐圧200kgを実現",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "公的機関による圧縮試験結果に基づくとメーカーが明記しており、構造上の大型キャップと極太パイプによって高い耐荷重を担保している。"
       }
@@ -174,6 +178,7 @@
         "取付高さ：50～75cm",
         "耐圧：200kg（公的機関による圧縮試験結果による）"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,273"
   }
 }

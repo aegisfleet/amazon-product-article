@@ -28,7 +28,9 @@
         "userType": "リモートワーカー",
         "scenario": "自宅の作業デスクで複数のデバイスを充電する",
         "experience": "PCやスマホ、タブレットの充電ケーブルがデスクから落ちてしまうことに悩んでいましたが、本製品を導入してからはマグネットでピタッと定位置に固定できるようになりストレスが激減しました。ただし、手持ちの太めのナイロン編み込みケーブルはクリップに挟みにくかったため、純正ケーブルなどの細いケーブルを中心に使っています。",
-        "supportingSourceIds": ["src-anker-official"],
+        "supportingSourceIds": [
+          "src-anker-official"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -51,7 +53,9 @@
         "claim": "直径3.5mmまでのケーブルに対応している",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-anker-official"],
+        "supportingSourceIds": [
+          "src-anker-official"
+        ],
         "crossChecked": false,
         "notes": "公式の製品説明欄に明記されている仕様"
       },
@@ -59,7 +63,9 @@
         "claim": "粘着面は水洗いで最大10回再利用可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-anker-official"],
+        "supportingSourceIds": [
+          "src-anker-official"
+        ],
         "crossChecked": false,
         "notes": "公式の製品説明に再利用可能との記載あり"
       }
@@ -178,6 +184,7 @@
         "再利用可能回数: 最大10回（ベースの粘着面）",
         "設置可能素材: 木製、金属製、ガラス製など"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,690"
   }
 }

@@ -27,14 +27,18 @@
         "userType": "50代男性",
         "scenario": "健康診断の数値が気になり始め、青魚の成分を手軽に摂りたいと考えた時",
         "experience": "魚を毎日食べるのは難しいためサプリメントを探していました。他社製品より高額ですが、セサミンも一緒に摂れる点とサントリーという大手メーカーの安心感が決め手になり購入しました。粒が飲みやすく、毎朝の習慣になっています。コストはかかりますが、これ一つで済む手軽さに満足しています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "40代女性",
         "scenario": "仕事で頭を使うことが多く、将来の健康にも不安を感じた時",
         "experience": "「考える力」をサポートするという宣伝を見て試してみました。しばらく続けましたが、正直なところ月額6000円近い出費は家計の負担が大きく、他社の安いDHAサプリに乗り換えることにしました。製品自体に不満はありませんでしたが、継続のしやすさには難があります。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -57,7 +61,9 @@
         "claim": "DHAの弱点である“酸化”をゴマの稀少成分セサミンで抑える",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "サントリーの独自配合技術として広く認知されており、他社との明確な差別化要因となっている"
       }
@@ -164,9 +170,18 @@
     "technicalSpecs": {
       "weight": "70g",
       "capacity": "120粒（約30日分）",
-      "ingredients": ["DHA含有精製魚油", "EPA含有精製魚油", "セサミン", "ビタミンE", "米胚芽油", "ゼラチン", "グリセリン"],
+      "ingredients": [
+        "DHA含有精製魚油",
+        "EPA含有精製魚油",
+        "セサミン",
+        "ビタミンE",
+        "米胚芽油",
+        "ゼラチン",
+        "グリセリン"
+      ],
       "usage": "1日4粒目安",
       "origin": "日本"
-    }
+    },
+    "investigatedPrice": "￥6,633"
   }
 }

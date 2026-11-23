@@ -28,7 +28,9 @@
         "userType": "スマートホーム導入者",
         "scenario": "帰宅時の自動点灯",
         "experience": "Matter対応により、設定が簡単でした。SwitchBotの他のセンサーと連携して、夜中にトイレに行くときや帰宅時に自動で点灯するようにでき、生活がとても便利になりました。テープの素材も丈夫そうです。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -51,7 +53,9 @@
         "claim": "Matter標準規格に対応し、Apple HomeやGoogle Home、Alexaなどとシームレスに連携可能",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式サイトの仕様で明記"
       },
@@ -59,7 +63,9 @@
         "claim": "IP44防塵防水およびPUコーティングによる高い耐久性",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式サイトの仕様で明記"
       }
@@ -174,6 +180,7 @@
         "無段階調光調色対応",
         "Alexa, Google Home, Apple Home, Siri対応"
       ]
-    }
+    },
+    "investigatedPrice": "￥5,480"
   }
 }

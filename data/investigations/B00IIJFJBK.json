@@ -29,14 +29,18 @@
         "userType": "子犬を迎えた飼い主",
         "scenario": "初めて犬を室内で飼育する",
         "experience": "仕切りドアがあるおかげで、寝る場所とトイレの区別をすぐにつけてくれました。トレーに漏れ防止の返しがついているので、おしっこが外に漏れることもなく掃除がとても楽です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "中型犬の飼い主",
         "scenario": "成長に伴い広いサークルに買い替え",
         "experience": "ワイドサイズなので、柴犬でも十分に足を伸ばして寝られるスペースがあります。ただ、重量が20kg近くあるので、一度組み立てると掃除の際に移動させるのが大変です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -59,7 +63,9 @@
         "claim": "トイレのしつけが出来る",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "住居とトイレを物理的に分ける仕切りドアにより、空間の区別がつきやすく、実際にしつけがスムーズにいったという声が多い"
       },
@@ -67,7 +73,9 @@
         "claim": "おしっこが漏れにくい特許構造",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "特許構造の漏れ防止突起機構により、トレーの隙間からの尿漏れを効果的に防いでいる"
       }
@@ -190,6 +198,7 @@
         "カラー: ホワイト",
         "対象犬種: 超小型犬～中型犬"
       ]
-    }
+    },
+    "investigatedPrice": "￥25,294"
   }
 }

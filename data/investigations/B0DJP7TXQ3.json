@@ -3,23 +3,43 @@
     "productName": "BOTANIST ボタニスト シャンプー バウンシーボリューム 大容量 詰め替え",
     "parentAsin": "B0DJP7TXQ3",
     "productDescription": "BOTANISTの「バウンシーボリューム」シリーズのシャンプー大容量詰め替えタイプ。ハリ・コシのあるしなやかな髪に仕上げ、ピオニーとオレンジブロッサムの香りが特徴。内容量は通常詰め替え品の3倍となる1200mL。",
-    "productUsage": ["毎日の洗髪用", "髪のボリュームアップ・ハリコシ付与"],
-    "positivePoints": ["1200mLの大容量でコストパフォーマンスが高い", "通常品詰め替え3個分で買い替えの手間が省ける", "植物由来成分配合で髪に優しい", "ピオニーとオレンジブロッサムの華やかな香り"],
-    "negativePoints": ["大容量のため詰め替え時に重く扱いにくい場合がある", "髪質によってはパサつきを感じることがある", "ボトルの保管場所を選ぶサイズ感"],
-    "useCases": ["家族全員での共用", "頻繁にシャンプーを消費する方", "ボリューム不足が気になる髪質の方"],
+    "productUsage": [
+      "毎日の洗髪用",
+      "髪のボリュームアップ・ハリコシ付与"
+    ],
+    "positivePoints": [
+      "1200mLの大容量でコストパフォーマンスが高い",
+      "通常品詰め替え3個分で買い替えの手間が省ける",
+      "植物由来成分配合で髪に優しい",
+      "ピオニーとオレンジブロッサムの華やかな香り"
+    ],
+    "negativePoints": [
+      "大容量のため詰め替え時に重く扱いにくい場合がある",
+      "髪質によってはパサつきを感じることがある",
+      "ボトルの保管場所を選ぶサイズ感"
+    ],
+    "useCases": [
+      "家族全員での共用",
+      "頻繁にシャンプーを消費する方",
+      "ボリューム不足が気になる髪質の方"
+    ],
     "userStories": [
       {
         "userType": "髪のボリューム不足に悩む女性",
         "scenario": "毎日の洗髪とヘアセットの時",
         "experience": "根元からふんわりと立ち上がり、ハリ・コシが出るようになりました。1200mLの大容量なので、買い出しの頻度が減ってとても助かっています。ピオニーとオレンジブロッサムの甘すぎない香りも気に入っています。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "家族で同じシャンプーを使う主婦",
         "scenario": "お風呂場での詰め替え時",
         "experience": "コスパが良いのは嬉しいですが、1200mLもあるとパッケージが大きくて重いため、ボトルに詰め替える時に少し腕が疲れます。注ぎ口の工夫があればもっと良かったです。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -53,7 +73,9 @@
         "claim": "通常詰め替え品の3倍となる1200mLの大容量である",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-product"],
+        "supportingSourceIds": [
+          "src-amazon-product"
+        ],
         "crossChecked": true,
         "notes": "商品名および商品仕様に「通常品詰替3個分」「1200mL」と明記されている。"
       },
@@ -61,7 +83,10 @@
         "claim": "ハリ・コシのあるしなやかな髪に仕上げる",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-product", "src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-product",
+          "src-amazon-reviews"
+        ],
         "crossChecked": true,
         "notes": "商品仕様に記載があり、使用者の声とも一致している。"
       }
@@ -180,6 +205,7 @@
         "ボタニカル成分独自比率配合",
         "通常品詰替3個分の容量"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,630"
   }
 }

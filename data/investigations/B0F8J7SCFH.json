@@ -31,7 +31,9 @@
         "userType": "出張が多いビジネスマン",
         "scenario": "ホテルやカフェでのPC作業時",
         "experience": "以前はノートPC用の大きなACアダプタとスマホ用の充電器、さらにそれぞれのケーブルを持ち歩いていましたが、これ一つで解決しました。ケーブル内蔵なのでカバンの中で絡まることもなく、サッと引き出してすぐにMacBookとスマホを同時充電できるのが本当に便利です。充電スピードも申し分なく、出張の荷物が劇的に減りました。",
-        "supportingSourceIds": ["src-amazon-review-1"],
+        "supportingSourceIds": [
+          "src-amazon-review-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -65,7 +67,9 @@
         "claim": "自動巻き取り式TYPE-Cケーブルは20,000回以上の使用に耐える耐久性がある",
         "category": "durability",
         "confidence": "medium",
-        "supportingSourceIds": ["src-amazon-product-page"],
+        "supportingSourceIds": [
+          "src-amazon-product-page"
+        ],
         "crossChecked": false,
         "notes": "メーカーの公称値であり、実際の長期使用レビューでの検証は不十分だが、24ヶ月保証があるため一定の信頼性はある。"
       }
@@ -155,6 +159,7 @@
       "color": "ホワイト",
       "warranty": "24ヶ月間",
       "certification": "PSE技術基準適合"
-    }
+    },
+    "investigatedPrice": "￥1,799"
   }
 }

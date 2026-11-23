@@ -42,7 +42,9 @@
         "claim": "ヒンジ保護構造と内蔵スタンドを備え、液晶保護フィルムが一体化されている",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "Amazonの商品ページ記載事項から確認"
       }
@@ -149,7 +151,13 @@
       "material": "PC素材 (ポリカーボネート)",
       "color": "ブラック",
       "compatibleModel": "Google Pixel 10 Pro Fold",
-      "features": ["ヒンジ保護", "内蔵スタンド機能", "9H強化スクリーンフィルム一体型", "耐衝撃設計"]
-    }
+      "features": [
+        "ヒンジ保護",
+        "内蔵スタンド機能",
+        "9H強化スクリーンフィルム一体型",
+        "耐衝撃設計"
+      ]
+    },
+    "investigatedPrice": "￥2,999"
   }
 }

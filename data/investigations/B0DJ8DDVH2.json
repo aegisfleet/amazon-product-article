@@ -44,7 +44,9 @@
         "claim": "10,500Paの高い吸引性能でカーペットやソファの奥の汚れを回収",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-B0DJ8DDVH2"],
+        "supportingSourceIds": [
+          "src-amazon-B0DJ8DDVH2"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式のスペック表に記載"
       },
@@ -52,7 +54,9 @@
         "claim": "レバーを握るだけで連続散水可能な自動ポンプ式を採用",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-B0DJ8DDVH2"],
+        "supportingSourceIds": [
+          "src-amazon-B0DJ8DDVH2"
+        ],
         "crossChecked": false,
         "notes": "商品の主要機能として記載"
       }
@@ -165,11 +169,15 @@
       "suctionPower": "10,500Pa",
       "pumpType": "自動ポンプ式",
       "color": "ホワイト",
-      "attachments": ["ブラシヘッド", "T字型ヘッド"],
+      "attachments": [
+        "ブラシヘッド",
+        "T字型ヘッド"
+      ],
       "other": [
         "水のみで洗浄可能",
         "洗剤不要"
       ]
-    }
+    },
+    "investigatedPrice": "￥14,801"
   }
 }

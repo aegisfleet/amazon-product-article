@@ -3,7 +3,11 @@
     "productName": "Levoit Vital 100S",
     "parentAsin": "B0D78ZJNH2",
     "productDescription": "四方向からの広範囲な空気清浄と高精度センサーを搭載した、家庭内のメイン空間に適したスマート空気清浄機",
-    "productUsage": ["リビングや寝室での日常的な空気清浄", "花粉・ハウスダスト・PM2.5などの除去", "ペットの毛やニオイ対策"],
+    "productUsage": [
+      "リビングや寝室での日常的な空気清浄",
+      "花粉・ハウスダスト・PM2.5などの除去",
+      "ペットの毛やニオイ対策"
+    ],
     "positivePoints": [
       "最大適用床面21畳で、家庭内のメイン空間での使用に最適",
       "U字型の大きな吸込口と四方向吸気により、高い浄化力を実現",
@@ -26,14 +30,18 @@
         "userType": "ペットを飼う家庭",
         "scenario": "リビングでのペットのニオイ対策",
         "experience": "ペットモードを使用すると、気になるニオイが素早く軽減されました。プレフィルターが水洗いできるのも手入れが簡単で助かります。",
-        "supportingSourceIds": ["src-amazon-product-page"],
+        "supportingSourceIds": [
+          "src-amazon-product-page"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "スマート家電ユーザー",
         "scenario": "日常的な空気清浄機の管理",
         "experience": "VeSyncアプリを使ってスマホから電源のオンオフやモード切替ができ、タイマー設定も簡単で便利です。",
-        "supportingSourceIds": ["src-amazon-product-page"],
+        "supportingSourceIds": [
+          "src-amazon-product-page"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -56,7 +64,9 @@
         "claim": "最大適用床面21畳のパワフルな浄化力",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-product-page"],
+        "supportingSourceIds": [
+          "src-amazon-product-page"
+        ],
         "crossChecked": true,
         "notes": "商品仕様および特徴説明で一貫して21畳対応と記載あり"
       },
@@ -64,7 +74,9 @@
         "claim": "スマートアプリ対応",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-product-page"],
+        "supportingSourceIds": [
+          "src-amazon-product-page"
+        ],
         "crossChecked": true,
         "notes": "VeSyncアプリとの連携機能が明記されている"
       }
@@ -188,6 +200,7 @@
         "センサー: 高精度ホコリセンサー、光センサー",
         "スマート機能: VeSyncアプリ対応、スマートスピーカー連携"
       ]
-    }
+    },
+    "investigatedPrice": "￥18,800"
   }
 }

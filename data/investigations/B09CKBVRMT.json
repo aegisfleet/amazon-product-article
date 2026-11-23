@@ -26,21 +26,28 @@
         "userType": "一般男性",
         "scenario": "日々の入浴",
         "experience": "頭も身体もこれ一本で楽だし、綺麗に洗えるので大満足です。大容量の詰め替え用でキャップがついているため、買いに行く回数も少なくて済み、置き場所も取りません。",
-        "supportingSourceIds": ["kakaku-review-1"],
+        "supportingSourceIds": [
+          "kakaku-review-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "一般男性",
         "scenario": "季節ごとの使用",
         "experience": "夏は暑くて汗をかくので体の汚れがしっかり落とせて良いのですが、冬場は少し洗浄力が強すぎて乾燥するかもしれません。肌が弱い方や敏感な方は要注意です。",
-        "supportingSourceIds": ["kakaku-review-1"],
+        "supportingSourceIds": [
+          "kakaku-review-1"
+        ],
         "sentiment": "mixed"
       },
       {
         "userType": "一般男性",
         "scenario": "香りの印象",
         "experience": "女性が使用しても大丈夫な良い香りです。かなりサッパリスッキリします。泡立ちも良く毛穴油も取ってくれるようなので長年愛用しています。",
-        "supportingSourceIds": ["kakaku-review-2", "kakaku-review-3"],
+        "supportingSourceIds": [
+          "kakaku-review-2",
+          "kakaku-review-3"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -85,7 +92,10 @@
         "claim": "髪、顔、体をこれ1本で洗える",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["kakaku-review-1", "kakaku-review-2"],
+        "supportingSourceIds": [
+          "kakaku-review-1",
+          "kakaku-review-2"
+        ],
         "crossChecked": true,
         "notes": "複数のユーザーが全身を洗える利便性を評価"
       },
@@ -93,7 +103,9 @@
         "claim": "フルーティーサボンの香りが爽やかで男女問わず使いやすい",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["kakaku-review-2"],
+        "supportingSourceIds": [
+          "kakaku-review-2"
+        ],
         "crossChecked": false,
         "notes": "ユーザーの個人的な感想"
       },
@@ -101,7 +113,9 @@
         "claim": "大容量詰め替えタイプでキャップ付きなので保管しやすい",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["kakaku-review-1"],
+        "supportingSourceIds": [
+          "kakaku-review-1"
+        ],
         "crossChecked": false,
         "notes": "商品の物理的な特徴と利便性"
       }
@@ -214,6 +228,7 @@
         "大容量詰め替え用（キャップ付き）",
         "髪・顔・体用オールインワン"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,031"
   }
 }

@@ -41,7 +41,9 @@
         "claim": "柔軟なソフトヒドロゲル素材を使用し折りたたみに対応",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-main"],
+        "supportingSourceIds": [
+          "src-amazon-main"
+        ],
         "crossChecked": false,
         "notes": "商品仕様に明記されている"
       },
@@ -49,7 +51,9 @@
         "claim": "小さな傷を自己修復する機能を搭載",
         "category": "durability",
         "confidence": "medium",
-        "supportingSourceIds": ["src-amazon-main"],
+        "supportingSourceIds": [
+          "src-amazon-main"
+        ],
         "crossChecked": false,
         "notes": "素材の特性として自己修復機能が謳われている"
       }
@@ -168,6 +172,7 @@
         "コーティング: 疎水性および疎油性コーティング",
         "機能: 気泡自動修復、指紋防止、高透過率"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,280"
   }
 }

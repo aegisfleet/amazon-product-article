@@ -27,21 +27,27 @@
         "userType": "老犬・療養中の犬の飼い主",
         "scenario": "病気の回復期で流動食を与えており、口周りの毛が固まってしまった時のケア",
         "experience": "首のチューブからの給餌で毛がガチガチに固まってしまったが、身体の負担になるシャンプーは避けたかった。スプレーを染み込ませて揉むと、ヨダレや食べカスなどの汚れがしっかりと落ち、清潔に保つことができた。",
-        "supportingSourceIds": ["src-rakuten-review"],
+        "supportingSourceIds": [
+          "src-rakuten-review"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "子犬の飼い主",
         "scenario": "ワクチン接種が完了する前で、お風呂に入れられない期間のケア",
         "experience": "お迎えして間もなく、まだシャンプーができない時期に使用。直接のスプレーは少し嫌がったものの、ブラッシングをするとふわふわの毛並みになった。",
-        "supportingSourceIds": ["src-rakuten-review"],
+        "supportingSourceIds": [
+          "src-rakuten-review"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "長毛種の猫の飼い主",
         "scenario": "毎日のブラッシング時の静電気防止と毛並みケア",
         "experience": "スリッカーブラシでの引っかかりが減り、静電気が抑えられて毛玉ができにくくなった。無香料なので猫も嫌がらず、仕上がりがさらさらでふわふわになる。",
-        "supportingSourceIds": ["src-rakuten-review"],
+        "supportingSourceIds": [
+          "src-rakuten-review"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -75,7 +81,9 @@
         "claim": "清涼飲料水の規格基準をクリアし、舐めても安全な完全無添加処方である",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式情報の安全性基準。"
       },
@@ -83,7 +91,10 @@
         "claim": "皮脂汚れや食べカスの汚れを水なしで落とすことができる",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon", "src-rakuten-review"],
+        "supportingSourceIds": [
+          "src-amazon",
+          "src-rakuten-review"
+        ],
         "crossChecked": true,
         "notes": "公式の主張と、実際のユーザーのレビュー（流動食の汚れ落ち）が一致。"
       }
@@ -199,6 +210,7 @@
       "other": [
         "color: 透明"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,970"
   }
 }

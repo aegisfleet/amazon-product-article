@@ -27,7 +27,10 @@
         "userType": "40代男性",
         "scenario": "薄毛と頭皮のニオイが気になり始めたため使用",
         "experience": "超濃密な泡立ちで、頭皮の皮脂や汚れがしっかり落ちている感覚があります。洗い上がりは爽快感があり、気になっていた頭皮のニオイも軽減されました。髪の根本からフワッと立ち上がる感じがあり、ボリュームアップ効果も実感しています。ただ、冬場など乾燥しやすい時期は少しパサつくことがあるので、コンディショナーを併用しています。",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -61,7 +64,9 @@
         "claim": "独自処方のペプチドを配合し、保湿と育毛サポートが期待できる",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "東京予防医療クリニックの記事で、アセチルテトラペプチド-3等の独自ペプチド処方について解説されている"
       },
@@ -69,7 +74,9 @@
         "claim": "フケや頭皮のニオイを軽減する効果がある",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "口コミにおいてニオイ軽減の報告が多数あり、洗浄成分による雑菌除去効果として紹介されている"
       }
@@ -174,7 +181,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (独自処方ペプチドによるボリュームアップ効果への評価)\n[加点: +5] (濃密泡による洗浄力とニオイ対策への実用性の高さ)\n[減点: -5] (洗浄力の高さゆえに乾燥肌・敏感肌の人には刺激になり得るリスク)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "200mm", "width": "120mm", "depth": "60mm" },
+      "dimensions": {
+        "height": "200mm",
+        "width": "120mm",
+        "depth": "60mm"
+      },
       "weight": "330g",
       "capacity": "300ml",
       "material": "プラスチック（パウチ）",
@@ -186,6 +197,7 @@
         "ディフェンスカルプ(R)配合",
         "香り：ジェントルミント"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,867"
   }
 }

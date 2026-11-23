@@ -27,7 +27,9 @@
         "userType": "ロングヘアの女性",
         "scenario": "お風呂上がりに毎日髪を乾かす際",
         "experience": "大風量のおかげで、乾かす時間が以前より大幅に短縮されました。GLOSSモードの温冷切り替えを使うと、乾かした後の髪がしっとりまとまってツヤが出ます。少し重さは感じますが、乾くのが早いので腕はそこまで疲れません。",
-        "supportingSourceIds": ["src-official"],
+        "supportingSourceIds": [
+          "src-official"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -61,7 +63,10 @@
         "claim": "2.4㎥/minの大風量による速乾",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-official", "src-andhabit"],
+        "supportingSourceIds": [
+          "src-official",
+          "src-andhabit"
+        ],
         "crossChecked": true,
         "notes": "公式ページのスペック表にて確認"
       },
@@ -69,7 +74,10 @@
         "claim": "GLOSSモードとSKINモードによるヘア・スカルプケア",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-official", "src-andhabit"],
+        "supportingSourceIds": [
+          "src-official",
+          "src-andhabit"
+        ],
         "crossChecked": true,
         "notes": "温冷自動切り替え機能の搭載を公式情報にて確認"
       }
@@ -191,6 +199,7 @@
         "マイナスイオン搭載（従来品比120%）",
         "温冷自動切り替え機能（GLOSSモード、SKINモード）"
       ]
-    }
+    },
+    "investigatedPrice": "￥13,200"
   }
 }

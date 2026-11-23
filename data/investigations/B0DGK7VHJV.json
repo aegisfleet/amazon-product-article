@@ -28,7 +28,9 @@
         "userType": "長距離フライトを利用する旅行者",
         "scenario": "国際線での長時間移動中",
         "experience": "以前使っていた布だけのフットレストは足が中央に寄ってしまい窮屈でしたが、この商品は底に硬い板（竹製ストリップ）が入っているため、しっかりとした平面が保たれ足が圧迫されませんでした。足の裏だけでなく、ふくらはぎを乗せることもでき、ファーストクラスのような快適な姿勢で過ごせました。ただ、セパレート式のように足を別々に動かすことはできないので、完全に自由な姿勢を取りたい人には向かないかもしれません。",
-        "supportingSourceIds": ["src-amazon-listing"],
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -51,7 +53,9 @@
         "claim": "従来製品によくある「足の圧迫」という悩みを解決するため、独自に竹製ストリップをサポート構造に採用し、変形を防ぐ",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-listing"],
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
         "crossChecked": false,
         "notes": "メーカーの商品説明に基づく。構造的に底面が硬くなるため、布だけのハンモックで起きる「足が中央に寄る」現象を防げることは論理的に妥当。"
       }
@@ -124,6 +128,7 @@
         "カラー: ブラック",
         "専用収納袋付属"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,680"
   }
 }

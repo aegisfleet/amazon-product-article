@@ -24,7 +24,9 @@
         "userType": "20代女性",
         "scenario": "休日のお出かけに使用",
         "experience": "普段のメイクにプラスするだけで、瞳がくっきりと強調されて華やかな印象になりました。1日つけていてもゴロゴロせず、乾燥も気にならなかったので快適に過ごせました。",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -58,7 +60,9 @@
         "claim": "色素が瞳に直接触れないインナーカラー構造",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "crossChecked": false,
         "notes": "公式ページの製品特長にて確認"
       },
@@ -66,7 +70,10 @@
         "claim": "UVカット機能を備えている",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "Amazon商品名および公式ページの製品特長にて確認"
       }
@@ -143,6 +150,7 @@
         "天然うるおい成分（アルギン酸）配合",
         "インナーカラー構造"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,448"
   }
 }

@@ -29,14 +29,18 @@
         "userType": "通勤で毎日車に乗るユーザー",
         "scenario": "夏の暑い時期や冬の寒い時期を通してダッシュボードに設置して使用",
         "experience": "以前使っていたプラスチック製のホルダーは夏の暑さで変形してしまったが、このフルメタル製のホルダーは一年中安定して使えている。2.3cmという薄さのおかげでフロントガラスの視界もクリアで、運転に集中できる。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ナビを頻繁に使うドライバー",
         "scenario": "高速道路や段差の多い道を走行中にスマホをナビとして利用",
         "experience": "N55マグネットの磁力が非常に強力で、段差を乗り越えてもスマホがズレ落ちる不安がない。真空吸盤もしっかりと密着しており、片手でスマホの縦横の向きをスムーズに変えられるのが便利。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -59,7 +63,9 @@
         "claim": "厚さ約2.3cmの超薄型設計で視界を妨げない",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品仕様に基づく"
       },
@@ -67,7 +73,9 @@
         "claim": "フルメタル構造で高温・低温環境でも変形や割れが生じにくい",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "素材特性およびメーカーの公式説明に基づく"
       },
@@ -75,7 +83,9 @@
         "claim": "N55二重磁環と真空ゲルロック吸盤により高い固定力を実現",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品仕様に基づく"
       }
@@ -196,6 +206,7 @@
         "可動域: 360度調整可能",
         "固定方式: 2WAYロック構造"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,279"
   }
 }

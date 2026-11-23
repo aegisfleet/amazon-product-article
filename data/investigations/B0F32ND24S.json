@@ -46,7 +46,9 @@
         "claim": "AIを活用したDLSS 4によりゲームのフレームレートを向上させ、より滑らかな映像を実現",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": true,
         "notes": "NVIDIA Blackwell世代の標準的な強みであり、製品仕様とも合致する"
       },
@@ -54,7 +56,9 @@
         "claim": "優れた冷却と静かな動作、低温時にはファンが完全に停止し静音性を向上",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": true,
         "notes": "STORMFORCEファンとゼロフローズル（0dB機能）によるものとして事実である"
       }
@@ -175,6 +179,7 @@
         "0dBテクノロジー(低温時ファン停止機能)",
         "通気孔付きメタルバックプレート搭載"
       ]
-    }
+    },
+    "investigatedPrice": "￥98,500"
   }
 }

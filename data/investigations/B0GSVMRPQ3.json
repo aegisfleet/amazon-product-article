@@ -30,7 +30,9 @@
         "userType": "アレルギー体質の家族を持つ主婦",
         "scenario": "リビングでの空気循環と、定期的な清掃",
         "experience": "サーキュレーターはすぐにホコリが溜まるのが悩みでしたが、この商品は工具なしでカチッと外して水洗いできるのが最大の決め手でした。実際に洗ってみると本当に簡単で、風に乗ってホコリが舞う心配がなくなりました。風量も9段階あり、普段は静かな微風、換気時は強風と使い分けられて便利です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -53,7 +55,9 @@
         "claim": "動作音はわずか 25dB の超静音",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "1〜3段階の微風モード時における仕様数値"
       },
@@ -61,7 +65,9 @@
         "claim": "電気代はわずか1時間あたり約0.4円（従来品比最大68%節電）",
         "category": "comparativeAdvantage",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "DCモーター搭載機としては標準的な省エネ性能だが、具体的な比較対象（従来品）は不明"
       }
@@ -184,6 +190,7 @@
         "転倒防止の低重心設計・滑り止め脚",
         "背面に持ち運び用取っ手搭載"
       ]
-    }
+    },
+    "investigatedPrice": "￥4,980"
   }
 }

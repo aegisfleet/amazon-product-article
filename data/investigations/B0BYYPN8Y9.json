@@ -30,14 +30,18 @@
         "userType": "敏感肌の20代女性",
         "scenario": "夏の外出後、日焼けによるほてりが気になる時に使用",
         "experience": "冷蔵庫で冷やさなくてもパッド自体がひんやりとしていて気持ちよく、肌のほてりがスッと引いていくのを感じました。液がヒタヒタで摩擦を感じることなく拭き取れ、そのまま頬に貼ってパックするとさらに潤います。CICA成分配合のものと迷いましたが、水分補給力と即効性のあるクーリング効果が決め手でした。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "混合肌の30代女性",
         "scenario": "朝の忙しい時間の時短スキンケアとして使用",
         "experience": "朝の洗顔代わりにサッと拭き取るだけで、保湿と鎮静が完了するのでとても便利です。肌の温度が下がることでその後のメイクのノリも良くなり、崩れにくくなった気がします。ただ、他社のパッドのようにピンセットが内蔵されているとさらに使いやすかったと思います。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -60,7 +64,9 @@
         "claim": "外気の乾燥や外出後の熱感にもやさしくケア",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "ユーザーレビューでも、日焼け後のほてりや赤みの鎮静に効果があるという声が多数確認できる"
       },
@@ -68,7 +74,9 @@
         "claim": "敏感肌対応・低刺激処方",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "敏感肌ユーザーからも刺激を感じずに使えたという報告が多い"
       }
@@ -174,8 +182,14 @@
     },
     "technicalSpecs": {
       "capacity": "70枚",
-      "ingredients": ["氷河水", "ウォータリーエッセンス"],
-      "skinType": ["敏感肌", "全肌質対応"],
+      "ingredients": [
+        "氷河水",
+        "ウォータリーエッセンス"
+      ],
+      "skinType": [
+        "敏感肌",
+        "全肌質対応"
+      ],
       "weight": "約280g",
       "color": "無色",
       "origin": "韓国",
@@ -184,6 +198,7 @@
         "クーリング効果",
         "鎮静・水分補給特化"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,200"
   }
 }

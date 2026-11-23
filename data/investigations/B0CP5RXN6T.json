@@ -24,14 +24,18 @@
         "userType": "漫画ファン",
         "scenario": "日常の息抜きとして",
         "experience": "主人公たちの関係が一気に進展するわけでもなく、かといってもどかしいわけでもなく、自然な会話の中で少しずつお互いに惹かれていく過程が丁寧に描かれており、今の絶妙な距離感を楽しめる。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ラブコメ好き読者",
         "scenario": "優しい物語を求めている時",
         "experience": "令和のラブコメらしく優しくて気遣いができ、強引ではない登場人物たちのやり取りに歯痒さを感じつつも、癒やされながら読み進められる。",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -65,7 +69,9 @@
         "claim": "主人公二人の絶妙な距離感と丁寧な心理描写が高評価",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "複数のレビューで、関係性の変化と距離感が魅力であると一致している"
       }
@@ -174,7 +180,11 @@
       "publicationDate": "2024-01-25",
       "language": "日本語",
       "author": "地主",
-      "genre": ["青年マンガ", "ラブコメディ"]
-    }
+      "genre": [
+        "青年マンガ",
+        "ラブコメディ"
+      ]
+    },
+    "investigatedPrice": "￥790"
   }
 }

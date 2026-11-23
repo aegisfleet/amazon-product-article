@@ -29,14 +29,20 @@
         "userType": "SHURE SE215ユーザー",
         "scenario": "純正ケーブルが断線したため、安価な代替品を探して購入",
         "experience": "耳掛け用のワイヤーがないので最初は掛けづらく感じましたが、慣れると耳によく馴染み、メガネに干渉しないので逆に使いやすいです。ケーブルが柔らかい分タッチノイズも少なく満足していますが、布製のため絡まりやすい点は注意が必要です。",
-        "supportingSourceIds": ["src-rakuten", "src-yuuto-kannami"],
+        "supportingSourceIds": [
+          "src-rakuten",
+          "src-yuuto-kannami"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "日常使いユーザー",
         "scenario": "外出時や通勤中の音楽鑑賞",
         "experience": "デザインが良く布製の質感も気に入っていますが、ストレート型のプラグのため取り扱いに気を使います。音質は純正と比べて大きく変わらないものの、少し低音が強めに出る印象を受けました。",
-        "supportingSourceIds": ["src-rakuten", "src-yuuto-kannami"],
+        "supportingSourceIds": [
+          "src-rakuten",
+          "src-yuuto-kannami"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -70,7 +76,10 @@
         "claim": "耳掛け用ワイヤーがないためメガネ着用時でも干渉しにくい",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-rakuten", "src-yuuto-kannami"],
+        "supportingSourceIds": [
+          "src-rakuten",
+          "src-yuuto-kannami"
+        ],
         "crossChecked": true,
         "notes": "複数のレビュー及び検証ブログで言及されている事実"
       },
@@ -78,7 +87,10 @@
         "claim": "ケーブルが布製で柔らかく、タッチノイズが少ない",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-rakuten", "src-yuuto-kannami"],
+        "supportingSourceIds": [
+          "src-rakuten",
+          "src-yuuto-kannami"
+        ],
         "crossChecked": true,
         "notes": "素材の特性と実際の使用感に関する一致した意見"
       }
@@ -197,6 +209,7 @@
         "インピーダンス: 0.5Ω以下",
         "クライオ処理: -156℃ / 48時間"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,981"
   }
 }

@@ -26,7 +26,9 @@
         "userType": "カラーリングで髪が傷んでいる30代女性",
         "scenario": "パサつきとカラーの色落ちが気になっていた",
         "experience": "オイルインシャンプーということで重くなりすぎるか心配でしたが、しっとりとまとまるのにベタつかず、指通りが良くなりました。サンダルウッドの深みのある香りがとてもリラックスでき、競合製品によくある甘い香りが苦手な私にとって選ぶ最大の決め手になりました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -49,7 +51,9 @@
         "claim": "濃香オイルで髪の芯までダメージ補修し、パサつきを満たして閉じ込める",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "ユーザーレビューにおいてもしっとり感やまとまりが改善したとの報告が多く、主張と一致している"
       }
@@ -159,11 +163,16 @@
       },
       "capacity": "シャンプー 460ml / トリートメント 460g",
       "scent": "シャンプー：パロサント＆サンダルウッド / トリートメント：パロサント＆ローズウッド",
-      "keyIngredients": ["レブリン酸", "グルコシルヘスペリジン", "濃香オイル"],
+      "keyIngredients": [
+        "レブリン酸",
+        "グルコシルヘスペリジン",
+        "濃香オイル"
+      ],
       "color": "SANTAL",
       "other": [
         "オイルイン処方"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,300"
   }
 }

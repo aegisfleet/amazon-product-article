@@ -26,7 +26,9 @@
         "userType": "作業員",
         "scenario": "夏の暑い時期の屋外作業での使用",
         "experience": "風量がしっかりあり、これからの暑い季節に活躍してくれそうです。早めに購入して正解でした。また、バッテリーは緩衝材で丁寧に梱包されており、安心して受け取れました。",
-        "supportingSourceIds": ["src-review-1"],
+        "supportingSourceIds": [
+          "src-review-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -60,7 +62,9 @@
         "claim": "最大電圧30Vで約120リットル/秒の強力な風量を実現",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-page"],
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式スペックに基づく数値"
       },
@@ -68,7 +72,9 @@
         "claim": "京セラIT社製のバッテリーを採用し高い信頼性を持つ",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-page"],
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
         "crossChecked": false,
         "notes": "実績のある京セラ製デバイスであるため、中華系の安価な製品群に比べ品質と安全性が期待できる"
       }
@@ -190,6 +196,7 @@
         "対応機種: AC10-1、AC10-2、IC10-1",
         "カラー: シルバー"
       ]
-    }
+    },
+    "investigatedPrice": "￥25,000"
   }
 }

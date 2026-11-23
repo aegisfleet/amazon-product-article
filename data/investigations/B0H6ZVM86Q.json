@@ -31,14 +31,18 @@
         "userType": "テレワーク中心の会社員",
         "scenario": "在宅勤務用のサブPCとして購入",
         "experience": "会社支給のPCに加えて、自宅で作業する用の端末として購入しました。第10世代のCore i5搭載ということで、OfficeソフトやZoomを起動しても動作はスムーズです。初期設定済みですぐに使えた点と、Office 2021が付いている点が決め手でした。ただ、本体が2.2kgとずっしり重いので、基本的にはデスクに据え置いて使っています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "大学生",
         "scenario": "レポート作成やオンライン授業用に購入",
         "experience": "予算を抑えつつ、ある程度新しめのスペックのPCを探してこれを選びました。Webカメラ内蔵でオンライン授業にもそのまま参加でき、Type-Cポートがあるのも今どきで便利です。メモリが8GBなので、タブをたくさん開いたまま作業すると少しもたつくことがありますが、レポート作成などの基本用途なら十分です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -61,7 +65,9 @@
         "claim": "日常業務からビジネス用途まで快適に対応、複数のアプリケーションを同時に使用しても動作がスムーズ",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "第10世代Core i5の性能としては十分だが、メモリが8GBであるため「複数のアプリケーションを同時に使用」する規模（ブラウザのタブを数十個開きながらの重い処理など）には限界がある点に注意が必要。"
       }
@@ -169,10 +175,19 @@
       "storage": "256GB SSD",
       "os": "Windows 11 Pro",
       "software": "Microsoft Office 2021",
-      "interfaces": ["Webカメラ", "HDMI", "USB Type-C", "VGA", "USB 3.0", "Wi-Fi", "Bluetooth"],
+      "interfaces": [
+        "Webカメラ",
+        "HDMI",
+        "USB Type-C",
+        "VGA",
+        "USB 3.0",
+        "Wi-Fi",
+        "Bluetooth"
+      ],
       "weight": "2.2kg",
       "warranty": "180日無料保証",
       "accessories": "有線静音マウス"
-    }
+    },
+    "investigatedPrice": "￥38,880"
   }
 }

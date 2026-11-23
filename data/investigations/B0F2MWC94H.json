@@ -3,10 +3,24 @@
     "productName": "ペティオ 犬猫用 FIXCARE ピン先が優しく握りやすい ソフトスリッカーブラシ ミニ",
     "parentAsin": "B0F5GQZVFV",
     "productDescription": "犬や猫の長くもつれやすい毛をやさしくときほぐし、サラサラに整えるソフトスリッカーブラシ。握りやすい設計で飼い主の負担も軽減します。",
-    "productUsage": ["犬猫の被毛のブラッシング", "もつれや毛玉の除去", "抜け毛のケア"],
-    "positivePoints": ["握りやすい形状でブラッシングの負担を軽減", "ピン先が優しく肌への負担が少ない", "コンパクトなミニサイズで顔回りや小型犬・猫に最適"],
-    "negativePoints": ["ミニサイズのため、大型犬や広範囲のブラッシングには時間がかかる"],
-    "useCases": ["日々のブラッシングケア", "顔回りや足先など細かい部分のお手入れ", "長毛種の毛玉予防"],
+    "productUsage": [
+      "犬猫の被毛のブラッシング",
+      "もつれや毛玉の除去",
+      "抜け毛のケア"
+    ],
+    "positivePoints": [
+      "握りやすい形状でブラッシングの負担を軽減",
+      "ピン先が優しく肌への負担が少ない",
+      "コンパクトなミニサイズで顔回りや小型犬・猫に最適"
+    ],
+    "negativePoints": [
+      "ミニサイズのため、大型犬や広範囲のブラッシングには時間がかかる"
+    ],
+    "useCases": [
+      "日々のブラッシングケア",
+      "顔回りや足先など細かい部分のお手入れ",
+      "長毛種の毛玉予防"
+    ],
     "userStories": [],
     "userImpression": "ピン先が肌に優しく、握りやすい設計で日々のブラッシングが快適に行えると評価されています。特に細かい部分のケアや小型ペットに適しています。",
     "sources": [
@@ -38,7 +52,9 @@
         "claim": "もつれて毛玉になりやすい長い毛を取り除き、サラサラにできる",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "公式の商品特徴説明に基づく"
       },
@@ -46,7 +62,9 @@
         "claim": "握りやすい設計である",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "商品名および特徴説明に基づく"
       }
@@ -157,6 +175,7 @@
       },
       "color": "ピンク",
       "size": "ミニ"
-    }
+    },
+    "investigatedPrice": "￥754"
   }
 }

@@ -25,7 +25,9 @@
         "userType": "多頭飼いの飼い主",
         "scenario": "日常的な食事用として初めて与えた",
         "experience": "大き目で硬めの粒ですが、よく噛んで食べているので味が良いのだと思われます。外装厚めアルミで中の小分けの袋もアルミなので鮮度的にも香りも抜群です。基本フードとして常備しています。４にゃんは全員ビューティープロ大好きで、小分けがありがたいですが、主原料がトウモロコシなどなのが少し気になります。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -48,7 +50,9 @@
         "claim": "コラーゲン3000mg/kg配合",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式商品特徴として記載。"
       },
@@ -56,7 +60,9 @@
         "claim": "マグネシウム調整でストルバイト結石に配慮",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式商品特徴として記載。"
       }
@@ -175,6 +181,7 @@
         "コラーゲン3000mg/kg配合",
         "マグネシウム調整でストルバイト結石に配慮"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,291"
   }
 }

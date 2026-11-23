@@ -32,14 +32,20 @@
         "userType": "一人暮らしの社会人",
         "scenario": "平日は忙しく、休日にまとめてご飯を炊いて冷凍保存したい",
         "experience": "5.5合を一度に炊けるので、休日にまとめて炊いて小分け冷凍するのに重宝しています。早炊き機能を使えば約30分で炊けるため、急にご飯が必要になった時も助かります。一方で、長時間保温には向かないため、炊きあがったらすぐに冷凍庫へ移す運用を徹底しています。この価格帯で十分な機能があり、一人暮らしの自炊生活にぴったりの炊飯器でした。",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "夫婦2人暮らし",
         "scenario": "炊飯だけでなく、たまには簡単な料理にも炊飯器を活用したい",
         "experience": "ご飯は毎回3合ほど炊いていますが、やわらかさの調整ができる点が気に入っています。また、温度調理機能で25℃から100℃まで設定できるので、休日にローストビーフや煮込み料理を作る際にも活用できました。ただ、予約機能が時計式ではなく「何時間後」の設定なので、最初は計算に戸惑いました。",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -73,7 +79,10 @@
         "claim": "25℃から100℃まで5℃刻みで設定できる温度調理機能を搭載している",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "複数のレビューサイトで確認。低価格帯の炊飯器としては珍しい機能であり、事実として確認された。"
       },
@@ -81,7 +90,10 @@
         "claim": "価格が安くコストパフォーマンスに優れている",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "Amazon等での実売価格が約6,000円台であり、5.5合炊きで温度調理機能搭載であることを考慮すると客観的にコスパが高いと言える。"
       }
@@ -206,6 +218,7 @@
         "予約機能: 最大24時間（経過時間指定）",
         "付属品: しゃもじ、おかゆ用しゃもじ、計量カップ、無洗米専用計量カップ、電源コード"
       ]
-    }
+    },
+    "investigatedPrice": "￥7,980"
   }
 }

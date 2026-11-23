@@ -31,7 +31,9 @@
         "userType": "DIY・ハンドメイド愛好家",
         "scenario": "自作のアクセサリーや木工作品の仕上げ、微細な彫刻作業",
         "experience": "価格の割に128点ものアクセサリーが付いており、届いたその日から様々な作業に取り掛かることができた。フレキシブルシャフトが非常に便利で、ペンを持つような感覚で細かい削り出しができるのが決め手だった。ただし、長時間の作業ではモーターの排熱と動作音が少し気になったが、総合的なコスパと使い勝手の良さには満足している。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -54,7 +56,9 @@
         "claim": "作業効率を30％向上させる180Wの純銅モーター",
         "category": "durability",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーの主張。同等クラスのモーターと比較した相対的な数値と思われるが、客観的な第三者による比較検証は見当たらない"
       },
@@ -62,7 +66,9 @@
         "claim": "他社製グラインダー工具との互換性が高くコストパフォーマンスに優れる",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "シャンク径4mm～3.2mm対応のキーレスチャック構造であることから、物理的な仕様として互換性があることは事実と確認可能"
       }
@@ -174,6 +180,7 @@
         "color: グリーン",
         "features: フレキシブルシャフト付属, 透明カバーシールド付属, 収納ケース付属"
       ]
-    }
+    },
+    "investigatedPrice": "￥5,999"
   }
 }

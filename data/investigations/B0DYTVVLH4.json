@@ -29,7 +29,9 @@
         "userType": "WindowsノートPCユーザー",
         "scenario": "在宅ワークでのデュアル・トリプルモニター環境の構築",
         "experience": "複数のモニターを接続して作業領域を広げられるため、仕事の効率が格段に向上します。100WのPD給電によりノートPCの充電も同時に行え、デスク周りのケーブルがスッキリとまとまりました。",
-        "supportingSourceIds": ["src-amazon-product"],
+        "supportingSourceIds": [
+          "src-amazon-product"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -52,7 +54,9 @@
         "claim": "最大3画面のマルチモニター出力に対応",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-product"],
+        "supportingSourceIds": [
+          "src-amazon-product"
+        ],
         "crossChecked": false,
         "notes": "Amazon商品ページの特徴リストで確認"
       },
@@ -60,7 +64,9 @@
         "claim": "最大100WのPD充電と10Gbpsのデータ転送に対応",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-product"],
+        "supportingSourceIds": [
+          "src-amazon-product"
+        ],
         "crossChecked": false,
         "notes": "Amazon商品ページの特徴リストで確認"
       }
@@ -165,7 +171,11 @@
     },
     "technicalSpecs": {
       "// 注意": "調査で判明した仕様情報をここに網羅的に記載する（サイズはメートル法のみ、インチ不要）",
-      "dimensions": { "height": "125mm", "width": "50mm", "depth": "96mm" },
+      "dimensions": {
+        "height": "125mm",
+        "width": "50mm",
+        "depth": "96mm"
+      },
       "ports": [
         "HDMI (最大4K@60Hz) x2",
         "DisplayPort (最大8K@30Hz / 4K@120Hz) x1",
@@ -181,6 +191,7 @@
       "model": "CM843",
       "partNumber": "55891",
       "cableLength": "90cm"
-    }
+    },
+    "investigatedPrice": "￥27,380"
   }
 }

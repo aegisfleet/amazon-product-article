@@ -29,14 +29,18 @@
         "userType": "金属アレルギーを持つ男性",
         "scenario": "日常的にアクセサリーをつけたいが、肌荒れが心配な状況",
         "experience": "金属アレルギーで今までアクセサリーを避けていましたが、このステンレス製ネックレスは24時間つけっぱなしでも肌トラブルがありませんでした。お風呂に入るときも外さなくて良いのが手軽で、780円と非常に安かったため、お試しとして買って大正解でした。",
-        "supportingSourceIds": ["src-amazon-B0C8HZ2KBG"],
+        "supportingSourceIds": [
+          "src-amazon-B0C8HZ2KBG"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ファッションを楽しむ若者",
         "scenario": "手頃な価格で色々なパターンのネックレスを試したい状況",
         "experience": "3mm幅の50cmを購入しました。6面カットの輝きが綺麗で、手持ちのペンダントトップとも合わせやすいです。ただ、少し軽すぎて重厚感には欠ける印象。それでもこの値段なら重ね付け用にもう一本別のサイズを買ってもいいかなと思えました。",
-        "supportingSourceIds": ["src-amazon-B0C8HZ2KBG"],
+        "supportingSourceIds": [
+          "src-amazon-B0C8HZ2KBG"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -92,7 +96,9 @@
         "claim": "2面カットやカットなしと比較すると華やかな輝きを放つ",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-B0C8HZ2KBG"],
+        "supportingSourceIds": [
+          "src-amazon-B0C8HZ2KBG"
+        ],
         "crossChecked": true,
         "notes": "6面カットによる光の反射増加は一般的な物理的特徴として妥当であり、競合のKRKC&CO（B0F9PGV731）も同様に6面カットの輝きをアピールしている。"
       },
@@ -100,7 +106,9 @@
         "claim": "お風呂や雨の日でも安心して使用できるサビへの強さ",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-B0C8HZ2KBG"],
+        "supportingSourceIds": [
+          "src-amazon-B0C8HZ2KBG"
+        ],
         "crossChecked": true,
         "notes": "ステンレス素材の特徴としてサビに強いことは事実であり、他の競合商品でも同様の主張が見られる。"
       }
@@ -174,6 +182,7 @@
       "cut": "6面カット",
       "color": "シルバー",
       "variations": "幅: 3/5/7/9/11mm, 長さ: 45/50/55/60/70cm, カラー: シルバー/ゴールド (合計50種類)"
-    }
+    },
+    "investigatedPrice": "￥748"
   }
 }

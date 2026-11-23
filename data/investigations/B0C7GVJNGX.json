@@ -33,14 +33,18 @@
         "userType": "主婦",
         "scenario": "毎日の料理とキッチンの片付け",
         "experience": "厚手で丈夫なので、揚げ物の油切りだけでなく、濡らして台拭き代わりにも使えて便利です。片手でサッと引き出せるので、調理中に手が汚れていても使いやすいです。",
-        "supportingSourceIds": ["src-crecia-official"],
+        "supportingSourceIds": [
+          "src-crecia-official"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "一人暮らし",
         "scenario": "日常的な掃除や手拭き",
         "experience": "普通のティッシュだと水に濡れると破れてしまうが、これなら洗面所の手拭きや、ちょっとした水回りの掃除にも使えて重宝しています。",
-        "supportingSourceIds": ["src-crecia-official"],
+        "supportingSourceIds": [
+          "src-crecia-official"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -74,7 +78,9 @@
         "claim": "濡れても丈夫な厚手シートで、野菜の水切りから掃除まで幅広く使える",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-crecia-official"],
+        "supportingSourceIds": [
+          "src-crecia-official"
+        ],
         "crossChecked": true,
         "notes": "公式サイトの特長説明にて明記されている"
       },
@@ -82,7 +88,10 @@
         "claim": "ティシューよりも厚くペーパータオルより丈夫",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-crecia-official", "src-amazon"],
+        "supportingSourceIds": [
+          "src-crecia-official",
+          "src-amazon"
+        ],
         "crossChecked": true,
         "notes": "Amazon商品説明と公式サイトの記載で一致"
       }
@@ -201,6 +210,7 @@
         "ポップアップ式",
         "日本製"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,532"
   }
 }

@@ -41,7 +41,9 @@
         "claim": "厚さ4cmで防音、断熱、転倒時のケガ防止に効果的",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-bodymaker-official"],
+        "supportingSourceIds": [
+          "src-bodymaker-official"
+        ],
         "crossChecked": false,
         "notes": "公式サイトの製品説明にて確認"
       },
@@ -49,7 +51,9 @@
         "claim": "重量は約2.5kg",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-bodymaker-official"],
+        "supportingSourceIds": [
+          "src-bodymaker-official"
+        ],
         "crossChecked": false,
         "notes": "公式サイトのスペック表にて確認"
       }
@@ -160,11 +164,16 @@
       },
       "weight": "2500g",
       "material": "合成皮革、EPE",
-      "colors": ["ブラック", "ブルー", "ホワイト"],
+      "colors": [
+        "ブラック",
+        "ブルー",
+        "ホワイト"
+      ],
       "other": [
         "折りたたみ可能",
         "壁面設置の際は別途両面テープやボンドが必要"
       ]
-    }
+    },
+    "investigatedPrice": "￥8,000"
   }
 }

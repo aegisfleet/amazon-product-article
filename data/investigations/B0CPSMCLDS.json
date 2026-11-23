@@ -30,14 +30,18 @@
         "userType": "20代女性（会社員）",
         "scenario": "職場で浮かないナチュラルなレンズを探していた時",
         "experience": "職場の規則が厳しく、あからさまなカラコンはNG。このオークルは着色直径が13.0mmと小さく、元の瞳が少し明るくなったような自然な仕上がりでバレません。2weekでコスパも良く、リピートしています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "30代女性（主婦）",
         "scenario": "長時間の外出時に装用",
         "experience": "UVカット機能がついているのが決め手でした。以前使っていたワンデーよりは少し乾燥しやすい気もしますが、目薬をさせば問題ないレベルです。自然な発色で30代でも浮きません。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -60,7 +64,9 @@
         "claim": "すっぴんのような仕上がり・自然に馴染む",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "着色直径13.0mmというスペックからも、瞳を極端に大きくしない自然なデザインであることが裏付けられている。"
       },
@@ -68,7 +74,9 @@
         "claim": "UV-A波：90％以上、UV-B波：99％以上カット",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "公式の製品スペック表に明記されている。"
       }
@@ -187,6 +195,7 @@
         "保湿成分: MPCポリマー配合",
         "度数: ±0.00, -0.50～-6.00(0.25step), -6.50～-10.00(0.50step)"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,035"
   }
 }

@@ -41,7 +41,9 @@
         "claim": "紙の本より10%（154円）安い",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "Amazon商品ページの価格情報より"
       }
@@ -153,6 +155,7 @@
       "other": [
         "ファイルサイズ等の詳細はKindle端末/アプリの仕様に依存"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,386"
   }
 }

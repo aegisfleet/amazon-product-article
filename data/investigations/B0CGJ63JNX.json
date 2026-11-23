@@ -3,7 +3,11 @@
     "productName": "BOTANIST ボタニスト シャンプー トリートメント セット 大容量 詰め替え スムース",
     "parentAsin": "B0CGJ63JNX",
     "productDescription": "BOTANISTの「スムース」ラインの大容量詰め替えセット。通常サイズの約3倍量（シャンプー1200ml、トリートメント1200g）が含まれており、髪の絡まりを抑え、サラッとした指通りの良い髪へ導きます。",
-    "productUsage": ["毎日の洗髪", "髪の絡まりやごわつきのケア", "頭皮の保湿ケア"],
+    "productUsage": [
+      "毎日の洗髪",
+      "髪の絡まりやごわつきのケア",
+      "頭皮の保湿ケア"
+    ],
     "positivePoints": [
       "適度な洗浄力でさっぱり洗いつつも低刺激なタウリン系・ベタイン系洗浄成分を使用",
       "市販品では希少なサルフェートフリー処方",
@@ -26,21 +30,27 @@
         "userType": "髪のきしみに悩む女性",
         "scenario": "美容師の勧めで使用を開始した",
         "experience": "使用した日から見事に髪がきしまなくなり、滑らかさと手触りの良さに美容室専売品に劣らないと感じた。",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "髪の量が多く細い女性",
         "scenario": "1日経つとベタつく髪質のためスムースを選択",
         "experience": "香りがとても良く、サラサラな仕上がりになったが、時間が経つとベタついてしまうため、自分の頭皮には合わなかった。",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "sentiment": "mixed"
       },
       {
         "userType": "乾燥肌・直毛のユーザー",
         "scenario": "秋冬の乾燥対策も兼ねて購入し一週間使用",
         "experience": "使い初めはしっとりツヤツヤで香りの持続も良かったが、次第にベタつきはじめ、頭皮のニオイやかゆみが出てしまい、シリコンが多すぎると感じた。",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "sentiment": "negative"
       }
     ],
@@ -74,7 +84,9 @@
         "claim": "サルフェートフリーで、タウリン系やベタイン系などの低刺激な洗浄成分を使用している。",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "成分解析から確認。"
       },
@@ -82,7 +94,9 @@
         "claim": "リニューアル後、髪のコンディショニング効果を高めるために頭皮に刺激性のある第4級アンモニウム塩（ベヘントリモニウムクロリド等）が追加されている。",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "専門家の成分解析により指摘されている。"
       },
@@ -90,7 +104,10 @@
         "claim": "髪の絡まりを抑え、サラッとした指通りの良い仕上がりになる。",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "専門家のレビューおよび複数のユーザーの口コミで一致。"
       }
@@ -176,6 +193,7 @@
       "scent": "シャンプー: グリーンアップル＆ローズの香り / トリートメント: アップル＆ベリーの香り",
       "ingredientsFeatures": "シリコンフリー(シャンプーのみ)、パラベンフリー、合成着色料フリー、サルフェートフリー(シャンプーのみ)",
       "keyIngredients": "ココイルメチルタウリンNa、コカミドプロピルベタイン、シラカンバ樹液、マカデミアナッツ脂肪酸フィトステリル、加水分解野菜タンパク、セラミドNG、ホホバ種子油"
-    }
+    },
+    "investigatedPrice": "￥7,260"
   }
 }

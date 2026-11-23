@@ -3,7 +3,12 @@
     "productName": "by Amazon 味の素 ギョーザ 1kg 袋",
     "parentAsin": "B0C582SP8L",
     "productDescription": "売上日本一を誇る味の素冷凍食品の「ギョーザ」をベースに、Amazonと共同開発した大容量1kg（約42〜44個相当）の冷凍餃子です。水も油も使わずにフライパンで誰でも簡単にパリッとジューシーな餃子が焼き上がります。",
-    "productUsage": ["毎日の食卓のおかず", "お弁当のおかず", "おつまみ", "冷凍庫のストック"],
+    "productUsage": [
+      "毎日の食卓のおかず",
+      "お弁当のおかず",
+      "おつまみ",
+      "冷凍庫のストック"
+    ],
     "positivePoints": [
       "水・油不要でフライパンに並べて焼くだけの簡単調理仕様（味の素独自の羽根の素を採用）",
       "1袋1kgの大容量パッケージで、大家族やヘビーユーザーのストックに最適",
@@ -24,14 +29,18 @@
         "userType": "共働きファミリー層",
         "scenario": "平日の忙しい夕食の準備",
         "experience": "水も油も不要で、冷凍庫から出してフライパンに並べて火にかけるだけで見事な羽根つき餃子が完成します。大容量なので家族みんなでたっぷり食べられて、味の素の味で失敗がないのが決め手です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "一人暮らし・単身者",
         "scenario": "週末のおつまみや夜食作り",
         "experience": "1kgが1袋に入っているため、冷凍庫のスペースを圧迫します。また、開封後は輪ゴムなどでしっかり口を閉めないと霜がつきやすくなりますが、好きな個数だけ焼けるのは便利です。",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -65,7 +74,9 @@
         "claim": "水無し油無しで誰でも簡単に羽根つき餃子が焼ける",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "味の素冷凍食品の独自技術であり、他の同社製品でも広く実証されている事実。"
       }
@@ -176,6 +187,7 @@
         "アレルギー物質: 小麦、卵、乳成分、ごま、大豆、鶏肉、豚肉",
         "個数目安: 1kgあたり約42〜44個 (グラム管理のため変動あり)"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,816"
   }
 }

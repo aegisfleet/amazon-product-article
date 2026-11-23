@@ -3,7 +3,10 @@
     "productName": "爆弾",
     "parentAsin": "B0D8HRGQMQ",
     "productDescription": "呉勝浩による長編推理小説。2022年に単行本が発売され、第167回直木三十五賞候補、「このミステリーがすごい!」などで上位にランクイン。2025年には映画化もされた話題作。",
-    "productUsage": ["エンターテインメント", "ミステリー小説の読書"],
+    "productUsage": [
+      "エンターテインメント",
+      "ミステリー小説の読書"
+    ],
     "positivePoints": [
       "先の読めない緊迫感のある展開",
       "クイズ形式で進む爆弾のありかを推理する面白さ",
@@ -15,20 +18,28 @@
       "人が死傷する爆発事件や殺人など、暴力的な描写が含まれる",
       "犯人の身元や動機など、一部の謎が完全に解明されないまま終わる余韻が残る結末"
     ],
-    "useCases": ["休日の読書", "ミステリーやサスペンスを楽しみたい時", "話題の映画の原作を読みたい時"],
+    "useCases": [
+      "休日の読書",
+      "ミステリーやサスペンスを楽しみたい時",
+      "話題の映画の原作を読みたい時"
+    ],
     "userStories": [
       {
         "userType": "ミステリー小説ファン",
         "scenario": "休日に一気読み",
         "experience": "取調室での犯人と刑事のやり取りが非常にスリリングで、ページをめくる手が止まりませんでした。出題されるクイズを一緒に考えながら読み進められる点も面白く、最後には予想外の展開が待っていて大満足です。",
-        "supportingSourceIds": ["bookmeter-19616091"],
+        "supportingSourceIds": [
+          "bookmeter-19616091"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "サスペンス好きの読者",
         "scenario": "映画化を機に原作を読書",
         "experience": "「スズキタゴサク」というキャラクターの不気味さと、次々と起こる爆発のスケールの大きさに圧倒されました。ただ、結末が少しモヤモヤする部分もあり、すっきりとした解決を求める人には好みが分かれるかもしれません。",
-        "supportingSourceIds": ["bookmeter-19616091"],
+        "supportingSourceIds": [
+          "bookmeter-19616091"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -62,7 +73,9 @@
         "claim": "第167回直木三十五賞候補および「このミステリーがすごい！」第1位など多数のランキングで上位を獲得",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["wikipedia-bakudan"],
+        "supportingSourceIds": [
+          "wikipedia-bakudan"
+        ],
         "crossChecked": true,
         "notes": "Wikipediaの受賞歴セクションで確認。"
       },
@@ -70,7 +83,9 @@
         "claim": "2025年に映画化され、山田裕貴が主演を務めた",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["wikipedia-bakudan"],
+        "supportingSourceIds": [
+          "wikipedia-bakudan"
+        ],
         "crossChecked": true,
         "notes": "Wikipediaの映画セクションで確認。"
       }
@@ -181,6 +196,7 @@
       "releaseDate": "2024-07-12",
       "printLength": "推定500ページ前後（文庫版に基づく）",
       "isAdultProduct": "false"
-    }
+    },
+    "investigatedPrice": "￥1,067"
   }
 }

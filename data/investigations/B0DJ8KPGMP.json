@@ -48,7 +48,9 @@
         "claim": "10000mAhの容量",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "商品仕様に記載"
       },
@@ -56,7 +58,9 @@
         "claim": "最大15W出力対応",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "商品仕様に記載"
       }
@@ -199,6 +203,7 @@
         "おまかせ充電対応 (USB-Aポート)",
         "まとめて充電対応"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,615"
   }
 }

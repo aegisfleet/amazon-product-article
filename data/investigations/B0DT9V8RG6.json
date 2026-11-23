@@ -25,14 +25,18 @@
         "userType": "一般ユーザー",
         "scenario": "毎日の洗髪",
         "experience": "凄くきめ細やかな泡立ちで、頭皮までスッキリ洗えます。トリートメントもセットで使用しました。翌朝の髪はスルッとした感触で時々感じる痒みもありませんでした。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "香りに敏感なユーザー",
         "scenario": "夜のバスタイム",
         "experience": "甘ったるい香りが苦手ですが、YOLUはスッキリ爽やかな香りで良き。シャンプーもキシまず、トリートメントもサラサラになるだけでなく痒みが出ないので大満足です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -55,7 +59,9 @@
         "claim": "睡眠中の乾燥や摩擦ダメージから髪を守る",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品仕様およびユーザーレビューの使用感から確認"
       },
@@ -63,7 +69,9 @@
         "claim": "ベルガモット＆ムスクの香り",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品仕様およびユーザーレビューから確認"
       }
@@ -129,6 +137,7 @@
         "香り：ベルガモット＆ムスク",
         "カラー：【新】ディープナイトリペア"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,300"
   }
 }

@@ -32,21 +32,27 @@
         "userType": "DTM初心者",
         "scenario": "自宅でのPCを使った音楽制作とリスニング",
         "experience": "価格が安かったので試しに買ってみましたが、低価格帯にありがちな過度な低音の強調がなく、フラットで素直な音が鳴ります。細かい音も聴き取りやすく、エントリークラスのモニターとして十分な性能を発揮してくれています。装着感も軽く、自宅での作業にぴったりです。",
-        "supportingSourceIds": ["src-kakaku-reviews"],
+        "supportingSourceIds": [
+          "src-kakaku-reviews"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "デスクワーカー・ゲーマー",
         "scenario": "白い周辺機器で統一したデスク環境の構築",
         "experience": "デスク周りを白で統一したくて、マイクやスタンドと同じオーディオテクニカのホワイトカラーを選びました。デザイン重視で購入しましたが、音質も非常にクリアで聴きやすく、見た目も音も大満足の買い物になりました。",
-        "supportingSourceIds": ["src-kakaku-reviews-wh"],
+        "supportingSourceIds": [
+          "src-kakaku-reviews-wh"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "楽器練習者",
         "scenario": "ギターのエフェクターに繋いでの自宅練習",
         "experience": "ギターの練習用に購入しました。音の分離が良く、アンプやエフェクターからの音を正確に聴き取れます。ただ、イヤーパッドが少し小さめで、長時間着けていると耳が押されて痛くなったり、密閉型ゆえに蒸れたりするのが少し気になります。",
-        "supportingSourceIds": ["src-kakaku-reviews"],
+        "supportingSourceIds": [
+          "src-kakaku-reviews"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -91,7 +97,10 @@
         "claim": "フラットな特性で広帯域再生を実現",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-official", "src-kakaku-reviews"],
+        "supportingSourceIds": [
+          "src-official",
+          "src-kakaku-reviews"
+        ],
         "crossChecked": true,
         "notes": "公式の主張通り、ユーザーレビューでも低価格帯にありがちな過度な低音・高音の誇張がなく、素直でモニター用途に適した音質であると多数の支持を得ている。"
       }
@@ -200,12 +209,19 @@
       "frequencyResponse": "15-20,000Hz",
       "maxInput": "700mW",
       "impedance": "47Ω",
-      "dimensions": { "height": "16.99cm", "width": "20.70cm", "depth": "8.19cm" },
+      "dimensions": {
+        "height": "16.99cm",
+        "width": "20.70cm",
+        "depth": "8.19cm"
+      },
       "weight": "約190g (コード除く)",
       "plug": "φ6.3mm標準/φ3.5mmミニ 金メッキステレオ2ウェイ",
       "cordLength": "3.0m (OFCリッツ線片出しコード)",
       "color": "ホワイト",
-      "other": ["公式限定カラー"]
-    }
+      "other": [
+        "公式限定カラー"
+      ]
+    },
+    "investigatedPrice": "￥9,680"
   }
 }

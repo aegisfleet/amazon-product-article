@@ -32,14 +32,18 @@
         "userType": "日々のケアを続けたいユーザー",
         "scenario": "入浴後、ドライヤー前に使用",
         "experience": "以前使っていた頭皮ケアグッズは時間管理が面倒で続かなかったが、この製品は15分で自動オフになるため「これが終わったらケア完了」と分かりやすく、毎日のルーティンとして定着した。FDA認証のLLLTとEMSが同時に使え、充電台も使いやすい。",
-        "supportingSourceIds": ["src-amazon-review"],
+        "supportingSourceIds": [
+          "src-amazon-review"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "初めて電動頭皮ブラシを使うユーザー",
         "scenario": "自宅でのスカルプケアに導入",
         "experience": "本体は軽くコードレスで扱いやすい。使用直後は頭皮の奥がポカポカして血流が良くなったように感じる。しかし、レーザーが切れる時のタイムラグで光が目に入って眩しく、サングラスが必要だと感じた。また、効果的な当て方などの詳しい説明書がないため少し不安がある。",
-        "supportingSourceIds": ["src-amazon-review"],
+        "supportingSourceIds": [
+          "src-amazon-review"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -73,7 +77,9 @@
         "claim": "アメリカFDA認証を取得している（登録番号：K213027）",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-product"],
+        "supportingSourceIds": [
+          "src-amazon-product"
+        ],
         "crossChecked": false,
         "notes": "商品ページの公式な記述に基づく"
       },
@@ -81,7 +87,10 @@
         "claim": "低出力レーザー（LLLT）とEMSのダブル機能",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-product", "src-amazon-review"],
+        "supportingSourceIds": [
+          "src-amazon-product",
+          "src-amazon-review"
+        ],
         "crossChecked": true,
         "notes": "商品仕様とユーザーレビューの両方で言及されている"
       }
@@ -199,6 +208,7 @@
       ],
       "powerSupply": "充電式 (USB/AC両対応)",
       "certification": "アメリカFDA認証 (登録番号: K213027)"
-    }
+    },
+    "investigatedPrice": "￥47,000"
   }
 }

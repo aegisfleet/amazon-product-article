@@ -3,7 +3,12 @@
     "productName": "因幡電工 洗濯機用防振かさ上げ台 ふんばるマン OP-SG600",
     "parentAsin": "B0F1N58GPZ",
     "productDescription": "洗濯機の下に設置して高さを出し、排水スペースの確保や掃除を容易にする防振かさ上げ台。振動の伝達を軽減し、ズレ落ち防止機能も備える。",
-    "productUsage": ["ドラム式・縦型洗濯機のかさ上げ", "洗濯機下の掃除スペース確保", "排水ホースのスペース確保", "洗濯機の振動・騒音軽減"],
+    "productUsage": [
+      "ドラム式・縦型洗濯機のかさ上げ",
+      "洗濯機下の掃除スペース確保",
+      "排水ホースのスペース確保",
+      "洗濯機の振動・騒音軽減"
+    ],
     "positivePoints": [
       "洗濯機の下に手が入るようになり、掃除が劇的に楽になる",
       "排水ホースのスペースが確保でき、排水口のメンテナンスもしやすくなる",
@@ -24,14 +29,18 @@
         "userType": "マンション住まい・共働き",
         "scenario": "ドラム式洗濯機の下にほこりが溜まるのが気になっていたが、掃除ができずストレスだった。",
         "experience": "ふんばるマンを設置したことで、洗濯機の下にクイックルワイパーが入るようになり、いつでも清潔に保てるようになりました。また、脱水時の振動も以前より静かになった気がします。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "戸建て住まい",
         "scenario": "洗濯機の排水口が本体の真下にあり、ホースが潰れがちだった。",
         "experience": "かさ上げしたことで排水ホースに余裕ができ、排水がスムーズになりました。ただ、洗濯機の位置が高くなった分、奥の洗濯物を取るのが少し大変になりました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -65,7 +74,9 @@
         "claim": "耐荷重は4個使用時で300kg（1個あたり75kg）",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "公式の製品仕様にて確認。Amazon側の表記（150kg）と乖離があるが、メーカー公式（300kg）を正とする。"
       },
@@ -73,7 +84,10 @@
         "claim": "洗濯機の下側に排水口がくる場合でも排水ホースのスペースが確保でき、掃除もスムーズ",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "公式ページの特長およびAmazon商品ページにて記載あり。"
       }
@@ -167,13 +181,18 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (掃除のしやすさ・排水スペース確保という実用性の高さ)\n[加点: +5] (防水パンにフィットし、ズレ落ち防止リブを備えた専用設計の使い勝手)\n[加点: +5] (空調・設備部材トップメーカーである因幡電工製というブランドの信頼性)\n[加点: +3] (手頃な価格設定によるコストパフォーマンス)\n[減点: -3] (設置の手間・重労働が必要である点)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "62mm", "width": "100mm", "depth": "100mm" },
+      "dimensions": {
+        "height": "62mm",
+        "width": "100mm",
+        "depth": "100mm"
+      },
       "weight": "不明",
       "capacity": "耐荷重: 300kg (4個使用時、メーカー公式仕様)",
       "material": "本体: ポリプロピレン、滑り止めシート: エラストマー",
       "origin": "不明",
       "color": "ホワイト",
       "notes": "寸法はリニューアル品のサイズ（縦100mm×横100mm×高さ62mm）。切替前品は高さ60mm。"
-    }
+    },
+    "investigatedPrice": "￥1,846"
   }
 }

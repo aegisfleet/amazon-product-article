@@ -27,7 +27,9 @@
         "userType": "子供を持つ親",
         "scenario": "子供の運動会のご褒美として",
         "experience": "子供の運動会のご褒美に購入しました。大喜びで毎日抱っこして眠っています。触り心地もよく、すっかりお気に入りのアイテムになったようです。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -50,7 +52,9 @@
         "claim": "全6種+シークレット1種のブラインドボックス形式である",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式の商品仕様欄に記載。"
       },
@@ -58,7 +62,9 @@
         "claim": "商品サイズは高さ約170mmである",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式の商品仕様欄に記載。"
       }
@@ -175,6 +181,7 @@
         "種類数: ノーマル6種＋シークレット1種",
         "入数: 1ピース入り"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,750"
   }
 }

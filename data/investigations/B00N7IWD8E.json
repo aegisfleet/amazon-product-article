@@ -43,7 +43,9 @@
         "claim": "こすると消える",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-pilot-official"],
+        "supportingSourceIds": [
+          "src-pilot-official"
+        ],
         "crossChecked": true,
         "notes": "パイロット独自のフリクションインキにより、専用ラバーでこするだけで摩擦熱によりインキが無色になることを公式情報から確認。"
       }
@@ -155,9 +157,17 @@
       "weight": "54g",
       "penSize": "最大径12.6mm、全長139mm (1本あたり)",
       "lineStyle": "太字 (3.3mm)",
-      "colors": ["ピンク", "イエロー", "グリーン", "オレンジ", "ブルー", "バイオレット"],
+      "colors": [
+        "ピンク",
+        "イエロー",
+        "グリーン",
+        "オレンジ",
+        "ブルー",
+        "バイオレット"
+      ],
       "mechanism": "キャップ式",
       "inkType": "フリクションインキ"
-    }
+    },
+    "investigatedPrice": "￥407"
   }
 }

@@ -3,7 +3,11 @@
     "productName": "強粘着 シリコンブラ",
     "parentAsin": "B0B4P23R2P",
     "productDescription": "やわらかいシリコン素材で自然な谷間メイクができる強粘着タイプのブラパッド。水や汗に強く、ドレスや水着など幅広いシーンで利用可能。",
-    "productUsage": ["谷間メイク", "水着・ドレス時のインナー", "ニップレス・ランジェリーパッド"],
+    "productUsage": [
+      "谷間メイク",
+      "水着・ドレス時のインナー",
+      "ニップレス・ランジェリーパッド"
+    ],
     "positivePoints": [
       "やわらかいシリコン素材で誰でも簡単に谷間メイクが可能",
       "水や汗に強い強粘着タイプで、海やプールでも1日中安心して着用できる",
@@ -38,7 +42,9 @@
         "claim": "水や汗に強く海やプールでも1日中安心して着用可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-product"],
+        "supportingSourceIds": [
+          "src-amazon-product"
+        ],
         "crossChecked": false,
         "notes": "商品ページの特徴として明記されている"
       },
@@ -46,7 +52,9 @@
         "claim": "やわらかいシリコンブラで簡単に谷間メイクが可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-product"],
+        "supportingSourceIds": [
+          "src-amazon-product"
+        ],
         "crossChecked": false,
         "notes": "商品の主な使用目的・特徴として記載"
       }
@@ -155,6 +163,7 @@
       "material": "シリコン",
       "waterResistance": "水・汗に強い（海やプールでの使用可）",
       "accessories": "つけ方説明書"
-    }
+    },
+    "investigatedPrice": "￥1,280"
   }
 }

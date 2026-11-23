@@ -27,7 +27,9 @@
         "userType": "小型犬の飼い主",
         "scenario": "毎日の散歩で使用",
         "experience": "メッシュ素材で軽く、愛犬も嫌がらずに着けてくれます。首を通すだけでバックルを留めるので、お散歩前の準備がスムーズになりました。ただ、首回りの調整ができないので、頭が通るか少し心配でしたが、サイズ表通りでピッタリでした。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -50,7 +52,9 @@
         "claim": "通気性の高いエアメッシュ素材で軽量",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品ページの特徴に記載あり"
       },
@@ -58,7 +62,9 @@
         "claim": "首回りの調整はできない",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品ページのサイズ説明にて明確な注意喚起あり"
       }
@@ -175,6 +181,7 @@
         "金属製Dリング",
         "反射材付き"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,899"
   }
 }

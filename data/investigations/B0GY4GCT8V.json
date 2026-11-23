@@ -44,7 +44,9 @@
         "claim": "双頭ノズルにより豊富な噴射量を実現",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式のスペック表にて確認"
       },
@@ -52,7 +54,9 @@
         "claim": "450mlのタンクと1200mAhバッテリーで長時間の使用が可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式のスペック表にて確認"
       }
@@ -162,8 +166,14 @@
       "battery": "1200mAh",
       "continuousUsageTime": "約40分",
       "range": "最大6m",
-      "features": ["双頭ノズル", "LED発光", "効果音", "ワンタッチ高速自動連射"],
+      "features": [
+        "双頭ノズル",
+        "LED発光",
+        "効果音",
+        "ワンタッチ高速自動連射"
+      ],
       "color": "イエロー"
-    }
+    },
+    "investigatedPrice": "￥4,999"
   }
 }

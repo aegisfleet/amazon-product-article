@@ -29,14 +29,18 @@
         "userType": "飲食店のキッチンスタッフ",
         "scenario": "仕事中の時間確認用に購入",
         "experience": "水洗いや洗い物が多く、以前使っていた時計はすぐ水が入って壊れてしまいましたが、この時計は10気圧防水なので全く気にせず水仕事ができます。軽くて邪魔にならないのも素晴らしいです。デザインはシンプルですが仕事用にはこれで十分です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "受験生",
         "scenario": "試験会場での時間配分用に購入",
         "experience": "文字盤の数字がはっきりしていて見やすく、秒針の音も気にならないため試験中に集中できました。余計な機能がなく、シンプルで使いやすい点が気に入っています。ただ、ベルトが少し硬い印象を受けました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -59,7 +63,9 @@
         "claim": "水仕事や素潜りにも耐えうる10気圧防水",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカー公称値であり、日常生活用強化防水（10気圧）として水仕事や水上スポーツに十分な性能を持つ"
       }
@@ -174,6 +180,7 @@
       "waterResistance": "10気圧防水",
       "material": "ウレタン (バンド), 樹脂 (ケース)",
       "origin": "中国"
-    }
+    },
+    "investigatedPrice": "￥1,320"
   }
 }

@@ -28,14 +28,18 @@
         "userType": "リモートワーカー",
         "scenario": "カフェや自宅でのオンライン会議",
         "experience": "骨伝導センサーとAI制御によるマイク性能の向上が素晴らしく、周囲の雑音を相手に伝えずにクリアな声を届けることができました。マルチポイント機能によりPCとスマホの切り替えもスムーズで仕事の効率が上がりました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "オーディオ愛好家",
         "scenario": "ハイレゾ音源のリスニング",
         "experience": "新開発のプロセッサーQN3eにより、ノイズキャンセリングを効かせた状態でも音質の劣化がなく、非常にクリアで立体感のある音が楽しめました。新しい通気構造で長時間の装着でも耳が疲れにくいです。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -58,7 +62,9 @@
         "claim": "世界最高クラスのアクティブノイズキャンセリング性能を持つ",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式の製品特徴として明記"
       },
@@ -66,7 +72,9 @@
         "claim": "片側2個のマイクと骨伝導センサー＋AI制御によりクリアな通話品質を実現",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式の製品仕様より通話時のノイズ低減技術について確認"
       }
@@ -184,6 +192,7 @@
         "エルゴノミック・サーフェス・デザイン",
         "アンテナサイズアップと筐体内部構造の最適化による接続安定性の向上"
       ]
-    }
+    },
+    "investigatedPrice": "￥40,000"
   }
 }

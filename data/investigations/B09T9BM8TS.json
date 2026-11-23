@@ -27,7 +27,9 @@
         "userType": "デスクワーク中心の会社員",
         "scenario": "自宅でのリモートワーク中に冷たいコーヒーを飲むために使用",
         "experience": "氷を入れたアイスコーヒーが数時間経っても薄まらず冷たいままなのが嬉しいです。結露しないのでデスクに置いても書類が濡れる心配がなく、飲み口が丸くて飲みやすいのも決め手でした。また、食洗機で洗えるため毎日の手入れが全く苦になりません。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -50,7 +52,9 @@
         "claim": "飲み口が丸く、優しい口当たり",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "メーカー公式の仕様・アピールポイントとして記載されており、製品の構造上明らかである。"
       }
@@ -166,6 +170,7 @@
         "食洗機対応: 可",
         "飲み口形状: 丸い飲み口タイプ"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,999"
   }
 }

@@ -32,21 +32,27 @@
         "scenario": "フリーアドレス環境での移動",
         "experience": "ノートPC、資料などをまとめて移動するのに使用。自立するのでデスクの足元に置いても倒れず、必要なものをサッと取り出せるのが非常に便利。",
         "sentiment": "positive",
-        "supportingSourceIds": ["src-amazon"]
+        "supportingSourceIds": [
+          "src-amazon"
+        ]
       },
       {
         "userType": "一般ユーザー",
         "scenario": "日用品の持ち運び・整理",
         "experience": "毎日たくさんの書類やガジェットを入れて持ち歩くが、型崩れもせず大容量で助かっている。外側のポケットも使いやすいが、内側にも仕切りがあればなお良かった。",
         "sentiment": "mixed",
-        "supportingSourceIds": ["src-amazon"]
+        "supportingSourceIds": [
+          "src-amazon"
+        ]
       },
       {
         "userType": "趣味・アウトドア層",
         "scenario": "重い道具類の収納",
         "experience": "かさばるものを投げ込んで使っている。非常に頑丈な作りで、値段が安い割にハードユースに耐えられる点が気に入っている。",
         "sentiment": "positive",
-        "supportingSourceIds": ["src-amazon"]
+        "supportingSourceIds": [
+          "src-amazon"
+        ]
       }
     ],
     "userImpression": "多くのユーザーが「頑丈さ（耐荷重50kg）」と「自立することの便利さ」、「大容量」を高く評価しています。フリーアドレスのオフィス移動用から、アウトドアや業務用のハードな使用まで幅広く支持されています。一方で、「内側に仕切りやポケットがない点」や「上部にフタやファスナーがない点」に対する改善要望が見受けられます。",
@@ -68,7 +74,9 @@
         "claim": "耐荷重約50kg",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": true,
         "notes": "メーカー公式スペックとして記載"
       },
@@ -76,7 +84,9 @@
         "claim": "自立可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": true,
         "notes": "公式情報および多数のレビューで言及"
       }
@@ -200,6 +210,7 @@
       ],
       "color": "ブラック",
       "sizeType": "ヨコ型"
-    }
+    },
+    "investigatedPrice": "￥3,200"
   }
 }

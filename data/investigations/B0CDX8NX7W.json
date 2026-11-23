@@ -26,7 +26,9 @@
         "userType": "一般ユーザー",
         "scenario": "ボトムスのインナーとして着用した際",
         "experience": "着用感はさらっとしていて心地よいが、想定よりもサイズがかなり大きく感じられた。タグを切ってしまったため交換できず残念だった。",
-        "supportingSourceIds": ["src-amazon-review-1"],
+        "supportingSourceIds": [
+          "src-amazon-review-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -60,7 +62,9 @@
         "claim": "ウエストと裾が切りっぱなし仕様でゴム不使用",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-1"],
+        "supportingSourceIds": [
+          "src-amazon-1"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式の説明文より確認。"
       },
@@ -68,7 +72,9 @@
         "claim": "吸放湿性能に優れたキュプラ混素材",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-1"],
+        "supportingSourceIds": [
+          "src-amazon-1"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式の説明文より確認。"
       }
@@ -176,7 +182,12 @@
       "size": "M (バリエーションにL, LLあり)",
       "color": "プリマベージュ (バリエーションにNewスミクロ, クリアグレー, スミクロあり)",
       "type": "フレアパンツ (ペチコート)",
-      "features": ["切りっぱなし仕様", "ウエストゴム不使用", "吸放湿機能"]
-    }
+      "features": [
+        "切りっぱなし仕様",
+        "ウエストゴム不使用",
+        "吸放湿機能"
+      ]
+    },
+    "investigatedPrice": "￥1,700"
   }
 }

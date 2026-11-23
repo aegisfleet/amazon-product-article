@@ -31,14 +31,18 @@
         "userType": "一般ユーザー",
         "scenario": "日常的な手指・身の回りの除菌",
         "experience": "手にキズがあってもほとんどしみず、手荒れしない点が非常に良いと感じた。肌への負担が少なく安心して使える。",
-        "supportingSourceIds": ["src-amazon-page"],
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "一般ユーザー",
         "scenario": "衣類や空間の消臭",
         "experience": "某消臭スプレーが苦手だったが、この商品はベタベタした感じもなく快適。外出先で洋服についたタバコや揚げ物の臭いもスプレーしておくと気にならなくなる。カビの臭いもすっきりした。",
-        "supportingSourceIds": ["src-amazon-page"],
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -61,7 +65,9 @@
         "claim": "医師会おんが病院と共同研究し開発され、第三者機関にてエビデンスを取得している",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-page"],
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
         "crossChecked": false,
         "notes": "商品ページで明確に謳われている主要な訴求点"
       },
@@ -69,7 +75,9 @@
         "claim": "全国1,400以上の幼稚園・保育園や大手コンビニでの使用実績がある",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-page"],
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
         "crossChecked": false,
         "notes": "公式の商品説明に記載あり"
       }
@@ -178,7 +186,10 @@
       "capacity": "2.0L",
       "concentration": "200ppm",
       "acidity": "弱酸性",
-      "ingredients": ["次亜塩素酸", "純水"],
+      "ingredients": [
+        "次亜塩素酸",
+        "純水"
+      ],
       "origin": "日本",
       "shelfLife": "製品到着日から3ヶ月以内を目安",
       "precautions": [
@@ -186,6 +197,7 @@
         "スプレーで使用する際は薄めずに使用",
         "専用加湿器に入れる場合は3～4倍に希釈"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,980"
   }
 }

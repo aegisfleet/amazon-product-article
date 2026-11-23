@@ -3,7 +3,12 @@
     "productName": "ESR iPad用 デジタルペンシル",
     "parentAsin": "B0DT3MHSMM",
     "productDescription": "2018年以降のiPadシリーズに幅広く対応する、高精度のデジタルペンシルです。傾斜感知機能やパームリジェクションを備え、長持ちする合成樹脂製ペン先を採用しています。",
-    "productUsage": ["メモ書き", "イラスト制作", "ドキュメントへの署名", "iPadのタッチ操作"],
+    "productUsage": [
+      "メモ書き",
+      "イラスト制作",
+      "ドキュメントへの署名",
+      "iPadのタッチ操作"
+    ],
     "positivePoints": [
       "本物のペンのような滑らかな描き心地と高感度",
       "手首を画面に置いたまま描けるパームリジェクション機能",
@@ -28,14 +33,18 @@
         "userType": "学生",
         "scenario": "講義でのノートテイキングとして",
         "experience": "ペアリング不要ですぐに使い始められるため、急にメモを取る必要がある場面でも活躍します。パームリジェクション機能のおかげで、紙のノートに書いているような自然な姿勢で画面に手を置いて書くことができます。",
-        "supportingSourceIds": ["src-esr-official"],
+        "supportingSourceIds": [
+          "src-esr-official"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "一般ユーザー",
         "scenario": "イラストやスケッチの作成時",
         "experience": "傾斜感知機能があるため、ペンの角度を変えることで線の太さを調整でき、より表現力豊かなイラストを描くことが可能です。純正品のような遅延もなく、スムーズな描画体験を得られました。ただし、重量がやや重く感じられることもあります。",
-        "supportingSourceIds": ["src-esr-official"],
+        "supportingSourceIds": [
+          "src-esr-official"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -69,7 +78,10 @@
         "claim": "パームリジェクション機能を搭載し、画面に手を置いたまま自然に描画できる",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon", "src-esr-official"],
+        "supportingSourceIds": [
+          "src-amazon",
+          "src-esr-official"
+        ],
         "crossChecked": true,
         "notes": "Amazon商品説明および公式サイトの双方で機能として明記されている。"
       },
@@ -77,7 +89,9 @@
         "claim": "合成樹脂製のペン先を採用し、シリコン製よりも耐久性が高い",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-esr-official"],
+        "supportingSourceIds": [
+          "src-esr-official"
+        ],
         "crossChecked": false,
         "notes": "公式サイトにて「Synthetic Resin Nib」として耐久性の高さがアピールされている。"
       },
@@ -85,7 +99,10 @@
         "claim": "ペアリング不要で、箱から出してすぐに使用可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-esr-official", "src-amazon"],
+        "supportingSourceIds": [
+          "src-esr-official",
+          "src-amazon"
+        ],
         "crossChecked": true,
         "notes": "「Super-Easy Setup: Can be used straight out of the box, no Bluetooth pairing required」との記載あり。"
       }
@@ -178,14 +195,25 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (パームリジェクション、傾斜感知など必須機能を完備し、合成樹脂ペン先による高耐久性)\n[加点: +10] (Apple純正品と比較して圧倒的なコストパフォーマンスと手軽さ)\n[減点: -5] (ワイヤレス充電非対応で、一部モデルで磁気吸着不可などの制約があるため)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "15.0mm", "width": "9.0mm", "length": "160.0mm" },
+      "dimensions": {
+        "height": "15.0mm",
+        "width": "9.0mm",
+        "length": "160.0mm"
+      },
       "weight": "60.0g",
       "color": "ホワイト",
       "compatibility": "2018年以降のiPadシリーズに対応（iPad第6～11世代、iPad Air第3～5世代、Air 11/13、iPad Pro 11第1～4世代/13、iPad Pro 12.9第3～6世代、iPad mini第5/6世代など）",
       "batteryLife": "13時間",
       "charging": "USB-Cポート（ワイヤレス充電非対応）",
-      "features": ["パームリジェクション", "傾斜感知機能", "磁気吸着機能", "Bluetoothペアリング不要", "自動スリープ（5分間）"],
+      "features": [
+        "パームリジェクション",
+        "傾斜感知機能",
+        "磁気吸着機能",
+        "Bluetoothペアリング不要",
+        "自動スリープ（5分間）"
+      ],
       "accessories": "交換用ペン先3個付属、USB-C充電ケーブル付属"
-    }
+    },
+    "investigatedPrice": "￥3,080"
   }
 }

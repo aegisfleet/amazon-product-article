@@ -24,7 +24,9 @@
         "userType": "プラモデル愛好家",
         "scenario": "30MSシリーズのカスタマイズ",
         "experience": "既存のキャラクターに組み合わせて、手軽に新しいデザインを試すことができる。パーツの合いも良く、色分けされているため無塗装でも見栄えが良い点が決め手。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -47,7 +49,9 @@
         "claim": "色分け済みプラモデル",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "商品名に明記されており、プラモデルの一般的な仕様と一致"
       }
@@ -145,6 +149,7 @@
         "ノンスケール",
         "※組み立てにはニッパー等が必要"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,020"
   }
 }

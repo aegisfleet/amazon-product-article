@@ -27,7 +27,9 @@
         "userType": "VRヘビーユーザー",
         "scenario": "メガネを着用したままのVRプレイに不便を感じていた",
         "experience": "メガネのフレームがヘッドセットに干渉する不快感がなくなり、快適にプレイできるようになった。度数をカスタマイズできるため見え方もクリアだが、注文時のメール連絡は少し手間に感じた。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -50,7 +52,9 @@
         "claim": "ブルーライト99％カット",
         "category": "safety",
         "confidence": "low",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーの主張のみであり、第三者機関による検証データは確認できない"
       }
@@ -161,6 +165,7 @@
       "blueLightCut": "99%",
       "attachmentMethod": "マグネット式",
       "unitCount": "1個"
-    }
+    },
+    "investigatedPrice": "￥1,780"
   }
 }

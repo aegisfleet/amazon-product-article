@@ -3,23 +3,43 @@
     "productName": "ジョージア 深み焙煎贅沢ブラック 無糖 950mlPET×12本",
     "parentAsin": "B01AXT2TQU",
     "productDescription": "コカ・コーラのジョージアブランドから発売されている、深み焙煎で豆本来の風味を引き出した無糖のペットボトルコーヒー。950mlの大容量サイズで12本セット。",
-    "productUsage": ["ストレートでの飲用", "ミルクと割ってカフェオレとして"],
-    "positivePoints": ["深みのある焙煎で本格的な香り・コクが楽しめる", "ストレートでもミルクで割っても美味しい", "大容量(950ml)でコストパフォーマンスが良い", "カロリーゼロ(0kcal/100ml)でヘルシー"],
-    "negativePoints": ["12本のまとめ買いのため保管スペースが必要", "ラベルを剥がす手間がある(ラベルレス商品と比べて)"],
-    "useCases": ["自宅でのリラックスタイムに", "リモートワーク中のお供に", "家族での共有用として", "来客用のアイスコーヒーとして"],
+    "productUsage": [
+      "ストレートでの飲用",
+      "ミルクと割ってカフェオレとして"
+    ],
+    "positivePoints": [
+      "深みのある焙煎で本格的な香り・コクが楽しめる",
+      "ストレートでもミルクで割っても美味しい",
+      "大容量(950ml)でコストパフォーマンスが良い",
+      "カロリーゼロ(0kcal/100ml)でヘルシー"
+    ],
+    "negativePoints": [
+      "12本のまとめ買いのため保管スペースが必要",
+      "ラベルを剥がす手間がある(ラベルレス商品と比べて)"
+    ],
+    "useCases": [
+      "自宅でのリラックスタイムに",
+      "リモートワーク中のお供に",
+      "家族での共有用として",
+      "来客用のアイスコーヒーとして"
+    ],
     "userStories": [
       {
         "userType": "コーヒー愛好家",
         "scenario": "毎日のコーヒータイム",
         "experience": "スペシャルティコーヒー専門店監修だけあって、ペットボトルコーヒーとしては香りとコクがしっかりしています。氷を入れても味が薄まりにくく、ストレートでも美味しいです。",
-        "supportingSourceIds": ["amazon-features"],
+        "supportingSourceIds": [
+          "amazon-features"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "リモートワーカー",
         "scenario": "仕事中の水分補給・気分転換",
         "experience": "950mlの大容量なので、仕事中に何杯も飲むのに重宝しています。そのまま飲んだり、少しミルクを足したりして気分を変えながら楽しんでいます。",
-        "supportingSourceIds": ["amazon-features"],
+        "supportingSourceIds": [
+          "amazon-features"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -42,7 +62,9 @@
         "claim": "スペシャルティコーヒー専門店監修のもと、深み焙煎で豆本来の風味を引き出している",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-features"],
+        "supportingSourceIds": [
+          "amazon-features"
+        ],
         "crossChecked": false,
         "notes": "公式情報より"
       },
@@ -50,7 +72,9 @@
         "claim": "カロリーゼロ(0kcal/100ml)",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-features"],
+        "supportingSourceIds": [
+          "amazon-features"
+        ],
         "crossChecked": false,
         "notes": "公式の栄養成分表示より"
       }
@@ -137,20 +161,40 @@
       }
     ],
     "recommendation": {
-      "targetUsers": ["毎日コーヒーを飲む方", "コスパ重視の方", "ミルクと割ってカフェオレとして楽しみたい方", "深煎りのコクが好きな方"],
-      "pros": ["深みのある焙煎でコクと香りがしっかりしている", "950mlの大容量でコスパが高い", "ストレートでもミルクで割っても美味しい"],
-      "cons": ["12本のまとめ買いのため保管場所の確保が必要", "ペットボトルの廃棄時にラベルを剥がす手間がある"],
+      "targetUsers": [
+        "毎日コーヒーを飲む方",
+        "コスパ重視の方",
+        "ミルクと割ってカフェオレとして楽しみたい方",
+        "深煎りのコクが好きな方"
+      ],
+      "pros": [
+        "深みのある焙煎でコクと香りがしっかりしている",
+        "950mlの大容量でコスパが高い",
+        "ストレートでもミルクで割っても美味しい"
+      ],
+      "cons": [
+        "12本のまとめ買いのため保管場所の確保が必要",
+        "ペットボトルの廃棄時にラベルを剥がす手間がある"
+      ],
       "score": 85,
       "scoreRationale": "[基本点: 70]\n[加点: +10] 950mlの大容量による優れたコストパフォーマンス\n[加点: +5] 深み焙煎による本格的な香りとコク、ミルクとの相性の良さ\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "286mm", "width": "290mm", "depth": "216mm" },
+      "dimensions": {
+        "height": "286mm",
+        "width": "290mm",
+        "depth": "216mm"
+      },
       "weight": "5.0kg",
       "capacity": "950ml (x 12本)",
       "calories": "0kcal/100ml",
-      "ingredients": ["コーヒー", "香料"],
+      "ingredients": [
+        "コーヒー",
+        "香料"
+      ],
       "material": "ペットボトル",
       "origin": "日本"
-    }
+    },
+    "investigatedPrice": "￥1,742"
   }
 }

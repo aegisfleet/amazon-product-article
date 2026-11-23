@@ -41,7 +41,9 @@
         "claim": "必要なアイテム(補修剤、ヘラ、サンドペーパー、ポリ板)が全てセットになっている",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-cemedine-official"],
+        "supportingSourceIds": [
+          "src-cemedine-official"
+        ],
         "crossChecked": false,
         "notes": "公式サイトにてセット内容として明記"
       },
@@ -49,7 +51,9 @@
         "claim": "すり減った靴底の肉盛り補修が10分程度の作業で可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-cemedine-official"],
+        "supportingSourceIds": [
+          "src-cemedine-official"
+        ],
         "crossChecked": false,
         "notes": "硬化時間には24時間以上必要だが、作業自体は短時間で終わると記載"
       }
@@ -157,9 +161,14 @@
       "capacity": "50ml",
       "color": "ブラック",
       "material": "ウレタン樹脂",
-      "accessories": ["補修用ポリ板", "ヘラ", "サンドペーパー"],
+      "accessories": [
+        "補修用ポリ板",
+        "ヘラ",
+        "サンドペーパー"
+      ],
       "weight": "約60g",
       "origin": "日本"
-    }
+    },
+    "investigatedPrice": "￥802"
   }
 }

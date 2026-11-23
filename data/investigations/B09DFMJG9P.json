@@ -51,7 +51,9 @@
         "claim": "サクラレビューの危険性が高い",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "サクラチェッカーでの判定"
       }
@@ -159,6 +161,7 @@
       "material": "304ステンレススチール",
       "features": "ワンタッチ中留機能、クイックリリース",
       "compatibility": "ラグ幅22mmの時計、スマートウォッチ"
-    }
+    },
+    "investigatedPrice": "￥890"
   }
 }

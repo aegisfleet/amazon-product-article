@@ -43,7 +43,9 @@
         "claim": "CS43198を2基搭載し高音質と低消費電力を両立",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-B0GFD3CV9N"],
+        "supportingSourceIds": [
+          "src-amazon-B0GFD3CV9N"
+        ],
         "crossChecked": false,
         "notes": "商品仕様に明記"
       },
@@ -51,7 +53,9 @@
         "claim": "100段階の音量調整が可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-B0GFD3CV9N"],
+        "supportingSourceIds": [
+          "src-amazon-B0GFD3CV9N"
+        ],
         "crossChecked": false,
         "notes": "商品仕様に明記"
       }
@@ -163,6 +167,7 @@
       "inputPort": "USB Type-C",
       "volumeControl": "100段階独立音量調整",
       "powerSupply": "3基のLDO電源チップによる独立供給"
-    }
+    },
+    "investigatedPrice": "￥10,800"
   }
 }

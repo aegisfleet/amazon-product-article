@@ -55,7 +55,9 @@
         "claim": "最短10分で洗濯ができるお急ぎコースを搭載",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "Amazonの商品説明にて確認。競合他社は10分～14分程度であるため優位性がある。"
       },
@@ -63,7 +65,9 @@
         "claim": "しわケア脱水によりアイロンの手間を軽減",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "Amazonの商品説明にて確認。"
       }
@@ -184,6 +188,7 @@
         "機能：高濃度洗浄、槽風乾燥、ちょっと槽洗浄、予約タイマー",
         "カラー：ホワイト"
       ]
-    }
+    },
+    "investigatedPrice": "￥34,253"
   }
 }

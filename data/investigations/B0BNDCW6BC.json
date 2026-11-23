@@ -32,21 +32,27 @@
         "userType": "ビジネスパーソン",
         "scenario": "カフェで作業する際の持ち運び",
         "experience": "クッション性がある素材なので、PCやタブレットをそのまま入れても安心です。自立するのでデスクの横に置いても倒れず、荷物の出し入れがスムーズに行えます。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "子育て中の母親",
         "scenario": "マザーズバッグとして日常使い",
         "experience": "本体が約200gととても軽く、汚れもサッと拭き取れます。外側のポケットにはスマホや定期を入れられ、すぐに取り出したいものをサッと出せるので便利です。手持ちのショルダーベルトを付けて工夫して使っています。",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "通勤者",
         "scenario": "冬場の通勤",
         "experience": "デザインや機能にはとても満足していますが、持ち手が短めなので、厚手のコートを着ている時は肩掛けがしづらいのが少し残念です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -102,7 +108,10 @@
         "claim": "重量が約200gと非常に軽量である",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "複数のレビューや商品スペックで約200gであることが確認されている。"
       },
@@ -110,7 +119,9 @@
         "claim": "クッション性があり、13型（約33cm）PCやタブレットの収納に適している",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式情報や実使用レビューで収納可能であることが記載されている。"
       }
@@ -218,7 +229,11 @@
     },
     "technicalSpecs": {
       "// 注意": "調査で判明した仕様情報をここに網羅的に記載する",
-      "dimensions": { "height": "21cm", "width": "29.5cm", "depth": "15cm" },
+      "dimensions": {
+        "height": "21cm",
+        "width": "29.5cm",
+        "depth": "15cm"
+      },
       "weight": "約200g",
       "capacity": "7L (サイドのスナップボタンを外した場合は9L)",
       "material": "80Dポリエステルジオエンボス",
@@ -232,6 +247,7 @@
         "フロントに2つのオープンポケット"
       ],
       "origin": "ベトナム"
-    }
+    },
+    "investigatedPrice": "￥7,070"
   }
 }

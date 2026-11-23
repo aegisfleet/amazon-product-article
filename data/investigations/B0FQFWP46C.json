@@ -31,14 +31,18 @@
         "userType": "コンテンツクリエイター",
         "scenario": "外出先での動画撮影と編集",
         "experience": "これまで容量不足に悩まされていましたが、512GBのストレージのおかげで長時間の4K動画撮影も安心して行えるようになりました。ProMotion対応の画面はスクロールが非常に滑らかで、新搭載のセンターフレームカメラを使った自撮り撮影も快適です。バッテリーの持ちも非常に良く、1日中の外出でもモバイルバッテリー不要で過ごせるのが決め手でした。",
-        "supportingSourceIds": ["src-specs"],
+        "supportingSourceIds": [
+          "src-specs"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ビジネスパーソン",
         "scenario": "日常的なタスク管理と屋外での利用",
         "experience": "画面が3000ニトと非常に明るく、日差しの強い屋外でも文字がはっきりと読めます。Apple Intelligenceの機能でメールの要約などがスムーズにでき、A19チップの処理能力の高さを実感しています。ただ、Proモデルのような望遠カメラがないため、遠くの景色をズームして撮る際には少し物足りなさを感じることがあります。",
-        "supportingSourceIds": ["src-specs"],
+        "supportingSourceIds": [
+          "src-specs"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -61,7 +65,9 @@
         "claim": "最大33時間のビデオ再生が可能で、飛躍的に向上したバッテリー駆動時間",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-specs"],
+        "supportingSourceIds": [
+          "src-specs"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式の仕様情報として確認。"
       },
@@ -69,7 +75,9 @@
         "claim": "一世代前のモデルと比べて反射が33%軽減",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-specs"],
+        "supportingSourceIds": [
+          "src-specs"
+        ],
         "crossChecked": false,
         "notes": "メーカーの製品説明に明記されている。"
       }
@@ -214,6 +222,7 @@
         "生体認証: Face ID",
         "アクションボタン搭載 / カメラコントロール搭載"
       ]
-    }
+    },
+    "investigatedPrice": "￥179,596"
   }
 }

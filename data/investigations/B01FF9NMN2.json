@@ -27,7 +27,9 @@
         "userType": "40代健康志向の会社員",
         "scenario": "健康診断で内臓脂肪が気になり、手軽に続けられるドリンクを探していた。",
         "experience": "健康診断の結果を受けて内臓脂肪対策として購入。黒酢特有のツンとした酸味が少なく、りんごのフルーティーな甘みでジュース感覚で飲めるのが決め手になった。毎晩お風呂上がりに炭酸水で割って飲むのが日課になり、無理なくおいしく続けられている。ただし甘みがしっかりあるので、飲みすぎには注意している。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -50,7 +52,9 @@
         "claim": "肥満気味の方の内臓脂肪を減少させる機能がある",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "消費者庁に届出された機能性表示食品（関与成分：酢酸）としての事実。パッケージや公式情報と一致。"
       }
@@ -169,6 +173,7 @@
         "機能性関与成分: 酢酸 750mg",
         "アレルゲン: りんご"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,572"
   }
 }

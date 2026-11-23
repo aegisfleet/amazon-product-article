@@ -30,14 +30,18 @@
         "userType": "ファミリー層",
         "scenario": "夏の公園でのピクニック",
         "experience": "パッと開くだけで設営できるので、子供から目を離す時間が短くて済みました。ダークルームテクノロジーのおかげで中は涼しく、フルクローズできるのでおむつ替えや授乳も周囲を気にせず行えました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "アウトドア初心者",
         "scenario": "ビーチでの日よけ",
         "experience": "骨組みを組み立てる手間がなく簡単ですが、最初はたたみ方にコツが必要でした。慣れれば撤収もすぐでき、ショルダーベルト付きのケースで持ち運びも楽です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -60,7 +64,9 @@
         "claim": "日光を90％以上遮断して、シェード内の温度上昇を抑制する",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品仕様に「コールマンのダークルームテクノロジーは、日光を90％以上遮断」と明記されている"
       },
@@ -68,7 +74,9 @@
         "claim": "耐水圧：約3,000mm（上部シェード）、約1,500mm（床面シート）",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品仕様に記載（シームテープによる目止めはなし）"
       }
@@ -190,6 +198,7 @@
         "ベンチレーション搭載",
         "フルクローズ可能ドアパネル"
       ]
-    }
+    },
+    "investigatedPrice": "￥8,999"
   }
 }

@@ -27,14 +27,18 @@
         "userType": "一般ユーザー",
         "scenario": "PCやキーボードの定期的な掃除",
         "experience": "定期的に購入していますが、ホームセンターで売っているものより比較的長持ちするような気がします。しっかりとしたエアダスター缶なので、今後もリピートすると思います。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "一般ユーザー",
         "scenario": "ホコリ飛ばしのための連続使用",
         "experience": "連続使用すると勢いが弱まる場面もありますが、これは他社の有名エアダスターでも同様の缶タイプの仕様であり、少し待てば勢いも戻るので問題なく使えています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -68,7 +72,9 @@
         "claim": "1本あたり約460円という高いコストパフォーマンス",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "crossChecked": false,
         "notes": "Amazon価格(1,379円/3本)に基づく。他社製3本セット（約1,500円〜）と比較しても安価。"
       },
@@ -76,7 +82,10 @@
         "claim": "逆さ噴射対応で液漏れしない",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "商品仕様およびユーザーレビューの使用感で一致している。"
       },
@@ -84,7 +93,9 @@
         "claim": "ホームセンター等で売っているものより長持ちする実感がある",
         "category": "durability",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "ユーザー個人の主観的感想であるが、リピート購入の根拠となっている。"
       }
@@ -176,6 +187,7 @@
         "ノンフロン",
         "付属品: チューブ"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,499"
   }
 }

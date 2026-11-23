@@ -29,7 +29,9 @@
         "userType": "日常的にボディピアスを愛用する人",
         "scenario": "トラガスやヘリックス用のピアスを新調する際",
         "experience": "キャッチのボールが小さくてよく失くしてしまうため、5個セットでこの価格は非常に助かります。シャフト12mmは少し長めですが、ホールが腫れた時や厚みのある部位にも余裕を持って着けられるため安心感があります。裏側が平らなので、寝る時も痛くならず快適です。",
-        "supportingSourceIds": ["src-specs"],
+        "supportingSourceIds": [
+          "src-specs"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -52,7 +54,9 @@
         "claim": "金属アレルギー対応",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-specs"],
+        "supportingSourceIds": [
+          "src-specs"
+        ],
         "crossChecked": false,
         "notes": "サージカルステンレス素材を使用しているため、一般的に金属アレルギーを起こしにくい素材として広く認知されている。"
       }
@@ -133,6 +137,7 @@
         "ボールサイズ: 4mm",
         "形状: ラブレットスタッド"
       ]
-    }
+    },
+    "investigatedPrice": "￥600"
   }
 }

@@ -29,14 +29,18 @@
         "userType": "小型犬の子犬を飼い始めた飼い主",
         "scenario": "ドライフードへの食いつきが悪く、栄養不足が心配になった",
         "experience": "ドライフードにこのパテをスプーンで崩して混ぜたところ、お肉の匂いに惹かれて完食するようになりました。1食で半分（50g）使うので、残りを冷蔵庫で保管するのに100gトレイはちょうど良いサイズ感でした。カロリーもしっかり摂れているようで、順調に体重が増えています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "多頭飼いで中型犬の子犬を育てる家庭",
         "scenario": "成長期の旺盛な食欲を満たしつつ、質の高い食事を与えたい",
         "experience": "色々なタンパク源が入っている点が気に入り箱買いしました。食いつきは抜群ですが、中型犬だと1回の食事で複数個消費するため、あっという間に24個がなくなってしまい、毎月の食費はかなりかさみます。それでも品質を考えるとリピートする価値はあると感じています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -70,7 +74,10 @@
         "claim": "自然素材の高い栄養価とおいしさをそのままに、最適な栄養バランスを引きだす “ホリスティック・ブレンド”",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "原材料リストに多種多様な肉類、野菜、果物が含まれていることから、コンセプト通りの配合が確認できる。"
       },
@@ -78,7 +85,9 @@
         "claim": "“ミート ファースト”で抜群のおいしさを実現",
         "category": "comparativeAdvantage",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "原材料の筆頭が「チキン、鶏レバー」など肉類であることを確認。おいしさ（食いつき）については個体差があるものの、レビュー評価は概ね高い。"
       }
@@ -155,6 +164,7 @@
       "nutrition": "タンパク質 7.0%以上、脂質 6.0%以上、粗繊維 1.0%以下、灰分 3.0%以下、水分 78.0%以下",
       "foodType": "総合栄養食 (ウェットタイプ・パテ状)",
       "targetLifeStage": "子犬用（成長期用）"
-    }
+    },
+    "investigatedPrice": "￥5,164"
   }
 }

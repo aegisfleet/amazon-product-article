@@ -31,14 +31,18 @@
         "userType": "車通勤の会社員",
         "scenario": "雨の日の車の乗り降り",
         "experience": "ワンタッチ自動開閉と逆折り式の組み合わせが最高です。車のドアの隙間からサッと開閉でき、閉じた後も濡れた面が内側になるのでシートが濡れません。これまで使っていた普通の折りたたみ傘の不満が見事に解消されました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "体格の良い男性",
         "scenario": "風の強い豪雨の日の徒歩移動",
         "experience": "直径109cmという大判サイズのおかげで、大きなリュックを背負っていても全く濡れませんでした。12本骨なので強風に煽られても骨が反り返ることなく、非常に安定感があります。ただ、常にバッグに入れておくには少し重くてかさばるのが気になります。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -61,7 +65,9 @@
         "claim": "強風の圧力を効率よく分散し、激しい雨や強風にも耐え、折れたり曲がったりしにくい",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "12本骨構造とグラスファイバー素材から論理的に裏付けられるが、実際の耐風速などは未検証"
       },
@@ -69,7 +75,9 @@
         "claim": "水滴が生地表面に残りにくく、軽く振るだけで水滴をスムーズに落とせる超撥水",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "テフロン加工等の具体的な記載がないため長期的な撥水持続性は不明だが、高密度布による効果は期待できる"
       }
@@ -187,7 +195,10 @@
         "UPF50+ 遮光遮熱コーティング"
       ],
       "color": "ブラック",
-      "other": ["専用カバー・収納袋付き"]
-    }
+      "other": [
+        "専用カバー・収納袋付き"
+      ]
+    },
+    "investigatedPrice": "￥2,199"
   }
 }

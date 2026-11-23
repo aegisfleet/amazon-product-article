@@ -41,7 +41,9 @@
         "claim": "締付ネジがサッシ枠に直接触れず、サッシ枠に傷がつきにくい",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "商品ページの特徴に明記されており、一般的にこのタイプの製品において重要な差別化要素"
       },
@@ -49,7 +51,9 @@
         "claim": "窓や雨戸の開閉がスムーズに",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "製品の設計上、サッシの動きを阻害しにくい仕様であることを確認"
       }
@@ -110,7 +114,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] サッシを傷つけない配慮のある構造で、賃貸等でも使いやすい\n[減点: 0] 特になし\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "47mm", "width": "72mm", "depth": "63mm" },
+      "dimensions": {
+        "height": "47mm",
+        "width": "72mm",
+        "depth": "63mm"
+      },
       "weight": "20g",
       "capacity": "2個組",
       "material": "6ナイロン樹脂、ステンレス",
@@ -120,6 +128,7 @@
         "取り付け可能場所: アルミサッシ窓枠、雨戸枠、テラス、木部等",
         "取り付け不可条件: 取付部5mm以下、サッシの厚み6mm以上、サッシ枠と戸の隙間1mm以下"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,221"
   }
 }

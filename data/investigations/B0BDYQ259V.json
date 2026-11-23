@@ -26,7 +26,9 @@
         "userType": "デスクワーカー",
         "scenario": "毎日の長時間のPC作業で肩こりが酷くなった",
         "experience": "着用していると、首回りから肩にかけての重だるさが軽減され、温かさを感じる。デザインもシンプルなので、職場でも目立たずに着けられて重宝している。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -49,7 +51,9 @@
         "claim": "医療機器認証を取得し、血行改善・コリ緩和の効果がある",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "医療機器認証番号226AGBZX00054000が明記されている"
       }
@@ -167,6 +171,7 @@
         "サイズ: Lサイズ 約51cm",
         "カラー: プレミアムブラック"
       ]
-    }
+    },
+    "investigatedPrice": "￥9,900"
   }
 }

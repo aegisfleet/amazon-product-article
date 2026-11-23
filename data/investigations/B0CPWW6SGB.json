@@ -28,7 +28,9 @@
         "userType": "デスクワーカー",
         "scenario": "USBハブのケーブル延長",
         "experience": "USBハブのケーブルが短く、デスク周りの配線に困っていましたが、このケーブルで延長することでスッキリと配置できました。充電やキーボードの接続等、基本的な用途では全く問題なく動作しています。エレコム製なので安心感があります。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -51,7 +53,9 @@
         "claim": "最大65WまでのUSB PD充電に対応している",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "crossChecked": true,
         "notes": "公式の製品仕様に記載あり"
       }
@@ -112,9 +116,17 @@
       }
     ],
     "recommendation": {
-      "targetUsers": ["充電メインで安価な延長ケーブルを探している人", "国内メーカーの製品を選びたい人"],
-      "pros": ["手頃な価格", "エレコム製の信頼感"],
-      "cons": ["高速通信や映像出力には非対応"],
+      "targetUsers": [
+        "充電メインで安価な延長ケーブルを探している人",
+        "国内メーカーの製品を選びたい人"
+      ],
+      "pros": [
+        "手頃な価格",
+        "エレコム製の信頼感"
+      ],
+      "cons": [
+        "高速通信や映像出力には非対応"
+      ],
       "score": 75,
       "scoreRationale": "[基本点: 70]\n[加点: +5] (安価でありながら大手メーカー製というコストパフォーマンスの良さ)\n[合計: 75]"
     },
@@ -123,7 +135,11 @@
       "color": "ブラック",
       "usbStandard": "USB 2.0 (最大480Mbps)",
       "powerDelivery": "最大65W対応",
-      "other": ["※映像出力(Alt Mode)の保証なし", "※連結は最大3m、合計2本まで"]
-    }
+      "other": [
+        "※映像出力(Alt Mode)の保証なし",
+        "※連結は最大3m、合計2本まで"
+      ]
+    },
+    "investigatedPrice": "￥597"
   }
 }

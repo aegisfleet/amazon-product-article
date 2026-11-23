@@ -3,7 +3,12 @@
     "productName": "Rabbitgoo 犬ハーネス リードセット Mサイズ",
     "parentAsin": "B0G2L2RV8Y",
     "productDescription": "愛犬の引っ張りを防止し、喉に負担をかけない軽量メッシュ素材のハーネスとリードのセット。Mサイズは中型犬に適しており、夜間のお散歩でも安心な反射素材を採用しています。",
-    "productUsage": ["毎日の散歩", "アウトドア", "しつけ・訓練", "老犬の歩行補助"],
+    "productUsage": [
+      "毎日の散歩",
+      "アウトドア",
+      "しつけ・訓練",
+      "老犬の歩行補助"
+    ],
     "positivePoints": [
       "約170gの軽量設計かつ通気性に優れたメッシュ素材で愛犬への負担が少ない",
       "マジックテープとバックルによる簡単装着が可能",
@@ -14,20 +19,28 @@
       "大型犬には非対応",
       "サイズ間違いに注意が必要で、正確な採寸が求められる"
     ],
-    "useCases": ["夜間の散歩", "暑い季節のお出かけ", "引き癖のある犬の散歩"],
+    "useCases": [
+      "夜間の散歩",
+      "暑い季節のお出かけ",
+      "引き癖のある犬の散歩"
+    ],
     "userStories": [
       {
         "userType": "小型犬の飼い主",
         "scenario": "引き癖があり、首輪だとむせる愛犬のために購入。",
         "experience": "引っ張っても首が締まらず喉に優しいので、ゼーゼーと苦しそうにすることがなくなりました。マジックテープで微調整できるので体にしっかりフィットし、すっぽ抜けの不安が減ったのが決め手です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "中型犬の飼い主",
         "scenario": "夏の夜の散歩用として通気性と安全性を重視して購入。",
         "experience": "メッシュ素材なので蒸れにくく、夏の散歩でも快適そうです。反射材が広範囲についているので、暗い道でも車や自転車から気づいてもらいやすくなりました。リード付きでコスパが良いのも助かりました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -50,7 +63,9 @@
         "claim": "喉に優しい・引っ張り防止設計",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "衝撃を分散するエルゴノミクス設計により喉への負担を軽減する仕様。"
       },
@@ -58,7 +73,9 @@
         "claim": "全方位を守る安心設計（マジックテープ、バックル、Dリング2個）",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "複数の固定箇所によりすっぽ抜けを防ぐ構造。"
       }
@@ -162,14 +179,23 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (喉への負担を軽減するエルゴノミクス設計と通気性)\n[加点: +5] (ハーネスとリードのセットで約1,900円という高いコストパフォーマンス)\n[加点: +5] (夜間反射材や二重の固定具など安全面への配慮)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "162mm", "width": "208mm", "depth": "40mm" },
+      "dimensions": {
+        "height": "162mm",
+        "width": "208mm",
+        "depth": "40mm"
+      },
       "weight": "170g",
       "capacity": "首周り31.2～37.1cm / 胸囲40.6～47cm",
       "material": "通気性メッシュ素材",
       "color": "ブルー＆オレンジ",
       "size": "M",
       "leadLength": "156cm",
-      "other": ["反射材付き", "マジックテープ・バックル固定", "Dリング2個装備"]
-    }
+      "other": [
+        "反射材付き",
+        "マジックテープ・バックル固定",
+        "Dリング2個装備"
+      ]
+    },
+    "investigatedPrice": "￥1,699"
   }
 }

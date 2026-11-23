@@ -25,14 +25,18 @@
         "userType": "ミステリー小説ファン",
         "scenario": "直木賞受賞作ということで期待して読んだ",
         "experience": "トリックの緻密さだけでなく、犯人の石神の「献身」の理由を知った瞬間に胸が締め付けられました。ただの謎解きで終わらない人間ドラマが最大の魅力で、なぜこれほど評価が高いのか納得できました。読み終わった後もしばらく余韻が抜けません。",
-        "supportingSourceIds": ["src-bunshun"],
+        "supportingSourceIds": [
+          "src-bunshun"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ガリレオシリーズ読者",
         "scenario": "ドラマや映画化を機に原作を手に取った",
         "experience": "普段のガリレオシリーズの短編とは違い、湯川が真相に近づくことを躊躇する描写など、天才たちの苦悩が丁寧に描かれていて引き込まれました。ただ、結末が悲しすぎるため、痛快な謎解きを期待していると少し心が重くなります。",
-        "supportingSourceIds": ["src-bunshun"],
+        "supportingSourceIds": [
+          "src-bunshun"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -66,7 +70,9 @@
         "claim": "国内主要ミステリランキングですべて1位を獲得",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-bunshun"],
+        "supportingSourceIds": [
+          "src-bunshun"
+        ],
         "crossChecked": true,
         "notes": "文春文庫の公式ページで、2005年度の「本格ミステリ・ベスト10」「このミステリーがすごい! 」「週刊文春ミステリベスト10」すべてにおいて1位獲得と明記されている。"
       }
@@ -171,7 +177,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (直木賞やミステリ3冠など、日本のミステリ史に残る客観的かつ圧倒的な受賞実績と完成度)\n[加点: +10] (世界各国で映画化されるなど、国境を越えて普遍的な感動を呼ぶ人間ドラマとしての極めて高い品質)\n[加点: +5] (トリックの論理的緻密さと、タイトル「献身」に繋がる動機の見事な融合による独自の強み)\n[減点: -5] (結末の重さゆえに、爽快なカタルシスを求める読者を選ぶ点)\n[合計: 90]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "152mm", "width": "105mm", "depth": "15mm" },
+      "dimensions": {
+        "height": "152mm",
+        "width": "105mm",
+        "depth": "15mm"
+      },
       "weight": "200g",
       "format": "文庫本",
       "pages": "400",
@@ -179,6 +189,7 @@
       "publicationDate": "2008-08-05",
       "language": "日本語",
       "isbn": "978-4167110123"
-    }
+    },
+    "investigatedPrice": "￥770"
   }
 }

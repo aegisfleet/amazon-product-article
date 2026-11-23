@@ -29,14 +29,18 @@
         "userType": "20代女性・会社員",
         "scenario": "休日のちょっとしたお出かけ",
         "experience": "普段はブラウン系をつけていますが、少し雰囲気を変えたくてカシスシャーベットを選びました。着色直径13.4mmなので大きすぎず、ほんのり青みがかったアッシュブラウンのような発色で透明感が出ます。MPCポリマー配合のおかげか、低含水レンズでも夕方まで乾燥しにくく、快適に過ごせたのが決め手です。",
-        "supportingSourceIds": ["src-specs"],
+        "supportingSourceIds": [
+          "src-specs"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "30代女性",
         "scenario": "日常的な使用",
         "experience": "色が綺麗で透明感が出るのは良いのですが、1箱10枚で1,100円台だと毎日使うのには少しコストがかかります。また、がっつりデカ目効果を狙うには着色直径が小さめなので、あくまでナチュラルなニュアンスチェンジ向きだと感じました。",
-        "supportingSourceIds": ["src-specs"],
+        "supportingSourceIds": [
+          "src-specs"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -59,7 +63,9 @@
         "claim": "保湿成分MPCポリマー配合により長時間のうるおいをキープする",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-specs"],
+        "supportingSourceIds": [
+          "src-specs"
+        ],
         "crossChecked": true,
         "notes": "商品仕様として明記。低含水（38%）と相まって乾燥対策として論理的に妥当"
       }
@@ -170,9 +176,12 @@
       "coloredDiameter": "13.4mm",
       "waterContent": "38%",
       "power": "-2.50D",
-      "ingredients": ["MPCポリマー"],
+      "ingredients": [
+        "MPCポリマー"
+      ],
       "medicalDeviceApprovalNumber": "22900BZX00223A07",
       "type": "単回使用視力補正用色付コンタクトレンズ"
-    }
+    },
+    "investigatedPrice": "￥1,160"
   }
 }

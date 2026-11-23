@@ -31,14 +31,18 @@
         "userType": "会社員",
         "scenario": "仕事中の連絡確認",
         "experience": "仕事中にスマホをすぐに取り出せない環境でも、手元の画面でLINEや着信をサッと確認できて非常に助かっています。スピーカー内蔵なので、手が離せない家事の合間などにも簡単な通話なら手首だけで完結するのが決め手でした。ただ、長文のメッセージはスマホで見直す必要があります。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "フィットネス初心者",
         "scenario": "日々の運動量の記録",
         "experience": "初めてのスマートウォッチとして購入しました。2000円台という安さにも関わらず、歩数や睡眠時間などをしっかり記録してくれるので、運動のモチベーションが上がりました。ピンクのデザインも可愛らしくて気に入っていますが、本格的なランニングでGPSルートを残すにはスマホを一緒に持っていく必要がある点が少し不便です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -61,7 +65,9 @@
         "claim": "水濡れを気にせず、スポーツや日常生活の中で自由に使用できる",
         "category": "durability",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品ページで防水・防塵対応を謳っているが、完全防水（IP68等）の具体的な等級の記載がないため、過度な水没には注意が必要と推測される。"
       }
@@ -178,9 +184,24 @@
       "size": "フリーサイズ",
       "connectivity": "Bluetooth 4.0以上",
       "compatibility": "Android 5.0以降、iOS 9.0以降",
-      "features": ["Bluetooth通話", "メッセージ通知", "活動量計", "多種類運動モード", "370種以上の文字盤", "音楽再生", "天気予報", "目覚まし時計", "懐中電灯", "遠隔撮影"],
+      "features": [
+        "Bluetooth通話",
+        "メッセージ通知",
+        "活動量計",
+        "多種類運動モード",
+        "370種以上の文字盤",
+        "音楽再生",
+        "天気予報",
+        "目覚まし時計",
+        "懐中電灯",
+        "遠隔撮影"
+      ],
       "model": "L2",
-      "other": ["防水防塵対応（等級不明）", "1年メーカー保証"]
-    }
+      "other": [
+        "防水防塵対応（等級不明）",
+        "1年メーカー保証"
+      ]
+    },
+    "investigatedPrice": "￥4,416"
   }
 }

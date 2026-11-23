@@ -30,28 +30,36 @@
         "userType": "金属アレルギーを持つユーザー",
         "scenario": "つけっぱなしできるピアスを探していた",
         "experience": "アナトメタルのチタン製を愛用しており、過去にサージカルステンレス製でアレルギーが出たことがあったためダメ元で購入したが、全くアレルギー反応が出ず快適。安価なのに品質が良く、久しぶりにつけられるピアスに出会えて満足している。",
-        "supportingSourceIds": ["src-amazon-review-1"],
+        "supportingSourceIds": [
+          "src-amazon-review-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "着脱のしやすさを求めるユーザー",
         "scenario": "セグメントリングは着けづらいというイメージを持っていた",
         "experience": "ストレートバーベルを愛用していたが、このリングはパチっとハマって簡単に着脱でき、見た目も美しいため非常に感激した。着けっぱなしでの耐久性は今後観察するが、現時点では大変満足。",
-        "supportingSourceIds": ["src-amazon-review-2"],
+        "supportingSourceIds": [
+          "src-amazon-review-2"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "日常使いユーザー",
         "scenario": "手頃な価格で使いやすいピアスを探していた",
         "experience": "安いのにくすみや歪みがなく、気持ちよくパチっとハマる。継ぎ目もほぼ分からず、つけっぱなしに最適だと感じた。",
-        "supportingSourceIds": ["src-amazon-review-3"],
+        "supportingSourceIds": [
+          "src-amazon-review-3"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "サイズ感が合わなかったユーザー",
         "scenario": "口用のピアスとして購入した",
         "experience": "商品自体は良いが、口用としてはサイズが少し小さく感じた。",
-        "supportingSourceIds": ["src-amazon-review-4"],
+        "supportingSourceIds": [
+          "src-amazon-review-4"
+        ],
         "sentiment": "negative"
       }
     ],
@@ -107,7 +115,9 @@
         "claim": "サージカルステンレス製で金属アレルギーが出にくい",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-review-1"],
+        "supportingSourceIds": [
+          "src-amazon-review-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーの商品説明および複数のユーザーレビューでアレルギー反応が出ないと報告されている。"
       },
@@ -115,7 +125,10 @@
         "claim": "ワンタッチで簡単に着脱でき、継ぎ目が目立たない",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-review-2", "src-amazon-review-3"],
+        "supportingSourceIds": [
+          "src-amazon-review-2",
+          "src-amazon-review-3"
+        ],
         "crossChecked": false,
         "notes": "着脱の容易さと、装着時の見た目の美しさ（継ぎ目の目立たなさ）がユーザーから高く評価されている。"
       }
@@ -236,6 +249,7 @@
         "カラー: ステンレス シルバー",
         "タイプ: ワンタッチセグメントリング"
       ]
-    }
+    },
+    "investigatedPrice": "￥349"
   }
 }

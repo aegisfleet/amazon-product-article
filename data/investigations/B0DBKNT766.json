@@ -28,7 +28,9 @@
         "userType": "30代女性 / デスクワーク",
         "scenario": "仕事終わりの入浴後、頭皮のリフレッシュとヘアケアを同時に行いたい",
         "experience": "お風呂上がりにスプレーすると、パチパチとはじける炭酸泡が頭皮に心地よく、一日の疲れが吹き飛ぶような爽快感がありました。競合のサロン専売品は高価で続けにくかったのですが、花王の製品で1,000円台という手頃な価格帯が決め手になりました。ゼラニウム＆ミュゲの香りも自然で強すぎず、寝る前のリラックスタイムにぴったりです。ドライヤーの乾きも早くなったように感じます。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -51,7 +53,9 @@
         "claim": "ドライヤー時間を短縮し、熱・摩擦によるダメージ補修・予防効果がある",
         "category": "comparativeAdvantage",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーの商品説明として記載されている事実を確認"
       },
@@ -59,7 +63,9 @@
         "claim": "寝ぐせがつきにくく、日中の浮き毛も出にくくなる",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーの効能訴求として確認"
       }
@@ -171,6 +177,7 @@
       "other": [
         "高圧ガス(LPガス)使用の可燃性製品"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,350"
   }
 }

@@ -29,14 +29,18 @@
         "userType": "健康志向の会社員",
         "scenario": "平日の忙しい朝食",
         "experience": "普段からオートミールを食べていますが、調理の手間を省きたくてこちらを購入しました。牛乳をかけるだけで食べられ、マカダミアナッツとパンプキンシードの食感が良いアクセントになって飽きません。甘さも控えめで、毎朝無理なく続けられています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "家族の朝食担当",
         "scenario": "週末の家族の朝食",
         "experience": "子供と一緒に食べるために購入しましたが、ナッツの風味が少し大人向けだったようで、子供には通常のフルグラの方が好評でした。ただ、大人はヨーグルトに合わせて美味しく頂いています。8袋あるので消費には少し時間がかかりそうです。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -59,7 +63,9 @@
         "claim": "香ばしく焼き上げたオートミールにマカダミアとパンプキンシードをトッピング",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "公式の製品特徴として明記されており、実際の製品構成と一致"
       }
@@ -176,6 +182,7 @@
         "主原料: オートミール (オーツ麦)",
         "トッピング: マカダミアナッツ、パンプキンシード"
       ]
-    }
+    },
+    "investigatedPrice": "￥4,178"
   }
 }

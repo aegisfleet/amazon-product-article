@@ -28,7 +28,9 @@
         "userType": "賃貸住宅の居住者",
         "scenario": "リビングと隣接する洋室、キッチンの空気循環のため",
         "experience": "これまで扇風機タイプのサーキュレーターを使用していましたが、場所を取らないこちらを購入しました。リビングのエアコン1台稼働で洋室のクローゼット前、キッチン、玄関先、洗面所まで風が流れてどこに行っても涼しく、大満足です。ただし、最新モデルは取り付けタイプが引っ掛けシーリングでないとダメな仕様だったため、賃貸ですが天井にビスを打って取り付けました。賃貸にも完全対応しているとさらに嬉しいです。",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -62,7 +64,9 @@
         "claim": "2022年モデルに比べ照明は約23％省エネ、風量は約16％アップ",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式の仕様・性能比較"
       },
@@ -70,7 +74,9 @@
         "claim": "引掛シーリングの種類によってはビス止めが必要",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "crossChecked": false,
         "notes": "実際のユーザーレビューにて確認"
       }
@@ -141,6 +147,7 @@
         "正逆回転切替機能付き",
         "オフタイマー機能（1、2、4、8時間）"
       ]
-    }
+    },
+    "investigatedPrice": "￥24,800"
   }
 }

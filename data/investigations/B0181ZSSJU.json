@@ -3,7 +3,11 @@
     "productName": "いけにえと雪のセツナ",
     "parentAsin": "B0185OT576",
     "productDescription": "雪国を舞台にした90年代風RPG",
-    "productUsage": ["ゲームプレイ", "ストーリー体験", "ノスタルジックなRPG体験"],
+    "productUsage": [
+      "ゲームプレイ",
+      "ストーリー体験",
+      "ノスタルジックなRPG体験"
+    ],
     "positivePoints": [
       "90年代のRPGを思い起こさせるクラシックなシステム",
       "雪国をテーマにした美しい世界観とピアノ中心のBGM",
@@ -13,13 +17,19 @@
       "グラフィックや演出が最新のゲームと比べると控えめ",
       "物語のテーマが重いため、好みが分かれる可能性がある"
     ],
-    "useCases": ["休日などのまとまった時間にじっくりプレイ", "過去のRPG作品に懐かしさを感じる時"],
+    "useCases": [
+      "休日などのまとまった時間にじっくりプレイ",
+      "過去のRPG作品に懐かしさを感じる時"
+    ],
     "userStories": [
       {
         "userType": "RPGファン",
         "scenario": "休日のリラックスタイムにプレイ",
         "experience": "昔遊んだRPGの感覚が蘇り、ピアノのBGMと雪の世界観に引き込まれた。戦闘もシンプルで遊びやすい。",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -53,7 +63,10 @@
         "claim": "90年代のRPGを意識したシステムである",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "Wikipedia及び公式の情報から確認"
       }
@@ -164,6 +177,7 @@
       "platform": "PlayStation 4",
       "developer": "Tokyo RPG Factory",
       "publisher": "SQUARE ENIX"
-    }
+    },
+    "investigatedPrice": "￥3,777"
   }
 }

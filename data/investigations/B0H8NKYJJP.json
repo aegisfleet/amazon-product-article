@@ -30,7 +30,9 @@
         "userType": "通勤・通学者",
         "scenario": "電車内でのスマートフォン使用時",
         "experience": "ケーブルレスでMagSafe吸着して充電できるため、電車内で動画を視聴したりSNSを見たりする際にも邪魔にならず快適に操作できる。ただし、LED表示なので正確な残量パーセントが分からないのは少し不便。",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -53,7 +55,9 @@
         "claim": "最大15Wのワイヤレス充電に対応",
         "category": "comparativeAdvantage",
         "confidence": "medium",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "iPhone側の仕様により、サードパーティ製充電器では最大出力が制限される場合があるため、実使用時に常に15Wが出るとは限らない。"
       }
@@ -127,6 +131,7 @@
         "PSE認証済",
         "多重安全保護回路（過充電・過放電・短絡保護等）搭載"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,998"
   }
 }

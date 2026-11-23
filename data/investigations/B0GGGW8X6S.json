@@ -3,7 +3,10 @@
     "productName": "ヒツジのいらない毛布",
     "parentAsin": "B0GGGW8X6S",
     "productDescription": "ヒツジのいらない枕シリーズから登場した、リバーシブルのファー素材を採用した加重毛布。約4kgの重さととろけるような肌触りで全身を包み込み、冬の冷気を遮断して暖かさを保ちます。",
-    "productUsage": ["睡眠時の掛け毛布", "リラックスタイムのブランケット"],
+    "productUsage": [
+      "睡眠時の掛け毛布",
+      "リラックスタイムのブランケット"
+    ],
     "positivePoints": [
       "約4kg（8.8ポンド）の加重設計で安心感をもたらす",
       "表裏で毛足の長さが異なるリバーシブルのファー素材で、とろけるような肌触り",
@@ -39,7 +42,9 @@
         "claim": "リバーシブル仕様のファー素材でとろけるような極上の肌触り",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "Amazon商品ページの公式説明による"
       },
@@ -47,7 +52,9 @@
         "claim": "洗濯機OK、抗菌・防臭仕様",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "Amazon商品ページの公式説明による"
       }
@@ -170,6 +177,7 @@
         "専用バッグ付属",
         "リバーシブル仕様"
       ]
-    }
+    },
+    "investigatedPrice": "￥33,000"
   }
 }

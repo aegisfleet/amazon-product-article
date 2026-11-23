@@ -3,7 +3,13 @@
     "productName": "AiMike 330度回転レンズ・自動追尾アクションカメラ",
     "parentAsin": "B0H14XVNDT",
     "productDescription": "330度回転レンズと自動顔追跡機能を搭載した、Vlogや自撮り撮影に特化した小型アクションカメラ。",
-    "productUsage": ["Vlog撮影", "自撮り", "旅行の記録", "商品紹介動画の撮影", "ライブ配信"],
+    "productUsage": [
+      "Vlog撮影",
+      "自撮り",
+      "旅行の記録",
+      "商品紹介動画の撮影",
+      "ライブ配信"
+    ],
     "positivePoints": [
       "330度回転レンズとシングル軸の自動顔追跡機能を搭載し、被写体を自動でフレーム中央に保つことができる",
       "1.72インチのIPS液晶タッチスクリーンを搭載し、本体単体での操作や構図確認が容易である",
@@ -17,20 +23,29 @@
       "アクションカメラを謳いながら、防塵防水性能に関する言及がなく、激しいアウトドアや水辺での使用には向かない",
       "ノーブランドのOEM製品の可能性が高く、長期間のメーカー保証やファームウェアアップデートには期待できない"
     ],
-    "useCases": ["旅行や観光地での歩き撮り", "一人でのVlog撮影やライブ配信", "手元の小物やハンドメイド作品の紹介", "動き回る子供やペットの記録"],
+    "useCases": [
+      "旅行や観光地での歩き撮り",
+      "一人でのVlog撮影やライブ配信",
+      "手元の小物やハンドメイド作品の紹介",
+      "動き回る子供やペットの記録"
+    ],
     "userStories": [
       {
         "userType": "Vlog配信者",
         "scenario": "一人での街歩き動画の撮影",
         "experience": "カメラを手に持って歩きながら撮影する際、330度の自動追尾機能が働き、自分がフレームから外れるのを防いでくれるため、ワンオペでの自撮り撮影が非常に快適であった。",
-        "supportingSourceIds": ["amazon-product-page"],
+        "supportingSourceIds": [
+          "amazon-product-page"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ハンドメイド作家",
         "scenario": "商品紹介動画の作成",
         "experience": "カメラの前で手元の作品を見せる際、顔から手元の小物へスムーズにピントが移動するため、ピンボケの少ない見やすい紹介動画を簡単に撮影できた。",
-        "supportingSourceIds": ["amazon-product-page"],
+        "supportingSourceIds": [
+          "amazon-product-page"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -53,7 +68,9 @@
         "claim": "7500万画素の高精細静止画を実現",
         "category": "quality",
         "confidence": "low",
-        "supportingSourceIds": ["amazon-product-page"],
+        "supportingSourceIds": [
+          "amazon-product-page"
+        ],
         "crossChecked": false,
         "notes": "スペック表内に「1600万CMOSセンサーを採用」との記載があり、7500万画素はソフトウェアによる補間（アップスケーリング）であるため、実際の解像感は劣る"
       }
@@ -145,6 +162,7 @@
         "8種類の撮影モード",
         "31種類のカラーフィルター"
       ]
-    }
+    },
+    "investigatedPrice": "￥15,980"
   }
 }

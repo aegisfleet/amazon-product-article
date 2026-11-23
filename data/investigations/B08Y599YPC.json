@@ -40,7 +40,9 @@
         "claim": "体温の手入力による転記が必要なく、簡単に転送/記録できる",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-features"],
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
         "crossChecked": true,
         "notes": "OMRON connect連携機能（音波通信）により自動記録されることを確認。手入力不要は事実である。"
       }
@@ -111,6 +113,7 @@
       "other": [
         "わき専用"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,144"
   }
 }

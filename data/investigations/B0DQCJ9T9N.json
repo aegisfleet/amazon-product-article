@@ -27,21 +27,27 @@
         "userType": "針美容液初心者",
         "scenario": "リードルショット系のチクチク感が苦手だったがPDRNを試したくて購入",
         "experience": "チクチク感はそこまで辛くなく、肌の調子が良くなった気がしてリピート購入した。",
-        "supportingSourceIds": ["amazon-reviews"],
+        "supportingSourceIds": [
+          "amazon-reviews"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "乾燥肌のユーザー",
         "scenario": "翌日の肌の保湿効果を求めて夜に使用",
         "experience": "使うと次の日の肌がしっとりし、他の美容液よりも潤いを感じた。",
-        "supportingSourceIds": ["amazon-reviews"],
+        "supportingSourceIds": [
+          "amazon-reviews"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "エイジングケア重視のユーザー",
         "scenario": "化粧ノリの改善やハリを求めて継続して使用",
         "experience": "翌日の化粧ノリが良く、肌に張りが出たように感じる。肌荒れなどのトラブルもなく使い続けている。",
-        "supportingSourceIds": ["amazon-reviews"],
+        "supportingSourceIds": [
+          "amazon-reviews"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -75,7 +81,9 @@
         "claim": "角質層まで美容成分を効果的に届ける塗る針（マイクロニードル）処方",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-product-page"],
+        "supportingSourceIds": [
+          "amazon-product-page"
+        ],
         "crossChecked": false,
         "notes": "商品ページでスキンブースターセラムとして説明されている"
       },
@@ -83,7 +91,9 @@
         "claim": "翌朝の肌のしっとり感やハリの向上を実感しやすい",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-reviews"],
+        "supportingSourceIds": [
+          "amazon-reviews"
+        ],
         "crossChecked": true,
         "notes": "複数のレビューで翌日の肌状態の改善が報告されている"
       }
@@ -188,13 +198,29 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (サーモンPDRNとエクソソームの組み合わせによる成分の先進性・独自性)\n[加点: +5] (2970円という価格設定で初心者でも手に取りやすい優れたコストパフォーマンス)\n[加点: +5] (翌朝の肌のハリやしっとり感に関するポジティブなユーザーレビューが多い点)\n[減点: -0] (チクチク感は針美容液特有の性質であり、製品の欠陥ではないため減点なし)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "120mm", "width": "40mm", "depth": "100mm" },
+      "dimensions": {
+        "height": "120mm",
+        "width": "40mm",
+        "depth": "100mm"
+      },
       "weight": "450g",
       "capacity": "30ml",
-      "ingredients": ["サーモンPDRN", "エクソソーム", "2000DAコラーゲン", "8種ヒアルロン酸", "3種ペプチド"],
-      "skinType": ["全ての肌質 (目元・口元を除く)"],
+      "ingredients": [
+        "サーモンPDRN",
+        "エクソソーム",
+        "2000DAコラーゲン",
+        "8種ヒアルロン酸",
+        "3種ペプチド"
+      ],
+      "skinType": [
+        "全ての肌質 (目元・口元を除く)"
+      ],
       "origin": "大韓民国",
-      "other": ["マイクロニードル（塗る針）配合", "2000ppm"]
-    }
+      "other": [
+        "マイクロニードル（塗る針）配合",
+        "2000ppm"
+      ]
+    },
+    "investigatedPrice": "￥2,970"
   }
 }

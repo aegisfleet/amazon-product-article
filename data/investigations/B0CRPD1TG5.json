@@ -27,7 +27,9 @@
         "userType": "小型犬（5kg以上）の飼い主",
         "scenario": "今までの歯ブラシを嫌がっていたため、より柔らかいものを探していた",
         "experience": "0.08mmという超極細毛が密集しているため、歯茎に当てても痛がらず、大人しく磨かせてくれるようになった。カーブした持ち手も手にフィットして力が入りすぎず使いやすい。ただ、ブラシ部分を噛んでしまうとすぐに毛先が傷んでしまうため注意が必要。",
-        "supportingSourceIds": ["src-amazon-page"],
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -50,7 +52,9 @@
         "claim": "るる動物病院 医学博士獣医師が推奨",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-page"],
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
         "crossChecked": false,
         "notes": "メーカーの公式な主張として確認。"
       },
@@ -58,7 +62,9 @@
         "claim": "0.08mm超極細毛 10000本植毛",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-page"],
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
         "crossChecked": false,
         "notes": "本商品の最大の特徴として記載。"
       }
@@ -175,6 +181,7 @@
         "毛の太さ: 0.08mm",
         "植毛数: 10000本"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,499"
   }
 }

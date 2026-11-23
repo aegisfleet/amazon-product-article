@@ -28,14 +28,18 @@
         "userType": "デスクワーク中心の会社員",
         "scenario": "慢性的な背中や肩甲骨のコリを解消するため",
         "experience": "普通のハンディガンでは背中に届かず困っていましたが、このアーチ型のアームのおかげで肩甲骨の隙間までしっかり届きます。ただ、少し重いので長時間やっていると腕が疲れますが、背中を自分でほぐせるのは大きなメリットです。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "節約志向の購入者",
         "scenario": "手頃な価格で背中まで届くマッサージガンを探して",
         "experience": "アテックスなどの有名メーカー品は1万円以上しますが、こちらは3000円台で買えるのが決め手でした。機能的には十分ですが、同ブランドの色違いが2000円台で売られているのを見て少し損した気分になりました。",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -69,7 +73,9 @@
         "claim": "使用可能な年数も最大10年に達します",
         "category": "durability",
         "confidence": "low",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "モーター寿命等の客観的な検証データはなく、安価なノーブランド品であることを考慮すると誇大広告の可能性が高い"
       },
@@ -77,7 +83,9 @@
         "claim": "業界最速3800回転/分",
         "category": "comparativeAdvantage",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "強力な部類ではあるが、他のハンディガンでも同等の回転数を持つモデルは存在するため「業界最速」は強調表現の域を出ない"
       }
@@ -168,6 +176,7 @@
         "双チュアベアリング採用による手振れ抑制",
         "ミュートチップ搭載"
       ]
-    }
+    },
+    "investigatedPrice": "￥5,280"
   }
 }

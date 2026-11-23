@@ -3,7 +3,12 @@
     "productName": "Creative Sound Blaster Play! 3",
     "parentAsin": "B06XZY8JTZ",
     "productDescription": "最大24bit/96kHzのハイレゾ再生と、最大300Ωの高インピーダンスヘッドホン駆動に対応した超小型USBオーディオインターフェイス。",
-    "productUsage": ["PCのオーディオノイズ低減", "ハイレゾ音源の再生", "高インピーダンスヘッドホンの駆動", "ボイスチャットやテレワークでの音質向上"],
+    "productUsage": [
+      "PCのオーディオノイズ低減",
+      "ハイレゾ音源の再生",
+      "高インピーダンスヘッドホンの駆動",
+      "ボイスチャットやテレワークでの音質向上"
+    ],
     "positivePoints": [
       "最大24bit/96kHzのハイレゾオーディオ再生に対応している",
       "32Ωから最大300Ωの高インピーダンスヘッドホンを駆動可能なアンプを内蔵している",
@@ -17,13 +22,20 @@
       "環境によっては直挿し時よりも音量が下がる場合があり、PC側での再調整が必要になることがある",
       "ハイレゾ対応（96kHz）ではあるが、192kHz以上の超高解像度音源のネイティブ再生には対応していない"
     ],
-    "useCases": ["マザーボードのノイズに悩まされているPC環境の改善", "高インピーダンスのヘッドホンをPCで鳴らしたい場合", "外出先のノートPCで手軽に高音質環境を構築するシーン"],
+    "useCases": [
+      "マザーボードのノイズに悩まされているPC環境の改善",
+      "高インピーダンスのヘッドホンをPCで鳴らしたい場合",
+      "外出先のノートPCで手軽に高音質環境を構築するシーン"
+    ],
     "userStories": [
       {
         "userType": "PCゲーマー・一般ユーザー",
         "scenario": "マザーボード直挿しのイヤホンジャックから発生するノイズに悩まされていた状況",
         "experience": "マザーボード由来のノイズ対策として導入したところ、ホワイトノイズやPCの動作に伴うノイズを完全に除去することができました。PCの電源ON/OFF時のポップノイズが発生しない点も非常に優秀です。ただ、直挿しの時よりも全体の音量が少し小さくなったため、Windows側でのボリューム調整が必要でした。本体が非常に小さく、ケーブル同然に扱えるので邪魔にならないのも助かっています。",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -57,7 +69,10 @@
         "claim": "マザーボード等のPC内蔵サウンド機能による電気的ノイズを劇的に改善できる",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "メーカーの「手軽に改善」という主張に対し、実際のユーザーレビューでも「ノイズを完全に除去できた」と非常に高く評価されており、主張は事実と合致している。"
       },
@@ -65,7 +80,9 @@
         "claim": "最大300Ωの高インピーダンスヘッドホンも駆動可能",
         "category": "performance",
         "confidence": "high",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "crossChecked": false,
         "notes": "メーカー公称値であり、この価格帯としては強力なアンプを搭載していることがスペックから確認できる。"
       }
@@ -131,14 +148,25 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (性能・機能: 24bit/96kHzハイレゾ再生および最大300Ωの高インピーダンスヘッドホン駆動に対応)\n[加点: +8] (コストパフォーマンス: 1000円台という低価格でハイレゾ再生環境を構築でき、ノイズ低減効果が高い)\n[加点: +3] (品質・デザイン: ノートPCの密集したUSBポートでも邪魔にならないコンパクトなケーブル一体型デザイン)\n[加点: +4] (ユーザー満足度: マザーボード由来のノイズ除去に効果的であるとユーザーから高く評価されている)\n[合計: 90]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "9.4mm", "width": "22.0mm", "depth": "138.0mm" },
+      "dimensions": {
+        "height": "9.4mm",
+        "width": "22.0mm",
+        "depth": "138.0mm"
+      },
       "weight": "13g",
       "interface": "USB Type-A",
       "maxPlaybackResolution": "24bit/96kHz",
       "maxRecordingResolution": "24bit/48kHz",
       "supportedHeadphoneImpedance": "32Ω ～ 300Ω",
-      "terminals": ["3.5mm マイク入力端子", "3.5mm 4極 ヘッドホン・ヘッドセット端子"],
-      "compatibleOS": ["Windows", "macOS"]
-    }
+      "terminals": [
+        "3.5mm マイク入力端子",
+        "3.5mm 4極 ヘッドホン・ヘッドセット端子"
+      ],
+      "compatibleOS": [
+        "Windows",
+        "macOS"
+      ]
+    },
+    "investigatedPrice": "￥1,652"
   }
 }

@@ -30,14 +30,19 @@
         "userType": "収納スペースに悩む主婦",
         "scenario": "キッチンの冷蔵庫や換気扇に調理器具を収納したい状況",
         "experience": "これまで吸盤式のフックを使っていましたが、フライパンを掛けるとすぐに落ちてしまいストレスでした。この商品は垂直14.7kgと強力で、重めの鉄フライパンもしっかりホールドしてくれます。選んだ決め手は、強力なだけでなく360度回転するため、換気扇の側面など微妙な角度の場所でもフックの向きを調整して使える点です。期待通り、一度付けたら全くずり落ちず、キッチンの作業スペースが広がりました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "アパート住まいの単身者",
         "scenario": "玄関のドアに鍵や傘などの小物をまとめて掛けたい状況",
         "experience": "賃貸なので壁に穴を開けられず、マグネットで強力なものを探していました。この商品は補助シートが付いているため、ドアに傷をつける心配がなく安心して設置できました。ただ、傘など少し斜めに力が加わる（水平方向）ものを掛けた時、想定より耐荷重が低く感じました（水平2.8kg）。使い方に工夫は必要ですが、鍵などの軽いものであれば全く問題ありません。",
-        "supportingSourceIds": ["src-1", "src-3"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-3"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -82,7 +87,10 @@
         "claim": "強力の中でもトップクラスの吸着力でフライパン・工具・タオルをしっかり吊り下げ、落下の心配なし",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "第三者機関検査済（10kg以上）であり、レビューでも重いフライパンが落ちないという高い評価を得ており信頼できる"
       },
@@ -90,7 +98,9 @@
         "claim": "電気泳動プロセスによる防錆加工でキッチンの油汚れにも強く、美しい光沢を長期間維持",
         "category": "durability",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーの仕様。ステンレス製などと同様に水回りでの使用が前提とされており妥当"
       }
@@ -184,6 +194,7 @@
         "フック可動範囲: 360度回転",
         "付属品: 設置面保護用補助シート4枚"
       ]
-    }
+    },
+    "investigatedPrice": "￥730"
   }
 }

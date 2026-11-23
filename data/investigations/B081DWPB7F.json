@@ -27,14 +27,18 @@
         "userType": "コスト重視の学生・社会人",
         "scenario": "毎日の通勤通学での日常使い",
         "experience": "毎日使うものなので出費が気になっていたが、1箱1000円台前半という破格の安さが決め手で購入。これまで使っていた高価格帯のレンズと比較しても見え方や装着感に大きな違和感はなく、毎月のコンタクト代を大幅に節約できている。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ドライアイ気味のデスクワーカー",
         "scenario": "長時間のPC作業",
         "experience": "高含水のコンタクトだと夕方には目に張り付く感覚があったため、低含水（38%）のこちらに乗り換え。夕方以降の目の乾燥感が軽減され、目薬をさす回数が減ったのが良かった。ただUVカット機能がないため、屋外での長時間の活動には向かないと感じる。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -57,7 +61,9 @@
         "claim": "低含水率38%で長時間の装用でも乾燥しにくい",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "一般的な低含水レンズの特性として医学的・物理的にも妥当であり、製品スペックとも一致している。"
       }
@@ -137,6 +143,7 @@
         "度数(PWR): -8.00 (※当該ASINの仕様)",
         "高度管理医療機器"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,155"
   }
 }

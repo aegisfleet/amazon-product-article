@@ -31,14 +31,18 @@
         "userType": "セルフネイラー",
         "scenario": "旅行先でネイルが欠けてしまった時の応急処置として",
         "experience": "コンパクトでポーチにすっぽり収まるサイズなので、旅行に持っていくのに全く邪魔になりませんでした。出力は3Wと弱めですが、1本だけの補修なら十分使えます。液晶で残り時間がわかるのも便利でした。ただ、スタンドがないので片手はずっと塞がってしまいます。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ネイル初心者",
         "scenario": "パーツ固定などの細かい作業用として",
         "experience": "大きなライトだとパーツがズレてしまうことがありましたが、これならピンポイントで当てられるのでパーツの仮止めに最適です。値段も800円台と安いので、サブ用のライトとして割り切って使う分には非常にコスパが良いと感じました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -61,7 +65,9 @@
         "claim": "LEDとUVジェルの両方に対応",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "365nm+405nmの波長仕様から技術的に対応可能と判断"
       }
@@ -180,6 +186,7 @@
       "other": [
         "液晶モニター搭載（照射時間表示）"
       ]
-    }
+    },
+    "investigatedPrice": "￥999"
   }
 }

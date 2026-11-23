@@ -30,21 +30,27 @@
         "userType": "吹奏楽部の保護者",
         "scenario": "中学生になった子どもが吹奏楽部に入部し、学校指定に近いヤマハのチューナーを必要とした。",
         "experience": "YAMAHAのチューナーが欲しいとのことで購入しました。メトロノームとチューナーが同時に使えて便利だと言って、毎日家でも部活でも重宝して使っているようです。画面が見やすく機能が充実しており、親としても安心できる商品でした。",
-        "supportingSourceIds": ["src-yahoo-reviews-1"],
+        "supportingSourceIds": [
+          "src-yahoo-reviews-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "吹奏楽経験者",
         "scenario": "長年使ってきた旧モデルから新しいTDM-710に買い替えた。",
         "experience": "画面の鮮明さに驚きました。アイボリーの本体は上品で、譜面台に置いても主張しすぎず馴染みます。新機能の「トラックモード」が自分の音を客観的に聴くのに非常に役立っており、低音域でも安定してチューニングできています。",
-        "supportingSourceIds": ["src-amazon-reviews-1"],
+        "supportingSourceIds": [
+          "src-amazon-reviews-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "楽器愛好家",
         "scenario": "価格の安いチューナーメトロノームを探して購入した。",
         "experience": "機能的にはしっかりしていてチューニングできますが、外装がプラスチックで安っぽく感じるのが残念です。とはいえ予算内でしたし、拍も取ってくれるので毎日の練習には問題なく使えています。",
-        "supportingSourceIds": ["src-amazon-reviews-2"],
+        "supportingSourceIds": [
+          "src-amazon-reviews-2"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -100,7 +106,10 @@
         "claim": "液晶が従来モデルより見やすくなり、2段階のバックライトを搭載している。",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-yamaha-official", "src-amazon-reviews-1"],
+        "supportingSourceIds": [
+          "src-yamaha-official",
+          "src-amazon-reviews-1"
+        ],
         "crossChecked": true,
         "notes": "公式サイトの仕様および複数のユーザーレビューで言及されている。"
       },
@@ -108,7 +117,10 @@
         "claim": "サウンドバックモード、トラックモード、フォーカスモードなど練習をサポートする新機能が追加されている。",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-yamaha-official", "src-amazon-reviews-1"],
+        "supportingSourceIds": [
+          "src-yamaha-official",
+          "src-amazon-reviews-1"
+        ],
         "crossChecked": true,
         "notes": "ヤマハ公式サイトの特長ページおよびユーザーの体験談から確認。"
       }
@@ -161,7 +173,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (長年の定番モデルとしての圧倒的な信頼性とユーザー満足度の高さ)\n[加点: +5] (視認性の高い大型液晶と2段階バックライトの搭載)\n[加点: +5] (「トラックモード」など、楽器の上達を促す独自の練習サポート機能)\n[減点: -2] (電池が別売りであり、購入してすぐ使えない場合がある点)\n[合計: 83]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "72mm", "width": "106mm", "depth": "18mm" },
+      "dimensions": {
+        "height": "72mm",
+        "width": "106mm",
+        "depth": "18mm"
+      },
       "weight": "79g (電池除く)",
       "display": "バックライト付き（オフ/ソフト/オートの2段階+オフ）",
       "tuningRange": "C1（30.47 Hz）～C8（4566.56 Hz）",
@@ -176,6 +192,7 @@
         "サウンドバック・モード、トラック・モード、フォーカス・モード搭載",
         "メモリーバックアップ機能"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,809"
   }
 }

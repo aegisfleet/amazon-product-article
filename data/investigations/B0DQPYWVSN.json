@@ -29,7 +29,9 @@
         "userType": "一般家庭のユーザー",
         "scenario": "寝室のベッドサイドランプとして",
         "experience": "就寝前に手元を照らすために購入。コンセントの位置を気にせず置けるコードレス仕様が決め手となった。タッチ操作で簡単に明るさを絞れるため、常夜灯としても使い勝手が良い。一方で、バッテリーの持ち時間が明記されていないため、こまめな充電が必要になる点は少し気になった。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -52,7 +54,9 @@
         "claim": "どんな場所へもフィットするデザインで雰囲気を壊さずにおしゃれな空間を演出する",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーの主観的な主張。マットな質感でレトロなデザインであることは写真等から確認できるが、全ての空間にフィットするかはユーザーの好みによる。"
       }
@@ -172,6 +176,7 @@
         "タッチセンサー制御",
         "面発光設計"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,760"
   }
 }

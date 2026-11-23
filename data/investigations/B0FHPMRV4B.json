@@ -26,7 +26,9 @@
         "userType": "デスクワーカー",
         "scenario": "毎日のパソコン作業で蓄積した首コリを解消したい",
         "experience": "長時間のデスクワークで慢性的な首・肩のコリに悩んでいました。コリコランループは首にかけるだけでよく、ピリピリとした刺激がないので、仕事中につけっぱなしにしていても全く気になりません。数日継続して使用することで、夕方にかけて重くなる首の不快感が軽減され、血行が良くなっているのを感じました。",
-        "supportingSourceIds": ["src-panasonic-official"],
+        "supportingSourceIds": [
+          "src-panasonic-official"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -49,7 +51,9 @@
         "claim": "1秒間に約900万回（9MHz）の高周波により血行を促進し、首・肩のコリを改善する。",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-panasonic-official"],
+        "supportingSourceIds": [
+          "src-panasonic-official"
+        ],
         "crossChecked": false,
         "notes": "公式サイト記載の製品特長"
       },
@@ -57,7 +61,9 @@
         "claim": "特定管理医療機器（認証番号: 306AKBZX00052000）としての効果効能を持つ。",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-panasonic-official"],
+        "supportingSourceIds": [
+          "src-panasonic-official"
+        ],
         "crossChecked": false,
         "notes": "医療機器認証番号による裏付け"
       }
@@ -173,6 +179,7 @@
       "deviceCount": "4個 (高周波デバイス)",
       "frequency": "約9MHz",
       "waterproof": "非対応"
-    }
+    },
+    "investigatedPrice": "￥26,300"
   }
 }

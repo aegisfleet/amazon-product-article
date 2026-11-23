@@ -28,7 +28,9 @@
         "userType": "日常的にフィットネスを行う人",
         "scenario": "トレーニング後の疲労回復",
         "experience": "ジムに持っていくために購入。370gとコンパクトで巾着袋に収まるため持ち運びが容易。一般的な小型ガンは振幅が浅いものが多いが、これは10mmあるためしっかりとした打撃感がある。AIモードにしておけば、強く押し当てた時だけパワフルになるため、強さをいちいち切り替える手間が省けて便利。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -51,7 +53,9 @@
         "claim": "AIスマートセンサーを備えた自適応モード",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品説明に明記。押し当てる強さで振動が変化する機能は本製品の大きな特徴。"
       }
@@ -191,6 +195,7 @@
         "モーター: ハイエンドブラシレスモーター",
         "アタッチメント: 4種類 (球形、U形、円柱形、平形)"
       ]
-    }
+    },
+    "investigatedPrice": "￥8,999"
   }
 }

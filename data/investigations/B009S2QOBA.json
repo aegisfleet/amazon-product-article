@@ -30,14 +30,18 @@
         "userType": "犬・猫の飼い主",
         "scenario": "ペットのトイレ周りの消臭に使用",
         "experience": "トイレの後の臭いや、おしっこの失敗で床に染み付いた臭いに悩んでいましたが、スプレーするとイヤな臭いがすっきり消えました。香りでごまかさない無香料なのが良かったです。",
-        "supportingSourceIds": ["src-official-pet"],
+        "supportingSourceIds": [
+          "src-official-pet"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "猫の飼い主（複数飼い）",
         "scenario": "病気の猫や粗相をする猫のいる環境での消臭",
         "experience": "病気の猫の腫瘍からの臭いや、粗相をする複数の猫の臭いに困って洗剤等を使っていましたが臭いが残っていました。この商品をスプレーしたところ一発で消臭でき、トイレの臭いも消えて驚きました。",
-        "supportingSourceIds": ["src-official-pet"],
+        "supportingSourceIds": [
+          "src-official-pet"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -71,7 +75,10 @@
         "claim": "天然成分100%でペットの口に入っても安心",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-official-pet", "src-official-store"],
+        "supportingSourceIds": [
+          "src-official-pet",
+          "src-official-store"
+        ],
         "crossChecked": true,
         "notes": "公式サイトおよび公式ストアの製品説明にて明記されている。"
       },
@@ -79,7 +86,9 @@
         "claim": "アンモニア臭などイヤな臭いだけを消し、良い匂いは残す",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-official-store"],
+        "supportingSourceIds": [
+          "src-official-store"
+        ],
         "crossChecked": false,
         "notes": "公式ストアの特徴説明に記載。"
       }
@@ -194,10 +203,13 @@
       "origin": "日本",
       "liquidColor": "透明",
       "scent": "無香",
-      "ingredients": ["環境微生物群（乳酸菌等）を発酵・培養した善玉活性水"],
+      "ingredients": [
+        "環境微生物群（乳酸菌等）を発酵・培養した善玉活性水"
+      ],
       "other": [
         "スプレータイプ"
       ]
-    }
+    },
+    "investigatedPrice": "￥991"
   }
 }

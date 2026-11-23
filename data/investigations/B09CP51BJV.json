@@ -26,14 +26,18 @@
         "userType": "デスクワーカー",
         "scenario": "長時間のPC作業で肩こりがつらい冬の夜",
         "experience": "電子レンジでサッと温めて肩に乗せると、じんわりとした温かさが広がり、カチコチだった肩がほぐれていくのを感じる。適度な重みで安定し、ながら作業でも使いやすい。",
-        "supportingSourceIds": ["src-note-1"],
+        "supportingSourceIds": [
+          "src-note-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "冷え性の人",
         "scenario": "寒くて肩に力が入ってしまう時",
         "experience": "温かさは30分ほどで徐々に落ち着くが、熱すぎずちょうど良い温度。カバーの肌触りも良く、繰り返し使えるので毎日の習慣になっている。",
-        "supportingSourceIds": ["src-k-kori"],
+        "supportingSourceIds": [
+          "src-k-kori"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -78,7 +82,11 @@
         "claim": "温かさは約30分持続する",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-official", "src-note-1", "src-k-kori"],
+        "supportingSourceIds": [
+          "src-official",
+          "src-note-1",
+          "src-k-kori"
+        ],
         "crossChecked": true,
         "notes": "公式サイトの仕様および複数レビューで一致。"
       },
@@ -86,7 +94,10 @@
         "claim": "重量があり、肩に乗せると適度に安定する",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-note-1", "src-k-kori"],
+        "supportingSourceIds": [
+          "src-note-1",
+          "src-k-kori"
+        ],
         "crossChecked": true,
         "notes": "約557gの重さでずり落ちにくくフィットするとの声多数。"
       }
@@ -192,6 +203,7 @@
         "専用カバー付き（洗濯可）",
         "加熱時間目安（500W：約2分30秒、600W：約2分、1000W：約1分30秒）"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,750"
   }
 }

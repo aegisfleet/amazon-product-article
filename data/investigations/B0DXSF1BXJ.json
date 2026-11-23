@@ -3,7 +3,11 @@
     "productName": "iPhone 16e 128GB",
     "parentAsin": "B0DXSF1BXJ",
     "productDescription": "Apple Intelligenceに対応するA18チップと48MP Fusionカメラを搭載し、iPhone史上最長クラスのバッテリー駆動時間を実現した約15.5cmディスプレイ搭載のスマートフォン。",
-    "productUsage": ["日常的なコミュニケーションやSNS利用", "高画質な写真やビデオの撮影・編集", "長時間の動画視聴や重いモバイルゲームのプレイ"],
+    "productUsage": [
+      "日常的なコミュニケーションやSNS利用",
+      "高画質な写真やビデオの撮影・編集",
+      "長時間の動画視聴や重いモバイルゲームのプレイ"
+    ],
     "positivePoints": [
       "最新のA18チップを搭載しており、Apple Intelligence機能や高負荷なゲームもスムーズに動作する",
       "最大26時間のビデオ再生が可能な強力なバッテリー駆動時間を誇る",
@@ -17,20 +21,28 @@
       "超広角カメラやマクロ撮影機能が省略されており、カメラの汎用性が上位モデルに比べて劣る",
       "ディスプレイのリフレッシュレートが60Hzに制限されている"
     ],
-    "useCases": ["外出先での長時間の動画視聴やウェブブラウジング", "旅行やイベントでの高解像度な写真撮影", "Apple Intelligenceを活用した文章作成や写真編集"],
+    "useCases": [
+      "外出先での長時間の動画視聴やウェブブラウジング",
+      "旅行やイベントでの高解像度な写真撮影",
+      "Apple Intelligenceを活用した文章作成や写真編集"
+    ],
     "userStories": [
       {
         "userType": "旧モデル（iPhone 11やSE）からの乗り換えユーザー",
         "scenario": "日常的な使用において、バッテリーの持ちやカメラ性能に不満を感じていた",
         "experience": "iPhone 11やSEから乗り換えたことで、バッテリーの持ちが劇的に向上し、1日中使っても余裕があることに驚いた。A18チップのおかげで動作も非常にサクサクしており、48MPカメラで撮る写真の美しさにも満足している。最新のApple Intelligence機能を手頃な価格で体験できたことが決め手だった。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "機能性と価格のバランスを重視するユーザー",
         "scenario": "最新機能を求めているが、Proモデルのような高価な機種はオーバースペックと感じている",
         "experience": "上位機種のようなDynamic Islandや超広角カメラはないが、A18チップによる高速な処理性能と、十分すぎるカメラ性能があれば普段使いには全く問題ない。ただし、MagSafe非対応な点には注意が必要で、充電スタンドなどを使いたい場合はマグネット付きのケースを別途用意しなければならないのが少し不便に感じた。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -53,7 +65,9 @@
         "claim": "このサイズのiPhoneで最長のバッテリー駆動時間（最大26時間のビデオ再生）",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "CNETのレビューでもバッテリーの持ちが非常に良いことが確認されており、動画ストリーミングのテストでも1時間後に100%を維持していたと言及されている。"
       },
@@ -61,7 +75,9 @@
         "claim": "A18チップによる快適な処理性能とゲーム体験",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "CNETのGeekbenchテストでiPhone 15やiPhone SEを上回るスコアを記録し、高負荷なゲームもスムーズに動作することが確認されている。"
       }
@@ -181,6 +197,7 @@
         "※MagSafe充電非対応 (Qi充電対応)",
         "※超広角カメラ非搭載"
       ]
-    }
+    },
+    "investigatedPrice": "￥84,800"
   }
 }

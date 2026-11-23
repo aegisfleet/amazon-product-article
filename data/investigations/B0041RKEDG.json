@@ -27,7 +27,9 @@
         "userType": "日常的にコーヒーを飲むユーザー",
         "scenario": "毎日のコーヒーブレイク",
         "experience": "毎日何杯もコーヒーを飲むため、1杯約34.9円という安さは非常に助かります。安いだけでなく、1袋に9gの豆が入っているので、マグカップでたっぷりと抽出しても薄くならず、しっかりとした味わいを楽しめます。200袋入りの段ボールで届くため、保管場所は取りますが、毎月買い足す手間が省けるのも便利です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -50,7 +52,9 @@
         "claim": "カフェ工房リピート率No.1であり、5,500万杯を突破している",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式商品ページで確認された情報"
       },
@@ -58,7 +62,9 @@
         "claim": "1袋に9gのコーヒー豆を使用している",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "一般的な7〜8gのドリップバッグと比較して量が多い"
       }
@@ -162,6 +168,7 @@
       "other": [
         "段ボールにバラ入り"
       ]
-    }
+    },
+    "investigatedPrice": "￥7,980"
   }
 }

@@ -42,7 +42,9 @@
         "claim": "重量250gの超軽量設計",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "商品詳細より確認"
       },
@@ -50,7 +52,9 @@
         "claim": "折りたたみ・回転設計で収納スペースを削減",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "機能説明より確認"
       }
@@ -164,7 +168,12 @@
       "connection": "3.5mm 有線接続",
       "cableLength": "1.5m",
       "driverSize": "40mm",
-      "features": ["ミュート機能", "音量調整リモコン（イヤーカップ部）", "折りたたみ・回転対応"]
-    }
+      "features": [
+        "ミュート機能",
+        "音量調整リモコン（イヤーカップ部）",
+        "折りたたみ・回転対応"
+      ]
+    },
+    "investigatedPrice": "￥2,999"
   }
 }

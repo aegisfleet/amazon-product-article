@@ -30,21 +30,29 @@
         "userType": "カフェインを控えている女性",
         "scenario": "日常的な飲み物として利用",
         "experience": "妊娠を機にカフェインを控えたいと思い、コスパの良さに惹かれて購入。スーパーのティーバッグより安く、味がマイルドで飲みやすい。お湯を注いで3～5分待つだけで手軽に作れ、毎日飲んでも3ヶ月以上もつ大容量が助かっている。",
-        "supportingSourceIds": ["amazon-review-1"],
+        "supportingSourceIds": [
+          "amazon-review-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "家族の健康を考える主婦",
         "scenario": "家族の水筒用の飲み物として利用",
         "experience": "夫と子供の水筒に毎日入れている。煮出さずにお湯を注ぐだけでしっかり味が出るので、忙しい朝でも手軽に作れて重宝している。クセが少なくスッキリした味なので食事にもよく合う。",
-        "supportingSourceIds": ["amazon-review-2", "amazon-review-3"],
+        "supportingSourceIds": [
+          "amazon-review-2",
+          "amazon-review-3"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "手軽にお茶を楽しみたい人",
         "scenario": "就寝前のリラックスタイムに利用",
         "experience": "ティーバッグに紐は付いていないが、スプーンで混ぜて数分置くだけで簡単に美味しいルイボスティーができる。ティーバッグを入れたままでも渋くならないのが嬉しい。寝る前に飲むのが日課になっている。",
-        "supportingSourceIds": ["amazon-review-2", "amazon-review-4"],
+        "supportingSourceIds": [
+          "amazon-review-2",
+          "amazon-review-4"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -111,7 +119,9 @@
         "claim": "残留農薬検査、水銀検査を実施している",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["tealife-official"],
+        "supportingSourceIds": [
+          "tealife-official"
+        ],
         "crossChecked": false,
         "notes": "公式サイトおよびAmazon商品情報で明記されている。"
       },
@@ -119,7 +129,10 @@
         "claim": "ティーバッグを入れたままでも渋くならない",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-review-2", "amazon-review-4"],
+        "supportingSourceIds": [
+          "amazon-review-2",
+          "amazon-review-4"
+        ],
         "crossChecked": true,
         "notes": "複数のユーザーレビューで言及されている。"
       }
@@ -237,6 +250,7 @@
       "packaging": "植物由来の三角ティーバッグ",
       "features": "ノンカフェイン、残留農薬検査済、水銀検査済",
       "shelfLife": "製造日より2年"
-    }
+    },
+    "investigatedPrice": "￥1,000"
   }
 }

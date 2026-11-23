@@ -29,14 +29,18 @@
         "userType": "日常的にマイボトルを利用する人",
         "scenario": "朝、水筒にティーバッグと水を入れて出勤する",
         "experience": "水筒に入れておくだけですぐに飲めて便利です。1パックで1日持ち、後味もスッキリしていて飲みやすいため重宝しています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "健康を気遣う人",
         "scenario": "マグカップで手軽にルイボスティーを飲みたい",
         "experience": "味は美味しくて飲みやすいのですが、ティーバッグに紐がついていないため、マグカップで直接淹れると取り出しにくく、ティーポット向けだと感じました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -59,7 +63,9 @@
         "claim": "無添加・ノンカフェインで専門機関による残留農薬検査済み",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品仕様および商品説明より確認"
       },
@@ -67,7 +73,9 @@
         "claim": "渋みがなく飲みやすい",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "複数のカスタマーレビューで言及されている"
       }
@@ -178,13 +186,16 @@
       },
       "capacity": "2g×100包",
       "origin": "原料原産地: 南アフリカ、製造: 国内製造",
-      "ingredients": ["グリーンルイボス"],
+      "ingredients": [
+        "グリーンルイボス"
+      ],
       "shelfLife": "製造日から2年",
       "other": [
         "ノンカフェイン",
         "無添加",
         "残留農薬検査済み"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,836"
   }
 }

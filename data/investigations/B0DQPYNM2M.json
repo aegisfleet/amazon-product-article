@@ -28,7 +28,9 @@
         "userType": "ジム通いのユーザー",
         "scenario": "トレーニング時の水分補給",
         "experience": "800mlと大容量なので、1回のトレーニング中に水分が足りなくなることがありません。また、ハンドル付きで持ち運びやすく、使用後はそのまま食洗機に入れられるのが非常に楽です。パッキンを外す手間がなくなり、紛失の心配もありません。",
-        "supportingSourceIds": ["src-zojirushi"],
+        "supportingSourceIds": [
+          "src-zojirushi"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -73,7 +75,9 @@
         "claim": "せんとパッキンが一体になった「シームレスせん」を採用し、全パーツ食洗機対応でお手入れが簡単。",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-zojirushi"],
+        "supportingSourceIds": [
+          "src-zojirushi"
+        ],
         "crossChecked": true,
         "notes": "公式サイトとAmazon製品ページで確認。"
       },
@@ -81,7 +85,9 @@
         "claim": "高い保温・保冷力（保温効力: 79℃以上(6時間)、保冷効力: 7℃以下(6時間)）。",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-zojirushi"],
+        "supportingSourceIds": [
+          "src-zojirushi"
+        ],
         "crossChecked": true,
         "notes": "公式サイトの仕様表にて確認。"
       }
@@ -201,6 +207,7 @@
         "食洗機対応",
         "シームレスせん"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,673"
   }
 }

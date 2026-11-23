@@ -30,14 +30,19 @@
         "userType": "学生",
         "scenario": "授業のノート取りに使用",
         "experience": "ドットが入っているおかげで、フリーハンドでも図やグラフがきれいに描けるようになりました。文字の開始位置も揃えやすく、後から見返した時にとても見やすいノートになります。さらさらとした書き心地で、長時間の授業でも手が疲れにくいです。",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "社会人",
         "scenario": "資格勉強のまとめに使用",
         "experience": "学生時代から使っていますが、ドット罫線が秀逸です。箇条書きの際に文頭がきっちり揃うので、整理されたまとめが作れます。紙質もよく、様々なペンで書いても裏抜けしにくいので信頼しています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -71,7 +76,10 @@
         "claim": "ドット入り罫線により図表が書きやすく、文頭が揃えやすい",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "公式情報とユーザーレビューの両方で確認"
       },
@@ -79,7 +87,10 @@
         "claim": "「さらさら書ける」タイプのオリジナル原紙で、スムーズな筆記が可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "摩擦の少ない書き心地について公式とレビューで一致"
       }
@@ -199,6 +210,7 @@
       "size": "B5 (26穴)",
       "color": "白",
       "origin": "日本"
-    }
+    },
+    "investigatedPrice": "￥259"
   }
 }

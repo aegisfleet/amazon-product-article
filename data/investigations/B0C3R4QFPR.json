@@ -3,7 +3,11 @@
     "productName": "Anker Soundcore Q20i",
     "parentAsin": "B0C3R4QFPR",
     "productDescription": "アクティブノイズキャンセリングとマルチポイント接続に対応し、最大60時間の再生が可能なエントリー向けワイヤレスヘッドホン。",
-    "productUsage": ["音楽鑑賞", "テレワーク・オンライン会議", "通勤・通学時の使用"],
+    "productUsage": [
+      "音楽鑑賞",
+      "テレワーク・オンライン会議",
+      "通勤・通学時の使用"
+    ],
     "positivePoints": [
       "5000円以下の低価格帯ながらアクティブノイズキャンセリング(ANC)を搭載",
       "2台の端末に同時接続できるマルチポイントに対応",
@@ -14,20 +18,28 @@
       "LDACなどの高音質コーデックやハイレゾワイヤレスには非対応",
       "ノイズキャンセリング性能は上位機種や最新の競合機種(最大-50dBクラス)と比較すると控えめ"
     ],
-    "useCases": ["自宅でのリモートワーク", "カフェなどの出先での作業", "長時間の移動"],
+    "useCases": [
+      "自宅でのリモートワーク",
+      "カフェなどの出先での作業",
+      "長時間の移動"
+    ],
     "userStories": [
       {
         "userType": "テレワーク中心の会社員",
         "scenario": "自宅でのオンライン会議と作業中のBGM再生",
         "experience": "5,000円以下でマルチポイント接続に対応しているのが最大の決め手でした。PCでのWeb会議とスマホでの音楽再生をシームレスに切り替えられ、仕事効率が上がりました。LDAC非対応ですが、オンライン会議やBGM用途としては全く問題なく、マイク付きで重宝しています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "学生",
         "scenario": "通学時の電車内やカフェでの学習",
         "experience": "手頃な価格でノイキャン付きのヘッドホンを探していて購入。電車の走行音など低周波ノイズを程よく抑えてくれるので、勉強に集中しやすくなりました。アプリで好みの音質にいじれるのも楽しいポイントです。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -61,7 +73,9 @@
         "claim": "最大60時間の長時間再生",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "ANCオフ時の仕様であり、同価格帯の標準的なバッテリー寿命（40～50時間）を上回る長寿命を実現している。"
       },
@@ -69,7 +83,10 @@
         "claim": "同時に2台の機器に接続可能なマルチポイント対応",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "5,000円以下の価格帯でマルチポイントに対応している製品は珍しく、ビジネス用途での強力な利点となっている。"
       }
@@ -132,12 +149,21 @@
       "scoreRationale": "[基本点: 70] (固定)\n[加点: +10] 5,000円以下でANC・マルチポイント対応という圧倒的なコストパフォーマンス\n[加点: +5] ブランドの実績と専用アプリの使い勝手の良さ\n[加点: +5] 最大60時間再生の実用性の高さ\n[合計: 90]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "79.5mm", "width": "185.0mm", "depth": "176.0mm" },
+      "dimensions": {
+        "height": "79.5mm",
+        "width": "185.0mm",
+        "depth": "176.0mm"
+      },
       "weight": "246g",
       "color": "ブラック, ホワイト, ネイビー",
       "connectivity": "Bluetooth, 3.5mm AUX有線接続",
       "batteryLife": "最大60時間 (ANCオフ), 最大40時間 (ANCオン)",
-      "features": ["アクティブノイズキャンセリング", "マルチポイント接続", "専用アプリ(Soundcore)対応"]
-    }
+      "features": [
+        "アクティブノイズキャンセリング",
+        "マルチポイント接続",
+        "専用アプリ(Soundcore)対応"
+      ]
+    },
+    "investigatedPrice": "￥6,990"
   }
 }

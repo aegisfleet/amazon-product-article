@@ -3,7 +3,10 @@
     "productName": "ヒツジのいらないかけ布団 ファイヤーブースト 暖々",
     "parentAsin": "B0GL21F4B5",
     "productDescription": "ヒツジのいらない枕シリーズから登場した、真冬でも極暖・肌触り抜群な冬用掛け布団です。5層構造の吸湿発熱素材とカーボンファイバーで暖かさを保ちつつ静電気を抑制します。",
-    "productUsage": ["冬場の睡眠時の防寒用掛け布団として", "静電気を抑えて快適に眠りたいときに"],
+    "productUsage": [
+      "冬場の睡眠時の防寒用掛け布団として",
+      "静電気を抑えて快適に眠りたいときに"
+    ],
     "positivePoints": [
       "5層構造の吸湿発熱素材(Fire Fiber)で高い保温性と極上の触り心地",
       "5cmのフチと高密度の中綿でスキマからの冷気をシャットアウト",
@@ -59,7 +62,9 @@
         "claim": "5層構造の吸湿発熱素材と5cmのフチにより暖かさを保ち冷気を遮断する",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式の商品特徴説明に基づく"
       },
@@ -67,7 +72,9 @@
         "claim": "導電性カーボンファイバー×ポリエステルで静電気を抑制する",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式の商品特徴説明に基づく"
       },
@@ -75,7 +82,11 @@
         "claim": "競合品（約5,000円〜1万円台）と比較して、独自構造による機能性を持つが価格は非常に高価である",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2", "src-3"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2",
+          "src-3"
+        ],
         "crossChecked": true,
         "notes": "複数商品の価格・仕様を比較して確認"
       }
@@ -153,7 +164,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (5層構造による高い保温性と静電気抑制機能など優れた機能性)\n[加点: +5] (抗菌・防臭・防ダニ仕様かつ洗濯機・乾燥機対応という手入れの容易さ)\n[減点: -15] (一般的な冬用掛け布団が1万円前後であるのに対し47,000円と極めて高額であり、コストパフォーマンスが低い)\n[合計: 70]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "2000mm", "width": "1500mm", "depth": "50mm" },
+      "dimensions": {
+        "height": "2000mm",
+        "width": "1500mm",
+        "depth": "50mm"
+      },
       "weight": "2500g",
       "capacity": "1枚",
       "material": "側生地: ポリエステル, 詰め物: ポリエステル(吸湿発熱素材、導電性カーボンファイバー配合)",
@@ -164,6 +179,7 @@
         "仕様: 洗濯機・乾燥機対応、抗菌・防臭・防ダニ",
         "構造: 5層構造(5cmのフチ付き)"
       ]
-    }
+    },
+    "investigatedPrice": "￥42,300"
   }
 }

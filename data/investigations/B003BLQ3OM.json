@@ -42,7 +42,9 @@
         "claim": "電波修正機能（40kHz/60kHz自動選局）を備え、正確な時刻を表示する",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式の製品仕様より"
       },
@@ -50,7 +52,9 @@
         "claim": "温度および湿度を表示し、室内の環境管理に役立つ",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式の製品仕様より"
       }
@@ -169,6 +173,7 @@
         "温湿度表示: 温度測定範囲:0℃～40℃ 測定精度±2℃ / 湿度測定範囲:25%RH～85%RH 測定精度±8%(25℃)",
         "時間表示: 12/24時間制切替式"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,425"
   }
 }

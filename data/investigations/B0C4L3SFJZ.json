@@ -30,14 +30,18 @@
         "userType": "一人暮らしの会社員",
         "scenario": "毎朝のコーヒー用にお湯を沸かす",
         "experience": "これまで使っていたプラスチック製のケトルは独特のにおいが気になっていましたが、ガラス製にしてからお湯が無臭でコーヒーが美味しく感じます。また、お湯が沸くのを青いLEDライトで見ていると少し癒されます。軽くて片手で注ぎやすいのも毎日の使い勝手として非常に優れています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "赤ちゃんのいる家庭",
         "scenario": "ミルクの調乳用にお湯を準備する",
         "experience": "ミルクの調乳用に清潔さを重視して購入しました。広口で底までしっかり洗えるので衛生面で安心です。ただ、沸騰後に本体のガラス部分がかなり熱くなるので、子供の手の届かない場所に設置するよう気を付けています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -60,7 +64,9 @@
         "claim": "お湯が沸くまでわずか95秒",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "※150ml・水温25度の場合という条件付きでのメーカー記載事実として確認"
       }
@@ -175,7 +181,13 @@
       "power": "1000W",
       "cordLength": "1.3m",
       "material": "耐熱強化ガラス、ポリプロピレン（持ち手）",
-      "features": ["空焚き防止機能", "オートスイッチオフ機能", "LEDライト点灯", "漏れ防止フィルター"]
-    }
+      "features": [
+        "空焚き防止機能",
+        "オートスイッチオフ機能",
+        "LEDライト点灯",
+        "漏れ防止フィルター"
+      ]
+    },
+    "investigatedPrice": "￥3,290"
   }
 }

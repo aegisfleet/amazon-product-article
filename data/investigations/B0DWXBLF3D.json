@@ -42,7 +42,9 @@
         "claim": "乗るピタ機能を搭載",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品タイトルに記載"
       },
@@ -50,7 +52,9 @@
         "claim": "スマホ連動に対応",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品タイトルに記載"
       }
@@ -155,7 +159,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (乗るピタ機能による使い勝手の良さ)\n[加点: +5] (スマホ連動機能によるデータ管理のしやすさ)\n[加点: +5] (基礎代謝量や体内年齢など充実した測定項目)\n[減点: -2] (最小表示が100g単位であり、同価格帯の一部製品(50g単位)に劣る)\n[合計: 83]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "36mm", "width": "278mm", "depth": "285mm" },
+      "dimensions": {
+        "height": "36mm",
+        "width": "278mm",
+        "depth": "285mm"
+      },
       "weight": "1.6kg",
       "capacity": "計量範囲: 0〜150kg",
       "material": "樹脂・強化ガラス等",
@@ -166,6 +174,7 @@
         "機能: 乗るピタ（自動認識機能）、スマホ連動",
         "カラー: ホワイト"
       ]
-    }
+    },
+    "investigatedPrice": "￥6,980"
   }
 }

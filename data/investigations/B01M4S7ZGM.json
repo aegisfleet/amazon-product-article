@@ -29,14 +29,18 @@
         "userType": "在宅ワーカー",
         "scenario": "限られたスペースの自宅デスクでの作業環境改善",
         "experience": "以前はデスクの上がキーボードや書類で散らかっていましたが、この2段式のスタンドを導入したことで、下段にキーボード、中段にノートや小物を収納できるようになり、作業スペースが格段に広がりました。スマホスロットがあるおかげで、通知の確認もしやすくなり便利です。",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "オフィスワーカー",
         "scenario": "大型モニターの設置と姿勢改善",
         "experience": "27インチの大きめのモニターを乗せていますが、耐荷重30kgとしっかりしたMDF素材のおかげで、タイピング時も全く揺れず安定しています。ただ、高さが固定なので、座高や椅子の高さによってはモニター位置の微調整ができないのが少し残念です。",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -59,7 +63,9 @@
         "claim": "反り・変形しにくい設計の高品質MDF採用",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式のスペック表にて厚さ12mmのMDF素材であることが確認できる"
       },
@@ -67,7 +73,9 @@
         "claim": "耐荷重30kgで大型モニターにも対応",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "商品仕様として明記されており、MDFの厚みを考慮すると十分な耐荷重を備えていると判断可能"
       }
@@ -182,6 +190,7 @@
         "ケーブル整理ハブ搭載",
         "2段式（中央棚付き）"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,099"
   }
 }

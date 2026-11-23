@@ -3,7 +3,12 @@
     "productName": "ウノ(UNO)",
     "parentAsin": "B0GV41FGQV",
     "productDescription": "世界中で愛される定番カードゲーム。2～10人でプレイ可能。",
-    "productUsage": ["パーティー", "家族団らん", "旅行", "キャンプ"],
+    "productUsage": [
+      "パーティー",
+      "家族団らん",
+      "旅行",
+      "キャンプ"
+    ],
     "positivePoints": [
       "2〜10人まで幅広い人数でプレイ可能",
       "7歳から大人まで一緒に楽しめるシンプルなルール",
@@ -13,20 +18,28 @@
     "negativePoints": [
       "特になし（スタンダードなルールであるため、派生ルールを好むユーザーには物足りない可能性がある）"
     ],
-    "useCases": ["家族での食後の団らん", "友人とのパーティー", "旅行やキャンプでの空き時間"],
+    "useCases": [
+      "家族での食後の団らん",
+      "友人とのパーティー",
+      "旅行やキャンプでの空き時間"
+    ],
     "userStories": [
       {
         "userType": "家族",
         "scenario": "年末年始や親戚の集まり",
         "experience": "ルールがシンプルなので、子供からおじいちゃんおばあちゃんまで世代を問わず一緒に楽しめました。定番ゲームだからこそ、説明不要ですぐに遊べるのが最大の決め手です。",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "旅行者",
         "scenario": "友人との旅行",
         "experience": "コンパクトでかさばらないため、旅行鞄に必ず入れています。移動中や夜の空き時間にサクッと遊べて重宝しています。",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -60,7 +73,10 @@
         "claim": "大人から子どもまで、家族や友達みんなで楽しめます",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "定番ゲームとしての客観的事実およびユーザーレビュー"
       }
@@ -175,6 +191,7 @@
       "origin": "不明",
       "players": "2～10人",
       "targetAge": "7歳以上"
-    }
+    },
+    "investigatedPrice": "￥697"
   }
 }

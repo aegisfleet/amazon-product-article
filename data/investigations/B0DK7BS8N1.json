@@ -27,7 +27,9 @@
         "userType": "一般ユーザー",
         "scenario": "スマートフォンの充電",
         "experience": "手持ちのケーブルに取り付けるだけで、簡単にマグネット充電環境を構築できました。端子に近づけるだけでカチッと吸着するので、暗い場所でもケーブルを挿しやすくなり、端子の摩耗も防げるので非常に便利です。",
-        "supportingSourceIds": ["src-amazon-features"],
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -50,7 +52,9 @@
         "claim": "通電トラブルが起きにくい「ポゴピン」設計を採用",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-features"],
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式の仕様として明記されている"
       },
@@ -58,7 +62,9 @@
         "claim": "映像出力には非対応",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-features"],
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
         "crossChecked": false,
         "notes": "仕様としての制限"
       }
@@ -170,6 +176,7 @@
       "dataTransferSpeed": "最大480Mbps (USB 2.0)",
       "videoOutput": "非対応",
       "design": "ストレート型"
-    }
+    },
+    "investigatedPrice": "￥1,580"
   }
 }

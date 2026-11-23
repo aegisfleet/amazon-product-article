@@ -3,7 +3,11 @@
     "productName": "デコラティブアイズ ヴェール ワンデー コーラルブルーム",
     "parentAsin": "B07DY1X679",
     "productDescription": "UVカットと保湿成分（MPCポリマー）を配合した、1日使い捨てのカラーコンタクトレンズ。自然なツヤ感を与え、瞳にのっぺり感を出さないデザインが特徴です。",
-    "productUsage": ["視力補正", "アイメイク", "瞳の印象アップ"],
+    "productUsage": [
+      "視力補正",
+      "アイメイク",
+      "瞳の印象アップ"
+    ],
     "positivePoints": [
       "UVカット機能搭載で紫外線から目を守る",
       "保湿成分MPCポリマー配合で潤いが持続しやすい",
@@ -13,7 +17,11 @@
       "カラーバリエーションが限られている場合がある",
       "度数(-4.25)など特定の仕様が合わないユーザーもいる"
     ],
-    "useCases": ["日常のメイク", "デートやお出かけ", "オフィスや学校での自然な瞳の強調"],
+    "useCases": [
+      "日常のメイク",
+      "デートやお出かけ",
+      "オフィスや学校での自然な瞳の強調"
+    ],
     "userStories": [],
     "userImpression": "自然なサイズ感とデザインで、のっぺりしないツヤ感のある瞳を演出できると期待される。また、UVカットと保湿成分配合により、快適な装用感が期待できる。",
     "sources": [
@@ -34,7 +42,9 @@
         "claim": "UVカット機能とMPCポリマー保湿成分配合",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品パッケージおよび公式仕様にて記載あり"
       },
@@ -42,7 +52,9 @@
         "claim": "自然なツヤ感を与え、のっぺりしないデザイン",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品画像内の説明文より抽出"
       }
@@ -129,7 +141,10 @@
       "power": "±0.00D、-0.50D～-6.00D(0.25Dステップ)、-6.50D～-9.00D(0.50Dステップ)",
       "moistureIngredient": "MPCポリマー",
       "medicalDeviceApprovalNumber": "22900BZX00223A07",
-      "other": ["UVカット機能付き"]
-    }
+      "other": [
+        "UVカット機能付き"
+      ]
+    },
+    "investigatedPrice": "￥1,160"
   }
 }

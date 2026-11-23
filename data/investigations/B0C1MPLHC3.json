@@ -29,7 +29,9 @@
         "userType": "寝汗が気になる人",
         "scenario": "暑い夏の夜に就寝する際",
         "experience": "以前は薄い枕カバーを使用しており、朝起きると枕本体まで汗が染み込んでいることがありました。本製品を選んだ決め手は、一般的な製品の2倍という中綿のボリュームです。実際に使用してみると、しっかり汗を吸収してくれて枕本体が汚れるストレスから解放されました。冷感面も心地よく、洗濯してもすぐに乾くため2枚セットで毎日ローテーションできる点に満足しています。",
-        "supportingSourceIds": ["src-amazon-features"],
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -52,7 +54,9 @@
         "claim": "Q-Max値0.35で一般的な寝具の3倍ひんやり",
         "category": "comparativeAdvantage",
         "confidence": "medium",
-        "supportingSourceIds": ["src-amazon-features"],
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
         "crossChecked": false,
         "notes": "メーカー公称値。「一般的な寝具」の基準が明確ではないが、0.35という数値自体は標準的な接触冷感生地と同等レベルである"
       },
@@ -60,7 +64,9 @@
         "claim": "一般的な枕パッドの2倍以上の中綿（200g/F）",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-features"],
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
         "crossChecked": false,
         "notes": "メーカーの具体的な数値主張であり、クッション性や吸水性に関する説得力がある"
       }
@@ -173,6 +179,7 @@
         "中綿量: 200g/F",
         "付属品: 取扱説明書、専用化粧箱"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,998"
   }
 }

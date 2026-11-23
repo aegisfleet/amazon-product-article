@@ -3,7 +3,12 @@
     "productName": "マイネイルプレックス ネイル オイル",
     "parentAsin": "B0FRFKK7JV",
     "productDescription": "ヘマチンとPLEX成分を高濃度配合し、爪のダメージを瞬時に補修・保護するネイルサロン専売のネイルトリートメントセラム。",
-    "productUsage": ["爪表面のダメージ補修", "ジェルネイルやマニキュアで傷んだ爪のケア", "爪の乾燥・縦すじ・二枚爪の改善", "指先・甘皮の保湿"],
+    "productUsage": [
+      "爪表面のダメージ補修",
+      "ジェルネイルやマニキュアで傷んだ爪のケア",
+      "爪の乾燥・縦すじ・二枚爪の改善",
+      "指先・甘皮の保湿"
+    ],
     "positivePoints": [
       "高濃度ヘマチンとPLEX成分（ジカルボン酸・コハク酸）による爪表面のダメージスピード補修とケラチン結合の強化",
       "ヒト幹細胞培養液と8種のボタニカル成分（アルガンオイルなど）による保湿と育爪サポート",
@@ -16,20 +21,28 @@
       "簡易包装（エコパッケージ）のため、プレゼントなどの用途には向かない可能性がある",
       "2本セットでの販売となっており、少量だけ試したい場合には初期費用がかかる"
     ],
-    "useCases": ["毎日のネイルケア", "仕事中や家事の合間の保湿", "ジェルネイルオフ後のダメージケア"],
+    "useCases": [
+      "毎日のネイルケア",
+      "仕事中や家事の合間の保湿",
+      "ジェルネイルオフ後のダメージケア"
+    ],
     "userStories": [
       {
         "userType": "ジェルネイル愛好者",
         "scenario": "ジェルネイルの繰り返しで爪が薄くなり、ダメージが気になった時",
         "experience": "ジェルネイルを繰り返すうちに爪が薄くペラペラになってしまい、休息期間のケア用に選びました。ヘマチン配合というサロン専売品質に惹かれました。塗るとすぐに浸透してベタつかないので、仕事中や寝る前などいつでも使えるのが良かったです。使い続けるうちに爪の縦すじや二枚爪が気にならなくなり、爪がしっかりしてきたように感じます。",
-        "supportingSourceIds": ["amazon-reviews-1"],
+        "supportingSourceIds": [
+          "amazon-reviews-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "デスクワーカー",
         "scenario": "仕事中の指先の乾燥対策",
         "experience": "オフィスでの乾燥でささくれができやすく、こまめに保湿したくて購入しました。ペンタイプのノズルが直接爪の裏側（ハイポニキウム）にも塗りやすく便利です。一番の決め手は塗った直後にPCのキーボードを触ってもベタつかない点でした。レモン系の爽やかな香りもリフレッシュになります。",
-        "supportingSourceIds": ["amazon-reviews-2"],
+        "supportingSourceIds": [
+          "amazon-reviews-2"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -63,7 +76,9 @@
         "claim": "たった1本で爪の様々なトラブルに対応し、爪表面のダメージを瞬時に補修する",
         "category": "comparativeAdvantage",
         "confidence": "medium",
-        "supportingSourceIds": ["amazon-reviews-1"],
+        "supportingSourceIds": [
+          "amazon-reviews-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーの主張。ヘマチンとPLEX成分による効果を謳っているが、「瞬時に」という表現は体感に個人差がある。"
       },
@@ -71,7 +86,9 @@
         "claim": "塗布後すぐにスマホ操作やデスクワークが可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-reviews-2"],
+        "supportingSourceIds": [
+          "amazon-reviews-2"
+        ],
         "crossChecked": true,
         "notes": "ユーザーレビューでもベタつかない使用感は高く評価されている。"
       }
@@ -189,6 +206,7 @@
         "製造: ISO9001認定工場",
         "9種の無添加処方"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,927"
   }
 }

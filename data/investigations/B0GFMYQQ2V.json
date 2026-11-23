@@ -26,7 +26,9 @@
         "userType": "眉毛のお手入れ頻度を減らしたい人",
         "scenario": "これまで週に何度もシェーバーで剃っていたが、すぐに生えてくるのが手間で導入した",
         "experience": "なぞるだけで毛が抜けるので、毛抜きで一本一本抜く手間が省けて非常に楽。抜く際の痛みも独自設計のおかげで軽減されており、処理後のツルツルした状態が長続きするのが良い。ただ、価格が高いので購入には少し勇気が必要だった。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -49,7 +51,9 @@
         "claim": "なぞるだけでスルッと抜ける電動眉毛抜きであり、痛みを抑える独自設計を採用している",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーの公式な製品特長として記載"
       }
@@ -168,6 +172,7 @@
         "なぞるだけでスルッと抜ける電動眉毛抜き",
         "肌にやさしく痛みを抑える独自設計"
       ]
-    }
+    },
+    "investigatedPrice": "￥7,000"
   }
 }

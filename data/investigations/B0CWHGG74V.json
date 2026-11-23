@@ -3,7 +3,10 @@
     "productName": "プロスタッフ レインモンスター ウォッシャー 2L A-76",
     "parentAsin": "B0FCLQZMJ2",
     "productDescription": "ウォッシャーしてワイパーを作動するだけで雨を弾く自己撥水型ウォッシャー液。純水仕様でシミが残りにくい。",
-    "productUsage": ["フロントガラスの洗浄", "フロントガラスの撥水コーティング"],
+    "productUsage": [
+      "フロントガラスの洗浄",
+      "フロントガラスの撥水コーティング"
+    ],
     "positivePoints": [
       "ウォッシャー液と撥水コーティングが同時にできる",
       "純水仕様のため、ボディにシミや液あとが残りにくい",
@@ -23,14 +26,18 @@
         "userType": "一般ドライバー",
         "scenario": "雨天走行時",
         "experience": "ウォッシャー液を出してワイパーを動かすだけで、瞬時にフロントガラスが撥水状態になり、急な雨でもクリアな視界が確保できた。純水なのでボディに跡が残りにくいのも嬉しい。",
-        "supportingSourceIds": ["src-prostaff-official"],
+        "supportingSourceIds": [
+          "src-prostaff-official"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "コーティング施工車オーナー",
         "scenario": "撥水コーティングのメンテナンス",
         "experience": "すでにレインモンスターの塗布タイプを施工しているが、このウォッシャー液を併用することで、撥水効果がさらに長持ちする実感がある。日々の手入れが楽になった。",
-        "supportingSourceIds": ["src-prostaff-official"],
+        "supportingSourceIds": [
+          "src-prostaff-official"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -53,7 +60,9 @@
         "claim": "純水仕様でボディにシミや液あとが残りにくい",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-prostaff-official"],
+        "supportingSourceIds": [
+          "src-prostaff-official"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式の製品特徴"
       },
@@ -61,7 +70,9 @@
         "claim": "凍結温度-20℃まで対応",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-prostaff-official"],
+        "supportingSourceIds": [
+          "src-prostaff-official"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式のスペック"
       }
@@ -181,6 +192,7 @@
         "自己撥水型ウォッシャー液",
         "鳥フンや虫汚れの除去効果"
       ]
-    }
+    },
+    "investigatedPrice": "￥927"
   }
 }

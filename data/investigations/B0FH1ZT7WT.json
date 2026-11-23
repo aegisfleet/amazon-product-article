@@ -47,7 +47,9 @@
         "claim": "800万画素の4K超高精細映像に対応",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式仕様より"
       },
@@ -55,7 +57,9 @@
         "claim": "顔認識と多彩なAI検知（人物・ペット・泣き声など）に対応",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式仕様より"
       },
@@ -63,7 +67,9 @@
         "claim": "メーカー保証3年",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式仕様より"
       }
@@ -181,6 +187,7 @@
       "storage": "microSDカード (最大512GB、別売) または Tapo Care (有料クラウド)",
       "aiDetection": "顔認識、人物、ペット、赤ちゃんの泣き声、車両、いたずら検知",
       "color": "ホワイト"
-    }
+    },
+    "investigatedPrice": "￥9,500"
   }
 }

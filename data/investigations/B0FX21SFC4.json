@@ -44,7 +44,9 @@
         "claim": "最大7.5時間の連続録画が可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": true,
         "notes": "1800mAhバッテリー内蔵による長時間稼働"
       },
@@ -52,7 +54,9 @@
         "claim": "IP66相当の防水防塵機能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": true,
         "notes": "屋外での過酷な環境にも耐える設計"
       }
@@ -175,6 +179,7 @@
         "機能: 常時録画、ループ録画、緊急録画(Gセンサー搭載)、駐車監視、LED信号機対応、OTAアップグレード",
         "対応ハンドル径: 20〜40mm"
       ]
-    }
+    },
+    "investigatedPrice": "￥9,599"
   }
 }

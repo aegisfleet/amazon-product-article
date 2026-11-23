@@ -3,7 +3,11 @@
     "productName": "ASUS VY249HGR Eye Care モニター",
     "parentAsin": "B0H62CHF87",
     "productDescription": "120Hz駆動に対応する60.5cm(FHD)のIPSパネルを搭載し、ベゼルやボタンに独自の抗菌加工を施した目に優しい設計のモニター。",
-    "productUsage": ["動画鑑賞", "カジュアルなゲームプレイ", "事務作業やテレワーク"],
+    "productUsage": [
+      "動画鑑賞",
+      "カジュアルなゲームプレイ",
+      "事務作業やテレワーク"
+    ],
     "positivePoints": [
       "120Hz（オーバークロック時）のリフレッシュレートと1ms(MPRT)の応答速度を備えたIPSパネルを搭載している",
       "ベゼルおよびホットキーに、細菌やカビの繁殖を抑制する独自の抗菌加工処理が施されている",
@@ -40,7 +44,9 @@
         "claim": "ベゼルとホットキーに施された抗菌加工処理が細菌やカビの繁殖を抑制する",
         "category": "safety",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーの公式仕様として記載されているが、持続性や効果の検証に関する第三者のデータは商品ページ単体からは確認できないためmediumとした。"
       }
@@ -144,7 +150,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (120Hz駆動対応のIPSパネルを採用し基本性能が高い)\n[減点: -3] (DisplayPortやUSB-C非搭載で接続性に制約がある)\n[減点: -2] (スピーカー非搭載で音声出力に別途機器が必要)\n[加点: +10] (同スペック帯で1万円を切る非常に高いコストパフォーマンス)\n[加点: +2] (独自の抗菌加工による衛生面への配慮)\n[加点: +2] (3年間の手厚い国内保証による安心感)\n[合計: 84]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "395mm", "width": "541mm", "depth": "185mm" },
+      "dimensions": {
+        "height": "395mm",
+        "width": "541mm",
+        "depth": "185mm"
+      },
       "weight": "3.4kg",
       "capacity": "該当なし",
       "material": "プラスチック（抗菌加工）",
@@ -163,6 +173,7 @@
         "画面サイズ: 60.5cm",
         "画素ピッチ: 0.2745mm"
       ]
-    }
+    },
+    "investigatedPrice": "￥11,380"
   }
 }

@@ -3,7 +3,11 @@
     "productName": "Anker Prime USB-C & USB-C ケーブル Thunderbolt 5",
     "parentAsin": "B0FDGKHYJ4",
     "productDescription": "Thunderbolt 5認証を取得し、最大80Gbpsのデータ転送と最大240Wの急速充電に対応する高品質USB-Cケーブル。",
-    "productUsage": ["高速データ転送", "ノートパソコン・スマートフォンの急速充電", "外部ディスプレイへの高画質映像出力"],
+    "productUsage": [
+      "高速データ転送",
+      "ノートパソコン・スマートフォンの急速充電",
+      "外部ディスプレイへの高画質映像出力"
+    ],
     "positivePoints": [
       "Thunderbolt 5認証を取得しており、安定した最大80Gbps（映像出力時最大120Gbps）のデータ転送が可能",
       "最大240WのUSB PDに対応し、高消費電力のノートPCにも余裕を持って給電可能",
@@ -13,20 +17,28 @@
       "1.0mという長さが固定されており、用途によっては短く感じる・または長く感じる場合がある",
       "1.0mケーブルとしては3,000円台と、一般的なUSB-Cケーブルと比較して高価格帯に位置する"
     ],
-    "useCases": ["MacBook Proなどの高性能PCとThunderboltドッキングステーションの接続", "大容量の動画データや写真データを外部SSDへ高速転送する", "高解像度外部モニターを利用したクリエイティブ作業"],
+    "useCases": [
+      "MacBook Proなどの高性能PCとThunderboltドッキングステーションの接続",
+      "大容量の動画データや写真データを外部SSDへ高速転送する",
+      "高解像度外部モニターを利用したクリエイティブ作業"
+    ],
     "userStories": [
       {
         "userType": "動画クリエイター",
         "scenario": "大容量の動画データを外部SSDに転送する",
         "experience": "無名ブランドの安いケーブルでは転送エラーが頻発していたが、Ankerという信頼できるブランドのThunderbolt 5対応ケーブルを選ぶことでGB単位の動画ファイルも一瞬で転送でき、エラーへの不安が完全に払拭された。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ノートPCユーザー",
         "scenario": "高出力充電と外部ディスプレイ出力を一本で済ませる",
         "experience": "手持ちの充電器がすべてAnker製なので本製品を選んだところ、相性の問題もなく、240W給電と8K出力がこのケーブル1本で安定して行え、デスク周りがすっきりした。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -49,7 +61,9 @@
         "claim": "5GBのファイルをわずか1秒で転送可能",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "理論値(最大80Gbps)に基づいた主張であり、環境によっては速度が落ちる可能性があるため留意が必要。"
       }
@@ -162,6 +176,7 @@
         "最大電力供給: 240W (PD対応)",
         "最大解像度: 8K"
       ]
-    }
+    },
+    "investigatedPrice": "￥4,990"
   }
 }

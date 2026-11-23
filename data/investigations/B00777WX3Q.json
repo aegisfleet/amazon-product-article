@@ -3,7 +3,11 @@
     "productName": "3M スコッチ ガムテープ 布梱包テープ 軽量用 50mm×25m 509BEN",
     "parentAsin": "B00777WX3Q",
     "productDescription": "保持力に優れた軽量用布梱包テープ。油性ペンでの書き込みや重ね貼り、手での切断が可能です。",
-    "productUsage": ["軽量な宅配便や荷物の梱包", "ゴミ袋の口止め", "簡易ラベルとしての使用"],
+    "productUsage": [
+      "軽量な宅配便や荷物の梱包",
+      "ゴミ袋の口止め",
+      "簡易ラベルとしての使用"
+    ],
     "positivePoints": [
       "はさみがなくても手でまっすぐ切れるため作業性が高い",
       "表面に油性ペンで文字が書けるため簡易ラベルとして活用できる",
@@ -12,7 +16,11 @@
     "negativePoints": [
       "「軽量用」とあるため、重量物の梱包には向かない可能性がある"
     ],
-    "useCases": ["引っ越し時の軽量荷物の梱包", "フリマアプリ等の宅配便の発送", "ゴミ袋の口の封入"],
+    "useCases": [
+      "引っ越し時の軽量荷物の梱包",
+      "フリマアプリ等の宅配便の発送",
+      "ゴミ袋の口の封入"
+    ],
     "userStories": [],
     "userImpression": "手で簡単に切断でき、書き込みや重ね貼りが可能なため、一般的な軽作業やフリマアプリの梱包用として使い勝手が良いと評価されています。",
     "sources": [
@@ -33,7 +41,9 @@
         "claim": "はさみがなくても手でまっすぐ切れる",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": true,
         "notes": "商品仕様として明記されている"
       },
@@ -41,7 +51,9 @@
         "claim": "油性ペンで文字が書ける",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": true,
         "notes": "商品仕様として明記されている"
       }
@@ -128,18 +140,32 @@
       }
     ],
     "recommendation": {
-      "targetUsers": ["フリマアプリ等で軽量な荷物を頻繁に発送する人", "家庭でのゴミ袋の口止めや簡易的な梱包をしたい人"],
-      "pros": ["手で簡単に切れる", "油性ペンで書き込み可能", "重ね貼りができる"],
-      "cons": ["重量物の梱包には不向きな可能性がある"],
+      "targetUsers": [
+        "フリマアプリ等で軽量な荷物を頻繁に発送する人",
+        "家庭でのゴミ袋の口止めや簡易的な梱包をしたい人"
+      ],
+      "pros": [
+        "手で簡単に切れる",
+        "油性ペンで書き込み可能",
+        "重ね貼りができる"
+      ],
+      "cons": [
+        "重量物の梱包には不向きな可能性がある"
+      ],
       "score": 80,
       "scoreRationale": "[基本点: 70]\n[加点: +5] (手でまっすぐ切れて作業性が高い)\n[加点: +5] (油性ペンでの書き込みや重ね貼りに対応する利便性)\n[合計: 80]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "61mm", "width": "144mm", "depth": "145mm" },
+      "dimensions": {
+        "height": "61mm",
+        "width": "144mm",
+        "depth": "145mm"
+      },
       "weight": "308g",
       "size": "厚さ0.2mm × 幅50mm × 長さ25m",
       "material": "布",
       "color": "ウッドカラー"
-    }
+    },
+    "investigatedPrice": "￥366"
   }
 }

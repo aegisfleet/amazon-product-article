@@ -26,7 +26,9 @@
         "userType": "主婦",
         "scenario": "キッチンの大掃除",
         "experience": "長年放置して真っ黒になった五徳やグリルの焦げ。色々な洗剤を試してもダメでしたが、これをスプレーして2時間放置しただけで、こすらずにスルッと汚れが落ちて新品のようになりました。大容量でスリムなボトルなので、収納場所を取らず助かっています。ただ、強力な洗剤なので手袋は必須です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -60,7 +62,10 @@
         "claim": "頑固なコゲがこすらず落ちる",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "メーカーの強力な主張であり、製品の核となる機能"
       }
@@ -177,6 +182,7 @@
         "用途: キッチンの五徳・グリル（網・皿）・ガラストップ（IH・ガスコンロ）・鍋・やかんなどの頑固なコゲつき汚れ・油汚れ落とし",
         "使用方法: 対象物に噴射し30〜60分放置（頑固なコゲの場合は2時間程度）。その後水かお湯で洗い流すか水拭きする"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,200"
   }
 }

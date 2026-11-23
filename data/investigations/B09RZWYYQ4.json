@@ -30,14 +30,18 @@
         "userType": "DIY初心者",
         "scenario": "休日に自宅の棚を自作する",
         "experience": "初めてインパクトドライバーを購入しましたが、1.3kgと軽量で女性でも扱いやすかったです。18Vのパワーがあるおかげで、木材への長いネジもスイスイと入り、作業時間が大幅に短縮できました。ケースとバッテリーがセットになっているので、すぐにDIYを始められたのが嬉しかったです。",
-        "supportingSourceIds": ["src-note"],
+        "supportingSourceIds": [
+          "src-note"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "日曜大工愛好家",
         "scenario": "家の修繕と簡単な家具作り",
         "experience": "以前使っていた10.8Vの機種から買い替えました。ヘッドの長さが約150mmとコンパクトなので、狭い隙間での作業も難なくこなせます。ただ、付属のバッテリーが2.0Ahなので、一日中ぶっ通しで作業する時は途中で充電が必要になることがありました。",
-        "supportingSourceIds": ["src-powertool"],
+        "supportingSourceIds": [
+          "src-powertool"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -93,7 +97,10 @@
         "claim": "最大締付トルクは140N・mであり、DIY作業において十分なパワーを発揮する",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-hikoki-official", "src-kakaku"],
+        "supportingSourceIds": [
+          "src-hikoki-official",
+          "src-kakaku"
+        ],
         "crossChecked": true,
         "notes": "公式サイトの仕様表と価格.comのスペック表で一致"
       },
@@ -101,7 +108,10 @@
         "claim": "全長150mm、重量約1.3kgとコンパクトかつ軽量で取り回しが良い",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-hikoki-official", "src-powertool"],
+        "supportingSourceIds": [
+          "src-hikoki-official",
+          "src-powertool"
+        ],
         "crossChecked": true,
         "notes": "公式サイトおよびレビューサイトで言及されている"
       }
@@ -223,6 +233,7 @@
         "打撃数: 0～3,600回/分",
         "充電器: UC18YKSL (充電時間約60分)"
       ]
-    }
+    },
+    "investigatedPrice": "￥12,980"
   }
 }

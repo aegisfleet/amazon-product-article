@@ -44,7 +44,9 @@
         "claim": "完成品で組み立てが不要",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "商品詳細ページに「完成品」と明記されている。"
       },
@@ -52,7 +54,9 @@
         "claim": "デスク折りたたみ時は厚さ3.5cmと非常にスリム",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "商品詳細に折りたたみ時のサイズが記載されている。"
       }
@@ -144,6 +148,7 @@
         "チェアサイズ: 幅300mm x 奥行300mm x 高さ460mm",
         "チェアも折りたたみ可能"
       ]
-    }
+    },
+    "investigatedPrice": "￥5,990"
   }
 }

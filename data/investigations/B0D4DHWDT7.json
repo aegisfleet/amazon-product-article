@@ -30,14 +30,18 @@
         "userType": "初めての出産を控えたプレママ",
         "scenario": "退院後の通院やお出かけ用のチャイルドシート選び",
         "experience": "安全基準のR129を満たしていることと、エッグショックが頭を守ってくれるという安心感が決め手で購入しました。実際に使ってみると、片手でくるっと回せるワンハンドターンがとても便利で、首が座っていない赤ちゃんでも乗せ降ろしが非常に楽でした。お値段は張りましたが、長く使えることを考えると良い買い物でした。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "複数台の車を所有する家庭",
         "scenario": "祖父母の車へのチャイルドシート付け替え",
         "experience": "長く使える点は素晴らしいですが、本体が14kg以上あるため、夫の車から私の車へ付け替える際はかなり重労働です。ISOFIXなので固定自体は簡単なのですが、頻繁に車間で移動させる用途には向いていないと感じました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -60,7 +64,9 @@
         "claim": "成長に合わせて3つのモードに変えられ、着用義務期間をしっかりカバーするロングユース設計",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "商品仕様として新生児〜10歳頃までの対応が明記されている"
       },
@@ -68,7 +74,9 @@
         "claim": "シートを伸ばすと幌と肩ベルトも連動して位置が変わるため、面倒な肩ベルト位置の調節がラクラク",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "「ずっとフィット構造」として商品ページに記載あり"
       }
@@ -184,6 +192,7 @@
       "targetAge": "新生児〜10才頃",
       "targetHeight": "40cm〜135cm",
       "color": "グレージュ"
-    }
+    },
+    "investigatedPrice": "￥52,882"
   }
 }

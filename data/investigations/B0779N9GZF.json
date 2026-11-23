@@ -41,7 +41,9 @@
         "claim": "もち麦の2倍、ゴボウの5倍の総食物繊維量を含有する",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "商品情報より"
       },
@@ -49,7 +51,9 @@
         "claim": "レジスタントスターチが通常大麦の4倍含まれている",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "商品情報より"
       }
@@ -161,6 +165,7 @@
       "other": [
         "非遺伝子組み換え"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,180"
   }
 }

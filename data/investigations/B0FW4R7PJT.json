@@ -3,7 +3,11 @@
     "productName": "VisionOwl デュアルモバイルモニター 14インチ DB-14",
     "parentAsin": "B0G2HJ6R27",
     "productDescription": "14インチのデュアルモバイルディスプレイ。1本のType-Cケーブルで2画面拡張が可能で、統合モードや重力感知による画面回転機能を備える。",
-    "productUsage": ["ノートPCのサブモニター", "ゲーム機（PS4/Switch/Xbox）用モニター", "対面商談時の画面共有"],
+    "productUsage": [
+      "ノートPCのサブモニター",
+      "ゲーム機（PS4/Switch/Xbox）用モニター",
+      "対面商談時の画面共有"
+    ],
     "positivePoints": [
       "Type-Cケーブル1本で2画面拡張可能（Windows PCでDP Alt Mode対応の場合）",
       "2画面を統合して19.2インチ相当として使用できる統合モード搭載",
@@ -42,7 +46,9 @@
         "claim": "Type-Cケーブル1本で2画面拡張可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "DP Alt Mode対応のWindows PCの場合。Mac OSでは不可。"
       },
@@ -50,7 +56,9 @@
         "claim": "重力感知で上画面が自動回転",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "ボタン操作不要で回転する"
       }
@@ -166,6 +174,7 @@
       "brightness": "350nit",
       "colorGamut": "100％sRGB",
       "mount": "4穴VESA対応"
-    }
+    },
+    "investigatedPrice": "￥26,980"
   }
 }

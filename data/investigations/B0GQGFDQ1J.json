@@ -3,7 +3,11 @@
     "productName": "Munyday 筋膜リリースガン",
     "parentAsin": "B0GQGFDQ1J",
     "productDescription": "12mmの深部振幅と99段階の振動調整機能を備えた、超軽量（460g）のミニ筋膜リリースガン。8種類のアタッチメントが付属し、全身のケアに対応します。",
-    "productUsage": ["筋肉の緊張緩和", "運動後のリフレッシュ", "肩・腰・背中・脚などのコリほぐし"],
+    "productUsage": [
+      "筋肉の緊張緩和",
+      "運動後のリフレッシュ",
+      "肩・腰・背中・脚などのコリほぐし"
+    ],
     "positivePoints": [
       "12mmの深い振幅で、筋膜の深部までしっかりアプローチ可能",
       "99段階のきめ細やかな振動調整ができ、自分に最適な強さを選べる",
@@ -15,20 +19,29 @@
       "99段階という細かすぎる調整機能は、人によっては操作の手間になる可能性がある",
       "詳細なサイズ情報（寸法）が不足している"
     ],
-    "useCases": ["自宅でのリラックスタイム", "ジムでのトレーニング前後", "オフィスでの休憩時間", "旅行や出張先への持ち運び"],
+    "useCases": [
+      "自宅でのリラックスタイム",
+      "ジムでのトレーニング前後",
+      "オフィスでの休憩時間",
+      "旅行や出張先への持ち運び"
+    ],
     "userStories": [
       {
         "userType": "デスクワーカー",
         "scenario": "毎日の長時間のデスクワークで肩や腰の疲れが気になっている。",
         "experience": "460gと非常に軽いため、片手で長時間持っていても腕が疲れにくいです。99段階の調整があるので、肩は弱め、腰は強めなど細かく調整できて便利です。動作音も静かなので、夜でも気兼ねなく使えます。",
-        "supportingSourceIds": ["src-amazon-1"],
+        "supportingSourceIds": [
+          "src-amazon-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "スポーツ愛好家",
         "scenario": "ジムでの激しいトレーニング後に筋肉をケアしたい。",
         "experience": "12mmの振幅が筋肉の奥深くまで届く感覚があり、トレーニング後のリフレッシュに最適です。豊富なアタッチメントを部位ごとに使い分けられるのも気に入っています。収納ケース付きでジムにも持っていきやすいです。",
-        "supportingSourceIds": ["src-amazon-1"],
+        "supportingSourceIds": [
+          "src-amazon-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -51,7 +64,9 @@
         "claim": "12mmの深部振幅で筋膜の深部までアプローチ可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-1"],
+        "supportingSourceIds": [
+          "src-amazon-1"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式のスペックシートより確認"
       },
@@ -59,7 +74,9 @@
         "claim": "99段階の振動強度調整が可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-1"],
+        "supportingSourceIds": [
+          "src-amazon-1"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式のスペックシートより確認"
       },
@@ -67,7 +84,9 @@
         "claim": "重量460gの軽量設計",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-1"],
+        "supportingSourceIds": [
+          "src-amazon-1"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式のスペックシートより確認"
       }
@@ -184,6 +203,7 @@
         "高温保護、過電圧保護、過電流保護機能",
         "18ヶ月保証"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,999"
   }
 }

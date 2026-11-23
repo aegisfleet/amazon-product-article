@@ -31,14 +31,18 @@
         "userType": "出張が多いビジネスマン",
         "scenario": "ホテルやカフェでの作業",
         "experience": "出張時、スマホ2台とスマートウォッチ、ワイヤレスイヤホンを持ち歩いていますが、この充電器1つで全部まかなえるのが最大のメリットです。コンパクトでプラグも折りたためるためポーチにすっきり収まります。特にC1ポートが30W固定されるので、スマホを急ぎで充電したい時に重宝しています。",
-        "supportingSourceIds": ["src-anker-official"],
+        "supportingSourceIds": [
+          "src-anker-official"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "複数ガジェットを持ち歩く学生",
         "scenario": "自宅や図書館での使用",
         "experience": "スマホとタブレットを同時に急速充電したかったので購入しました。CポートでスマホとiPadを繋ぐと両方早く充電できて快適です。ただ、Aポートに他の機器を繋ぐと出力が制限されてしまうのが少し残念。それでもこの価格で4ポートあるのはコスパが良いと思います。",
-        "supportingSourceIds": ["src-anker-official"],
+        "supportingSourceIds": [
+          "src-anker-official"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -61,7 +65,9 @@
         "claim": "他のポートを同時に使用していても、USB-C1ポートの出力を落とさず安定して充電できます",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-anker-official"],
+        "supportingSourceIds": [
+          "src-anker-official"
+        ],
         "crossChecked": true,
         "notes": "公式サイトの仕様表にて、3・4ポート使用時でも最大45Wとなっており、USB-C1(30W)＋他(合計15W制限)という記載から事実と確認。"
       },
@@ -69,7 +75,9 @@
         "claim": "常に温度を計測し制御するためお使いの機器を24時間守ります",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-anker-official"],
+        "supportingSourceIds": [
+          "src-anker-official"
+        ],
         "crossChecked": true,
         "notes": "AnkerのActiveShield4.0の機能として公式に記載あり。"
       }
@@ -193,6 +201,7 @@
         "プラグ仕様: 折りたたみ式",
         "パッケージ内容: 本体、クイックスタートガイド、カスタマーサポート"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,990"
   }
 }

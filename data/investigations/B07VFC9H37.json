@@ -32,7 +32,9 @@
         "userType": "一般ユーザー",
         "scenario": "自宅でのセルフケア用として購入",
         "experience": "色味（アースブラウン）が可愛く、部屋に出しっぱなしにしていてもインテリアに馴染むのが気に入っている。他社の高価な製品と迷ったが、まずはフォームローラーというものを試してみたかったのと、手軽な価格であることが決め手となりこの商品を選んだ。内側の芯材はややチープな感じがするが、価格が安いため全体としては満足しており、初めてのフォームローラーとして十分な働きをしてくれている。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -55,7 +57,9 @@
         "claim": "耐荷重200kgの高耐久構造",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "製品仕様として明記されており、PVC芯材へのリニューアルにより耐久性が向上している。"
       }
@@ -158,11 +162,16 @@
       "scoreRationale": "[基本点: 70]\n[加点: +8] (他ECサイトと比較しても手頃な価格であり、高いコストパフォーマンス)\n[加点: +5] (耐荷重200kgの頑丈なPVC芯材へのリニューアル)\n[加点: +3] (軽量650gで取り回しが良い)\n[減点: -3] (内側の芯材の質感に対する一部不満の声)\n[合計: 83]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "33.5cm", "width": "13.5cm", "depth": "13.5cm" },
+      "dimensions": {
+        "height": "33.5cm",
+        "width": "13.5cm",
+        "depth": "13.5cm"
+      },
       "weight": "650g",
       "material": "EVA（表面）、PVC（芯材）",
       "loadCapacity": "200kg",
       "color": "アースブラウン"
-    }
+    },
+    "investigatedPrice": "￥1,833"
   }
 }

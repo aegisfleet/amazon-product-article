@@ -30,14 +30,20 @@
         "userType": "在宅ワーカー",
         "scenario": "デュアルモニター環境での夜間のPC作業",
         "experience": "27インチモニターを2枚並べているため、一般的なデスクライトでは端が暗くなっていましたが、幅98cmのこの製品はデスク全体を均一に明るくしてくれました。決め手は環境補助光で、モニター裏の壁を照らすことで画面との明暗差が減り、長時間の作業でも目の疲れが格段に軽減されました。無線リモコンが手元でサッと使えるのも非常に便利です。",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "学生",
         "scenario": "広いデスクでの勉強とPC作業の併用",
         "experience": "参考書を広げながらPCを使うために広い照明を探して購入しました。幅が広いため多重影ができにくく、字が読みやすいです。ただ、机の幅が100cmギリギリなので、少し窮屈に感じるほどの存在感があります。とはいえ、勉強中は昼白色、リラックス時は電球色とリモコンで簡単に切り替えられるので重宝しています。",
-        "supportingSourceIds": ["src-1", "src-3"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-3"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -82,7 +88,9 @@
         "claim": "環境補助光による間接照明効果で眼精疲労を和らげる",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "メーカーの主張。モニター背面の壁を照らして明暗差を減らす手法（バイアスライティング）は目の疲労軽減に効果があるとして一般的にも知られている機能であり、独立制御できる本製品の特徴と合致する。"
       }
@@ -198,6 +206,7 @@
         "メモリー機能搭載",
         "PSE認証済"
       ]
-    }
+    },
+    "investigatedPrice": "￥7,999"
   }
 }

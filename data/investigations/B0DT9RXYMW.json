@@ -30,14 +30,18 @@
         "userType": "定期購入者",
         "scenario": "日常的なヘアケアの継続利用",
         "experience": "YOLUのリラックスナイトリペアの香りと仕上がりが気に入っており、毎月詰め替えを買うのが手間だったため大容量に変更。ボトルへの補充頻度が減り、ゴミも少なくなるので快適です。うねりが気になる髪も翌朝ストンとまとまるので朝のセットが楽になります。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "新規購入者",
         "scenario": "コスパを求めて大容量を購入",
         "experience": "お得だと思って購入しましたが、想像以上にパックが大きく（高さ約29cm）、洗面台の下の収納スペースを圧迫してしまいました。ただ、品質自体は良く、夜使うと朝の指通りがサラサラになるので満足しています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -60,7 +64,9 @@
         "claim": "睡眠中の摩擦ダメージを軽減し、翌朝の髪を扱いやすくする",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "「ナイトキャップセラム」処方によるコーティング効果としてメーカーが強くアピールしている。"
       },
@@ -68,7 +74,9 @@
         "claim": "通常詰め替えの約3個分の大容量サイズ",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "重量仕様（約1135g）から、通常の詰め替えの約3個分であることが確認できる。"
       }
@@ -188,6 +196,7 @@
         "対象髪質: 乾燥・うねりが気になる髪",
         "処方: スリークナイトリペア処方（ナイトキャップセラム配合）"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,300"
   }
 }

@@ -28,14 +28,18 @@
         "userType": "40代女性・主婦",
         "scenario": "子どもの軽食や休日の昼食用に",
         "experience": "自立するトレーが非常に画期的です。お皿を汚さずに済み、切り離してそのまま出せるので洗い物も減り助かります。味も美味しくて子どもも喜んでいます。",
-        "supportingSourceIds": ["src-shareview-41441"],
+        "supportingSourceIds": [
+          "src-shareview-41441"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "検証・レビューサイト",
         "scenario": "定番の冷凍焼きおにぎり食べ比べ",
         "experience": "ボリューム感とお米のふっくら感では群を抜いており、食事としても満足できるレベル。ただし、カリッとしたおこげ感が好きな人は、レンチン後にトースターで追加焼きするとより楽しめます。",
-        "supportingSourceIds": ["src-kakakumag-18363"],
+        "supportingSourceIds": [
+          "src-kakakumag-18363"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -80,7 +84,10 @@
         "claim": "香りのWアップ製法で、しょうゆの風味と香りをより引き立たせました",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-nissui-00189", "src-kakakumag-18363"],
+        "supportingSourceIds": [
+          "src-nissui-00189",
+          "src-kakakumag-18363"
+        ],
         "crossChecked": true,
         "notes": "メーカーの主張。レビュー記事でも「中までしっかりと浸透した醤油ダレの味と香ばしさが口の中に広がる」と一致している。"
       },
@@ -88,7 +95,10 @@
         "claim": "お米本来のおいしさを追求しふっくら仕上げた",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-nissui-00189", "src-kakakumag-18363"],
+        "supportingSourceIds": [
+          "src-nissui-00189",
+          "src-kakakumag-18363"
+        ],
         "crossChecked": true,
         "notes": "メーカーの主張。レビュー記事でも「お米のふっくら感No.1」と評価されており事実と一致している。"
       }
@@ -206,13 +216,31 @@
     "technicalSpecs": {
       "content": "450g (75g×6個) × 8袋",
       "calories": "122kcal (1個75gあたり)",
-      "ingredients": ["米", "しょうゆ", "みりん", "植物油脂", "砂糖", "食塩", "かつおぶしエキス", "こんぶエキス", "かつおエキス", "酵母エキス", "（一部に小麦・大豆を含む）"],
-      "allergens": ["小麦", "大豆", "鶏肉", "豚肉"],
+      "ingredients": [
+        "米",
+        "しょうゆ",
+        "みりん",
+        "植物油脂",
+        "砂糖",
+        "食塩",
+        "かつおぶしエキス",
+        "こんぶエキス",
+        "かつおエキス",
+        "酵母エキス",
+        "（一部に小麦・大豆を含む）"
+      ],
+      "allergens": [
+        "小麦",
+        "大豆",
+        "鶏肉",
+        "豚肉"
+      ],
       "origin": "日本 (株式会社ニッスイ 八王子総合工場 または ハチカン)",
       "other": [
         "パッケージ: フィルムにアルミ不使用、インキの10%に植物由来原料を使用",
         "栄養成分 (1個75gあたり): たんぱく質2.4g、脂質0.7g、炭水化物26.7g、食塩相当量0.8g"
       ]
-    }
+    },
+    "investigatedPrice": "￥5,980"
   }
 }

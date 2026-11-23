@@ -45,7 +45,9 @@
         "claim": "非常に軽量で腕にフィットする薄型モデル",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "Amazon商品ページの公式特徴に基づき記載。"
       },
@@ -53,7 +55,9 @@
         "claim": "日常生活用防水機能を搭載",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "Amazon商品ページの公式特徴に基づき記載。"
       }
@@ -160,7 +164,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] 薄型軽量で邪魔にならず、日常生活用防水・約3年の電池寿命を備える基本性能の高さ\n[加点: +10] 1,540円という低価格で信頼のカシオブランドが手に入る圧倒的なコストパフォーマンス\n[加点: +5] シンプルでミニマルなデザイン、WEB限定のブラック×ゴールドの配色がスタイリッシュ\n[合計: 90]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "38mm", "width": "34mm", "depth": "8mm" },
+      "dimensions": {
+        "height": "38mm",
+        "width": "34mm",
+        "depth": "8mm"
+      },
       "weight": "20g",
       "capacity": "1個",
       "material": "樹脂（ケース・ベゼル）、樹脂バンド",
@@ -172,6 +180,7 @@
         "表示：アナログ3針",
         "カラー：WEB限定モデル ブラック×ゴールド"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,540"
   }
 }

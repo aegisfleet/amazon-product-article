@@ -3,7 +3,10 @@
     "productName": "能率 NOLTY 2026年 カレンダー 壁掛け B4 C115",
     "parentAsin": "B0F8H7D457",
     "productDescription": "見やすく広い記入スペースと、書き心地の良さが特徴のB4横型壁掛けカレンダー（リング綴じ）。",
-    "productUsage": ["スケジュールの管理・記入", "リビングやオフィスでの日付・予定の確認"],
+    "productUsage": [
+      "スケジュールの管理・記入",
+      "リビングやオフィスでの日付・予定の確認"
+    ],
     "positivePoints": [
       "ペン先が躍るような書き心地のオリジナルクリーム用紙を採用している",
       "売上2位の人気シリーズであり、見やすく記入スペースが広いB4横型サイズである",
@@ -13,20 +16,27 @@
       "六曜や月相、年間行事などの詳細な暦情報の記載に関する言及が公式情報にない",
       "用紙色がクリーム色であるため、真っ白な用紙を好む人には向かない可能性がある"
     ],
-    "useCases": ["リビングで家族の予定を共有・管理する", "オフィスのデスク横や壁に掛けて直近のスケジュールを把握する"],
+    "useCases": [
+      "リビングで家族の予定を共有・管理する",
+      "オフィスのデスク横や壁に掛けて直近のスケジュールを把握する"
+    ],
     "userStories": [
       {
         "userType": "家族の予定を管理する人",
         "scenario": "リビングでのスケジュール共有",
         "experience": "競合のカレンダーは真っ白な紙が多く目にチカチカしてしまうため、目に優しいオリジナルクリーム用紙を採用しているこの商品を選んだ。記入スペースが広く、家族それぞれの予定を書き込みやすくて重宝している。",
-        "supportingSourceIds": ["src-original-data"],
+        "supportingSourceIds": [
+          "src-original-data"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ビジネスパーソン",
         "scenario": "オフィスでの予定管理",
         "experience": "情報が詰め込まれたカレンダーよりもシンプルに予定だけを管理したかったので、六曜などが省かれてすっきりとしたこのカレンダーを選択した。書き心地が良く、付属のスケジュールシールで重要な予定が一目でわかるので満足している。",
-        "supportingSourceIds": ["src-original-data"],
+        "supportingSourceIds": [
+          "src-original-data"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -60,7 +70,9 @@
         "claim": "ペン先が躍るような書き心地",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-original-data"],
+        "supportingSourceIds": [
+          "src-original-data"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式の主張。オリジナルクリーム用紙を採用していることからの表現と考えられる"
       }
@@ -120,6 +132,7 @@
         "年間カレンダー（2年分）付属",
         "スケジュールシール付属"
       ]
-    }
+    },
+    "investigatedPrice": "￥471"
   }
 }

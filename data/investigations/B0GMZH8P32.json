@@ -3,7 +3,12 @@
     "productName": "REDMAGIC 11 Air",
     "parentAsin": "B0GT4K2JRB",
     "productDescription": "最新SoC「Snapdragon 8 Elite」とAirシリーズ初の高速冷却ファンを搭載した、薄型・軽量デザインのゲーミングスマートフォン。",
-    "productUsage": ["高負荷な3Dゲームのプレイ", "長時間の動画視聴", "日常のスマートフォン利用", "高画質カメラでの写真撮影"],
+    "productUsage": [
+      "高負荷な3Dゲームのプレイ",
+      "長時間の動画視聴",
+      "日常のスマートフォン利用",
+      "高画質カメラでの写真撮影"
+    ],
     "positivePoints": [
       "QualcommのフラグシップSoC「Snapdragon 8 Elite」を搭載し、高水準の処理能力を発揮",
       "Airシリーズとして初めて最大24,000RPMの高速冷却ファンを搭載",
@@ -17,20 +22,29 @@
       "おサイフケータイ（FeliCa）対応の記載がない",
       "ワイヤレス充電には非対応（有線充電のみの記載）"
     ],
-    "useCases": ["外出先での長時間のゲームセッション", "充電しながらのゲームプレイやライブ配信（バイパス充電利用）", "高い処理能力を活かしたマルチタスク"],
+    "useCases": [
+      "外出先での長時間のゲームセッション",
+      "充電しながらのゲームプレイやライブ配信（バイパス充電利用）",
+      "高い処理能力を活かしたマルチタスク"
+    ],
     "userStories": [
       {
         "userType": "ハードコアゲーマー",
         "scenario": "高負荷なFPSゲームを長時間プレイ",
         "experience": "Snapdragon 8 Eliteの圧倒的な処理能力と、内蔵された冷却ファンのおかげで、長時間のプレイでも端末が熱くならず、フレームレートの低下も全く感じませんでした。また、バイパス充電機能があるため、バッテリーの劣化を気にせず充電しながらプレイできるのも大きな決め手になりました。",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ガジェット愛好家",
         "scenario": "日常使いとゲームの両立",
         "experience": "ゲーミングスマホでありながら薄型軽量で、透明デザインの背面がとても美しいです。7000mAhもの大容量バッテリーのおかげで、1日中ゲームや動画を楽しんでもバッテリー切れの心配がありません。ただ、おサイフケータイ非対応なのは少し不便に感じます。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -64,7 +78,9 @@
         "claim": "長時間のゲームプレイでも熱くならない高い冷却性能",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "公式ページで最大24,000RPMの冷却ファン搭載と高密度毛細管構造による冷却液の循環が謳われている。"
       },
@@ -72,7 +88,9 @@
         "claim": "バッテリー切れの不安なく楽しめる7000mAh大容量バッテリー",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "ゲーミングスマホの中でも最大クラスの7000mAhバッテリーを搭載している。"
       }
@@ -211,6 +229,7 @@
         "マジックタッチ技術 (最大2,500Hz瞬時タッチサンプリングレート)",
         "透明デザイン (3D曲面ガラス背面)"
       ]
-    }
+    },
+    "investigatedPrice": "￥94,800"
   }
 }

@@ -27,7 +27,9 @@
         "userType": "立ち仕事のスタッフ",
         "scenario": "長時間のレジ業務や品出しを行う勤務中",
         "experience": "立ったままスムーズに脱ぎ履きでき、休憩時の着脱が楽になりました。軽量でクッション性も高いため、一日中立ちっぱなしでも足の疲労感が以前より軽減されていると感じます。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -50,7 +52,9 @@
         "claim": "手を使わず立ったまま履ける構造",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品画像や説明文でU字型ヒール構造を確認"
       },
@@ -58,7 +62,9 @@
         "claim": "25.5cmサイズで約220gの超軽量設計",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式スペックとして明記"
       }
@@ -177,6 +183,7 @@
         "立ったまま履ける特殊ヒール構造",
         "理学療法士推薦"
       ]
-    }
+    },
+    "investigatedPrice": "￥4,780"
   }
 }

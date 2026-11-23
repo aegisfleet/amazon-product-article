@@ -28,7 +28,9 @@
         "userType": "リモートワーカー",
         "scenario": "カフェや自宅など多様な場所で作業する際",
         "experience": "これまでケーブル類が鞄の中で絡まりがちでしたが、このポーチは開いたまま自立するので出し入れが非常にスムーズです。PCのACアダプターやマウスといった大きめのガジェットもすっぽり入り、5つのメッシュポケットでケーブルもすっきり整理できます。撥水加工のおかげでカフェのテーブルに水滴があっても安心できる点が決め手でした。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -51,7 +53,9 @@
         "claim": "ファスナーを開けると自然に大きく開き、開いた状態をキープする",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "独自開発の芯材構造によるもの。実際の使用でも片手で出し入れしやすいと評価されている。"
       }
@@ -163,7 +167,13 @@
       "capacity": "Lサイズ",
       "material": "シャンブレー生地（撥水加工）、芯材",
       "color": "ダークグレー",
-      "features": ["自立機能", "メッシュポケット×5", "持ち手付き", "撥水加工"]
-    }
+      "features": [
+        "自立機能",
+        "メッシュポケット×5",
+        "持ち手付き",
+        "撥水加工"
+      ]
+    },
+    "investigatedPrice": "￥2,750"
   }
 }

@@ -25,14 +25,18 @@
         "userType": "システムトレーダー",
         "scenario": "トレード戦略の運用成績をさらに向上させたい時",
         "experience": "トレードの勝率や利益率だけでなく、一回のトレードに投じる最適な資金量（オプティマルf）を数学的に導き出すアプローチは非常に革新的でした。難解な数式が多く読むのに苦労しましたが、これを理解することでラリー・ウィリアムズ氏のようなプロの資金管理術に近づけた気がします。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "投資初心者",
         "scenario": "資金管理の重要性を学びたい時",
         "experience": "資金管理のバイブルと聞いて購入しましたが、数学的な数式や専門用語が多く、途中から内容についていけなくなりました。チャートを見て視覚的に理解しようと努めましたが、初心者にはレベルが高すぎる一冊でした。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "negative"
       }
     ],
@@ -55,7 +59,9 @@
         "claim": "確率と現代ポートフォリオ理論を使ってトレーディングシステムを改良できる",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "出版社の商品説明にて、本書の主要なアプローチとして記載されている。"
       },
@@ -63,7 +69,9 @@
         "claim": "ギャンブルと投資を絶妙に融合させた資金管理のバイブルである",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "ケリーの法則などを投資に応用するアプローチを指して、高い評価を得ている。"
       }
@@ -173,6 +181,7 @@
         "価格: 6252円",
         "著者: ラルフ・ビンス"
       ]
-    }
+    },
+    "investigatedPrice": "￥6,252"
   }
 }

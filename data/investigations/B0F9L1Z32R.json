@@ -3,7 +3,12 @@
     "productName": "GGPT ペット ひんやりマット 28℃自然凍結 41×30cm グレー",
     "parentAsin": "B0H4W69YCF",
     "productDescription": "28℃以下で自然凍結するPCM素材を採用したペット用ひんやりマット。JIS認証取得の高密度PVC素材とTPU素材の2層構造で耐久性に優れ、専用のグレーカバーが付いています。",
-    "productUsage": ["ペットの熱中症対策", "室内・屋外のクールマット", "氷枕・アイスパック", "車内やアウトドアでの冷却グッズ"],
+    "productUsage": [
+      "ペットの熱中症対策",
+      "室内・屋外のクールマット",
+      "氷枕・アイスパック",
+      "車内やアウトドアでの冷却グッズ"
+    ],
     "positivePoints": [
       "28℃以下で自然凍結する次世代PCM素材を採用し、電気不要で繰り返し使用可能",
       "JIS認証済みの高密度PVC素材と強靭なTPU素材の2層構造で、ペットの噛みつきや引っ掻きに強い",
@@ -14,13 +19,19 @@
       "冷却をさらに強めるためには冷蔵庫で冷やす手間が必要",
       "サイズが41×30cmと中型・大型犬にとってはやや小さめ"
     ],
-    "useCases": ["夏の室内でのペットの居場所として", "外出先や車内での暑さ対策", "ケージ内に敷く冷感シートとして"],
+    "useCases": [
+      "夏の室内でのペットの居場所として",
+      "外出先や車内での暑さ対策",
+      "ケージ内に敷く冷感シートとして"
+    ],
     "userStories": [
       {
         "userType": "小型犬の飼い主",
         "scenario": "夏の暑い時期の室内用クールマットとして",
         "experience": "28度以下で自然に冷たくなるため、エアコンを控えめにしている時でも愛犬が快適そうに寝ています。カバーが付いているので、汚れてもすぐに拭き取れて清潔を保てます。サイズ感も小型犬にちょうど良く、噛んでも破れにくいのが安心の決め手になりました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -43,7 +54,9 @@
         "claim": "100万回以上繰り返し使用できる",
         "category": "durability",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーの仕様上の理論値であり、実際の長期耐久性については環境によって変動する可能性がある"
       },
@@ -51,7 +64,9 @@
         "claim": "液漏れ防止100％合格の強靭TPU素材",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "航空機レベルのTPU素材を使用し、テーバー摩耗試験をクリアしている旨の記載から、安全性に配慮されていることが伺える"
       }
@@ -105,12 +120,20 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (28℃で自然凍結するPCM素材の利便性とエコ性能)\n[加点: +5] (41×30cmと汎用性のあるサイズ)\n[減点: -15] (サクラチェッカーで警告されており、レビューや品質の信頼性が著しく低い)\n[減点: -10] (同サイズ・同素材の他社製品に比べて価格が割高であり、コスパが悪い)\n[合計: 55]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "300mm", "width": "410mm", "depth": "5mm" },
+      "dimensions": {
+        "height": "300mm",
+        "width": "410mm",
+        "depth": "5mm"
+      },
       "weight": "不明",
       "capacity": "1枚",
       "material": "カバー：高密度PVC、内部：TPU・PCM素材",
       "origin": "不明",
-      "other": ["折りたたみ時サイズ：300mm × 130mm", "JIS認証取得"]
-    }
+      "other": [
+        "折りたたみ時サイズ：300mm × 130mm",
+        "JIS認証取得"
+      ]
+    },
+    "investigatedPrice": "￥3,799"
   }
 }

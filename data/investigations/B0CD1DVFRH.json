@@ -29,14 +29,20 @@
         "userType": "ニキビ跡やシミが気になる30代女性",
         "scenario": "毎日の夜のスキンケアの美容液として導入",
         "experience": "デパコスのビタミンC美容液から乗り換えました。1回に数滴で済むので非常に長持ちし、2本セットなので買い替えの手間も省けます。数ヶ月継続することで、新しくできるニキビが減り、全体的なトーンアップを実感しています。少しオイルのようなテクスチャーなので、夜メインで使っています。",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "さっぱりした使用感を好む20代敏感肌",
         "scenario": "日焼け後のシミ予防として顔全体に使用",
         "experience": "使い始めは肌に少しピリピリとした刺激を感じました。数日で慣れましたが、オイルっぽさが強く肌の表面に残る感じがあるため、朝のメイク前には使いにくいです。また、1滴ずつしか出ないので顔全体に塗る時は少し面倒に感じます。",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -70,7 +76,9 @@
         "claim": "1回4～5滴、1日1回の使用で、1本で約5～6ヶ月お使いいただけます",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "メーカー公式見解であり、実際の容量（20ml）と1滴の量から計算しても妥当な使用期間である"
       },
@@ -78,7 +86,9 @@
         "claim": "集中的に角層奥深くまで浸透！気になるシミの元まで届き、メラニンの生成を抑え、しみ・そばかすを防ぎます",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "医薬部外品として有効成分が規定量配合されているため、予防効果についての主張は信頼性が高い"
       }
@@ -199,6 +209,7 @@
         "付属品: 肌ラボ 極潤ヒアルロン酸 3ml サンプル",
         "1回4～5滴、1日1回の使用で約5～6ヶ月使用可能"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,929"
   }
 }

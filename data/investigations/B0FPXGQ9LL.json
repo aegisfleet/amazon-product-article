@@ -3,7 +3,12 @@
     "productName": "Prechen セカンダリモニター",
     "parentAsin": "B0FPXGQ9LL",
     "productDescription": "1920x720の高解像度IPSパネルを搭載した31.2cm（12.3型相当）のストレッチバー型モバイルモニター。USB-Cケーブル1本で接続可能で、内蔵スピーカーやPCのステータスモニタリングに対応。",
-    "productUsage": ["PCのセカンダリモニター", "CPU/GPUなどのステータスモニタリング", "動画・マルチメディアの視聴", "プレゼンテーション用ディスプレイ"],
+    "productUsage": [
+      "PCのセカンダリモニター",
+      "CPU/GPUなどのステータスモニタリング",
+      "動画・マルチメディアの視聴",
+      "プレゼンテーション用ディスプレイ"
+    ],
     "positivePoints": [
       "USB-Cケーブル1本で映像出力と給電が完了するため、配線がスッキリする",
       "バー型で、メインモニターの下や隙間など省スペースに設置しやすい",
@@ -38,7 +43,9 @@
         "claim": "USB-Cケーブル1本で映像と給電が可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "商品仕様で明記されている"
       },
@@ -46,7 +53,9 @@
         "claim": "AIDA64との互換性があり、PCのステータスモニタリングに最適",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "商品タイトルおよび仕様でアピールされている"
       }
@@ -94,9 +103,20 @@
       }
     ],
     "recommendation": {
-      "targetUsers": ["自作PCユーザー", "デスクの隙間を活用したい人", "株価やチャットツールを常時表示したい人"],
-      "pros": ["省スペースなバー型デザイン", "ケーブル1本での簡単な接続", "高解像度IPSパネルで見やすい"],
-      "cons": ["特殊なアスペクト比のため用途が限られる", "タッチ操作非対応"],
+      "targetUsers": [
+        "自作PCユーザー",
+        "デスクの隙間を活用したい人",
+        "株価やチャットツールを常時表示したい人"
+      ],
+      "pros": [
+        "省スペースなバー型デザイン",
+        "ケーブル1本での簡単な接続",
+        "高解像度IPSパネルで見やすい"
+      ],
+      "cons": [
+        "特殊なアスペクト比のため用途が限られる",
+        "タッチ操作非対応"
+      ],
       "score": 85,
       "scoreRationale": "[基本点: 70]\n[加点: +10] (USB-Cケーブル1本で接続でき、省スペース性に優れる実用性の高さ)\n[加点: +10] (同種のバー型モニターと比較して安価でコストパフォーマンスが良い)\n[減点: -5] (特殊な比率のため、一般的な動画視聴等には不向きで用途が限定される)\n[合計: 85]"
     },
@@ -111,7 +131,10 @@
       "resolution": "1920 x 720",
       "panelType": "IPS",
       "material": "金属素材",
-      "interfaces": ["HDMI", "USB-C"],
+      "interfaces": [
+        "HDMI",
+        "USB-C"
+      ],
       "other": [
         "内蔵スピーカー",
         "VESAマウント対応 (75x75mm)",
@@ -119,6 +142,7 @@
         "輝度 300ニト",
         "視野角 178度"
       ]
-    }
+    },
+    "investigatedPrice": "￥12,999"
   }
 }

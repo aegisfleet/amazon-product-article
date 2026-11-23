@@ -26,7 +26,9 @@
         "userType": "ダイキン空気清浄機ユーザー",
         "scenario": "純正フィルターの交換時期が来て、コストを抑えるために購入",
         "experience": "純正品より安価で複数枚手に入るため購入。サイズはぴったりで本体に問題なくセットできた。集じん効果も特に違和感なく使用できているが、純正品と比べて耐久性がどうなるか様子見している。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -60,7 +62,9 @@
         "claim": "強化された集じんフィルター",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品名に記載があるが、具体的に純正品や旧品と比較してどのように強化されたか客観的な数値データはない"
       }
@@ -169,6 +173,7 @@
       "material": "ポリプロピレン、ポリエステル系不織布",
       "compatibility": "KAC998A4（KAC979A4後継品）",
       "quantity": "5枚入り"
-    }
+    },
+    "investigatedPrice": "￥2,391"
   }
 }

@@ -40,7 +40,9 @@
         "claim": "わずか0.15mmの厚さで、気泡消滅や傷の自動修復機能（48時間）を備える",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-B0FR8RM4VR"],
+        "supportingSourceIds": [
+          "src-amazon-B0FR8RM4VR"
+        ],
         "crossChecked": false,
         "notes": "メーカーの商品説明より"
       }
@@ -147,7 +149,9 @@
     "technicalSpecs": {
       "material": "TPU",
       "thickness": "0.15mm",
-      "packageContents": ["保護フィルム 2枚"],
+      "packageContents": [
+        "保護フィルム 2枚"
+      ],
       "compatibleModel": "Google Pixel 10 Pro Fold",
       "other": [
         "自己修復機能（48時間）",
@@ -156,6 +160,7 @@
         "防爆仕様",
         "指紋防止コーティング"
       ]
-    }
+    },
+    "investigatedPrice": "￥700"
   }
 }

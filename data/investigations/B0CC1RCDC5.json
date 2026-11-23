@@ -31,14 +31,18 @@
         "userType": "高身長のリモートワーカー",
         "scenario": "一日中の在宅勤務で腰痛に悩み、スタンディングデスクの導入を検討",
         "experience": "身長が180cm以上あるため、下位モデルでは高さが微妙に足りず不満でしたが、このE7Hは最大128.5cmまで上がるのが決め手になりました。立ち作業時もタイピングで揺れることなく、デュアルモーターのおかげでスムーズに昇降できるため、座り・立ちの切り替えが全く苦になりません。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "マルチモニターを使用するクリエイター",
         "scenario": "重い機材を複数載せられる頑丈な昇降デスクが必要",
         "experience": "大型モニター2枚とデスクトップPC本体を机上に置いていますが、耐荷重160kgの余裕があるため、昇降時も全く不安を感じません。付属のケーブルトレーやマグネット式カバーのおかげで、ごちゃごちゃしていたケーブル類をスッキリ隠せたのも嬉しい誤算でした。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -72,7 +76,9 @@
         "claim": "耐荷重は驚異の160kg",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "FLEXISPOTの旧モデルE7（耐荷重125kg）から大幅に強化されていることを確認"
       },
@@ -80,7 +86,10 @@
         "claim": "従来のE7と比較して、より高い位置（128.5cm）まで昇降可能",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "E7の上限123cmに対し、E7Hは128.5cmまで対応していることを仕様比較で確認"
       }
@@ -144,8 +153,14 @@
       "loadCapacity": "160kg",
       "liftSpeed": "40mm/s",
       "motorType": "デュアル静音モーター",
-      "features": ["4メモリー機能", "USB充電ポート", "障害物検知(セーフティモーション)", "チャイルドロック機能"],
+      "features": [
+        "4メモリー機能",
+        "USB充電ポート",
+        "障害物検知(セーフティモーション)",
+        "チャイルドロック機能"
+      ],
       "warranty": "メーカー5年保証"
-    }
+    },
+    "investigatedPrice": "￥63,800"
   }
 }

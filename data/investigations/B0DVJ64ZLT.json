@@ -40,7 +40,9 @@
         "claim": "Wi-Fi 6対応で安定した通信が可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "商品詳細より確認"
       },
@@ -48,7 +50,9 @@
         "claim": "USB-Cケーブル経由でテレビから直接給電可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "商品特徴の「セットアップがさらに簡単に」より確認"
       }
@@ -169,6 +173,7 @@
         "端子: HDMI、USB-C (給電用)",
         "付属品: Alexa対応音声認識リモコン、USB電源ケーブル"
       ]
-    }
+    },
+    "investigatedPrice": "￥8,980"
   }
 }

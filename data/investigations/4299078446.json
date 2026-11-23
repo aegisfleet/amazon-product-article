@@ -27,7 +27,9 @@
         "userType": "海外ホラー中心の読書家",
         "scenario": "見逃していた新しいホラー小説を発見する",
         "experience": "普段は翻訳ものを中心に読んでいるが、本書のランキングを通じて、ノーチェックだった翻訳ホラー（グルドーヴァ『人形のアルファベット』など）が高い評価を受けていることを知ることができた。意外な見逃し作品に出会えるため、ホラーファンなら一度は目を通しておきたい有益なガイドブックだと感じた。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -50,7 +52,9 @@
         "claim": "2025年4月～2026年3月に発売されたホラー小説から、国内・海外ベスト20の作品を紹介している",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "Amazonの商品概要欄および読者レビューから、対象期間のランキングが掲載されていることを確認"
       },
@@ -58,7 +62,9 @@
         "claim": "漫画『光が死んだ夏』の特集や『リング』35周年特集、作家13名のエッセイなど豊富な特別企画が収録されている",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "Amazonの商品概要欄にて企画の収録が明記されていることを確認"
       }
@@ -116,6 +122,7 @@
       "other": [
         "発行: 宝島社"
       ]
-    }
+    },
+    "investigatedPrice": "￥900"
   }
 }

@@ -29,21 +29,27 @@
         "userType": "30代女性・混合肌",
         "scenario": "夏の暑い時期や、ベタつきが気になる時のデイリーケアとして",
         "experience": "サラッとしたオイルで仕上がりが重くならず、ちょうどいいまとまり感が出ます。森林をイメージした爽やかな香りで甘すぎず、さっぱりしているので心地よく使えました。夏の時期でも不快感なくサラッとまとまるのが決め手です。",
-        "supportingSourceIds": ["src-cosme-10156285"],
+        "supportingSourceIds": [
+          "src-cosme-10156285"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "40代女性・乾燥肌",
         "scenario": "お風呂上がりのアウトバストリートメントとして",
         "experience": "少し重めのオイルだと感じましたが、髪につけてベタベタすることはなく馴染みは良いです。ただ、私の乾燥した髪では劇的に綺麗になったりまとまりやすくなったりという実感は薄く、どうしてもこれでなければダメというほどの魅力は感じませんでした。",
-        "supportingSourceIds": ["src-cosme-10156285"],
+        "supportingSourceIds": [
+          "src-cosme-10156285"
+        ],
         "sentiment": "mixed"
       },
       {
         "userType": "20代女性・乾燥肌",
         "scenario": "朝のブロー前の髪の保護として",
         "experience": "さらっとしたテクスチャーで髪にスッと馴染むので、ブロー前に使うのが好きです。優しい森の香りに癒されながら、心やすらぐ指通りに仕上がります。合成香料不使用の自然な香りが選んだ理由です。",
-        "supportingSourceIds": ["src-cosme-10156285"],
+        "supportingSourceIds": [
+          "src-cosme-10156285"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -77,7 +83,10 @@
         "claim": "髪質改善が期待できる（植物オイル配合で髪を補修する効果）",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-cosme-10156285", "src-amazon-B079S1WB7S"],
+        "supportingSourceIds": [
+          "src-cosme-10156285",
+          "src-amazon-B079S1WB7S"
+        ],
         "crossChecked": true,
         "notes": "メーカーの商品説明で謳われているが、ユーザーレビューでは「まとまる」「サラサラになる」という即効性の実感はあるものの、根本的な「髪質改善」までの劇的な効果を実感しているという声は少なく、あくまで日常的な保湿・保護ケアの範囲に留まる。"
       },
@@ -85,7 +94,9 @@
         "claim": "ヘアアイロン・ドライヤーなどの熱から髪を守るヒートプロテクト処方",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-B079S1WB7S"],
+        "supportingSourceIds": [
+          "src-amazon-B079S1WB7S"
+        ],
         "crossChecked": true,
         "notes": "配合されている植物性オイル（シクロペンタシロキサン等のベース成分を含む）の一般的な特性として、髪表面をコーティングして熱から保護する機能は妥当である。"
       }
@@ -204,6 +215,7 @@
         "無添加処方: 合成香料不使用、合成着色料不使用、鉱物油不使用、パラベンフリー、紫外線吸収剤不使用、アルコールフリー、サルフェートフリー",
         "主な保湿成分: オリーブ果実油、アルガニアスピノサ核油、シア脂油、ホホバ種子油など多数の植物オイル、セラミドNP"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,280"
   }
 }

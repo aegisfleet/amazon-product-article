@@ -28,14 +28,18 @@
         "userType": "テレワーカー",
         "scenario": "自宅での長時間のPC作業",
         "experience": "120Hzのリフレッシュレートにより、スクロール時やウィンドウの移動時の残像感が少なく、目の負担が軽減されているのを感じます。ブルーライト軽減機能とフリッカーフリー機能のおかげで、長時間画面を見ていても目が疲れにくいです。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "カジュアルゲーマー",
         "scenario": "休日の動画視聴とゲームプレイ",
         "experience": "IPSパネルの発色が良く、動画やゲームの映像が鮮やかです。ただし、スピーカーが内蔵されていないため、イヤホン端子に外部スピーカーを接続する必要がありました。DisplayPortがない点もPCの構成によっては不便かもしれません。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -69,7 +73,10 @@
         "claim": "120Hzのリフレッシュレートと1ms(MPRT)の応答速度に対応",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "AmazonおよびASUS公式サイトのスペック表で確認"
       },
@@ -77,7 +84,10 @@
         "claim": "ベゼルやボタンに独自の抗菌加工を施している",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "製品の独自機能として明記されている"
       }
@@ -201,6 +211,7 @@
       "speaker": "非搭載",
       "specialFeatures": "抗菌加工、ブルーライト軽減、フリッカーフリー、Adaptive Sync",
       "warranty": "購入日より3年間の日本国内保証"
-    }
+    },
+    "investigatedPrice": "￥13,980"
   }
 }

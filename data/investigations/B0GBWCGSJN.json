@@ -29,7 +29,9 @@
         "userType": "出張が多いビジネスマン",
         "scenario": "ホテルやカフェでPCとスマホを同時に充電",
         "experience": "出張のたびに充電器と複数のケーブルを持ち歩いていましたが、この充電器にしてから荷物が減りました。95cmのケーブルが内蔵されているので、別途ケーブルを出さずにすぐPCを充電でき、空いているポートでスマホも同時に充電できるのが非常に便利です。プラグも折りたためてコンパクトなのが決め手でした。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -52,7 +54,9 @@
         "claim": "最大3台のデバイスを同時に充電可能",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "内蔵Type-C、USB-C、USB-Aの3ポート構成で仕様通り"
       }
@@ -156,7 +160,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (2,373円という安価な価格設定と機能性の高さによる優れたコスパ)\n[加点: +8] (95cmの長い巻き取りケーブル内蔵と3ポートによる高い利便性)\n[加点: +5] (GaN採用によるコンパクトな設計)\n[減点: -3] (無名ブランドかつケーブル断線時の交換不可リスク)\n[合計: 90]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "53mm", "width": "32mm", "depth": "69mm" },
+      "dimensions": {
+        "height": "53mm",
+        "width": "32mm",
+        "depth": "69mm"
+      },
       "weight": "130g",
       "power": "最大65W出力 (PD対応)",
       "ports": "内蔵Type-Cケーブル x1, USB-C x1, USB-A x1",
@@ -168,6 +176,7 @@
         "PSE技術基準適合",
         "PD3.0 / QC4+ / PPS 等対応"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,192"
   }
 }

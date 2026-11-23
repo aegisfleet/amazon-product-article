@@ -43,7 +43,9 @@
         "claim": "最大8Kでの1画面出力、または最大4Kでの3画面同時出力に対応する",
         "category": "performance",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式ページの製品特徴に記載あり"
       },
@@ -51,7 +53,9 @@
         "claim": "最大140WのUSB PD給電に対応し、ノートPCを急速充電可能",
         "category": "performance",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式ページの製品仕様に記載あり"
       }
@@ -173,6 +177,7 @@
         "冷却機能: 常時温度管理システムActiveShield 3.0および冷却ファン内蔵",
         "要件: DisplayLinkアプリのダウンロードが必要"
       ]
-    }
+    },
+    "investigatedPrice": "￥39,990"
   }
 }

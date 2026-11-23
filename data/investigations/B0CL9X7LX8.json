@@ -3,7 +3,11 @@
     "productName": "MOUNTUP 自立式 上下2画面モニターアーム",
     "parentAsin": "B0CL9X7LX8",
     "productDescription": "約33.0cm～81.3cmのディスプレイを縦に2画面設置できる、自立式PCモニタースタンド。各アームの耐荷重は15kg（合計30kg）で、チルト、パン、ピボット機能に対応し、多段階の高さ調整が可能です。",
-    "productUsage": ["上下2画面でのPC作業", "デスク上の省スペース化", "モニターの高さ・角度調整による作業環境の改善"],
+    "productUsage": [
+      "上下2画面でのPC作業",
+      "デスク上の省スペース化",
+      "モニターの高さ・角度調整による作業環境の改善"
+    ],
     "positivePoints": [
       "約33.0cm～81.3cmと幅広いサイズのモニターに対応",
       "各アームの耐荷重が15kg（合計30kg）と堅牢",
@@ -14,7 +18,11 @@
       "自立式のベース部分がデスク上で一定のスペースを占有する",
       "各15kgの耐荷重を支えるため、スタンド自体の重量が重い可能性がある"
     ],
-    "useCases": ["プログラミングやデータ入力など、縦に広い表示領域が必要な作業", "省スペースなデスクでのデュアルモニター環境構築", "クランプ固定ができないガラステーブル等でのデュアルモニター設置"],
+    "useCases": [
+      "プログラミングやデータ入力など、縦に広い表示領域が必要な作業",
+      "省スペースなデスクでのデュアルモニター環境構築",
+      "クランプ固定ができないガラステーブル等でのデュアルモニター設置"
+    ],
     "userStories": [],
     "userImpression": "クランプで固定できないデスクでも上下2画面のデュアルモニター環境を構築できる、堅牢で安定性の高い自立式スタンドとして評価されます。",
     "sources": [
@@ -35,7 +43,9 @@
         "claim": "耐荷重は各15kg（合計30kg）で、約33.0cm～81.3cmのディスプレイに対応",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-b0cl9x7lx8"],
+        "supportingSourceIds": [
+          "amazon-b0cl9x7lx8"
+        ],
         "crossChecked": false,
         "notes": "Amazon商品ページの商品説明にて確認"
       },
@@ -43,7 +53,9 @@
         "claim": "チルト（上下傾き）上30°/下30°、パン（左右首振り）左45°/右45°、ピボット機能（回転360°）に対応",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-b0cl9x7lx8"],
+        "supportingSourceIds": [
+          "amazon-b0cl9x7lx8"
+        ],
         "crossChecked": false,
         "notes": "Amazon商品ページの商品説明にて確認"
       }
@@ -156,6 +168,7 @@
       "pivot": "360°回転",
       "color": "ブラック",
       "warranty": "3年間品質保証"
-    }
+    },
+    "investigatedPrice": "￥3,399"
   }
 }

@@ -3,16 +3,35 @@
     "productName": "消臭力 プレミアムアロマ 部屋用 置き型 アーバンリュクス 400mL×3個",
     "parentAsin": "B08X7QPRL1",
     "productDescription": "パフューマーが厳選したフレグランスオイルを配合し、香水調の香りが空間に広がる置き型消臭・芳香剤。ナノパウダー配合で悪臭をすばやく強力に消臭します。",
-    "productUsage": ["部屋の消臭", "部屋の芳香", "玄関やリビング、寝室のルームフレグランスとして"],
-    "positivePoints": ["高級感のある香水調の香り", "ナノパウダー配合で強力な消臭効果", "香りの強さが調節可能", "大容量(400mL)で2〜3ヶ月持続", "お得な3個セット"],
-    "negativePoints": ["香りの好みが分かれる可能性がある", "効果持続期間は使用環境に依存する"],
-    "useCases": ["リビングや寝室に置いてリラックス空間を演出する", "玄関に置いて来客時に良い香りでお出迎えする", "部屋の生活臭をしっかり消臭しつつ、好みの香りで満たす"],
+    "productUsage": [
+      "部屋の消臭",
+      "部屋の芳香",
+      "玄関やリビング、寝室のルームフレグランスとして"
+    ],
+    "positivePoints": [
+      "高級感のある香水調の香り",
+      "ナノパウダー配合で強力な消臭効果",
+      "香りの強さが調節可能",
+      "大容量(400mL)で2〜3ヶ月持続",
+      "お得な3個セット"
+    ],
+    "negativePoints": [
+      "香りの好みが分かれる可能性がある",
+      "効果持続期間は使用環境に依存する"
+    ],
+    "useCases": [
+      "リビングや寝室に置いてリラックス空間を演出する",
+      "玄関に置いて来客時に良い香りでお出迎えする",
+      "部屋の生活臭をしっかり消臭しつつ、好みの香りで満たす"
+    ],
     "userStories": [
       {
         "userType": "一般家庭のユーザー",
         "scenario": "玄関やリビングのニオイ対策として使用",
         "experience": "アーバンリュクスの上品な香りが部屋中に広がり、まるでホテルや高級サロンのような空間を演出してくれます。ナノパウダーによる消臭効果もしっかりしており、嫌な生活臭をカバーしてくれます。400mLの大容量で長持ちするため、何度も買い替える手間が省けて便利です。",
-        "supportingSourceIds": ["src-amazon-features"],
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -35,7 +54,9 @@
         "claim": "ナノパウダー配合ですばやく強力に空間を消臭",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-features"],
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
         "crossChecked": false,
         "notes": "公式情報に基づく機能説明。"
       },
@@ -43,7 +64,9 @@
         "claim": "通常約2～3ヶ月持続（使用環境による）",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-features"],
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
         "crossChecked": false,
         "notes": "公式の持続期間の目安。"
       }
@@ -164,6 +187,7 @@
         "成分: フレグランスオイル、ナノパウダー配合",
         "用途: 消臭・芳香剤 室内(玄関・リビング)用"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,215"
   }
 }

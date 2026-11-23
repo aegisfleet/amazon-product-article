@@ -3,7 +3,12 @@
     "productName": "Pasinaz アウトドアワゴン 261L ブラック",
     "parentAsin": "B0GXK87JDR",
     "productDescription": "大容量261L、耐荷重180kg〜200kgを誇る折りたたみ式のアウトドアワゴン。極厚クッションのベンチや簡易コットとしても利用可能な2WAY仕様が特徴です。",
-    "productUsage": ["キャンプでの荷物運搬", "ピクニックでのベンチ・コット利用", "庭やベランダでの休憩", "重量物や大型荷物の収納・運搬"],
+    "productUsage": [
+      "キャンプでの荷物運搬",
+      "ピクニックでのベンチ・コット利用",
+      "庭やベランダでの休憩",
+      "重量物や大型荷物の収納・運搬"
+    ],
     "positivePoints": [
       "座面と背もたれに極厚EPEクッションを採用し、長時間座っても快適",
       "直径16cmのノーパンクPU素材ビックタイヤで悪路でもスムーズに走行可能",
@@ -38,7 +43,9 @@
         "claim": "最大容量261L、耐荷重180kg〜200kg",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品詳細データより"
       },
@@ -46,7 +53,9 @@
         "claim": "極厚Wクッションとリクライニング機能を備え、ベンチや簡易コットとして使用可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品詳細データより"
       }
@@ -167,6 +176,7 @@
         "ワンタッチブレーキ搭載",
         "リクライニング機能付き"
       ]
-    }
+    },
+    "investigatedPrice": "￥11,800"
   }
 }

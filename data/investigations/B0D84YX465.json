@@ -3,7 +3,11 @@
     "productName": "Spigen EZ Fit ガラスフィルム (iPhone 17 Pro / 16 Pro 対応 2枚入)",
     "parentAsin": "B0FRS823ZM",
     "productDescription": "SpigenのiPhone 17 Pro / iPhone 16 Pro対応の強化ガラスフィルム。専用の貼り付けトレイ「EZ Fit」が付属し、初心者でもズレや気泡なく簡単に貼り付けられる設計になっている。2枚入りでコストパフォーマンスも良好。",
-    "productUsage": ["スマートフォンの画面保護", "落下時の画面割れ防止", "画面への指紋・汚れ付着防止"],
+    "productUsage": [
+      "スマートフォンの画面保護",
+      "落下時の画面割れ防止",
+      "画面への指紋・汚れ付着防止"
+    ],
     "positivePoints": [
       "専用の貼り付けトレイ（ガイド枠）が付属し、ズレや気泡がなく一発で綺麗に貼れる",
       "ナノコーティングによる指滑りの良さと、指紋の拭き取りやすさ",
@@ -13,20 +17,28 @@
       "日光の下など強い光の当たる屋外では反射して画面が見づらくなることがある",
       "防指紋コーティングはあるものの、指紋跡がやや残りやすいと感じるユーザーもいる"
     ],
-    "useCases": ["日常的なスマートフォンの使用", "iPhoneを落としやすい環境での作業", "フィルム貼りが苦手な方"],
+    "useCases": [
+      "日常的なスマートフォンの使用",
+      "iPhoneを落としやすい環境での作業",
+      "フィルム貼りが苦手な方"
+    ],
     "userStories": [
       {
         "userType": "フィルム貼りが苦手なユーザー",
         "scenario": "新しいiPhoneを購入し、失敗せず綺麗にフィルムを貼りたい",
         "experience": "これまでフィルム貼りで何度も失敗してきたが、専用のガイド枠のおかげで上からまっすぐ置くだけでズレずに一発で綺麗に貼れた。気泡も自然に抜け、仕上がりに大満足している。風呂場で作業するとホコリも入らずさらに完璧だった。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "Spigen製品リピーター",
         "scenario": "数年にわたりiPhoneの機種変更のたびに購入",
         "experience": "iPhone12の時から5年間ずっとこの製品をリピートしている。ゲームをする際も指滑りが良く、引っかかりを感じない。指紋がついてもサッと拭き取れて、落としてもまだ一度も画面が割れたことがなく信頼している。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -49,7 +61,9 @@
         "claim": "EZ Fitによる失敗のない簡単な貼り付けが可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "crossChecked": true,
         "notes": "多数のユーザーがガイド枠によってズレや気泡なく貼れたと報告している。"
       },
@@ -57,7 +71,9 @@
         "claim": "高い耐衝撃性とケースとの親和性",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "crossChecked": true,
         "notes": "落としても割れなかったという声や、Spigenケースをはじめとするケース類と干渉しない点が評価されている。"
       }
@@ -178,6 +194,7 @@
         "対応機種: iPhone 17 Pro / iPhone 17 / iPhone 16 Pro",
         "付属品: EZ Fitトレイ、クリーニングキット、スクイージー（ヘラ）、ホコリ取りシール"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,998"
   }
 }

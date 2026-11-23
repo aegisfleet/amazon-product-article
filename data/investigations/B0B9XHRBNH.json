@@ -28,21 +28,28 @@
         "userType": "一般ユーザー",
         "scenario": "魚の炊き込みご飯を調理した後の手入れ",
         "experience": "炊き込みご飯を作った後、釜に魚のにおいが残って気になりましたが、洗浄モードを使用したらしっかりにおいが消えました。気兼ねなく色々なメニューに挑戦できます。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "一般ユーザー",
         "scenario": "毎日の炊飯と片付け",
         "experience": "フルフラットなタッチパネルは操作しやすく、本体の汚れもサッと拭き取れて清潔を保てます。ただ、内釜がずっしりと重く、蒸気口のパーツを毎回分解して洗うのは少し手間に感じました。",
-        "supportingSourceIds": ["src-1", "src-3"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-3"
+        ],
         "sentiment": "mixed"
       },
       {
         "userType": "一般ユーザー",
         "scenario": "様々な種類のお米の炊き比べ",
         "experience": "白米は水分のバランスが良く一粒一粒の輪郭がはっきりした粘りある食感に。玄米はプチプチとした歯ごたえで旨みが感じられ、タイ米（長粒米）も専用モードでパラっと美味しく炊き上がりました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -87,7 +94,10 @@
         "claim": "遠赤外線と高火力IHにより、お米の表面にハリが出て甘みが閉じ込められ、粒立ちの良いご飯が炊き上がる",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-3"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-3"
+        ],
         "crossChecked": true,
         "notes": "実機レビューにて白米の炊き上がりについて一貫した評価が確認できる。"
       },
@@ -95,7 +105,11 @@
         "claim": "独自の球状で3.0mm厚の本釜が大きな熱対流を起こし、加熱ムラを抑える",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2", "src-3"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2",
+          "src-3"
+        ],
         "crossChecked": true,
         "notes": "スペック情報および内釜の形状に対する評価として複数ソースで一致。"
       },
@@ -103,7 +117,10 @@
         "claim": "洗浄機能を使用することで、炊き込みご飯などの調理後のにおい残りを効果的に抑えられる",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-3"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-3"
+        ],
         "crossChecked": true,
         "notes": "実証レビューにて、においがしっかり消えることが確認されている。"
       }
@@ -225,6 +242,7 @@
         "洗浄機能搭載",
         "タッチパネル操作"
       ]
-    }
+    },
+    "investigatedPrice": "￥25,800"
   }
 }

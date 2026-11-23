@@ -3,7 +3,11 @@
     "productName": "ハイセンス 冷蔵庫 295L HR-K280LS スペースグレー",
     "parentAsin": "B0G6ZQK9N1",
     "productDescription": "幅55cmのスリムボディに295Lの大容量を収めた3ドア冷蔵庫。使用頻度の高い野菜室を真ん中に配置し、使い勝手を向上。ファン式自動霜取りや静音設計など、日常の快適さに配慮したモデルです。",
-    "productUsage": ["食材の冷蔵保存", "冷凍食品・作り置きの冷凍保存", "野菜・果物の鮮度保持"],
+    "productUsage": [
+      "食材の冷蔵保存",
+      "冷凍食品・作り置きの冷凍保存",
+      "野菜・果物の鮮度保持"
+    ],
     "positivePoints": [
       "幅55cmというスリムな設計ながら295Lの容量を確保",
       "ファン式冷却による自動霜取り機能を搭載し、手動での霜取りが不要",
@@ -15,20 +19,28 @@
       "左開きモデルの展開がなく、右開きのみの仕様",
       "同容量帯の競合（アイリスオーヤマ等）と比べると、奥行きがやや大きい（67.8cm）"
     ],
-    "useCases": ["二人暮らしのメイン冷蔵庫として", "自炊の頻度が高い単身者のまとめ買い用として", "キッチンに幅の制約があるが容量を確保したいご家庭"],
+    "useCases": [
+      "二人暮らしのメイン冷蔵庫として",
+      "自炊の頻度が高い単身者のまとめ買い用として",
+      "キッチンに幅の制約があるが容量を確保したいご家庭"
+    ],
     "userStories": [
       {
         "userType": "二人暮らし",
         "scenario": "週末のまとめ買い",
         "experience": "以前は200L弱の冷蔵庫で常にパンパンでしたが、この冷蔵庫に替えてから作り置きタッパーや鍋ごと入れられるようになり助かっています。特に折りたたみ棚のおかげで背の高い容器も余裕です。",
-        "supportingSourceIds": ["src-specs"],
+        "supportingSourceIds": [
+          "src-specs"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "自炊派の単身者",
         "scenario": "日々の自炊・野菜の調理",
         "experience": "真ん中野菜室が想像以上に便利です。重いキャベツや大根を取り出すときにかがまなくて済むので腰の負担が減りました。音も静かなのでワンルームに置いても気になりません。",
-        "supportingSourceIds": ["src-specs"],
+        "supportingSourceIds": [
+          "src-specs"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -51,7 +63,9 @@
         "claim": "ファン式で霜取り不要",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-specs"],
+        "supportingSourceIds": [
+          "src-specs"
+        ],
         "crossChecked": true,
         "notes": "スペック表および機能紹介にてファン式冷却機構の搭載を確認。"
       },
@@ -59,7 +73,9 @@
         "claim": "静音設計",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-specs"],
+        "supportingSourceIds": [
+          "src-specs"
+        ],
         "crossChecked": true,
         "notes": "メーカーの共通機能として約23dBの静音設計がアピールされている（別モデルでも共通）。"
       }
@@ -180,6 +196,7 @@
         "大容量ドアポケット",
         "節電モード搭載"
       ]
-    }
+    },
+    "investigatedPrice": "￥55,800"
   }
 }

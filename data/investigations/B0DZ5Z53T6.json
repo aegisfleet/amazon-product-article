@@ -29,14 +29,18 @@
         "userType": "Vlogger・配信者",
         "scenario": "室内でのWebカメラ利用や長時間配信",
         "experience": "Pocket 3をWebカメラとしてPCに繋ぐ際、純正や安価なベースだとケーブルの取り回しが悪かったが、この製品は側面にType-Cポートがあるため安定して設置できた。充電しながらの長時間稼働にも対応でき、アルミ製の質感も高くて満足している。",
-        "supportingSourceIds": ["src-amazon-spec"],
+        "supportingSourceIds": [
+          "src-amazon-spec"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "アウトドアカメラマン",
         "scenario": "屋外での様々なマウント機器との併用",
         "experience": "底面のGoProコネクターが普段は隠れており、必要な時にだけ引き出してチェストマウントなどに固定できるのが非常に便利。さらに側面がアルカスイス対応なので、三脚への移行もスムーズに行え、撮影の幅が大きく広がった。マグネット式でない点は好みが分かれるが、物理ロックで脱落の心配がないのは安心。",
-        "supportingSourceIds": ["src-amazon-spec"],
+        "supportingSourceIds": [
+          "src-amazon-spec"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -59,7 +63,9 @@
         "claim": "側面充電ポート設計により、撮影中にバッテリーの切れを心配する必要がない。データ転送機能があるフル機能データポートでWebカメラでも使用可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-spec"],
+        "supportingSourceIds": [
+          "src-amazon-spec"
+        ],
         "crossChecked": true,
         "notes": "Type-Cパススルー機能を備えており、給電および通信が仕様上可能であることを確認。"
       },
@@ -67,7 +73,9 @@
         "claim": "底面に1/4ネジ穴と隠蔽型Goproコネクター、側面にActionインターフェースとアルカ対応",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-spec"],
+        "supportingSourceIds": [
+          "src-amazon-spec"
+        ],
         "crossChecked": true,
         "notes": "複数の規格に1台で対応する物理的設計。競合製品（単なる1/4ネジのみや充電のみ）と比較して多機能性が際立つ。"
       }
@@ -149,6 +157,7 @@
       ],
       "compatibility": "DJI Osmo Pocket 3",
       "origin": "中国 (Ulanzi)"
-    }
+    },
+    "investigatedPrice": "￥2,999"
   }
 }

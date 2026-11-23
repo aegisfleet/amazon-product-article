@@ -30,14 +30,18 @@
         "userType": "4人家族の主婦",
         "scenario": "忙しい平日夜の夕食準備",
         "experience": "仕事から帰ってきて夕食を作る気力がない時に、レンジで温めるだけのチャーハンと焼くだけの餃子に何度も助けられました。子供たちも「お店の味がする！」と大喜びで食べてくれます。選んだ決め手は、炒飯が袋のままレンジ加熱できる手軽さと、圧倒的なコストパフォーマンスの良さです。ただ、届いた時は冷凍庫がパンパンになったので、事前のスペース確保は必須でした。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "一人暮らしの会社員",
         "scenario": "在宅勤務時のランチ",
         "experience": "直火炒めチャーハンと豚カルビチャーハンの2種類がたっぷり入っているので、毎日食べても飽きません。特に豚カルビチャーハンの柚子の香りがさっぱりしていてお気に入りです。競合のスーパーの冷凍炒飯より具材がゴロゴロしていて満足感が高かったのが、この商品を選んだ理由です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -71,7 +75,9 @@
         "claim": "国産豚肉100％使用、国内契約農家のキャベツを使用（こだわり餃子）",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーの商品説明にて明記されている"
       },
@@ -79,7 +85,9 @@
         "claim": "袋のままレンジで温めるだけの簡単調理（炒飯）",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "専用パッケージにより実現している機能"
       }
@@ -119,7 +127,13 @@
       "capacity": "餃子124個（肉餃子、こだわり餃子）、炒飯24袋（直火炒めチャーハン、豚カルビチャーハン）",
       "storageCondition": "冷凍（-18℃以下）保存",
       "shelfLife": "60日以上",
-      "allergens": ["豚肉", "小麦", "卵", "ごま"]
-    }
+      "allergens": [
+        "豚肉",
+        "小麦",
+        "卵",
+        "ごま"
+      ]
+    },
+    "investigatedPrice": "￥17,290"
   }
 }

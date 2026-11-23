@@ -30,14 +30,18 @@
         "userType": "キャンパー",
         "scenario": "キャンプ場でシャワーや着替えを行う際",
         "experience": "キャンプ場での着替え用に購入しました。ポップアップ式なので袋から出すだけで一瞬で設営でき、非常に楽です。内側はPUコーティングで中が透けないため、安心して着替えられます。ランタンフックや小物ポケットがあるのも便利でした。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "防災備蓄検討者",
         "scenario": "災害用トイレの目隠しとしての購入",
         "experience": "防災用の簡易トイレとセットで備蓄するために購入しました。中が透けない工夫がされており、天井のメッシュとフライシートで通気性と雨よけを両立している点が素晴らしいです。たたみ方も動画で確認できるため、いざという時でも安心です。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -60,7 +64,9 @@
         "claim": "わずか5秒でパッと開くワンタッチ着替えテント",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "crossChecked": true,
         "notes": "商品ページの特徴欄に記載"
       },
@@ -68,7 +74,9 @@
         "claim": "透けないPUコーティング加工でプライバシーをしっかり保護",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "crossChecked": true,
         "notes": "商品ページの特徴欄に記載"
       }
@@ -190,6 +198,7 @@
         "フライシート付属",
         "たたみ方動画確認コード付き"
       ]
-    }
+    },
+    "investigatedPrice": "￥4,980"
   }
 }

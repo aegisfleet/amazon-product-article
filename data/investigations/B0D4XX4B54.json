@@ -3,7 +3,11 @@
     "productName": "阪急デリカ 洋風＆中華メニューアソート 1食×6種",
     "parentAsin": "B0D4XX4B54",
     "productDescription": "阪急デリカアイが手掛ける、本格的な洋風・中華メニューが楽しめる冷凍弁当6食セット。デミソースハンバーグやグリルチキン、アクアパッツァなど、バラエティ豊かなメニューが特徴です。",
-    "productUsage": ["毎日の食事", "時短調理", "昼食・夕食"],
+    "productUsage": [
+      "毎日の食事",
+      "時短調理",
+      "昼食・夕食"
+    ],
     "positivePoints": [
       "オリジナルデミソースハンバーグ、アクアパッツァなど本格的な6種のメニュー構成",
       "1食あたり約525円という本格洋食・中華メニューとしては手頃な価格設定",
@@ -13,20 +17,28 @@
       "メニューが固定されており、好みに合わないメニューがある場合の選択肢がない",
       "熱量が202kcal〜438kcalとメニューによってバラつきがあり、厳格なカロリー管理には向かない場合がある"
     ],
-    "useCases": ["忙しい日の夕食", "手軽に本格的な味を楽しみたいランチ", "塩分を抑えつつ美味しい食事を摂りたい時"],
+    "useCases": [
+      "忙しい日の夕食",
+      "手軽に本格的な味を楽しみたいランチ",
+      "塩分を抑えつつ美味しい食事を摂りたい時"
+    ],
     "userStories": [
       {
         "userType": "忙しい共働き世帯",
         "scenario": "仕事で帰りが遅くなった日の夕食準備",
         "experience": "疲れて帰ってきた日でも、レンジで温めるだけで本格的な洋食や中華が楽しめるのが嬉しいです。特にデミグラスソースのハンバーグやアクアパッツァなど、普段自分では作りにくいメニューが手軽に食べられるので助かっています。味付けもしっかりしていて、冷凍弁当のイメージが変わりました。",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "塩分を気にするシニア層",
         "scenario": "毎日の健康的な食事の用意",
         "experience": "塩分が1食あたり2g前後に抑えられているのに、味が薄いと感じることはなく、美味しくいただけました。ただ、メニューによってカロリーの差があるので、その日の体調に合わせて食べるものを選ぶようにしています。",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -49,7 +61,9 @@
         "claim": "本格的な洋風・中華メニューが楽しめる",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": true,
         "notes": "デミソースハンバーグやアクアパッツァなど、メニュー構成から事実として確認できる"
       }
@@ -209,6 +223,7 @@
         "carbohydrates": "21.7g",
         "saltEquivalent": "1.9g"
       }
-    }
+    },
+    "investigatedPrice": "￥3,758"
   }
 }

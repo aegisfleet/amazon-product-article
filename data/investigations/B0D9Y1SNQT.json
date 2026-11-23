@@ -32,14 +32,18 @@
         "userType": "プログラマー・デスクワーカー",
         "scenario": "一日中PCの前で作業する環境",
         "experience": "以前から初代MX ERGOを愛用していましたが、クリック音が大きいのが気になっていました。MX ERGO Sでは静音スイッチになり、オンライン会議中でもマイクにクリック音が入らず快適です。また、ついに充電端子がMicro USBからUSB-Cになり、ケーブルを統一できたのが一番の決め手でした。価格は高いですが、毎日の手首の負担軽減を考えれば投資する価値があります。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "動画編集者",
         "scenario": "長時間のタイムライン操作",
         "experience": "プレシジョンボタンのおかげで、細かいキーフレームを打つ時は低速に、大きくタイムラインを移動する時は高速にと、ワンタッチで切り替えられるのが非常に便利です。ただ、重量がかなりあるため、カフェでの作業など外に持ち出す気にはなれません。据え置き専用として割り切って使っています。また、充電ケーブルが入っていない点には最初戸惑いました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -62,7 +66,9 @@
         "claim": "クリック音を80%削減",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "メーカー公式の仕様変更として明記。実際のレビュー傾向でも静音化は高く評価されている"
       },
@@ -70,7 +76,9 @@
         "claim": "1分間の充電で24時間、フル充電で最長120日間の使用が可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "バッテリー持続時間に関する公式スペック"
       }
@@ -180,7 +188,10 @@
         "depth": "51.4mm"
       },
       "weight": "259g",
-      "connectivity": ["Bluetooth Low Energy", "Logi Bolt USBレシーバー"],
+      "connectivity": [
+        "Bluetooth Low Energy",
+        "Logi Bolt USBレシーバー"
+      ],
       "battery": "充電式Li-Poバッテリー（500mAh）、1分充電で24時間、フル充電で最大120日",
       "sensor": "アドバンス オプティカル トラッキング",
       "dpi": "512～2000dpi",
@@ -192,6 +203,7 @@
         "Amazon.co.jp限定壁紙ダウンロード特典",
         "保証期間1年"
       ]
-    }
+    },
+    "investigatedPrice": "￥17,131"
   }
 }

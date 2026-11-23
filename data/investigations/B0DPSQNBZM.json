@@ -41,7 +41,9 @@
         "claim": "2本綿芯設計により、ワックスを満遍なく溶かしムラなく均一に燃焼する",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーの仕様として記載。物理的に2本の芯を配置することでワックスが均等に溶けやすくなる構造であると確認できる。"
       },
@@ -49,7 +51,9 @@
         "claim": "天然精油を配合し、きつすぎず刺激の少ない香り",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカー主張。香りの感じ方には個人差があるが、成分として天然精油が含まれていることはスペックから確認可能。"
       }
@@ -162,6 +166,7 @@
       "material": "ソイワックス（植物ワックスブレンド）、綿（芯）、ガラス（容器）",
       "burnTime": "約50時間",
       "fragrance": "サマーズ・ナイト（天然精油配合）"
-    }
+    },
+    "investigatedPrice": "￥1,999"
   }
 }

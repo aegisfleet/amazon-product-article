@@ -31,7 +31,9 @@
         "userType": "ミラーレス一眼ユーザー",
         "scenario": "普段使いのバッグでカメラを持ち歩きたい時",
         "experience": "専用のカメラバッグを使わずに、普段のトートバッグにカメラを入れて持ち歩くために購入しました。布同士がしっかりくっつくので、移動中にバッグの中でほどけることはありませんでした。また、出先でレンズの汚れが気になった際に、そのままクリーニングクロスとして使えるのが非常に便利で、別のクロスを持ち歩く手間が省けたのが決め手となりました。",
-        "supportingSourceIds": ["src-amazon-features"],
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -54,7 +56,9 @@
         "claim": "左右に振ってもバラバラにならず、洗濯しても変わらず強力にくっつき、リサイクルをサポートします。",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-features"],
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
         "crossChecked": false,
         "notes": "メーカーの主張。自己粘着素材の特性として一般的であるが、洗濯後の耐久性については長期的な検証が必要。"
       }
@@ -154,7 +158,12 @@
       "weight": "約130g",
       "material": "ポリマー素材、ナノマイクロファイバー",
       "color": "グリーン",
-      "features": ["自己粘着仕様", "洗濯機洗い対応", "クリーニングクロス機能"]
-    }
+      "features": [
+        "自己粘着仕様",
+        "洗濯機洗い対応",
+        "クリーニングクロス機能"
+      ]
+    },
+    "investigatedPrice": "￥1,880"
   }
 }

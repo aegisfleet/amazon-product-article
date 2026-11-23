@@ -3,10 +3,24 @@
     "productName": "アンダーアーマー ポロシャツ テックポロ",
     "parentAsin": "B0F86P4CT8",
     "productDescription": "速乾性に優れたテック素材を使用したメンズポロシャツ。ゴルフやトレーニングなど様々なスポーツシーンで活躍します。",
-    "productUsage": ["ゴルフ", "トレーニング", "スポーツ全般", "普段着"],
-    "positivePoints": ["吸汗速乾性に優れている", "軽量で動きやすい"],
-    "negativePoints": ["サイズ感が大きめな場合がある"],
-    "useCases": ["夏のゴルフラウンド", "ジムでのトレーニング", "クールビズでの通勤"],
+    "productUsage": [
+      "ゴルフ",
+      "トレーニング",
+      "スポーツ全般",
+      "普段着"
+    ],
+    "positivePoints": [
+      "吸汗速乾性に優れている",
+      "軽量で動きやすい"
+    ],
+    "negativePoints": [
+      "サイズ感が大きめな場合がある"
+    ],
+    "useCases": [
+      "夏のゴルフラウンド",
+      "ジムでのトレーニング",
+      "クールビズでの通勤"
+    ],
     "userStories": [],
     "userImpression": "吸汗速乾性に優れた素材で、夏のスポーツやアクティビティを快適にサポートするポロシャツとして評価されています。",
     "sources": [
@@ -27,7 +41,9 @@
         "claim": "吸汗速乾性に優れたテック素材を採用",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品の基本機能として記載"
       }
@@ -114,16 +130,30 @@
       }
     ],
     "recommendation": {
-      "targetUsers": ["ゴルフなどのスポーツをする方", "ジムでトレーニングをする方", "夏場を快適に過ごしたい方"],
-      "pros": ["吸汗速乾性に優れ快適", "スポーツブランドとしての信頼感"],
-      "cons": ["価格がやや高め", "サイズ選びに注意が必要"],
+      "targetUsers": [
+        "ゴルフなどのスポーツをする方",
+        "ジムでトレーニングをする方",
+        "夏場を快適に過ごしたい方"
+      ],
+      "pros": [
+        "吸汗速乾性に優れ快適",
+        "スポーツブランドとしての信頼感"
+      ],
+      "cons": [
+        "価格がやや高め",
+        "サイズ選びに注意が必要"
+      ],
       "score": 75,
       "scoreRationale": "[基本点: 70]\n[加点: +5] (吸汗速乾性に優れたスポーツに最適な機能性)\n[合計: 75]"
     },
     "technicalSpecs": {
       "color": "ミッドナイトネイビー グラファイト グラファイト",
       "size": "L (日本サイズL相当)",
-      "dimensions": { "height": "10.0mm", "width": "10.0mm", "depth": "10.0mm" },
+      "dimensions": {
+        "height": "10.0mm",
+        "width": "10.0mm",
+        "depth": "10.0mm"
+      },
       "weight": "150.3g",
       "model": "1290140",
       "releaseDate": "2017-02-15",
@@ -135,6 +165,7 @@
         "SIZE:XXL 身長182-188cm、胸囲101-107cm、ウエスト87-93cm",
         "SIZE:3XL 身長187-193cm、胸囲105-113cm、ウエスト91-97cm"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,352"
   }
 }

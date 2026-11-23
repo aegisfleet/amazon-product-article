@@ -3,7 +3,12 @@
     "productName": "ワイヤレスイヤホン Bloomtwin AP28",
     "parentAsin": "B0HCJZZ413",
     "productDescription": "Bluetooth 6.0を搭載し、最大60時間の再生が可能なコンパクトなワイヤレスイヤホンです。IPX7の防水性能とENC通話ノイズ低減機能を備え、幅広いシーンで活用できます。",
-    "productUsage": ["音楽再生", "通話/WEB会議", "スポーツ/ランニング", "通勤・通学"],
+    "productUsage": [
+      "音楽再生",
+      "通話/WEB会議",
+      "スポーツ/ランニング",
+      "通勤・通学"
+    ],
     "positivePoints": [
       "Bluetooth 6.0採用による低遅延・高安定な通信と、最大60時間のロングバッテリーを両立",
       "イヤホン片側約4g、充電ケースを含めても約60.8gと軽量で持ち運びに便利",
@@ -15,20 +20,28 @@
       "充電ケース自体は防水仕様ではないため、水濡れに注意が必要",
       "999円という非常に安価な価格設定であり、耐久性や長期的なサポートに不安が残る可能性がある"
     ],
-    "useCases": ["ジムでのトレーニングやランニング時の音楽鑑賞", "長時間の移動中における動画視聴・音楽再生", "リモートワーク時のWEB会議用ヘッドセットとして"],
+    "useCases": [
+      "ジムでのトレーニングやランニング時の音楽鑑賞",
+      "長時間の移動中における動画視聴・音楽再生",
+      "リモートワーク時のWEB会議用ヘッドセットとして"
+    ],
     "userStories": [
       {
         "userType": "通勤者",
         "scenario": "毎日の満員電車での通勤中に使用",
         "experience": "非常に安価だったのでとりあえず購入しました。Bluetooth 6.0のおかげか、人が多い場所でも音が途切れにくく快適です。充電を気にせず1週間以上使えるバッテリー持ちの良さが一番のメリットでした。",
-        "supportingSourceIds": ["src-amazon-specs"],
+        "supportingSourceIds": [
+          "src-amazon-specs"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ランナー",
         "scenario": "雨天時のランニングで使用",
         "experience": "IPX7の防水があるので、汗をかいても雨が降っても気にせず使えます。ただし、ケースは防水ではないので、走っている間は濡れないようにジップロックに入れて持ち歩いています。",
-        "supportingSourceIds": ["src-amazon-specs"],
+        "supportingSourceIds": [
+          "src-amazon-specs"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -51,7 +64,9 @@
         "claim": "最大60時間再生",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-specs"],
+        "supportingSourceIds": [
+          "src-amazon-specs"
+        ],
         "crossChecked": false,
         "notes": "ケース込みの総再生時間として一般的な数値だが、価格帯を考慮すると優秀。"
       },
@@ -59,7 +74,9 @@
         "claim": "40dBのノイズ低減（低周波数帯）",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-amazon-specs"],
+        "supportingSourceIds": [
+          "src-amazon-specs"
+        ],
         "crossChecked": false,
         "notes": "本格的なANCではなく、ENC通話ノイズ低減またはパッシブな遮音性の可能性が高い。"
       }
@@ -172,7 +189,12 @@
       },
       "waterResistance": "IPX7",
       "weight": "約4g（片側）、約60.8g（ケース）",
-      "other": ["ENC通話ノイズ低減", "瞬時自動ペアリング対応", "片耳/両耳対応"]
-    }
+      "other": [
+        "ENC通話ノイズ低減",
+        "瞬時自動ペアリング対応",
+        "片耳/両耳対応"
+      ]
+    },
+    "investigatedPrice": "￥999"
   }
 }

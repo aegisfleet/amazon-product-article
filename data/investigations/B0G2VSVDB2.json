@@ -27,7 +27,9 @@
         "userType": "小学生の保護者",
         "scenario": "子どもの新学期用や入学祝いとして",
         "experience": "子どもが大好きなシマエナガのデザインなので、進んで机に向かってくれるようになりました。六角軸で転がりにくく、学校指定の2Bである点も親としては安心です。",
-        "supportingSourceIds": ["src-amazon-B0G2VSVDB2"],
+        "supportingSourceIds": [
+          "src-amazon-B0G2VSVDB2"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -83,7 +85,9 @@
         "claim": "かわいい動物をあしらったパッケージと鉛筆軸で学習意欲を高める",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-B0G2VSVDB2"],
+        "supportingSourceIds": [
+          "src-amazon-B0G2VSVDB2"
+        ],
         "crossChecked": false,
         "notes": "メーカーのアピールポイントとして記載。レビューの好評さからも支持されている傾向がある。"
       }
@@ -146,7 +150,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (子どもに人気の高いシマエナガ柄による学習意欲の向上効果)\n[加点: +5] (2B・六角軸という学校推奨の王道スペックを備えている実用性)\n[減点: 0] (特筆すべきマイナス要素は少ないが、学校の規則による制約の可能性がある点のみ注意)\n[合計: 80]"
     },
     "technicalSpecs": {
-      "dimensions": { "width": "47mm", "height": "198mm", "depth": "17mm" },
+      "dimensions": {
+        "width": "47mm",
+        "height": "198mm",
+        "depth": "17mm"
+      },
       "weight": "66g",
       "capacity": "1ダース（12本入り）",
       "material": "木材、黒鉛",
@@ -158,6 +166,7 @@
         "紙箱入り",
         "uni Paletteシリーズ"
       ]
-    }
+    },
+    "investigatedPrice": "￥666"
   }
 }

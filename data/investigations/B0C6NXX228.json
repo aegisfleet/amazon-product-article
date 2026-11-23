@@ -28,7 +28,9 @@
         "userType": "在宅ワーカー",
         "scenario": "デスク周りの配線整理と複数機器の接続",
         "experience": "モニターやPC、スマホ充電器など複数の機器を繋ぐため購入しました。脚パーツのおかげで重いACアダプタを繋いでも倒れにくく、デスク裏のスチール部分にマグネットで固定できたことで配線が非常にスッキリしました。個別スイッチがないのが少し残念ですが、常時通電させる機器ばかりなので問題ありません。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -51,7 +53,9 @@
         "claim": "重いACアダプターなどを接続した際もタップが横転しにくい",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "360度回転可能な脚パーツを展開することで物理的に接地面積が増えるため、主張は妥当"
       }
@@ -170,6 +174,7 @@
         "ほこり防止シャッター",
         "広間隔差込口 (57mm×2箇所、35mm×7箇所)"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,699"
   }
 }

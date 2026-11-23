@@ -30,7 +30,9 @@
         "userType": "学生",
         "scenario": "受験勉強での長時間の使用",
         "experience": "自動芯出し機構のおかげで、芯を出すためにノックする手間が省け、集中力が途切れずに勉強に取り組めます。低重心でデュアルグリップの握り心地も良く、長時間書き続けても手が疲れにくいのが大きなメリットです。",
-        "supportingSourceIds": ["src-pentel-official"],
+        "supportingSourceIds": [
+          "src-pentel-official"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -53,7 +55,9 @@
         "claim": "ノック1回で芯が出続ける自動芯出し機構を搭載している。",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-pentel-official"],
+        "supportingSourceIds": [
+          "src-pentel-official"
+        ],
         "crossChecked": false,
         "notes": "公式サイトにて「自動芯出し機構」の記載を確認"
       },
@@ -61,7 +65,9 @@
         "claim": "金属とラバーのデュアルグリップを採用し、しっかり握れる。",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-pentel-official"],
+        "supportingSourceIds": [
+          "src-pentel-official"
+        ],
         "crossChecked": false,
         "notes": "公式サイトにて「デュアルグリップ」の記載を確認"
       }
@@ -167,7 +173,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +8] (ノック1回で書き続けられる画期的な自動芯出し機構)\n[加点: +5] (芯が折れにくいオレンズシステムによる筆記ストレスの軽減)\n[加点: +4] (低重心設計とデュアルグリップによる高いホールド感と疲れにくさ)\n[減点: -2] (芯詰まり発生時のメンテナンスが必要な点)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "136mm", "width": "12mm", "depth": "11mm" },
+      "dimensions": {
+        "height": "136mm",
+        "width": "12mm",
+        "depth": "11mm"
+      },
       "weight": "15g",
       "capacity": "",
       "material": "先金・前軸・ノック: 真鍮、ゴムグリップ: シリコン、後軸: ABS、クリップ: 鉄",
@@ -179,6 +189,7 @@
         "芯径: 0.5mm",
         "軸色: シルバー"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,469"
   }
 }

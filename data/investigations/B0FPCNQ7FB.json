@@ -41,7 +41,9 @@
         "claim": "ステンレス製で防錆性が高い",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "商品情報に明記"
       },
@@ -49,7 +51,9 @@
         "claim": "水がこぼれない・むせにくい設計",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "浮遊式ディスクによる効果として記載"
       }
@@ -154,7 +158,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (ステンレス製で手入れがしやすく衛生的)\n[加点: +5] (こぼれ防止・早飲み防止機能が実用的で評価が高い)\n[合計: 80]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "40mm", "width": "20mm", "depth": "30mm" },
+      "dimensions": {
+        "height": "40mm",
+        "width": "20mm",
+        "depth": "30mm"
+      },
       "weight": "152g",
       "capacity": "1.2L",
       "material": "ステンレス鋼",
@@ -163,6 +171,7 @@
         "color: ダークグレー",
         "model: SC-CW-0192-JP"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,999"
   }
 }

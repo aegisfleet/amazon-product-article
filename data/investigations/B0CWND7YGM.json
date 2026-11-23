@@ -3,7 +3,12 @@
     "productName": "フロム ダ ファクトリー ワンタッチ セグメントリング サージカルステンレス シルバー",
     "parentAsin": "B0CWND7YGM",
     "productDescription": "サージカルステンレスを使用した金属アレルギー対応のワンタッチセグメントリング。着脱が簡単で、ファーストピアスやセカンドピアスとしても適しています。",
-    "productUsage": ["軟骨ピアス", "ボディピアス", "ファーストピアス", "セカンドピアス"],
+    "productUsage": [
+      "軟骨ピアス",
+      "ボディピアス",
+      "ファーストピアス",
+      "セカンドピアス"
+    ],
     "positivePoints": [
       "ワンタッチで簡単に着脱できる",
       "サージカルステンレス製で金属アレルギーに対応している",
@@ -23,7 +28,9 @@
         "userType": "日常的にピアスを装着するユーザー",
         "scenario": "普段使い用のシンプルなリングピアスを探していた時",
         "experience": "ワンタッチ式で開きにくいことも無く、スムーズに着脱できました。色味や大きさも丁度良く、非常に気に入って日常的に着けっぱなしにしています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -46,7 +53,9 @@
         "claim": "サージカルステンレス素材を使用し、金属アレルギーに対応している",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品仕様および商品説明にて明記されている。"
       },
@@ -54,7 +63,9 @@
         "claim": "ワンタッチで着脱が可能なセグメントリングである",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品の主要な特徴として記載されており、レビューでも言及されている。"
       }
@@ -174,6 +185,7 @@
         "装着方式: ワンタッチヒンジ付きセグメントリング",
         "推奨部位: イヤーロブ、ヘリックス、トラガス、コンクなど"
       ]
-    }
+    },
+    "investigatedPrice": "￥349"
   }
 }

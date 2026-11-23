@@ -25,14 +25,18 @@
         "userType": "糖質制限中の人",
         "scenario": "朝食",
         "experience": "通常のフルグラより甘さ控えめで、牛乳やヨーグルトと合わせて食べると罪悪感が少なく美味しいです。ザクザクした食感が楽しめます。",
-        "supportingSourceIds": ["src-cosme-1"],
+        "supportingSourceIds": [
+          "src-cosme-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "グラノーラ好きの人",
         "scenario": "朝食や間食",
         "experience": "大豆たんぱくの風味が少し気になり、通常のフルグラと比べると味が単調に感じることがありますが、糖質オフとしては満足感があります。",
-        "supportingSourceIds": ["src-mognavi-1"],
+        "supportingSourceIds": [
+          "src-mognavi-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -77,7 +81,9 @@
         "claim": "通常のフルグラに比べて糖質が30％オフ",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-calbee-1"],
+        "supportingSourceIds": [
+          "src-calbee-1"
+        ],
         "crossChecked": true,
         "notes": "カルビー公式の商品情報で確認"
       },
@@ -85,7 +91,9 @@
         "claim": "たんぱく質、食物繊維、8種のビタミン、鉄分が豊富",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-calbee-1"],
+        "supportingSourceIds": [
+          "src-calbee-1"
+        ],
         "crossChecked": true,
         "notes": "カルビー公式の栄養成分表示で確認"
       }
@@ -193,9 +201,17 @@
       "capacity": "1000g×2袋",
       "calories": "238kcal (1食分50g当たり)",
       "ingredients": "大豆たんぱく（国内製造）、オーツ麦、植物油、ココナッツ、砂糖、デキストリン、ライ麦粉、クラッシュアーモンド、水溶性食物繊維、乾燥果実（レーズン、いちご）、小麦粉、スライスアーモンド、かぼちゃの種、アーモンドミルク、米粉、コーンフラワー、食塩、小麦ふすま、玄米粉、乳糖 / グリセリン、炭酸Ｃａ、クエン酸鉄Ｎａ、香辛料抽出物、酸化防止剤（ビタミンＣ、ビタミンＥ、ローズマリー抽出物）、加工デンプン、ナイアシン、パントテン酸Ｃａ、酸味料、ビタミンＡ、ビタミンＢ６、ビタミンＢ１、葉酸、ビタミンＤ、ビタミンＢ１２",
-      "allergens": ["乳成分", "小麦", "アーモンド", "大豆"],
+      "allergens": [
+        "乳成分",
+        "小麦",
+        "アーモンド",
+        "大豆"
+      ],
       "nutrition": "1食分50g当たり：たんぱく質 9.3g、脂質 12.7g、コレステロール 0mg、炭水化物 25.1g（糖質 18.2g、食物繊維 6.9g）、食塩相当量 0.2g、カルシウム 120mg、鉄 5.0mg、ビタミンA 257μg、ビタミンD 1.84μg、ビタミンB1 0.40mg、ナイアシン 5.5mg、ビタミンB6 0.44mg、ビタミンB12 0.80μg、葉酸 96μg、パントテン酸 1.6mg",
-      "other": ["対象年齢: 6才以上"]
-    }
+      "other": [
+        "対象年齢: 6才以上"
+      ]
+    },
+    "investigatedPrice": "￥3,025"
   }
 }

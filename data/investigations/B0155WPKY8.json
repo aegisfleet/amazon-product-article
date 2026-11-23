@@ -26,14 +26,18 @@
         "userType": "会社員",
         "scenario": "職場でのお弁当のお供に",
         "experience": "毎日お弁当を持参していますが、温かい汁物があると満足度が違います。この商品は種類が豊富で毎日選ぶ楽しさがあり、お湯を注ぐだけなのでオフィスでも重宝しています。価格も手頃で助かっています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "主婦",
         "scenario": "忙しい朝の食卓で",
         "experience": "朝の忙しい時間帯に、家族それぞれの好みに合わせて手軽に味噌汁が出せるのがありがたいです。具材は少し物足りない時もありますが、乾燥わかめなどを足して工夫しています。",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -67,7 +71,9 @@
         "claim": "50通りの味が楽しめる",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "5種の味噌と10種の具材の組み合わせによる仕様。"
       },
@@ -75,7 +81,9 @@
         "claim": "1食あたり約30円と経済的",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "1855円/60食で計算。他社製品と比較しても安価な部類。"
       }
@@ -187,12 +195,16 @@
       "capacity": "60食",
       "calories": "30～32kcal (調味みそ1食あたり)、2～5kcal (具材1食あたり)",
       "shelfLife": "未記載",
-      "allergens": ["小麦", "大豆"],
+      "allergens": [
+        "小麦",
+        "大豆"
+      ],
       "ingredients": "【調味みそ】米みそ、豆みそ、麦みそ、食塩、昆布エキス、かつお節エキス等 【具】わかめ、オクラ、とうふ、油あげ、白菜、ほうれん草、かきたま、長ねぎ、チンゲン菜、あおさ等",
       "other": [
         "生みそタイプ",
         "5種の産地別みそ(仙台、信州、三州、加賀、九州)"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,615"
   }
 }

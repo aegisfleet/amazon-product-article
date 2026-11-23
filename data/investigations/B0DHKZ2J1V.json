@@ -28,7 +28,9 @@
         "userType": "一般ユーザー",
         "scenario": "帰宅前にエアコンをつけようとした",
         "experience": "「帰宅30分前にエアコンを付ける」目的で購入したが、シャープの2025年製エアコンが反応しなかった。また、他の家電の設定も行ってみたが、設定がしづらく、設定後も使いづらいと感じた。",
-        "supportingSourceIds": ["kakaku-review-1"],
+        "supportingSourceIds": [
+          "kakaku-review-1"
+        ],
         "sentiment": "negative"
       }
     ],
@@ -59,7 +61,9 @@
         "claim": "一部の最新家電（シャープ製2025年モデル等）で反応しない場合がある",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["kakaku-review-1"],
+        "supportingSourceIds": [
+          "kakaku-review-1"
+        ],
         "crossChecked": false,
         "notes": "ユーザーレビューでの報告"
       }
@@ -153,12 +157,18 @@
     "technicalSpecs": {
       "weight": "約140g",
       "compatibleAppliances": "18種類の家電、8000以上のブランドの赤外線家電",
-      "supportedAssistants": ["Amazon Alexa", "Google Assistant"],
-      "smartHomeStandard": ["Matter対応"],
+      "supportedAssistants": [
+        "Amazon Alexa",
+        "Google Assistant"
+      ],
+      "smartHomeStandard": [
+        "Matter対応"
+      ],
       "other": [
         "Sub-1GHz対応",
         "チャイム機能搭載"
       ]
-    }
+    },
+    "investigatedPrice": "￥4,580"
   }
 }

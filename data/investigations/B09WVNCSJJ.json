@@ -28,7 +28,9 @@
         "userType": "マンション住まい",
         "scenario": "ベランダと網戸の掃除",
         "experience": "以前使っていた大きな高圧洗浄機は収納場所を取って困っていましたが、K MINIプラスは洗面台の下にも収まるほどのコンパクトさで驚きました。ホースも柔らかくて取り回しがしやすく、狭いベランダでも網戸や床の汚れをしっかり落とすことができました。片付けも簡単になったのが一番のメリットです。",
-        "supportingSourceIds": ["src-kaercher-official"],
+        "supportingSourceIds": [
+          "src-kaercher-official"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -62,7 +64,9 @@
         "claim": "ケルヒャー史上最もコンパクトな高圧洗浄機",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-kaercher-official"],
+        "supportingSourceIds": [
+          "src-kaercher-official"
+        ],
         "crossChecked": true,
         "notes": "メーカー公称値であり、本体寸法からも家庭用として極めて小型であることが確認できる。"
       }
@@ -167,7 +171,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (家庭用に最適な圧倒的なコンパクトさと収納性の高さ)\n[加点: +10] (プレミアムフレックスホースによる取り回しの良さと準備・片付けのストレス軽減)\n[減点: -5] (コードレスの手軽さには及ばず、電源環境の制約がある)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "295mm", "width": "233mm", "depth": "280mm" },
+      "dimensions": {
+        "height": "295mm",
+        "width": "233mm",
+        "depth": "280mm"
+      },
       "weight": "3.9kg",
       "power": "AC 100V (50/60Hz共用)",
       "motorOutput": "1kW",
@@ -175,7 +183,10 @@
       "maxFlowRate": "330L/h",
       "maxWaterTemperature": "40℃",
       "color": "黒、白",
-      "other": ["プレミアムフレックス高圧ホース付属"]
-    }
+      "other": [
+        "プレミアムフレックス高圧ホース付属"
+      ]
+    },
+    "investigatedPrice": "￥27,800"
   }
 }

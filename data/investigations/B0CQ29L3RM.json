@@ -27,7 +27,9 @@
         "userType": "ビジネスパーソン",
         "scenario": "ミニPCのUSB-Cポート拡張およびディスプレイ出力に利用",
         "experience": "薄型で各ポートに簡易な表示があり、デザインが良いです。PCへの給電だけでなく、HDMIポートを利用したディスプレイ出力も問題なく使え、安定性も高いと感じました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -50,7 +52,9 @@
         "claim": "薄型デザインでポートの簡易表示が分かりやすく、HDMIやPDの動作が安定している",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "ユーザーレビューから確認。"
       }
@@ -170,6 +174,7 @@
         "転送速度: 最大5Gbps (USB3.2 Gen1)",
         "映像出力: HDMI (最大4K 30Hz) ※USB-Cポートはデータ専用"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,490"
   }
 }

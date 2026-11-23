@@ -3,7 +3,11 @@
     "productName": "北海道産100％ 黒豆茶 ティーバッグ 無添加 ノンカフェイン 4g×42包",
     "parentAsin": "B0DNJ8S1Y6",
     "productDescription": "北海道産黒豆を100%使用した、無添加でノンカフェインの黒豆茶です。香ばしい焙煎ブレンドで、ホットでもアイスでも楽しめます。",
-    "productUsage": ["日常の水分補給", "リラックスタイムの飲料", "温活"],
+    "productUsage": [
+      "日常の水分補給",
+      "リラックスタイムの飲料",
+      "温活"
+    ],
     "positivePoints": [
       "北海道産100%の黒豆を使用しており安心",
       "ノンカフェインで妊婦や子どもにも配慮されている",
@@ -38,7 +42,9 @@
         "claim": "北海道産黒豆100%使用、無添加、ノンカフェイン",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式の仕様情報"
       },
@@ -46,7 +52,9 @@
         "claim": "FSSC22000認証取得工場で製造",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "メーカーによる製造環境の説明"
       }
@@ -151,11 +159,16 @@
     },
     "technicalSpecs": {
       "capacity": "4g×42包 (168g)",
-      "ingredients": ["北海道産黒豆"],
+      "ingredients": [
+        "北海道産黒豆"
+      ],
       "caffeine": "0mg (ノンカフェイン)",
       "additives": "無添加",
       "certification": "FSSC22000認証",
-      "other": ["浅煎り・中煎り・深煎りのブレンド焙煎"]
-    }
+      "other": [
+        "浅煎り・中煎り・深煎りのブレンド焙煎"
+      ]
+    },
+    "investigatedPrice": "￥1,590"
   }
 }

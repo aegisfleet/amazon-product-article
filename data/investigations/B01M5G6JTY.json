@@ -31,14 +31,18 @@
         "userType": "日常的に自炊をする主婦",
         "scenario": "まとめ買いした食材の小分け冷凍や、日々の生ごみ処理に使用",
         "experience": "箱からティッシュのように1枚ずつサッと取り出せるのがとにかく便利です。エンボス加工のおかげで、調理中の濡れた手や、逆に乾燥した手でもすぐに袋の口が開けられてストレスがありません。薄手ですがマチがあるので大根などの大きめの野菜も入りますし、何より300枚の大容量でコスパが良いので、毎日の生ごみ捨てにも気兼ねなく使えます。ただ、魚の骨などを入れると破れそうになるので、そこだけは注意しています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "節約志向の一人暮らし",
         "scenario": "コスパ重視で日用品を選んでいる",
         "experience": "1枚1円ちょっとという安さに惹かれて購入しました。競合製品と比較しても圧倒的に安いのが決め手です。ゴミ袋として使っていますが、薄い割には丈夫で、普段の生活ゴミ程度なら全く問題ありません。ただ、本当に0.008mmとかなり薄いので、汁気の多い生ごみを捨てる時は二重にするなど工夫が必要です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -61,7 +65,9 @@
         "claim": "エンボス加工で滑りにくく、取り出しやすい",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品仕様として明記されており、一般的なエンボス加工ポリ袋の特性と合致する"
       },
@@ -69,7 +75,9 @@
         "claim": "薄くても強く、食品の保存やキッチンの後始末などに便利",
         "category": "durability",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "高密度ポリエチレンを使用しているため強度はある程度あるが、0.008mmという極薄仕様のため物理的な突き刺しには弱いと推測される"
       }
@@ -172,7 +180,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +15] (1枚あたり約1.06円という圧倒的なコストパフォーマンスと大容量)\n[加点: +5] (エンボス加工による開けやすさと使い勝手の良さ)\n[減点: -5] (厚さが0.008mmと極薄で、強度にやや不安が残る仕様)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "350mm", "width": "190mm", "depth": "60mm" },
+      "dimensions": {
+        "height": "350mm",
+        "width": "190mm",
+        "depth": "60mm"
+      },
       "weight": "400g",
       "capacity": "300枚",
       "material": "高密度ポリエチレン(食品用)",
@@ -183,6 +195,7 @@
         "外形寸法: タテ35+ヨコ25(19+6)cm",
         "箱サイズ: 奥行約100mm×幅210mm×高さ90mm"
       ]
-    }
+    },
+    "investigatedPrice": "￥391"
   }
 }

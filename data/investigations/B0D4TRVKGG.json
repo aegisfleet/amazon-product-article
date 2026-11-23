@@ -3,10 +3,25 @@
     "productName": "FUNLOGY Speaker",
     "parentAsin": "B0D4TRVKGG",
     "productDescription": "FUNLOGYの総合出力14WステレオPCスピーカーです。USB給電と3.5mmピン入力に対応し、30度の傾斜角度による聴き取りやすい音響設計が特徴です。",
-    "productUsage": ["PCやモニターの外部スピーカーとして", "デスク周りの省スペースな音響アップグレードに"],
-    "positivePoints": ["総合14Wの十分な出力による迫力あるサウンド", "スピーカー間のケーブルが130cmありデュアルモニター環境にも対応", "30度の傾斜でリスニングポジションに向けた設計", "1年保証と日本人スタッフによるサポート対応"],
-    "negativePoints": ["USB給電のためノイズが乗る環境がある可能性がある", "Bluetooth接続非対応のため有線接続が必須"],
-    "useCases": ["デュアルモニター環境でのPC作業・動画視聴", "ノートPCの音質を改善したい時の外部スピーカーとして", "手軽に迫力ある低音を楽しみたいゲームプレイ時に"],
+    "productUsage": [
+      "PCやモニターの外部スピーカーとして",
+      "デスク周りの省スペースな音響アップグレードに"
+    ],
+    "positivePoints": [
+      "総合14Wの十分な出力による迫力あるサウンド",
+      "スピーカー間のケーブルが130cmありデュアルモニター環境にも対応",
+      "30度の傾斜でリスニングポジションに向けた設計",
+      "1年保証と日本人スタッフによるサポート対応"
+    ],
+    "negativePoints": [
+      "USB給電のためノイズが乗る環境がある可能性がある",
+      "Bluetooth接続非対応のため有線接続が必須"
+    ],
+    "useCases": [
+      "デュアルモニター環境でのPC作業・動画視聴",
+      "ノートPCの音質を改善したい時の外部スピーカーとして",
+      "手軽に迫力ある低音を楽しみたいゲームプレイ時に"
+    ],
     "userStories": [],
     "userImpression": "1990円という低価格ながら14W出力を備え、十分な音圧と聴き取りやすい音質でコストパフォーマンスが高いと評価されています。",
     "sources": [
@@ -27,7 +42,9 @@
         "claim": "総合出力14Wで迫力ある音",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-official"],
+        "supportingSourceIds": [
+          "amazon-official"
+        ],
         "crossChecked": false,
         "notes": "商品仕様に7W×2の記載あり"
       },
@@ -35,7 +52,9 @@
         "claim": "スピーカー間のケーブルが130cmでデュアルディスプレイ対応",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-official"],
+        "supportingSourceIds": [
+          "amazon-official"
+        ],
         "crossChecked": false,
         "notes": "商品仕様に記載"
       }
@@ -122,22 +141,45 @@
       }
     ],
     "recommendation": {
-      "targetUsers": ["PCの音質を手軽に向上させたい人", "デュアルモニター環境でスピーカーを配置したい人", "低予算で高出力なスピーカーを探している人"],
-      "pros": ["1990円で総合14Wの迫力あるサウンド", "スピーカー間ケーブル130cmで配置の自由度が高い", "USB給電でコンセント不要", "音を聴き取りやすい30度の傾斜設計"],
-      "cons": ["Bluetooth非対応（有線接続のみ）", "USB給電特有のノイズが発生する可能性がある"],
+      "targetUsers": [
+        "PCの音質を手軽に向上させたい人",
+        "デュアルモニター環境でスピーカーを配置したい人",
+        "低予算で高出力なスピーカーを探している人"
+      ],
+      "pros": [
+        "1990円で総合14Wの迫力あるサウンド",
+        "スピーカー間ケーブル130cmで配置の自由度が高い",
+        "USB給電でコンセント不要",
+        "音を聴き取りやすい30度の傾斜設計"
+      ],
+      "cons": [
+        "Bluetooth非対応（有線接続のみ）",
+        "USB給電特有のノイズが発生する可能性がある"
+      ],
       "score": 88,
       "scoreRationale": "[基本点: 70]\n[加点: +10] (1990円で14W出力という非常に高いコストパフォーマンス)\n[加点: +5] (ケーブル長130cmや30度傾斜など実用性の高い設計)\n[加点: +5] (日本ブランドによる安心のサポートと1年保証)\n[減点: -2] (Bluetooth非対応で有線接続のみの制約)\n[合計: 88]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "108mm", "width": "69mm", "depth": "132mm" },
+      "dimensions": {
+        "height": "108mm",
+        "width": "69mm",
+        "depth": "132mm"
+      },
       "weight": "260g (片方のみ)",
       "power": "総合14W (7W x 2)",
       "impedance": "3.2 Ω × 2",
       "connection": "3.5mm AUXピン入力",
       "powerSupply": "USB Type-A給電",
       "cableLength": "スピーカー間: 130cm, AUXケーブル: 130cm, USB給電ケーブル: 130cm",
-      "features": ["音量調整ダイヤル", "パッシブラジエーター型", "30度傾斜設計"],
-      "other": ["取扱説明書（保証書付き）付属"]
-    }
+      "features": [
+        "音量調整ダイヤル",
+        "パッシブラジエーター型",
+        "30度傾斜設計"
+      ],
+      "other": [
+        "取扱説明書（保証書付き）付属"
+      ]
+    },
+    "investigatedPrice": "￥1,990"
   }
 }

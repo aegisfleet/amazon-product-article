@@ -30,14 +30,18 @@
         "userType": "ポータブルオーディオ入門者",
         "scenario": "SHURE SE215の純正ケーブルが断線したため、安価な交換用ケーブルを探していた。",
         "experience": "純正ケーブルと比べて非常に柔らかく、耳掛けしても反発しないため装着感が格段に向上しました。音質面でも、全体的にモヤモヤしていた音が晴れ、ボーカルの抜けが良くなったように感じます。この価格で16芯ケーブルが買えるのは驚きです。初めてのリケーブルでしたが、大満足の買い物になりました。",
-        "supportingSourceIds": ["src-amazon-data"],
+        "supportingSourceIds": [
+          "src-amazon-data"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "オーディオ愛好家",
         "scenario": "手持ちのマルチBAイヤホンの気分転換用に、安価な銀メッキケーブルを試してみた。",
         "experience": "16芯特有の太さはあるものの、非常にしなやかで取り回しは抜群です。音の傾向としては、銀メッキらしく中高域が煌びやかになり、解像度が一段上がったように感じられます。ただ、元々高域が強いイヤホンと合わせると少し刺さりが気になりました。低域の量感はそこまで増えませんが、見通しの良いスッキリとしたサウンドに変化します。コスパは非常に高いです。",
-        "supportingSourceIds": ["src-amazon-data"],
+        "supportingSourceIds": [
+          "src-amazon-data"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -60,7 +64,9 @@
         "claim": "低域はより深みを増し、中高域は更なる解像感を獲得する",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-amazon-data"],
+        "supportingSourceIds": [
+          "src-amazon-data"
+        ],
         "crossChecked": false,
         "notes": "メーカーの主張。一般的な銀メッキ線の特性（中高域の解像感向上）とは合致するが、低域の深み増幅については組み合わせるイヤホンの特性に大きく依存するため、ユーザーの主観による部分が大きい。"
       }
@@ -154,6 +160,7 @@
         "ワイヤー（耳掛け用の針金）無し仕様（ケーブル自体の柔らかさで耳掛け対応）",
         "Y字スプリッターおよびスライダー装備"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,279"
   }
 }

@@ -28,7 +28,9 @@
         "userType": "デスクワーカー",
         "scenario": "毎日の長時間のPC作業で肩と首がガチガチになっている状況",
         "experience": "ピップの従来のマグネループから買い替えました。ループ全体からの磁気に加え、特にコリがひどい部分に200mTの磁石が当たるので、着用していると肩周りが温かくなるような感覚があり、翌朝の重だるさが軽減されました。水洗いできるので夏場でも清潔に保てるのが嬉しいです。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -51,7 +53,9 @@
         "claim": "最大磁束密度200mTの強力な磁力が首こり・肩こりに効果を発揮する",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "crossChecked": false,
         "notes": "医療機器認証番号(302AGBZX00107000)を取得した管理医療機器である"
       }
@@ -145,7 +149,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (安全性・信頼性重視商品: 医療機器認証を取得した確かな品質)\n[加点: +5] (性能・効果: 国内最大級200mTの強力な磁力による高いコリほぐし効果)\n[加点: +5] (コストパフォーマンス: 強力な磁力と水洗い可能な耐久性を備えながら手頃な価格)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "500mm", "width": "4mm", "depth": "4mm" },
+      "dimensions": {
+        "height": "500mm",
+        "width": "4mm",
+        "depth": "4mm"
+      },
       "weight": "30g",
       "capacity": "1本",
       "material": "シリコーン樹脂（ループ）、磁石",
@@ -156,6 +164,7 @@
         "ループ表面に微細な溝加工（肌との接地面積約50%削減）",
         "水洗い可能"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,168"
   }
 }

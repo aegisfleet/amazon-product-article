@@ -3,7 +3,11 @@
     "productName": "ディアナチュラスタイル 鉄×マルチビタミン 90粒",
     "parentAsin": "B0CT8T2X1D",
     "productDescription": "アサヒグループ食品が国内工場で生産する、鉄と14種類のビタミンを1粒で補給できるサプリメント。",
-    "productUsage": ["鉄分補給", "日常のビタミン不足のサポート", "栄養機能の補給"],
+    "productUsage": [
+      "鉄分補給",
+      "日常のビタミン不足のサポート",
+      "栄養機能の補給"
+    ],
     "positivePoints": [
       "1日1粒で鉄と14種のビタミン（ビタミン様物質含む）を手軽に摂取可能",
       "アサヒグループ食品の国内工場生産による高い信頼性と品質",
@@ -21,7 +25,9 @@
         "userType": "食事のバランスが気になる社会人",
         "scenario": "忙しくて外食が続き、野菜や鉄分が不足していると感じている状況",
         "experience": "1日1粒飲むだけなので、忙しい朝でも無理なく続けられます。パウチタイプで持ち運びやすく、国内工場生産という点も安心感があり、毎日の栄養補助として重宝しています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -44,7 +50,9 @@
         "claim": "鉄と14種類のビタミンを1粒で摂取できる",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "商品パッケージおよび公式説明から確認"
       },
@@ -52,7 +60,9 @@
         "claim": "国内工場で生産されている",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "商品名および説明から確認"
       }
@@ -169,6 +179,7 @@
         "1日摂取目安量: 1粒",
         "栄養機能食品: ビタミンB1、ビタミンB2、ビタミンB6、ビタミンB12、ビタミンC、ビタミンE"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,688"
   }
 }

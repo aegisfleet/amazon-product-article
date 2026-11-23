@@ -28,28 +28,36 @@
         "userType": "40代女性",
         "scenario": "湿度の高い地域に住んでおり、年齢による肌の変化に合わせてメイク崩れを防ぎたい",
         "experience": "湿度が高い環境でもメイクが崩れず、懸念していたテカりやベタつきもなく、適度なツヤ感が出て満足している。",
-        "supportingSourceIds": ["src-rev-renee"],
+        "supportingSourceIds": [
+          "src-rev-renee"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ツヤ肌を求めるユーザー",
         "scenario": "海外コスメに懸念を持っていたが、自然なツヤ肌を目指して使用",
         "experience": "肌荒れすることもなく、コーティング感がなく毛穴も詰まらない。細かいミストで自然なツヤ肌になり、周りからも褒められた。",
-        "supportingSourceIds": ["src-rev-yakiniku"],
+        "supportingSourceIds": [
+          "src-rev-yakiniku"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "細かいミストを求めるユーザー",
         "scenario": "夏のメイク崩れ対策としてSNSの情報をきっかけに購入",
         "experience": "メイクスポンジに含ませて使うなどの工夫をしている。ミストの粒子が細かく、香りも気にならない上、減りが遅いためコスパが良いと感じている。",
-        "supportingSourceIds": ["src-rev-gelatoni"],
+        "supportingSourceIds": [
+          "src-rev-gelatoni"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "スプレーの出方に不満を持つユーザー",
         "scenario": "ツヤ肌になることを期待して購入",
         "experience": "ツヤ肌にならず、何よりスプレーが荒く出てミスト状にならないため使いづらいと感じた。",
-        "supportingSourceIds": ["src-rev-yodobashi"],
+        "supportingSourceIds": [
+          "src-rev-yodobashi"
+        ],
         "sentiment": "negative"
       }
     ],
@@ -116,7 +124,9 @@
         "claim": "ヒアルロン酸などの保湿成分や植物エキスが配合されている",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-page"],
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
         "crossChecked": false,
         "notes": "商品ページの成分説明より確認"
       },
@@ -124,7 +134,11 @@
         "claim": "超微細ミストの霧噴射ポンプを採用している",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-page", "src-rev-yakiniku", "src-rev-gelatoni"],
+        "supportingSourceIds": [
+          "src-amazon-page",
+          "src-rev-yakiniku",
+          "src-rev-gelatoni"
+        ],
         "crossChecked": true,
         "notes": "メーカー訴求内容と複数のユーザーレビューが一致（ただし一部不満の声あり）"
       },
@@ -132,7 +146,11 @@
         "claim": "メイクを長時間キープし、ツヤ肌に仕上げる",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-page", "src-rev-renee", "src-rev-yakiniku"],
+        "supportingSourceIds": [
+          "src-amazon-page",
+          "src-rev-renee",
+          "src-rev-yakiniku"
+        ],
         "crossChecked": true,
         "notes": "メーカーの主張とユーザーの実体験が一致"
       }
@@ -249,6 +267,7 @@
       "other": [
         "フランス産アルベアポンプ採用"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,190"
   }
 }

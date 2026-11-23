@@ -24,7 +24,9 @@
         "userType": "エレキギタープレイヤー",
         "scenario": "コーティング弦特有のヌルヌル感が苦手だが、弦を長持ちさせたい場合",
         "experience": "従来のコーティング弦のような不自然な滑りや音の籠もりがなく、ノンコーティング弦とほぼ変わらない弾き心地でありながら、寿命が長いため弦交換のストレスから解放された。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -47,7 +49,9 @@
         "claim": "ノンコーティング弦と変わらない音色と感触を実現",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "極薄のオプティウェブコーティングによる設計思想として公式とレビューで一致。"
       }
@@ -161,6 +165,7 @@
       "size": "Super Light (.009-.042)",
       "coatingType": "OPTIWEB",
       "instrument": "エレキギター"
-    }
+    },
+    "investigatedPrice": "￥2,432"
   }
 }

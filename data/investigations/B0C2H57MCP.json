@@ -30,14 +30,18 @@
         "userType": "共働き家庭の親",
         "scenario": "忙しい平日の夕食の準備を時短したい状況",
         "experience": "仕事で遅くなった日に、電子レンジで温めるだけで立派なメインディッシュが出せるので非常に助かっている。3種類入っているため、夫はカレー、子供は牛めしといったように気分に合わせて選べる点が、単一メニューのセットよりも満足度が高かった。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "単身赴任の会社員",
         "scenario": "手軽にすませたい休日のランチ",
         "experience": "牛丼だけだと飽きてしまうが、カレーと豚丼もあるのでローテーションで食べられる。ただし、オリジナルカレーが思っていた以上にスパイシーで辛く、美味しいが食べるタイミングを選ぶ。また、30食一気に届くので冷凍庫を空けておくのに苦労した。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -60,7 +64,9 @@
         "claim": "オリジナルカレーは10数種類の香辛料を使用した本格的な辛口仕様",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "メーカーの仕様説明通りであり、実際のユーザーレビューでも『スパイシー』『辛口』との評価と一致している。"
       }
@@ -170,6 +176,7 @@
       "ingredients_beef": "アメリカ産牛肉5割以上使用、甘味料・保存料未使用のプレミアムタレ",
       "ingredients_pork": "デンマーク産豚肉、厳選タマネギ",
       "ingredients_curry": "10数種類の香辛料を使用した辛口"
-    }
+    },
+    "investigatedPrice": "￥8,980"
   }
 }

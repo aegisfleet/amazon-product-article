@@ -30,21 +30,27 @@
         "userType": "スポーツを行う学生の親",
         "scenario": "夏の部活動の合宿や大会の差し入れとして購入",
         "experience": "冷凍兼用のペットボトルなので、前日から凍らせてクーラーボックスに入れて持っていくことができ非常に便利でした。保冷剤の代わりにもなり、子供たちも冷たいドリンクが飲めて喜んでいます。ポカリスエットよりも少しあっさりしていて飲みやすいようです。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ダイエット中の社会人",
         "scenario": "ジムでのトレーニング中の水分補給",
         "experience": "BCAAなどのアミノ酸が入っている点が選んだ決め手です。ポカリスエットに比べてカロリーも抑えめなので罪悪感なく飲めますが、人工甘味料の後味が少し気になります。水と交互に飲んで調節しています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       },
       {
         "userType": "日常の熱中症対策を意識する主婦",
         "scenario": "家族の夏の水分補給用としてまとめ買い",
         "experience": "24本でこの価格ならスーパーの特売と比べても遜色なく、自宅まで重い箱を運んでもらえるので助かります。ラベルレスボトルの存在を知らずにこちらを買ってしまいましたが、ゴミ捨ての時に少し手間なので次はラベルレスにしようと思います。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -78,7 +84,9 @@
         "claim": "水より優れた水分補給機能",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "体液とほぼ同じ浸透圧（アイソトニック）とナトリウム濃度の調整により、水単体よりも吸収効率が高いことは一般的なスポーツ医学の見解とも一致している。"
       },
@@ -86,7 +94,9 @@
         "claim": "パフォーマンスを維持するための3つのエネルギー成分を配合",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "BCAA（イソロイシン、バリン、ロイシン）、アルギニン、糖の配合が成分表示から明確に確認できる。"
       }
@@ -198,7 +208,21 @@
       },
       "weight": "13kg",
       "capacity": "500ml × 24本",
-      "ingredients": ["果糖ぶどう糖液糖(国内製造)", "塩化Na", "クエン酸", "香料", "クエン酸Na", "塩化K", "硫酸Mg", "乳酸Ca", "酸化防止剤(ビタミンC)", "甘味料(スクラロース)", "イソロイシン", "バリン", "ロイシン"],
+      "ingredients": [
+        "果糖ぶどう糖液糖(国内製造)",
+        "塩化Na",
+        "クエン酸",
+        "香料",
+        "クエン酸Na",
+        "塩化K",
+        "硫酸Mg",
+        "乳酸Ca",
+        "酸化防止剤(ビタミンC)",
+        "甘味料(スクラロース)",
+        "イソロイシン",
+        "バリン",
+        "ロイシン"
+      ],
       "calories": "19kcal / 100ml",
       "nutritionFacts_per100ml": {
         "protein": "0g",
@@ -212,7 +236,13 @@
         "leucine": "0.5mg"
       },
       "origin": "日本",
-      "features": ["冷凍兼用", "カロリーオフ", "アイソトニック設計", "アミノ酸配合"]
-    }
+      "features": [
+        "冷凍兼用",
+        "カロリーオフ",
+        "アイソトニック設計",
+        "アミノ酸配合"
+      ]
+    },
+    "investigatedPrice": "￥2,191"
   }
 }

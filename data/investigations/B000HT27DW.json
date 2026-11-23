@@ -3,23 +3,44 @@
     "productName": "せんねん灸 太陽 火を使わないお灸 30コ入",
     "parentAsin": "B000HT27DW",
     "productDescription": "火を使わずにはるだけで、気持ちよい温熱効果が約3時間続くお灸です。衣服の下にはったまま外出も可能なため、場所を選ばず手軽にお灸の効果を得られます。",
-    "productUsage": ["肩こり・腰痛の緩和", "疲労回復", "血行の促進", "筋肉の疲れをとる"],
-    "positivePoints": ["火を使わないため火傷のリスクが少なく安全", "煙やにおいが出ないため外出先やオフィスでも使用可能", "衣服の下に貼ったまま活動できる", "約3時間温熱効果が持続する"],
-    "negativePoints": ["1回使い切りのため、頻繁に使用するとコストがかかる", "肌が弱い方は低温やけどや皮膚のかぶれに注意が必要"],
-    "useCases": ["仕事中や家事をしながらのながらケア", "外出先でのリフレッシュ", "就寝前のリラックスタイム"],
+    "productUsage": [
+      "肩こり・腰痛の緩和",
+      "疲労回復",
+      "血行の促進",
+      "筋肉の疲れをとる"
+    ],
+    "positivePoints": [
+      "火を使わないため火傷のリスクが少なく安全",
+      "煙やにおいが出ないため外出先やオフィスでも使用可能",
+      "衣服の下に貼ったまま活動できる",
+      "約3時間温熱効果が持続する"
+    ],
+    "negativePoints": [
+      "1回使い切りのため、頻繁に使用するとコストがかかる",
+      "肌が弱い方は低温やけどや皮膚のかぶれに注意が必要"
+    ],
+    "useCases": [
+      "仕事中や家事をしながらのながらケア",
+      "外出先でのリフレッシュ",
+      "就寝前のリラックスタイム"
+    ],
     "userStories": [
       {
         "userType": "デスクワーカー",
         "scenario": "長時間のPC作業で肩と首が凝り固まった時",
         "experience": "オフィスで煙や匂いを気にせず使えるのが最大のメリットです。服の下に貼って仕事をしていますが、じんわりとした温かさが3時間ほど続き、夕方には肩の重さがかなり軽減されました。剥がれたりズレたりすることもなく、快適に過ごせます。",
-        "supportingSourceIds": ["src-amazon-review-1"],
+        "supportingSourceIds": [
+          "src-amazon-review-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "主婦",
         "scenario": "家事や育児で腰に負担がかかった時",
         "experience": "火を使わないので、子供が近くにいても安心してお灸ができます。家事をしながらでも使えるので時間の節約になり、じんわりとした温熱が心地よく、腰の痛みが和らぎました。ただ、毎日使うと少し出費が気になるのが難点です。",
-        "supportingSourceIds": ["src-amazon-review-2"],
+        "supportingSourceIds": [
+          "src-amazon-review-2"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -64,7 +85,10 @@
         "claim": "火を使わず、衣服の下に貼ったまま外出が可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-sennenq-official", "src-amazon-review-1"],
+        "supportingSourceIds": [
+          "src-sennenq-official",
+          "src-amazon-review-1"
+        ],
         "crossChecked": true,
         "notes": "公式サイトの記述とユーザーレビューの双方で確認。"
       },
@@ -72,7 +96,10 @@
         "claim": "温熱効果が約3時間持続する",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-sennenq-official", "src-amazon-review-1"],
+        "supportingSourceIds": [
+          "src-sennenq-official",
+          "src-amazon-review-1"
+        ],
         "crossChecked": true,
         "notes": "公式サイトの仕様およびレビューの体感時間として確認。"
       }
@@ -193,6 +220,7 @@
         "持続時間: 約3時間",
         "色: ゴールド"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,118"
   }
 }

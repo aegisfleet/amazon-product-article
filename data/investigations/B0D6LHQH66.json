@@ -3,7 +3,11 @@
     "productName": "TORRAS iPhone 16 Pro用 ガラスフィルム GlassGo Ultra (2枚セット)",
     "parentAsin": "B0GS3C4D6H",
     "productDescription": "日本製の航空宇宙用ガラス材料を採用し、9H+硬度とMIL規格をクリアしたiPhone 16 Pro専用ガラスフィルム。Just One Pull（ワンプル）ガイド枠による簡単貼り付けが特徴。",
-    "productUsage": ["iPhone 16 Proの画面保護", "落下や衝撃からのディスプレイ破損防止", "指紋や汚れの付着防止"],
+    "productUsage": [
+      "iPhone 16 Proの画面保護",
+      "落下や衝撃からのディスプレイ破損防止",
+      "指紋や汚れの付着防止"
+    ],
     "positivePoints": [
       "Just One Pull（ワンプル）ガイド枠により、素人でも気泡やズレなく簡単に貼り付け可能",
       "日本製航空宇宙材料を採用し、硬度9H+・MIL規格準拠の高い耐久性と保護性能を持つ",
@@ -14,13 +18,19 @@
       "他社の一般的なガラスフィルム（1,000円～2,000円台）と比較して、3,000円台とやや価格が高い",
       "極限の薄さを謳っているが、厚みについての具体的な数値記載（mmなど）が仕様にない"
     ],
-    "useCases": ["新しいiPhone 16 Proを購入し、すぐに完璧な状態で保護したい時", "過去にフィルム貼りで失敗した経験があり、絶対にズレなく貼りたい時", "ゲームや長時間の操作でも滑らかな指滑りとクリアな画質を求める時"],
+    "useCases": [
+      "新しいiPhone 16 Proを購入し、すぐに完璧な状態で保護したい時",
+      "過去にフィルム貼りで失敗した経験があり、絶対にズレなく貼りたい時",
+      "ゲームや長時間の操作でも滑らかな指滑りとクリアな画質を求める時"
+    ],
     "userStories": [
       {
         "userType": "iPhone 16 Proユーザー",
         "scenario": "新機種購入時の画面保護",
         "experience": "付属のガイド枠を使い、タブを引くだけで自動的にホコリ取りと貼り付けが完了し、気泡も一切入らず完璧に貼れました。指滑りも非常に滑らかで、ベゼル部分も引っかかりがなく快適です。",
-        "supportingSourceIds": ["amazon-product-data"],
+        "supportingSourceIds": [
+          "amazon-product-data"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -43,7 +53,9 @@
         "claim": "Just One Pull（ワンプル）ガイド枠による簡単貼り付けと自動排気・除塵",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-product-data"],
+        "supportingSourceIds": [
+          "amazon-product-data"
+        ],
         "crossChecked": false,
         "notes": "商品詳細データに第5世代ガイド枠の仕様として明記"
       },
@@ -51,7 +63,9 @@
         "claim": "日本製航空宇宙材料採用、表面硬度9H+、MIL規格越えの耐衝撃性",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-product-data"],
+        "supportingSourceIds": [
+          "amazon-product-data"
+        ],
         "crossChecked": false,
         "notes": "商品詳細データに明記（MIL-STD-810G規格認証番号記載あり）"
       }
@@ -138,19 +152,38 @@
       }
     ],
     "recommendation": {
-      "targetUsers": ["絶対にフィルム貼りに失敗したくない人", "高品質な素材（航空宇宙ガラス）と高い耐久性を求める人", "極細ベゼルや滑らかな操作感など、ディテールにこだわる人"],
-      "pros": ["ホコリ取りから貼り付けまで一発で完了する革新的なガイド枠", "MIL規格準拠・9H+硬度の高い防御力", "高透過率と極細ベゼルによる画面の一体感"],
-      "cons": ["一般的なガラスフィルムと比べると価格がやや高め"],
+      "targetUsers": [
+        "絶対にフィルム貼りに失敗したくない人",
+        "高品質な素材（航空宇宙ガラス）と高い耐久性を求める人",
+        "極細ベゼルや滑らかな操作感など、ディテールにこだわる人"
+      ],
+      "pros": [
+        "ホコリ取りから貼り付けまで一発で完了する革新的なガイド枠",
+        "MIL規格準拠・9H+硬度の高い防御力",
+        "高透過率と極細ベゼルによる画面の一体感"
+      ],
+      "cons": [
+        "一般的なガラスフィルムと比べると価格がやや高め"
+      ],
       "score": 85,
       "scoreRationale": "[基本点: 70]\n[加点: +10] (画期的な貼り付けガイド枠による圧倒的な使いやすさと失敗リスクの低さ)\n[加点: +10] (MIL規格準拠の航空宇宙ガラス採用など、高い品質と保護性能)\n[減点: -5] (競合他社のスタンダード製品と比較して価格がやや高い)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "12.7mm", "width": "80.0mm", "depth": "180.0mm" },
+      "dimensions": {
+        "height": "12.7mm",
+        "width": "80.0mm",
+        "depth": "180.0mm"
+      },
       "weight": "12g",
       "capacity": "2枚セット",
       "material": "日本製航空宇宙材料ガラス",
       "origin": "不明",
-      "other": ["対応機種: iPhone 16 Pro", "表面硬度: 9H+ (ビッカーズ硬度Hv673)", "MIL規格認証: MIL-STD-810G (認証番号GZMR220300626209)"]
-    }
+      "other": [
+        "対応機種: iPhone 16 Pro",
+        "表面硬度: 9H+ (ビッカーズ硬度Hv673)",
+        "MIL規格認証: MIL-STD-810G (認証番号GZMR220300626209)"
+      ]
+    },
+    "investigatedPrice": "￥3,480"
   }
 }

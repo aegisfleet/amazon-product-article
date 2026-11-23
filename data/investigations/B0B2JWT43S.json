@@ -28,21 +28,27 @@
         "userType": "医療従事者",
         "scenario": "仕事で時刻を確認するため、見やすくオシャレな時計を探していた",
         "experience": "大きすぎず小さすぎず、手を綺麗に見せてくれる色合いで、仕事中も気分良く使えている。時刻も見やすく実用的。",
-        "supportingSourceIds": ["amazon-review"],
+        "supportingSourceIds": [
+          "amazon-review"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "学生の親",
         "scenario": "子供の入試や模試用として、シンプルで使いやすい時計が必要になった",
         "experience": "シンプルで文字盤が見やすく、時間を確認しやすい。デザインも写真通りで可愛く、購入してよかったと感じている。",
-        "supportingSourceIds": ["amazon-review"],
+        "supportingSourceIds": [
+          "amazon-review"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "日常使いユーザー",
         "scenario": "水場でも気兼ねなく使え、安価で可愛い時計を求めていた",
         "experience": "手頃な価格ながら高見えし、10気圧防水で多少の濡れなら気にせず使える。ただし、ベルトが短く感じるのと、輪っかの部分が少しチクチクするのが気になった。",
-        "supportingSourceIds": ["amazon-review"],
+        "supportingSourceIds": [
+          "amazon-review"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -65,7 +71,9 @@
         "claim": "10気圧防水機能により、日常生活での水濡れに対応可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-review"],
+        "supportingSourceIds": [
+          "amazon-review"
+        ],
         "crossChecked": true,
         "notes": "商品仕様およびユーザーレビューにて、多少の水濡れは問題なく使用できていることが確認されている。"
       },
@@ -73,7 +81,9 @@
         "claim": "ベルトの長さが短めに作られている",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-review"],
+        "supportingSourceIds": [
+          "amazon-review"
+        ],
         "crossChecked": true,
         "notes": "複数のユーザーレビューで共通して「ベルトが短い」との指摘がある。"
       }
@@ -194,6 +204,7 @@
         "文字盤形状: 円形",
         "表示タイプ: アナログ"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,410"
   }
 }

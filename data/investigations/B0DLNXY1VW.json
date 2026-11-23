@@ -31,14 +31,18 @@
         "userType": "通勤・通学で利用するユーザー",
         "scenario": "電車やバスなど騒がしい環境での音楽視聴",
         "experience": "有線イヤホンなのでバッテリー残量を気にせず使える点が非常に便利。また、ノイズキャンセリング機能により電車の走行音が軽減され、SOLID BASSの豊かな重低音で音楽を楽しむことができ、日々の移動が快適になった。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ゲーマー",
         "scenario": "Nintendo Switchやスマートフォンでのゲームプレイ",
         "experience": "ワイヤレスイヤホンのような遅延がないため、音のタイミングが重要なゲームでも違和感なくプレイできる。充電不要ですぐにゲーム機に繋げて使える手軽さが決め手となった。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -61,7 +65,9 @@
         "claim": "独自の構造により、従来よりも明瞭な低域表現を可能に",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "SOLID BASSシリーズとして実績のある技術。公式サイトで確認。"
       }
@@ -138,6 +144,7 @@
         "DAC（D/Aコンバーター）内蔵",
         "マイク付きリモコン搭載"
       ]
-    }
+    },
+    "investigatedPrice": "￥5,398"
   }
 }

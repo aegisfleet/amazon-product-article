@@ -26,14 +26,18 @@
         "userType": "ビジネスパーソン",
         "scenario": "長時間のプレゼンや会議",
         "experience": "MacBook Proを使ってプレゼンをする際、バッテリーの減りが気になるが、このアダプターを使えば充電しながらHDMIでプロジェクターに出力できるため、バッテリー切れの心配なく進行に集中できた。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "クリエイター",
         "scenario": "自宅でのデュアルモニター環境構築",
         "experience": "iPad Proを外部モニターに接続して大画面で作業する際に使用。4K/60Hz出力に対応しているため、遅延や画質の劣化を感じることなく快適に作業ができた。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -56,7 +60,9 @@
         "claim": "4K/60Hzの映像出力に対応",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "crossChecked": true,
         "notes": "製品仕様として明記されており、レビューでも確認済み。"
       },
@@ -64,7 +70,9 @@
         "claim": "最大60WのPD充電に対応",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "crossChecked": true,
         "notes": "製品仕様として明記されている。"
       }
@@ -172,6 +180,7 @@
         "給電ポート: USB Type-C (最大60W PD対応)",
         "対応OS: Mac OS、Windows、iPadOS、Chrome OS"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,509"
   }
 }

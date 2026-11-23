@@ -3,7 +3,11 @@
     "productName": "DHC ビタミンC（ハードカプセル）徳用90日分",
     "parentAsin": "B06WW1BH1C",
     "productDescription": "失いやすいビタミンCを1日1000mg補える、徳用90日分の栄養機能食品です。はたらきを助けるビタミンB2も配合しています。",
-    "productUsage": ["ビタミンCの補給", "毎日の健康維持", "美容のサポート"],
+    "productUsage": [
+      "ビタミンCの補給",
+      "毎日の健康維持",
+      "美容のサポート"
+    ],
     "positivePoints": [
       "90日分の徳用サイズでコストパフォーマンスが非常に高い",
       "ビタミンCのはたらきを助けるビタミンB2が配合されている",
@@ -23,14 +27,18 @@
         "userType": "長期間愛用しているユーザー",
         "scenario": "毎日の健康維持のために長年継続して使用している",
         "experience": "朝晩1錠ずつ飲んでいます。90日分たっぷり入っていてお得なので、長年継続して購入しており、安いから無理なく続けられています。",
-        "supportingSourceIds": ["src-dhc-review"],
+        "supportingSourceIds": [
+          "src-dhc-review"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "紫外線対策を意識するユーザー",
         "scenario": "夏の紫外線が気になる時期に日傘などと併用して使用している",
         "experience": "連日の暑さと降り注ぐ紫外線が気になるので、日傘をさすだけでなく内側からもケアしたいと思い、このビタミンCサプリを飲んで対策しています。",
-        "supportingSourceIds": ["src-dhc-review"],
+        "supportingSourceIds": [
+          "src-dhc-review"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -53,7 +61,9 @@
         "claim": "1日あたり1000mgのビタミンCを補給できる",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-dhc-review"],
+        "supportingSourceIds": [
+          "src-dhc-review"
+        ],
         "crossChecked": true,
         "notes": "公式サイトの成分表示から確認"
       },
@@ -61,7 +71,9 @@
         "claim": "ビタミンCの働きを助けるビタミンB2が配合されている",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-dhc-review"],
+        "supportingSourceIds": [
+          "src-dhc-review"
+        ],
         "crossChecked": true,
         "notes": "公式サイトの成分表示から確認"
       }
@@ -166,13 +178,25 @@
       "scoreRationale": "[基本点: 70]\n[加点: +15] (90日分の大容量で圧倒的なコストパフォーマンスと継続しやすさ)\n[加点: +5] (大手DHCブランドの安心感と入手性の高さ)\n[加点: +5] (ビタミンCのはたらきを助けるビタミンB2も配合されている実用性)\n[減点: -5] (持続型ではないため、効率を求める場合はこまめに摂取する手間がある)\n[合計: 90]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "190mm", "width": "110mm", "depth": "20mm" },
+      "dimensions": {
+        "height": "190mm",
+        "width": "110mm",
+        "depth": "20mm"
+      },
       "weight": "110g",
       "capacity": "180粒 (90日分)",
-      "ingredients": ["ビタミンC", "ゼラチン", "着色料（カラメル、酸化チタン）", "ビタミンB2"],
+      "ingredients": [
+        "ビタミンC",
+        "ゼラチン",
+        "着色料（カラメル、酸化チタン）",
+        "ビタミンB2"
+      ],
       "nutritionFacts": "2粒(1156mg)あたり: 熱量 4.5kcal, たんぱく質 0.13g, 脂質 0g, 炭水化物 1.0g, 食塩相当量 0.001g, ビタミンB2 2.0mg, ビタミンC 1000mg",
       "origin": "日本",
-      "other": ["アレルギー物質: ゼラチン"]
-    }
+      "other": [
+        "アレルギー物質: ゼラチン"
+      ]
+    },
+    "investigatedPrice": "￥564"
   }
 }

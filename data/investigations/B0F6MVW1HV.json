@@ -45,7 +45,9 @@
         "claim": "Xbox、Windows PC、Android、iOSで利用可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-official"],
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
         "crossChecked": false,
         "notes": "公式の商品特徴にて記載"
       },
@@ -53,7 +55,9 @@
         "claim": "シェアボタンを新たに搭載し、ゲーム画面のキャプチャと共有が容易",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-official"],
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
         "crossChecked": false,
         "notes": "公式の商品特徴にて記載"
       }
@@ -160,14 +164,28 @@
     "technicalSpecs": {
       "color": "ブラック",
       "model": "EP2-29945",
-      "compatibility": ["Xbox Series X|S", "Xbox One", "Windows PC", "Android", "iOS"],
-      "connectivity": ["Xbox ワイヤレス", "Bluetooth", "USB-C 有線接続"],
-      "ports": ["USB-C ポート", "3.5mm オーディオ ジャック"],
+      "compatibility": [
+        "Xbox Series X|S",
+        "Xbox One",
+        "Windows PC",
+        "Android",
+        "iOS"
+      ],
+      "connectivity": [
+        "Xbox ワイヤレス",
+        "Bluetooth",
+        "USB-C 有線接続"
+      ],
+      "ports": [
+        "USB-C ポート",
+        "3.5mm オーディオ ジャック"
+      ],
       "other": [
         "ハイブリッド方向パッド搭載",
         "トリガー、バンパー、背面にテクスチャー加工採用",
         "専用シェアボタン搭載"
       ]
-    }
+    },
+    "investigatedPrice": "￥8,300"
   }
 }

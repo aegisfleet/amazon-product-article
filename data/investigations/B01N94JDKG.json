@@ -29,7 +29,9 @@
         "userType": "ペットを飼っている家族",
         "scenario": "ペットのトイレ周りやリビングの臭い対策",
         "experience": "大容量で気兼ねなく使えるのが良いです。10倍希釈でスプレーボトルを作って各部屋に置いています。ペットのトイレ周りの消臭効果が高く、アルコール不使用なので安心して使えます。ただし、詰め替え時は少し重いです。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -63,7 +65,10 @@
         "claim": "10倍希釈が可能でコストパフォーマンスが高い",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "500ppmという高濃度を活かした希釈使用が推奨されている"
       },
@@ -71,7 +76,10 @@
         "claim": "分析機関で99.94%の除菌効果をテスト済み",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "メーカーの商品説明より"
       }
@@ -186,6 +194,7 @@
         "成分: 次亜塩素酸",
         "消費期限: 未開封で製造より3ヶ月後500ppm、1年後300ppm以上保証（直射日光のあたらない常温保存）"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,000"
   }
 }

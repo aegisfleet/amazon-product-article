@@ -47,7 +47,9 @@
         "claim": "1.0Lの大容量",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "商品ページで確認"
       },
@@ -55,7 +57,9 @@
         "claim": "空焚き防止機能付き",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "商品ページで確認"
       }
@@ -138,6 +142,7 @@
         "中身が見える窓付き",
         "コード収納可能"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,529"
   }
 }

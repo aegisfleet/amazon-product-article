@@ -28,14 +28,18 @@
         "userType": "髪の長い女性",
         "scenario": "毎日のヘアドライ",
         "experience": "以前使っていたドライヤーは重くて途中で腕が疲れてしまっていましたが、これに変えてからは約280gという軽さのおかげで、最後まで快適に乾かせるようになりました。自動で温度調整してくれるので、夏場でも熱くなりすぎず重宝しています。",
-        "supportingSourceIds": ["amazon-feature"],
+        "supportingSourceIds": [
+          "amazon-feature"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ギフトを探していた男性",
         "scenario": "パートナーへの誕生日プレゼント",
         "experience": "妻への誕生日プレゼントとして購入しました。専用のショッパーがセットになっていたので、自分でラッピングする手間が省けてよかったです。髪がしっとりまとまると喜んで毎日使ってくれています。",
-        "supportingSourceIds": ["amazon-feature"],
+        "supportingSourceIds": [
+          "amazon-feature"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -58,7 +62,9 @@
         "claim": "重量が約280gと非常に軽量である",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-feature"],
+        "supportingSourceIds": [
+          "amazon-feature"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式の特徴欄に明記あり"
       },
@@ -66,7 +72,9 @@
         "claim": "環境温度を感知し自動でアンダー60℃をキープするセンシングプログラムを搭載",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-feature"],
+        "supportingSourceIds": [
+          "amazon-feature"
+        ],
         "crossChecked": false,
         "notes": "メーカー独自の温度コントロール機能として記載"
       }
@@ -147,6 +155,7 @@
         "付属品: ショッパー",
         "保証期間: 1年"
       ]
-    }
+    },
+    "investigatedPrice": "￥33,000"
   }
 }

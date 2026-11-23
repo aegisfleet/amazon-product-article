@@ -45,7 +45,9 @@
         "claim": "針が60度に曲がっており、長期間使用しても変形しにくく、ペットの体にぴったりフィットする",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "商品仕様として明記されており、スリッカーブラシの標準的な機能設計として妥当。"
       },
@@ -53,7 +55,9 @@
         "claim": "プラスチック製の丸頭ニードルビーズがペットの皮膚を傷つけから守る",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "丸玉ピンは直接皮膚に触れる刺激を和らげるため、事実として妥当。"
       }
@@ -165,6 +169,7 @@
       "color": "グレー",
       "compatibility": "犬・猫（長毛・短毛兼用）",
       "maintenance": "丸洗い可能"
-    }
+    },
+    "investigatedPrice": "￥1,799"
   }
 }

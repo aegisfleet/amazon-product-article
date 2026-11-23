@@ -31,7 +31,9 @@
         "userType": "ソロキャンパー",
         "scenario": "初めてのソロキャンプで利用",
         "experience": "ポールポケット式のおかげで、初心者でも一人でスムーズに設営できました。前室が広いため、夜間に荷物をしまったり、ちょっとした雨の時にタープなしで過ごせるのが非常に便利です。一方で、約4kgあるため車やバイク以外での持ち運びは厳しいと感じました。使い勝手と価格のバランスが良く、定番と言われる理由がわかりました。",
-        "supportingSourceIds": ["amazon-review"],
+        "supportingSourceIds": [
+          "amazon-review"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -65,7 +67,10 @@
         "claim": "ひとりでも設営しやすい簡単設営",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-product-page", "amazon-review"],
+        "supportingSourceIds": [
+          "amazon-product-page",
+          "amazon-review"
+        ],
         "crossChecked": true,
         "notes": "ポールポケット式構造により、ユーザーレビューでも一人での設営が容易であることが多数報告されている。"
       }
@@ -191,6 +196,7 @@
         "ランタンハンガー、メッシュポケット",
         "付属品: ペグ、ロープ、収納ケース"
       ]
-    }
+    },
+    "investigatedPrice": "￥15,733"
   }
 }

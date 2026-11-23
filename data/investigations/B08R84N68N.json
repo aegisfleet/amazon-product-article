@@ -28,7 +28,9 @@
         "userType": "MacBookユーザー",
         "scenario": "外出先での作業やプレゼン",
         "experience": "MacBook Airのポート不足を補うために購入。軽くてコンパクトなので持ち運びが苦になりません。SDカードスロットがあるため、カメラで撮影したデータをその場で取り込んで編集でき、HDMIで外部モニターにも出力できるので重宝しています。ただし、パススルー充電には対応していないため、長時間の作業時はPC本体のバッテリー残量に気をつける必要があります。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -51,7 +53,9 @@
         "claim": "USB2.0の約10倍の超高速データ転送",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "USB 3.1 Gen1 (5Gbps)の理論値に基づく事実"
       }
@@ -165,6 +169,7 @@
         "カラー: シルバー",
         "保証期間: 1年"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,890"
   }
 }

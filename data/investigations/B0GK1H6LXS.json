@@ -32,14 +32,18 @@
         "userType": "ソロキャンパー",
         "scenario": "秋口の肌寒い季節でのテント泊",
         "experience": "これまで薄手の銀マットを使っていましたが、地面の冷えと硬さで翌朝に腰が痛くなるのが悩みでした。このマットに変えてからは厚さ10cmのおかげで底付き感がなくなり、R値3.5の断熱性で底冷えも防げました。設営も足で踏むだけなので、疲れて到着した時でもすぐに寝床が作れるのが大きな決め手でした。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "車中泊ユーザー",
         "scenario": "ミニバンでの車中泊",
         "experience": "シートの段差を解消するために購入しました。完全にフラットにはなりませんが、10cmの厚みでかなり快適に眠れるようになりました。ただ、枕の高さが自分の好みより少し高めで、空気を抜いて調整するとマット全体の張りが落ちてしまう点が少し不満です。それでも価格を考えれば十分満足しています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -62,7 +66,9 @@
         "claim": "R値3.5相当で春・秋の寒暖差が激しい環境でも温かい睡眠環境を確保できる",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーの仕様に基づく。厚さ10cmの空気層があるため一定の断熱性は期待できるが、厳冬期の使用は別途対策が必要"
       },
@@ -70,7 +76,9 @@
         "claim": "耐パンク・耐摩耗性に優れ耐荷重200kg",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "40Dナイロン+TPUコーティングの一般的な耐久性として妥当な数値"
       }
@@ -185,9 +193,22 @@
       "loadCapacity": "200kg",
       "rValue": "3.5相当（三季対応）",
       "storageSize": "直径100mm × 260mm",
-      "features": ["足踏み式ポンプ内蔵", "枕一体型", "無限連結可能", "防水・耐パンク仕様"],
-      "contents": ["マット本体", "収納袋", "固定バンド", "補修パッチ"],
-      "other": ["膨張時間目安: 約30〜60秒"]
-    }
+      "features": [
+        "足踏み式ポンプ内蔵",
+        "枕一体型",
+        "無限連結可能",
+        "防水・耐パンク仕様"
+      ],
+      "contents": [
+        "マット本体",
+        "収納袋",
+        "固定バンド",
+        "補修パッチ"
+      ],
+      "other": [
+        "膨張時間目安: 約30〜60秒"
+      ]
+    },
+    "investigatedPrice": "￥2,798"
   }
 }

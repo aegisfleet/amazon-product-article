@@ -27,14 +27,18 @@
         "userType": "血圧が気になる中高年層",
         "scenario": "毎日の健康管理として血圧対策を検討している時",
         "experience": "健康診断で血圧が高めと言われたため、トクホである本商品を購入。希釈不要のストレートタイプなので毎日続けやすく、りんご果汁とハチミツの甘みでお酢特有のツンとした刺激も少なく美味しく飲めています。この手軽さと飲みやすさが他の黒酢飲料ではなく本商品を選んだ決め手です。",
-        "supportingSourceIds": ["src-amazon-page"],
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "自然派志向のユーザー",
         "scenario": "健康のために毎日飲むお酢ドリンクを探している時",
         "experience": "トクホで血圧対策ができる点に惹かれて購入しましたが、人工甘味料（スクラロース）の独特の甘みが後味として残り、気になってしまいました。味自体はサッパリしていますが、成分表示をもっとよく確認してから購入すべきだったと反省しています。",
-        "supportingSourceIds": ["src-amazon-page"],
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
         "sentiment": "negative"
       }
     ],
@@ -57,7 +61,9 @@
         "claim": "血圧が高めの方のための特定保健用食品",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-page"],
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
         "crossChecked": true,
         "notes": "パッケージのトクホマークおよび消費者庁の許可表示から事実確認済み。"
       }
@@ -164,9 +170,12 @@
       "energy": "14kcal (100mlあたり)",
       "ingredients": "りんご酢(国内製造)、りんご果汁、ハチミツ/乳酸Ca、香料、クエン酸、炭酸K、ビタミンC、グルコン酸K、甘味料(スクラロース)",
       "nutritionalInformation": "たんぱく質:0g、脂質:0g、炭水化物:3.7g、食塩相当量:0.0g、酢酸:750mg (100mlあたり)",
-      "allergens": ["りんご"],
+      "allergens": [
+        "りんご"
+      ],
       "certification": "特定保健用食品 (トクホ)",
       "origin": "日本"
-    }
+    },
+    "investigatedPrice": "￥3,762"
   }
 }

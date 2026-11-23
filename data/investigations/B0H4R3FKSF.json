@@ -3,7 +3,11 @@
     "productName": "KZ EDX PRO 有線イヤホン",
     "parentAsin": "B0FN7HDLKN",
     "productDescription": "10mmデュアルマグネットドライバーを搭載した、迫力の低音とクリアな高音を両立する有線インイヤーモニターです。",
-    "productUsage": ["ゲームプレイ（音像定位）", "日常の音楽リスニング", "DJプレイやステージモニター"],
+    "productUsage": [
+      "ゲームプレイ（音像定位）",
+      "日常の音楽リスニング",
+      "DJプレイやステージモニター"
+    ],
     "positivePoints": [
       "10mmデュアルマグネットドライバーによる迫力のある低域とクリアな高域",
       "高級5N OFC（無酸素銅）ケーブル採用による信号ロスの低減",
@@ -14,20 +18,28 @@
       "マイクが搭載されていないため、ボイスチャットには別途マイクが必要",
       "有線モデルのため、ワイヤレスイヤホンのような取り回しの良さはない"
     ],
-    "useCases": ["FPSなどのゲームで正確な音を聞き分ける", "外出時の音楽鑑賞", "自宅での長時間リスニング"],
+    "useCases": [
+      "FPSなどのゲームで正確な音を聞き分ける",
+      "外出時の音楽鑑賞",
+      "自宅での長時間リスニング"
+    ],
     "userStories": [
       {
         "userType": "ゲーマー",
         "scenario": "FPSゲームでの利用",
         "experience": "ゲーム中の足音や銃声の方向が分かりやすく、定位感が優れていると感じた。長時間のプレイでも耳が痛くなりにくいのが決め手となった。ただし、マイクがないためボイスチャット用には別途マイクを用意する必要があった。",
-        "supportingSourceIds": ["src-amazon-features"],
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "オーディオファン",
         "scenario": "日常の音楽リスニング",
         "experience": "2000円台とは思えないほど低音がしっかり出ており、ライブ音源を聴くのに適している。高級感のあるメタルハウジングのデザインも気に入っており、コスパの良さが決め手となった。",
-        "supportingSourceIds": ["src-amazon-features"],
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -50,7 +62,9 @@
         "claim": "スタジオクオリティの音質とライブコンサートさながらの没入感あふれるハイファイサウンド",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-amazon-features"],
+        "supportingSourceIds": [
+          "src-amazon-features"
+        ],
         "crossChecked": false,
         "notes": "メーカーの主張。価格帯を考慮すると「スタジオクオリティ」は誇張の可能性があるが、10mmデュアルマグネットドライバーによる低音の迫力は評価されている傾向にある。"
       }
@@ -162,7 +176,11 @@
       "weight": "約30g (ケーブル含む推測値)",
       "color": "青緑",
       "microphone": "無し",
-      "other": ["人間工学に基づいたデザイン", "やわらかいシリコンイヤーチップ付属"]
-    }
+      "other": [
+        "人間工学に基づいたデザイン",
+        "やわらかいシリコンイヤーチップ付属"
+      ]
+    },
+    "investigatedPrice": "￥2,299"
   }
 }

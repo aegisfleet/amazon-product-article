@@ -40,7 +40,9 @@
         "claim": "ブルーライトを約50%カット",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "公式の商品説明に記載"
       },
@@ -48,7 +50,9 @@
         "claim": "超軽量弾力素材「TR-90」を採用",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "公式の商品説明に記載"
       }
@@ -113,6 +117,7 @@
         "ブルーライトカット率: 約50%",
         "付属品: 収納ポーチ"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,180"
   }
 }

@@ -27,7 +27,9 @@
         "userType": "眼科手術を受けた患者",
         "scenario": "網膜剥離の手術後、長期間のうつぶせ寝が必要になった際",
         "experience": "顔をしっかりサポートしながらも息苦しさがなく、長時間うつぶせの状態を保つのが楽になりました。低反発素材が頭の重さに合わせてフィットするので、首や肩の負担も軽減されたように感じます。",
-        "supportingSourceIds": ["amazon-features"],
+        "supportingSourceIds": [
+          "amazon-features"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -50,7 +52,9 @@
         "claim": "中空換気設計により空気の循環がスムーズ",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-features"],
+        "supportingSourceIds": [
+          "amazon-features"
+        ],
         "crossChecked": false,
         "notes": "商品詳細ページの記載に基づく"
       },
@@ -58,7 +62,9 @@
         "claim": "熱調節を向上させる細断メモリーフォームブレンド",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-features"],
+        "supportingSourceIds": [
+          "amazon-features"
+        ],
         "crossChecked": false,
         "notes": "商品詳細ページの記載に基づく"
       }
@@ -171,6 +177,7 @@
       "material": "細断メモリーフォーム（中材）、ベルベット（カバー）",
       "color": "グレー",
       "size": "大型"
-    }
+    },
+    "investigatedPrice": "￥5,580"
   }
 }

@@ -3,7 +3,12 @@
     "productName": "Notta Memo Type-C充電 AIボイスレコーダー",
     "parentAsin": "B0G3GH1H1K",
     "productDescription": "専用の「Notta」アプリと連携し、録音・文字起こし・翻訳・要約までを自動化する薄型AIボイスレコーダー。高水準のセキュリティと法人向け機能も備え、会議や商談を効率化します。",
-    "productUsage": ["会議の議事録作成", "商談・インタビューの録音と文字起こし", "多言語通話や会議のリアルタイム翻訳", "アイデアの音声メモと要約"],
+    "productUsage": [
+      "会議の議事録作成",
+      "商談・インタビューの録音と文字起こし",
+      "多言語通話や会議のリアルタイム翻訳",
+      "アイデアの音声メモと要約"
+    ],
     "positivePoints": [
       "Nottaアプリとの連携による文字起こし、翻訳、AI要約（Notta Brain）の自動化ワークフローが構築されている",
       "ワンタッチで1秒以内に即時録音が開始できる設計",
@@ -17,13 +22,19 @@
       "機能の多くがNottaのクラウドサービスと連携することを前提としているため、スタータープラン超過後は継続的な利用コストが発生する可能性がある",
       "スマートフォンの背面にマグネットで装着する利用スタイルは、MagSafe非対応ケースを使用しているユーザーには別途工夫が必要になる"
     ],
-    "useCases": ["オンライン・オフライン会議での多言語同時文字起こし", "スマートフォンに装着して外出先での通話や急な打ち合わせを録音", "PCにType-Cで有線接続し、セキュリティの厳しい環境下でのデータ同期"],
+    "useCases": [
+      "オンライン・オフライン会議での多言語同時文字起こし",
+      "スマートフォンに装着して外出先での通話や急な打ち合わせを録音",
+      "PCにType-Cで有線接続し、セキュリティの厳しい環境下でのデータ同期"
+    ],
     "userStories": [
       {
         "userType": "ビジネスマン（営業・コンサルタント）",
         "scenario": "多言語が飛び交うオンライン会議や、機密性の高い商談において",
         "experience": "Nottaアプリと連携することで、ワンタッチ録音から文字起こし・要約までがシームレスに行える点が非常に便利。特にPCへ直接Type-Cで同期できる法人向けセキュリティ機能があるため、私用スマホを経由せずに機密データを安全に管理できるのが大きな決め手。Nottaアカウントとの連携によるスタータープランが自動適用されるため、導入後すぐに使える点も評価できる。",
-        "supportingSourceIds": ["src-notta-official"],
+        "supportingSourceIds": [
+          "src-notta-official"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -46,7 +57,9 @@
         "claim": "文字起こしおよび要約の精度は最大98.86％",
         "category": "comparativeAdvantage",
         "confidence": "medium",
-        "supportingSourceIds": ["src-notta-official"],
+        "supportingSourceIds": [
+          "src-notta-official"
+        ],
         "crossChecked": false,
         "notes": "メーカーの公式な主張。録音環境や言語、発話者の明瞭さによって変動する可能性があるため、絶対的な数値ではなく参考値として捉える必要がある。"
       },
@@ -54,7 +67,9 @@
         "claim": "無線接続時と比較して最大10倍のスピードで大容量データを安定的に転送（Type-C有線接続時）",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-notta-official"],
+        "supportingSourceIds": [
+          "src-notta-official"
+        ],
         "crossChecked": false,
         "notes": "Type-C（最大800kb/s）の仕様に基づいたメーカーの主張。有線による安定性と速度向上は技術的に妥当である。"
       }
@@ -160,10 +175,22 @@
     },
     "technicalSpecs": {
       "color": "ブラック",
-      "dimensions": { "height": "約86.2mm", "width": "約54.9mm", "depth": "約3.0mm" },
+      "dimensions": {
+        "height": "約86.2mm",
+        "width": "約54.9mm",
+        "depth": "約3.0mm"
+      },
       "weight": "約29g",
       "connectivity": "Bluetooth / Wi-Fi / USB Type-C有線",
-      "features": ["1秒ワンタッチ録音", "Nottaアプリ連携", "リアルタイム文字起こし・翻訳 (最大58言語対応/23言語で2か国語同時)", "Notta Brain AI要約", "マグネット装着", "話者識別"]
-    }
+      "features": [
+        "1秒ワンタッチ録音",
+        "Nottaアプリ連携",
+        "リアルタイム文字起こし・翻訳 (最大58言語対応/23言語で2か国語同時)",
+        "Notta Brain AI要約",
+        "マグネット装着",
+        "話者識別"
+      ]
+    },
+    "investigatedPrice": "￥25,500"
   }
 }

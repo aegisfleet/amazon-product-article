@@ -3,7 +3,11 @@
     "productName": "Kindle Colorsoft Signature Edition (2025年発売)",
     "parentAsin": "B0CX8MT2M2",
     "productDescription": "Kindleシリーズ初のカラー対応モデル。7インチのカラー電子ペーパーディスプレイを搭載し、フルカラーの表紙、マーカーの色分け、コミック・雑誌のカラー表示が可能になった防水仕様の電子書籍リーダーです。",
-    "productUsage": ["カラーでのコミック・雑誌・絵本の閲覧", "カラーマーカーを活用した実用書や専門書の学習", "長時間の読書"],
+    "productUsage": [
+      "カラーでのコミック・雑誌・絵本の閲覧",
+      "カラーマーカーを活用した実用書や専門書の学習",
+      "長時間の読書"
+    ],
     "positivePoints": [
       "Kindle初のカラー表示対応により、雑誌やコミック、絵本などのカラーコンテンツを本来の色合いで楽しめる",
       "白黒300ppi、カラー150ppiの解像度を備えた7インチディスプレイで、光の反射を抑えた目に優しい表示",
@@ -18,27 +22,38 @@
       "本体重量が約213gあり、長時間の片手持ちでは負担に感じる可能性がある",
       "ストレージが16GB固定であり、容量を多く消費するカラーコミックや雑誌を大量に保存する場合は不足する可能性がある"
     ],
-    "useCases": ["入浴中にカラーのマンガや雑誌を読む", "旅行先へ大量の蔵書を持ち運んで隙間時間に読書する", "実用書を読みながら重要箇所をカラーでマーカーする", "就寝前に色調調節ライトをアンバーにして読書する"],
+    "useCases": [
+      "入浴中にカラーのマンガや雑誌を読む",
+      "旅行先へ大量の蔵書を持ち運んで隙間時間に読書する",
+      "実用書を読みながら重要箇所をカラーでマーカーする",
+      "就寝前に色調調節ライトをアンバーにして読書する"
+    ],
     "userStories": [
       {
         "userType": "カラーコミック・雑誌愛好家",
         "scenario": "これまで白黒のKindleを使っていたが、カラーコンテンツを楽しむために乗り換えた",
         "experience": "ついにKindleでカラー表示ができるようになり、フルカラーのコミックや雑誌の本来の魅力が楽しめるようになりました。特に実用書などで図解がカラーになるだけで圧倒的に理解しやすくなります。ただし、カラー時の解像度は150ppiなので、スマホの画面に慣れていると少し粗く感じるのは否めません。それでも目に優しく、長時間の読書でも疲れないメリットのほうが上回っています。",
-        "supportingSourceIds": ["amazon-product-page"],
+        "supportingSourceIds": [
+          "amazon-product-page"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "お風呂読書が日課のユーザー",
         "scenario": "入浴中のリラックスタイムに読書をするため、防水機能付きの端末を探していた",
         "experience": "IPX8の防水対応なので、お風呂に浸かりながら安心して読書ができます。これまでスマホをジップロックに入れて持ち込んでいましたが、Kindle Colorsoftなら裸のままでも大丈夫です。さらに色調調節ライトのおかげで、就寝前の入浴でも眩しすぎず、リラックスして読書に集中できるのが決め手でした。",
-        "supportingSourceIds": ["amazon-product-page"],
+        "supportingSourceIds": [
+          "amazon-product-page"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "コストパフォーマンス重視のユーザー",
         "scenario": "カラー電子書籍リーダーの購入を検討したが、価格で迷っている",
         "experience": "機能には満足していますが、約4万円という価格はネックです。競合のKoboならより安価にカラーモデルが手に入るため、どうしてもKindleストアの資産にこだわる人でないと割高に感じるかもしれません。16GBという容量も、カラーコミックメインだとすぐにいっぱいになりそうです。",
-        "supportingSourceIds": ["amazon-product-page"],
+        "supportingSourceIds": [
+          "amazon-product-page"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -83,7 +98,9 @@
         "claim": "一度のフル充電で最大8週間続くバッテリー",
         "category": "durability",
         "confidence": "medium",
-        "supportingSourceIds": ["amazon-product-page"],
+        "supportingSourceIds": [
+          "amazon-product-page"
+        ],
         "crossChecked": false,
         "notes": "公式の主張であり、使用環境（明るさ設定やワイヤレス通信の使用状況）によって実際の駆動時間は変動する可能性があります。電子ペーパー端末としては標準的〜優秀な水準です。"
       },
@@ -91,7 +108,9 @@
         "claim": "光の反射を抑えた目に優しい紙のような読み心地のカラーディスプレイ",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-product-page"],
+        "supportingSourceIds": [
+          "amazon-product-page"
+        ],
         "crossChecked": true,
         "notes": "E Ink技術の特性上、バックライト付きの液晶や有機ELディスプレイと比較して目に優しいのは事実です。"
       }
@@ -161,6 +180,7 @@
         "色調調節ライト内蔵",
         "広告無しモデル"
       ]
-    }
+    },
+    "investigatedPrice": "￥51,980"
   }
 }

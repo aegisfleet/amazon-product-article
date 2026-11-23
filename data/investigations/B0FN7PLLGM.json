@@ -3,7 +3,12 @@
     "productName": "車用サンバイザーミラー LEDライト付き 無段階調光",
     "parentAsin": "B0FN7R93LX",
     "productDescription": "サンバイザーに取り付け可能な、LEDライト搭載の薄型・大判の車用化粧鏡。3色の照明モードと無段階調光機能を備え、Type-C充電でコードレスで使用できる。",
-    "productUsage": ["車内でのメイク直し", "ヘアスタイルのチェック", "夜間や暗い車内での補助照明", "後部座席の確認"],
+    "productUsage": [
+      "車内でのメイク直し",
+      "ヘアスタイルのチェック",
+      "夜間や暗い車内での補助照明",
+      "後部座席の確認"
+    ],
     "positivePoints": [
       "無段階調光と3色のライトモードで、時間帯や目的に応じた明るさ調整が可能",
       "Type-C USB充電式の1500mAhバッテリー内蔵で、ケーブルレスで設置できる",
@@ -52,7 +57,9 @@
         "claim": "無段階調光と3つの照明モード(冷光、暖光、自然光)を搭載している。",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品仕様として記載されている基本機能。"
       },
@@ -60,7 +67,9 @@
         "claim": "Type-C充電式の1500mAhバッテリーを内蔵している。",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "充電方式およびバッテリー容量の仕様表記。"
       },
@@ -68,7 +77,9 @@
         "claim": "サクラチェッカーで「注意」判定となっており、レビューや評価を鵜呑みにしない方が良い。",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "crossChecked": false,
         "notes": "外部ツールによる客観的な警告指標。"
       }
@@ -187,6 +198,7 @@
       "material": "耐熱素材",
       "color": "ブラック",
       "origin": "表記なし"
-    }
+    },
+    "investigatedPrice": "￥1,880"
   }
 }

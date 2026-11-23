@@ -31,14 +31,18 @@
         "userType": "コーヒー愛好家",
         "scenario": "朝のコーヒードリップで使用",
         "experience": "4mmの細口ノズルのおかげで湯量のコントロールが非常にしやすく、初心者でもプロのようにゆっくりとドリップできました。1℃単位で温度調節できるため、豆に合わせた最適な温度で抽出でき、毎朝のコーヒーが一段と美味しくなりました。",
-        "supportingSourceIds": ["src-amazon-page"],
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "乳児のいる親",
         "scenario": "夜間のミルク調乳で使用",
         "experience": "調乳に最適な温度に設定でき、2時間の保温機能があるため、夜中の授乳時にすぐお湯が使えて非常に助かりました。万が一倒してしまってもお湯がこぼれにくい構造なので、子どもがいても安心して使えます。",
-        "supportingSourceIds": ["src-amazon-page"],
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -61,7 +65,9 @@
         "claim": "10～100℃まで1℃単位で温度調整可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-page"],
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
         "crossChecked": false,
         "notes": "商品仕様から確認"
       },
@@ -69,7 +75,9 @@
         "claim": "転倒湯漏れ防止機能搭載",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-page"],
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
         "crossChecked": false,
         "notes": "商品仕様から確認"
       }
@@ -187,6 +195,7 @@
         "転倒湯もれ防止構造",
         "メモリー機能(3分以内の離脱時)"
       ]
-    }
+    },
+    "investigatedPrice": "￥12,998"
   }
 }

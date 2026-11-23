@@ -29,14 +29,18 @@
         "userType": "節酒中の人",
         "scenario": "禁酒中のお酒の代わりになるドリンクを探している時",
         "experience": "お酒の代わりに炭酸水で割って飲んでいます。酸味がマイルドでりんごの風味がしっかり感じられ、ノンアルコールドリンクとして美味しく楽しめています。",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "健康を意識する50代",
         "scenario": "毎日の健康サポートとしてお酢ドリンクを飲みたい時",
         "experience": "自分好みのお酢ドリンクを作るためにこちらを購入しました。水とメープルシロップ、氷を加えて飲むのがマイベストです。綺麗な琥珀色で美味しく、長期間無理なく飲み続けられています。",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -70,7 +74,9 @@
         "claim": "無ろ過製法により、りんご本来の恵みと発酵の源である酢酸菌をまるごと摂れる",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "公式サイトの記述と製品仕様（にごり酢）から事実と確認。"
       },
@@ -78,7 +84,10 @@
         "claim": "内側からすっきりキレイが続く、美容をサポートする成分（ポリフェノール）が摂れる",
         "category": "comparativeAdvantage",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "公式サイトで謳われており、ユーザーレビューでも美容サポートを期待して継続している声を確認。"
       }
@@ -189,10 +198,26 @@
         "depth": "72mm"
       },
       "capacity": "500ml",
-      "ingredients": ["りんご果汁（外国製造）"],
-      "nutrition": ["大さじ1杯(15ml)当たり", "エネルギー: 4.8kcal", "たんぱく質: 0g", "脂質: 0g", "炭水化物: 1.4g", "食塩相当量: 0.0g"],
-      "allergens": ["りんご"],
-      "features": ["無ろ過", "酢酸菌（マザー）入り", "純リンゴ酢"]
-    }
+      "ingredients": [
+        "りんご果汁（外国製造）"
+      ],
+      "nutrition": [
+        "大さじ1杯(15ml)当たり",
+        "エネルギー: 4.8kcal",
+        "たんぱく質: 0g",
+        "脂質: 0g",
+        "炭水化物: 1.4g",
+        "食塩相当量: 0.0g"
+      ],
+      "allergens": [
+        "りんご"
+      ],
+      "features": [
+        "無ろ過",
+        "酢酸菌（マザー）入り",
+        "純リンゴ酢"
+      ]
+    },
+    "investigatedPrice": "￥1,010"
   }
 }

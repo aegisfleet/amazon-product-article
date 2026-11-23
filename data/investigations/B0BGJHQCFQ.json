@@ -3,7 +3,10 @@
     "productName": "オープンファーム ターキー＆チキン レシピ ドッグフード",
     "parentAsin": "B0BGJHQCFQ",
     "productDescription": "人道的に飼育された七面鳥と鶏肉を主原料に、非遺伝子組み換えの有機野菜を配合した高品質なグレインフリードッグフード。原材料の出所を100%追跡可能なトレーサビリティが特徴です。",
-    "productUsage": ["毎日の主食（総合栄養食）", "穀物アレルギーのある犬への食事"],
+    "productUsage": [
+      "毎日の主食（総合栄養食）",
+      "穀物アレルギーのある犬への食事"
+    ],
     "positivePoints": [
       "原材料の出所が100%追跡可能（トレーサビリティ）であり、極めて高い安全性を誇る",
       "人道的に飼育された鶏や七面鳥など、倫理的かつ高品質な動物性タンパク質を使用",
@@ -23,14 +26,18 @@
         "userType": "成犬（ウィートンテリア）の飼い主",
         "scenario": "食の細い愛犬に様々なフードを試していた状況",
         "experience": "子犬の頃から様々なフードを試してきましたが、やっと愛犬が楽しみにするフードに出会えました。食いつきが非常に良く、6歳になった今でも子犬のように元気で、毛並みも素晴らしい状態を維持しています。",
-        "supportingSourceIds": ["src-openfarm"],
+        "supportingSourceIds": [
+          "src-openfarm"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "健康意識の高い飼い主",
         "scenario": "愛犬の食事の安全性を重視し、信頼できるフードを探していた状況",
         "experience": "使用されている食材の透明性が高く、出所を追跡できる点が購入の決め手になりました。以前のフードからの切り替えもスムーズで、お腹の調子を崩すこともなく元気に過ごしています。",
-        "supportingSourceIds": ["src-openfarm"],
+        "supportingSourceIds": [
+          "src-openfarm"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -53,7 +60,9 @@
         "claim": "原材料の100%が追跡可能であり、動物福祉に配慮して飼育された肉を使用している",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-openfarm"],
+        "supportingSourceIds": [
+          "src-openfarm"
+        ],
         "crossChecked": false,
         "notes": "公式サイトにてトレーサビリティと動物福祉（人道的な飼育）の明確な方針が掲げられている"
       },
@@ -61,7 +70,9 @@
         "claim": "穀物アレルギーに配慮し、穀物を一切使用していない",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-openfarm"],
+        "supportingSourceIds": [
+          "src-openfarm"
+        ],
         "crossChecked": true,
         "notes": "製品名や公式サイト、Amazonでの公式説明でもグレインフリーであることが確認できる"
       }
@@ -142,6 +153,7 @@
         "対象年齢: 全年齢（大型犬の成長期を除く）",
         "AAFCO栄養基準適合"
       ]
-    }
+    },
+    "investigatedPrice": "￥8,250"
   }
 }

@@ -41,7 +41,9 @@
         "claim": "本体言語は日本語のみに対応し、日本のアカウントのみ利用可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式情報で確認"
       },
@@ -49,7 +51,9 @@
         "claim": "別売りのディスクドライブを装着可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式情報で確認"
       }
@@ -133,6 +137,7 @@
         "対応アカウント: 国/地域が「日本」のアカウントのみ",
         "端子: HDMI出力端子、Ethernet端子、USB Type-A 端子×2、USB Type-C 端子×2"
       ]
-    }
+    },
+    "investigatedPrice": "￥55,000"
   }
 }

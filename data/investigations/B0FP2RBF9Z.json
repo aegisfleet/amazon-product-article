@@ -3,10 +3,25 @@
     "productName": "Apple Gift Card Eメール送信 5,000円",
     "parentAsin": "B09T37DLG6",
     "productDescription": "Apple製のハードウェア、アクセサリ、アプリ、ゲーム、音楽、映画、iCloud+などの購入に利用できるEメールタイプのギフトカードです。",
-    "productUsage": ["App Storeでのアプリやゲームの購入", "iTunesでの音楽や映画の購入", "Apple Storeでのハードウェアやアクセサリの購入", "iCloud+やApple Oneなどのサブスクリプションの支払い"],
-    "positivePoints": ["Appleのあらゆる製品・サービスに1枚で対応可能", "Eメール送信タイプのため、すぐに届き相手に素早く贈れる", "有効期限がないため、自分のタイミングで利用できる"],
-    "negativePoints": ["購入できる金額には制限があり、前回の購入から24時間以内は5万円までという制限がある", "返品や払い戻しは一切不可"],
-    "useCases": ["友人や家族への誕生日・記念日のギフト", "自分用のアプリ購入やサブスクリプション支払いの事前チャージ"],
+    "productUsage": [
+      "App Storeでのアプリやゲームの購入",
+      "iTunesでの音楽や映画の購入",
+      "Apple Storeでのハードウェアやアクセサリの購入",
+      "iCloud+やApple Oneなどのサブスクリプションの支払い"
+    ],
+    "positivePoints": [
+      "Appleのあらゆる製品・サービスに1枚で対応可能",
+      "Eメール送信タイプのため、すぐに届き相手に素早く贈れる",
+      "有効期限がないため、自分のタイミングで利用できる"
+    ],
+    "negativePoints": [
+      "購入できる金額には制限があり、前回の購入から24時間以内は5万円までという制限がある",
+      "返品や払い戻しは一切不可"
+    ],
+    "useCases": [
+      "友人や家族への誕生日・記念日のギフト",
+      "自分用のアプリ購入やサブスクリプション支払いの事前チャージ"
+    ],
     "userStories": [],
     "userImpression": "多くのユーザーは、Eメールですぐに受け取れる利便性と、Appleの全サービス・ハードウェアで統一して使える汎用性の高さを評価しています。一方で、クレジットカード決済時のセキュリティチェックによる配送遅延や、購入金額の制限（24時間で5万円まで）に注意が必要との声も散見されます。",
     "sources": [
@@ -27,7 +42,9 @@
         "claim": "Apple製ハードウェアからアプリ・サブスクリプションまで幅広く利用可能である。",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "Apple公式サイトの記述と一致。"
       },
@@ -35,7 +52,9 @@
         "claim": "ギフトカードには有効期限がない。",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "公式サイトにて有効期限がないことを確認。"
       }
@@ -122,9 +141,20 @@
       }
     ],
     "recommendation": {
-      "targetUsers": ["iPhoneやMacのユーザー", "Appleのサブスクリプション(iCloud+, Apple Music等)を利用している人", "友人や家族へすぐに届くギフトを探している人"],
-      "pros": ["Appleのあらゆるサービス・製品に利用可能", "Eメールですぐに届く", "有効期限がない"],
-      "cons": ["購入金額に24時間で5万円までの制限がある", "返品・払い戻し不可"],
+      "targetUsers": [
+        "iPhoneやMacのユーザー",
+        "Appleのサブスクリプション(iCloud+, Apple Music等)を利用している人",
+        "友人や家族へすぐに届くギフトを探している人"
+      ],
+      "pros": [
+        "Appleのあらゆるサービス・製品に利用可能",
+        "Eメールですぐに届く",
+        "有効期限がない"
+      ],
+      "cons": [
+        "購入金額に24時間で5万円までの制限がある",
+        "返品・払い戻し不可"
+      ],
       "score": 85,
       "scoreRationale": "[基本点: 70]\n[加点: +10] (Appleのエコシステム全体で利用できる汎用性の高さ)\n[加点: +5] (Eメール送信による即時性と利便性)\n[加点: +5] (有効期限がない安心感)\n[減点: -5] (購入金額制限があるための不便さ)\n[合計: 85]"
     },
@@ -133,6 +163,7 @@
       "model": "Apple(アップル)_1_5000",
       "validityPeriod": "無期限",
       "purchaseLimit": "前回の購入から24時間以内は5万円まで"
-    }
+    },
+    "investigatedPrice": "￥5,000"
   }
 }

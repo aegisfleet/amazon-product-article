@@ -29,14 +29,18 @@
         "userType": "歩行に不安を感じ始めた高齢者",
         "scenario": "日々の買い物や通院",
         "experience": "足腰が弱り長距離の歩行が辛くなってきたため購入。一般的なシニアカーと違い非常に軽く、操作もジョイスティックで直感的なためすぐに慣れました。手を離すとすぐにブレーキがかかるので、坂道でも安心感があります。折りたためば玄関先に置けるので邪魔になりません。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "高齢の親を持つ家族",
         "scenario": "親の外出サポートや旅行時の持ち運び",
         "experience": "親が一人で外出する際の移動手段としてプレゼントしました。最大の決め手は17kg台という軽さです。軽自動車のトランクにも簡単に積めるので、一緒に出かける際も非常に助かっています。パンク修理不要なタイヤもメンテナンスの手間がなくありがたいです。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -59,7 +63,9 @@
         "claim": "厚さ42cmまでわずか数秒で折りたたみ可能",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品仕様および折りたたみ時の寸法データから確認可能。車載性を高める重要な機能。"
       },
@@ -67,7 +73,9 @@
         "claim": "最大9°の傾斜道や段差でも安定した走行が可能",
         "category": "safety",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "転倒防止ホイールの搭載により、仕様上の登坂能力は担保されているが、実際の路面状況により体感は異なる可能性がある。"
       }
@@ -146,7 +154,13 @@
       "tire": "19cm パンクレスタイヤ (ノーパンクタイヤ)",
       "brakeSystem": "電磁ブレーキ",
       "material": "航空機用アルミニウム合金フレーム、レザー調素材 (座面)",
-      "features": ["高輝度LEDヘッドライト", "転倒防止ホイール", "無段階速度調整", "背面大容量収納バッグ"]
-    }
+      "features": [
+        "高輝度LEDヘッドライト",
+        "転倒防止ホイール",
+        "無段階速度調整",
+        "背面大容量収納バッグ"
+      ]
+    },
+    "investigatedPrice": "￥158,990"
   }
 }

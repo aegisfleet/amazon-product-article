@@ -27,7 +27,9 @@
         "userType": "一般ユーザー",
         "scenario": "毎日のスキンケアで毛穴やくすみをケアしたい時",
         "experience": "オシャレな容器にラベンダー色の美容液がキレイで、気分が上がります。柔らかくなめらかなテクスチャーで、肌にスーッと馴染んでくれ、ベタつかず使い心地が良いです。マンダリンオレンジの香りも癒されます。ただし、これだけでは保湿力が少し足りないので、使用後にクリームで蓋をする必要があります。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -50,7 +52,9 @@
         "claim": "水を一滴も使わず99%が美容成分で構成されている",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "crossChecked": false,
         "notes": "Amazonの商品詳細情報から確認"
       },
@@ -58,7 +62,9 @@
         "claim": "CICAエクソソームとNMNを配合",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "crossChecked": false,
         "notes": "Amazonの商品詳細情報から確認"
       }
@@ -177,6 +183,7 @@
         "肌質: 全肌",
         "商品の形状: セラム"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,980"
   }
 }

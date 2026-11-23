@@ -43,7 +43,9 @@
         "claim": "864×480ドットのTFTカラー液晶を搭載している",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "Amazonの商品仕様から確認"
       },
@@ -51,7 +53,9 @@
         "claim": "単3形アルカリ乾電池2本、または充電池（eneloop/EVOLTA）2本で駆動し、USB給電にも対応する",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "Amazonの商品仕様から確認"
       }
@@ -166,6 +170,7 @@
       "display": "864×480ドット TFTカラー液晶",
       "memoryCapacity": "約900MB",
       "origin": "中国"
-    }
+    },
+    "investigatedPrice": "￥29,800"
   }
 }

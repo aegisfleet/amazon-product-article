@@ -42,7 +42,9 @@
         "claim": "ハリ感チャージ成分2倍配合により、洗うたびシワ・カタチ回復",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式の製品特徴として記載されている"
       },
@@ -50,7 +52,9 @@
         "claim": "ダメージリペア技術でセンイを内側から補修",
         "category": "durability",
         "confidence": "medium",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式の製品特徴として記載されている"
       }
@@ -158,7 +162,11 @@
       "color": "ピンク",
       "energyEfficiencyClass": "High Efficiency",
       "type": "詰め替え用",
-      "features": ["蛍光剤無配合（※微量検出の可能性あり）", "ハリ感チャージ成分配合"]
-    }
+      "features": [
+        "蛍光剤無配合（※微量検出の可能性あり）",
+        "ハリ感チャージ成分配合"
+      ]
+    },
+    "investigatedPrice": "￥1,509"
   }
 }

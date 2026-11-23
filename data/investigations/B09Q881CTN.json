@@ -3,30 +3,53 @@
     "productName": "山善 電子レンジ 17L 単機能 YRM-HF171(B)",
     "parentAsin": "B0DCFWH9WN",
     "productDescription": "全国で使えるヘルツフリーの単機能電子レンジ（17L・ブラック）。ごはんや飲み物をワンタッチで温められるオートメニューやタイマー機能を搭載し、一人暮らしや少人数の家庭に最適なコンパクトモデルです。",
-    "productUsage": ["お弁当やお惣菜のあたため", "冷凍食品や肉類の解凍", "飲み物のあたため"],
-    "positivePoints": ["ヘルツフリーで全国どこでも使用できる", "よく使う「ごはん」「飲み物」のオートメニュー搭載", "ターンテーブル式でムラなく温まる", "設置しやすいコンパクトサイズ"],
-    "negativePoints": ["レンジ出力500W以上で15分を超えると約350Wに自動切り替えされる", "稼働音や終了時の音がやや大きいと感じる場合がある", "深さのあるお皿を出し入れする際に扉付近に気をつける必要がある"],
-    "useCases": ["引っ越しや転勤の多い一人暮らしの方のメインレンジとして", "シンプルに温めるだけの機能を求めるご家庭に", "民泊やゲストハウスなど、直感的な操作が求められる施設での利用"],
+    "productUsage": [
+      "お弁当やお惣菜のあたため",
+      "冷凍食品や肉類の解凍",
+      "飲み物のあたため"
+    ],
+    "positivePoints": [
+      "ヘルツフリーで全国どこでも使用できる",
+      "よく使う「ごはん」「飲み物」のオートメニュー搭載",
+      "ターンテーブル式でムラなく温まる",
+      "設置しやすいコンパクトサイズ"
+    ],
+    "negativePoints": [
+      "レンジ出力500W以上で15分を超えると約350Wに自動切り替えされる",
+      "稼働音や終了時の音がやや大きいと感じる場合がある",
+      "深さのあるお皿を出し入れする際に扉付近に気をつける必要がある"
+    ],
+    "useCases": [
+      "引っ越しや転勤の多い一人暮らしの方のメインレンジとして",
+      "シンプルに温めるだけの機能を求めるご家庭に",
+      "民泊やゲストハウスなど、直感的な操作が求められる施設での利用"
+    ],
     "userStories": [
       {
         "userType": "一人暮らし",
         "scenario": "新生活で初めての電子レンジ購入",
         "experience": "価格が手頃で一人暮らしのキッチンにちょうど良い小さめのサイズ感が良かったです。操作も直感的で使いやすく、朝の忙しい時間にも活躍しています。",
-        "supportingSourceIds": ["src-amazon-review"],
+        "supportingSourceIds": [
+          "src-amazon-review"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "一般家庭",
         "scenario": "冷凍食品や惣菜のあたため",
         "experience": "シンプルな機能で使い勝手が良く、驚いたことに解凍時のムラが少ないです。ただ、終了時のブザー音が以前使っていたものより大きく感じるため、音量変更ができたらさらに良かったです。",
-        "supportingSourceIds": ["src-amazon-review"],
+        "supportingSourceIds": [
+          "src-amazon-review"
+        ],
         "sentiment": "mixed"
       },
       {
         "userType": "施設管理者",
         "scenario": "民泊への設置",
         "experience": "機能がシンプルなため、宿泊客が使い方に迷うことなく利用できています。多機能すぎるものより壊れにくそうなのも良い点です。",
-        "supportingSourceIds": ["src-amazon-review"],
+        "supportingSourceIds": [
+          "src-amazon-review"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -60,7 +83,9 @@
         "claim": "ヘルツフリーで全国で使える",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-product"],
+        "supportingSourceIds": [
+          "src-amazon-product"
+        ],
         "crossChecked": true,
         "notes": "商品仕様に明記されている"
       },
@@ -68,7 +93,9 @@
         "claim": "終了音が大きい",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-amazon-review"],
+        "supportingSourceIds": [
+          "src-amazon-review"
+        ],
         "crossChecked": false,
         "notes": "複数のレビューで指摘がある"
       }
@@ -129,9 +156,20 @@
       }
     ],
     "recommendation": {
-      "targetUsers": ["一人暮らしの方", "温め機能だけをシンプルに使いたい方", "引っ越しが多くヘルツフリー対応を求める方"],
-      "pros": ["ヘルツフリーで全国対応", "オートメニューで操作が簡単", "コンパクトで設置しやすい"],
-      "cons": ["終了音などの稼働音がやや大きい", "長時間の高出力稼働には制限がある"],
+      "targetUsers": [
+        "一人暮らしの方",
+        "温め機能だけをシンプルに使いたい方",
+        "引っ越しが多くヘルツフリー対応を求める方"
+      ],
+      "pros": [
+        "ヘルツフリーで全国対応",
+        "オートメニューで操作が簡単",
+        "コンパクトで設置しやすい"
+      ],
+      "cons": [
+        "終了音などの稼働音がやや大きい",
+        "長時間の高出力稼働には制限がある"
+      ],
       "score": 77,
       "scoreRationale": "[基本点: 70]\n[加点: +3] (ヘルツフリーで全国どこでも使用でき、引っ越し時も安心)\n[加点: +3] (オートメニュー搭載による操作性の良さ)\n[加点: +3] (コンパクトで一人暮らしに適したサイズ感)\n[減点: -2] (稼働音や終了音が大きいというユーザーの声がある)\n[合計: 77]"
     },
@@ -154,6 +192,7 @@
       "annualPowerConsumption": "60.03kWh/年 (50Hz) / 59.93kWh/年 (60Hz)",
       "turntableDiameter": "25.5cm",
       "powerCordLength": "1.5m"
-    }
+    },
+    "investigatedPrice": "￥8,980"
   }
 }

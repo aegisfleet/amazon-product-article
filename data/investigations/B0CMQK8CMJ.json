@@ -3,7 +3,11 @@
     "productName": "UGREEN NexodeX 100W GaNII充電器 (USB-C×2+USB-A)",
     "parentAsin": "B0GSVSFH38",
     "productDescription": "最新のGaNInfinityチップを搭載し、単ポート最大100Wの高出力を実現した超小型急速充電器。USB-C×2、USB-A×1の3ポートを備え、PCからスマートフォンまで3台同時に急速充電が可能です。",
-    "productUsage": ["ノートPCへの給電", "スマートフォンやタブレットの急速充電", "旅行・出張時の持ち運び"],
+    "productUsage": [
+      "ノートPCへの給電",
+      "スマートフォンやタブレットの急速充電",
+      "旅行・出張時の持ち運び"
+    ],
     "positivePoints": [
       "単ポート使用時で最大100Wの高出力に対応",
       "最新のGaNInfinityチップ搭載による超小型化（約35×43×71mm）",
@@ -14,13 +18,18 @@
       "複数ポート同時使用時は、接続機器に応じて出力が分配されるため、100Wフル出力は得られない",
       "100W出力には100W対応のUSB-Cケーブルが別途必要"
     ],
-    "useCases": ["MacBook ProなどのノートPCとスマートフォンを同時に充電する", "外出先での作業用にコンパクトな充電器として持ち運ぶ"],
+    "useCases": [
+      "MacBook ProなどのノートPCとスマートフォンを同時に充電する",
+      "外出先での作業用にコンパクトな充電器として持ち運ぶ"
+    ],
     "userStories": [
       {
         "userType": "ビジネスパーソン",
         "scenario": "出張先でのPC作業",
         "experience": "MacBook ProとiPhoneを同時に充電でき、かつ従来の100W充電器より圧倒的に小さいため、バッグの中でかさばりません。Thermal Guard技術のおかげか、長時間使用しても異常な発熱がなく安心して使えます。ただし、ケーブルは付属していないので、100W対応ケーブルを別途用意する必要がある点に注意が必要です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -43,7 +52,9 @@
         "claim": "iPhone 17 Proをわずか30分で0％から68％に充電可能",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "100WのPD急速充電仕様に基づき、十分実現可能な数値であると判断"
       }
@@ -162,6 +173,7 @@
         "搭載チップ: GaNInfinity",
         "安全機能: Thermal Guard (過熱・過充電・過電流制御)"
       ]
-    }
+    },
+    "investigatedPrice": "￥4,880"
   }
 }

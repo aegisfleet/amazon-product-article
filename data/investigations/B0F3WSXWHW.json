@@ -43,7 +43,9 @@
         "claim": "8K@60Hzおよび4K@240Hzに対応",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-b0f3wsxwhw"],
+        "supportingSourceIds": [
+          "src-amazon-b0f3wsxwhw"
+        ],
         "crossChecked": false,
         "notes": "公式スペックに基づく"
       },
@@ -51,7 +53,9 @@
         "claim": "VRR、ダイナミックHDR、Dolby Atmos、HDCP2.3対応",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-b0f3wsxwhw"],
+        "supportingSourceIds": [
+          "src-amazon-b0f3wsxwhw"
+        ],
         "crossChecked": false,
         "notes": "公式スペックに基づく"
       }
@@ -158,7 +162,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +8] (4K@240Hzという優れた高リフレッシュレート対応)\n[加点: +5] (VRR、Dolby Atmosなどの充実した最新規格への対応)\n[加点: +5] (UGREENという信頼性の高いブランド)\n[減点: -5] (多くの競合が備える双方向対応（1入力2出力）機能がないこと)\n[合計: 83]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "30.0mm", "width": "72.0mm", "depth": "157.0mm" },
+      "dimensions": {
+        "height": "30.0mm",
+        "width": "72.0mm",
+        "depth": "157.0mm"
+      },
       "resolution": "8K@60Hz、4K@240Hz、4K@120Hz、2K@240Hz、1080P@240Hz",
       "bandwidth": "48Gbps",
       "supportedFeatures": "HDMI 2.1/2.0/1.4、VRR、Dynamic HDR、Dolby Atmos、HDCP 2.3",
@@ -168,6 +176,7 @@
       "color": "ブラック",
       "model": "65877",
       "warranty": "24ヶ月"
-    }
+    },
+    "investigatedPrice": "￥2,500"
   }
 }

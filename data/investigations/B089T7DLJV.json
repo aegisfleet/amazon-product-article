@@ -31,14 +31,18 @@
         "userType": "飲食店のスタッフ",
         "scenario": "店舗でのユニフォームとして毎日着用",
         "experience": "肩紐が太いH型なので、長時間着ていても首や肩が疲れにくいのがこの商品を選んだ決め手でした。洗濯してもシワになりにくく、ノーアイロンですぐに使えるため、毎日の手入れが非常に楽です。ただ、撥水機能はないので水回りでのハードな作業には少し不安があります。",
-        "supportingSourceIds": ["src-amazon-creators"],
+        "supportingSourceIds": [
+          "src-amazon-creators"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "主婦",
         "scenario": "家庭での毎日の家事に使用",
         "experience": "ポケットが少し高めの位置にあるおかげで、スマートフォンやメモ帳を入れても足の動きを邪魔せず、しゃがむ作業がしやすいのが選んだ理由です。丈が短めなので足捌きも良く、家事全般で動きやすいのが気に入っています。",
-        "supportingSourceIds": ["src-amazon-creators"],
+        "supportingSourceIds": [
+          "src-amazon-creators"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -61,7 +65,9 @@
         "claim": "ナイロン製のエプロンに比べて丈夫で、縮みにくく、シワにもなりにくい",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-creators"],
+        "supportingSourceIds": [
+          "src-amazon-creators"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式の主張。具体的な素材名の記載はないが、ポリエステル混紡などの一般的なシワ防止素材であると推測される。"
       },
@@ -69,7 +75,9 @@
         "claim": "ポケットが通常より高めの位置にあり、人体の重心に近いため物を入れても動きやすい",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-creators"],
+        "supportingSourceIds": [
+          "src-amazon-creators"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式の設計意図。エルゴノミクスに基づいた具体的な設計アピール。"
       }
@@ -161,6 +169,7 @@
         "アイロン: 不要（シワ防止仕様）",
         "サイズ詳細: 55×85×70cm"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,000"
   }
 }

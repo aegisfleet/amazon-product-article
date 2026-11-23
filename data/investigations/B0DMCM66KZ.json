@@ -28,21 +28,27 @@
         "userType": "2人暮らしのユーザー",
         "scenario": "日常の洗濯",
         "experience": "2人暮らしで使用していますが、価格の割に使いやすく助かっています。ただ、脱水時の音や揺れは結構気になります。それでもコストパフォーマンスが高いため満足しています。",
-        "supportingSourceIds": ["src-amazon-review-1"],
+        "supportingSourceIds": [
+          "src-amazon-review-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "単身・またはサブ用途のユーザー",
         "scenario": "作業着やスニーカーなどの汚れ物の洗濯",
         "experience": "主に雑巾や作業着、スニーカーを洗うために購入しました。低価格ですが性能は十分で、しっかり汚れが落ちます。操作も簡単でサブ洗濯機として大活躍しています。",
-        "supportingSourceIds": ["src-amazon-review-2"],
+        "supportingSourceIds": [
+          "src-amazon-review-2"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "買い替えユーザー",
         "scenario": "毎日の洗濯利用",
         "experience": "洗い上がりには満足していますが、スタートボタンを押してから自動測定を経て動き出すまで少し時間がかかるため、最初は水が出ないと焦りました。慣れれば問題ありません。",
-        "supportingSourceIds": ["src-amazon-review-3"],
+        "supportingSourceIds": [
+          "src-amazon-review-3"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -87,7 +93,10 @@
         "claim": "部屋干しの乾燥時間を大幅に短縮できる風乾燥機能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-review-1", "src-amazon-review-2"],
+        "supportingSourceIds": [
+          "src-amazon-review-1",
+          "src-amazon-review-2"
+        ],
         "crossChecked": true,
         "notes": "ユーザーレビューで基本性能（洗浄・脱水・乾燥）に概ね満足している旨が確認できている"
       }
@@ -161,9 +170,15 @@
       "weight": "25kg",
       "capacity": "5.5kg",
       "color": "金属グレー",
-      "features": ["8つの洗濯コース", "風乾燥", "ガラスドア", "槽洗浄・槽乾燥"],
+      "features": [
+        "8つの洗濯コース",
+        "風乾燥",
+        "ガラスドア",
+        "槽洗浄・槽乾燥"
+      ],
       "model": "CAC06EW55/T-S1",
       "manufacturer": "日本美的株式会社"
-    }
+    },
+    "investigatedPrice": "￥27,980"
   }
 }

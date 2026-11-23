@@ -27,7 +27,9 @@
         "userType": "40代男性（会社員）",
         "scenario": "外食が多く胃もたれが気になる日常",
         "experience": "最近胃もたれを感じやすくなったため購入しました。天然由来の成分ということで安心して飲めます。1回10錠飲むのは最初は驚きましたが、慣れると問題ありません。大容量なので家族でシェアしても長持ちし、コスパが良いのが決め手でした。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -50,7 +52,9 @@
         "claim": "不足しがちな栄養素の補給に役立つ",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "必須アミノ酸やビタミンB群などが豊富に含まれているため"
       }
@@ -103,9 +107,16 @@
     "technicalSpecs": {
       "capacity": "1200錠",
       "weight": "580g",
-      "ingredients": ["乾燥酵母"],
+      "ingredients": [
+        "乾燥酵母"
+      ],
       "dosage": "成人（15歳以上）1回10錠、1日3回",
-      "other": ["指定医薬部外品", "天然素材由来", "必須アミノ酸、ビタミンB群、ミネラル含有"]
-    }
+      "other": [
+        "指定医薬部外品",
+        "天然素材由来",
+        "必須アミノ酸、ビタミンB群、ミネラル含有"
+      ]
+    },
+    "investigatedPrice": "￥1,500"
   }
 }

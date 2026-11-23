@@ -3,7 +3,11 @@
     "productName": "ホルツ ペイント塗料 プラサフ グレー 300ml MH11503",
     "parentAsin": "B0F6Y1T764",
     "productDescription": "車の金属ボディやアルミ製品の下塗りに適した、速乾性のスプレー式下塗り塗料です。",
-    "productUsage": ["自動車のボディやバンパーの塗装前下地処理", "金属・木材・アルミ製品の下塗り", "パテ仕上げ面の細かいキズ埋め"],
+    "productUsage": [
+      "自動車のボディやバンパーの塗装前下地処理",
+      "金属・木材・アルミ製品の下塗り",
+      "パテ仕上げ面の細かいキズ埋め"
+    ],
     "positivePoints": [
       "塗布後20〜40分で乾燥する速乾性仕様",
       "パテ作業後の細かいキズを埋めることができ、ペイントの仕上がりを向上させる",
@@ -13,13 +17,18 @@
     "negativePoints": [
       "SOFT99等の同等の競合製品（約900円前後）と比較すると価格が高め（約1,700円）である"
     ],
-    "useCases": ["車の補修塗装時の下塗り", "色を塗り替える際の下地処理"],
+    "useCases": [
+      "車の補修塗装時の下塗り",
+      "色を塗り替える際の下地処理"
+    ],
     "userStories": [
       {
         "userType": "車のDIY補修を行うユーザー",
         "scenario": "バンパーのキズをパテで埋めた後の塗装前処理として",
         "experience": "パテで補修した後の細かな段差やキズをしっかりと埋めてくれました。20分ほどですぐに乾き、その後のヤスリがけ（研磨）もスムーズに行えたため、上塗りのカラー塗装がきれいに仕上がりました。競合より少し高いですが、仕上がりの良さで選んで正解でした。",
-        "supportingSourceIds": ["src-amazon-product-info"],
+        "supportingSourceIds": [
+          "src-amazon-product-info"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -42,7 +51,9 @@
         "claim": "ペイントの密着性を高め、強い防錆力もある",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-product-info"],
+        "supportingSourceIds": [
+          "src-amazon-product-info"
+        ],
         "crossChecked": true,
         "notes": "メーカーの商品説明として一貫して記載されている"
       },
@@ -50,7 +61,9 @@
         "claim": "塗装後、20〜40分で乾燥する速乾性",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-product-info"],
+        "supportingSourceIds": [
+          "src-amazon-product-info"
+        ],
         "crossChecked": true,
         "notes": "メーカーの商品説明として一貫して記載されている"
       }
@@ -162,6 +175,7 @@
         "用途: 自動車のボディ、バンパー、金属、木材",
         "乾燥時間: 20〜40分"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,534"
   }
 }

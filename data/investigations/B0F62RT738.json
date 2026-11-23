@@ -33,14 +33,18 @@
         "userType": "デスクワーカー",
         "scenario": "オフィスでの長時間のPC作業",
         "experience": "プラスチック製の安っぽい扇風機はオフィスのデスクに合わなかったため、デザイン性を重視してこのチタン製フルメタルボディのモデルを選びました。LEDのディスプレイがかっこよく、所有欲を満たしてくれます。風量1なら音も非常に静かで集中を妨げず、Type-CケーブルでPCの近くから給電できるのが便利です。ただ、少しずっしりとした重さがあります。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "一人暮らしの社会人",
         "scenario": "ワンルームでの空気循環と部屋干し",
         "experience": "部屋が狭いので、収納しやすく邪魔にならないサーキュレーターを探していました。折りたたむと17cmと非常にコンパクトになり、棚にスッキリ収まるのが決め手でした。風量のパワーは十分で、最大12畳まで対応とのことで空気の循環もしっかりできます。ただし、左右の角度調整は手動なので、広範囲を自動で風を当てたい用途には少し不向きでした。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -63,7 +67,9 @@
         "claim": "通常の場合と比べて風力が瞬時に300％も向上",
         "category": "comparativeAdvantage",
         "confidence": "low",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーの自社従来品または一般的な同クラス品との比較と思われるが、具体的な比較対象が不明確なための表現。"
       },
@@ -71,7 +77,9 @@
         "claim": "運転音を図書館並みの静けさ、最小風量（01段階）においてわずか23dB以下に抑えている",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "DCブラシレスモーターとノイズキャンセリング技術を謳っており、最小風量時であれば23dBの静音性は技術的に妥当である。"
       }
@@ -159,6 +167,7 @@
         "充電時間: 約3.5時間",
         "角度調整: 左右360°(手動)、上下180°(手動)"
       ]
-    }
+    },
+    "investigatedPrice": "￥6,630"
   }
 }

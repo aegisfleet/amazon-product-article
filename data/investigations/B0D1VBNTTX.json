@@ -29,14 +29,18 @@
         "userType": "キッチン収納を見直す家庭",
         "scenario": "冷蔵庫横の15cmの隙間を有効活用したい場合",
         "experience": "高さ180cmを活かして大量の調味料やストック食品を収納できます。組み立て時に開く方向を選べるため、自宅の間取りに合わせて左右どちらからでも出し入れしやすいように設定でき、使い勝手が良好です。",
-        "supportingSourceIds": ["src-amazon-page"],
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "インテリアにこだわるユーザー",
         "scenario": "キッチンの雰囲気に合わせて収納家具を選びたい場合",
         "experience": "前板がナチュラル（木目調）とホワイトのリバーシブルになっているため、キッチンのデザインに合わせて面を選ぶことができます。裏面も化粧仕上げされており、隙間から引き出した際も見栄えが良いです。",
-        "supportingSourceIds": ["src-amazon-page"],
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -59,7 +63,9 @@
         "claim": "組み立て時に前板の色（ナチュラル・ホワイト）と開口方向（左右）を選べるリバーシブル仕様である",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-page"],
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
         "crossChecked": false,
         "notes": "公式商品ページの説明にて確認"
       },
@@ -67,7 +73,9 @@
         "claim": "全て可動棚（一部固定式可動棚）となり、従来品より収納の自由度が向上している",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-page"],
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
         "crossChecked": false,
         "notes": "公式商品ページのリニューアル情報にて確認"
       }
@@ -189,6 +197,7 @@
         "裏面化粧仕上げ",
         "安全のため必ず隙間で使用すること"
       ]
-    }
+    },
+    "investigatedPrice": "￥18,390"
   }
 }

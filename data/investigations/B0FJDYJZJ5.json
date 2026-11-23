@@ -3,7 +3,11 @@
     "productName": "PUPTECK 犬 ハーネス リード セット",
     "parentAsin": "B0FJGCJWLQ",
     "productDescription": "首に負担をかけない安心設計と、軽量で通気性に優れたエアメッシュ生地を使用した犬用ハーネスとリードのセットです。両サイドの反射テープにより、夜間のお散歩でも安全性を確保します。",
-    "productUsage": ["犬の散歩", "夜間の散歩", "引っ張り癖の軽減"],
+    "productUsage": [
+      "犬の散歩",
+      "夜間の散歩",
+      "引っ張り癖の軽減"
+    ],
     "positivePoints": [
       "マジックテープ、クイックリリースバックル、2つの金属Dリングの三重構造で抜けにくい",
       "ポリエステルとエアメッシュ生地により軽量で蒸れにくい",
@@ -12,20 +16,28 @@
     "negativePoints": [
       "首回りの調整ができないため、事前のサイズ確認が必須"
     ],
-    "useCases": ["毎日の散歩", "夜間の外出", "夏の暑い日の散歩"],
+    "useCases": [
+      "毎日の散歩",
+      "夜間の外出",
+      "夏の暑い日の散歩"
+    ],
     "userStories": [
       {
         "userType": "小型犬の飼い主",
         "scenario": "夏の暑い日の毎日の散歩",
         "experience": "エアメッシュ生地のおかげで、暑い季節の長時間の散歩でも犬が蒸れにくく、快適そうに過ごしていました。着脱も簡単なので、毎日の散歩の準備がとてもスムーズになりました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "夜間に散歩する飼い主",
         "scenario": "仕事終わりの暗い時間帯の散歩",
         "experience": "両サイドの反射テープが車のライトにしっかり反射するため、暗い夜道でも安心して散歩ができます。安全性への配慮が感じられ、飼い主としての安心感に繋がっています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -48,7 +60,9 @@
         "claim": "胸と肩に力が分散される設計になっており、首に負担がかからない",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "Amazonの商品説明で確認"
       }
@@ -152,7 +166,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (手頃な価格でリードがセットになっておりコスパが高い)\n[加点: +5] (通気性の良いメッシュ素材や反射材など基本的な機能が充実している)\n[減点: -5] (首回りの調整ができないため、サイズ選びが難しく汎用性に欠ける)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "10mm", "width": "10mm", "depth": "10mm" },
+      "dimensions": {
+        "height": "10mm",
+        "width": "10mm",
+        "depth": "10mm"
+      },
       "weight": "150g",
       "capacity": "",
       "material": "ポリエステル、エアメッシュ生地",
@@ -160,6 +178,7 @@
       "other": [
         "サイズM: 首周り35.6cm、胸周り43.2-53.3cm"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,899"
   }
 }

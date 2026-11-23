@@ -29,14 +29,18 @@
         "userType": "リモートワーカー",
         "scenario": "在宅勤務時の拡張ポート不足の解消",
         "experience": "USB-Cポートが少ないノートPCを使用しているため、このハブを使って外部モニター、マウス、キーボードを同時に接続しています。充電しながら使えるのでバッテリー切れの心配もなく、デスク周りがすっきりしました。3つのUSB-Aポートがすべて5Gbps対応なのも地味に便利です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ビジネスパーソン",
         "scenario": "出張先でのプレゼンテーション",
         "experience": "軽くてスリムなのでPCケースに入れて常に持ち歩いています。出張先でプロジェクターに接続する際もHDMIポートが活躍し、USBメモリからのデータ読み込みも高速でストレスがありません。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -70,7 +74,9 @@
         "claim": "最大100WのUSB PD入力に対応し、最大90Wでのパススルー充電が可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式の製品特徴に明記"
       },
@@ -78,7 +84,9 @@
         "claim": "搭載されている3つのUSB-Aポートはすべて最大5Gbpsの高速データ転送に対応",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式の製品特徴に明記（データ転送用USB-Aポートから最大5Gbpsでの高速データ転送を実現）"
       }
@@ -199,6 +207,7 @@
       "other": [
         "PD対応の急速充電を行うには、100W出力に対応した充電器とケーブルが別途必要"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,790"
   }
 }

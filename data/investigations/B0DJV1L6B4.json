@@ -63,7 +63,9 @@
         "claim": "ケーブルは断線に強く高い耐久性を持つ",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-3"],
+        "supportingSourceIds": [
+          "src-3"
+        ],
         "crossChecked": false,
         "notes": "アリオン株式会社の検証で38000回の屈曲試験をクリアしている"
       },
@@ -71,7 +73,11 @@
         "claim": "セット買いによる価格的な割引はない",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2", "src-3"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2",
+          "src-3"
+        ],
         "crossChecked": true,
         "notes": "セット価格2889円に対し、単品は1890円と999円で合計2889円と同額。"
       }
@@ -190,6 +196,7 @@
         "高性能ICによるおまかせ充電対応",
         "MFi認証品"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,089"
   }
 }

@@ -29,14 +29,18 @@
         "userType": "筋膜リリース初心者",
         "scenario": "日々のデスクワークの疲れを癒やすためにリビングで使用",
         "experience": "初めてのフォームローラーでしたが、凹凸が強すぎないので痛みに耐えながら使う必要がなく、毎日5分のケアが心地よく続けられています。リビングに置いたままでもインテリアに馴染むカラーなのが嬉しいです。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "インテリア重視のヨガ実践者",
         "scenario": "自宅でのヨガと筋膜リリースを組み合わせたルーティン",
         "experience": "他社の派手な色のローラーと違い、落ち着いたグレージュのカラーがお部屋の雰囲気を壊しません。EVA素材で軽く、汚れてもサッと水洗いできるので衛生的に使えます。収納袋付きでヨガ教室への持ち運びにも便利でした。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -59,7 +63,9 @@
         "claim": "12色以上のくすみカラー展開でインテリアに馴染む",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品仕様で確認。通常のフォームローラーには少ない独自色"
       },
@@ -67,7 +73,9 @@
         "claim": "EVA素材を使用し水洗いが可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品仕様で明記されている"
       }
@@ -191,6 +199,7 @@
         "日本語説明書"
       ],
       "origin": "日本企画"
-    }
+    },
+    "investigatedPrice": "￥1,680"
   }
 }

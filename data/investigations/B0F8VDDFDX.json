@@ -29,21 +29,27 @@
         "userType": "旅行者",
         "scenario": "旅行用リュックへの取り付け",
         "experience": "しっかりとした作りで安心感があります。デザインもカラフルで目立つので、自分の荷物をすぐに見分けられるのも便利です。暗証番号の設定もとても簡単で、すぐに使い始められました。ジッパー部分にもスムーズに通せました。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "一般ユーザー",
         "scenario": "ロッカーでの使用",
         "experience": "100円ショップのものは設定時にダイヤルが一緒に回ってしまい使えませんでしたが、こちらはダイヤルの回す時のスムースさやカチカチという感覚があり、設定が簡単でした。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "一般ユーザー",
         "scenario": "屋内での使用",
         "experience": "少し重さを感じる点と、屋内では数字が見にくい点が気になりました。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -66,7 +72,9 @@
         "claim": "高強度亜鉛合金とスチール製ケーブルで頑丈",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "crossChecked": true,
         "notes": "公式情報とユーザーレビューの両方で頑丈さが言及されている"
       },
@@ -74,7 +82,9 @@
         "claim": "ダイヤルの設定が簡単でスムーズ",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "crossChecked": true,
         "notes": "複数のレビューで安価な製品と比較してダイヤルのスムーズさが高く評価されている"
       }
@@ -192,6 +202,7 @@
       "other": [
         "ワイヤーケーブルタイプ"
       ]
-    }
+    },
+    "investigatedPrice": "￥799"
   }
 }

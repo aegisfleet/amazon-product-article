@@ -55,7 +55,10 @@
         "claim": "血圧が高めの方や血中コレステロールが気になる方向けの機能性表示食品（リコピン・GABA配合）",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-listing", "src-kakaku-kagome-720"],
+        "supportingSourceIds": [
+          "src-amazon-listing",
+          "src-kakaku-kagome-720"
+        ],
         "crossChecked": true,
         "notes": "パッケージや公式情報で確認可能"
       },
@@ -63,7 +66,10 @@
         "claim": "食塩無添加",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-listing", "src-kakaku-kagome-720"],
+        "supportingSourceIds": [
+          "src-amazon-listing",
+          "src-kakaku-kagome-720"
+        ],
         "crossChecked": true,
         "notes": "商品名および成分表示から確認"
       }
@@ -176,11 +182,19 @@
       "weight": "5000g",
       "capacity": "720ml×15本",
       "calories": "36kcal (180ml当たり)",
-      "ingredients": ["トマト"],
-      "allergens": ["なし"],
+      "ingredients": [
+        "トマト"
+      ],
+      "allergens": [
+        "なし"
+      ],
       "shelfLife": "製造日より約半年～1年（常温）",
       "origin": "日本（使用トマトは輸入または国産）",
-      "features": ["食塩無添加", "機能性表示食品（届出番号:B417）"]
-    }
+      "features": [
+        "食塩無添加",
+        "機能性表示食品（届出番号:B417）"
+      ]
+    },
+    "investigatedPrice": "￥3,645"
   }
 }

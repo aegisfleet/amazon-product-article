@@ -28,14 +28,18 @@
         "userType": "デスクワーク従事者",
         "scenario": "頭の重さ・目の疲れ・首肩こりが慢性化していた",
         "experience": "横振動の感覚が今までにないもので、頭皮とその下の筋肉を横にガッツリ動かされる感じ。3秒で頭皮がほぐれる実感がすごく、頭皮が剥がれるような軽さになる。乾いた髪のまま使えるのが最高に楽で、毎日使いたくなるレベル。",
-        "supportingSourceIds": ["src-mytrex-official"],
+        "supportingSourceIds": [
+          "src-mytrex-official"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "自宅ケア目的のユーザー",
         "scenario": "頭皮の凝りを手軽にほぐしたい",
         "experience": "顔周りの頭皮に当ててみると顔ごと動く感じがしてとても気持ちいい。頭頂部に当てると頭の上半分がじんわりほぐされる感覚があり、手でマッサージしていた時と違い、力を入れずとも頭皮が動いて頭が温かくなる。",
-        "supportingSourceIds": ["src-mytrex-official"],
+        "supportingSourceIds": [
+          "src-mytrex-official"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -69,7 +73,10 @@
         "claim": "発明特許および意匠権を取得した横振動モーションブラシである",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-mytrex-official", "src-amazon-api"],
+        "supportingSourceIds": [
+          "src-mytrex-official",
+          "src-amazon-api"
+        ],
         "crossChecked": true,
         "notes": "公式サイトおよびAmazonの製品特徴で特許取得済（特許第7355349号）であることが確認できる。"
       },
@@ -77,7 +84,9 @@
         "claim": "完全防水仕様ではない",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-mytrex-official"],
+        "supportingSourceIds": [
+          "src-mytrex-official"
+        ],
         "crossChecked": false,
         "notes": "公式サイトのHOW TOにて「本製品は防水仕様ではありません。浴室での使用は避け、乾いた髪にお使いください。」と明記されている。"
       }
@@ -199,6 +208,7 @@
         "タイマー: 10分自動オフ",
         "セット内容: 本体、専用ACアダプター、取扱説明書（保証書）、収納用布袋、掃除用ブラシ"
       ]
-    }
+    },
+    "investigatedPrice": "￥16,280"
   }
 }

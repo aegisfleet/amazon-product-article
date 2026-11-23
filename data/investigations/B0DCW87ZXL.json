@@ -29,7 +29,9 @@
         "userType": "一人暮らしの会社員",
         "scenario": "ワンルームの寝室で乾燥対策として使用",
         "experience": "エアコンの暖房で喉が乾燥するため購入しました。決め手は、卓上に置けるコンパクトなサイズ感とダイヤル式の簡単な操作性です。寝る前に給水して弱モードで稼働させると朝まで持ち、稼働音もとても静かなので睡眠の邪魔になりません。ただ、タンクが1.3Lなので、日中ずっと強モードで使うとすぐに水がなくなってしまうのは少し手間に感じます。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -52,7 +54,9 @@
         "claim": "最大約15時間稼働できる",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "弱モード等のミスト量最小設定時における理論値として妥当。ユーザーレビューでも弱めの設定なら朝まで持つと確認されている。"
       }
@@ -179,6 +183,7 @@
         "無段階ミスト量調節ダイヤル",
         "360度回転吹き出し口"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,199"
   }
 }

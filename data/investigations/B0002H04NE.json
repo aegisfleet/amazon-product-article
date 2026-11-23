@@ -30,14 +30,19 @@
         "userType": "ベーシスト（中級者）",
         "scenario": "バンドのライブやリハーサルに向けての定期的なメンテナンス時",
         "experience": "色々な弦を試してきましたが、結局このEXL170に戻ってきます。張り立てのギラっとした音から、少し落ち着いて馴染んだ後のミドルがしっかり出る感じまで、ベースの音作りの基準として非常に扱いやすいです。どこでも買える安心感と価格のバランスが選ぶ決め手です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "自宅録音メインのプレイヤー",
         "scenario": "宅録用にベースのコンディションを整える際",
         "experience": "パッケージが密閉されていて長期間保管していてもサビていないのが助かります。ボールエンドの色分けが分かりやすく、弦交換がスムーズに行えます。ただ、コーティング弦に比べるとやはり劣化は早いので、レコーディング前には毎回新品に張り替える必要があります。",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -71,7 +76,9 @@
         "claim": "独自の耐腐食性パッケージ（VCI）により、開封時まで新品の鮮度を維持する",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "公式サイトの仕様とユーザーの『サビていない』という評価が一致"
       },
@@ -79,7 +86,9 @@
         "claim": "世界標準と言えるほどの普及率と、あらゆるジャンルに対応する汎用性の高いトーン",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "楽器店での取り扱い率やベーシストの間での共通認識として広く支持されている事実と一致"
       }
@@ -196,6 +205,7 @@
       "material": "Nickel-plated steel wound",
       "core": "High Carbon Hexagon Steel Core",
       "origin": "米国製 (Made in USA)"
-    }
+    },
+    "investigatedPrice": "￥3,191"
   }
 }

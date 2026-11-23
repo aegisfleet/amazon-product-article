@@ -3,10 +3,27 @@
     "productName": "エレコム 小型・軽量設計 USB Type-C接続 4ポートハブ (ケーブル長15cm) U3HC-H042BK/E",
     "parentAsin": "B0DVL6YKJJ",
     "productDescription": "厚さ約10mm、重さ約36gという小型・軽量設計を実現した、持ち運びに便利なUSB Type-C接続の4ポートUSBハブです。USB 5Gbps(USB3.2 Gen1)に対応し、高速データ転送が可能です。",
-    "productUsage": ["ノートPCのUSB-Aポート増設", "外付けHDDやUSBメモリの接続", "マウス・キーボードの接続", "出張や旅行時の持ち運び用ハブ"],
-    "positivePoints": ["厚さ約10mm、重さ約36gの薄型・軽量コンパクト設計", "USB 5Gbps (USB 3.2 Gen1) 対応による高速データ転送", "かさばらない15cmのショートケーブル", "国内メーカー製で1年間の保証付き"],
-    "negativePoints": ["バスパワー専用のため、消費電力の大きい機器の複数接続には不向き", "充電用途(スマホやタブレットの充電)は非推奨", "ケーブルの着脱はできない"],
-    "useCases": ["外出先のカフェでノートPCにマウスとUSBメモリを接続して作業する", "自宅のデスクでノートPCの限られたType-Cポートから複数のUSB-A機器(キーボード、外付けストレージなど)を同時接続する"],
+    "productUsage": [
+      "ノートPCのUSB-Aポート増設",
+      "外付けHDDやUSBメモリの接続",
+      "マウス・キーボードの接続",
+      "出張や旅行時の持ち運び用ハブ"
+    ],
+    "positivePoints": [
+      "厚さ約10mm、重さ約36gの薄型・軽量コンパクト設計",
+      "USB 5Gbps (USB 3.2 Gen1) 対応による高速データ転送",
+      "かさばらない15cmのショートケーブル",
+      "国内メーカー製で1年間の保証付き"
+    ],
+    "negativePoints": [
+      "バスパワー専用のため、消費電力の大きい機器の複数接続には不向き",
+      "充電用途(スマホやタブレットの充電)は非推奨",
+      "ケーブルの着脱はできない"
+    ],
+    "useCases": [
+      "外出先のカフェでノートPCにマウスとUSBメモリを接続して作業する",
+      "自宅のデスクでノートPCの限られたType-Cポートから複数のUSB-A機器(キーボード、外付けストレージなど)を同時接続する"
+    ],
     "userStories": [],
     "userImpression": "非常にコンパクトで軽く、外出先への持ち運びに適したシンプルなUSB Type-Cハブ。基本的なUSB-A拡張機能に特化しており、手軽にポートを増やしたいノートPCユーザー向けの製品です。",
     "sources": [
@@ -27,7 +44,9 @@
         "claim": "厚さ約10mm、重さ約36gのコンパクト設計で持ち運びに便利。",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "公式の商品特徴情報より。"
       },
@@ -35,7 +54,9 @@
         "claim": "USB 5Gbps (USB3.2 Gen1) に対応し、高速データ転送が可能。",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "公式の商品特徴情報より。"
       }
@@ -140,7 +161,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (厚さ約10mm、重さ約36gの薄型・軽量で持ち運びに便利な設計を評価)\n[加点: +5] (USB 5Gbps対応で実用的な高速データ転送が可能な点を評価)\n[加点: +5] (国内メーカー製で1年保証付きというサポート・信頼性を評価)\n[減点: -5] (バスパワー専用で消費電力の大きい機器の接続に制約がある点を減点)\n[合計: 80]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "10mm", "width": "31mm", "depth": "100mm" },
+      "dimensions": {
+        "height": "10mm",
+        "width": "31mm",
+        "depth": "100mm"
+      },
       "weight": "36g",
       "cableLength": "15cm",
       "interface": "USB Type-C",
@@ -149,6 +174,7 @@
       "powerSupply": "バスパワー専用",
       "warranty": "1年間",
       "model": "U3HC-H042BK/E"
-    }
+    },
+    "investigatedPrice": "￥1,290"
   }
 }

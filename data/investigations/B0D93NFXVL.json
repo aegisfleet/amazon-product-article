@@ -3,7 +3,10 @@
     "productName": "Edifier M60 マルチメディアスピーカー",
     "parentAsin": "B0D93NFXVL",
     "productDescription": "66Wの高出力とLDAC対応によるハイレゾ再生が可能なコンパクトなマルチメディアスピーカーです。タッチパネルや専用スピーカースタンドを備え、使い勝手と音質を両立させています。",
-    "productUsage": ["PCやスマートフォンと接続しての高音質な音楽鑑賞", "デスクトップ環境での映画鑑賞やゲームプレイ"],
+    "productUsage": [
+      "PCやスマートフォンと接続しての高音質な音楽鑑賞",
+      "デスクトップ環境での映画鑑賞やゲームプレイ"
+    ],
     "positivePoints": [
       "合計66Wの高出力で強力かつ鮮明な音を提供する",
       "Bluetooth 5.3対応でLDACコーデックによるハイレゾオーディオ再生が可能",
@@ -38,7 +41,9 @@
         "claim": "最大66W RMSの強力な出力",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品説明にて明確に記載"
       },
@@ -46,7 +51,9 @@
         "claim": "LDAC対応によるハイレゾワイヤレス再生",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "Bluetooth 5.3でのLDAC対応が明記されている"
       }
@@ -169,6 +176,7 @@
         "専用アプリ (EDIFIER ConneX) 対応",
         "専用アルミスピーカースタンド付属 (15度傾斜)"
       ]
-    }
+    },
+    "investigatedPrice": "￥23,980"
   }
 }

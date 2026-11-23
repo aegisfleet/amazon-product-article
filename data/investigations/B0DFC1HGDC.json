@@ -3,23 +3,44 @@
     "productName": "ベジイン 無添加 わかめスープ 粉末タイプ",
     "parentAsin": "B0DFC1HGDC",
     "productDescription": "調味料（アミノ酸等）、カラメル色素、香料を使用していない、体にやさしい無添加わかめスープです。",
-    "productUsage": ["食事の汁物として", "間食や夜食", "非常食・備蓄", "オフィスでのランチのお供"],
-    "positivePoints": ["無添加（調味料、カラメル色素、香料不使用）で体にやさしい", "1食あたり7.9kcalと低カロリー", "個包装で持ち運びや保存が容易", "ミネラルが豊富"],
-    "negativePoints": ["1食約42円と、一般的な大容量インスタントスープよりはやや割高", "アレルギー物質（小麦・ごま・大豆）が含まれる"],
-    "useCases": ["ダイエット中の低カロリーな食事に", "オフィスでの簡単なランチスープとして", "家庭のストックや非常食として"],
+    "productUsage": [
+      "食事の汁物として",
+      "間食や夜食",
+      "非常食・備蓄",
+      "オフィスでのランチのお供"
+    ],
+    "positivePoints": [
+      "無添加（調味料、カラメル色素、香料不使用）で体にやさしい",
+      "1食あたり7.9kcalと低カロリー",
+      "個包装で持ち運びや保存が容易",
+      "ミネラルが豊富"
+    ],
+    "negativePoints": [
+      "1食約42円と、一般的な大容量インスタントスープよりはやや割高",
+      "アレルギー物質（小麦・ごま・大豆）が含まれる"
+    ],
+    "useCases": [
+      "ダイエット中の低カロリーな食事に",
+      "オフィスでの簡単なランチスープとして",
+      "家庭のストックや非常食として"
+    ],
     "userStories": [
       {
         "userType": "健康志向の会社員",
         "scenario": "オフィスでのランチタイムに",
         "experience": "無添加なので毎日飲んでも罪悪感がなく、お弁当の汁物として重宝しています。後味もすっきりしていて美味しいです。",
-        "supportingSourceIds": ["amazon-pqv"],
+        "supportingSourceIds": [
+          "amazon-pqv"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ダイエット中の主婦",
         "scenario": "小腹が空いた時の間食に",
         "experience": "1食約8kcalと低カロリーなので、夜食やちょっとお腹が空いた時に安心して飲めます。個包装なのも便利です。",
-        "supportingSourceIds": ["amazon-pqv"],
+        "supportingSourceIds": [
+          "amazon-pqv"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -42,7 +63,9 @@
         "claim": "調味料（アミノ酸等）、カラメル色素、香料不使用の無添加スープ",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-pqv"],
+        "supportingSourceIds": [
+          "amazon-pqv"
+        ],
         "crossChecked": true,
         "notes": "メーカー公式の説明に明記"
       },
@@ -50,7 +73,9 @@
         "claim": "1食あたり7.9kcalの低カロリー",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-pqv"],
+        "supportingSourceIds": [
+          "amazon-pqv"
+        ],
         "crossChecked": true,
         "notes": "栄養成分表示より確認"
       }
@@ -137,21 +162,41 @@
       }
     ],
     "recommendation": {
-      "targetUsers": ["食品添加物を気にする方", "ダイエット中で低カロリーな汁物を探している方", "オフィスでのランチ用に手軽なスープが欲しい方"],
-      "pros": ["無添加で体に優しい", "低カロリー（7.9kcal）", "個包装で便利"],
-      "cons": ["一般的なインスタントスープよりは少し割高", "味が薄く感じる場合がある"],
+      "targetUsers": [
+        "食品添加物を気にする方",
+        "ダイエット中で低カロリーな汁物を探している方",
+        "オフィスでのランチ用に手軽なスープが欲しい方"
+      ],
+      "pros": [
+        "無添加で体に優しい",
+        "低カロリー（7.9kcal）",
+        "個包装で便利"
+      ],
+      "cons": [
+        "一般的なインスタントスープよりは少し割高",
+        "味が薄く感じる場合がある"
+      ],
       "score": 85,
       "scoreRationale": "[基本点: 70]\n[加点: +10] (無添加で安全性が高い)\n[加点: +5] (低カロリーで健康志向にマッチ)\n[加点: +5] (50食入りの利便性)\n[減点: -5] (業務用に比べると単価がやや高い)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "33mm", "width": "206mm", "depth": "299mm" },
+      "dimensions": {
+        "height": "33mm",
+        "width": "206mm",
+        "depth": "299mm"
+      },
       "weight": "190g",
       "capacity": "50食 (1食3.8g)",
       "material": "粉末スープ（パウチ容器）",
       "origin": "日本",
       "calories": "7.9kcal (1食あたり)",
       "ingredients": "食塩(国内製造)、砂糖、昆布粉末、かつお節粉末、粉末醤油、ローストオニオンパウダー、酵母エキス、香辛料、食用植物油脂、うきみ・具(乾燥わかめ、いりごま、乾燥ねぎ)",
-      "allergens": ["小麦", "ごま", "大豆"]
-    }
+      "allergens": [
+        "小麦",
+        "ごま",
+        "大豆"
+      ]
+    },
+    "investigatedPrice": "￥2,100"
   }
 }

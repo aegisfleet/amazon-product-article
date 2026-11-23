@@ -25,7 +25,9 @@
         "userType": "iPhone 16 Proユーザー",
         "scenario": "新しくiPhoneを購入し、画面を保護したい時",
         "experience": "付属のガイド枠を使うことで、不器用な自分でもホコリや気泡を入れることなく、一発で綺麗に貼り付けることができました。黒縁がないため、画面がスッキリして見やすく、タッチ操作も滑らかでストレスがありません。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -48,7 +50,9 @@
         "claim": "米軍規格「MIL-STD-810H」に準拠",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品ページの記載に基づき、高い耐衝撃性を持つ"
       }
@@ -161,6 +165,7 @@
       "color": "黒縁なし",
       "model": "DSP24I1530",
       "compatibility": "iPhone 16 Pro / iPhone 17 (約160mm)"
-    }
+    },
+    "investigatedPrice": "￥1,599"
   }
 }

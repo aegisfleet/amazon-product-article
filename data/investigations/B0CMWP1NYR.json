@@ -28,14 +28,18 @@
         "userType": "デスクワーカー",
         "scenario": "PC周辺の配線整理",
         "experience": "PCデスク裏の複雑な配線を整理するために購入した。ハサミで簡単に切れるため、ケーブルの太さに合わせて無駄なく長さを調整できた。無地の方を表にして巻くことで見た目もスッキリとまとまり、後からケーブルを追加する際も簡単に取り外せて便利だった。",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "園芸愛好家",
         "scenario": "植物の支柱固定",
         "experience": "家庭菜園で伸びてきた植物を支柱に固定するために使用。ナイロン製で雨に濡れても耐久性があり、植物の成長に合わせて何度でも巻き直しができる点が非常に使いやすかった。",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -58,7 +62,9 @@
         "claim": "繰り返し使用しても変形することはありません",
         "category": "durability",
         "confidence": "medium",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "一般的なナイロン製マジックテープの耐久性の範囲内と思われるが、長期間の屋外使用等での極端な劣化度合いは不明である"
       }
@@ -168,6 +174,7 @@
         "特徴: 両面使用可能 (ロゴ面/無地面)",
         "保証: 6ヶ月サポート"
       ]
-    }
+    },
+    "investigatedPrice": "￥699"
   }
 }

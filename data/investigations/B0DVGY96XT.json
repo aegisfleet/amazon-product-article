@@ -29,7 +29,9 @@
         "userType": "くせ毛・うねりに悩む女性",
         "scenario": "湿気の多い時期に髪がまとまらず、朝のスタイリングに時間がかかっていた",
         "experience": "ReFaから新しく出たミルクプロテインシャンプーを使ってみました。ピンクフローラルベリーの甘すぎない上品な香りで、バスタイムがリラックスできます。洗い上がりはきしまず、ドライヤー後はいつもより髪がしっとりとして、うねりや広がりが落ち着いているのを実感しました。翌朝もスタイリングがしやすく、雨の日でも広がりにくくなったのが選んで良かった決め手です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -63,7 +65,9 @@
         "claim": "天然由来タンパク質を特殊加工したうねりケア成分「コントロールケラチン」が余計な湿気をブロックしうねりをケアする",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "メーカーの商品説明で確認。毛髪の80%がタンパク質であることに着目した成分配合。"
       },
@@ -71,7 +75,9 @@
         "claim": "6種のホワイト素材をブレンドした「ホワイトスムースコンプレックス」がキューティクルを補修する",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "成分表示（シアバター、シルク、羊毛ケラチンなど）として商品説明に記載あり。"
       }
@@ -147,6 +153,7 @@
       ],
       "hairType": "うねり毛・くせ毛・ダメージ毛向け",
       "origin": "日本"
-    }
+    },
+    "investigatedPrice": "￥3,960"
   }
 }

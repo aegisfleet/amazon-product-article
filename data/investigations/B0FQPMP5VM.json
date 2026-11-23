@@ -43,7 +43,9 @@
         "claim": "スチーム機能によりダメージを軽減し、くせ毛を抑える",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品ページで公式の機能として記載"
       }
@@ -148,7 +150,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (スチーム機能による髪へのダメージ軽減と高い保湿効果)\n[加点: +5] (30秒で立ち上がる急速加熱と時短性能)\n[減点: -5] (競合するマイナスイオンブラシと比較して価格がやや高額である点)\n[合計: 80]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "55mm", "width": "55mm", "depth": "307mm" },
+      "dimensions": {
+        "height": "55mm",
+        "width": "55mm",
+        "depth": "307mm"
+      },
       "weight": "未公表",
       "capacity": "スチーム用タンク搭載",
       "material": "防護カバー付き発熱素材",
@@ -159,6 +165,7 @@
         "国際電圧対応",
         "ナノミストノズル搭載"
       ]
-    }
+    },
+    "investigatedPrice": "￥7,999"
   }
 }

@@ -28,7 +28,9 @@
         "userType": "iPhone 16購入者",
         "scenario": "新機種購入に伴う充電環境の刷新",
         "experience": "iPhone 16に機種変更し、従来のLightningケーブルが使えなくなったため購入しました。2個セットなので自室と職場に一つずつ置いています。ケーブルの長さが2mあるため、コンセントから離れたベッドやデスクでも充電しながら快適に操作でき、充電速度も純正と同等クラスで非常に満足しています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -51,7 +53,9 @@
         "claim": "iPhone 13を30分で60％まで充電可能（純正アダプタの3倍速い）",
         "category": "comparativeAdvantage",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "20W PD充電としての一般的な理論値・実力値とは合致するが、純正5Wアダプタとの比較であり、純正20Wアダプタより3倍速いわけではない点に注意が必要。"
       },
@@ -59,7 +63,9 @@
         "claim": "MFi認証品",
         "category": "quality",
         "confidence": "low",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "LightningケーブルであればMFi認証が存在するが、Type-C to Type-CケーブルにおいてはMFi認証プログラムの対象外であるため、表記の信憑性に疑問が残る。"
       }
@@ -165,12 +171,15 @@
       "power": "最大20W (Power Delivery 3.0)",
       "ports": "USB Type-C x1",
       "cableLength": "2m",
-      "certifications": ["PSE認証"],
+      "certifications": [
+        "PSE認証"
+      ],
       "color": "ホワイト",
       "other": [
         "過熱・過充電・過放電・回路ショート防止機能搭載",
         "入力電圧100-240V（海外対応）"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,327"
   }
 }

@@ -42,7 +42,9 @@
         "claim": "隆起したエッジパターンが液体の溢れを防ぐ",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品ページの特徴として記載されている"
       },
@@ -50,7 +52,9 @@
         "claim": "耐摩耗性に優れたシリコン製で長期間使用可能",
         "category": "durability",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品ページの特徴として記載されているが、客観的な耐久テストのデータはない"
       }
@@ -166,6 +170,7 @@
         "隆起したエッジパターン設計",
         "洗浄可能"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,650"
   }
 }

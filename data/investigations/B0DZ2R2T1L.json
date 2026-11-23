@@ -30,14 +30,18 @@
         "userType": "一人暮らしの会社員",
         "scenario": "仕事から帰宅後の夜や休日の短い時間での掃除",
         "experience": "とにかく1.5kg台と非常に軽いため、片手でスイスイ動かせて掃除のハードルが大きく下がりました。ヘッドの緑色の光でホコリがくっきりと浮かび上がるので、今まで見逃していたゴミがよく見え、綺麗になっている実感があります。ゴミ捨ての頻度が多くなるのが少し手間ですが、手軽さを優先してこの機種を選んで正解でした。",
-        "supportingSourceIds": ["src-amazon-review-1"],
+        "supportingSourceIds": [
+          "src-amazon-review-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ペットを飼っている家庭",
         "scenario": "フローリングの抜け毛や微細なホコリの掃除",
         "experience": "以前使っていたダイソンは重くて腕が疲れましたが、これは別次元の軽さです。また、ペットの抜け毛が光で照らされてよく見えるので掃除残しがなくなりました。ただ、カーペット部分では少し吸引力が物足りなく感じることもあり、我が家ではフローリング専用として割り切って使っています。全体的には軽さが決め手となり満足しています。",
-        "supportingSourceIds": ["src-amazon-review-2"],
+        "supportingSourceIds": [
+          "src-amazon-review-2"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -71,7 +75,9 @@
         "claim": "他のどの軽量コードレスクリーナーよりも目に見えないゴミを可視化する",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-review-1"],
+        "supportingSourceIds": [
+          "src-amazon-review-1"
+        ],
         "crossChecked": true,
         "notes": "Fluffy Opticクリーナーヘッドの緑色の光は実際にホコリを鮮明に浮かび上がらせるため、ユーザーレビューでも『非常に良く見える』と高く評価されており、メーカーの主張と一致している。"
       },
@@ -79,7 +85,9 @@
         "claim": "変わらない吸引力を実現する",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-amazon-review-2"],
+        "supportingSourceIds": [
+          "src-amazon-review-2"
+        ],
         "crossChecked": true,
         "notes": "サイクロンテクノロジーによりフィルターの目詰まりが少なく吸引力が持続する点は事実だが、本機自体が軽量モデルであり絶対的な吸引力はV12等より低いため、ユーザーによっては『吸わない』と誤解するケースがある。"
       }
@@ -196,6 +204,7 @@
         "充電時間: 約3.5時間",
         "クリーナーヘッド: Fluffy Optic クリーナーヘッド"
       ]
-    }
+    },
+    "investigatedPrice": "￥53,391"
   }
 }

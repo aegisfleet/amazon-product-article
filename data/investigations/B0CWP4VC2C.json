@@ -34,14 +34,18 @@
         "userType": "出張が多い会社員",
         "scenario": "新幹線や飛行機での移動中の仮眠",
         "experience": "以前は平らなアイマスクを使っていて瞬きするたびにまつ毛が当たるのが不快でしたが、この商品は目の部分がくぼんでいる3D立体構造なので、メイクやまつ毛エクステをしていても気にならず、移動中の仮眠に重宝しています。34gと軽いので着け心地も快適でした。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "睡眠の質に悩む人",
         "scenario": "毎日の夜間睡眠",
         "experience": "鼻の隙間から入る光が気になって眠れないことが多かったですが、日本人の骨格に合わせたというだけあって、鼻周りのフィット感が良く光漏れがほぼありません。ただ、厚みが3cmほどあるため、横向き寝の際に枕と干渉して少しズレることがありました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -64,7 +68,9 @@
         "claim": "国内品質評価センターで遮光率99.99％を認証済み",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーが国内機関での認証を明記しており、客観的根拠がある"
       },
@@ -72,7 +78,9 @@
         "claim": "日本人特有の骨格構造をCGで再構成した3Dフェイスマッピング搭載",
         "category": "comparativeAdvantage",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "海外製の汎用アイマスクと比較して、フィット感を高める独自の設計アプローチを採用している"
       }
@@ -177,14 +185,21 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] 専門家（工学博士と医師）の共同開発による信頼性と設計根拠\n[加点: +5] 国内品質評価センターでの99.99%遮光率認証という客観的証拠\n[加点: +4] 日本人の骨格に合わせた3Dフェイスマッピングによる高いフィット感と光漏れ防止\n[加点: +3] 34gの超軽量設計と通気性の高い6層マイクロメッシュによる高い快適性\n[減点: -4] 3cmの厚みにより、横向き・うつ伏せ寝の際に枕と干渉しズレやすい構造的制約\n[合計: 83]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "30mm", "width": "100mm", "length": "250mm" },
+      "dimensions": {
+        "height": "30mm",
+        "width": "100mm",
+        "length": "250mm"
+      },
       "weight": "約34g",
       "material": "ライクラメモリーフォームコットン（6層構造マイクロメッシュ素材）",
       "headCircumference": "44cm～88cm（高伸縮性ゴムバンドで調整可能）",
       "lightBlockingRate": "99.99%（国内品質評価センター認証済み）",
       "careInstructions": "洗濯ネット使用で洗濯機丸洗い可能",
       "warranty": "1年間国内メーカー保証、30日間返品保証",
-      "accessories": ["取扱説明書兼保証書"]
-    }
+      "accessories": [
+        "取扱説明書兼保証書"
+      ]
+    },
+    "investigatedPrice": "￥1,999"
   }
 }

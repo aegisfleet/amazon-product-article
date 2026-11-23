@@ -44,7 +44,9 @@
         "claim": "無段階で高さと角度の調整が可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "商品詳細ページの特徴に明記されている"
       },
@@ -52,7 +54,9 @@
         "claim": "39.6cmまでのノートPC・タブレットに対応",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "商品仕様に対応サイズが明記されている"
       }
@@ -165,6 +169,7 @@
       "weight": "未公表",
       "material": "合金（詳細不明）、シリコン（滑り止めパッド）",
       "compatibleSize": "最大39.6cmのノートPC、MacBook、iPad、タブレットなど"
-    }
+    },
+    "investigatedPrice": "￥2,086"
   }
 }

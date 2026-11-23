@@ -30,21 +30,27 @@
         "userType": "ガジェット愛好家",
         "scenario": "eGPUを利用したゲーミングPCの構築",
         "experience": "OCuLink端子が搭載されているため、外部GPUボックスを接続することで、ミニPCでありながらデスクトップ級のゲーミング性能を発揮できました。普段は省スペースな作業用PCとして使い、ゲームをするときだけeGPUを繋ぐという運用が非常に快適です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ホームサーバー運用者",
         "scenario": "自宅のネットワーク環境のアップグレード",
         "experience": "デュアル2.5GbE LANポートを搭載しているミニPCは珍しく、この価格帯で手に入るのはありがたいです。リンクアグリゲーションを組んでNASのデータ転送を高速化したり、仮想環境を構築したりと、サーバー用途としても非常に優秀に機能しています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "リモートワーカー",
         "scenario": "USB4ケーブル1本でのスッキリとしたデスク環境構築",
         "experience": "PD給電対応のモニターとUSB4ケーブル1本で繋ぐだけで、映像出力と本体への給電が同時に行えるため、デスク周りの配線がとてもスッキリしました。ただし、100W以上の出力が必要なのでモニター選びには注意が必要でした。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -67,7 +73,9 @@
         "claim": "外部GPU（R-TX 4060など）を接続すれば、『L-O-L』では画質フル設定で最大232fpsを達成",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "OCuLink (PCIe 4.0 x4) は帯域幅が広いため、eGPUによる高フレームレート達成は技術的に妥当である。"
       }
@@ -202,6 +210,7 @@
         "その他機能: Wake-on-LAN、Auto Power On対応",
         "USB4給電: PD 100W以上の電源入力が必要"
       ]
-    }
+    },
+    "investigatedPrice": "￥73,599"
   }
 }

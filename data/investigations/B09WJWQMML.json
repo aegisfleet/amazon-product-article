@@ -44,7 +44,9 @@
         "claim": "最大100WのPD充電に対応",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-B09WJWQMML"],
+        "supportingSourceIds": [
+          "src-amazon-B09WJWQMML"
+        ],
         "crossChecked": false,
         "notes": "商品ページで100W対応を明記"
       },
@@ -52,7 +54,9 @@
         "claim": "10Gbpsデータ転送、4K/60Hz映像出力対応",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-B09WJWQMML"],
+        "supportingSourceIds": [
+          "src-amazon-B09WJWQMML"
+        ],
         "crossChecked": false,
         "notes": "商品ページで10Gbpsおよび4K/60Hz出力対応を明記"
       }
@@ -174,6 +178,7 @@
         "width": "不明",
         "depth": "不明"
       }
-    }
+    },
+    "investigatedPrice": "￥2,499"
   }
 }

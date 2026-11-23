@@ -3,7 +3,10 @@
     "productName": "Spigen Pixel 10 Pro Fold EZ Fit Pro ガラスフィルム 2枚入",
     "parentAsin": "B0DKY3GRMZ",
     "productDescription": "Googleの「Made for Google」認定を受けたPixel 10 Pro Fold用の強化ガラスフィルム（2枚入り）です。専用の貼り付けキット（トレイ）が付属しており、初心者でも失敗なく簡単に貼り付けることができます。",
-    "productUsage": ["スマートフォン画面の保護", "指紋や汚れの防止"],
+    "productUsage": [
+      "スマートフォン画面の保護",
+      "指紋や汚れの防止"
+    ],
     "positivePoints": [
       "【Made for Google 公式認定】Googleの厳しい互換性テストを正式にクリアした、安心の認定製品",
       "貼り付けトレイ（EZ Fit）が付属しており、画面と平行に装着しやすく、気泡が入りにくい設計",
@@ -14,13 +17,18 @@
     "negativePoints": [
       "2枚入りで約3,000円と、他社製の安価なフィルム（1,000円台）と比較して価格が高い"
     ],
-    "useCases": ["新しいPixel 10 Pro Foldを傷や衝撃から守りたい時", "フィルム貼りが苦手で、ガイド枠付きの製品を探している時"],
+    "useCases": [
+      "新しいPixel 10 Pro Foldを傷や衝撃から守りたい時",
+      "フィルム貼りが苦手で、ガイド枠付きの製品を探している時"
+    ],
     "userStories": [
       {
         "userType": "Pixel 10 Pro Fold購入者",
         "scenario": "新しく購入した高価な折りたたみスマホの画面を保護したい",
         "experience": "これまでフィルム貼りにはいつも苦戦していましたが、この製品は専用のトレイが付属しているため、被せて引くだけで驚くほど綺麗に貼れました。「Made for Google」認定という安心感も、高価な端末に使う上で大きな決め手になりました。少し値段は張りますが、失敗して買い直すリスクを考えれば十分な価値があります。",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -43,7 +51,9 @@
         "claim": "一般強化ガラスより衝撃に10倍強い",
         "category": "durability",
         "confidence": "medium",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "メーカー独自のアルミナコアガラス採用による主張。第三者機関の検証データは未確認のためmediumとする"
       }
@@ -146,12 +156,23 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (Made for Google公式認定による高い信頼性と品質)\n[加点: +10] (EZ Fitキットによる圧倒的な貼りやすさ・失敗のなさ)\n[減点: -5] (競合品と比較して価格がやや高い点)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "147.88mm", "width": "68.04mm", "depth": "0.58mm" },
+      "dimensions": {
+        "height": "147.88mm",
+        "width": "68.04mm",
+        "depth": "0.58mm"
+      },
       "weight": "不明",
       "capacity": "2枚入り",
       "material": "アルミノケイ酸塩ガラス（9H+硬度）",
       "origin": "不明",
-      "other": ["Made for Google公式認定", "EZ Fit貼り付けキット付属", "指紋認証対応", "ナノコーティング（撥油加工）", "飛散防止加工"]
-    }
+      "other": [
+        "Made for Google公式認定",
+        "EZ Fit貼り付けキット付属",
+        "指紋認証対応",
+        "ナノコーティング（撥油加工）",
+        "飛散防止加工"
+      ]
+    },
+    "investigatedPrice": "￥2,542"
   }
 }

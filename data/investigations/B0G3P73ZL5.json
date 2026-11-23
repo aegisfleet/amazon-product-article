@@ -27,14 +27,18 @@
         "userType": "スマートウォッチユーザー",
         "scenario": "日常的にXiaomi Smart Band 9 Activeを着用している状況",
         "experience": "毎日着用していると不意に壁などにぶつけてしまうことがありますが、自己修復機能のおかげで細かいキズが自然に消えていくので画面をキレイに保てます。3枚入りなので、もし深く傷がついてもすぐに貼り替えられる安心感があります。",
-        "supportingSourceIds": ["src-amazon-B0G3P73ZL5"],
+        "supportingSourceIds": [
+          "src-amazon-B0G3P73ZL5"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "スマートウォッチユーザー",
         "scenario": "フィルムを自分で貼り付ける状況",
         "experience": "フィルムが画面サイズよりも少し小さめに作られているため、端の湾曲部分まで完全に覆えない点には少し不満が残りますが、その分ケースとの干渉がなく、気泡も抜けやすいため初心者でも貼りやすかったです。",
-        "supportingSourceIds": ["src-amazon-B0G3P73ZL5"],
+        "supportingSourceIds": [
+          "src-amazon-B0G3P73ZL5"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -79,7 +83,9 @@
         "claim": "軽微なキズ・気泡が時間の経過とともに自己修復し、自然に目立たなくなる",
         "category": "durability",
         "confidence": "medium",
-        "supportingSourceIds": ["src-amazon-B0G3P73ZL5"],
+        "supportingSourceIds": [
+          "src-amazon-B0G3P73ZL5"
+        ],
         "crossChecked": false,
         "notes": "メーカーの主張であり、特殊素材による効果とされているが、深いキズには対応しない旨も明記されている"
       },
@@ -87,7 +93,9 @@
         "claim": "年間販売数は50万枚を突破",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-amazon-B0G3P73ZL5"],
+        "supportingSourceIds": [
+          "src-amazon-B0G3P73ZL5"
+        ],
         "crossChecked": false,
         "notes": "メーカーの販売実績アピールであり、ブランドの信頼性を示す要素として記載されている"
       }
@@ -205,6 +213,7 @@
       "other": [
         "エッジの浮きを防ぐため画面より一回り小さいサイズ設計"
       ]
-    }
+    },
+    "investigatedPrice": "￥597"
   }
 }

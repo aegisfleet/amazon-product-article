@@ -3,7 +3,12 @@
     "productName": "リフレ はくパンツ軽やかなうす型 Mサイズ 34枚",
     "parentAsin": "B07RRXB962",
     "productDescription": "薄手で洋服に響きにくく、医療・介護現場でも評価されている大人用おむつ（パンツタイプ）。2回分の尿をしっかり吸収し、全面通気性でムレにくい設計。",
-    "productUsage": ["高齢者の尿もれ対策", "外出時の安心・漏れ防止", "介護用下着", "就寝時の経血漏れ対策（代用）"],
+    "productUsage": [
+      "高齢者の尿もれ対策",
+      "外出時の安心・漏れ防止",
+      "介護用下着",
+      "就寝時の経血漏れ対策（代用）"
+    ],
     "positivePoints": [
       "1枚あたり約69円（34枚入り2,345円）というコストパフォーマンスの高さ",
       "薄型設計で洋服のシルエットに響きにくい",
@@ -16,27 +21,37 @@
       "吸収量は2回分（約300ml程度）であり、長時間の外出や夜間の多量排尿には向かない",
       "深く履き込むタイプのため、体型やストーマ（人工肛門）等がある場合はゴムが当たる可能性がある"
     ],
-    "useCases": ["高齢の家族との外出・旅行", "日中の軽い尿もれ対策", "下着感覚で履きたい方の日常使い"],
+    "useCases": [
+      "高齢の家族との外出・旅行",
+      "日中の軽い尿もれ対策",
+      "下着感覚で履きたい方の日常使い"
+    ],
     "userStories": [
       {
         "userType": "高齢の家族を介護する人",
         "scenario": "外出時に漏れが気になり始めた高齢の家族のサポート",
         "experience": "価格がお手頃でまとめ買いしやすい点に惹かれて購入。薄手なので洋服に響かず、本人が履いて出かける際も抵抗感が少ないのが決め手となった。出先での漏れの不安が解消され、安心して外出できるようになった。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "日常使いするシニア層",
         "scenario": "仕事や日常生活での尿もれ対策",
         "experience": "他社製品では股が擦れて痛くなることがあったが、本製品は紙質が柔らかく、履き心地が良いと感じた。仕事中も動きやすく、肌トラブルなく過ごせる点が気に入っている。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "生理の経血漏れに悩む女性",
         "scenario": "経血量が多い日の夜間の就寝時",
         "experience": "生理用のショーツ型ナプキンは価格が高いため、コスパの良い本製品を代用。ゴワゴワせず、一晩中漏れを防いでくれるため、安心して眠れるようになった。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -59,7 +74,9 @@
         "claim": "おしっこ約2回分をしっかり吸水（1度の排尿量を150mlとした場合）",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "crossChecked": true,
         "notes": "メーカーのスペック表記。ユーザーレビューでも「大体おしっこ2回分くらいは吸える」という実感の声があり、主張と一致している。"
       },
@@ -67,7 +84,9 @@
         "claim": "医療・介護の現場でも評価され選ばれ続けている",
         "category": "durability",
         "confidence": "medium",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "crossChecked": false,
         "notes": "商品詳細からの抜粋。具体的なシェア率などは不明だが、製造元のリブドゥコーポレーションは介護業界で高い実績を持つメーカーであるため妥当と考えられる。"
       }
@@ -179,7 +198,12 @@
       "target": "男女兼用",
       "absorption": "約300ml（1回の排尿量を150mlとして）",
       "color": "白",
-      "other": ["全面通気性シート", "サイド破り可能", "Amazon.co.jp限定パッケージ"]
-    }
+      "other": [
+        "全面通気性シート",
+        "サイド破り可能",
+        "Amazon.co.jp限定パッケージ"
+      ]
+    },
+    "investigatedPrice": "￥2,532"
   }
 }

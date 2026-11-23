@@ -27,7 +27,9 @@
         "userType": "定期的に鎮痛剤を使用する人",
         "scenario": "頭痛が起こりやすい体質のため、常備薬として購入",
         "experience": "価格が手頃で大容量なので、痛みが気になるときに惜しみなく使えます。イブプロフェン配合で効果も早く、小粒で飲みやすい点も決め手でした。",
-        "supportingSourceIds": ["src-product-page"],
+        "supportingSourceIds": [
+          "src-product-page"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -50,7 +52,9 @@
         "claim": "熱や痛み、炎症を速く抑える",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-product-page"],
+        "supportingSourceIds": [
+          "src-product-page"
+        ],
         "crossChecked": true,
         "notes": "イブプロフェンの薬理作用として一般的な効果であり、商品仕様と一致する"
       }
@@ -152,7 +156,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +8] (100錠入りで日常使いに適した優れたコストパフォーマンス)\n[加点: +5] (鎮痛効果を高める成分の複合処方)\n[加点: +3] (Amazonブランドによる入手性の高さと安心感)\n[減点: -3] (アダムA錠など一部のさらに安価な競合が存在することによる優位性の低下)\n[合計: 83]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "不明", "width": "不明", "depth": "不明" },
+      "dimensions": {
+        "height": "不明",
+        "width": "不明",
+        "depth": "不明"
+      },
       "weight": "不明",
       "capacity": "100錠",
       "material": "イブプロフェン、アリルイソプロピルアセチル尿素、無水カフェイン（添加物：セルロース、クロスカルメロースNa、無水ケイ酸、乳糖、ステアリン酸Mg）",
@@ -163,6 +171,7 @@
         "1日3回まで",
         "製造販売元：大昭製薬株式会社"
       ]
-    }
+    },
+    "investigatedPrice": "￥824"
   }
 }

@@ -28,7 +28,9 @@
         "userType": "小型犬の飼い主",
         "scenario": "愛犬の毎日の歯磨きケアのため",
         "experience": "チワワなど口の小さな犬でも無理なく奥まで届く極薄ヘッドが使いやすい。やわらかい毛なので、愛犬も嫌がらずに磨かせてくれるようになり、継続してケアできている。",
-        "supportingSourceIds": ["amazon-review-summary"],
+        "supportingSourceIds": [
+          "amazon-review-summary"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -62,7 +64,9 @@
         "claim": "先端が0.02mmの超極細毛だから歯周ポケットまでみがける",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-product-page"],
+        "supportingSourceIds": [
+          "amazon-product-page"
+        ],
         "crossChecked": true,
         "notes": "メーカー公式のスペック表に記載があり、物理的な細さに基づく効果であるため信頼性が高い。"
       }
@@ -165,11 +169,20 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (大手メーカー製で極薄ヘッドや極細毛など口腔への安全性・機能性に配慮されている)\n[加点: +5] (1本325円と手頃で、日常的な買い替えがしやすいコストパフォーマンス)\n[加点: +5] (高評価レビューが多数あり、定番品としての信頼性がある)\n[合計: 90]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "210mm", "width": "45mm", "depth": "21mm" },
+      "dimensions": {
+        "height": "210mm",
+        "width": "45mm",
+        "depth": "21mm"
+      },
       "weight": "20g",
       "material": "柄：ポリアセタール、毛：飽和ポリエステル樹脂",
       "origin": "日本",
-      "other": ["毛の硬さ：やわらかめ", "極薄ヘッド採用", "先端0.02mm超極細毛"]
-    }
+      "other": [
+        "毛の硬さ：やわらかめ",
+        "極薄ヘッド採用",
+        "先端0.02mm超極細毛"
+      ]
+    },
+    "investigatedPrice": "￥318"
   }
 }

@@ -30,21 +30,27 @@
         "userType": "ビジネスユーザー",
         "scenario": "Zoomでのプレゼンテーションや会議",
         "experience": "AirPods Proから切り替えたところ、声のニュアンスまで忠実に捉えられプレゼンでの音質が格段に向上しました。Web会議システムのノイズキャンセリングと相性が良く、空調音などは相手に伝わらずクリアに会話できます。",
-        "supportingSourceIds": ["kakaku-review"],
+        "supportingSourceIds": [
+          "kakaku-review"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ゲーマー",
         "scenario": "Discordでのボイスチャット",
         "experience": "口から20cmほど離れていても小声までしっかり拾ってくれます。ヘッドセットを使わなくて済むため、長時間のボイスチャットでも頭周りが快適になりました。ショックマウントが金属製でしっかりしている点も良かったです。",
-        "supportingSourceIds": ["kakaku-review"],
+        "supportingSourceIds": [
+          "kakaku-review"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "配信・録音ユーザー",
         "scenario": "自宅での録音作業",
         "experience": "生声の質感たっぷりに録音ができますが、10～15cmくらいまで近づかないと適正音量になりません。また、小さな空調音なども拾うため、録音用途では環境音への配慮やソフト側のノイズ処理が必要です。",
-        "supportingSourceIds": ["kakaku-review"],
+        "supportingSourceIds": [
+          "kakaku-review"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -78,7 +84,9 @@
         "claim": "プラグ・アンド・プレイで簡単に使えるUSBバスパワー駆動",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["kakaku-spec"],
+        "supportingSourceIds": [
+          "kakaku-spec"
+        ],
         "crossChecked": true,
         "notes": "Amazon商品データと一致"
       },
@@ -86,7 +94,9 @@
         "claim": "単一指向性でキーボード音などを拾いにくい",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["kakaku-review"],
+        "supportingSourceIds": [
+          "kakaku-review"
+        ],
         "crossChecked": true,
         "notes": "ユーザーレビューで多数報告あり"
       }
@@ -202,9 +212,14 @@
         "depth": "228.6mm"
       },
       "weight": "370g",
-      "accessories": ["ショックマウント", "保管用ケース", "USBケーブル"],
+      "accessories": [
+        "ショックマウント",
+        "保管用ケース",
+        "USBケーブル"
+      ],
       "connectivity": "USB (プラグアンドプレイ対応)",
       "color": "ブラック"
-    }
+    },
+    "investigatedPrice": "￥8,980"
   }
 }

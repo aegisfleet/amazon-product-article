@@ -43,7 +43,9 @@
         "claim": "1本あたり約40円台の圧倒的な低価格",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-api"],
+        "supportingSourceIds": [
+          "src-amazon-api"
+        ],
         "crossChecked": true,
         "notes": "販売価格1,962円÷48本で約40.8円であることを確認。競合他社製品と比較しても非常に安価。"
       }
@@ -131,6 +133,7 @@
         "内容量: 500ml × 48本",
         "ラベルレス仕様"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,499"
   }
 }

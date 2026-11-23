@@ -30,14 +30,18 @@
         "userType": "一般家庭の主婦",
         "scenario": "日々の生活ゴミの処分",
         "experience": "以前は安い薄手のゴミ袋を使っていて、重いゴミや角のある箱を入れるとすぐに破れてしまっていましたが、この商品は0.03mmと厚手で、少々無理に詰め込んでも破れず安心です。BOXから1枚ずつ取り出せるのも、毎日の家事で地味にストレスフリーで気に入っています。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "オフィスの総務担当",
         "scenario": "オフィス内ゴミ箱用の袋まとめ買い",
         "experience": "分別のために中身がはっきり見える透明な袋が必要で、こちらをまとめ買いしています。100枚入りの箱は保管しやすく、取り出すときも絡まらずにサッと引けるので業務効率が良いです。ただ、箱自体が少し大きいので収納場所は確保する必要があります。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -60,7 +64,9 @@
         "claim": "厚み0.03mmで破れにくい",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "crossChecked": true,
         "notes": "スペック通りの厚み（0.03mm）とLDPE素材により、レビューでも破れにくさが実証されている。"
       }
@@ -154,6 +160,7 @@
       "other": [
         "1枚ずつ取り出しやすいパッケージ設計"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,555"
   }
 }

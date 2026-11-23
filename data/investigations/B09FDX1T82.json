@@ -29,21 +29,27 @@
         "userType": "花粉症に悩むデスクワーカー",
         "scenario": "スギ花粉の時期の作業",
         "experience": "花粉の時期にデスクの上に置いて使用しています。スギ花粉の最盛期以外は充分に清浄効果を感じます。コンパクトで場所を取らないのがとても良いです。",
-        "supportingSourceIds": ["src-kakaku-review"],
+        "supportingSourceIds": [
+          "src-kakaku-review"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ペットを飼っている家族",
         "scenario": "喫煙とペット臭の対策",
         "experience": "設置場所がないのでコンパクトで移動も容易な本製品を購入しました。操作はシンプルで分かりやすく、タバコの煙や臭いもかなり軽減されました。ペットの臭いも気になることはほとんど無くなりました。",
-        "supportingSourceIds": ["src-kakaku-review"],
+        "supportingSourceIds": [
+          "src-kakaku-review"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "デザイン重視のユーザー",
         "scenario": "寝室での利用",
         "experience": "部品が壊れて機械が動かないというトラブルは無いと思われますが、センサーは何も付いていない事から非常にシンプルな作りです。就寝時は風量1で使用していますが、とても静かです。",
-        "supportingSourceIds": ["src-kakaku-review"],
+        "supportingSourceIds": [
+          "src-kakaku-review"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -77,7 +83,10 @@
         "claim": "重量約1kgでコンパクトでありながら、タバコ臭やペット臭の軽減に効果がある",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-kakaku-review", "src-kakaku-spec"],
+        "supportingSourceIds": [
+          "src-kakaku-review",
+          "src-kakaku-spec"
+        ],
         "crossChecked": true,
         "notes": "スペック情報と実際のユーザーレビューの双方から確認"
       },
@@ -85,7 +94,10 @@
         "claim": "空気質センサーなどの自動運転機能は搭載されていない",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-kakaku-review", "src-kakaku-spec"],
+        "supportingSourceIds": [
+          "src-kakaku-review",
+          "src-kakaku-spec"
+        ],
         "crossChecked": true,
         "notes": "ユーザーレビューやスペック情報でセンサー非搭載であることが言及されている"
       }
@@ -192,7 +204,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (コンパクトで洗練されたデザインと約1kgという軽さで設置場所を選ばない)\n[加点: +5] (アロマ対応という独自の付加価値)\n[減点: -5] (空気質センサーやタイマー機能など、便利な機能が省かれている)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "264mm", "width": "164mm", "depth": "164mm" },
+      "dimensions": {
+        "height": "264mm",
+        "width": "164mm",
+        "depth": "164mm"
+      },
       "weight": "1000g",
       "capacity": "適用床面積: 12畳",
       "material": "プラスチック等",
@@ -203,6 +219,7 @@
         "アロマ機能対応",
         "3段階風量調節"
       ]
-    }
+    },
+    "investigatedPrice": "￥7,980"
   }
 }

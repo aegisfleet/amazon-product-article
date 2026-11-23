@@ -3,30 +3,53 @@
     "productName": "HAIBING ギターワイヤレスシステム",
     "parentAsin": "B0BSBL5QQB",
     "productDescription": "UHF帯を使用したギター・ベース用のワイヤレスシステム。低価格ながら最大4時間の連続使用が可能なバッテリーを内蔵し、手軽にワイヤレス環境を構築できます。",
-    "productUsage": ["エレキギターの演奏", "ベースの演奏", "自宅練習", "手軽なライブ演奏"],
-    "positivePoints": ["価格が非常に安い", "軽量でコンパクト", "USBで簡単に充電できる"],
-    "negativePoints": ["途中で通信不良が発生することがある", "ベースの低音がカットされてしまう", "バッテリーの持続時間が最大4時間と短め"],
-    "useCases": ["自宅でのギター練習", "ケーブルの煩わしさを解消したい時", "費用を抑えてワイヤレスを試したい初心者"],
+    "productUsage": [
+      "エレキギターの演奏",
+      "ベースの演奏",
+      "自宅練習",
+      "手軽なライブ演奏"
+    ],
+    "positivePoints": [
+      "価格が非常に安い",
+      "軽量でコンパクト",
+      "USBで簡単に充電できる"
+    ],
+    "negativePoints": [
+      "途中で通信不良が発生することがある",
+      "ベースの低音がカットされてしまう",
+      "バッテリーの持続時間が最大4時間と短め"
+    ],
+    "useCases": [
+      "自宅でのギター練習",
+      "ケーブルの煩わしさを解消したい時",
+      "費用を抑えてワイヤレスを試したい初心者"
+    ],
     "userStories": [
       {
         "userType": "自宅ギタリスト",
         "scenario": "自宅での練習時",
         "experience": "ケーブルが邪魔に感じていたため購入しました。低価格ですが音はよく出ており、練習には十分使えます。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ベーシスト",
         "scenario": "ベース演奏時",
         "experience": "手軽にワイヤレスにしたくて試しましたが、ベースギターの低音の深みがカットされてしまい、音質面で少し物足りなさを感じました。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "negative"
       },
       {
         "userType": "アマチュアミュージシャン",
         "scenario": "長時間の演奏",
         "experience": "安価で導入しやすいですが、途中で通信不良が度々発生することがあり、ライブなどの本番での使用には不安が残ります。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -60,7 +83,9 @@
         "claim": "ベースの低音がカットされる",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "crossChecked": false,
         "notes": "複数のレビューから音質、特に低音の再現性に難があることがうかがえる。"
       },
@@ -68,7 +93,9 @@
         "claim": "最大4時間の長時間動作",
         "category": "durability",
         "confidence": "medium",
-        "supportingSourceIds": ["src-amazon-page"],
+        "supportingSourceIds": [
+          "src-amazon-page"
+        ],
         "crossChecked": false,
         "notes": "メーカーの仕様に基づく。"
       }
@@ -155,9 +182,20 @@
       }
     ],
     "recommendation": {
-      "targetUsers": ["とにかく安くワイヤレスを試したい人", "自宅での練習用にケーブルをなくしたい人"],
-      "pros": ["非常に安価", "USB充電式で扱いやすい", "コンパクトで軽量"],
-      "cons": ["通信不良が発生しやすい", "ベースなどの低音がカットされる", "バッテリー駆動時間が最大4時間と短い"],
+      "targetUsers": [
+        "とにかく安くワイヤレスを試したい人",
+        "自宅での練習用にケーブルをなくしたい人"
+      ],
+      "pros": [
+        "非常に安価",
+        "USB充電式で扱いやすい",
+        "コンパクトで軽量"
+      ],
+      "cons": [
+        "通信不良が発生しやすい",
+        "ベースなどの低音がカットされる",
+        "バッテリー駆動時間が最大4時間と短い"
+      ],
       "score": 60,
       "scoreRationale": "[基本点: 70]\n[加点: +5] (1,550円という圧倒的な低価格によるコスパ)\n[減点: -10] (通信の不安定さや低音カットなど性能・品質に難あり)\n[減点: -5] (バッテリー駆動時間が最大4時間と短め)\n[合計: 60]"
     },
@@ -171,6 +209,7 @@
       "chargingInterface": "マイクロUSB",
       "material": "プラスチック+金属",
       "color": "黒"
-    }
+    },
+    "investigatedPrice": "￥1,400"
   }
 }

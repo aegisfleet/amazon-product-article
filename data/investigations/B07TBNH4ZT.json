@@ -30,14 +30,18 @@
         "userType": "DIY愛好家",
         "scenario": "自宅の床材やカーペットの張り替え作業",
         "experience": "一般的なカッターナイフでは刃がしなって力が入らなかったが、このナイフは刃がしっかりロックされるため、厚手で硬いカーペットも安定して力を込めて切断できた。標準サイズの替刃が使えるため、刃がこぼれてもすぐに交換できて作業が捗った。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ネット通販のヘビーユーザー",
         "scenario": "大量の段ボール箱の開梱と資源ごみ出しのための解体",
         "experience": "頑丈なアルミニウムボディで握りやすく、ザクザクと段ボールを切ることができる。価格が安いので気兼ねなくハードに使える点が決め手だった。ただ、重量がそこそこあるので長時間の作業では少し手が疲れる。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -60,7 +64,9 @@
         "claim": "ほとんどの標準サイズのブレードと互換性あり",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品仕様に明記されており、特殊な替刃を必要としない点は維持コストにおいて有利"
       }
@@ -178,6 +184,7 @@
         "クイックチェンジメカニズム",
         "標準サイズブレード互換"
       ]
-    }
+    },
+    "investigatedPrice": "￥979"
   }
 }

@@ -3,16 +3,37 @@
     "productName": "ホームメイド うるち米(国産)米の粉 お徳用 1kg",
     "parentAsin": "B009KFE700",
     "productDescription": "国産うるち米を使用した超微粒タイプの米粉。ダマになりにくく、お菓子や料理などに幅広く使える大容量サイズ。",
-    "productUsage": ["お菓子作り", "料理全般", "パン作り", "とろみづけ"],
-    "positivePoints": ["ダマになりにくい超微粒タイプ", "大容量でコスパが高い", "国産のうるち米を使用しており安心", "お菓子作りや料理に使いやすい"],
-    "negativePoints": ["吸水率が低いため、レシピによっては水分調整が必要", "パン作りには膨らみにくい場合がある"],
-    "useCases": ["クッキーやケーキなどのお菓子作り", "天ぷらや唐揚げの衣", "カレーやシチューのとろみづけ", "お好み焼きの生地"],
+    "productUsage": [
+      "お菓子作り",
+      "料理全般",
+      "パン作り",
+      "とろみづけ"
+    ],
+    "positivePoints": [
+      "ダマになりにくい超微粒タイプ",
+      "大容量でコスパが高い",
+      "国産のうるち米を使用しており安心",
+      "お菓子作りや料理に使いやすい"
+    ],
+    "negativePoints": [
+      "吸水率が低いため、レシピによっては水分調整が必要",
+      "パン作りには膨らみにくい場合がある"
+    ],
+    "useCases": [
+      "クッキーやケーキなどのお菓子作り",
+      "天ぷらや唐揚げの衣",
+      "カレーやシチューのとろみづけ",
+      "お好み焼きの生地"
+    ],
     "userStories": [
       {
         "userType": "家庭料理をする人",
         "scenario": "日常的な料理やお菓子作りに",
         "experience": "お値段も手頃で大容量なのでリピートしています。米粉パンを焼くと外はパリッ、中はモチモチに美味しく焼けて気に入っています。粒子が細かくダマになりにくいので、お菓子作りでも小麦粉に近い口溶けになり使いやすいです。",
-        "supportingSourceIds": ["src-yahoo-search-review-1", "src-yahoo-search-review-2"],
+        "supportingSourceIds": [
+          "src-yahoo-search-review-1",
+          "src-yahoo-search-review-2"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -68,7 +89,9 @@
         "claim": "国産うるち米を使用している",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-api"],
+        "supportingSourceIds": [
+          "src-amazon-api"
+        ],
         "crossChecked": false,
         "notes": "公式情報より"
       },
@@ -76,7 +99,10 @@
         "claim": "吸水率が低めでサラサラしており、ダマになりにくい",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-yahoo-search-review-2", "src-yahoo-search-review-3"],
+        "supportingSourceIds": [
+          "src-yahoo-search-review-2",
+          "src-yahoo-search-review-3"
+        ],
         "crossChecked": true,
         "notes": "複数の検証記事や口コミで一致"
       }
@@ -163,14 +189,31 @@
       }
     ],
     "recommendation": {
-      "targetUsers": ["小麦アレルギーの方", "グルテンフリーの食事を心がけている方", "日常的に料理やお菓子作りに米粉を使う方", "大容量でコスパの良い米粉を探している方"],
-      "pros": ["超微粒でダマになりにくい", "1kgの大容量でコストパフォーマンスが良い", "国産うるち米使用で安心", "料理・お菓子作りに幅広く使える"],
-      "cons": ["吸水率が低いため、レシピによっては水分調整が必要", "パン作りには特化していないため、専用の品種（ミズホチカラ等）よりは膨らみにくい場合がある"],
+      "targetUsers": [
+        "小麦アレルギーの方",
+        "グルテンフリーの食事を心がけている方",
+        "日常的に料理やお菓子作りに米粉を使う方",
+        "大容量でコスパの良い米粉を探している方"
+      ],
+      "pros": [
+        "超微粒でダマになりにくい",
+        "1kgの大容量でコストパフォーマンスが良い",
+        "国産うるち米使用で安心",
+        "料理・お菓子作りに幅広く使える"
+      ],
+      "cons": [
+        "吸水率が低いため、レシピによっては水分調整が必要",
+        "パン作りには特化していないため、専用の品種（ミズホチカラ等）よりは膨らみにくい場合がある"
+      ],
       "score": 85,
       "scoreRationale": "[基本点: 70]\n[加点: +10] 大容量(1kg)で日常使いしやすいコストパフォーマンスの良さ\n[加点: +5] 超微粒でダマになりにくく、お菓子や料理など幅広い用途で使いやすい点\n[加点: +5] 国産うるち米を使用しており安全性が高い点\n[減点: -5] 吸水率が低めで、一部のレシピ（パン作りなど）では工夫が必要な点\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "310mm", "width": "230mm", "depth": "40mm" },
+      "dimensions": {
+        "height": "310mm",
+        "width": "230mm",
+        "depth": "40mm"
+      },
       "weight": "1.02kg",
       "capacity": "1kg",
       "material": "うるち米(日本(国産))",
@@ -178,6 +221,7 @@
       "other": [
         "超微粒タイプ"
       ]
-    }
+    },
+    "investigatedPrice": "￥812"
   }
 }

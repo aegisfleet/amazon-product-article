@@ -3,7 +3,11 @@
     "productName": "伊藤園 さらさらとける 健康ミネラルむぎ茶 40g",
     "parentAsin": "B00UV7V6KK",
     "productDescription": "水にもお湯にもサッと溶ける、インスタントタイプの麦茶です。ミネラル分を含み、カフェインゼロなので家族全員で飲めます。",
-    "productUsage": ["水分補給", "マイボトルでの持ち運び", "食事のお供"],
+    "productUsage": [
+      "水分補給",
+      "マイボトルでの持ち運び",
+      "食事のお供"
+    ],
     "positivePoints": [
       "お湯だけでなく水にも素早く溶けるインスタント仕様",
       "飲用海洋深層水を使用し、ミネラル（カリウム・リン・マンガン）を含有",
@@ -15,20 +19,28 @@
       "茶葉から煮出した麦茶と比較すると、風味や香りが薄く感じられることがある",
       "1杯あたりの単価がティーバッグタイプの麦茶より高めになる"
     ],
-    "useCases": ["忙しい朝のマイボトル作りに", "少量だけ麦茶を飲みたい時に", "外出先での手軽な水分補給に"],
+    "useCases": [
+      "忙しい朝のマイボトル作りに",
+      "少量だけ麦茶を飲みたい時に",
+      "外出先での手軽な水分補給に"
+    ],
     "userStories": [
       {
         "userType": "子育て中の親",
         "scenario": "子供が急に麦茶を飲みたいと言った時",
         "experience": "お湯を沸かしたり煮出したりする手間がなく、水と粉末だけでサッと作れるので非常に助かっています。子供も嫌がらずに飲んでくれ、カフェインゼロという安心感も決め手になりました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "一人暮らしの会社員",
         "scenario": "毎日の水筒の準備",
         "experience": "ティーバッグだと濃くなりすぎたり、捨てる手間がありますが、これなら粉末を入れるだけで好みの濃さに調整できます。ただ、40gはすぐになくなってしまうため、コスパは微妙に感じます。",
-        "supportingSourceIds": ["src-2"],
+        "supportingSourceIds": [
+          "src-2"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -62,7 +74,10 @@
         "claim": "水にもお湯にもさらさらとける",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "ユーザーレビューで「本当にすぐ溶ける」と多数の報告あり"
       }
@@ -165,7 +180,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] 水でも素早く溶ける高い利便性と手軽さ\n[加点: +5] ミネラル配合でカフェインゼロという安心感\n[減点: -5] 40gという少容量によるコストパフォーマンスの低さ\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "119mm", "width": "166mm", "depth": "23mm" },
+      "dimensions": {
+        "height": "119mm",
+        "width": "166mm",
+        "depth": "23mm"
+      },
       "weight": "40g",
       "capacity": "40g",
       "ingredients": "大麦(カナダ)、デキストリン、飲用海洋深層水(高知県)/ビタミンC",
@@ -174,6 +193,7 @@
       "other": [
         "チャック付きパック"
       ]
-    }
+    },
+    "investigatedPrice": "￥538"
   }
 }

@@ -3,7 +3,10 @@
     "productName": "Vbestlife USB指紋認証リーダー",
     "parentAsin": "B0D3TC5HGN",
     "productDescription": "Windows Hello対応のUSB指紋認証リーダー。360度全方向からの指紋読み取りに対応し、最大10個の指紋を登録可能です。",
-    "productUsage": ["Windows PCへのパスワードレスログイン", "ファイルの暗号化と復号化"],
+    "productUsage": [
+      "Windows PCへのパスワードレスログイン",
+      "ファイルの暗号化と復号化"
+    ],
     "positivePoints": [
       "0.5秒の高速な指紋認識",
       "最大10件の指紋登録が可能",
@@ -39,7 +42,9 @@
         "claim": "認識速度0.5秒、誤認率0.0002%の高性能センサー搭載",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "メーカー公称値の確認"
       }
@@ -150,7 +155,11 @@
       "fingerprintCapacity": "最大10個",
       "falseRejectionRate": "2%",
       "falseAcceptanceRate": "0.0002%",
-      "features": ["360度タッチ対応", "ファイル暗号化対応"]
-    }
+      "features": [
+        "360度タッチ対応",
+        "ファイル暗号化対応"
+      ]
+    },
+    "investigatedPrice": "￥2,900"
   }
 }

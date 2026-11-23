@@ -32,14 +32,20 @@
         "userType": "在宅勤務の会社員",
         "scenario": "ノートPCをデスクに置いて外部モニターと接続する際",
         "experience": "以前使っていたハブはPCの横でブラブラして邪魔で、ケーブルの反発で位置が定まらなかった。この製品はスタンドでデスクの端に固定できるので、見た目がスッキリし、USBメモリを片手でサッと抜き差しできるのが非常に快適だ。",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "動画クリエイター",
         "scenario": "撮影データをPCに取り込む際",
         "experience": "SDカードスロットと10Gbps対応の高速なUSB-Cポートがあるので、カメラからのデータ取り込みと外付けSSDへのバックアップがスムーズに行える。転送速度が速いので作業効率が上がった。",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -73,7 +79,9 @@
         "claim": "USB 10Gbps(USB3.2(Gen2))に対応したUSB Type-Cポートを搭載",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "商品ページで確認"
       },
@@ -81,7 +89,9 @@
         "claim": "両面テープでデスクに固定できるスタンド付き",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "商品ページで確認"
       }
@@ -206,6 +216,7 @@
         "microSDカードスロット x1",
         "固定用スタンド付属（両面テープ固定）"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,980"
   }
 }

@@ -51,7 +51,10 @@
         "claim": "初のオールタイム・ベストアルバム",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "レーベルを超えた選曲によるオールタイム・ベストである旨をWikipediaおよびOriconで確認。"
       },
@@ -59,7 +62,9 @@
         "claim": "2012年最新デジタルリマスター",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "Wikipediaの記述から確認。"
       }
@@ -174,6 +179,7 @@
       "trackCount": "49",
       "label": "ワーナーミュージック・ジャパン",
       "releaseDate": "2012-09-26"
-    }
+    },
+    "investigatedPrice": "￥3,100"
   }
 }

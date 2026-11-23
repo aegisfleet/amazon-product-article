@@ -28,14 +28,18 @@
         "userType": "カメラ愛好家",
         "scenario": "普段使いのリュックでカメラを持ち運ぶ際",
         "experience": "インナーボックスを入れるとリュックがパンパンになってしまうのが悩みでしたが、このクロスでカメラを包むだけで済むようになり、省スペース化できました。マジックテープを使わないので、バリバリという音がせず、布のどこでもピタッとくっつくのが本当に便利です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ガジェット好き",
         "scenario": "タブレットや小型キーボードの持ち歩き",
         "experience": "無地のクロスが多い中、サーキットボード柄がガジェット心をくすぐります。タブレットを包んで持ち歩いていますが、ほどよい厚みがあり安心感があります。画面の指紋も内側の生地でサッと拭けるのが嬉しいポイントです。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -58,7 +62,9 @@
         "claim": "表面と裏面を重ねるだけでピタッと密着する",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーの公式な製品仕様として明記されている"
       },
@@ -66,7 +72,9 @@
         "claim": "内側はクリーニングクロスとして使用可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "内側にマイクロファイバーを使用していると記載がある"
       }
@@ -184,6 +192,7 @@
         "機能: 布同士の自己粘着機能（表面と裏面の接触で密着）",
         "用途: カメラ、レンズ、タブレットなどの保護およびクリーニング"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,660"
   }
 }

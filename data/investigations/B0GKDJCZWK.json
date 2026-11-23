@@ -31,14 +31,18 @@
         "userType": "自宅で全身のムダ毛ケアをしたい人",
         "scenario": "お風呂上がりや空き時間に、顔からVIOまで手軽にケアしたい時",
         "experience": "ヘッドをいちいち付け替える手間がなく、トリマーで長い毛をカットしたあと、そのまま回転式ヘッドで仕上げられるのが非常に便利でした。デジタル表示で残量が分かるので、使用中に突然充電が切れるストレスもありません。この手軽さと機能性の両立が決め手になりました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "出張や旅行が多い人",
         "scenario": "外出先で気になったムダ毛をサッと処理したい時",
         "experience": "約115gと軽く、両端にキャップが付いているのでポーチにそのまま放り込んでも安心です。Type-Cケーブルでスマホの充電器と兼用できるため、余計な荷物が増えません。ただ、本体ごと水洗いできない（水没NG）ので、お風呂でガッツリ使う時は少し気を使います。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -61,7 +65,9 @@
         "claim": "痛くない 電気シェーバー ムダ毛処理",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーの商品名と説明（3Dフローティング円形ヘッド、刃先が丸みを帯びたデザイン）に記載あり。肌への優しさをアピールしている。"
       },
@@ -69,7 +75,9 @@
         "claim": "男性の太く硬い毛にも対応",
         "category": "comparativeAdvantage",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "レディースシェーバーでありながら男女兼用を謳っており、トリマー刃によるプレカット機能で対応していると推測される。"
       }
@@ -171,14 +179,21 @@
       "scoreRationale": "[基本点: 70]\n[加点: +4] (ヘッド交換不要の2in1一体型設計による高い利便性)\n[加点: +3] (デジタルディスプレイ搭載による明確なバッテリー管理)\n[加点: +3] (Type-C充電対応と115gの軽量設計による優れた携帯性)\n[減点: -3] (同等機能を持つ競合製品と比較して価格がやや高めである点)\n[合計: 77]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "不明", "width": "不明", "depth": "不明" },
+      "dimensions": {
+        "height": "不明",
+        "width": "不明",
+        "depth": "不明"
+      },
       "weight": "約115g",
       "power": "USB充電式 (Type-C)",
       "battery": "満充電後約90分連続使用可能",
       "waterproof": "IPX6 (ヘッド水洗い可能、本体水没不可)",
       "display": "デジタルディスプレイ搭載",
       "color": "ホワイト",
-      "other": ["2in1ダブルヘッド(コームトリマー＆3Dフローティングラウンドヘッド)"]
-    }
+      "other": [
+        "2in1ダブルヘッド(コームトリマー＆3Dフローティングラウンドヘッド)"
+      ]
+    },
+    "investigatedPrice": "￥3,480"
   }
 }

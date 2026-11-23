@@ -30,14 +30,18 @@
         "userType": "家族で使うユーザー",
         "scenario": "お風呂上がりの全身保湿ケアとして",
         "experience": "1000mLという圧倒的な大容量で、家族全員でお風呂上がりに顔から体まで気兼ねなく使えます。ポンプ式で出しやすく、通常の菊正宗製品と違いゆずの香りがするため、日本酒特有の香りが苦手な子供でも嫌がらずに使ってくれます。大容量による圧倒的なコスパが決め手です。",
-        "supportingSourceIds": ["src-amazon-listing"],
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "乾燥肌のユーザー",
         "scenario": "毎日の洗顔後のコットンパックとして",
         "experience": "保湿力が高いことで有名な菊正宗の化粧水が1リットルサイズで出たため購入しました。コットンにひたひたになるまで出して贅沢にパックすると、肌がもちもちになります。ただ、ボトルが大きすぎて狭い洗面台には置きにくく、別の容器に詰め替えて使っています。",
-        "supportingSourceIds": ["src-amazon-listing"],
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -82,7 +86,9 @@
         "claim": "日本酒2升(3,600mL)分の遊離アミノ酸(保湿成分)配合",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-listing"],
+        "supportingSourceIds": [
+          "src-amazon-listing"
+        ],
         "crossChecked": false,
         "notes": "メーカーの商品説明に基づく。具体的な含有量は非公開だが、同ブランドの既存品と同様の保湿力を担保する指標として用いられている。"
       }
@@ -195,12 +201,17 @@
       "weight": "1080g",
       "capacity": "1000ml",
       "scent": "ゆずの香り",
-      "properties": ["弱酸性", "無着色", "無鉱物油"],
+      "properties": [
+        "弱酸性",
+        "無着色",
+        "無鉱物油"
+      ],
       "origin": "日本",
       "other": [
         "日本酒(コメ発酵液・保湿成分)配合",
         "アミノ酸、セラミド配合"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,248"
   }
 }

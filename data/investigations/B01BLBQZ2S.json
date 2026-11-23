@@ -27,7 +27,9 @@
         "userType": "在宅ワーカー",
         "scenario": "散らかりがちなデスク周りの書類を整理するため",
         "experience": "5段あるので、未処理、処理済み、保管用など用途別に書類を分けられて大変便利です。A4のクリアファイルも問題なく入り、積み重ねもできるので机の上がすっきりしました。",
-        "supportingSourceIds": ["src-amazon-review-1"],
+        "supportingSourceIds": [
+          "src-amazon-review-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -61,7 +63,9 @@
         "claim": "積み重ねて使用可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "商品タイトルや仕様に明記されている"
       }
@@ -140,6 +144,7 @@
         "インデックスシール付属",
         "積み重ね可能"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,070"
   }
 }

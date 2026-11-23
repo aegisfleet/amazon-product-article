@@ -3,7 +3,10 @@
     "productName": "伊藤園 おーいお茶 緑茶 (抹茶入り) エコティーバッグ 120袋",
     "parentAsin": "B0F23VDDQR",
     "productDescription": "国産の緑茶と抹茶を使用し、120袋入りの大容量で経済的なティーバッグです。",
-    "productUsage": ["自宅やオフィスでの日常的なお茶の飲用", "マイボトルでの持ち運び"],
+    "productUsage": [
+      "自宅やオフィスでの日常的なお茶の飲用",
+      "マイボトルでの持ち運び"
+    ],
     "positivePoints": [
       "120袋と大容量でコストパフォーマンスが高い",
       "個包装で衛生的かつ持ち運びに便利",
@@ -24,14 +27,18 @@
         "userType": "会社員",
         "scenario": "オフィスでの日常利用",
         "experience": "マイボトルに入れて毎日会社に持っていっています。120袋入っているので頻繁に買い足す必要がなく、個包装なのでデスクの引き出しにストックしやすく便利です。味も急須で淹れたお茶のように美味しいです。",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "主婦",
         "scenario": "家族用",
         "experience": "大容量でコスパが良いので助かっています。ただ、マグカップで飲むには良いのですが、少し大きめのマイボトルで作る時は1袋だと少し味が薄く感じることがあり、2袋使うこともあります。",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -54,7 +61,9 @@
         "claim": "自然にやさしい植物由来の生分解性フィルターを使用している",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "Amazon商品ページのメーカー提供情報より確認"
       },
@@ -62,7 +71,9 @@
         "claim": "個包装で衛生的、持ち運びに便利",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "Amazon商品ページのメーカー提供情報より確認"
       }
@@ -180,6 +191,7 @@
       "other": [
         "原材料: 緑茶(日本)、抹茶(日本)"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,973"
   }
 }

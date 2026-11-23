@@ -30,7 +30,9 @@
         "userType": "フローリング中心のマンション住まい",
         "scenario": "日々のこまめな掃除",
         "experience": "選んだ決め手は、圧倒的な軽さと自動ゴミ収集ドック付きで2万円台という安さでした。1.2kgと非常に軽く、気になった時にサッと取り出して掃除できるのが快適です。動くノズルのおかげで、ダイニングチェアの脚周りもスイスイ掃除できます。ただ、カーペットには対応していないため、ラグを敷いている部分は別の掃除機を使う必要があります。それでも、面倒なゴミ捨てから解放されたメリットは大きいです。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -53,7 +55,9 @@
         "claim": "面倒なゴミ捨ては約3か月に1回",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "1日分の平均ゴミ量（1g）を基準としたメーカーの試験結果に基づく。部屋の環境によって前後するが、一般的な自動収集ドックと同等の頻度。"
       },
@@ -61,7 +65,9 @@
         "claim": "障害物に合わせてノズルの羽根が動く",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "「動くノズル」の独自の機構。家具の脚回りなどにフィットするが、フローリング・畳専用である点に注意が必要。"
       }
@@ -176,6 +182,7 @@
         "動くノズル（フローリング・畳専用）",
         "特殊加工ローラー"
       ]
-    }
+    },
+    "investigatedPrice": "￥24,549"
   }
 }

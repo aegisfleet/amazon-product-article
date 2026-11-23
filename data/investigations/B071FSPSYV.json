@@ -3,7 +3,11 @@
     "productName": "Bauhutte 昇降式 L字デスク スタンダード BHD-670H-BK",
     "parentAsin": "B071FSPSYV",
     "productDescription": "既存のデスクの横に設置することで、手軽にL字デスク環境を構築できる昇降式のPCワゴン・CPUスタンド。",
-    "productUsage": ["作業スペースの拡張", "ミドルタワーPCの収納", "マウステーブルとしての活用"],
+    "productUsage": [
+      "作業スペースの拡張",
+      "ミドルタワーPCの収納",
+      "マウステーブルとしての活用"
+    ],
     "positivePoints": [
       "今あるデスクと高さを揃えて連結できる無段階昇降機能",
       "PCを埃や衝撃から保護する堅牢なCPUスタンド構造",
@@ -23,7 +27,9 @@
         "userType": "ゲーマー",
         "scenario": "ゲームプレイ時のマウス操作スペース拡大",
         "experience": "既存のデスクと高さをピッタリ合わせることができるため、段差を気にせず腕を乗せられ、安定したエイム操作が可能になります。また、PC本体を足元から浮かせて収納できるため、床のホコリを吸い込みにくくなりました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -57,7 +63,10 @@
         "claim": "天板は無段階での高さ調節が可能で、57cmから78cmの範囲で昇降する",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "公式サイトのスペック表とAmazonの仕様記載で一致"
       },
@@ -65,7 +74,9 @@
         "claim": "総耐荷重は60kg未満で、天板と底板それぞれに30kgまで積載可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "公式サイトのスペック表にて確認"
       }
@@ -183,6 +194,7 @@
         "昇降ロック: 樹脂製ロックレバー",
         "機能: ロック付きキャスター, 取っ手, パンチングボード"
       ]
-    }
+    },
+    "investigatedPrice": "￥15,000"
   }
 }

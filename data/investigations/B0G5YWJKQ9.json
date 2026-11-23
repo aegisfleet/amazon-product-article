@@ -27,7 +27,9 @@
         "userType": "デスクワーカー",
         "scenario": "日々の長時間のパソコン作業で目が疲れ、就寝前に使用",
         "experience": "使い捨てのホットアイマスクを毎日消費するのにコストがかかるため本製品を購入しました。1000mAhのバッテリーが長持ちし、数日充電しなくても使えるのが便利です。また、日本語音声で温度や設定を教えてくれるので、アイマスクをつけたまま手探りで操作しても迷わない点が決め手になりました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -50,7 +52,9 @@
         "claim": "目元サウナ体験のような深い温もりを実現",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "温熱機能によるリラックス効果のアピールであるが、実際の体感は個人差が大きい"
       }
@@ -162,6 +166,7 @@
         "音声機能: 日本語音声ガイダンス搭載",
         "お手入れ: カバー取り外し・丸洗い可能"
       ]
-    }
+    },
+    "investigatedPrice": "￥3,178"
   }
 }

@@ -43,7 +43,9 @@
         "claim": "最大4.5cmの立体ギャザーでおしっこもゆるうんちもせき止め、横モレ防止",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-api-spec"],
+        "supportingSourceIds": [
+          "src-amazon-api-spec"
+        ],
         "crossChecked": false,
         "notes": "メーカー公式のスペック情報として記載されている特徴。"
       },
@@ -51,7 +53,9 @@
         "claim": "独自！1秒吸収シート スポンジのように即吸収",
         "category": "performance",
         "confidence": "medium",
-        "supportingSourceIds": ["src-amazon-api-spec"],
+        "supportingSourceIds": [
+          "src-amazon-api-spec"
+        ],
         "crossChecked": false,
         "notes": "平均尿量2回分の想定。実際の吸収速度は状況によるが、メーカーの主要な機能的強みとして提示されている。"
       }
@@ -162,6 +166,7 @@
         "2.5倍伸びるのびのびベルト",
         "おしっこお知らせライン機能"
       ]
-    }
+    },
+    "investigatedPrice": "￥8,280"
   }
 }

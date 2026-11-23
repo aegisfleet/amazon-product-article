@@ -3,7 +3,11 @@
     "productName": "FRECIOUS 富士 9.3L 天然水 ウォーターサーバー用 水ボトル",
     "parentAsin": "B07GBD2WKB",
     "productDescription": "富士山の標高1,000m地点で採水されたバナジウム含有の天然水です。フレシャスウォーターサーバー専用の9.3L使い捨てボトルを採用し、PFAS不検出の検査をクリアした安全性の高い商品です。",
-    "productUsage": ["ウォーターサーバー用の飲料水", "料理用のお水", "赤ちゃんのミルク作り"],
+    "productUsage": [
+      "ウォーターサーバー用の飲料水",
+      "料理用のお水",
+      "赤ちゃんのミルク作り"
+    ],
     "positivePoints": [
       "PFAS（有機フッ素化合物）の検出限界基準未満で安全性が高い",
       "富士山の天然水でバナジウムを含有し、まろやかな味わいが楽しめる",
@@ -51,7 +55,9 @@
         "claim": "PFAS（有機フッ素化合物）不検出の検査をクリアしている",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "メーカー公式ページで大々的にアピールされている安全性に関する重要な情報"
       },
@@ -59,7 +65,9 @@
         "claim": "9.3Lで女性でも交換しやすい使い捨てボトル",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "仕様に基づく物理的な特徴"
       }
@@ -166,7 +174,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (PFAS不検出など高い安全性が確認されている)\n[加点: +5] (9.3Lの使い捨て・収縮ボトルによる利便性と交換しやすさ)\n[減点: -5] (専用サーバーでしか利用できない汎用性の低さ)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "315mm", "width": "230mm", "depth": "235mm" },
+      "dimensions": {
+        "height": "315mm",
+        "width": "230mm",
+        "depth": "235mm"
+      },
       "weight": "約9300g (内容量から推計)",
       "capacity": "9.3L × 2本",
       "material": "ペットボトル（使い捨て・収縮タイプ）",
@@ -176,6 +188,7 @@
         "認証等：国際規格「FSSC22000」認証取得工場にて製造、PFAS不検出",
         "対応機種：フレシャス専用ウォーターサーバー"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,780"
   }
 }

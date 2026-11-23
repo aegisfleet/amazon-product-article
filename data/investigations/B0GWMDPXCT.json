@@ -34,14 +34,18 @@
         "userType": "Vlog撮影者",
         "scenario": "旅行先での散策や風景の撮影",
         "experience": "スマホを持たずにハンズフリーで撮影できるため、自然な動きでVlogが撮れる。1.5インチの画面があるおかげで、スマホを出さなくてもその場でアングルや録画状況を確認できるのが便利。縦型動画も自動対応するのでSNSへのアップロードも手間が省けた。",
-        "supportingSourceIds": ["src-amazon-official"],
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "サイクリスト",
         "scenario": "自転車走行中の風景撮影",
         "experience": "重量が32gと非常に軽く、ヘルメットやハンドルにマウントしても全く重さを感じない。強力なマグネット式なので取り付けも簡単だった。EIS手ブレ補正は効いているが、激しい振動には限界があるかもしれない。",
-        "supportingSourceIds": ["src-amazon-official"],
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -64,7 +68,9 @@
         "claim": "6軸EIS手ブレ補正機能により、より滑らかで安定した映像を実現",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-amazon-official"],
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
         "crossChecked": false,
         "notes": "カタログスペックでの主張。32gの超小型筐体でどの程度の手ブレ補正効果があるかは未知数"
       },
@@ -72,7 +78,9 @@
         "claim": "強力なマグネット式デザインで衣類や帽子などに素早く取り付け可能",
         "category": "durability",
         "confidence": "medium",
-        "supportingSourceIds": ["src-amazon-official"],
+        "supportingSourceIds": [
+          "src-amazon-official"
+        ],
         "crossChecked": false,
         "notes": "マグネットの吸着力は使用状況（激しい運動など）に依存するため注意が必要"
       }
@@ -200,6 +208,7 @@
         "マグネット式マウント対応",
         "最大512GBのメモリーカード対応 (別売)"
       ]
-    }
+    },
+    "investigatedPrice": "￥11,480"
   }
 }

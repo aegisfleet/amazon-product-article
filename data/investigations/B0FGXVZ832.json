@@ -45,7 +45,9 @@
         "claim": "ハンドルが表面を傷つけることなく快適なグリップを提供する",
         "category": "safety",
         "confidence": "low",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーの主張だが、安価なノーブランド品であるため、実際に完全に傷を防げるかは使用環境や力加減に依存する。"
       }
@@ -147,13 +149,20 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (競合製品を大幅に下回る約200円という圧倒的な低価格によるコスパ)\n[減点: -3] (ノーブランド品による品質の不透明さ)\n[減点: -2] (詳細なサイズ情報不足)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "不明", "width": "不明", "depth": "不明" },
+      "dimensions": {
+        "height": "不明",
+        "width": "不明",
+        "depth": "不明"
+      },
       "weight": "約45g",
       "capacity": "1個",
       "material": "プラスチック（耐久性素材）、柔らかい素材（ブラシ部）",
       "origin": "不明",
       "color": "イエロー",
-      "other": ["水洗い可能"]
-    }
+      "other": [
+        "水洗い可能"
+      ]
+    },
+    "investigatedPrice": "￥222"
   }
 }

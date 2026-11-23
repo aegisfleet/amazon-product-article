@@ -3,7 +3,11 @@
     "productName": "SEIKO SELECTION SSEH002 レディース腕時計 nano universeコラボ",
     "parentAsin": "B0CTCBTJRN",
     "productDescription": "セレクトショップ「nano・universe」監修のクラシックなスクエア型レディース腕時計。どんなファッションにも合うデザインと、アクセントの色ガラス入りりゅうずが特徴です。",
-    "productUsage": ["日常的な時刻確認", "ビジネスシーンやフォーマルな場での着用", "ファッションのアクセントとしてのアクセサリー"],
+    "productUsage": [
+      "日常的な時刻確認",
+      "ビジネスシーンやフォーマルな場での着用",
+      "ファッションのアクセントとしてのアクセサリー"
+    ],
     "positivePoints": [
       "nano・universe監修による洗練されたヴィンテージライクなデザイン",
       "平均月差±15秒の高精度なクオーツムーブメントを採用",
@@ -39,7 +43,9 @@
         "claim": "nano・universe監修によるクラシックなデザインでどんなファッションにも合う",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "セイコー公式の商品説明より"
       },
@@ -47,7 +53,9 @@
         "claim": "厚さ4.9mm、重さ16gの薄型・軽量設計",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "セイコー公式のスペック表より"
       }
@@ -152,7 +160,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (nano・universe監修の高いデザイン性)\n[加点: +5] (厚さ4.9mm、重さ16gという薄型・軽量による着け心地の良さ)\n[合計: 80]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "28.4mm", "width": "18.9mm", "depth": "4.9mm" },
+      "dimensions": {
+        "height": "28.4mm",
+        "width": "18.9mm",
+        "depth": "4.9mm"
+      },
       "weight": "16g",
       "capacity": "1個",
       "material": "ケース: ステンレススチール(一部イエローゴールド色めっき)、ガラス: ハードレックス、バンド: 皮革（カーフ）",
@@ -164,6 +176,7 @@
         "耐磁: あり",
         "腕周り長さ（最長）: 165mm"
       ]
-    }
+    },
+    "investigatedPrice": "￥28,600"
   }
 }

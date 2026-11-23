@@ -27,14 +27,18 @@
         "userType": "アパート住まいのギタリスト",
         "scenario": "夜間にギターの練習をする",
         "experience": "生音が非常に小さいため、隣の部屋を気にすることなく夜間でも思い切りストローク練習ができます。イヤホンを繋ぐだけで高音質なアコースティックサウンドが聴けるのが便利です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "出張の多い会社員",
         "scenario": "出張先のホテルにギターを持ち込む",
         "experience": "分解してコンパクトなケースに収まるため、新幹線などの移動でも邪魔になりません。内蔵エフェクトだけで十分な音作りができ、別途機材を持ち運ぶ必要がないのが良いです。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -57,7 +61,9 @@
         "claim": "18種類のエフェクトと8つのクラシックギターボディトーンシミュレーションを搭載している",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品仕様に記載"
       },
@@ -65,7 +71,9 @@
         "claim": "重量は2.1kgで、着脱式フレームを採用している",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品仕様に記載"
       }
@@ -185,6 +193,7 @@
         "8つのボディトーンシミュレーション内蔵",
         "USB-C充電インターフェース"
       ]
-    }
+    },
+    "investigatedPrice": "￥45,999"
   }
 }

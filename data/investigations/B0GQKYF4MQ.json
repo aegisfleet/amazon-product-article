@@ -30,7 +30,9 @@
         "userType": "DIY・車いじり愛好家",
         "scenario": "車のエンジンルームやバイクのカウル内など、様々なサイズのボルトが混在する場所での整備",
         "experience": "ソケットをいちいち付け替える手間が省け、10mm〜19mmまでのボルトならこれ一つで対応できるため作業効率が劇的に向上した。電動ドリル用アダプターも付属しているため、インパクトドライバーで一気に回せるのが便利。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -53,7 +55,9 @@
         "claim": "スリーブセットは狭いスペースでも効率的に作業でき、全体的な作業効率を向上させます。",
         "category": "comparativeAdvantage",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "通常のソケットより外径が大きくなる傾向があるため、極端に狭いスペース（奥まった場所）では使用できない可能性がある"
       }
@@ -165,6 +169,7 @@
         "電動ドリル用アダプター付属",
         "2点セット"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,880"
   }
 }

@@ -31,14 +31,18 @@
         "userType": "ファミリーキャンパー",
         "scenario": "家族でのテント泊キャンプ",
         "experience": "以前は薄い銀マットを使っていて背中が痛かったが、これに変えてからは厚みがあるので快眠できた。足踏み式で子供でも簡単に膨らませられ、複数枚繋げられるので隙間に落ちることもなく快適だった。ただ、連泊時には少し空気が抜けるので足踏みで補充する必要があった。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "車中泊ユーザー",
         "scenario": "ミニバンでの車中泊",
         "experience": "シートを倒した時の段差が気になっていたが、厚さ10cmのおかげで完全にフラットな感覚で寝られた。電動ポンプ不要で車内でも静かに準備できるのが良い。収納もコンパクトで積載の邪魔にならない。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -61,7 +65,9 @@
         "claim": "約1〜2分の足踏みで膨らませることができる",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "内蔵ポンプの構造上妥当な時間であり、競合の同等製品でも同程度の時間での充気が謳われている"
       },
@@ -69,7 +75,9 @@
         "claim": "耐荷重約200kg",
         "category": "durability",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーが測定値であり保証値ではないと注記している"
       }
@@ -149,6 +157,7 @@
         "収納サイズ: 約280mm × 100mm",
         "補修用テープ付属"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,824"
   }
 }

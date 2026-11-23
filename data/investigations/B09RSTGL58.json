@@ -30,14 +30,18 @@
         "userType": "戸建て住宅の居住者",
         "scenario": "玄関灯に集まる蛾やコバエに悩まされていた",
         "experience": "夜間に玄関灯をつけると大量の虫が集まって困っていましたが、このスプレーを散布してからは寄り付く虫が激減しました。ジェット噴射なので脚立なしでも高い位置のライトに届くのが便利で、雨が降っても効果が持続している点が非常に良かったです。2本セットでたっぷり使えるので、外壁にも惜しみなく使えました。",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "アパートの住人",
         "scenario": "秋に発生するカメムシ対策として",
         "experience": "外壁にカメムシがよく付くため購入。ジェット噴射で勢いよく出るため広範囲に塗布しやすい反面、少し風がある日だと自分に飛んでくることがあり注意が必要です。ただ、カメムシの飛来は明らかに減り、見つけた時は直接かけて駆除もできるので重宝しています。",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -60,7 +64,9 @@
         "claim": "雨に強い撥水成分シリコーン配合で効果が約4ヶ月持続する",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": true,
         "notes": "メーカー公式スペックとして記載あり。使用環境により変動するとの但し書きも確認"
       }
@@ -166,10 +172,29 @@
     },
     "technicalSpecs": {
       "capacity": "450ml × 2本",
-      "targetPests": ["蛾", "羽アリ", "ユスリカ", "カメムシ", "ウンカ", "ヨコバイ", "キノコバエ", "チョウバエ", "ブユ", "アブ", "ハチ", "クモ"],
+      "targetPests": [
+        "蛾",
+        "羽アリ",
+        "ユスリカ",
+        "カメムシ",
+        "ウンカ",
+        "ヨコバイ",
+        "キノコバエ",
+        "チョウバエ",
+        "ブユ",
+        "アブ",
+        "ハチ",
+        "クモ"
+      ],
       "duration": "約4ヵ月（使用環境により異なる）",
-      "features": ["屋外専用", "撥水成分シリコーン配合", "無香料", "ジェット噴射"],
+      "features": [
+        "屋外専用",
+        "撥水成分シリコーン配合",
+        "無香料",
+        "ジェット噴射"
+      ],
       "material": "シリコーン（撥水成分）"
-    }
+    },
+    "investigatedPrice": "￥1,264"
   }
 }

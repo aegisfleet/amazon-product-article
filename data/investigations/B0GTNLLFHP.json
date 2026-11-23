@@ -3,7 +3,11 @@
     "productName": "iSinbox 卓上冷風機 600ML大容量 USB給電式",
     "parentAsin": "B0GYMYCPZ8",
     "productDescription": "600mlの大容量水タンクと冷却コットンを搭載した、USB給電式のコンパクトな卓上冷風機です。3段階の風量調節や12時間タイマーを備え、デスクワークや就寝時の使用に適しています。",
-    "productUsage": ["デスクワーク時の冷却", "就寝時のパーソナルクーラー", "キャンプや車中泊での暑さ対策"],
+    "productUsage": [
+      "デスクワーク時の冷却",
+      "就寝時のパーソナルクーラー",
+      "キャンプや車中泊での暑さ対策"
+    ],
     "positivePoints": [
       "最大12時間設定可能な切タイマーにより、就寝時も冷えすぎを防止できる",
       "水タンクが取り外し可能で、シンクでの給水やお手入れが簡単",
@@ -24,14 +28,18 @@
         "userType": "デスクワーカー",
         "scenario": "夏の在宅ワーク中、エアコンだけでは暑さを感じる時に使用",
         "experience": "コンパクトでデスクの邪魔にならず、パソコンのUSBポートから直接給電できるのが便利です。水と氷を入れるとすぐに冷たい風が出てきて、顔周りだけを効率よく冷やすことができます。タッチパネルの操作も直感的で使いやすいです。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ファミリー層",
         "scenario": "小さな子供がいる家庭での使用",
         "experience": "扇風機のように羽根がむき出しになっていないため、子供が指を入れる心配がなく安心して床や低いテーブルに置けます。就寝時にタイマーをセットできるので、朝までつけっぱなしにならない点も助かっています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -54,7 +62,9 @@
         "claim": "体感温度を最大10℃下げる強力な冷却性能",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカー独自の測定基準に基づく主張であり、実際の使用環境（気温・湿度）により変動する可能性が高い"
       },
@@ -62,7 +72,9 @@
         "claim": "消費電力5Wで約90％の省エネを実現",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "USB給電の標準的な消費電力であり、一般的なACモーター扇風機（30W～50W）と比較して妥当な数値"
       }
@@ -184,6 +196,7 @@
         "角度調整: 上下15度手動調節",
         "機能: LEDムードライト、タッチパネル操作"
       ]
-    }
+    },
+    "investigatedPrice": "￥7,680"
   }
 }

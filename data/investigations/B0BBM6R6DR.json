@@ -43,7 +43,9 @@
         "claim": "球状の煮込み鍋により、フラットな鍋と比較して最大約30％柔らかく仕上がる",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "自社比較データ（Amazon商品ページ記載）"
       },
@@ -51,7 +53,9 @@
         "claim": "調理時間を最大1/3まで短縮",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "普通の鍋との比較（Amazon商品ページ記載）"
       }
@@ -168,6 +172,7 @@
         "カラー：ブラック",
         "1台12役"
       ]
-    }
+    },
+    "investigatedPrice": "￥15,800"
   }
 }

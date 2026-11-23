@@ -44,7 +44,9 @@
         "claim": "高濃度500ppmの次亜塩素酸水を約125リットル生成可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品詳細の【コスパ良く次亜塩素酸水を生成】に記載あり"
       },
@@ -52,7 +54,9 @@
         "claim": "長期保存(3年)でも品質の低下はほとんどない",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品詳細の【メリットたくさん】に記載あり"
       },
@@ -60,7 +64,9 @@
         "claim": "日本国内工場製造で第三者機関によるパッチテスト済み",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品詳細の【安心と信頼の日本国内製造】に記載あり"
       }
@@ -170,6 +176,7 @@
       "countryOfOrigin": "日本",
       "shelfLife": "3年",
       "yield": "500ppmで約125リットル、50ppmで約1250リットル生成可能"
-    }
+    },
+    "investigatedPrice": "￥1,280"
   }
 }

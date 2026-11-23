@@ -30,7 +30,10 @@
         "userType": "ガンプラファン",
         "scenario": "映画の印象的なシーンを再現するために購入",
         "experience": "通常版のΞガンダムも持っていますが、キルケーの魔女版特有の緑がかった成形色と、新規追加されたガンダムフェイスや被弾シールドに惹かれて購入しました。特にシールドのダメージ表現は梨地のようなテクスチャが細かく入っており、ウェザリング塗装を施すことで劇中の激戦の雰囲気が見事に蘇りました。サイズが大きく迫力がありますが、パーツが大きいため組みやすく、休日の楽しみとして大満足でした。",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -75,7 +78,9 @@
         "claim": "通常のHGスケールを凌駕するMG並みのサイズ（全高約20.5cm）",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-3"],
+        "supportingSourceIds": [
+          "src-3"
+        ],
         "crossChecked": true,
         "notes": "複数のレビューサイトで1/144スケールでありながら20cm超の大型キットであることが確認されている。"
       },
@@ -83,7 +88,11 @@
         "claim": "新規追加のシールド（被弾状態）には細かいテクスチャが施されている",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2", "src-3"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2",
+          "src-3"
+        ],
         "crossChecked": true,
         "notes": "削ると消えてしまう梨地のような細かい凹凸表現があることがレビューで一致している。"
       }
@@ -209,6 +218,7 @@
         "ビーム・サーベル刃×2"
       ],
       "features": "ポリキャップレス（KPS関節）、フライト・フォーム変形機構"
-    }
+    },
+    "investigatedPrice": "￥5,327"
   }
 }

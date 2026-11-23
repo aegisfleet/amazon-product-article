@@ -3,7 +3,11 @@
     "productName": "白夜行 (集英社文庫)",
     "parentAsin": "4087474399",
     "productDescription": "東野圭吾による累計数百万部を超えるベストセラーであり、二人の男女の壮絶な人生を描いた長編ミステリー大作。",
-    "productUsage": ["読書", "ミステリー愛好家のコレクション", "長編小説の没入体験"],
+    "productUsage": [
+      "読書",
+      "ミステリー愛好家のコレクション",
+      "長編小説の没入体験"
+    ],
     "positivePoints": [
       "圧倒的なボリューム感（厚さ約20mm）",
       "伏線回収と緻密な心理描写が織りなす圧倒的なストーリー構成",
@@ -13,13 +17,18 @@
       "約431gという文庫本としては重い重量であり、長時間の持ち歩きや片手での読書には適さない",
       "非常に長編であるため、気軽にサクッと読める作品を探している層には不向き"
     ],
-    "useCases": ["休日のまとまった時間を利用した長時間の読書", "自宅のソファやベッドでのリラックスした没入体験"],
+    "useCases": [
+      "休日のまとまった時間を利用した長時間の読書",
+      "自宅のソファやベッドでのリラックスした没入体験"
+    ],
     "userStories": [
       {
         "userType": "長編ミステリーが好きな30代読者",
         "scenario": "休日に自宅で一気に読み進める",
         "experience": "最初は分厚さと重さ（約430g）に驚きましたが、ページをめくる手が止まらず、圧倒的な伏線回収に引き込まれました。ただ、通勤電車で片手で持って読むには重すぎて手首が疲れました。自宅でじっくり腰を据えて読むのが正解です。",
-        "supportingSourceIds": ["amazon-official"],
+        "supportingSourceIds": [
+          "amazon-official"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -42,7 +51,9 @@
         "claim": "圧倒的なボリュームと緻密な構成による没入体験",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-official"],
+        "supportingSourceIds": [
+          "amazon-official"
+        ],
         "crossChecked": false,
         "notes": "商品サイズ（厚さ20mm、重さ431g）の物理的ボリュームから推論"
       }
@@ -103,6 +114,7 @@
       "other": [
         "判型: A6判 (文庫判)"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,430"
   }
 }

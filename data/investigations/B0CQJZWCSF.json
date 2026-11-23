@@ -41,7 +41,9 @@
         "claim": "幅60cmの横長設計で、からだを横に伸ばして寝ることが可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品仕様から確認"
       },
@@ -49,7 +51,9 @@
         "claim": "100%紙（内10%はニュージーランド産原パルプ）を使用し、とぎカスが出づらい",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品仕様から確認"
       }
@@ -162,6 +166,7 @@
       "size": "XL",
       "color": "ライトブラウン",
       "material": "ダンボール（100％紙、内10％はニュージーランド産原パルプ）、植物由来の糊"
-    }
+    },
+    "investigatedPrice": "￥3,509"
   }
 }

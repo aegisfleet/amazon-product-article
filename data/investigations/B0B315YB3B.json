@@ -3,7 +3,11 @@
     "productName": "アイリスオーヤマ パックご飯 120g×40個 低温製法米",
     "parentAsin": "B0B315YB3B",
     "productDescription": "精米したてのおいしさをそのまま閉じ込めた、アイリスオーヤマの低温製法米の小盛りパックご飯。120gの食べきりサイズで、ちょっとだけご飯が食べたい時に便利です。",
-    "productUsage": ["食事の主食", "夜食や軽食", "お弁当への追加"],
+    "productUsage": [
+      "食事の主食",
+      "夜食や軽食",
+      "お弁当への追加"
+    ],
     "positivePoints": [
       "120gの小盛りサイズで食べきりやすく、食品ロスを防げる",
       "低温製法米を使用しており、お米の甘みと旨味が引き立っている",
@@ -23,14 +27,18 @@
         "userType": "小食な高齢者や女性",
         "scenario": "普段の食事で普通のパックご飯（150gや200g）では多すぎて残してしまう",
         "experience": "120gという小盛りサイズがちょうどよく、残さず食べきれるため罪悪感がありません。味も普通に炊いたご飯のように美味しいです。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "一人暮らしの社会人",
         "scenario": "忙しい朝や疲れて帰った夜に手軽にご飯を食べたい",
         "experience": "レンジで温めるだけで食べられるのが便利です。40個セットなので買い出しの手間が省け、コスパも良いので助かっています。ただ、場所を取るのだけが難点です。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -53,7 +61,9 @@
         "claim": "15度以下の低温管理で精米された「低温製法米」を使用している",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカー公称仕様より"
       }
@@ -158,7 +168,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (120gという小盛りサイズが特定のニーズに的確に応えており実用的)\n[加点: +10] (大容量まとめ買いによる優れたコストパフォーマンス)\n[減点: -5] (40個入りという大容量ゆえの保管スペースの確保がネック)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "155mm", "width": "539mm", "depth": "228mm" },
+      "dimensions": {
+        "height": "155mm",
+        "width": "539mm",
+        "depth": "228mm"
+      },
       "weight": "120g (1パックあたり)",
       "capacity": "40個 (120g×10パック×4個)",
       "material": "うるち米(国産)",
@@ -167,6 +181,7 @@
         "カロリー: 1食(120g)当たり173kcal",
         "精米製法: 低温製法"
       ]
-    }
+    },
+    "investigatedPrice": "￥4,899"
   }
 }

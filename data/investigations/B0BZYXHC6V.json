@@ -25,7 +25,9 @@
         "userType": "中高年の健康を気遣う層",
         "scenario": "毎日の骨密度ケアのために手軽な飲料を探していた",
         "experience": "味もスッキリしていて飲みやすく、100gという量が朝食時にも重すぎないのが良い。瓶タイプではなくプラ容器などで手軽に捨てられる点も日常使いに便利だと感じている。賞味期限が短いのでまとめ買いには注意が必要。",
-        "supportingSourceIds": ["src-amazon-api"],
+        "supportingSourceIds": [
+          "src-amazon-api"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -48,7 +50,9 @@
         "claim": "骨密度を高める",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-api"],
+        "supportingSourceIds": [
+          "src-amazon-api"
+        ],
         "crossChecked": true,
         "notes": "MBPが40mg配合されていることによる機能性表示"
       }
@@ -109,7 +113,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +3] (MBP40mg配合という明確な機能性)\n[加点: +2] (100g・低カロリー設計による毎日の継続しやすさ)\n[減点: -0] (特になし)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "約80mm", "width": "約45mm", "depth": "約45mm" },
+      "dimensions": {
+        "height": "約80mm",
+        "width": "約45mm",
+        "depth": "約45mm"
+      },
       "weight": "100g(内容量)",
       "capacity": "100g×12本",
       "material": "プラ容器",
@@ -126,6 +134,7 @@
         "保存方法: 要冷蔵(10℃以下)",
         "賞味期限: 14日前後"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,818"
   }
 }

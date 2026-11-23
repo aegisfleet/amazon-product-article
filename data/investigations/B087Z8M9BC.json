@@ -41,7 +41,9 @@
         "claim": "ノンシリコンで濃密泡によるスッキリとした洗浄力",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "Amazonの商品特徴に記載"
       },
@@ -49,7 +51,9 @@
         "claim": "医薬部外品であり、デオスカルプシャンプーとしてニオイ・フケなどのケアに対応",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "商品名および特徴から推測可能"
       }
@@ -158,8 +162,15 @@
       "color": "シャンプー",
       "size": "大容量詰め替え",
       "type": "医薬部外品",
-      "features": ["ノンシリコン", "濃密泡"],
-      "other": ["メンズ用", "2倍サイズ（通常品比較）"]
-    }
+      "features": [
+        "ノンシリコン",
+        "濃密泡"
+      ],
+      "other": [
+        "メンズ用",
+        "2倍サイズ（通常品比較）"
+      ]
+    },
+    "investigatedPrice": "￥1,804"
   }
 }

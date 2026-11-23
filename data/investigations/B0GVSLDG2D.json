@@ -32,21 +32,27 @@
         "userType": "冷え性が気になる家庭",
         "scenario": "夏の寝室での使用",
         "experience": "エアコンだと冷えすぎてだるくなるため購入。氷と保冷パックを入れると打ち水のような自然で心地よい冷風がきて、睡眠中も快適に過ごせました。24時間タイマーも帰宅前に部屋を涼しくできて便利です。",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "収納スペースに悩む一人暮らし",
         "scenario": "オフシーズンの片付け",
         "experience": "季節ものの家電は収納場所に困りますが、この冷風扇はタンクを逆さに被せると奥行きが半分になるので、ベッド下やクローゼットにすっきり収まりました。画期的な収納アイデアに感動しました。",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "電気代を気にするユーザー",
         "scenario": "長時間の日常使用",
         "experience": "エアコン代わりに日中ずっと稼働させていますが、消費電力が60Wと少ないため、電気代が大幅に節約できています。13Lの大容量タンクのおかげで、猛暑日でも1日1回の給水で済むのも助かります。",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -69,7 +75,9 @@
         "claim": "電源ONからわずか数秒で強力な冷風をお届けします",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": true,
         "notes": "霧化冷却技術による即効性の高い冷却機能の主張"
       },
@@ -77,7 +85,9 @@
         "claim": "強風モードで8時間運転しても1日の電気代は約12〜18円",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": true,
         "notes": "消費電力60Wに基づく省エネ性能の具体的な主張"
       }
@@ -204,6 +214,7 @@
         "LEDタッチパネル",
         "リモコン遠隔操作対応"
       ]
-    }
+    },
+    "investigatedPrice": "￥8,990"
   }
 }

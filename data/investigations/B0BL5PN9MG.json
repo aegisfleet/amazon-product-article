@@ -31,14 +31,18 @@
         "userType": "小学生の親",
         "scenario": "小学校入学祝いとして、子供専用のタブレットを探していた",
         "experience": "動画だけでなく学習アプリや電子書籍も定額で楽しめる点が決め手でした。親のスマホを貸す必要がなくなり、利用時間の制限もかけられるため安心して使わせられます。ただ、アプリの充実度はiPadに及ばないため、特定の学習アプリが使えない点は少し不便でした。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "7歳の子供を持つ家庭",
         "scenario": "旅行時の移動中の暇つぶし兼、家庭学習用デバイスとして購入",
         "experience": "2年間の破損保証が付いているため、外出先に持ち出す際も親として心理的な負担が少ないのが最大のメリットです。ギャラクシー柄のカバーは小学生でも恥ずかしくないデザインで気に入っています。しかし、カバー込みだと少し重く、長時間手に持って使うのは疲れるようです。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -61,7 +65,9 @@
         "claim": "アクシデントによる水濡れ破損・画面故障でも2年間無償で交換可能",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "メーカー公式保証として明記されている事実"
       },
@@ -69,7 +75,9 @@
         "claim": "最大13時間の長稼働バッテリー",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "メーカーの仕様に基づく"
       }
@@ -152,6 +160,7 @@
         "ギャラクシー柄スリムカバー付属",
         "対象年齢: 6歳から"
       ]
-    }
+    },
+    "investigatedPrice": "￥23,980"
   }
 }

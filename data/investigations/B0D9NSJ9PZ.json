@@ -27,14 +27,18 @@
         "userType": "高血圧の自己管理を必要とするユーザー（またはその家族）",
         "scenario": "医師の指示で毎日の血圧を測定・記録するため",
         "experience": "使い方は簡単で、病院で測るのと同じくらい手軽に家で測定できる点が助かります。ただし、チューブがクルクルと絡まりやすく、絡んだ状態だとあり得ない高血圧の数値が出ることがあります。管理できる人が適切に見守らないと正しい結果が得られない場合があり、使用者によっては注意が必要です。",
-        "supportingSourceIds": ["src-amazon-review-1"],
+        "supportingSourceIds": [
+          "src-amazon-review-1"
+        ],
         "sentiment": "mixed"
       },
       {
         "userType": "血圧計の買い替えを検討している人",
         "scenario": "アプリ連携機能に魅力を感じて購入",
         "experience": "ほぼ同じ機能を持つベーシックモデル（7104）と比較して、アプリ管理機能が追加されているだけで価格差が4,000円近くあるため、アプリの費用対効果としては割高に感じられます。機能自体には満足していますが、コストパフォーマンスの面で少し不満が残りました。",
-        "supportingSourceIds": ["src-amazon-review-2"],
+        "supportingSourceIds": [
+          "src-amazon-review-2"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -79,7 +83,10 @@
         "claim": "スマートフォンでの血圧データの一元管理機能",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-product-page", "src-amazon-review-2"],
+        "supportingSourceIds": [
+          "src-amazon-product-page",
+          "src-amazon-review-2"
+        ],
         "crossChecked": true,
         "notes": "商品ページでOMRON connect対応が明記されており、ユーザーレビューでもアプリ管理機能の存在（およびそれによる価格差）が言及されているため事実と確認。"
       }
@@ -191,6 +198,7 @@
       "power": "単3形アルカリ乾電池4個（専用ACアダプタ別売）",
       "cuffSize": "幅125×長さ470mm（チューブ長さ610mm）",
       "medicalDeviceCertification": "304AABZX00082000"
-    }
+    },
+    "investigatedPrice": "￥9,980"
   }
 }

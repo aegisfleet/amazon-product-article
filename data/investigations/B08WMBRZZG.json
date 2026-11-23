@@ -28,14 +28,18 @@
         "userType": "筋トレをしている人",
         "scenario": "トレーニング後の食事として高たんぱくパスタを活用",
         "experience": "普段のパスタと同じようにミートソースやカルボナーラにして食べています。プロテインを飲むだけでなく食事からもたんぱく質を摂れるのがありがたく、ゆで時間が3分と短いので疲れている時でもすぐに作れます。味も普通のパスタとほとんど変わらないので飽きずに続けられます。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "忙しい社会人",
         "scenario": "平日の簡単な夕食作りに使用",
         "experience": "仕事から帰ってきて疲れている時、3分でゆで上がるのはとても便利です。健康のためにたんぱく質を摂りたいと思っていましたが、これならいつものパスタをこれに変えるだけで手軽に栄養バランスを整えられます。食感ももちもちしていておいしいです。",
-        "supportingSourceIds": ["src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-amazon-reviews"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -69,7 +73,9 @@
         "claim": "乾麺100g当たり20.3gの高たんぱくを含有",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-official-info"],
+        "supportingSourceIds": [
+          "src-official-info"
+        ],
         "crossChecked": false,
         "notes": "メーカーの公式な成分表示に基づく"
       },
@@ -77,7 +83,10 @@
         "claim": "ゆで時間3分でアルデンテ食感を実現",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-official-info", "src-amazon-reviews"],
+        "supportingSourceIds": [
+          "src-official-info",
+          "src-amazon-reviews"
+        ],
         "crossChecked": true,
         "notes": "メーカー主張とユーザーの実際の使用感が一致"
       }
@@ -182,7 +191,11 @@
       "scoreRationale": "[基本点: 70] (固定)\n[加点: +5] 乾麺100g当たり20.3gという優れたたんぱく質含有量\n[加点: +5] ゆで時間3分という時短調理の利便性\n[加点: +5] 高たんぱくながら普通のパスタと変わらない美味しさと食感の実現\n[減点: -2] 一般的なパスタと比較して少し割高な価格設定\n[合計: 83]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "322mm", "width": "239mm", "depth": "141mm" },
+      "dimensions": {
+        "height": "322mm",
+        "width": "239mm",
+        "depth": "141mm"
+      },
       "weight": "1500g",
       "capacity": "300g×5袋",
       "cookingTime": "3分",
@@ -192,6 +205,7 @@
         "植物性たんぱく配合",
         "アルデンテ食感"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,732"
   }
 }

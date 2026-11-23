@@ -3,7 +3,13 @@
     "productName": "ALLDOCUBE iPlay80 mini Turbo",
     "parentAsin": "B0HDN5VKRC",
     "productDescription": "Dimensity 7400と120Hzリフレッシュレートを搭載し、ゲームや動画視聴に優れた性能を発揮する8.8インチAndroid 16ミニタブレット。",
-    "productUsage": ["ゲームプレイ", "動画・映画視聴", "電子書籍の閲覧", "ブラウジング", "カーナビゲーション"],
+    "productUsage": [
+      "ゲームプレイ",
+      "動画・映画視聴",
+      "電子書籍の閲覧",
+      "ブラウジング",
+      "カーナビゲーション"
+    ],
     "positivePoints": [
       "Dimensity 7400プロセッサとMali-G615 GPUを搭載し、AnTuTuスコア85万点以上という8インチクラスにおいて強力なパフォーマンスを実現。",
       "充電中の発熱を防ぐバイパス充電機能に対応し、長時間のゲームプレイでもパフォーマンスの低下を防ぐ設計。",
@@ -26,14 +32,18 @@
         "userType": "モバイルゲーマー",
         "scenario": "外出先や自宅のベッドで手軽にゲームをプレイしたい",
         "experience": "スマホよりも大きな画面でプレイしたかったが、10インチでは重すぎるため本機を選択。バイパス充電のおかげで、充電しながらでも本体が熱くならず、長時間プレイしてもフレームレートが安定しているのが非常に良い。イヤホンジャックがないのは少し不便だが、付属の変換アダプタで対応できた。",
-        "supportingSourceIds": ["amazon-description"],
+        "supportingSourceIds": [
+          "amazon-description"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "エンタメ重視の通勤者",
         "scenario": "通勤時間中に高画質で映画やアニメを楽しみたい",
         "experience": "毎日の電車通勤で使うため、片手で持てる軽さ（295g）が購入の決め手。Widevine L1対応で高画質なのと、120Hzの滑らかな画面が心地よい。デュアルスピーカーで音質もそこそこ良く、映画の世界に入り込める。",
-        "supportingSourceIds": ["amazon-description"],
+        "supportingSourceIds": [
+          "amazon-description"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -56,7 +66,9 @@
         "claim": "AnTuTuベンチマーク85万点以上という強力なパフォーマンス",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-description"],
+        "supportingSourceIds": [
+          "amazon-description"
+        ],
         "crossChecked": false,
         "notes": "メーカーの公称値。Dimensity 7400の性能水準としては妥当なスコア。"
       },
@@ -64,7 +76,9 @@
         "claim": "高度なバイパス充電に対応しており、充電中の発熱やバッテリーの劣化を防ぎます",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-description"],
+        "supportingSourceIds": [
+          "amazon-description"
+        ],
         "crossChecked": false,
         "notes": "ゲーミングスマートフォンや一部タブレットで採用されている機能であり、事実として評価可能。"
       }
@@ -200,6 +214,7 @@
         "Widevine L1対応",
         "デュアルBOXスピーカー"
       ]
-    }
+    },
+    "investigatedPrice": "￥33,999"
   }
 }

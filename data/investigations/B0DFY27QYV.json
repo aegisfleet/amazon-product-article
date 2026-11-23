@@ -43,7 +43,9 @@
         "claim": "日本の第三者機関で認証を受けた医療機器認証品である",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "Amazon商品ページの公式説明文より確認"
       },
@@ -51,7 +53,9 @@
         "claim": "コードレスで手ぶらで使用可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "Amazon商品ページの公式説明文より確認"
       }
@@ -167,6 +171,7 @@
       "battery": "約3時間充電で約5回(1回15分)使用可能",
       "certification": "医療機器認証品",
       "material": "ベルト部分はゴム製"
-    }
+    },
+    "investigatedPrice": "￥13,980"
   }
 }

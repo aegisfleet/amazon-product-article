@@ -27,7 +27,9 @@
         "userType": "リビングでの使用を想定した家庭",
         "scenario": "広いリビングでのエアコンの冷気循環",
         "experience": "AI機能により風量が自動で調節され、意識せずに部屋全体が快適な温度に保たれます。高さも最大100cmまで伸ばせるため、家具に遮られず効率よく空気を循環できるのが決め手でした。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -50,7 +52,9 @@
         "claim": "AI技術を搭載し、環境の変化に応じて風量調整が行われる",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "商品ページでAIスマート制御として明確にアピールされている"
       },
@@ -58,7 +62,9 @@
         "claim": "MAX 30畳までの広い空間に対応する",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "商品ページの仕様として記載"
       }
@@ -178,6 +184,7 @@
         "首振り: 3D（上下左右）",
         "付属品: 本体、リモコン、スタンド、延長パイプ2本、取扱説明書兼保証書"
       ]
-    }
+    },
+    "investigatedPrice": "￥6,660"
   }
 }

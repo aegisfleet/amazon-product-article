@@ -41,7 +41,9 @@
         "claim": "1台で浄水、冷水、熱湯、炭酸水が作れる",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "公式の製品仕様として明記されている"
       }
@@ -153,8 +155,17 @@
       "color": "ブラック",
       "setContents": "スターターセット",
       "model": "DRM1043",
-      "temperatureSettings": ["冷水10℃", "熱湯85℃"],
-      "features": ["浄水", "冷水", "熱湯", "炭酸水生成"]
-    }
+      "temperatureSettings": [
+        "冷水10℃",
+        "熱湯85℃"
+      ],
+      "features": [
+        "浄水",
+        "冷水",
+        "熱湯",
+        "炭酸水生成"
+      ]
+    },
+    "investigatedPrice": "￥58,800"
   }
 }

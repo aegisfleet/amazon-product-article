@@ -27,7 +27,9 @@
         "userType": "普段使いのドライバー",
         "scenario": "通勤時にナビゲーションを利用するためダッシュボードに設置",
         "experience": "手帳型ケースをいちいち外すのが面倒でしたが、このホルダーはケースを開いたまましっかり固定できるので非常に便利です。ゲル吸盤も強力で、走行中の振動でもズレることなく安心して使えています。ただし、アームの調整幅が少し狭いので、最適な角度を見つけるのに少し時間がかかりました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -50,7 +52,9 @@
         "claim": "手帳型ケースを開いたまま収納できる",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "公式サイトにて機能として明記されており、多くのユーザーレビューでも実証されている。"
       }
@@ -152,7 +156,11 @@
       "scoreRationale": "[基本点: 70] (固定)\n[加点: +5] (手帳型ケースを開いたまま収納できるという、ケース愛用者にとっての実用性の高さ)\n[加点: +5] (ゲル吸盤と補助板付属による設置の安定性)\n[減点: -5] (競合（ロングアームモデルなど）と比較して、位置調整の自由度がやや低い)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "119mm", "width": "73mm", "depth": "130mm" },
+      "dimensions": {
+        "height": "119mm",
+        "width": "73mm",
+        "depth": "130mm"
+      },
       "weight": "168g",
       "material": "プラスチック等",
       "origin": "不明",
@@ -161,6 +169,7 @@
         "補助板付属",
         "手帳型ケース開き角度調整ホルダー付属"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,107"
   }
 }

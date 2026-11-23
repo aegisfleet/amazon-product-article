@@ -3,7 +3,11 @@
     "productName": "Amazonベーシック ハンガーラック 2段 耐荷重181kg キャスター付き",
     "parentAsin": "B0799G89YB",
     "productDescription": "ハンガーバー2本と上下2つの棚を備えた、収納力に優れたスチール製ハンガーラック。静止時耐荷重181.4kgの頑丈な設計と、移動に便利なストッパー付きキャスターを採用しています。",
-    "productUsage": ["大量の衣類の収納", "靴や小物の棚置き収納", "部屋間の衣類移動"],
+    "productUsage": [
+      "大量の衣類の収納",
+      "靴や小物の棚置き収納",
+      "部屋間の衣類移動"
+    ],
     "positivePoints": [
       "静止時の全体耐荷重が181.4kgと非常に高い",
       "ハンガーバーと棚の高さを用途に合わせて調節可能",
@@ -26,7 +30,9 @@
         "userType": "夫婦2人暮らしの家庭",
         "scenario": "季節外のコートと普段着の収納",
         "experience": "冬物の重いコートを何着も掛けてもパイプがたわむことなく、安定して収納できたのが決め手でした。上下段を使えるので、上の段に長い服、下の段に短い服と分けて収納でき、余った棚にはバッグを置けてクローゼットがわりになります。本体が重いですが、キャスターがあるおかげで掃除の時も苦になりません。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -49,7 +55,9 @@
         "claim": "静止時の耐荷重は181.4kg",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "メーカー公式スペックとして記載。"
       },
@@ -57,7 +65,9 @@
         "claim": "追加の工具不要で30分以内に組み立て可能",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "工具不要なスリーブ式での組み立て仕様であることを確認。"
       }
@@ -161,12 +171,21 @@
       "scoreRationale": "[基本点: 70]\n[加点: +8] (静止時181.4kgという圧倒的な耐荷重)\n[加点: +5] (上下の棚板による収納力の高さ)\n[加点: +8] (競合と比較しても大容量ながら6,000円台という高いコストパフォーマンス)\n[減点: -3] (本体重量が約11kgと重く取り回しにやや難あり)\n[合計: 88]"
     },
     "technicalSpecs": {
-      "dimensions": { "width": "914mm", "depth": "356mm", "height": "1829mm" },
+      "dimensions": {
+        "width": "914mm",
+        "depth": "356mm",
+        "height": "1829mm"
+      },
       "weight": "10.93kg",
       "material": "スチール",
       "loadCapacity": "静止時181.4kg、移動時90.7kg",
       "color": "シルバー",
-      "other": ["ハンガーバー2本", "棚板2枚", "キャスター4個（うち2個ストッパー付き）"]
-    }
+      "other": [
+        "ハンガーバー2本",
+        "棚板2枚",
+        "キャスター4個（うち2個ストッパー付き）"
+      ]
+    },
+    "investigatedPrice": "￥6,181"
   }
 }

@@ -31,7 +31,9 @@
         "userType": "一人暮らしの学生",
         "scenario": "初めての一人暮らしで自炊を始める",
         "experience": "安価なマイコン式からの買い替えですが、IH式でお米一粒一粒が立っていて本当に美味しいです。30時間保温できるので、朝にまとめて炊いても夜までパサつかず、いつでも温かいご飯が食べられるのが最高です。ただ、炊飯中のファンの音は少し気になりますが、テレビをつけていれば問題ありません。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -54,7 +56,9 @@
         "claim": "IHの高火力により、マイコン式よりも美味しいご飯が炊ける",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "レビュー記事にて、お米が立って美味しいとの評価あり"
       },
@@ -62,7 +66,9 @@
         "claim": "30時間おいしく保温できる",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "象印の製品特長であり、レビュー記事でも「朝炊いて夜食べても黄色くなっていない」と評価されている"
       },
@@ -70,7 +76,9 @@
         "claim": "炊飯中のファンの音がうるさい",
         "category": "durability",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "IH式特有の冷却ファンの音。静かな部屋では気になるが、生活音があれば問題ないレベル"
       },
@@ -78,7 +86,9 @@
         "claim": "蓋が閉まりにくい・固い",
         "category": "durability",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "高い密閉性を保つための構造によるもの"
       }
@@ -198,6 +208,7 @@
         "保温機能：うるつや保温（30時間）",
         "電圧：100V専用"
       ]
-    }
+    },
+    "investigatedPrice": "￥18,500"
   }
 }

@@ -29,14 +29,19 @@
         "userType": "朝の支度を急ぐ女性",
         "scenario": "出勤前の忙しい時間にスタイリングを行う",
         "experience": "アイロンの温度が約30秒で220℃まで上がるため、忙しい朝でも待ち時間がなくスムーズにスタイリングできました。また、自動電源OFF機能があるので、出勤後に「消したかな？」と不安になることがなくなりました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "髪のダメージを気にするユーザー",
         "scenario": "くせ毛を直すために毎日ヘアアイロンを使用する",
         "experience": "以前のアイロンでは髪がパサパサになっていましたが、ラディアントに変えてからはシルクプレートのおかげで髪のツヤが保たれるようになりました。温度が下がりにくいため、何度も髪に通す必要がなくダメージが減ったと感じます。",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -70,7 +75,10 @@
         "claim": "水分の瞬間蒸発を防ぎ、髪のダメージを抑える「シルクプレート」を採用",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "テフロン系シートを施したプレートにより水分の蒸発を防ぐと記載あり。"
       },
@@ -78,7 +86,10 @@
         "claim": "約30秒で220℃まで温度が上昇する",
         "category": "performance",
         "confidence": "high",
-        "supportingSourceIds": ["src-1", "src-2"],
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
         "crossChecked": true,
         "notes": "センサーレス制御により高速な温度上昇が可能と明記。"
       }
@@ -183,7 +194,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (シルクプレートによる髪の水分保持・ダメージ軽減効果)\n[加点: +10] (センサーレス制御による約30秒で220℃への高速昇温と温度安定性)\n[減点: -5] (家庭用としては価格が高額である点)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "30mm", "width": "230mm", "depth": "30mm" },
+      "dimensions": {
+        "height": "30mm",
+        "width": "230mm",
+        "depth": "30mm"
+      },
       "weight": "320g",
       "capacity": "1台",
       "material": "テフロン系シルクプレート",
@@ -196,6 +211,7 @@
         "電源: AC100V（日本専用）",
         "自動電源OFF: 約30分後"
       ]
-    }
+    },
+    "investigatedPrice": "￥15,390"
   }
 }

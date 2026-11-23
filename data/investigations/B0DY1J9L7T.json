@@ -31,7 +31,9 @@
         "userType": "一人暮らし",
         "scenario": "日常的にお茶やコーヒーを飲む",
         "experience": "価格が安かったため購入しました。2.2Lという一人暮らしには十分な容量で、お茶やコーヒーを入れるのに重宝しています。温度設定ができるのも便利で、コスパが非常に高いと感じています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -76,7 +78,9 @@
         "claim": "ECOモード搭載",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "8時間操作がないと自動的に電源がオフになる機能が備わっている"
       }
@@ -148,6 +152,7 @@
         "360°回転ベース",
         "メーカー保証1年"
       ]
-    }
+    },
+    "investigatedPrice": "￥5,990"
   }
 }

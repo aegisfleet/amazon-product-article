@@ -3,23 +3,44 @@
     "productName": "ロジクール MX KEYS mini KX700GRd グラファイト",
     "parentAsin": "B0BWDSC5ZB",
     "productDescription": "テンキーレスで省スペース化を実現した、ロジクールの高機能ワイヤレスキーボードです。",
-    "productUsage": ["長時間のタイピング作業", "複数デバイス間の切り替え入力", "限られたデスクスペースでの利用"],
-    "positivePoints": ["指先にフィットする球状のくぼみを持つキーによる快適な打鍵感", "506gの重量と金属プレートによる圧倒的な安定性", "マウスとキーボードの距離が縮まり肩や腕の疲労を軽減"],
-    "negativePoints": ["Logi Boltレシーバーが別売り", "頻繁に持ち運ぶにはやや重い", "上下のカーソルキーが小さい"],
-    "useCases": ["自宅のテレワーク環境でのメインキーボードとして", "出先での安定したタイピング作業用として", "複数のPCやタブレットを切り替えての作業"],
+    "productUsage": [
+      "長時間のタイピング作業",
+      "複数デバイス間の切り替え入力",
+      "限られたデスクスペースでの利用"
+    ],
+    "positivePoints": [
+      "指先にフィットする球状のくぼみを持つキーによる快適な打鍵感",
+      "506gの重量と金属プレートによる圧倒的な安定性",
+      "マウスとキーボードの距離が縮まり肩や腕の疲労を軽減"
+    ],
+    "negativePoints": [
+      "Logi Boltレシーバーが別売り",
+      "頻繁に持ち運ぶにはやや重い",
+      "上下のカーソルキーが小さい"
+    ],
+    "useCases": [
+      "自宅のテレワーク環境でのメインキーボードとして",
+      "出先での安定したタイピング作業用として",
+      "複数のPCやタブレットを切り替えての作業"
+    ],
     "userStories": [
       {
         "userType": "デスクワーカー",
         "scenario": "毎日の長時間のタイピング作業において",
         "experience": "Magic Keyboardと比較して少し深めのストロークと、指にフィットするキーのくぼみのおかげで、ミスタイプが減り心地よいタイピングができました。打鍵音も静かで快適です。",
-        "supportingSourceIds": ["src-note-kenzaki"],
+        "supportingSourceIds": [
+          "src-note-kenzaki"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ノマドワーカー",
         "scenario": "カフェや外出先での作業時",
         "experience": "コンパクトでありながら約506gの重量があるため、外出先の不安定なテーブルで激しくタイピングしても本体が全く動かず、自宅と同じような安定した環境で作業できました。ただし、毎日持ち歩くには少しずっしりとした重みを感じます。",
-        "supportingSourceIds": ["src-taboyama", "src-note-kenzaki"],
+        "supportingSourceIds": [
+          "src-taboyama",
+          "src-note-kenzaki"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -53,7 +74,10 @@
         "claim": "指の形状に合わせた球状にくぼんだキーがミスタイプを減らし、心地よい打鍵感を提供する。",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-note-kenzaki", "src-taboyama"],
+        "supportingSourceIds": [
+          "src-note-kenzaki",
+          "src-taboyama"
+        ],
         "crossChecked": true,
         "notes": "両方のレビューサイトで共通して高く評価されているポイント。"
       },
@@ -61,7 +85,10 @@
         "claim": "約506gの重量があるためタイピング時の安定性が非常に高いが、持ち運びには少し重く感じる。",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-note-kenzaki", "src-taboyama"],
+        "supportingSourceIds": [
+          "src-note-kenzaki",
+          "src-taboyama"
+        ],
         "crossChecked": true,
         "notes": "重量によるトレードオフについて両方のレビューで言及あり。"
       }
@@ -148,9 +175,20 @@
       }
     ],
     "recommendation": {
-      "targetUsers": ["タイピングの快適さを重視するライターやプログラマー", "デスクをすっきりと保ちたいミニマリスト", "複数のデバイスを一つのキーボードで操作したい人"],
-      "pros": ["極めて快適な打鍵感と静音性", "重量による抜群の安定性", "省スペースでマウス操作への移行がスムーズ"],
-      "cons": ["USBレシーバーが付属しない", "持ち歩き用としてはやや重い"],
+      "targetUsers": [
+        "タイピングの快適さを重視するライターやプログラマー",
+        "デスクをすっきりと保ちたいミニマリスト",
+        "複数のデバイスを一つのキーボードで操作したい人"
+      ],
+      "pros": [
+        "極めて快適な打鍵感と静音性",
+        "重量による抜群の安定性",
+        "省スペースでマウス操作への移行がスムーズ"
+      ],
+      "cons": [
+        "USBレシーバーが付属しない",
+        "持ち歩き用としてはやや重い"
+      ],
       "score": 83,
       "scoreRationale": "[基本点: 70]\n[加点: +8] (指の形状に合わせた球状のくぼみと適度なストロークによる快適な打鍵感)\n[加点: +5] (506gの金属プレート内蔵によるタイピング時の高い安定性)\n[加点: +5] (テンキーレスによる省スペース設計と右手の移動距離削減)\n[減点: -2] (持ち運ぶにはやや重い重量)\n[減点: -3] (高価格帯ながらLogi Boltレシーバーが別売りである点)\n[合計: 83]"
     },
@@ -164,7 +202,12 @@
       "connectivity": "Bluetooth、Logi Bolt（レシーバー別売）、Unifying非対応",
       "powerSupply": "USB-C充電式",
       "keyLayout": "日本語配列",
-      "other": ["スマートイルミネーション（バックライト）搭載", "Easy-Switch対応（最大3台）", "対応OS: Windows 10/11以降, macOS 10.15以降, ChromeOS, Android 5.0以降"]
-    }
+      "other": [
+        "スマートイルミネーション（バックライト）搭載",
+        "Easy-Switch対応（最大3台）",
+        "対応OS: Windows 10/11以降, macOS 10.15以降, ChromeOS, Android 5.0以降"
+      ]
+    },
+    "investigatedPrice": "￥16,246"
   }
 }

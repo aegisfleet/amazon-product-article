@@ -3,7 +3,10 @@
     "productName": "カインズ マナー おさんぽパック 300枚入",
     "parentAsin": "B0D4Z2W3WD",
     "productDescription": "ウンチを取ってそのままトイレに流せる、犬用のふん処理パック。袋が開けやすいエンボス加工が施されており、動物愛護協会推奨品です。",
-    "productUsage": ["犬の散歩時のふん処理", "お出かけ時のマナー袋"],
+    "productUsage": [
+      "犬の散歩時のふん処理",
+      "お出かけ時のマナー袋"
+    ],
     "positivePoints": [
       "ビニール袋にエンボス加工が施されており、外出先でも開けやすい",
       "中の紙袋ごと水洗トイレに流せるため、後処理が簡単",
@@ -13,7 +16,10 @@
     "negativePoints": [
       "ポリ袋は水に流せないため、捨てる際に分別する必要がある"
     ],
-    "useCases": ["毎日の犬の散歩", "ドッグランや旅行などの外出時"],
+    "useCases": [
+      "毎日の犬の散歩",
+      "ドッグランや旅行などの外出時"
+    ],
     "userStories": [],
     "userImpression": "公式の仕様から、エンボス加工による開けやすさや水洗トイレにそのまま流せる利便性が高く評価できる設計。日本製で動物愛護協会推奨品という点も安心感に繋がっている。",
     "sources": [
@@ -34,7 +40,9 @@
         "claim": "水洗トイレに流せる",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "水溶性の紙を使用していると明記されている"
       },
@@ -42,7 +50,9 @@
         "claim": "動物愛護協会推奨品",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品説明に明記されている"
       }
@@ -161,6 +171,7 @@
         "紙袋サイズ：高さ200mm×幅230mm",
         "ビニールサイズ：高さ300mm×幅200mm"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,980"
   }
 }

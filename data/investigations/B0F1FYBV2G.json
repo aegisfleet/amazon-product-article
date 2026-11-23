@@ -3,7 +3,11 @@
     "productName": "DJcong 睡眠用耳栓",
     "parentAsin": "B0GZ4TCGXS",
     "productDescription": "横向き寝でも耳が痛くなりにくい、人間工学に基づいた3D設計の睡眠特化型耳栓です。ドイツのレッド・ドット・デザイン賞を受賞したスタイリッシュなデザインが特徴です。",
-    "productUsage": ["睡眠時の騒音・いびき対策", "勉強や仕事中の集中力向上", "移動中（飛行機・新幹線）の遮音"],
+    "productUsage": [
+      "睡眠時の騒音・いびき対策",
+      "勉強や仕事中の集中力向上",
+      "移動中（飛行機・新幹線）の遮音"
+    ],
     "positivePoints": [
       "横向きで寝ても耳への圧迫感が少なく痛くなりにくい",
       "SNR26dBの遮音性でエアコン音や環境音を効果的に軽減する",
@@ -26,14 +30,18 @@
         "userType": "エアコンの音が気になる社会人",
         "scenario": "夏の暑い夜、エアコンの作動音でなかなか寝付けない状況で使用",
         "experience": "耳栓を着けると、うるさくて仕方がなかったエアコンの音も呼吸音くらいの音に減りました。本体が全体的に柔らかいため、横になっても邪魔になりにくく、思ったより寝るのを阻害しません。ただ、使い始めて数日は朝起きたときに片耳が外れていた日もありました。",
-        "supportingSourceIds": ["src-take5blue"],
+        "supportingSourceIds": [
+          "src-take5blue"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "睡眠時の騒音に悩むユーザー",
         "scenario": "睡眠の質を向上させるために、外れにくい耳栓を探して使用",
         "experience": "説明書に書いてあるように付けたら完璧なフィット感でした。実際に2日ほど耳栓をつけて寝てみましたが、横向きで寝ても朝まで外れておらず、耳が痛くなることもありませんでした。ある程度の音は聞こえるのが逆に自然でちょうどいいです。",
-        "supportingSourceIds": ["src-hendigi"],
+        "supportingSourceIds": [
+          "src-hendigi"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -89,7 +97,11 @@
         "claim": "横向きに寝ても耳が痛くなりにくい超柔軟シリコン設計",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-take5blue", "src-hendigi", "src-hobby238"],
+        "supportingSourceIds": [
+          "src-take5blue",
+          "src-hendigi",
+          "src-hobby238"
+        ],
         "crossChecked": true,
         "notes": "複数のレビュー記事で横向きに寝た際の快適さと痛みの少なさが評価されている。"
       },
@@ -97,7 +109,10 @@
         "claim": "SNR値26dBのノイズリダクション性能で環境音を和らげる",
         "category": "performance",
         "confidence": "high",
-        "supportingSourceIds": ["src-hobby238", "src-take5blue"],
+        "supportingSourceIds": [
+          "src-hobby238",
+          "src-take5blue"
+        ],
         "crossChecked": true,
         "notes": "SNR26dBの公称値に基づいており、エアコンや生活音を効果的に軽減するが完全な無音にはならないと確認済み。"
       },
@@ -105,7 +120,9 @@
         "claim": "日本の会社（埼玉県）が販売し、JIS規格およびCE認証を取得している",
         "category": "safety",
         "confidence": "medium",
-        "supportingSourceIds": ["src-muji-nobita"],
+        "supportingSourceIds": [
+          "src-muji-nobita"
+        ],
         "crossChecked": false,
         "notes": "ブランドの所在については1つのソースで言及されているが、公式仕様等の追加確認は限定的。"
       }
@@ -224,6 +241,7 @@
         "ドイツ レッド・ドット賞受賞",
         "水洗い可能"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,708"
   }
 }

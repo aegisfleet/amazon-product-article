@@ -3,7 +3,12 @@
     "productName": "トジコ ペット ウェットティッシュ 厚手 大判 80枚×3個",
     "parentAsin": "B0D4QD3KSC",
     "productDescription": "ペットが舐めても安心な成分で作られた、無香料・純水99％の厚手大判ウェットティッシュです。",
-    "productUsage": ["ペットのおしりふき", "足拭き", "全身の汚れ拭き取り", "身の回りのお掃除"],
+    "productUsage": [
+      "ペットのおしりふき",
+      "足拭き",
+      "全身の汚れ拭き取り",
+      "身の回りのお掃除"
+    ],
     "positivePoints": [
       "純水99%でノンアルコール・無香料・無着色、パラベンフリー、PGフリーで舐めても安心",
       "20×14cmの大判厚手シートでしっかり汚れを拭き取れる",
@@ -38,7 +43,9 @@
         "claim": "ペットが舐めても安心な無添加処方（ノンアルコール・無香料・パラベンフリー等）",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-tojico"],
+        "supportingSourceIds": [
+          "src-amazon-tojico"
+        ],
         "crossChecked": false,
         "notes": "公式ページの成分記載に基づく"
       },
@@ -46,7 +53,9 @@
         "claim": "フタ付きで乾燥しづらい",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-tojico"],
+        "supportingSourceIds": [
+          "src-amazon-tojico"
+        ],
         "crossChecked": false,
         "notes": "パッケージの仕様による"
       }
@@ -150,7 +159,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +5] (成分の安全性・無添加処方で舐めても安心な品質)\n[加点: +5] (フタ付きで乾燥を防ぎ使いやすいパッケージデザイン)\n[減点: -5] (競合製品と比較して1枚あたりの単価が割高なためコストパフォーマンスが劣る)\n[合計: 75]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "70mm", "width": "220mm", "depth": "105mm" },
+      "dimensions": {
+        "height": "70mm",
+        "width": "220mm",
+        "depth": "105mm"
+      },
       "weight": "1700g",
       "capacity": "80枚×3個（計240枚）",
       "material": "レーヨン系不織布、ポリエステル",
@@ -160,6 +173,7 @@
         "成分: 水、塩化ベンザルコニウム、グリシン、アロエベラ葉エキス、ビタミンE",
         "仕様: 無香料、無着色、アルコールフリー、パラベンフリー、PGフリー、純水99％"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,790"
   }
 }

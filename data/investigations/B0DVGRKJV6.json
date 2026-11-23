@@ -43,7 +43,9 @@
         "claim": "厚さ約10mm、重量約33gの小型・軽量設計",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "商品詳細の寸法・重量データから確認"
       },
@@ -51,7 +53,9 @@
         "claim": "USB3.2 Gen1 (5Gbps)の高速転送に対応",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "商品仕様から確認"
       }
@@ -169,6 +173,7 @@
       "powerSupply": "バスパワー",
       "color": "ブラック",
       "model": "U3H-H042BK/E"
-    }
+    },
+    "investigatedPrice": "￥960"
   }
 }

@@ -3,7 +3,10 @@
     "productName": "サントリー 烏龍茶 ラベルレス",
     "parentAsin": "B0FNWWJRW4",
     "productDescription": "機能性表示食品のサントリー烏龍茶。ラベルレスボトルでゴミ捨てが簡単な600ml×24本入り。",
-    "productUsage": ["食事のお供", "日常的な水分補給"],
+    "productUsage": [
+      "食事のお供",
+      "日常的な水分補給"
+    ],
     "positivePoints": [
       "ラベルレスで廃棄時の手間が省ける",
       "600mlと少し多めで満足感がある",
@@ -14,7 +17,11 @@
       "安価なPB商品と比較するとやや割高",
       "ケース販売のみでバラ売りがないため保管スペースが必要"
     ],
-    "useCases": ["毎日の食事", "職場への持ち運び", "自宅でのストック"],
+    "useCases": [
+      "毎日の食事",
+      "職場への持ち運び",
+      "自宅でのストック"
+    ],
     "userStories": [],
     "userImpression": "定番のサントリー烏龍茶がラベルレスになり、毎日のゴミ捨てが非常に楽になったと好評。機能性表示食品であることや、600mlという少し多めの容量も日常使いに適していると評価されている。",
     "sources": [
@@ -35,7 +42,9 @@
         "claim": "機能性表示食品である",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品名および商品仕様に明記されている"
       },
@@ -43,7 +52,9 @@
         "claim": "1本あたり600mlの大容量",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品仕様に600ml×24本と記載されている"
       }
@@ -159,9 +170,15 @@
       "quantity": "24本",
       "calories": "0kcal/600ml",
       "origin": "日本",
-      "features": ["機能性表示食品", "ラベルレス"],
+      "features": [
+        "機能性表示食品",
+        "ラベルレス"
+      ],
       "ingredients": "烏龍茶（中国福建省）／ビタミンＣ",
-      "other": ["エネルギー:0kcal/1000ml"]
-    }
+      "other": [
+        "エネルギー:0kcal/1000ml"
+      ]
+    },
+    "investigatedPrice": "￥2,392"
   }
 }

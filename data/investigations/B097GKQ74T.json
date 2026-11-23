@@ -30,14 +30,18 @@
         "userType": "30代女性・会社員",
         "scenario": "職場のランチでお弁当と一緒に",
         "experience": "大きめの具がたくさん入っていて、特にナスは噛むとジュワッと旨味が出てきます。インスタント特有の変な濃さがなく、やさしい口当たりで満足度が高いです。",
-        "supportingSourceIds": ["src-note-1"],
+        "supportingSourceIds": [
+          "src-note-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "30代女性",
         "scenario": "野菜不足を感じる日の食事に",
         "experience": "キャベツやほうれん草などの野菜がたっぷりでシャキシャキとした食感が楽しめます。甘さのある優しい風味で、おにぎりとこれだけでも満足のいく食事になります。",
-        "supportingSourceIds": ["src-shareview-1"],
+        "supportingSourceIds": [
+          "src-shareview-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -82,7 +86,11 @@
         "claim": "フリーズドライ製法により、具材の大きさや本来の食感、旨味が保たれている",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-note-1", "src-shareview-1", "src-amano-1"],
+        "supportingSourceIds": [
+          "src-note-1",
+          "src-shareview-1",
+          "src-amano-1"
+        ],
         "crossChecked": true,
         "notes": "複数の実食レビューや公式検証記事で、具材のクオリティの高さが一致して評価されている"
       },
@@ -90,7 +98,10 @@
         "claim": "お湯を注ぐだけで10秒で調理可能であり、インスタント特有の癖がない",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-note-1", "src-amano-1"],
+        "supportingSourceIds": [
+          "src-note-1",
+          "src-amano-1"
+        ],
         "crossChecked": true,
         "notes": "レビューおよび商品説明により、調理の手軽さと優しい味わいが確認できる"
       }
@@ -206,6 +217,7 @@
       "shelfLife": "製造日より1年",
       "storageCondition": "直射日光・高温多湿の所を避け、常温で保存",
       "preparation": "熱湯を約160ml注いで軽くかき混ぜる"
-    }
+    },
+    "investigatedPrice": "￥3,980"
   }
 }

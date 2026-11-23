@@ -30,14 +30,18 @@
         "userType": "中高年層",
         "scenario": "入浴時に脱衣所で体重を測定",
         "experience": "文字が大きくバックライトが光るため、老眼でもとても見やすい。BluetoothではなくWi-Fi接続なので、わざわざスマホをお風呂場まで持っていかなくても良いのが便利。",
-        "supportingSourceIds": ["src-kakaku-rev-1"],
+        "supportingSourceIds": [
+          "src-kakaku-rev-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "ダイエット・健康管理目的のユーザー",
         "scenario": "毎日の体重・体脂肪率の記録",
         "experience": "Wi-Fiに接続して年齢や身長を登録すれば、あとは乗るだけで体重と体脂肪率が直ちにサーバーに記録され、スマホで読み込める。スマホでデータを管理できるおかげで身体管理を継続できるようになった。",
-        "supportingSourceIds": ["src-kakaku-rev-2"],
+        "supportingSourceIds": [
+          "src-kakaku-rev-2"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -71,7 +75,10 @@
         "claim": "Wi-Fi接続により、スマホを操作せずに乗るだけでデータが自動転送される",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-kakaku-rev-1", "src-kakaku-rev-2"],
+        "supportingSourceIds": [
+          "src-kakaku-rev-1",
+          "src-kakaku-rev-2"
+        ],
         "crossChecked": true,
         "notes": "複数のユーザーレビューで、スマホを持ち込まなくてもデータ転送される利便性が高く評価されている。"
       },
@@ -79,7 +86,9 @@
         "claim": "筑波大学との産学連携による体積推定方式で精度の高い測定が可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-kakaku-rev-2"],
+        "supportingSourceIds": [
+          "src-kakaku-rev-2"
+        ],
         "crossChecked": false,
         "notes": "商品説明やレビュー内で言及されている特徴的な機能。"
       }
@@ -165,6 +174,7 @@
         "登録人数: 4人",
         "カラー: ホワイト"
       ]
-    }
+    },
+    "investigatedPrice": "￥5,373"
   }
 }

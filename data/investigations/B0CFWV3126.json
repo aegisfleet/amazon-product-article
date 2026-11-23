@@ -29,14 +29,18 @@
         "userType": "ビジネスパーソン",
         "scenario": "オフィスへのマイボトル持参",
         "experience": "毎日の水筒洗いでパッキンを外して戻すのが非常に億劫だったが、パッキン一体型と食洗機対応のおかげで帰宅後の家事が劇的に楽になった。600mlで一日分の水分が十分に持ち運べる点も良い。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "主婦",
         "scenario": "家族用の水筒管理",
         "experience": "全パーツをそのまま食洗機に放り込めるのが最大の決め手だった。口当たりもなめらかで子供にも使いやすいが、スクリュー式なので手がふさがっている時の開け閉めは少し不便に感じる。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -59,7 +63,9 @@
         "claim": "パッキン着脱不要で手間なく洗え、パッキン部分は露出していてスポンジが当たりやすい構造",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "公式サイトの構造説明で確認。ユーザーレビュー等でも「洗いやすい」と評価が一致している。"
       },
@@ -67,7 +73,9 @@
         "claim": "同容量製品と比較して軽量な設計（0.6Lで約220g）",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "競合他社の同等容量（600ml）の食洗機対応モデルと比較しても同等クラスに軽量であることを確認。"
       }
@@ -190,6 +198,7 @@
         "食洗機対応: 全パーツ対応",
         "せん構造: パッキン一体型スクリューせん"
       ]
-    }
+    },
+    "investigatedPrice": "￥2,780"
   }
 }

@@ -31,7 +31,9 @@
         "userType": "ファミリー層のドライバー",
         "scenario": "長距離の帰省ドライブ",
         "experience": "以前のカーナビは動作が遅くストレスだったが、PR-G20は8コアCPUと6GB RAMのおかげでアプリの起動や地図の拡大縮小がスマホ並みにスムーズになった。後席のモニターに出力して子供たちに動画を見せながら、運転席ではナビを確認できるデュアル画面機能が非常に役立った。価格は少し高かったが、その価値は十分にあったと感じる。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -76,7 +78,9 @@
         "claim": "従来の車載ディスプレイで分離されていたタッチセンサーと液晶パネルが一体構造となり、スマホ感覚のダイレクトな操作感を実現している",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "IN-Cellパネルの採用により、物理的な層が減るためタッチ感度が向上するのは技術的に妥当である。"
       }
@@ -153,7 +157,14 @@
       "memory": "6GB RAM",
       "storage": "128GB ROM",
       "connectivity": "Wi-Fi, 4G LTE, Bluetooth 5.1",
-      "features": ["無線/有線 CarPlay", "無線/有線 Android Auto", "FM/AMラジオ", "ビデオ入出力端子", "DSP/多段EQ"]
-    }
+      "features": [
+        "無線/有線 CarPlay",
+        "無線/有線 Android Auto",
+        "FM/AMラジオ",
+        "ビデオ入出力端子",
+        "DSP/多段EQ"
+      ]
+    },
+    "investigatedPrice": "￥54,800"
   }
 }

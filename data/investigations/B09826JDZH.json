@@ -27,7 +27,9 @@
         "userType": "一般ユーザー",
         "scenario": "日常の靴に使用",
         "experience": "靴にフィットして、履き心地も大変良いですよ。視界が変わります。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -50,7 +52,9 @@
         "claim": "理学療法士監修の人間工学設計",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品情報に明記"
       },
@@ -58,7 +62,9 @@
         "claim": "衝撃を吸収するEVA素材と通気口",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "商品情報に明記"
       }
@@ -158,8 +164,17 @@
       "size": "3cm x 1組",
       "material": "EVA素材",
       "color": "ブラック",
-      "features": ["防臭", "軽量", "通気孔設計", "人間工学設計"],
-      "other": ["理学療法士監修", "男女兼用"]
-    }
+      "features": [
+        "防臭",
+        "軽量",
+        "通気孔設計",
+        "人間工学設計"
+      ],
+      "other": [
+        "理学療法士監修",
+        "男女兼用"
+      ]
+    },
+    "investigatedPrice": "￥999"
   }
 }

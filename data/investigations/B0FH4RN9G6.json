@@ -43,7 +43,9 @@
         "claim": "5000回以上の抜き差しテストをクリアした耐久性",
         "category": "durability",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーの製品説明に記載されているが、第三者による検証は未確認"
       }
@@ -131,6 +133,7 @@
         "PPS対応",
         "PSE適合"
       ]
-    }
+    },
+    "investigatedPrice": "￥599"
   }
 }

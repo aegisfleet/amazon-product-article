@@ -3,7 +3,13 @@
     "productName": "EVICIV モバイルモニター 15.6インチ FHD (EVC-1506S)",
     "parentAsin": "B07ZNTHZHZ",
     "productDescription": "15.6インチのフルHD(1920×1080)非光沢IPS液晶を搭載したモバイルモニター。自立型スタンドを内蔵し、USB Type-Cケーブル1本での映像出力と給電に対応する。",
-    "productUsage": ["サブモニター", "在宅勤務", "オンライン会議", "ゲーム", "外出先作業"],
+    "productUsage": [
+      "サブモニター",
+      "在宅勤務",
+      "オンライン会議",
+      "ゲーム",
+      "外出先作業"
+    ],
     "positivePoints": [
       "自立型の一体スタンドを採用し、0〜75度まで角度調整が可能で外付けスタンドが不要",
       "フル機能USB Type-Cポートに対応し、ケーブル1本で映像出力と給電が可能",
@@ -14,7 +20,11 @@
     "negativePoints": [
       "バッテリーは非内蔵であり、使用環境によっては電源アダプターやモバイルバッテリーからの給電が必要"
     ],
-    "useCases": ["ノートPCのデュアルディスプレイ化", "Nintendo SwitchやPS5などのゲーム機用モニター", "出張やカフェなど外出先での作業領域拡張"],
+    "useCases": [
+      "ノートPCのデュアルディスプレイ化",
+      "Nintendo SwitchやPS5などのゲーム機用モニター",
+      "出張やカフェなど外出先での作業領域拡張"
+    ],
     "userStories": [],
     "userImpression": "約8,000円という手頃な価格帯ながら、十分な画質のIPSパネルと使いやすい自立型スタンドを備えており、コストパフォーマンスが非常に高いと評価できる製品である。バッテリー非搭載という仕様はあるものの、付属のType-CケーブルによるPCからの給電やモバイルバッテリーでカバーできるため、実用上の不便を感じる場面は少ない。モバイルモニターを初めて導入するユーザーや、低予算で作業環境を拡張したいユーザーにとって有力な選択肢となっている。",
     "sources": [
@@ -35,7 +45,9 @@
         "claim": "178°の広視野角により、角度を変えても色ズレが少ない",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "IPS液晶パネルの一般的な特性と一致する"
       }
@@ -146,8 +158,17 @@
       "displaySize": "39.6cm",
       "resolution": "1920×1080 (FHD)",
       "panelType": "IPS 非光沢 (ノングレア)",
-      "interface": ["USB Type-C (フル機能)", "USB Type-C (給電用)", "Mini HDMI"],
-      "features": ["ブルーライトカット機能", "スピーカー内蔵", "自立型スタンド内蔵 (0〜75°角度調整)"]
-    }
+      "interface": [
+        "USB Type-C (フル機能)",
+        "USB Type-C (給電用)",
+        "Mini HDMI"
+      ],
+      "features": [
+        "ブルーライトカット機能",
+        "スピーカー内蔵",
+        "自立型スタンド内蔵 (0〜75°角度調整)"
+      ]
+    },
+    "investigatedPrice": "￥7,979"
   }
 }

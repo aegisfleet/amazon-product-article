@@ -44,7 +44,9 @@
         "claim": "MacBook Pro 16インチを90分間で0％-100％充電できる",
         "category": "comparativeAdvantage",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon-product"],
+        "supportingSourceIds": [
+          "src-amazon-product"
+        ],
         "crossChecked": false,
         "notes": "メーカーのスペック上の主張。C1ポートの240W出力によるものと考えられるが、実際の環境ではデバイス側の制御による影響を受ける可能性がある。"
       }
@@ -147,7 +149,11 @@
       "scoreRationale": "[基本点: 70]\n[加点: +10] (総出力500W、単ポート240Wという他に類を見ない超高出力と複数同時充電の利便性)\n[加点: +10] (13種類の安全保護機能や自動方位検知など、据え置き機としての高い安全性と完成度)\n[減点: -5] (約1.8kgという重量による取り回しの悪さ)\n[合計: 85]"
     },
     "technicalSpecs": {
-      "dimensions": { "height": "150mm", "width": "119mm", "depth": "60.6mm" },
+      "dimensions": {
+        "height": "150mm",
+        "width": "119mm",
+        "depth": "60.6mm"
+      },
       "weight": "1800g",
       "power": "総出力500W (単ポート最大240W)",
       "ports": "6ポート (USB-C×5, USB-A×1)",
@@ -159,6 +165,7 @@
         "13種類の充電安全保護機能",
         "PSE技術基準適合"
       ]
-    }
+    },
+    "investigatedPrice": "￥29,980"
   }
 }

@@ -57,7 +57,9 @@
         "claim": "ラベルレス仕様でゴミ分別の手間が省ける",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "公式サイトおよび製品仕様でラベルレスであることが明記されている"
       },
@@ -65,7 +67,9 @@
         "claim": "ノンカフェインで16種類の健康素材をブレンド",
         "category": "safety",
         "confidence": "high",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": true,
         "notes": "商品名および公式サイトの記述からノンカフェインであることが確認できる"
       }
@@ -188,6 +192,7 @@
         "入数: 24本",
         "※商品切り替え中のため、一部660mlが届く場合あり"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,758"
   }
 }

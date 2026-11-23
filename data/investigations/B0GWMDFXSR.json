@@ -41,7 +41,9 @@
         "claim": "Bluetooth 5.3に対応し、ウォッチ本体での通話やLINE通知の確認が可能",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "商品仕様からの事実に基づく"
       },
@@ -49,7 +51,9 @@
         "claim": "IP68防水に対応するが、入浴・サウナ等には非対応",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "メーカーによる注意書きとして明記"
       }
@@ -172,6 +176,7 @@
         "運動モード数: 100種類",
         "文字盤種類: 250種類以上"
       ]
-    }
+    },
+    "investigatedPrice": "￥11,999"
   }
 }

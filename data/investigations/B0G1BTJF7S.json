@@ -3,23 +3,40 @@
     "productName": "暁星",
     "parentAsin": "B0G1BTJF7S",
     "productDescription": "湊かなえによるミステリー小説。文部科学大臣暗殺事件を巡り、宗教二世である犯人の獄中手記と作家の小説という二重構造で描かれる群像劇。",
-    "productUsage": ["読書", "ミステリー小説の鑑賞"],
-    "positivePoints": ["手記と小説の二重構造が織りなす巧妙な伏線", "「告白」を彷彿とさせる多視点からの立体的な心理描写", "宗教二世や新興宗教といった現代の社会問題を鋭く切り取っている"],
-    "negativePoints": ["前半の助走部分が長く、展開がやや重たく感じられる", "結末に至るまでの心理描写にもっと深みが欲しいという意見がある"],
-    "useCases": ["じっくりと社会派ミステリーに没頭したい時", "湊かなえの多視点描写を味わいたい時"],
+    "productUsage": [
+      "読書",
+      "ミステリー小説の鑑賞"
+    ],
+    "positivePoints": [
+      "手記と小説の二重構造が織りなす巧妙な伏線",
+      "「告白」を彷彿とさせる多視点からの立体的な心理描写",
+      "宗教二世や新興宗教といった現代の社会問題を鋭く切り取っている"
+    ],
+    "negativePoints": [
+      "前半の助走部分が長く、展開がやや重たく感じられる",
+      "結末に至るまでの心理描写にもっと深みが欲しいという意見がある"
+    ],
+    "useCases": [
+      "じっくりと社会派ミステリーに没頭したい時",
+      "湊かなえの多視点描写を味わいたい時"
+    ],
     "userStories": [
       {
         "userType": "ミステリーファン",
         "scenario": "休日に湊かなえの新作を一気読み",
         "experience": "前半は犯人の手記という形で淡々と進むためやや重たく感じたが、後半の作家視点の小説と交錯してからは一気に引き込まれた。伏線が回収され、全く異なる視点が一つに繋がった時のカタルシスが素晴らしかった。",
-        "supportingSourceIds": ["amazon-reviews-1"],
+        "supportingSourceIds": [
+          "amazon-reviews-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "読書家",
         "scenario": "話題作として購入し、通勤電車で少しずつ読み進める",
         "experience": "新興宗教や宗教二世といった重いテーマを扱いつつも、手記と小説の二重構造という構成の妙に驚かされた。ただ、世界が反転する後半までの助走段階が長く、少し退屈に感じる部分もあった。",
-        "supportingSourceIds": ["amazon-reviews-2"],
+        "supportingSourceIds": [
+          "amazon-reviews-2"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -53,7 +70,10 @@
         "claim": "手記と小説の二重構造による巧妙な伏線回収",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["amazon-reviews-1", "amazon-reviews-2"],
+        "supportingSourceIds": [
+          "amazon-reviews-1",
+          "amazon-reviews-2"
+        ],
         "crossChecked": true,
         "notes": "複数のレビューで構成の巧みさが言及されている"
       },
@@ -61,7 +81,9 @@
         "claim": "前半の展開がややスローペースである",
         "category": "durability",
         "confidence": "medium",
-        "supportingSourceIds": ["amazon-reviews-2"],
+        "supportingSourceIds": [
+          "amazon-reviews-2"
+        ],
         "crossChecked": false,
         "notes": "一部の読者からの指摘として確認"
       }
@@ -148,9 +170,20 @@
       }
     ],
     "recommendation": {
-      "targetUsers": ["湊かなえのファン", "構成の凝ったミステリーが好きな人", "現代社会の闇を描いた重厚なドラマを読みたい人"],
-      "pros": ["手記と劇中小説が交差する緻密な構成", "社会問題（宗教二世）への鋭い切り込み", "終盤の鮮やかな伏線回収"],
-      "cons": ["前半の展開がやや遅く重い", "扱っているテーマが暗く、読むのに体力がいる"],
+      "targetUsers": [
+        "湊かなえのファン",
+        "構成の凝ったミステリーが好きな人",
+        "現代社会の闇を描いた重厚なドラマを読みたい人"
+      ],
+      "pros": [
+        "手記と劇中小説が交差する緻密な構成",
+        "社会問題（宗教二世）への鋭い切り込み",
+        "終盤の鮮やかな伏線回収"
+      ],
+      "cons": [
+        "前半の展開がやや遅く重い",
+        "扱っているテーマが暗く、読むのに体力がいる"
+      ],
       "score": 85,
       "scoreRationale": "[基本点: 70]\n[加点: +10] (手記と小説の二重構造による独創的で緻密な構成力)\n[加点: +5] (宗教二世という現代的テーマへの深い洞察)\n[加点: +5] (伏線回収による高い読後感とカタルシス)\n[減点: -5] (前半の展開がスローペースでやや冗長に感じられる点)\n[合計: 85]"
     },
@@ -161,7 +194,12 @@
       "publisher": "双葉社",
       "publicationDate": "2025-11-27",
       "language": "日本語",
-      "other": ["Text-to-Speech有効", "タイプセッティングの改善有効", "Page Flip有効"]
-    }
+      "other": [
+        "Text-to-Speech有効",
+        "タイプセッティングの改善有効",
+        "Page Flip有効"
+      ]
+    },
+    "investigatedPrice": "￥1,882"
   }
 }

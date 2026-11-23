@@ -41,7 +41,9 @@
         "claim": "パーツ数は83個で、接着剤や工具は不要",
         "category": "durability",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "公式の商品特徴に記載あり"
       },
@@ -49,7 +51,9 @@
         "claim": "丸太バスウッド素材で作られ、精密なレーザー切断技術を使用している",
         "category": "quality",
         "confidence": "high",
-        "supportingSourceIds": ["src-amazon"],
+        "supportingSourceIds": [
+          "src-amazon"
+        ],
         "crossChecked": false,
         "notes": "公式の商品特徴に記載あり"
       }
@@ -167,6 +171,7 @@
         "難易度: 初級から中級(3/5)",
         "完成目安時間: 約1時間"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,699"
   }
 }

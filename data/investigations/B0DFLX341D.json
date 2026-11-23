@@ -29,14 +29,18 @@
         "userType": "大型猫の飼い主",
         "scenario": "今までの爪とぎでは小さくて窮屈そうだったため買い替え",
         "experience": "高さが68cmあるため、我が家の大きめの猫でもしっかりと背伸びをしながら気持ちよさそうに爪とぎができています。付属のボールでもよく遊んでくれるので、お気に入りの場所になったようです。価格もお手頃で助かりました。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       },
       {
         "userType": "多頭飼いの飼い主",
         "scenario": "家具の保護目的で部屋の角に設置",
         "experience": "L字型なので壁にピタッと寄せて置くことができ、省スペースで助かっています。組み立て式でしたが、説明書と動画があったので数分で簡単に完成しました。ただ、勢いよく飛び乗ると少し動くので、裏に滑り止めシートを敷いて使っています。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "mixed"
       }
     ],
@@ -59,7 +63,9 @@
         "claim": "猫の引っかき傷に耐える耐久性がある高密度段ボール",
         "category": "durability",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "メーカーの主張。具体的な厚みや密度の数値は記載されていないため、一般的な段ボールと比較してどの程度高耐久かは実使用による検証が必要。"
       }
@@ -138,6 +144,7 @@
       "other": [
         "サイズ展開あり（本製品はLサイズ）"
       ]
-    }
+    },
+    "investigatedPrice": "￥1,979"
   }
 }
