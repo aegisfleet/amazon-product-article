@@ -222,6 +222,7 @@ function mapIndexItemToProduct(item) {
         description: item.summary || '',
         price: item.price || '',
         priceRaw: item.price_value || 0,
+        investigatedPrice: item.investigated_price || '',
         score: item.score || 0,
         lastInvestigated: item.last_investigated || '',
         asin: item.asin || '',

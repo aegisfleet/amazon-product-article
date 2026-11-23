@@ -17,6 +17,10 @@
 {{- if .Params.price -}}
 {{- $priceRaw = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | default 0 -}}
 {{- end -}}
+{{- $investigatedPriceRaw := 0 -}}
+{{- if .Params.investigated_price -}}
+{{- $investigatedPriceRaw = index (findRE "[0-9]+" (replace .Params.investigated_price "," "")) 0 | default 0 | int -}}
+{{- end -}}
 {{- $pointsRate := 0 -}}
 {{- if and .Params.price .Params.loyalty_points -}}
 {{- if gt (int $priceRaw) 0 -}}
@@ -42,6 +46,8 @@
   "score" $score
   "price" (.Params.price | default "")
   "priceRaw" $priceRaw
+  "investigatedPrice" (.Params.investigated_price | default "")
+  "investigatedPriceRaw" $investigatedPriceRaw
   "asin" (.Params.asin | default "")
   "category" $category
   "categoryUrl" $categoryUrl

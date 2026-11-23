@@ -488,18 +488,7 @@
                 {{- end -}}
                 <div class="card-meta-ext">
                     <div class="meta-main-row">
-                        <div class="meta-price-block">
-                            {{- if .Params.price -}}
-                            <span class="card-price">
-                                <span class="material-symbols-outlined icon-price" aria-hidden="true">payments</span> {{ partial "utils-price-format.html" .Params.price }}
-                            </span>
-                            {{- if .Params.loyalty_points -}}
-                            <span class="card-points m3-badge m3-badge-points">
-                                <span class="material-symbols-outlined icon-points" aria-hidden="true">card_giftcard</span> {{ .Params.loyalty_points }}pt
-                            </span>
-                            {{- end -}}
-                            {{- end -}}
-                        </div>
+                        {{- partial "product-card-price-block.html" . -}}
                         {{- if .Params.score -}}
                         {{- $score := .Params.score | int -}}
                         {{- $scoreClass := "score-caution" -}}

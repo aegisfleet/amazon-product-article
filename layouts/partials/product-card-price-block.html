@@ -1,0 +1,62 @@
+{{- /*
+  product-card-price-block.html
+
+  商品カード内の価格・価格変動バッジ・ポイント・調査時価格ブロックを出力する共通パーシャル。
+  引数: Page コンテキスト (.)
+*/ -}}
+{{- $priceRaw := 0 -}}
+{{- if .Params.price -}}
+  {{- $priceRaw = index (findRE "[0-9]+" (replace .Params.price "," "")) 0 | default 0 | int -}}
+{{- end -}}
+{{- $investigatedPriceRaw := 0 -}}
+{{- if .Params.investigated_price -}}
+  {{- $investigatedPriceRaw = index (findRE "[0-9]+" (replace .Params.investigated_price "," "")) 0 | default 0 | int -}}
+{{- end -}}
+{{- $diff := 0 -}}
+{{- $diffRate := 0 -}}
+{{- $diffAbs := 0 -}}
+{{- $isDiscounted := false -}}
+{{- $isPriceUp := false -}}
+{{- if and (gt $priceRaw 0) (gt $investigatedPriceRaw 0) (ne $priceRaw $investigatedPriceRaw) -}}
+  {{- $diff = sub $priceRaw $investigatedPriceRaw -}}
+  {{- if lt $diff 0 -}}
+    {{- $isDiscounted = true -}}
+    {{- $diffAbs = sub 0 $diff -}}
+    {{- $diffRate = math.Round (mul (div (float $diffAbs) (float $investigatedPriceRaw)) 100) -}}
+  {{- else -}}
+    {{- $isPriceUp = true -}}
+    {{- $diffAbs = $diff -}}
+  {{- end -}}
+{{- end -}}
+<div class="meta-price-block">
+    {{- if .Params.price -}}
+    <div class="meta-price-main">
+        <span class="card-price">
+            <span class="material-symbols-outlined icon-price" aria-hidden="true">payments</span> {{ partial "utils-price-format.html" .Params.price }}
+        </span>
+        {{- if $isDiscounted -}}
+        <span class="m3-badge m3-badge-price-diff m3-badge-price-down" title="調査時より ¥{{ lang.FormatNumber 0 $diffAbs }} 値下げ">
+            <span class="material-symbols-outlined icon-diff" aria-hidden="true">trending_down</span> -¥{{ lang.FormatNumber 0 $diffAbs }}{{ if gt $diffRate 0 }} ({{ printf "%.0f" $diffRate }}% OFF){{ end }}
+        </span>
+        {{- else if $isPriceUp -}}
+        <span class="m3-badge m3-badge-price-diff m3-badge-price-up" title="調査時より ¥{{ lang.FormatNumber 0 $diffAbs }} 値上げ">
+            <span class="material-symbols-outlined icon-diff" aria-hidden="true">trending_up</span> +¥{{ lang.FormatNumber 0 $diffAbs }}
+        </span>
+        {{- end -}}
+        {{- if .Params.loyalty_points -}}
+        <span class="card-points m3-badge m3-badge-points">
+            <span class="material-symbols-outlined icon-points" aria-hidden="true">card_giftcard</span> {{ .Params.loyalty_points }}pt
+        </span>
+        {{- end -}}
+    </div>
+    {{- if or $isDiscounted $isPriceUp -}}
+    <div class="card-investigated-price">
+        {{- if $isDiscounted -}}
+        調査時: <span class="card-investigated-price-del">{{ partial "utils-price-format.html" .Params.investigated_price }}</span>
+        {{- else -}}
+        調査時: {{ partial "utils-price-format.html" .Params.investigated_price }}
+        {{- end -}}
+    </div>
+    {{- end -}}
+    {{- end -}}
+</div>
