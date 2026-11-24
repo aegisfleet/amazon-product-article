@@ -114,9 +114,11 @@ export class ArticleGenerator {
       // 本文（セクション）を結合
       const sectionsContent = sections.map((section) => section.content).join('\n\n');
 
-      // 本文部分のみをモバイル最適化し、アフィリエイトリンクを挿入する
-      const mobileOptimizedContent = this.createMobileOptimizedLayout(sectionsContent);
-      const bodyWithAffiliateLinks = this.insertAffiliateLinks(mobileOptimizedContent, product, affiliatePartnerTag);
+      // 本文部分のみをモバイル最適化する（商品詳細欄への冗長なAmazonリンクは挿入しない）
+      if (affiliatePartnerTag) {
+        this.affiliateManager.updateConfig({ partnerTag: affiliatePartnerTag });
+      }
+      const bodyWithAffiliateLinks = this.createMobileOptimizedLayout(sectionsContent);
 
       // 最後にフロントマターを生成して、最適化された本文と結合する
       const frontMatter = this.generateFrontMatter(metadata);
@@ -436,26 +438,6 @@ export class ArticleGenerator {
     mobileContent = this.optimizeListsForMobile(mobileContent);
 
     return mobileContent;
-  }
-
-  /**
-   * アフィリエイトリンクを挿入
-   */
-  insertAffiliateLinks(content: string, product: Product, partnerTag?: string): string {
-    if (partnerTag) {
-      this.affiliateManager.updateConfig({ partnerTag });
-    }
-
-    const affiliateLink = this.affiliateManager.generateLinkFromProduct(product);
-    const affiliateUrl = affiliateLink.url;
-
-    // 商品名の後にアフィリエイトリンクを挿入
-    const contentWithLinks = content.replace(
-      /(## (🛒 )?商品詳細(・購入)?)/,
-      `$1\n\n<a href="${this.escapeHtml(affiliateUrl)}" class="affiliate-link mobile-friendly-button" target="_blank" rel="noopener noreferrer" data-track-product="1" data-mall="amazon" data-position="mid_article" data-asin="${this.escapeHtml(product.asin)}"><strong>${this.escapeHtml(product.asin)}をAmazonで確認する</strong></a>\n`,
-    );
-
-    return contentWithLinks;
   }
 
   /**

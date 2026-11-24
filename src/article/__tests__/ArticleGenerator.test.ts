@@ -895,29 +895,6 @@ describe('ArticleGenerator', () => {
     });
   });
 
-  describe('insertAffiliateLinks', () => {
-    it('should insert affiliate links with proper format', () => {
-      const content = '## 🛒 商品詳細\n\n商品の詳細情報です。';
-      const result = generator.insertAffiliateLinks(content, mockProduct);
-
-      expect(result).toContain('amazon.co.jp/dp/B08N5WRWNW');
-      expect(result).toContain('class="affiliate-link');
-      expect(result).toContain('target="_blank"');
-      expect(result).toContain('rel="noopener noreferrer"');
-    });
-
-    it('should use environment affiliate tag when available', () => {
-      process.env.AMAZON_PARTNER_TAG = 'test-affiliate-tag';
-      const localGenerator = new ArticleGenerator();
-      const content = '## 商品詳細・購入\n\n商品の詳細情報です。';
-      const result = localGenerator.insertAffiliateLinks(content, mockProduct);
-
-      expect(result).toContain('tag=test-affiliate-tag');
-
-      delete process.env.AMAZON_PARTNER_TAG;
-    });
-  });
-
   describe('performance / concurrency', () => {
     it('should process competitor data concurrently', async () => {
       const delay = 100; // 100ms delay per file read
