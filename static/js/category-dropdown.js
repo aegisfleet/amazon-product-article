@@ -363,7 +363,7 @@
                 viewAllOption.value = `__all__:${slug}`;
                 const parentCount = groupCounts[selectedGroup];
                 viewAllOption.textContent = parentCount !== undefined 
-                    ? `📁 ${selectedGroup}のすべて (${parentCount})`
+                    ? `📁 ${selectedGroup}のすべて (${parentCount}件)`
                     : `📁 ${selectedGroup}のすべて`;
                 viewAllOption.style.fontWeight = 'bold';
                 subSelect.appendChild(viewAllOption);
