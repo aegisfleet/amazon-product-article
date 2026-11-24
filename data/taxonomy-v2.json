@@ -91,7 +91,7 @@
         {
           "slug": "stream-controllers-capture",
           "name": "左手デバイス・配信・拡張機器",
-          "criteria": "Elgato Stream Deck・Ulanzi・ActionRing等の左手デバイス・ストリームコントローラー・USBフットペダル、HDMIキャプチャーボード、グラフィックボード、NAS、VR用アクセサリ等のPC拡張・配信デバイス。",
+          "criteria": "Elgato Stream Deck・Ulanzi・ActionRing等の左手デバイス・ストリームコントローラー・USBフットペダル、HDMIキャプチャーボード、グラフィックボード、NAS等のPC拡張・配信デバイス。VRヘッドセット・VR用アクセサリはゲーム／おもちゃへ。",
           "legacy_names": ["MIDIコントローラー", "外付TVチューナー・ビデオキャプチャ", "グラフィックボード"]
         },
         {
@@ -212,7 +212,7 @@
       "icon": "⌚",
       "priority": 4,
       "legacy_slugs": [],
-      "criteria": "スマートウォッチ本体、活動量計・スマートバンド、スマートリング、スマートグラス、紛失防止タグ・スマートトラッカー（AirTag互換等）、交換バンドなど。",
+      "criteria": "スマートウォッチ本体、活動量計・スマートバンド、スマートリング、スマートグラス、紛失防止タグ・スマートトラッカー（AirTag互換等）、交換バンドなど。VRヘッドセット・VRアクセサリはゲーム／おもちゃへ。",
       "children": [
         {
           "slug": "smartwatches",
@@ -1387,12 +1387,12 @@
       "icon": "🎮",
       "priority": 22,
       "legacy_slugs": [],
-      "criteria": "Nintendo Switch/PS5本体、ゲームソフト、コントローラー、ブロック(LEGO等)、ボードゲーム、プラモデル、知育玩具。",
+      "criteria": "Nintendo Switch/PS5本体、Meta Quest等のVRヘッドセット・VRアクセサリ、ゲームソフト、コントローラー、ブロック(LEGO等)、ボードゲーム、プラモデル、知育玩具。",
       "children": [
         {
           "slug": "video-game-consoles-accessories",
           "name": "ゲーム機本体・周辺機器",
-          "criteria": "Switch/PS5本体、ワイヤレスコントローラー、充電スタンド、専用ケース、VRヘッドセット・VRゴーグル・VRアクセサリ、アーケードコントローラー・ハンコン。",
+          "criteria": "Switch/PS5本体、ワイヤレスコントローラー、充電スタンド、専用ケース、VRヘッドセット（Meta Quest等）・VRゴーグル・VR用ヘッドストラップやレンズ等のVRアクセサリ、アーケードコントローラー・ハンコン。",
           "legacy_names": ["ゲーム機本体", "周辺機器・アクセサリ", "コントローラー", "単体型VRヘッドセット・アクセサリ"]
         },
         {
