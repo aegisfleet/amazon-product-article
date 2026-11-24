@@ -382,7 +382,7 @@
 
                 // Append product count if available
                 const count = categoryCounts[category];
-                option.textContent = count !== undefined ? `${category} (${count})` : category;
+                option.textContent = count !== undefined ? `${category} (${count}件)` : category;
 
                 subSelect.appendChild(option);
             });
@@ -446,7 +446,7 @@
         tag.dataset.categoryName = category;
 
         const count = categoryCounts[category];
-        tag.textContent = count !== undefined ? `${category} (${count})` : category;
+        tag.textContent = count !== undefined ? `${category} (${count}件)` : category;
         return tag;
     }
 
@@ -518,7 +518,7 @@
 
             const countSpan = document.createElement('span');
             countSpan.className = 'popular-category-tile-count';
-            countSpan.textContent = `(${categoryCounts[cat] || 0})`;
+            countSpan.textContent = `${categoryCounts[cat] || 0}件`;
 
             tile.appendChild(iconSpan);
             tile.appendChild(nameSpan);
@@ -685,7 +685,7 @@
                 viewAllTag.href = safeCategoryUrl(parentUrl);
                 viewAllTag.className = 'category-tag-link category-view-all';
                 viewAllTag.textContent = parentCount !== undefined
-                    ? `📁 ${groupName}のすべてを見る (${parentCount}) →`
+                    ? `📁 ${groupName}のすべてを見る (${parentCount}件) →`
                     : `📁 ${groupName}のすべてを見る →`;
                 tagsContainer.appendChild(viewAllTag);
             }
