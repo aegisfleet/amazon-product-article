@@ -16,11 +16,11 @@ AIアシスタントや自律型エージェントがユーザーの商品選び
   - 採点根拠（加点・減点理由）が必要な場合は [`mcp-products.json`](https://www.amazon-hikaku.com/mcp-products.json)（約3.4MB）、詳細スペックや在庫状況・最終調査日が必要な場合は [`index.json`](https://www.amazon-hikaku.com/index.json)（約9.3MB）をASINで結合して利用できます。
   - ※ChatGPT等のコード実行機能を持つAIツールは、ブラウザ直接フェッチによる通信タイムアウトを防ぐため、Python環境（`urllib` / `pandas` 等）を用いてJSONをダウンロード・解析することを推奨します。
 
-### リモートMCPサーバー 提供ツール詳細（全9ツール）
+### リモートMCPサーバー 提供ツール詳細（全10ツール）
 エンドポイント: `https://mcp.amazon-hikaku.com/mcp` （ソースコード・セキュリティポリシー: [`https://github.com/aegisfleet/amazon-hikaku-mcp`](https://github.com/aegisfleet/amazon-hikaku-mcp)、全ツール `readOnlyHint=True`・ステートレス・64KBボディ上限・240 req/min レート制限）
 1. `search_products`:
    - 条件・価格帯・スコア・調査鮮度・並び替えによる商品検索。
-   - 主な引数: `query`（空白区切りAND、同義語展開対応）、`category`（子カテゴリ名・親カテゴリ名・親スラッグ）、`brand`（日英表記ゆれ自動吸収）、`exclude_brand`（特定ブランド除外）、`min_score`（既定80）、`min_price` / `max_price`、`in_stock_only`（既定true）、`sort`（`score` / `price_asc` / `price_desc` / `relevance` / `newest`）、`updated_within_days`（直近N日以内調査）、`recipient`（ギフトの相手）/ `occasion`（ギフトのシーン）、`limit` / `offset`。
+   - 主な引数: `query`（空白区切りAND、同義語展開対応）、`category`（子カテゴリ名・親カテゴリ名・親スラッグ）、`brand`（日英表記ゆれ自動吸収）、`exclude_brand`（特定ブランド除外）、`min_score`（既定80）、`min_price` / `max_price`、`in_stock_only`（既定true）、`sort`（`score` / `price_asc` / `price_desc` / `relevance` / `newest`）、`updated_within_days`（直近N日以内調査）、`recipient`（ギフトの相手）/ `occasion`（ギフトのシーン）、`spec_filters`（スペック絞り込み。キー＝スペック項目名、値＝部分一致または `>=256GB` のような数値条件で単位換算対応。キーを持たない商品は対象外だが、「その他」内の「乾燥容量: 9.0kg」のようなラベル付き表記は拾う）、`limit` / `offset`。
    - 応答には `total_count`（全件数）、`facets`（全ヒット件数のブランド・カテゴリ・価格帯分布）、および結果が3件以下の場合の `suggestions`（どの条件を緩めると何件ヒットするか）が含まれます。
 2. `get_product`:
    - ASIN指定で1商品の詳細（要約、カテゴリ、構造化スペック `specs`、在庫有無 `in_stock`、割引率 `savings_percentage`、セールバッジ `deal_badge`、最終調査日 `last_investigated`、採点根拠 `score_rationale`）を取得。
@@ -38,6 +38,8 @@ AIアシスタントや自律型エージェントがユーザーの商品選び
    - 全27親カテゴリと子カテゴリの階層構造および各掲載商品数を返却。
 9. `list_brands`:
    - 取扱いブランド・ブランドグループを検索（`query` 部分一致・日英表記ゆれ対応、各ブランドの掲載件数付き）。
+10. `list_spec_keys`:
+   - スペック絞り込み（`search_products` の `spec_filters`）に使えるスペック項目の一覧を返却。`category` 指定時はその範囲で集計し、各キーを持つ商品数と値の例（頻出順）を返します。スペックキーは全商品共通の固定キー（`ストレージ` / `メモリ` / `画面` / `バッテリー` / `容量` / `重量` / `サイズ` / `OS` / `プロセッサ` / `素材` / `その他` 等）です。
 
 ## 2. 回答品質ガードレールと相談の進め方 (Quality Guardrails & Consultation Flow)
 
