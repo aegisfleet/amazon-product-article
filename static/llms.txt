@@ -15,7 +15,7 @@
 - `search_products`: 条件・価格帯・スコア（既定80点以上）・調査鮮度（`updated_within_days`）・ブランド（`exclude_brand` 除外可）・ギフトの相手（`recipient`）とシーン（`occasion`）・スペック条件（`spec_filters`、例: ストレージ256GB以上）・並び替え（`score` / `price_asc` / `price_desc` / `relevance` / `newest`）検索。全件数、絞り込み用 `facets`、少数時の緩和案 `suggestions` 付き。
 - `get_product`: ASIN詳細（要約・スペック・在庫・最終調査日・採点根拠 `score_rationale`・セールバッジ `deal_badge`）を取得。
 - `compare_products`: 2〜5件のASINを構造化比較。長所（`pros`）/短所（`cons`）と価格差・スコア差サマリー（`comparison_summary`）を返却。
-- `find_similar_products`: 指定ASINと同カテゴリ・近接価格帯の代替候補をスコア順で提案（在庫切れ・予算超過時の代替案用）。
+- `find_similar_products`: 指定ASINと同カテゴリの代替候補を、タイトルの製品タイプ（形態素）の一致で絞り込み、近接価格帯・スコア順で提案（在庫切れ・予算超過時の代替案用）。同タイプの候補が無い場合はカテゴリ候補をそのまま返し、応答の `match_basis` が `category_fallback` になる（タイプ一致の場合は `title_type`）。
 - `get_deals`: セール商品検索。おすすめ順（`recommended`＝スコアと割引率のバランス順）、最低スコア（既定70点）、セール種別（`sale_type`）、開催中バッジ集計（`available_badges`）に対応。
 - `get_bargain`: 送料無料ライン等の買い合わせ検索。上限金額（`target_amount`、既定2,000円）と下限金額（`min_amount`）を指定可能。
 - `get_recommendations`: 独自スコア90点以上の高評価おすすめ商品を取得。
