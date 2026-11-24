@@ -12,7 +12,7 @@
   - 2,000円以下の買い合わせは [`bargain/index.json`](https://www.amazon-hikaku.com/bargain/index.json)、セール品は [`deals/index.json`](https://www.amazon-hikaku.com/deals/index.json) を優先参照してください。コード実行環境ではタイムアウト防止のためPython等での取得・解析を推奨します。
 
 ### リモートMCP 全9ツール一覧 (`https://mcp.amazon-hikaku.com/mcp`)
-- `search_products`: 条件・価格帯・スコア（既定80点以上）・調査鮮度（`updated_within_days`）・ブランド（`exclude_brand` 除外可）・並び替え（`score` / `price_asc` / `price_desc` / `relevance` / `newest`）検索。全件数、絞り込み用 `facets`、少数時の緩和案 `suggestions` 付き。
+- `search_products`: 条件・価格帯・スコア（既定80点以上）・調査鮮度（`updated_within_days`）・ブランド（`exclude_brand` 除外可）・ギフトの相手（`recipient`）とシーン（`occasion`）・並び替え（`score` / `price_asc` / `price_desc` / `relevance` / `newest`）検索。全件数、絞り込み用 `facets`、少数時の緩和案 `suggestions` 付き。
 - `get_product`: ASIN詳細（要約・スペック・在庫・最終調査日・採点根拠 `score_rationale`・セールバッジ `deal_badge`）を取得。
 - `compare_products`: 2〜5件のASINを構造化比較。長所（`pros`）/短所（`cons`）と価格差・スコア差サマリー（`comparison_summary`）を返却。
 - `find_similar_products`: 指定ASINと同カテゴリ・近接価格帯の代替候補をスコア順で提案（在庫切れ・予算超過時の代替案用）。
@@ -35,7 +35,7 @@
 - [セール対象商品 (`deals/index.json`)](https://www.amazon-hikaku.com/deals/index.json): 現在割引中の商品データ（`savingsPercentage`, `dealBadge` 等、約250KB）。
 - [あともう一品 (`bargain/index.json`)](https://www.amazon-hikaku.com/bargain/index.json): 2,000円以下・高スコア商品データ（約200KB）。
 - [低スコア迷品館 (`low-scores/index.json`)](https://www.amazon-hikaku.com/low-scores/index.json): スコア50点以下の低評価商品データ（約80KB）。
-- [MCP専用インデックス (`mcp-products.json`)](https://www.amazon-hikaku.com/mcp-products.json): 全商品の `asin`, `brand`, `score_rationale`（採点根拠）補完データ（約3.4MB）。
+- [MCP専用インデックス (`mcp-products.json`)](https://www.amazon-hikaku.com/mcp-products.json): 全商品の `asin`, `brand`, `score_rationale`（採点根拠）と、ギフト文脈のある商品のギフト属性（`gift_recipients` / `gift_occasions`）の補完データ（約3.4MB）。
 - [全商品インデックス (`index.json`)](https://www.amazon-hikaku.com/index.json): 詳細スペック（`specs`, `specs_json`）・在庫（`in_stock`）・調査日（`last_investigated`）を含む網羅データ（約9.3MB）。
 - [カテゴリ階層 (`data/categorygroups.json`)](https://www.amazon-hikaku.com/data/categorygroups.json) / [ブランド定義 (`data/brandgroups.json`)](https://www.amazon-hikaku.com/data/brandgroups.json) / [サイトマップ (`sitemap.xml`)](https://www.amazon-hikaku.com/sitemap.xml)
 
