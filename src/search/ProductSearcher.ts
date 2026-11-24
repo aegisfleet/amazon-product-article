@@ -127,6 +127,8 @@ export class ProductSearcher {
       this.logger.info(
         `Filtering categories: ${targetCategoryNames.join(', ')}. Result: ${categories.length} categories found.`,
       );
+    } else {
+      categories = categories.filter((c) => c.enabled !== false);
     }
 
     // Shuffle categories to vary the starting point
