@@ -578,7 +578,7 @@
                 const isActive = tab.id === activeGroup;
                 btn.className = 'pickup-cat-tab' + (isActive ? ' is-active' : '');
                 btn.setAttribute('aria-pressed', String(isActive));
-                btn.textContent = tab.label + ' (' + tab.count + ')';
+                btn.textContent = tab.id === 'all' ? `${tab.label} (${Math.min(tab.count, MAX_DISPLAY)}件)` : tab.label;
                 btn.addEventListener('click', function () {
                     if (activeGroup === tab.id) return;
                     activeGroup = tab.id;
@@ -615,7 +615,7 @@
                     loadMoreBtn.hidden = false;
                     const remaining = totalAvailable - slice.length;
                     if (remaining > 0) {
-                        loadMoreBtn.innerHTML = '<span>高評価アイテムをもっと見る（残り' + remaining + '件 / 全' + filtered.length + '件）</span><span class="material-symbols-outlined" aria-hidden="true" style="font-size: 1rem;">expand_more</span>';
+                        loadMoreBtn.innerHTML = '<span>高評価アイテムをもっと見る（残り' + remaining + '件）</span><span class="material-symbols-outlined" aria-hidden="true" style="font-size: 1rem;">expand_more</span>';
                         loadMoreBtn.dataset.mode = 'expand';
                     } else {
                         loadMoreBtn.innerHTML = '<span>10件表示に戻す</span><span class="material-symbols-outlined" aria-hidden="true" style="font-size: 1rem;">expand_less</span>';
