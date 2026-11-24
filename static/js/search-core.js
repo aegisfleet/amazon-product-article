@@ -234,6 +234,90 @@
         return false;
     }
 
+    // --- 形態素照合（Sudachi SplitMode B、ビルド時に事前計算） ---
+    // 部分一致だけでは「衣類乾燥機」で「衣類ケア乾燥機」が拾えず、
+    // 「布団乾燥機」で「ふとん乾燥機」表記も拾えない。scripts/
+    // generate_search_morphs.py が public/search-morphs.json（商品ごと
+    // の形態素集合）と public/search-vocab.json（表層形→形態素の語彙）を
+    // 生成し、クエリはその語彙で最長一致分割して形態素の部分集合で照合
+    // する（MCPサーバーと同じ方式）。形態素は一致を広げるだけで、
+    // 部分一致で拾えていたものを落とすことはない。データ未読込時は
+    // 従来の部分一致のみで動作する。
+    let segmentVocab = new Map();
+    let segmentBuckets = new Map();
+    const segmentCache = new Map();
+
+    function prepareMorphIndex(items, morphData, vocabData) {
+        segmentVocab = new Map();
+        if (vocabData && typeof vocabData === 'object') {
+            for (const [k, v] of Object.entries(vocabData)) {
+                if (k && v) segmentVocab.set(k, v);
+            }
+        }
+        segmentBuckets = new Map();
+        for (const key of segmentVocab.keys()) {
+            const head = key.charAt(0);
+            if (!segmentBuckets.has(head)) segmentBuckets.set(head, []);
+            segmentBuckets.get(head).push(key);
+        }
+        for (const bucket of segmentBuckets.values()) {
+            bucket.sort((a, b) => b.length - a.length);
+        }
+        segmentCache.clear();
+
+        const morphMap = (morphData && typeof morphData === 'object') ? morphData : {};
+        if (!Array.isArray(items)) return items;
+        for (const item of items) {
+            const entry = item.asin ? morphMap[item.asin] : null;
+            item._morphs = new Set(entry && entry.m ? String(entry.m).split(' ').filter(Boolean) : []);
+            item._title_morphs = new Set(entry && entry.t ? String(entry.t).split(' ').filter(Boolean) : []);
+        }
+        return items;
+    }
+
+    function segmentToMorphs(text) {
+        if (!text || segmentVocab.size === 0) return new Set();
+        const cached = segmentCache.get(text);
+        if (cached) return cached;
+        const morphs = new Set();
+        for (const word of String(text).split(/\s+/).filter(Boolean)) {
+            let rest = word;
+            while (rest.length > 0) {
+                const bucket = segmentBuckets.get(rest.charAt(0)) || [];
+                let hit = null;
+                for (const key of bucket) {
+                    if (key.length <= rest.length && rest.startsWith(key)) {
+                        hit = key;
+                        break;
+                    }
+                }
+                if (!hit) break;
+                morphs.add(segmentVocab.get(hit));
+                rest = rest.slice(hit.length);
+            }
+        }
+        segmentCache.set(text, morphs);
+        return morphs;
+    }
+
+    function variantMorphSubset(variant, morphSet) {
+        if (!morphSet || morphSet.size === 0) return false;
+        const morphs = segmentToMorphs(variant);
+        if (morphs.size === 0) return false;
+        for (const m of morphs) {
+            if (!morphSet.has(m)) return false;
+        }
+        return true;
+    }
+
+    function itemMatchesTokenGroupMorph(variants, morphSet) {
+        if (!morphSet || morphSet.size === 0) return false;
+        for (const v of variants) {
+            if (variantMorphSubset(v, morphSet)) return true;
+        }
+        return false;
+    }
+
     function computeExpandedScoreAndPrimaryMatch(item, tokenGroups) {
         if (tokenGroups.length === 0) return { score: 1, isPrimaryMatch: false };
 
@@ -242,7 +326,8 @@
         const catText = (item._norm_categories || []).join(' ');
 
         for (const variants of tokenGroups) {
-            const inTitle = itemMatchesTokenGroup(variants, item._norm_title);
+            const inTitle = itemMatchesTokenGroup(variants, item._norm_title)
+                || itemMatchesTokenGroupMorph(variants, item._title_morphs);
             const inCat = itemMatchesTokenGroup(variants, catText) || itemMatchesTokenGroup(variants, item._norm_amazon_category);
             if (inTitle) titleMatches++;
             if (inCat) categoryMatches++;
@@ -284,7 +369,8 @@
             const haystack = item._norm_haystack || '';
             let allMatch = true;
             for (const variants of tokenGroups) {
-                if (!itemMatchesTokenGroup(variants, haystack)) {
+                if (!itemMatchesTokenGroup(variants, haystack)
+                    && !itemMatchesTokenGroupMorph(variants, item._morphs)) {
                     allMatch = false;
                     break;
                 }
@@ -573,6 +659,8 @@
         tokenizeQuery,
         variantMatches,
         prepareSearchIndex,
+        prepareMorphIndex,
+        segmentToMorphs,
         searchExpanded,
         mergeSearchResults,
         rerankResults,

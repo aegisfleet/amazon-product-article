@@ -39,6 +39,24 @@ async function handleInit(searchIndexUrl) {
 
         SearchCore.prepareSearchIndex(searchIndex);
 
+        // 形態素データ（ビルド時に Sudachi で生成）。取得できなくても
+        // 部分一致検索は従来どおり動くため、失敗は無視する。
+        try {
+            const [morphRes, vocabRes] = await Promise.all([
+                fetch('/search-morphs.json'),
+                fetch('/search-vocab.json')
+            ]);
+            if (morphRes.ok && vocabRes.ok) {
+                SearchCore.prepareMorphIndex(
+                    searchIndex,
+                    await morphRes.json(),
+                    await vocabRes.json()
+                );
+            }
+        } catch {
+            // 形態素照合なしで継続
+        }
+
         asinMap.clear();
         parentAsinMap.clear();
         for (const item of searchIndex) {

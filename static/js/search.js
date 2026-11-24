@@ -1074,6 +1074,24 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                     const searchIndex = normalizeSearchItems(data);
                     searchIndexFallback = searchIndex;
+                    // 形態素データ（任意）: 取得できなくても部分一致で動く
+                    if (globalThis.SearchCore?.prepareMorphIndex) {
+                        try {
+                            const [morphRes, vocabRes] = await Promise.all([
+                                fetch('/search-morphs.json'),
+                                fetch('/search-vocab.json')
+                            ]);
+                            if (morphRes.ok && vocabRes.ok) {
+                                globalThis.SearchCore.prepareMorphIndex(
+                                    searchIndex,
+                                    await morphRes.json(),
+                                    await vocabRes.json()
+                                );
+                            }
+                        } catch {
+                            // 形態素照合なしで継続
+                        }
+                    }
                     fuse = new Fuse(searchIndex, {
                         keys: [
                             { name: "asin", weight: 1 },

@@ -8,6 +8,7 @@
     "generate:summary": "ts-node src/scripts/generate-products-summary.ts",
     "generate:pickup-pool": "ts-node src/scripts/generate-pickup-pool.ts",
     "generate:mcp-products": "ts-node src/scripts/generate-mcp-products.ts",
+    "generate:search-morphs": "uv run scripts/generate_search_morphs.py",
     "prebuild:hugo": "ts-node src/scripts/enhance-categories.ts && ts-node src/scripts/extract-price-drops.ts && ts-node src/scripts/generate-products-summary.ts && ts-node src/scripts/generate-pickup-pool.ts && ts-node src/scripts/generate-mcp-products.ts",
     "build": "tsc",
     "build:hugo": "hugo --minify",
