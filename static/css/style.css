@@ -3177,7 +3177,7 @@ a.competitor-link:hover,
 
 .popular-categories-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   gap: 0.5rem;
 }
 
@@ -3659,12 +3659,14 @@ button.category-pill {
 .category-sub-toggle-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
-  padding: 0.28rem 0.6rem;
+  justify-content: center;
+  width: 1.85rem;
+  height: 1.85rem;
+  padding: 0;
   background: var(--color-bg-body);
   border: 1px solid var(--color-border);
   border-radius: 9999px;
-  font-size: 0.74rem;
+  font-size: 0.78rem;
   font-weight: 600;
   font-family: inherit;
   color: var(--color-text-muted);

@@ -16,7 +16,7 @@
 
     const PRIMARY_LIMIT = 10;
     const MIN_PRIMARY_COUNT = 5;
-    const POPULAR_TILE_LIMIT = 14;
+    const POPULAR_TILE_LIMIT = 12;
     const INITIAL_VISIBLE_GROUPS = 12;
 
     const SUBCATEGORY_ICON_MAP = {
@@ -514,7 +514,7 @@
 
             const nameSpan = document.createElement('span');
             nameSpan.className = 'popular-category-tile-name';
-            nameSpan.textContent = SUBCATEGORY_SHORT_LABELS[cat] || cat;
+            nameSpan.textContent = cat;
 
             const countSpan = document.createElement('span');
             countSpan.className = 'popular-category-tile-count';
@@ -580,17 +580,13 @@
             toggleBtn.className = 'category-sub-toggle-btn';
             toggleBtn.setAttribute('aria-expanded', 'false');
             toggleBtn.setAttribute('aria-label', `${groupName}の子カテゴリ（${subCount}件）を展開`);
-
-            const labelSpan = document.createElement('span');
-            labelSpan.className = 'category-sub-toggle-label';
-            labelSpan.textContent = `子カテゴリ (${subCount})`;
+            toggleBtn.title = `子カテゴリ（${subCount}件）`;
 
             const toggleIcon = document.createElement('span');
             toggleIcon.className = 'category-toggle-icon';
             toggleIcon.setAttribute('aria-hidden', 'true');
             toggleIcon.textContent = '▾';
 
-            toggleBtn.appendChild(labelSpan);
             toggleBtn.appendChild(toggleIcon);
 
             const handleToggle = function () {
