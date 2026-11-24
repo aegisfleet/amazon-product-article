@@ -58,6 +58,10 @@
                             data-prompt="送料無料まであと少し。2,000円以下で評価の高い日用品やガジェットはある？">
                             ③ コスパ重視
                         </button>
+                        <button type="button" class="showcase-ai-tab" role="tab" aria-selected="false"
+                            data-prompt="妻への誕生日プレゼントで、予算1万円以内のおすすめを探して。">
+                            ④ プレゼント相談
+                        </button>
                     </div>
                     <button type="button" class="ai-copy-btn showcase-ai-copy-btn" data-target="ai-hero-prompt-code" aria-label="表示中の質問例をコピー">
                         <span class="material-symbols-outlined ai-copy-icon" aria-hidden="true">content_copy</span>
@@ -115,6 +119,8 @@
                 <li><strong>「ブラックフライデーのセールでおすすめはある？」</strong>（セールの種類は商品ごとのバッジで区別されます。開催前など該当がない時期は、その旨と現在開催中のセールが返ります）</li>
                 <li><strong>「送料無料まであと少し。2,000円以下で良いものある？」</strong></li>
                 <li><strong>「スコア90点以上の商品だけ見せて」</strong></li>
+                <li><strong>「妻への誕生日プレゼントで、予算1万円以内のおすすめを探して」</strong>（相手・シーン・予算に合わせたギフト候補を提案します）</li>
+                <li><strong>「ストレージ256GB以上のスマホで評価の高いものは？」</strong>（容量・重量・画面サイズなどのスペック条件での絞り込みにも対応）</li>
             </ul>
         </article>
 
@@ -136,6 +142,26 @@
                 </div>
                 <p class="ai-tool-desc">
                     タイムセール／プライム会員限定セール／ブラックフライデーなどセールの種類を指定した掘り出し物探しや、送料無料ライン調整に便利な「2,000円以下の高評価アイテム」の抽出も一瞬で行えます。
+                </p>
+            </div>
+
+            <div class="ai-tool-card">
+                <div class="ai-tool-header">
+                    <h3 class="ai-tool-name">相手・シーン別のプレゼント相談</h3>
+                    <span class="ai-tool-badge">ギフト属性対応</span>
+                </div>
+                <p class="ai-tool-desc">
+                    女性／男性／恋人／両親／友人などの相手や、誕生日／クリスマス／母の日・父の日／お祝いなどのシーンと予算からギフト候補を提案します（※ラッピング・のし・配送期限の可否は詳細ページでの確認を案内します）。
+                </p>
+            </div>
+
+            <div class="ai-tool-card">
+                <div class="ai-tool-header">
+                    <h3 class="ai-tool-name">スペック絞り込み・代替品提案</h3>
+                    <span class="ai-tool-badge">詳細スペック対応</span>
+                </div>
+                <p class="ai-tool-desc">
+                    ストレージ容量・重量・画面サイズなどのスペック条件での絞り込みや、日本語の複合語・表記ゆれを吸収した検索に対応。目的の商品が在庫切れ・予算超過のときは同タイプ・近接価格帯の代替候補も提案します。
                 </p>
             </div>
 
@@ -351,12 +377,12 @@
         <details class="ai-tech-details" id="mcp-tools-list">
             <summary class="ai-tech-summary">
                 <span class="material-symbols-outlined ai-section-icon" aria-hidden="true">build</span>
-                <span>技術情報：搭載ツール（9種）・相談プロンプト（2種）・セキュリティ設計とソースコード</span>
+                <span>技術情報：搭載ツール（10種）・相談プロンプト（3種）・セキュリティ設計とソースコード</span>
                 <span class="ai-tech-summary-hint">普段はAIが自動選択するため意識不要です（クリックで詳細）</span>
             </summary>
 
             <p class="ai-section-desc" style="margin-bottom: var(--spacing-md);">
-                MCP サーバーには以下の9つのツールと2つの相談用テンプレート（MCP Prompts）が搭載されており、質問内容に応じて AI が自動的に呼び出します。
+                MCP サーバーには以下の10個のツールと3つの相談用テンプレート（MCP Prompts）が搭載されており、質問内容に応じて AI が自動的に呼び出します。
             </p>
 
             <div class="ai-endpoints-table-wrapper" style="margin-bottom: var(--spacing-lg);">
@@ -370,11 +396,11 @@
                     <tbody>
                         <tr>
                             <td><code>search_products</code></td>
-                            <td>キーワード／カテゴリ／ブランド／価格／スコアで商品を検索。ブランドの日英表記ゆれ（ソニー／Sony 等）や略語・同義語（ノイキャン、USB-C／Type-C 等）も自動で吸収</td>
+                            <td>キーワード／カテゴリ／ブランド／価格／スコア／調査鮮度で商品を検索（ブランド・カテゴリ除外も可）。ギフトの相手（<code>recipient</code>）・シーン（<code>occasion</code>）やスペック条件（<code>spec_filters</code>）での絞り込み、形態素解析による複合語・日英ブランド表記ゆれ（ソニー／Sony 等）・略語（ノイキャン、USB-C／Type-C 等）の自動吸収にも対応</td>
                         </tr>
                         <tr>
                             <td><code>get_product</code></td>
-                            <td>1商品の詳細（スペック、在庫、調査日、スコアの採点根拠）</td>
+                            <td>1商品の詳細（スペック、在庫、調査日、セールバッジ、スコアの採点根拠）</td>
                         </tr>
                         <tr>
                             <td><code>compare_products</code></td>
@@ -382,7 +408,7 @@
                         </tr>
                         <tr>
                             <td><code>find_similar_products</code></td>
-                            <td>指定商品と同カテゴリの代替候補（在庫切れ・予算超過のときに）</td>
+                            <td>指定商品と同カテゴリかつ製品タイプ（タイトルの形態素）が一致する近接価格帯の代替候補（在庫切れ・予算超過のときに。同タイプが無い場合はカテゴリ候補へフォールバック）</td>
                         </tr>
                         <tr>
                             <td><code>list_categories</code></td>
@@ -391,6 +417,10 @@
                         <tr>
                             <td><code>list_brands</code></td>
                             <td>ブランド検索（表記揺れにも対応）</td>
+                        </tr>
+                        <tr>
+                            <td><code>list_spec_keys</code></td>
+                            <td>スペック絞り込み（<code>search_products</code> の <code>spec_filters</code>）に使えるスペック項目の一覧（カテゴリ指定可、商品数と値の例つき）</td>
                         </tr>
                         <tr>
                             <td><code>get_deals</code></td>
@@ -402,7 +432,7 @@
                         </tr>
                         <tr>
                             <td><code>get_recommendations</code></td>
-                            <td>スコア90点以上の高評価商品</td>
+                            <td>スコア90点以上の高評価商品（カテゴリやギフトの相手・シーンでの絞り込みも可）</td>
                         </tr>
                     </tbody>
                 </table>
@@ -416,6 +446,16 @@
                     </div>
                     <p class="ai-tool-desc">
                         <strong>買い物相談用。</strong>まず候補を調べ、予算・用途などが曖昧なら実際の選択肢で最大3点まで聞き返し、回答に合わせて再検索して比較と推奨まで進めます。引数 <code>topic</code> にテーマ（例: ワイヤレスイヤホン）を渡せます（※MCP Prompts 対応クライアントで選択可）。
+                    </p>
+                </div>
+
+                <div class="ai-tool-card">
+                    <div class="ai-tool-header">
+                        <h3 class="ai-tool-name">MCP Prompt: <code>gift_consultation</code></h3>
+                        <span class="ai-tool-badge">引数: recipient / occasion / budget</span>
+                    </div>
+                    <p class="ai-tool-desc">
+                        <strong>プレゼント選び相談用。</strong>相手・シーン・予算のうち不足している条件を最大3点まで聞き取り、ギフト属性つきの候補を優先して提案します（候補が少ない場合は通常検索の候補も分けて提示）。引数に <code>recipient</code>（相手）・<code>occasion</code>（シーン）・<code>budget</code>（予算）を渡せます（※MCP Prompts 対応クライアントで選択可）。
                     </p>
                 </div>
 
@@ -443,7 +483,7 @@
                 </p>
                 <ul class="ai-mcp-steps" style="list-style-type: disc;">
                     <li><strong>オープンソース公開（GitHub）</strong>: <a href="https://github.com/aegisfleet/amazon-hikaku-mcp" target="_blank" rel="noopener noreferrer"><code>https://github.com/aegisfleet/amazon-hikaku-mcp</code></a>（MIT License / <a href="https://github.com/aegisfleet/amazon-hikaku-mcp/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer">SECURITY.md</a>）にて全コードとセキュリティポリシーを公開しています。</li>
-                    <li><strong>完全読み取り専用（副作用なし）</strong>: 公開している全9ツールに MCP 標準アノテーション <code>ToolAnnotations(readOnlyHint=True, destructiveHint=False, idempotentHint=True)</code> を設定しており、外部データの書き換えや注文・決済などの操作は一切行いません。</li>
+                    <li><strong>完全読み取り専用（副作用なし）</strong>: 公開している全10ツールに MCP 標準アノテーション <code>ToolAnnotations(readOnlyHint=True, destructiveHint=False, idempotentHint=True)</code> を設定しており、外部データの書き換えや注文・決済などの操作は一切行いません。</li>
                     <li><strong>ステートレス設計・個人情報の非保持</strong>: Streamable HTTP のステートレスモード（<code>stateless_http=True</code>）で稼働し、API キー・OAuth トークン・アカウント情報・会話セッション履歴を保持しません。</li>
                     <li><strong>データソースの限定</strong>: サーバーが参照するのは当サイト（<code>amazon-hikaku.com</code>）で公開配信している調査 JSON のみ（1時間キャッシュ）であり、任意の外部 URL へアクセスする機能（SSRF リスク）は持ちません。</li>
                     <li><strong>通信保護・過負荷防止ガード</strong>: リクエストサイズ上限（64KB、ヘッダー検査およびストリーム実測）と IP 単位のレート制限（240 req/min）、各種セキュリティヘッダー（<code>X-Content-Type-Options: nosniff</code>、<code>Cache-Control: no-store</code> 等）を適用しています。</li>
