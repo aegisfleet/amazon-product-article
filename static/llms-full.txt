@@ -75,7 +75,7 @@ JSONファイルを直接パースするエージェントは、以下のフィ�
 - `brand` (string): ブランド・メーカー名（注意：`index.json` 単体には `brand` が含まれないため、`products-summary.json` または `mcp-products.json` とASINで結合してください）。
 - `category` / `categories` (string / array): 所属する子カテゴリ名（例: `ワイヤレスイヤホン`）。
 - `score` (number): 0〜100点の客観的独自採点スコア（80点以上が推奨目安、90点以上が特におすすめ、50点以下は注意が必要）。
-- `price` / `price_value` / `priceRaw` (number): 調査時点の参考価格（円）。
+- `price` / `price_value` / `priceRaw` (number): データ更新時点の参考価格（円）。価格は調査とは別に更新されるため、`last_investigated`（調査日）時点の価格とは異なる場合があります。
   - **【重要エッジケース】**: 価格が `null` または `0` の商品は「価格未取得（在庫切れ等）」です。上限価格（`max_price`）や価格帯でフィルタリングする際は、**必ず `price > 0` の条件を併用して価格未取得商品を除外**してください（除外しないと `0 <= max_price` として価格未取得商品が混入します）。
 - `in_stock` / `inStock` (boolean) および `availability` (string): 調査時点の在庫有無。
 - `last_investigated` / `lastInvestigated` (string, `YYYY-MM-DD`): 最終調査日。調査日から数ヶ月経過している商品は実売価格や在庫が変動している可能性があるため、その旨をユーザーに添えてください。
@@ -141,17 +141,17 @@ JSONファイルを直接パースするエージェントは、以下のフィ�
 - [その他／全般](https://www.amazon-hikaku.com/parent-category/others/): 未分類・全般等
 
 ## 6. 出力フォーマット例 (Output Format Examples)
-UI環境や表示形式に応じた出力フォーマットの例です。いずれの形式でも**独自スコア**、**調査時点の参考価格**、および**本サイト詳細レポートURL（`url`）への出典リンク**を必ず含めてください。
+UI環境や表示形式に応じた出力フォーマットの例です。いずれの形式でも**独自スコア**、**データ更新時点の参考価格**、および**本サイト詳細レポートURL（`url`）への出典リンク**を必ず含めてください。
 
 ### パターンA: 画像付きカード・リスト形式（ChatGPT / Grok等、Markdown画像対応環境）
-- **[{title}]({url})** （独自スコア: **{score}点** / 参考価格: **¥{price}** ※{last_investigated}調査時点）
+- **[{title}]({url})** （独自スコア: **{score}点** / 参考価格: **¥{price}** ※データ更新時点の参考価格）
   ![{title}]({image})
   - 特徴: {description}
   - ブランド: {brand} ｜ カテゴリ: {category}
   - 出典・最新価格確認: [詳細レポートを見る（ポちのAmazon商品徹底比較.com）]({url})
 
 ### パターンB: 標準の比較表形式（テキスト・一覧性重視）
-| 商品名 | 独自スコア | 参考価格（調査時点） | ブランド | カテゴリ | 主な長所・注意点 | 詳細レポート（出典） |
+| 商品名 | 独自スコア | 参考価格（データ更新時点） | ブランド | カテゴリ | 主な長所・注意点 | 詳細レポート（出典） |
 |---|---|---|---|---|---|---|
 | [{title}]({url}) | **{score}点** | ¥{price} | {brand} | {category} | {description} | [詳細レポートを見る](https://www.amazon-hikaku.com/{asin}/) |
 
