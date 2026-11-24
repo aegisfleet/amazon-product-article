@@ -1,7 +1,12 @@
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { buildMcpProductItem, extractScoreRationale, generateMcpProducts } from '../generate-mcp-products';
+import {
+  buildMcpProductItem,
+  extractGiftAttributes,
+  extractScoreRationale,
+  generateMcpProducts,
+} from '../generate-mcp-products';
 
 describe('generateMcpProducts', () => {
   let tempDir: string;
@@ -49,6 +54,49 @@ describe('generateMcpProducts', () => {
         brand: 'DECORATIVE EYES',
         score_rationale: '根拠テキスト',
       });
+    });
+  });
+
+  describe('extractGiftAttributes', () => {
+    it('ギフト文脈から相手とシーンを抽出できること', () => {
+      const investigation = {
+        analysis: {
+          useCases: ['彼女へのクリスマスプレゼントに', '自分用に日常使い'],
+          userStories: [{ scenario: '誕生日プレゼントとして妻に贈る', experience: '喜ばれた' }],
+        },
+      };
+      expect(extractGiftAttributes(investigation)).toEqual({
+        gift_recipients: ['partner', 'female'],
+        gift_occasions: ['christmas', 'birthday'],
+      });
+    });
+
+    it('ギフト文脈が無ければ null を返すこと（使用者本人の記述だけでは付けない）', () => {
+      const investigation = {
+        analysis: {
+          useCases: ['共働き家庭の洗濯を楽に'],
+          userStories: [{ scenario: '妻と相談して購入', experience: '女性にも扱いやすい' }],
+        },
+      };
+      expect(extractGiftAttributes(investigation)).toBeNull();
+    });
+
+    it('結婚記念日は wedding として拾い、anniversary と重複させないこと', () => {
+      const investigation = { analysis: { useCases: ['結婚記念日のプレゼントに夫婦で使う'] } };
+      expect(extractGiftAttributes(investigation)?.gift_occasions).toEqual(['wedding']);
+    });
+
+    it('母の日のギフトは相手に両親を補完すること', () => {
+      const investigation = { analysis: { useCases: ['母の日のプレゼントとして贈る'] } };
+      expect(extractGiftAttributes(investigation)).toEqual({
+        gift_recipients: ['parents'],
+        gift_occasions: ['mothers_day'],
+      });
+    });
+
+    it('ギフト文脈はあるが相手・シーンが特定できない場合は空配列で返すこと', () => {
+      const investigation = { analysis: { productUsage: ['プレゼント用にも使える'] } };
+      expect(extractGiftAttributes(investigation)).toEqual({ gift_recipients: [], gift_occasions: [] });
     });
   });
 
