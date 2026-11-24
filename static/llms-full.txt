@@ -20,7 +20,7 @@ AIアシスタントや自律型エージェントがユーザーの商品選び
 エンドポイント: `https://mcp.amazon-hikaku.com/mcp` （ソースコード・セキュリティポリシー: [`https://github.com/aegisfleet/amazon-hikaku-mcp`](https://github.com/aegisfleet/amazon-hikaku-mcp)、全ツール `readOnlyHint=True`・ステートレス・64KBボディ上限・240 req/min レート制限）
 1. `search_products`:
    - 条件・価格帯・スコア・調査鮮度・並び替えによる商品検索。
-   - 主な引数: `query`（空白区切りAND、同義語展開対応）、`category`（子カテゴリ名・親カテゴリ名・親スラッグ）、`brand`（日英表記ゆれ自動吸収）、`exclude_brand`（特定ブランド除外）、`min_score`（既定80）、`min_price` / `max_price`、`in_stock_only`（既定true）、`sort`（`score` / `price_asc` / `price_desc` / `relevance` / `newest`）、`updated_within_days`（直近N日以内調査）、`limit` / `offset`。
+   - 主な引数: `query`（空白区切りAND、同義語展開対応）、`category`（子カテゴリ名・親カテゴリ名・親スラッグ）、`brand`（日英表記ゆれ自動吸収）、`exclude_brand`（特定ブランド除外）、`min_score`（既定80）、`min_price` / `max_price`、`in_stock_only`（既定true）、`sort`（`score` / `price_asc` / `price_desc` / `relevance` / `newest`）、`updated_within_days`（直近N日以内調査）、`recipient`（ギフトの相手）/ `occasion`（ギフトのシーン）、`limit` / `offset`。
    - 応答には `total_count`（全件数）、`facets`（全ヒット件数のブランド・カテゴリ・価格帯分布）、および結果が3件以下の場合の `suggestions`（どの条件を緩めると何件ヒットするか）が含まれます。
 2. `get_product`:
    - ASIN指定で1商品の詳細（要約、カテゴリ、構造化スペック `specs`、在庫有無 `in_stock`、割引率 `savings_percentage`、セールバッジ `deal_badge`、最終調査日 `last_investigated`、採点根拠 `score_rationale`）を取得。
@@ -60,7 +60,7 @@ AIアシスタントや自律型エージェントがユーザーの商品選び
 - [リモートMCPサーバー](https://mcp.amazon-hikaku.com/mcp): Streamable HTTP（認証不要・読み取り専用）。
 - [軽量商品サマリー (`products-summary.json`)](https://www.amazon-hikaku.com/products-summary.json): 全商品の主要9フィールドをスコア降順で収録（約1.7MB、gzip時約350KB）。
 - [全商品インデックス (`index.json`)](https://www.amazon-hikaku.com/index.json): 詳細スペックテキスト・構造化スペック・在庫・最終調査日を含む網羅データ（約9.3MB）。
-- [MCP専用インデックス (`mcp-products.json`)](https://www.amazon-hikaku.com/mcp-products.json): 全商品の `asin`, `brand`, `score_rationale`（採点根拠）を収録した補完データ（約3.4MB）。
+- [MCP専用インデックス (`mcp-products.json`)](https://www.amazon-hikaku.com/mcp-products.json): 全商品の `asin`, `brand`, `score_rationale`（採点根拠）と、ギフト文脈のある商品のギフト属性（`gift_recipients` / `gift_occasions`）を収録した補完データ（約3.4MB）。
 - [セール対象商品 (`deals/index.json`)](https://www.amazon-hikaku.com/deals/index.json): 現在割引中のお買い得商品データ（約250KB）。
 - [あともう一品 (`bargain/index.json`)](https://www.amazon-hikaku.com/bargain/index.json): 買い合わせ・送料無料ライン調整用の2,000円以下・高スコア商品データ（約200KB）。
 - [低スコア迷品館 (`low-scores/index.json`)](https://www.amazon-hikaku.com/low-scores/index.json): 独自スコア50点以下の低評価・要注意商品データ（約80KB）。
@@ -82,6 +82,7 @@ JSONファイルを直接パースするエージェントは、以下のフィ�
 - `savings_percentage` / `savingsPercentage` (number): 参考価格・過去価格からの割引率（%）。
 - `deal_badge` / `dealBadge` (string) および `dealAccessType` (string): セール種別ラベル（`タイムセール`, `限定タイムセール`, `プライム会員限定セール` 等）およびアクセス種別（`PRIME_EXCLUSIVE` 等）。
 - `score_rationale` (string | null): `mcp-products.json` に収録されている採点根拠テキスト（ベース点からの加点ポイント `+` と減点・注意点 `-` の明細）。
+- `gift_recipients` / `gift_occasions` (string[]): `mcp-products.json` に収録されているギフト属性（ギフト文脈のある商品にのみ付与）。相手は `female` / `male` / `partner` / `kids` / `parents` / `grandparents` / `friends` / `colleagues` / `self`、シーンは `christmas` / `birthday` / `mothers_day` / `fathers_day` / `valentine` / `whiteday` / `wedding` / `anniversary` 等。プレゼント相談では MCP の `search_products` の `recipient` / `occasion` 引数で絞り込めます。
 - `specs` / `specs_json` (string / JSON string): `index.json` に収録されている商品の主要仕様（サイズ・重量・接続方式・機能等）。
 - `url` / `permalink` (string): 個別詳細レポートページのURL（`https://www.amazon-hikaku.com/{asin}/`）。Keepa価格推移グラフや各モール（Amazon・楽天・Yahoo!）の最新確認先として必ず出典提示してください。
 - `image` (string): 商品のメイン画像URL。
