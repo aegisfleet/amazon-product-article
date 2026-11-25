@@ -13,6 +13,7 @@ import collections
 import requests
 from concurrent.futures import ThreadPoolExecutor
 from typing import List, Dict, Set, Any, Optional
+from urllib.parse import urlparse
 
 # Windows環境でのUnicodeEncodeError防止
 if sys.stdout:
@@ -145,6 +146,25 @@ VALID_PICK_TYPES = {"deal", "gem", "seasonal", "niche"}
 MAX_TODAY_OVERVIEW_LEN = 160
 MAX_DEAL_PICKS = 5
 FORBIDDEN_OVERVIEW_WORDS = ["Creators API", "Keepa", "キャッシュ"]
+FORBIDDEN_SELF_SOURCE_WORDS = ["サイト内", "当サイト", "amazon-hikaku"]
+NON_EXTERNAL_SOURCE_DOMAINS = (
+    "amazon.co.jp",
+    "amzn.to",
+    "amzn.asia",
+    "amazon-hikaku.com",
+)
+NON_DEAL_PICK_TYPES = {"gem", "seasonal", "niche"}
+
+
+def _is_non_external_source_url(url: str) -> bool:
+    """Amazonまたは自サイトドメインかどうかを判定する"""
+    try:
+        host = (urlparse(url).hostname or "").lower()
+    except Exception:
+        return True
+    if not host:
+        return True
+    return any(host == d or host.endswith(f".{d}") for d in NON_EXTERNAL_SOURCE_DOMAINS)
 
 
 def source_name_for_ratio(rec: Dict[str, Any]) -> str:
@@ -240,6 +260,13 @@ def _validate_recommendations_list(data: Any, errors: List[str]):
 
         # クーポン表記の禁止チェック（API・データから検証不能なハルシネーションの防止）
         source_name = str(rec.get("source", {}).get("name", "") if isinstance(rec.get("source"), dict) else "")
+        for word in FORBIDDEN_SELF_SOURCE_WORDS:
+            if word.lower() in source_name.lower():
+                errors.append(f"recommendations[{i}] (ASIN: {asin}) の 'source.name' ('{source_name}') に自己言及表現 '{word}' が含まれています。受賞歴・専門メディア・メーカー公式等の外部情報元を設定してください。")
+        if pick_type in NON_DEAL_PICK_TYPES:
+            source_url = str(rec.get("source", {}).get("url", "") or "").strip() if isinstance(rec.get("source"), dict) else ""
+            if not source_url or not source_url.startswith(("http://", "https://")) or _is_non_external_source_url(source_url):
+                errors.append(f"recommendations[{i}] (ASIN: {asin}, pickType: {pick_type}) の 'source.url' ('{source_url}') がAmazonまたは自サイトです。非セール枠では受賞歴・専門メディア・メーカー公式等の外部URLを設定してください。")
         for field_name, field_val in [("rankReason", rank_reason), ("whyBuyNow", why_buy_now), ("source.name", source_name)]:
             if "クーポン" in field_val:
                 errors.append(f"recommendations[{i}] (ASIN: {asin}) の '{field_name}' に禁止ワード 'クーポン' が含まれています。APIやデータからクーポンの有無は検証不能なため、「◯%OFF」「割引対象」「プライム会員限定セール」等の価格割引表記に修正してください。")
@@ -325,8 +352,8 @@ def check_url(url: str) -> Dict[str, Any]:
         # 初期チェックは HEAD
         response = requests.head(url, headers=headers, timeout=10, allow_redirects=True)
         
-        # HEAD が 404/405 の場合は GET で再試行
-        if response.status_code in (404, 405):
+        # HEAD が 403/404/405 の場合は GET で再試行
+        if response.status_code in (403, 404, 405):
             response = requests.get(url, headers=headers, timeout=10, allow_redirects=True, stream=True)
             
         # Amazon 503エラーはレート制限/WAFなどによる一時的なものが多いため許容する

@@ -120,6 +120,15 @@ describe('RecommendationPromptBuilder', () => {
     expect(prompt).toContain('システム処理報告');
   });
 
+  it('should require external Web evidence for non-deal picks and forbid self-referencing sources', () => {
+    const prompt = new RecommendationPromptBuilder().build();
+
+    expect(prompt).not.toContain('サイト内詳細検証');
+    expect(prompt).toContain('外部Webエビデンスの調査と引用（必須）');
+    expect(prompt).toContain('amazon.co.jp');
+    expect(prompt).toContain('amazon-hikaku.com');
+  });
+
   it('should include explicit prohibitions against coupon claims and require price discount wording', () => {
     const builder = new RecommendationPromptBuilder();
     const prompt = builder.build();
