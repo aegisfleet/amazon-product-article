@@ -10,7 +10,9 @@ import path from 'node:path';
 import { formatRecommendationPrompt } from '../prompts/prompts';
 import { setGitHubOutput } from '../utils/github-actions';
 import { Logger } from '../utils/Logger';
+import { extractDiscoveryCandidates } from './extract-discovery-candidates';
 import { extractSaleCandidates } from './extract-sale-candidates';
+import { loadRecentRecommendedAsins } from './recommendation-history';
 
 const logger = Logger.getInstance();
 
@@ -21,9 +23,19 @@ async function main(): Promise<void> {
     const maxProducts = Number.parseInt(process.env.MAX_RECOMMENDATION_PRODUCTS || '10', 10);
     logger.info(`Max recommendation products: ${maxProducts}`);
 
-    // キャッシュからセール・値引き候補商品を事前抽出 (tmp/sale_candidates.json)
+    // 直近掲載ASIN（git履歴。取得失敗時は空セット）
+    const recentAsins = loadRecentRecommendedAsins(14);
+    logger.info(`Recently featured ASINs excluded: ${recentAsins.size}`);
+
+    // 系統A: キャッシュ上の値下げ・セール候補 (tmp/sale_candidates.json)
     logger.info('Extracting sale candidates from cache...');
-    await extractSaleCandidates();
+    const sale = await extractSaleCandidates(undefined, undefined, 15, 2, undefined, undefined, undefined, recentAsins);
+
+    // 系統B: 非セール含む高スコア名品の発掘候補 (tmp/discovery_candidates.json)
+    const exclude = new Set<string>(recentAsins);
+    for (const c of sale.candidates) exclude.add(c.asin.toUpperCase());
+    const discovery = extractDiscoveryCandidates({ excludeAsins: exclude, limit: 20, maxPerGroup: 2 });
+    logger.info(`Candidates: sale=${sale.totalCandidates}, discovery=${discovery.totalCandidates}`);
 
     // 注目商品調査プロンプトを生成
     const prompt = formatRecommendationPrompt(maxProducts);

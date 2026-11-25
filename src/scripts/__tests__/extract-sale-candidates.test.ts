@@ -454,4 +454,79 @@ categories: ["PC"]
     expect(result.totalCandidates).toBe(1);
     expect(result.candidates[0]?.asin).toBe('ASIN_IN_STOCK');
   });
+
+  it('should boost real price drops from previousPrice and expose drop rate', async () => {
+    const base = {
+      status: 'valid',
+      timestamp: Date.now() - 1000,
+    };
+    const cache = {
+      DROP000001: {
+        ...base,
+        previousPrice: 2000,
+        data: {
+          asin: 'DROP000001',
+          title: '実値下げ',
+          category: '家電',
+          price: { amount: 1500, currency: 'JPY', formatted: '￥1,500' },
+          dealBadge: 'タイムセール',
+          savingsPercentage: 20,
+          rating: { average: 4.2, count: 150 },
+        },
+      },
+      FLAT000001: {
+        ...base,
+        data: {
+          asin: 'FLAT000001',
+          title: '値下げなし',
+          category: '食品',
+          price: { amount: 1500, currency: 'JPY', formatted: '￥1,500' },
+          dealBadge: 'タイムセール',
+          savingsPercentage: 20,
+          rating: { average: 4.2, count: 150 },
+        },
+      },
+    };
+    fs.writeFileSync(dummyCachePath, JSON.stringify(cache), 'utf-8');
+
+    const result = await extractSaleCandidates(dummyCachePath, outputPath, 10, 3, dummyArticlesDir);
+
+    expect(result.candidates.map((c) => c.asin)).toEqual(['DROP000001', 'FLAT000001']);
+    expect(result.candidates[0]?.previousPrice).toBe(2000);
+    expect(result.candidates[0]?.priceDropRate).toBe(25);
+    expect(result.candidates[1]?.priceDropRate).toBeUndefined();
+  });
+
+  it('should exclude recently featured ASINs', async () => {
+    const entry = (asin: string) => ({
+      status: 'valid',
+      timestamp: Date.now(),
+      data: {
+        asin,
+        title: asin,
+        category: '家電',
+        price: { amount: 1000, currency: 'JPY', formatted: '￥1,000' },
+        dealBadge: 'タイムセール',
+        savingsPercentage: 20,
+        rating: { average: 4.2, count: 150 },
+      },
+    });
+    fs.writeFileSync(
+      dummyCachePath,
+      JSON.stringify({ AAA0000001: entry('AAA0000001'), BBB0000001: entry('BBB0000001') }),
+    );
+
+    const result = await extractSaleCandidates(
+      dummyCachePath,
+      outputPath,
+      10,
+      3,
+      dummyArticlesDir,
+      undefined,
+      undefined,
+      new Set(['AAA0000001']),
+    );
+
+    expect(result.candidates.map((c) => c.asin)).toEqual(['BBB0000001']);
+  });
 });

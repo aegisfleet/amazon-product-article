@@ -141,6 +141,18 @@ def _validate_recommendation(analysis: Dict[str, Any], errors: List[str]):
             errors.append("'scoreRationale' に計算根拠が記載されていない可能性があります。")
     _validate_water_filter_safety(analysis, errors)
 
+VALID_PICK_TYPES = {"deal", "gem", "seasonal", "niche"}
+MAX_TODAY_OVERVIEW_LEN = 160
+MAX_DEAL_PICKS = 5
+FORBIDDEN_OVERVIEW_WORDS = ["Creators API", "Keepa", "キャッシュ"]
+
+
+def source_name_for_ratio(rec: Dict[str, Any]) -> str:
+    """セール比率判定用に source.name を取り出す"""
+    source = rec.get("source")
+    return str(source.get("name", "")) if isinstance(source, dict) else ""
+
+
 def _validate_recommendations_list(data: Any, errors: List[str]):
     """推薦商品リスト (today.json) の形式チェック"""
     required_fields = ["date", "headline", "searchContext", "recommendations"]
@@ -163,6 +175,17 @@ def _validate_recommendations_list(data: Any, errors: List[str]):
     why_buy_nows: List[str] = []
     image_urls: List[str] = []
     categories: Dict[str, int] = {}
+    deal_like_count = 0
+
+    # searchContext.todayOverview の検証（長さ・システム処理表現の禁止）
+    search_context = data.get("searchContext")
+    if isinstance(search_context, dict):
+        overview = str(search_context.get("todayOverview", "") or "")
+        if len(overview) > MAX_TODAY_OVERVIEW_LEN:
+            errors.append(f"'searchContext.todayOverview' が {len(overview)}文字です。{MAX_TODAY_OVERVIEW_LEN}文字以下（目安80文字、1〜2文）にしてください。")
+        for word in FORBIDDEN_OVERVIEW_WORDS:
+            if word.lower() in overview.lower():
+                errors.append(f"'searchContext.todayOverview' に禁止されたシステム表現 '{word}' が含まれています。読者向けの表現に書き換えてください。")
 
     for i, rec in enumerate(recs):
         for rf in required_rec_fields:
@@ -198,11 +221,32 @@ def _validate_recommendations_list(data: Any, errors: List[str]):
         if cat:
             categories[cat] = categories.get(cat, 0) + 1
 
+        # --- 4枠編集ミックス用の拡張フィールド検証（任意フィールド・後方互換） ---
+        pick_type = rec.get("pickType")
+        if pick_type is not None:
+            if pick_type not in VALID_PICK_TYPES:
+                errors.append(f"recommendations[{i}] (ASIN: {asin}) の 'pickType' ('{pick_type}') が不正です。{sorted(VALID_PICK_TYPES)} のいずれかを指定してください。")
+            elif pick_type == "deal":
+                deal_like_count += 1
+        catchphrase = rec.get("catchphrase")
+        if catchphrase is not None:
+            cp_len = len(str(catchphrase).strip())
+            if not (10 <= cp_len <= 50):
+                errors.append(f"recommendations[{i}] (ASIN: {asin}) の 'catchphrase' が {cp_len}文字です。10〜50文字（目安25〜45文字）にしてください。")
+        if "keepa" in why_buy_now.lower():
+            errors.append(f"recommendations[{i}] (ASIN: {asin}) の 'whyBuyNow' に 'Keepa' への言及が含まれています。削除してください。")
+        if pick_type != "deal" and "セール" in source_name_for_ratio(rec):
+            deal_like_count += 1
+
         # クーポン表記の禁止チェック（API・データから検証不能なハルシネーションの防止）
         source_name = str(rec.get("source", {}).get("name", "") if isinstance(rec.get("source"), dict) else "")
         for field_name, field_val in [("rankReason", rank_reason), ("whyBuyNow", why_buy_now), ("source.name", source_name)]:
             if "クーポン" in field_val:
                 errors.append(f"recommendations[{i}] (ASIN: {asin}) の '{field_name}' に禁止ワード 'クーポン' が含まれています。APIやデータからクーポンの有無は検証不能なため、「◯%OFF」「割引対象」「プライム会員限定セール」等の価格割引表記に修正してください。")
+
+    # セール一辺倒の再発防止ガード
+    if deal_like_count > MAX_DEAL_PICKS:
+        errors.append(f"セール枠（pickType 'deal' またはsource.nameに 'セール' を含む商品）が {deal_like_count}件あります。{MAX_DEAL_PICKS}件以下にしてください。")
 
     # 画像URL重複の検証 (同一imageUrlのコピペ禁止)
     for img_url, count in collections.Counter(image_urls).items():

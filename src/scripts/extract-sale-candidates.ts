@@ -22,6 +22,10 @@ export interface SaleCandidate {
     formatted: string;
   };
   savingsPercentage?: number;
+  /** キャッシュ上の前回価格（実値下げ判定用） */
+  previousPrice?: number;
+  /** 前回価格からの値下げ率（%） */
+  priceDropRate?: number;
   dealBadge?: string;
   isLimitedTimeSale?: boolean;
   rating?: {
@@ -43,6 +47,8 @@ export interface SaleCandidatesFile {
 interface CacheEntry {
   data: ProductDetail | null;
   timestamp: number;
+  previousPrice?: number;
+  priceChangedAt?: number;
   status: 'valid' | 'invalid' | 'permanent_invalid';
 }
 
@@ -60,6 +66,9 @@ export interface ArticleMetadata {
 
 const LIMITED_SALE_KEYWORDS = ['限定', '24時間', '特選', '数量限定', '本日限定'];
 
+/**
+ * @deprecated Keepa は AI の価格判定・文章生成から撤去済み。UI 側の折りたたみ参照専用。
+ */
 export function getKeepaGraphUrl(asin: string, rangeDays = 90): string {
   return `https://graph.keepa.com/pricehistory.png?asin=${asin}&domain=5&amazon=1&new=1&used=1&salesrank=1&bb=1&range=${rangeDays}&width=600&height=300`;
 }
@@ -194,6 +203,13 @@ function calculateArticleScoreBonus(articleScore?: number): number {
   return 0;
 }
 
+const REAL_PRICE_DROP_BONUS = 25;
+
+/** キャッシュ上の前回価格より現在価格が低い「実値下げ」への加点 */
+function calculateRealDropScore(candidate: SaleCandidate): number {
+  return candidate.priceDropRate !== undefined && candidate.priceDropRate > 0 ? REAL_PRICE_DROP_BONUS : 0;
+}
+
 function calculateFreshnessScore(timestamp?: number): number {
   if (!timestamp) return 0;
   const now = Date.now();
@@ -245,6 +261,7 @@ function calculateBrandScore(title: string, brandMatchers: RegExp[]): number {
 export function calculateCandidateScore(candidate: SaleCandidate, brandMatchers: RegExp[] = []): number {
   return (
     calculateDealBadgeScore(candidate) +
+    calculateRealDropScore(candidate) +
     calculateDiscountScore(candidate.savingsPercentage) +
     calculateFreshnessScore(candidate.timestamp) +
     calculateArticleScoreBonus(candidate.articleScore) +
@@ -356,6 +373,10 @@ function parseCandidateFromEntry(
     timestamp: entry.timestamp,
   };
 
+  if (typeof entry.previousPrice === 'number' && entry.previousPrice > product.price.amount) {
+    candidate.previousPrice = entry.previousPrice;
+    candidate.priceDropRate = Math.round(((entry.previousPrice - product.price.amount) / entry.previousPrice) * 100);
+  }
   if (product.savingsPercentage !== undefined) {
     candidate.savingsPercentage = product.savingsPercentage;
   }
@@ -421,6 +442,7 @@ export async function extractSaleCandidates(
   articlesDir?: string,
   brandPath?: string,
   investigationsDir?: string,
+  excludeAsins?: ReadonlySet<string>,
 ): Promise<SaleCandidatesFile> {
   const logger = Logger.getInstance();
   const cacheTarget = cacheFilePath || path.join(process.cwd(), 'data/cache');
@@ -457,6 +479,7 @@ export async function extractSaleCandidates(
     const candidates: SaleCandidate[] = [];
 
     for (const [asin, entry] of Object.entries(cache)) {
+      if (excludeAsins?.has(asin.toUpperCase())) continue;
       const candidate = parseCandidateFromEntry(asin, entry, articleScoreMap, investigationsDir);
       if (candidate) {
         candidates.push(candidate);

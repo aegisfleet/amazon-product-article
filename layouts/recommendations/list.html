@@ -55,6 +55,24 @@
         border-radius: var(--radius-md);
     }
 
+    .rec-pick-badge { display: inline-flex; align-items: center; gap: 0.2rem; padding: 2px 10px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; border: 1px solid transparent; }
+    .rec-pick-badge.pick-gem { background: #ede9fe; color: #5b21b6; border-color: #c4b5fd; }
+    .rec-pick-badge.pick-seasonal { background: #ecfdf5; color: #047857; border-color: #6ee7b7; }
+    .rec-pick-badge.pick-niche { background: #fff7ed; color: #c2410c; border-color: #fdba74; }
+    .rec-pick-badge.pick-deal { background: #fef2f2; color: #b91c1c; border-color: #fca5a5; }
+    [data-theme="dark"] .rec-pick-badge.pick-gem { background: #2e1065; color: #ddd6fe; border-color: #5b21b6; }
+    [data-theme="dark"] .rec-pick-badge.pick-seasonal { background: #064e3b; color: #a7f3d0; border-color: #047857; }
+    [data-theme="dark"] .rec-pick-badge.pick-niche { background: #431407; color: #fed7aa; border-color: #c2410c; }
+    [data-theme="dark"] .rec-pick-badge.pick-deal { background: #450a0a; color: #fecaca; border-color: #b91c1c; }
+    .rec-catchphrase { margin: 0 0 var(--spacing-sm); font-size: 1.15rem; font-weight: 700; line-height: 1.5; color: var(--color-primary, var(--color-text-main)); border-left: 4px solid var(--color-primary, #6366f1); padding-left: var(--spacing-sm); }
+    .keepa-details { margin: var(--spacing-xs) 0; max-width: 500px; }
+    .keepa-details summary { cursor: pointer; font-size: 0.85rem; color: var(--color-text-muted); padding: var(--spacing-xs) 0; }
+    .keepa-details[open] summary { margin-bottom: var(--spacing-xs); }
+    @media (max-width: 768px) {
+        .keepa-details { max-width: 100%; }
+        .rec-catchphrase { font-size: 1.05rem; }
+    }
+
     @media (max-width: 768px) {
         .recommendations-container .competitor-card {
             padding-left: var(--spacing-md);
@@ -853,24 +871,24 @@
             <span class="material-symbols-outlined" aria-hidden="true">info</span> AI厳選10選 選定ポリシーと評価について
         </h3>
         <p style="margin-bottom: var(--spacing-sm); color: var(--color-text-secondary);">
-            「AI厳選10選」は、日々のAmazonセール情報やトレンド、実用性、割引率、およびカテゴリの多様性を考慮し、AIが総合的に判断して<strong>おすすめ順</strong>にランキング化しています。
+            「AI厳選10選」は、検証スコアの高い名品の再発見、季節・生活シーンへの適合、課題解決型のユニークな商品、そして実質的な値下げの4つの枠をバランスよく組み合わせ、AIが総合的に判断して選定しています。
         </p>
         <div style="display: flex; gap: var(--spacing-md); flex-wrap: wrap; margin-top: var(--spacing-sm);">
             <div style="flex: 1; min-width: 250px;">
                 <strong><span class="material-symbols-outlined" aria-hidden="true" style="font-size:1.1rem; vertical-align:sub;">bar_chart</span> 選定基準（重視度）：</strong>
                 <ul
                     style="margin: var(--spacing-xs) 0 0; padding-left: 1.2rem; color: var(--color-text-secondary); list-style-type: disc;">
-                    <li style="margin-bottom: 0.25rem;"><strong>割引率・お得度:</strong> ★★★★★ (非常に対象になりやすい)</li>
-                    <li style="margin-bottom: 0.25rem;"><strong>実用性・トレンド:</strong> ★★★★☆</li>
+                    <li style="margin-bottom: 0.25rem;"><strong>品質・発見:</strong> ★★★★★ (検証スコアの高い名品を重視)</li>
+                    <li style="margin-bottom: 0.25rem;"><strong>季節性・生活シーン:</strong> ★★★★☆</li>
                     <li style="margin-bottom: 0.25rem;"><strong>カテゴリ分散:</strong> ★★★★☆ (ジャンル重複を回避)</li>
-                    <li style="margin-bottom: 0.25rem;"><strong>商品評価スコア:</strong> ★★★☆☆ (低スコアでも割引率が高ければ入る場合があります)</li>
+                    <li style="margin-bottom: 0.25rem;"><strong>実質値下げ:</strong> ★★★☆☆ (セールは厳選した少数のみ)</li>
                 </ul>
             </div>
             <div style="flex: 1; min-width: 250px;">
                 <strong><span class="material-symbols-outlined" aria-hidden="true" style="font-size:1.1rem; vertical-align:sub;">warning</span> スコアと順位の違い：</strong>
                 <ul
                     style="margin: var(--spacing-xs) 0 0; padding-left: 1.2rem; color: var(--color-text-secondary); list-style-type: disc;">
-                    <li style="margin-bottom: 0.25rem;"><strong>おすすめ順位 (1〜10位):</strong> 「今この瞬間に買うメリット」の大きさを示します。</li>
+                    <li style="margin-bottom: 0.25rem;"><strong>おすすめ順位 (1〜10位):</strong> 「今この商品を選ぶ価値」の大きさを示します。</li>
                     <li style="margin-bottom: 0.25rem;"><strong>商品評価スコア:</strong>
                         サイト内の詳細レビューに基づいた、商品の恒久的な品質・満足度評価です。</li>
                 </ul>
@@ -879,13 +897,13 @@
     </div>
 
     <!-- 比較サマリーテーブル（デフォルト表示） -->
-    <button class="rec-summary-toggle open" id="rec-summary-toggle" aria-expanded="true"
+    <button class="rec-summary-toggle" id="rec-summary-toggle" aria-expanded="false"
         aria-controls="rec-summary-panel">
         <span class="material-symbols-outlined" aria-hidden="true">toc</span>
         <span>比較サマリーを表示する</span>
         <em class="toggle-icon">▼</em>
     </button>
-    <section class="rec-summary-panel open" id="rec-summary-panel" aria-labelledby="rec-summary-toggle">
+    <section class="rec-summary-panel" id="rec-summary-panel" aria-labelledby="rec-summary-toggle">
         <table class="rec-summary-table">
             <thead>
                 <tr>
@@ -984,6 +1002,12 @@
                     <div
                         style="display: flex; gap: var(--spacing-xs); flex-wrap: wrap; align-items: center; margin-bottom: var(--spacing-sm);">
                         <a href="{{ printf `categories/%s/` ($rec.category | urlize) | relURL }}" class="card-tag" style="margin-bottom: 0; text-decoration: none;">{{- $rec.category -}}</a>
+                        {{- with $rec.pickType -}}
+                        {{- $pickLabel := dict "gem" "名品発掘" "seasonal" "季節・シーン" "niche" "課題解決" "deal" "注目セール" -}}
+                        {{- with index $pickLabel . -}}
+                        <span class="rec-pick-badge pick-{{ $rec.pickType }}">{{ . }}</span>
+                        {{- end -}}
+                        {{- end -}}
                         {{- if $rec.rankReason -}}
                         <span class="card-tag"
                             style="margin-bottom: 0; background-color: var(--color-bg-secondary); color: var(--color-text-main); border: 1px solid var(--color-border);">
@@ -1020,8 +1044,13 @@
                         {{- $rec.title -}}
                         {{- end -}}
                     </h3>
+                    {{- with $rec.catchphrase }}
+                    <p class="rec-catchphrase">{{ . }}</p>
+                    {{- end }}
 
                     <!-- Keepa Price Graph -->
+                    <details class="keepa-details">
+                    <summary>Keepaで価格推移を見る</summary>
                     <div class="keepa-graph-container"
                         style="margin-top: var(--spacing-sm); margin-bottom: var(--spacing-sm); max-width: 500px; text-align: left;">
                         <a href="https://keepa.com/#!product/5-{{ $rec.asin }}" target="_blank"
@@ -1035,6 +1064,7 @@
                             style="margin-top: var(--spacing-xs); font-size: 0.75rem; text-align: left;">※ クリックで Keepa
                             の詳細ページを開きます</p>
                     </div>
+                    </details>
 
                     {{- if and $rec.scoreDisclaimer (ne $rec.scoreDisclaimer "") -}}
                     <div
@@ -1047,16 +1077,12 @@
                     <div class="rec-why-box">
                         <h4
                             style="color: var(--color-recommend-why-header); font-size: 1rem; margin-bottom: var(--spacing-xs); display: flex; align-items: center; gap: 0.25rem;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path
-                                    d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
-                                </path>
-                                <line x1="12" y1="9" x2="12" y2="13"></line>
-                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                            </svg>
-                            なぜ『今日』おすすめなのか？
+                            <span class="material-symbols-outlined" aria-hidden="true" style="font-size:1.1rem;">auto_awesome</span>
+                            {{- if eq $rec.pickType "deal" }} 今が狙い目の理由
+                            {{- else if eq $rec.pickType "gem" }} 編集部の推しポイント
+                            {{- else if eq $rec.pickType "seasonal" }} 今の暮らしに効く理由
+                            {{- else if eq $rec.pickType "niche" }} 言われてみれば欲しい理由
+                            {{- else }} 編集部の推しポイント{{ end }}
                         </h4>
                         <p style="margin: 0; font-size: 0.95rem; font-weight: 600; color: var(--color-text-main);">{{-
                             $rec.whyBuyNow -}}</p>
