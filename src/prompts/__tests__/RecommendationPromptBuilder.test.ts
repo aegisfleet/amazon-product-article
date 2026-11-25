@@ -105,9 +105,9 @@ describe('RecommendationPromptBuilder', () => {
     expect(prompt).toContain('前回価格 ￥2,000');
     expect(prompt).toContain('GEMASIN001');
     expect(prompt).toContain('content/articles/gemasin001.md');
-    expect(prompt).toContain('`deal`（本気の値下げ）**2品**');
-    expect(prompt).toContain('`gem`（高スコア名品発掘）**3品**');
-    expect(prompt).toContain('`seasonal`（季節・生活シーン）**3品**');
+    expect(prompt).toContain('`deal`（本気の値下げ）**2〜3品**');
+    expect(prompt).toContain('`gem`（話題・高評価名品）**2〜3品**');
+    expect(prompt).toContain('`seasonal`（季節・最新トレンド）**2〜3品**');
     expect(prompt).toContain('`niche`（ニッチ・課題解決）**2品**');
     expect(prompt).not.toContain('いつでも買える単なる定番品の選定禁止');
   });
@@ -124,9 +124,19 @@ describe('RecommendationPromptBuilder', () => {
     const prompt = new RecommendationPromptBuilder().build();
 
     expect(prompt).not.toContain('サイト内詳細検証');
-    expect(prompt).toContain('外部Webエビデンスの調査と引用（必須）');
+    expect(prompt).toContain('外部Webエビデンスの調査と引用・静的カタログ引用の禁止（必須）');
     expect(prompt).toContain('amazon.co.jp');
     expect(prompt).toContain('amazon-hikaku.com');
+  });
+
+  it('should allow up to 5 unregistered trending picks and require external media-first flow without static catalogs', () => {
+    const prompt = new RecommendationPromptBuilder().build();
+
+    expect(prompt).not.toContain('記事が存在しない未調査商品の選定は厳禁とする');
+    expect(prompt).toContain('サイト未登録の新規トレンド商品（最大5品まで）');
+    expect(prompt).toContain('creators_get_item.py <ASIN>');
+    expect(prompt).toContain('外部メディア・ニュース起点の選定フロー');
+    expect(prompt).toContain('メーカー公式の静的な製品紹介ページ');
   });
 
   it('should include explicit prohibitions against coupon claims and require price discount wording', () => {
@@ -138,11 +148,11 @@ describe('RecommendationPromptBuilder', () => {
     expect(prompt).toContain('「クーポン」表記は禁止');
   });
 
-  it('should require verified article existence and prohibit fake sale claims for regular products', () => {
+  it('should require real ASIN verification and prohibit fake sale claims for regular products', () => {
     const builder = new RecommendationPromptBuilder();
     const prompt = builder.build();
 
-    expect(prompt).toContain('検証済み記事の存在が必須 (最重要)');
+    expect(prompt).toContain('既存記事あり商品とサイト未登録商品の配分（最大5品まで未登録を解禁）');
     expect(prompt).toContain('セールバッジのない通常商品へのセール表現の完全禁止 (最重要)');
     expect(prompt).toContain('セールバッジがない商品に「◯% OFF」は禁止');
   });

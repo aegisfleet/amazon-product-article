@@ -154,6 +154,14 @@ NON_EXTERNAL_SOURCE_DOMAINS = (
     "amazon-hikaku.com",
 )
 NON_DEAL_PICK_TYPES = {"gem", "seasonal", "niche"}
+MAX_UNREGISTERED_PICKS = 5
+FORBIDDEN_STATIC_CATALOG_SOURCE_WORDS = [
+    "公式製品ページ",
+    "公式製品・成分ページ",
+    "公式オンラインショップ",
+    "公式ショップ",
+    "公式ラインナップ",
+]
 
 
 def _is_non_external_source_url(url: str) -> bool:
@@ -173,7 +181,11 @@ def source_name_for_ratio(rec: Dict[str, Any]) -> str:
     return str(source.get("name", "")) if isinstance(source, dict) else ""
 
 
-def _validate_recommendations_list(data: Any, errors: List[str]):
+def _validate_recommendations_list(
+    data: Any,
+    errors: List[str],
+    investigations_dir: Optional[str] = "data/investigations",
+):
     """推薦商品リスト (today.json) の形式チェック"""
     required_fields = ["date", "headline", "searchContext", "recommendations"]
     for field in required_fields:
@@ -196,6 +208,8 @@ def _validate_recommendations_list(data: Any, errors: List[str]):
     image_urls: List[str] = []
     categories: Dict[str, int] = {}
     deal_like_count = 0
+    check_unregistered = bool(investigations_dir and os.path.isdir(investigations_dir))
+    unregistered_count = 0
 
     # searchContext.todayOverview の検証（長さ・システム処理表現の禁止）
     search_context = data.get("searchContext")
@@ -213,8 +227,15 @@ def _validate_recommendations_list(data: Any, errors: List[str]):
                 errors.append(f"recommendations[{i}] (ASIN: {rec.get('asin', 'unknown')}) に必須フィールド '{rf}' が見つかりません。")
         
         asin = rec.get("asin", "")
-        if not re.match(r'^[A-Z0-9]{10}$', str(asin).strip().upper()):
+        asin_str = str(asin).strip()
+        if not re.match(r'^[A-Z0-9]{10}$', asin_str.upper()):
             errors.append(f"recommendations[{i}] の ASIN '{asin}' は有効な10桁ASINではありません。")
+        elif check_unregistered:
+            is_registered = os.path.exists(os.path.join(investigations_dir, f"{asin_str.upper()}.json")) or os.path.exists(
+                os.path.join("content/articles", f"{asin_str.lower()}.md")
+            )
+            if not is_registered:
+                unregistered_count += 1
 
         price = rec.get("price")
         if price is None or not isinstance(price, (int, float)) or price <= 0:
@@ -264,12 +285,19 @@ def _validate_recommendations_list(data: Any, errors: List[str]):
             if word.lower() in source_name.lower():
                 errors.append(f"recommendations[{i}] (ASIN: {asin}) の 'source.name' ('{source_name}') に自己言及表現 '{word}' が含まれています。受賞歴・専門メディア・メーカー公式等の外部情報元を設定してください。")
         if pick_type in NON_DEAL_PICK_TYPES:
+            for word in FORBIDDEN_STATIC_CATALOG_SOURCE_WORDS:
+                if word in source_name:
+                    errors.append(f"recommendations[{i}] (ASIN: {asin}) の 'source.name' ('{source_name}') がメーカー公式の静的カタログページになっています。公開日や第三者評価のあるメディア記事・レビュー・アワード受賞・プレスリリース等を情報元に設定してください。")
             source_url = str(rec.get("source", {}).get("url", "") or "").strip() if isinstance(rec.get("source"), dict) else ""
             if not source_url or not source_url.startswith(("http://", "https://")) or _is_non_external_source_url(source_url):
                 errors.append(f"recommendations[{i}] (ASIN: {asin}, pickType: {pick_type}) の 'source.url' ('{source_url}') がAmazonまたは自サイトです。非セール枠では受賞歴・専門メディア・メーカー公式等の外部URLを設定してください。")
         for field_name, field_val in [("rankReason", rank_reason), ("whyBuyNow", why_buy_now), ("source.name", source_name)]:
             if "クーポン" in field_val:
                 errors.append(f"recommendations[{i}] (ASIN: {asin}) の '{field_name}' に禁止ワード 'クーポン' が含まれています。APIやデータからクーポンの有無は検証不能なため、「◯%OFF」「割引対象」「プライム会員限定セール」等の価格割引表記に修正してください。")
+
+    # 未登録商品の上限ガード
+    if check_unregistered and unregistered_count > MAX_UNREGISTERED_PICKS:
+        errors.append(f"サイト未登録の商品が {unregistered_count}件 含まれています。自動調査上限に合わせて最大 {MAX_UNREGISTERED_PICKS}件 以下にしてください。")
 
     # セール一辺倒の再発防止ガード
     if deal_like_count > MAX_DEAL_PICKS:
@@ -322,13 +350,13 @@ def _validate_investigation_artifact(analysis: Dict[str, Any], data: Any, errors
     _validate_metrics(data, errors)
     _validate_recommendation(analysis, errors)
 
-def validate_content(data: Any) -> List[str]:
+def validate_content(data: Any, investigations_dir: Optional[str] = "data/investigations") -> List[str]:
     """成果物の品質ガイドラインへの準拠を確認する"""
     errors = []
     
     # 推薦商品リスト (today.json) の形式チェック
     if "recommendations" in data and "headline" in data:
-        _validate_recommendations_list(data, errors)
+        _validate_recommendations_list(data, errors, investigations_dir=investigations_dir)
         return errors
 
     # 通常のアーティファクト (調査結果) の形式チェック
