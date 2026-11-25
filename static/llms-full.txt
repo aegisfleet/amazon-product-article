@@ -23,7 +23,7 @@ AIアシスタントや自律型エージェントがユーザーの商品選び
    - 主な引数: `query`（空白区切りAND、同義語・Sudachi形態素展開対応）、`category`（子カテゴリ名・親カテゴリ名・親スラッグ）、`brand`（日英表記ゆれ自動吸収）、`exclude_brand`（特定ブランド除外）、`exclude_category`（特定カテゴリ除外、親指定で配下全除外）、`min_score`（既定80）、`min_price` / `max_price`、`in_stock_only`（既定true）、`sort`（`score` / `price_asc` / `price_desc` / `relevance` / `newest`）、`updated_within_days`（直近N日以内調査）、`recipient`（ギフトの相手）/ `occasion`（ギフトのシーン）、`spec_filters`（スペック絞り込み。キー＝スペック項目名、値＝部分一致または `>=256GB` のような数値条件で単位換算対応。キーを持たない商品は対象外だが、「その他」内の「乾燥容量: 9.0kg」のようなラベル付き表記は拾う）、`limit` / `offset`。
    - 応答には `total_count`（全件数）、`facets`（全ヒット件数のブランド・カテゴリ・親カテゴリ・価格帯分布）、および結果が3件以下の場合の `suggestions`（どの条件を緩めると何件ヒットするか）が含まれます。
 2. `get_product`:
-   - ASIN指定で1商品の詳細（要約、カテゴリ、構造化スペック `specs`、在庫有無 `in_stock`、割引率 `savings_percentage`、セールバッジ `deal_badge`、最終調査日 `last_investigated`、採点根拠 `score_rationale`）を取得。
+   - ASIN指定で1商品の詳細（要約、カテゴリ、構造化スペック `specs`、在庫有無 `in_stock`、割引率 `savings_percentage`、セールバッジ `deal_badge`、最終調査日 `last_investigated`、採点根拠 `score_rationale`、採点根拠から抽出した加点理由 `pros`・減点理由 `cons`）を取得。単品のメリット・デメリットへの質問はこのツールだけで回答できます。
 3. `compare_products`:
    - 2〜5件のASINを横並びで構造化比較。各商品のスペック、採点根拠から抽出した長所（`pros`）・短所（`cons`）、および `comparison_summary`（最安商品・最高スコア商品・価格差 `price_spread`・スコア差 `score_spread`）を返却。
 4. `find_similar_products`:
