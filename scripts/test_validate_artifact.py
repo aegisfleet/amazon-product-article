@@ -112,8 +112,22 @@ def test_unregistered_picks_limit(tmp_path):
     # 5 registered + 5 unregistered -> passes
     assert validate_content(_data(), investigations_dir=str(inv_dir)) == []
 
-    # 4 registered + 6 unregistered -> fails
-    (inv_dir / "B000000004.json").unlink()
+    # 7 registered + 3 unregistered -> passes
+    for i in range(5, 7):
+        (inv_dir / f"B0{i:08d}.json").write_text("{}", encoding="utf-8")
+    assert validate_content(_data(), investigations_dir=str(inv_dir)) == []
+
+    # 8 registered + 2 unregistered -> fails (lower bound)
+    (inv_dir / "B000000007.json").write_text("{}", encoding="utf-8")
+    errs_low = validate_content(_data(), investigations_dir=str(inv_dir))
+    assert any("2件 しか含まれていません" in e for e in errs_low)
+
+    # < 10 items -> lower bound skipped
+    assert validate_content(_data([_rec(i) for i in range(8)]), investigations_dir=str(inv_dir)) == []
+
+    # 4 registered + 6 unregistered -> fails (upper bound)
+    for i in range(4, 8):
+        (inv_dir / f"B0{i:08d}.json").unlink()
     errs = validate_content(_data(), investigations_dir=str(inv_dir))
     assert any("サイト未登録の商品が 6件" in e for e in errs)
 

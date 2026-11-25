@@ -10,7 +10,6 @@ import path from 'node:path';
 import { formatRecommendationPrompt } from '../prompts/prompts';
 import { setGitHubOutput } from '../utils/github-actions';
 import { Logger } from '../utils/Logger';
-import { extractDiscoveryCandidates } from './extract-discovery-candidates';
 import { extractSaleCandidates } from './extract-sale-candidates';
 import { loadRecentRecommendedAsins } from './recommendation-history';
 
@@ -29,13 +28,8 @@ async function main(): Promise<void> {
 
     // 系統A: キャッシュ上の値下げ・セール候補 (tmp/sale_candidates.json)
     logger.info('Extracting sale candidates from cache...');
-    const sale = await extractSaleCandidates(undefined, undefined, 15, 2, undefined, undefined, undefined, recentAsins);
-
-    // 系統B: 非セール含む高スコア名品の発掘候補 (tmp/discovery_candidates.json)
-    const exclude = new Set<string>(recentAsins);
-    for (const c of sale.candidates) exclude.add(c.asin.toUpperCase());
-    const discovery = extractDiscoveryCandidates({ excludeAsins: exclude, limit: 20, maxPerGroup: 2 });
-    logger.info(`Candidates: sale=${sale.totalCandidates}, discovery=${discovery.totalCandidates}`);
+    const sale = await extractSaleCandidates(undefined, undefined, 10, 2, undefined, undefined, undefined, recentAsins);
+    logger.info(`Candidates: sale=${sale.totalCandidates}`);
 
     // 注目商品調査プロンプトを生成
     const prompt = formatRecommendationPrompt(maxProducts);

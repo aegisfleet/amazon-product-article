@@ -154,6 +154,7 @@ NON_EXTERNAL_SOURCE_DOMAINS = (
     "amazon-hikaku.com",
 )
 NON_DEAL_PICK_TYPES = {"gem", "seasonal", "niche"}
+MIN_UNREGISTERED_PICKS = 3
 MAX_UNREGISTERED_PICKS = 5
 FORBIDDEN_STATIC_CATALOG_SOURCE_WORDS = [
     "公式製品ページ",
@@ -295,9 +296,11 @@ def _validate_recommendations_list(
             if "クーポン" in field_val:
                 errors.append(f"recommendations[{i}] (ASIN: {asin}) の '{field_name}' に禁止ワード 'クーポン' が含まれています。APIやデータからクーポンの有無は検証不能なため、「◯%OFF」「割引対象」「プライム会員限定セール」等の価格割引表記に修正してください。")
 
-    # 未登録商品の上限ガード
+    # 未登録商品の上限・下限ガード
     if check_unregistered and unregistered_count > MAX_UNREGISTERED_PICKS:
         errors.append(f"サイト未登録の商品が {unregistered_count}件 含まれています。自動調査上限に合わせて最大 {MAX_UNREGISTERED_PICKS}件 以下にしてください。")
+    if check_unregistered and len(recs) >= 10 and all(rec.get("pickType") for rec in recs) and unregistered_count < MIN_UNREGISTERED_PICKS:
+        errors.append(f"サイト未登録の新規トレンド商品が {unregistered_count}件 しか含まれていません。外部メディア起点の新規発掘を最低 {MIN_UNREGISTERED_PICKS}件（最大 {MAX_UNREGISTERED_PICKS}件）含めてください。")
 
     # セール一辺倒の再発防止ガード
     if deal_like_count > MAX_DEAL_PICKS:

@@ -1,6 +1,5 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import type { DiscoveryCandidatesFile } from '../scripts/extract-discovery-candidates';
 import type { SaleCandidatesFile } from '../scripts/extract-sale-candidates';
 
 /**
@@ -10,10 +9,9 @@ import type { SaleCandidatesFile } from '../scripts/extract-sale-candidates';
 export class RecommendationPromptBuilder {
   private readonly today: string;
   private readonly candidatesPath: string;
-  private readonly discoveryPath: string;
   private readonly maxProducts: number;
 
-  constructor(candidatesPath?: string, maxProducts = 10, discoveryPath?: string) {
+  constructor(candidatesPath?: string, maxProducts = 10) {
     // JSTで現在の日付を取得 (YYYY-MM-DD)
     this.today = new Date()
       .toLocaleDateString('ja-JP', {
@@ -25,7 +23,6 @@ export class RecommendationPromptBuilder {
       .replaceAll('/', '-');
 
     this.candidatesPath = candidatesPath || path.join(process.cwd(), 'tmp/sale_candidates.json');
-    this.discoveryPath = discoveryPath || path.join(process.cwd(), 'tmp/discovery_candidates.json');
     this.maxProducts = maxProducts;
   }
 
@@ -42,7 +39,7 @@ export class RecommendationPromptBuilder {
         return '';
       }
 
-      const candidateLines = data.candidates.slice(0, 15).map((item, index) => {
+      const candidateLines = data.candidates.slice(0, 10).map((item, index) => {
         const limitedLabel = item.isLimitedTimeSale ? '🔥【限定セール】' : '';
         const badge = item.dealBadge ? ` [${item.dealBadge}]` : '';
         const discount = item.savingsPercentage ? ` (${item.savingsPercentage}% OFF)` : '';
@@ -59,8 +56,8 @@ export class RecommendationPromptBuilder {
       return `
 ---
 
-## 【系統A：事前抽出された高品質・高スコア候補商品リスト（値下げ・セール。deal枠・seasonal枠の材料）】
-以下はキャッシュ上の前回価格比の値下げ、およびセールバッジを基に決定論的に抽出した候補である（直近に掲載した商品は除外済み）。
+## 【参考候補：キャッシュ上の実値下げ・セール候補（最大10件・deal枠の材料）】
+以下はキャッシュ上の前回価格比の値下げ、およびセールバッジを基に決定論的に抽出した候補である（直近に掲載した商品は除外済み）。あくまで \`deal\` 枠（2〜3品）の参考リストであり、10品すべてをこのリストから選んではならない。
 
 ⚠️ **【リアルタイムAPI検証の義務】** ⚠️
 - ここに記載されたセールバッジや価格は「過去のキャッシュ情報」に過ぎない。**採用する際は必ず事前に \`uv run python scripts/creators_get_item.py <ASIN>\` を実行し、現在の最新の \`dealBadge\` と価格を確認せよ**。
@@ -74,43 +71,8 @@ ${candidateLines.join('\n')}
     }
   }
 
-  private loadDiscoveryCandidatesPromptSection(): string {
-    if (!fs.existsSync(this.discoveryPath)) {
-      return '';
-    }
-
-    try {
-      const raw = fs.readFileSync(this.discoveryPath, 'utf-8');
-      const data = JSON.parse(raw) as DiscoveryCandidatesFile;
-
-      if (!data.candidates || data.candidates.length === 0) {
-        return '';
-      }
-
-      const lines = data.candidates.slice(0, 20).map((item, index) => {
-        const price = item.price ? ` | 価格帯: ${item.price}` : '';
-        const image = item.imageUrl ? ` | 画像URL: ${item.imageUrl}` : '';
-        return `${index + 1}. ASIN: ${item.asin} | ${item.title} | 検証スコア: ${item.score}点 | 親グループ: ${item.group} | カテゴリ: ${item.category}${price} | 記事: ${item.articlePath}${image}`;
-      });
-
-      return `
----
-
-## 【系統B：高スコア名品の発掘候補リスト（gem枠・seasonal枠・niche枠の材料）】
-以下はサイト内の詳細検証でスコア80点以上を獲得した名品で、**セール中かどうかは問わない**。日付シードで毎日入れ替わる。直近に掲載した商品・系統Aの商品は除外済み。
-- ここに記載の価格は参考値である。\`price\` には \`uv run python scripts/creators_get_item.py <ASIN>\` で取得できた現在価格を設定せよ（取得不可なら記載の価格を数値化）。
-- セールバッジを確認できていない商品に、割引・値下げ・セールを示唆する表現を使ってはならない。
-
-${lines.join('\n')}
-`;
-    } catch {
-      return '';
-    }
-  }
-
   public build(): string {
     const saleCandidatesSection = this.loadSaleCandidatesPromptSection();
-    const discoveryCandidatesSection = this.loadDiscoveryCandidatesPromptSection();
     const n = this.maxProducts;
 
     return `【ミッション：本日（${this.today}）の「知らなかった良品の再発見＋厳選セール」${n}選の編集】
@@ -118,7 +80,7 @@ ${lines.join('\n')}
 本日は、特定のジャンルに偏らず、幅広いカテゴリから確かな品質と信頼性を持つ${n}個の商品を厳選せよ。
 既存の \`data/recommendations/today.json\` の内容は考慮不要。毎日新しい情報を上書きするため、過去のデータと大きく乖離しても問題ない。本日の季節・生活シーンと最新のセール情報に基づいた、最高の${n}選を提案せよ。
 最重要ルールは、**「なぜこの商品を今おすすめするのか」の根拠となる『情報元（エビデンス）』を必ず明記せよ**。客観的な事実に基づかない推奨は無価値である。
-${saleCandidatesSection}${discoveryCandidatesSection}
+${saleCandidatesSection}
 ---
 
 ## 自律性に関する基本原則（最重要：確認・アドバイス要求の完全禁止と自律完遂）
@@ -126,7 +88,7 @@ ${saleCandidatesSection}${discoveryCandidatesSection}
 - **完全自動・非同期バッチ実行環境（重要）**: 本システムは完全自動・非同期バッチ（無人環境）で実行されており、ユーザー（人間）からの回答や指示は物理的に一切得られない。質問や相談、確認メッセージを送信した時点でタスクは永久に停止し、完全に失敗・破棄となる。
 - **変更確定前（Before finalize）の事前確認・アドバイス要求の完全禁止 (最重要)**:
   「Before I finalize these changes, do you have any additional advice or specific checks you would like me to perform...?」「この内容で確定（finalize）してよろしいでしょうか？」「追加のアドバイスやチェックすべき点はありますか？」といった、**成果物の確定（finalize）・コミット・PR作成前の最終確認やアドバイス要求は絶対に禁止**する。プロンプトに記載された全ルールはすでに確定した要件であり、人間の追加レビューを待つ必要は一切ない。
-- **事前抽出候補の最優先活用**: 上記の系統A（値下げ）・系統B（発掘）の候補商品を最優先で採用し、客観的で魅力的な解説文を作成せよ。
+- **外部メディア起点＋未登録3〜5品の必須構成**: 参考候補（実値下げリスト）だけで10品を埋めることは禁止する（\`creators_search_items.py\` / \`creators_get_item.py\` が実行不可な環境へのフォールバック時のみ例外）。必ず外部メディアの直近記事・受賞・新発売情報から**サイト未登録の新規トレンド商品を最低3品・最大5品**発掘し、既存記事ありの商品（5〜7品）と組み合わせて計${n}品を構成せよ。
 - **自己レビューと自律的リトライ**: 選定した商品が不適切（エビデンスが弱い、セールの実態がない、カテゴリが重複しているなど）であると自己レビューで気づいた場合は、立ち止まらずにそれらを除外し、代わりの候補を自律的に選べ。10個すべてが「自信を持って今日おすすめできる」状態になるまで、繰り返し調査と選定を行え。
 - **手元データでの自律完遂**: 曖昧な仕様や未決定事項がある場合、またはツールの実行エラーに直面した場合は、手元のデータや文脈から自律的かつ合理的に判断し、あなたの判断だけで処理を完遂すること。
 
@@ -135,19 +97,23 @@ ${saleCandidatesSection}${discoveryCandidatesSection}
 ## 調査・選定の進め方
 1. **品質と信頼性の絶対厳守 (最重要方針)**:
    - **ノーブランド・無名業者の粗悪品（耳かきカメラ、怪しいマッサージ器、ノーブランド充電器等）の混入を絶対に禁止する**。
-   - **既存記事あり商品とサイト未登録商品の配分（最大5品まで未登録を解禁）**:
-     - **既存記事ありの商品（5品以上）**: 当リポジトリの \`content/articles/<asin>.md\` が存在するスコア75点以上の商品（系統A・系統B、または外部記事で見つけた商品がサイト内に登録済みの場合）。
-     - **サイト未登録の新規トレンド商品（最大5品まで）**: 直近の外部メディア記事・セール速報・アワード受賞・新製品レビュー等で取り上げられた実在商品。採用する場合は**必ず \`uv run python scripts/creators_get_item.py <ASIN>\` を実行し、Amazon上で実在・在庫あり・最新価格を確認できたものに限る**（APIが実行不可の環境では未登録商品を採用しない）。
+   - **既存記事あり商品（5〜7品）とサイト未登録商品（必須：3〜5品）の配分**:
+     - **未登録の新規トレンド商品（必須：3〜5品）**: 実行日（${this.today}）から直近7〜30日以内の国内主要メディア（ASCII.jp、家電Watch、AV Watch、価格.comマガジン、ITmedia、Gizmodo Japan、ROOMIE、MONOQLO、マイベスト等）やアワード発表（VGP、グッドデザイン賞、価格.comプロダクトアワード等）をWeb検索し、**今まさに話題・新発売・実機高評価・大幅値下げされている商品**から、当リポジトリに未登録（\`data/investigations/<ASIN>.json\` も \`content/articles/<asin>.md\` も存在しない）の商品を**最低3品・最大5品**必ず選定せよ。
+     - **既存記事ありの商品（5〜7品）**: 参考候補（実値下げリスト）からの本気の目玉（2〜3品）に加え、外部メディアの直近記事で見つけた商品のうち当リポジトリに \`content/articles/<asin（小文字）>.md\` が存在する商品（スコア75点以上）を組み合わせて計${n}品を構成せよ。
+     - **既存商品だけで10品を埋めることは禁止**（ただし認証エラー等で \`creators_search_items.py\` / \`creators_get_item.py\` が一切実行できない環境へのフォールバック時のみ例外とする）。
      - ノーブランド粗悪品・無名業者の製品・架空ASINの混入は厳禁とする。
    - 割引率の高さ（「50% OFF」「60% OFF」等の表示）だけで商品を選んではならない。参考価格を吊り上げた二重価格商品を徹底的に排除せよ。
-2. **外部メディア・ニュース起点の選定フロー**:
-   - **ステップ1（直近の外部トレンド・記事リサーチ）**: 実行日（${this.today}）から直近7〜30日以内の国内主要メディア（ASCII.jp、家電Watch、AV Watch、価格.comマガジン、ITmedia、Gizmodo Japan、ROOMIE、MONOQLO、マイベスト等）やアワード発表（VGP、グッドデザイン賞、価格.comプロダクトアワード等）をWeb検索し、**「今まさに話題・高評価・新発売・大幅値下げされている商品」**を起点に候補を洗い出せ。
-   - **ステップ2（既存記事との照合＆未登録枠の配分）**: 見つけた商品について \`content/articles/<asin（小文字）>.md\` の有無を確認し、既存記事あり（5品以上）＋未登録新規（最大5品）で計${n}品を構成せよ。系統A・系統Bからも、外部メディアで評価・話題性を裏付けられる商品や本気の値下げ品を組み合わせよ。
+2. **外部メディア起点の選定＆ASIN特定フロー**:
+   - **ステップ1（直近の外部トレンド・記事リサーチ）**: 実行日（${this.today}）から直近7〜30日以内の国内主要メディアやアワード発表をWeb検索し、**「今まさに話題・高評価・新発売・大幅値下げされている商品」**を起点に候補を洗い出せ。
+   - **ステップ2（\`creators_search_items.py\` によるASIN特定と \`creators_get_item.py\` による実在確定）**:
+     1. 記事内の商品名・型番で \`uv run python scripts/creators_search_items.py "<商品名・型番>"\` を実行し、\`tmp/search_results.json\` から正確な10桁ASINを特定せよ（必要に応じ \`--search-index Electronics\` や \`-o tmp/search_out.json\` を使用）。
+     2. 特定したASINに対し \`uv run python scripts/creators_get_item.py <ASIN>\` を実行し、実在・在庫あり・最新価格・\`dealBadge\`・画像URLを確認せよ。
+     3. 取得できたASINについて \`data/investigations/<ASIN>.json\` および \`content/articles/<asin（小文字）>.md\` の有無を確認し、既存枠（5〜7品）か未登録枠（3〜5品）かを正確にカウントせよ。
 3. **多角的な商品選定（カテゴリの分散）**:
    - 意図的にジャンルを分散させ、1つのテーマに偏らないようにせよ（同一カテゴリは最大2品まで）。
 4. **4枠編集ミックス（\`pickType\`）**: 次の配分で${n}品を構成し、各商品に \`pickType\` を必ず設定せよ。
-   - \`deal\`（本気の値下げ）**2〜3品**: 系統Aまたは外部セール速報から。リアルタイムAPIで最新の \`dealBadge\` を確認でき、前回価格より実際に下がっている二重価格でない目玉のみ。
-   - \`gem\`（話題・高評価名品）**2〜3品**: 外部メディアの高評価レビューやアワード受賞作、または系統Bの名品。
+   - \`deal\`（本気の値下げ）**2〜3品**: 参考候補（実値下げリスト）または外部セール速報から。リアルタイムAPIで最新の \`dealBadge\` を確認でき、前回価格より実際に下がっている二重価格でない目玉のみ。
+   - \`gem\`（話題・高評価名品）**2〜3品**: 外部メディアの高評価レビューやアワード受賞作。
    - \`seasonal\`（季節・最新トレンド）**2〜3品**: 実行日（${this.today}）の季節・気候・最新トレンドに刺さるもの。
    - \`niche\`（ニッチ・課題解決）**2品**: 自分では検索しないが「言われてみれば欲しい」一点突破型の便利・面白アイテム。
    - \`deal\` は最大でも5品以下を維持せよ。
@@ -171,7 +137,7 @@ ${saleCandidatesSection}${discoveryCandidatesSection}
      - **「クーポン適用」「クーポン対象」等のクーポン表現の完全禁止 (最重要)**:
         事前抽出リストやCreators APIには「商品ページで適用するクーポン」の情報は含まれず、判定も保証も不可能である。「クーポン」という語は一切使用してはならない。割引の記載は本体価格自体の割引事実のみを客観的に記述せよ。
    - **実在するASINと最新API状態の絶対保証**: \`uv run python scripts/creators_get_item.py ASIN\` で現在の最新価格と \`dealBadge\` を取得せよ。架空のASINは絶対に生成・追加してはならない。
-   - **API実行不可時の自律フォールバック**: 認証エラー等で \`creators_get_item.py\` が実行できない場合も作業を中断せず、候補リスト（系統A・系統Bの登録済み商品）の ASIN・商品名・カテゴリ・価格・画像URLを活用して構成せよ。この場合、未登録商品の採用およびセール表現・\`deal\` 枠の作成は行わないこと。
+   - **API実行不可時の自律フォールバック**: 認証エラー等で \`creators_get_item.py\` / \`creators_search_items.py\` が実行できない場合も作業を中断せず、参考候補リストの ASIN・商品名・カテゴリ・価格・画像URLを活用して構成せよ。この場合、未登録商品の採用およびセール表現・\`deal\` 枠の作成は行わないこと。
 8. **選定理由の明記と多様化**:
    - 同じ文言を安易にコピペしてはならない。\`rankReason\` には枠に応じた具体的な掲載理由（例: \`VGP2026受賞\`、\`ASCIIレビュー高評価\`、\`冬の乾燥対策\`、\`前回比15%値下げ\` など、20文字以内）を設定せよ。
 9. **文章品質ルール（厳守）**:
@@ -237,6 +203,7 @@ ${saleCandidatesSection}${discoveryCandidatesSection}
 ## 完了の条件（チェックリスト）
 以下の条件をすべて満たしてセッションを終了すること：
 - [ ] \`data/recommendations/today.json\` が生成され、${n}件の厳選商品が含まれている。
+- [ ] ${n}品のうち、サイト未登録の新規トレンド商品が3〜5品（既存記事あり5〜7品）含まれており、全件の実在・最新価格を Creators API で確認している。
 - [ ] 非セール枠（\`gem\` / \`seasonal\` / \`niche\`）の全商品に、\`amazon.co.jp\`・自サイト以外の実在する外部URLが \`source.url\` として設定され、リンクチェックを通過している。
 - [ ] \`uv run python scripts/validate_artifact.py data/recommendations/today.json\` を実行し、エラー件数が0件である。
 - [ ] \`today.json\` 以外の不要な一時ファイルやスクリプトがコミットに含まれていない。

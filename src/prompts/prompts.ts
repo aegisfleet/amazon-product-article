@@ -18,6 +18,6 @@ export function formatInvestigationPrompt(product: Product): string {
 /**
  * 本日の注目商品調査プロンプトを生成
  */
-export function formatRecommendationPrompt(maxProducts = 10, candidatesPath?: string, discoveryPath?: string): string {
-  return new RecommendationPromptBuilder(candidatesPath, maxProducts, discoveryPath).build();
+export function formatRecommendationPrompt(maxProducts = 10, candidatesPath?: string): string {
+  return new RecommendationPromptBuilder(candidatesPath, maxProducts).build();
 }

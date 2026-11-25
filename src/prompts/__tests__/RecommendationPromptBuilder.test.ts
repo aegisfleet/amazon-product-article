@@ -49,7 +49,7 @@ describe('RecommendationPromptBuilder', () => {
     const builder = new RecommendationPromptBuilder(dummyCandidatesPath);
     const prompt = builder.build();
 
-    expect(prompt).toContain('事前抽出された高品質・高スコア候補商品リスト');
+    expect(prompt).toContain('参考候補：キャッシュ上の実値下げ・セール候補');
     expect(prompt).toContain('TESTASIN123');
     expect(prompt).toContain('テストセール商品');
     expect(prompt).toContain('[タイムセール]');
@@ -58,8 +58,7 @@ describe('RecommendationPromptBuilder', () => {
     expect(prompt).not.toContain('Keepa価格推移グラフによる');
   });
 
-  it('should include both candidate sections and the 4-slot mix rules', () => {
-    const discoveryPath = path.join(tmpDir, 'discovery_candidates.json');
+  it('should include System A reference list and the 4-slot mix rules without System B', () => {
     fs.writeFileSync(
       dummyCandidatesPath,
       JSON.stringify({
@@ -79,32 +78,14 @@ describe('RecommendationPromptBuilder', () => {
         ],
       }),
     );
-    fs.writeFileSync(
-      discoveryPath,
-      JSON.stringify({
-        extractedAt: '',
-        seed: '2026-11-25',
-        totalCandidates: 1,
-        candidates: [
-          {
-            asin: 'GEMASIN001',
-            title: '発掘名品',
-            score: 91,
-            category: '充電器',
-            group: 'PC周辺機器',
-            articlePath: 'content/articles/gemasin001.md',
-          },
-        ],
-      }),
-    );
 
-    const prompt = new RecommendationPromptBuilder(dummyCandidatesPath, 10, discoveryPath).build();
+    const prompt = new RecommendationPromptBuilder(dummyCandidatesPath, 10).build();
 
-    expect(prompt).toContain('系統A');
-    expect(prompt).toContain('系統B');
+    expect(prompt).toContain('参考候補：キャッシュ上の実値下げ・セール候補');
     expect(prompt).toContain('前回価格 ￥2,000');
-    expect(prompt).toContain('GEMASIN001');
-    expect(prompt).toContain('content/articles/gemasin001.md');
+    expect(prompt).not.toContain('発掘候補リスト');
+    expect(prompt).not.toContain('discovery_candidates');
+    expect(prompt).not.toContain('事前抽出候補の最優先活用');
     expect(prompt).toContain('`deal`（本気の値下げ）**2〜3品**');
     expect(prompt).toContain('`gem`（話題・高評価名品）**2〜3品**');
     expect(prompt).toContain('`seasonal`（季節・最新トレンド）**2〜3品**');
@@ -129,13 +110,14 @@ describe('RecommendationPromptBuilder', () => {
     expect(prompt).toContain('amazon-hikaku.com');
   });
 
-  it('should allow up to 5 unregistered trending picks and require external media-first flow without static catalogs', () => {
+  it('should require 3 to 5 unregistered trending picks and creators_search_items.py workflow', () => {
     const prompt = new RecommendationPromptBuilder().build();
 
     expect(prompt).not.toContain('記事が存在しない未調査商品の選定は厳禁とする');
-    expect(prompt).toContain('サイト未登録の新規トレンド商品（最大5品まで）');
+    expect(prompt).toContain('未登録の新規トレンド商品（必須：3〜5品）');
+    expect(prompt).toContain('creators_search_items.py');
     expect(prompt).toContain('creators_get_item.py <ASIN>');
-    expect(prompt).toContain('外部メディア・ニュース起点の選定フロー');
+    expect(prompt).toContain('外部メディア起点の選定＆ASIN特定フロー');
     expect(prompt).toContain('メーカー公式の静的な製品紹介ページ');
   });
 
@@ -152,7 +134,7 @@ describe('RecommendationPromptBuilder', () => {
     const builder = new RecommendationPromptBuilder();
     const prompt = builder.build();
 
-    expect(prompt).toContain('既存記事あり商品とサイト未登録商品の配分（最大5品まで未登録を解禁）');
+    expect(prompt).toContain('既存記事あり商品（5〜7品）とサイト未登録商品（必須：3〜5品）の配分');
     expect(prompt).toContain('セールバッジのない通常商品へのセール表現の完全禁止 (最重要)');
     expect(prompt).toContain('セールバッジがない商品に「◯% OFF」は禁止');
   });
