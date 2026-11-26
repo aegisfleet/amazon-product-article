@@ -1,0 +1,298 @@
+{
+  "analysis": {
+    "productName": "バッファロー AirStation WSR6500BE6P/NBK (Wi-Fi 7 ルーター)",
+    "parentAsin": "B0FTMB2CNK",
+    "productDescription": "6GHz帯を省いたデュアルバンド構成により導入しやすさを重視した、バッファローのミドルレンジWi-Fi 7（IEEE 802.11be）対応ルーター。5GHz帯4ストリーム（最大5764Mbps）＋2.4GHz帯2ストリーム（最大688Mbps）、2.5Gbps対応INTERNETポート、EasyMesh、およびIoTセキュリティ制度「JC-STAR」★1適合を備えるAmazon.co.jp限定ブラックモデル。",
+    "productUsage": [
+      "1Gbps超～2.5Gbpsクラスの高速光回線環境での無線LAN構築",
+      "複数台のスマートフォン・PC・スマート家電の同時接続",
+      "EasyMesh対応機器と組み合わせた戸建て・広いマンションでのメッシュWi-Fi構築",
+      "既存のバッファロー製ルーターからの設定引き継ぎ買い替え"
+    ],
+    "positivePoints": [
+      "5GHz帯4ストリーム（最大5764Mbps）＋2.4GHz帯2ストリーム（最大688Mbps）の計6本アンテナ構成により、2ストリーム対応スマホ等を複数台同時接続しても帯域に余裕がある設計",
+      "INTERNET（WAN）ポートが2.5GBASE-T（最大2.5Gbps）に対応し、ITmedia PC USERの実測検証でWi-Fi 7端末（近距離）にて下り平均1464Mbps・上り平均1442Mbpsを記録",
+      "Wi-Fi 7のMLO（Multi-Link Operation）が初期設定で有効化されており、同梱のセットアップカードに『2.4/5GHz共通（MLO有効）』『5GHz専用』『2.4GHz専用』の3種類の接続用QRコードを用意",
+      "バッファロー旧機種からWi-Fi設定やプロバイダ設定を引き継げる『スマート引っ越し』機能と専用引っ越しガイド（紙マニュアル）を同梱",
+      "日本のIoT製品セキュリティ評価制度『JC-STAR』の★1（レベル1）に適合（登録番号：2026020100001550）",
+      "幅60mm×高さ177mm×奥行165mm・約500gのアンテナ内蔵型スリム筐体で、縦置き・壁掛けの両方に対応"
+    ],
+    "negativePoints": [
+      "6GHz帯に非対応のデュアルバンド仕様であるため、Wi-Fi 7の320MHz幅通信や混雑の少ない6GHz帯は利用できない",
+      "有線LAN側（機器側）の3ポートがすべて1Gbps（1000BASE-T）止まりであり、有線接続機器で2.5Gbps以上の高速通信を行うには別売りのスイッチングハブや上位機種が必要",
+      "外出先からスマートフォンアプリ『AirStation』経由でルーターを操作するリモート管理機能に非対応",
+      "調査時点のAmazon販売価格（￥26,480）は、発売当初の実売価格（約1.9万円前後）と比較して高く、10Gポート搭載の競合機（TP-Link Archer BE450等）や同クラス他社機（エレコム WRC-W702-B等）と比べ価格面での優位性が薄い"
+    ],
+    "useCases": [
+      "リビングのテレビ周辺に黒色筐体をすっきり設置し、家族全員のスマホやゲーム機を同時接続する家庭環境",
+      "1Gbps超の光回線（2G・10Gプラン等）を契約しており、Wi-Fiのボトルネックを解消したい戸建て・マンション",
+      "従来のバッファロー製Wi-Fiルーターから、家電やスマホの再設定の手間を最小限にして買い替えたい環境"
+    ],
+    "userStories": [
+      {
+        "userType": "高速光回線を利用する専門レビュアー（ITmedia PC USER検証）",
+        "scenario": "1Gbps超のインターネット回線環境で、Wi-Fi 7対応スマートフォン（Galaxy Z Flip7）およびWi-Fi 6対応PCを用いて、同一部屋と最も離れた仕事部屋で通信速度を検証",
+        "experience": "2.5Gbps対応のWANポートと5GHz帯4ストリーム構成を決め手に本機を導入し、設置部屋でのWi-Fi 7計測で下り平均1464Mbps（最高1706Mbps）・上り平均1442Mbpsという1Gbpsの壁を大きく超える実測値を記録した。スマート家電やPCが多数置かれた最も離れた仕事部屋でも下り平均441Mbps・上り平均500Mbpsを維持し、Wi-Fi 6端末でも設置部屋で下り平均1009Mbps超と、従来機からの速度向上を明確に体感できる結果となった。",
+        "supportingSourceIds": [
+          "src-4"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ネットワーク機器専門ライター（INTERNET Watch検証）",
+        "scenario": "旧型バッファロー製ルーターからの買い替えおよびWi-Fi 7のMLO接続環境の使い勝手を検証",
+        "experience": "スペックや価格だけで見るとTP-Link等の競合機種に見劣りする面もあるが、本機を選んだ理由は設置・接続・移行のきめ細かな配慮にある。標準でMLOがオンになっており、付属カードのQRコードを読み込むだけで自動的にMLO接続が完了するうえ、端末との相性でMLOが不安定な場合も5GHz専用・2.4GHz専用のSSIDへすぐ切り替えられる。また『スマート引っ越し』機能で古いバッファロー機から設定を丸ごと移行できた点が高く評価された一方、外出先からのリモート管理に非対応な点は親戚宅の管理用途などでは物足りなさが残った。",
+        "supportingSourceIds": [
+          "src-3"
+        ],
+        "sentiment": "mixed"
+      },
+      {
+        "userType": "戸建て・3LDKマンションのファミリー層（公式導入検証）",
+        "scenario": "水回りや壁を挟む間取りで、家族が複数端末で動画視聴やWeb会議を同時に行う環境での運用",
+        "experience": "6GHz帯対応のハイエンド機は対応端末が限られ価格も高いため、普及している5GHz帯を4ストリームに強化した本機を選択した。外付けアンテナのないスリムな縦型ボディはリビングに置いても目立たず、付属スタンドで壁掛け設置して高い位置に配置できるため電波の通りを確保しやすい。キッチンや浴室を挟む間取りでも、2.4GHz帯との併用やEasyMeshによる拡張で離れや子ども部屋まで安定した通信環境を構築できた。",
+        "supportingSourceIds": [
+          "src-2"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "専門メディアの実機検証やレビュー全体を通じて、『最新規格のWi-Fi 7と2.5G WANポートを実用的な構成にまとめ、日本メーカーならではの導入・移行のしやすさを追求した優等生モデル』として高く評価されている。実測で1.4Gbpsを超える高速性や、MLO標準オン＋用途別3種SSIDの用意、『スマート引っ越し』による買い替えの容易さが満足度を支えている。一方で、6GHz帯非対応や有線LAN側1Gbps上限、リモート管理非対応といった割り切り仕様に加え、調査時点の価格（￥26,480）は発売初期より上昇しているため、純粋なスペック対価格比（コスパ）を最優先するユーザーには競合機種の方が魅力的に映る場合があり、設定の安心感や国内メーカーのサポート・移行機能を重視する層に満足度が高い製品となっている。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "WSR6500BE6P-BK : Wi-Fiルーター : AirStation | バッファロー公式製品ページ",
+        "url": "https://www.buffalo.jp/product/detail/wsr6500be6p-bk.html",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-10-14",
+        "author": "株式会社バッファロー",
+        "conflictOfInterest": "none",
+        "notes": "公式スペック（5GHz 5764Mbps / 2.4GHz 688Mbps、WAN 2.5Gbps、LAN 1Gbps×3、EasyMesh、寸法60×177×165mm、約500g）を確認"
+      },
+      {
+        "id": "src-2",
+        "name": "家族みんなで高速接続Wi-Fiを安定して使える高コスパWi-Fi 7対応ルーター | デジラボ（バッファロー公式）",
+        "url": "https://www.buffalo.jp/media/review-wsr6500be6p/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-11-01",
+        "author": "株式会社バッファロー（デジラボ）",
+        "conflictOfInterest": "disclosed",
+        "notes": "5GHz帯4ストリーム強化の設計意図、壁掛け設置方法、3LDK・戸建てでのEasyMesh活用事例を確認"
+      },
+      {
+        "id": "src-3",
+        "name": "バッファロー「WSR6500BE6P」、3つの“答え”で独自の存在感を放つミドルレンジWi-Fi 7ルーター【イニシャルB】 - INTERNET Watch",
+        "url": "https://internet.watch.impress.co.jp/docs/column/shimizu/2057625.html",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2025-11-04",
+        "author": "清水 理史",
+        "conflictOfInterest": "none",
+        "notes": "詳細スペック表、MLO標準オンと3種類のQRコード、スマート引っ越し機能の利便性、リモート管理非対応などの注意点を抽出"
+      },
+      {
+        "id": "src-4",
+        "name": "バッファローのWi-Fi 7ルーター「AirStation WSR6500BE6P」を試す 2.5Gbps対応で約2万円 コスパの良さが光る - ITmedia PC USER",
+        "url": "https://www.itmedia.co.jp/pcuser/articles/2512/05/news113.html",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2025-12-05",
+        "author": "ITmedia PC USER",
+        "conflictOfInterest": "none",
+        "notes": "Galaxy Z Flip7での実測速度（近距離下り平均1464Mbps/上り1442Mbps、遠距離下り平均441Mbps/上り500Mbps）およびWi-Fi 6端末での実測を確認"
+      },
+      {
+        "id": "src-5",
+        "name": "Amazon.co.jp 商品公式ページ（B0FSCNXC6B）",
+        "url": "https://www.amazon.co.jp/dp/B0FSCNXC6B",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-10-14",
+        "author": "Amazon.co.jp / バッファロー",
+        "conflictOfInterest": "disclosed",
+        "notes": "調査時点の販売価格￥26,480、JC-STAR★1適合登録番号（2026020100001550）、Amazon.co.jp限定モデルWSR6500BE6P/NBKの仕様を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "2.5Gbps対応INTERNETポートと5GHz 4ストリームにより、高速光回線のポテンシャルを活かした実効速度を発揮する",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-4"
+        ],
+        "crossChecked": true,
+        "notes": "ITmedia PC USERの実測テストにて、Wi-Fi 7対応端末で設置部屋平均1464Mbps（最高1706Mbps）、Wi-Fi 6端末でも平均1009Mbps超を記録し、1Gbps超の通信性能が実証されている"
+      },
+      {
+        "claim": "MLOと6本の内蔵アンテナにより多台数接続や離れた部屋でも安定した通信を維持する",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-2",
+          "src-3",
+          "src-4"
+        ],
+        "crossChecked": true,
+        "notes": "INTERNET WatchでMLO標準有効と3種SSIDの切り替え設計が確認され、ITmediaでも障害物や他機器が多い離れた部屋で下り平均441Mbpsを維持したことが報告されている"
+      },
+      {
+        "claim": "JC-STAR★1適合による高いIoTセキュリティとスマート引っ越しによるスムーズな移行を提供する",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-3",
+          "src-5"
+        ],
+        "crossChecked": true,
+        "notes": "Amazon公式商品仕様にJC-STAR★1登録番号が明記され、INTERNET Watchでもスマート引っ越しと専用マニュアルによる移行の容易さが確認されている"
+      }
+    ],
+    "lastInvestigated": "2026-11-26",
+    "investigatedPrice": "￥26,480",
+    "competitiveAnalysis": [
+      {
+        "name": "エレコム Wi-Fi 7 ルーター WRC-W702-B",
+        "asin": "B0G5N4FZ8H",
+        "priceComparison": "エレコム製の方が大幅に安価であり、同等の無線スペック（5764+688Mbps）かつ2.5Gbpsポート搭載でありながら高いコストパフォーマンスを持つ。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7デュアルバンド（5GHz最大5764Mbps＋2.4GHz最大688Mbps）、有線2.5Gbps対応、EasyMesh対応、日本メーカー製",
+          "相違点：本商品はJC-STAR★1適合およびバッファローのスマート引っ越しに対応し、エレコム機はF-Secure SENSE（1年ライセンス）や離れ家モードを搭載"
+        ],
+        "differentiators": [
+          "バッファロー WSR6500BE6P/NBKの利点：旧バッファロー機からのスマート引っ越し機能やJC-STAR★1適合の公的セキュリティ基準、EasyMeshでのバッファロー製品との親和性を重視するなら本機が適している",
+          "エレコム WRC-W702-Bの利点：同等の無線通信速度と2.5Gbps有線ポートをより安価に導入したい場合や、F-Secureによるセキュリティ機能を重視する場合はエレコム機が有利"
+        ]
+      },
+      {
+        "name": "エレコム Wi-Fi 7 ルーター WRC-BE64QS-BA",
+        "asin": "B0HPFHNWDX",
+        "priceComparison": "エレコム製の方が大幅に安価であり、価格を抑えて5GHz帯5764MbpsクラスのWi-Fi 7環境を導入したい場合の有力な選択肢となる。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7デュアルバンド（5GHz最大5764Mbps）、WAN側2.5Gbps＋LAN側1Gbps×3ポート構成、EasyMesh対応、内蔵アンテナ",
+          "相違点：本商品は2.4GHz帯が最大688Mbps（11be対応）であるのに対し、WRC-BE64QS-BAは2.4GHz帯が最大574Mbps（11ax相当）仕様"
+        ],
+        "differentiators": [
+          "バッファロー WSR6500BE6P/NBKの利点：2.4GHz帯でもWi-Fi 7（688Mbps）および2バンド同時MLOを活用したい場合や、バッファロー製品の操作体系・引っ越し機能を継続したい場合は本機が適している",
+          "エレコム WRC-BE64QS-BAの利点：5GHz帯の高速通信と2.5Gbps WANがあれば十分で、初期投資を数千円抑えたい場合はエレコム機が合理的"
+        ]
+      },
+      {
+        "name": "TP-Link Archer BE450",
+        "asin": "B0DG1JKNTQ",
+        "priceComparison": "ほぼ同価格帯でありながら、TP-Link製の方が有線10Gbpsポートや2.4GHz帯4ストリームを備えており、ハードウェアスペック面でのコスパはTP-Linkが高い。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7デュアルバンド（5GHz最大5764Mbps）、MLO・EasyMesh対応",
+          "相違点：本商品はWAN 2.5Gbps止まり・2.4GHz 688Mbps・JC-STAR★1適合・日本メーカー製であるのに対し、Archer BE450は10Gbps有線ポート搭載・2.4GHz 1376Mbps（BE7200）対応"
+        ],
+        "differentiators": [
+          "バッファロー WSR6500BE6P/NBKの利点：日本のJC-STAR★1適合によるセキュリティの安心感や、紙マニュアル・スマート引っ越し等の国内メーカーサポート、省スペースな縦型デザインを重視するなら本機が適している",
+          "TP-Link Archer BE450の利点：10ギガ光回線を見据えた10Gbps有線ポートや、より高速な2.4GHz帯通信、スマホアプリでのリモート管理など純粋なスペック対価格比を求めるならTP-Link機が有利"
+        ]
+      },
+      {
+        "name": "ASUS RT-BE3600J PRO",
+        "asin": "B0GY3TPVMV",
+        "priceComparison": "ASUS製の方が安価であり、無線速度はエントリークラス（3600Mbps）ながら有線ポートや高度なネットワーク機能が充実している。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7デュアルバンド対応、MLO対応、2.5Gbps有線ポート搭載、メッシュWi-Fi対応",
+          "相違点：本商品は5GHz 4ストリーム（5764Mbps）で無線多台数接続に強いのに対し、ASUS機は5GHz 2ストリーム（2882Mbps）ながらWAN/LANデュアル2.5GbpsポートとVPN機能を標準搭載"
+        ],
+        "differentiators": [
+          "バッファロー WSR6500BE6P/NBKの利点：家族で同時に多くのスマホ・PCを5GHz帯に接続する無線スループットの余裕と、簡単な初期設定・引っ越し機能を求めるなら本機が適している",
+          "ASUS RT-BE3600J PROの利点：有線LAN側でも2.5Gbps通信を使いたい場合や、VPN・詳細なネットワーク管理機能を追加費用なしで使いたい場合はASUS機が優れる"
+        ]
+      },
+      {
+        "name": "バッファロー WSR3600BE4P-BK",
+        "asin": "B0FYNGQP53",
+        "priceComparison": "下位モデルであるWSR3600BE4P-BKの方が約半額近く安価であり、1Gbps回線中心の環境では高いコストパフォーマンスを発揮する。",
+        "featureComparison": [
+          "共通点：バッファロー製Wi-Fi 7デュアルバンド、MLO・EasyMesh・スマート引っ越し対応、内蔵アンテナ",
+          "相違点：本商品は5GHz 4ストリーム（5764Mbps）・WAN 2.5Gbps対応であるのに対し、WSR3600BE4P-BKは5GHz 2ストリーム（2882Mbps）・全ポート1Gbps対応"
+        ],
+        "differentiators": [
+          "バッファロー WSR6500BE6P/NBKの利点：1Gbpsを超える光回線（2G～10Gプラン）の速度を活かしたい場合や、多台数同時接続・EasyMeshバックホールでの高速通信が必要な環境では迷わず本機を選ぶべき",
+          "バッファロー WSR3600BE4P-BKの利点：契約回線が1Gbps以下で、一人暮らしや少人数世帯など接続台数が少ない場合は、価格を抑えられる下位モデルで十分"
+        ]
+      },
+      {
+        "name": "バッファロー WXR9300BE6P/N",
+        "asin": "B0DG8WHVH3",
+        "priceComparison": "上位モデルであるWXR9300BE6P/Nの方が高価だが、トライバンド（6GHz帯）と有線10Gbps対応を備えるため価格差に見合う拡張性がある。",
+        "featureComparison": [
+          "共通点：バッファロー製Wi-Fi 7（6ストリーム）、JC-STAR適合、EasyMesh対応",
+          "相違点：本商品は6GHz帯非対応・WAN 2.5Gbps・内蔵アンテナであるのに対し、WXR9300BE6P/Nは6GHz帯対応トライバンド（最大2882Mbps追加）・有線10Gbps対応・大型外付けアンテナ搭載"
+        ],
+        "differentiators": [
+          "バッファロー WSR6500BE6P/NBKの利点：1～2Gbpsクラスの回線環境で、外付けアンテナのないすっきりした設置性と導入コストのバランスを重視するなら本機が適している",
+          "バッファロー WXR9300BE6P/Nの利点：10ギガ光回線をフル活用したい場合や、周囲の電波干渉が少ない6GHz帯を使って対応スマホ・PCで極限の低遅延・高速通信を行いたい場合は上位機を選ぶべき"
+        ]
+      },
+      {
+        "name": "NEC Aterm AM-7200D8BE",
+        "asin": "B0DWMPZ1MQ",
+        "priceComparison": "NEC製は本商品の約1.8倍以上の高価格帯であり、10Gbps有線環境を求める上位ユーザー向けモデル。",
+        "featureComparison": [
+          "共通点：国内大手メーカー製Wi-Fi 7デュアルバンド（5GHz最大5764Mbps）、JC-STAR対応、縦型内蔵アンテナ筐体",
+          "相違点：本商品は2.4GHz 688Mbps・WAN 2.5Gbps止まりであるのに対し、Aterm AM-7200D8BEは2.4GHz 1376Mbps（4ストリーム）・有線10Gbps対応"
+        ],
+        "differentiators": [
+          "バッファロー WSR6500BE6P/NBKの利点：国内メーカー製・JC-STAR適合の安心感を維持しつつ、10Gbps回線までは不要な環境で初期費用を2万円以上抑えたい場合は本機が現実的",
+          "NEC Aterm AM-7200D8BEの利点：予算に余裕があり、国内メーカー製で有線10Gbpsポートや8ストリームの最高峰デュアルバンド性能を求める場合はNEC機が適している"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "1Gbps超～2.5Gbpsクラスの光回線を利用中で、6GHz帯のハイエンド機（3～5万円台）ほどの投資はせずに実用的なWi-Fi 7環境へ更新したいファミリー層",
+        "現在バッファロー製の旧ルーターを使用しており、設定やSSIDを『スマート引っ越し』で手間なく引き継ぎたい買い替えユーザー",
+        "海外メーカー製ルーターに不安があり、日本のIoTセキュリティ制度（JC-STAR★1適合）や紙マニュアル同梱の安心感を重視する人"
+      ],
+      "pros": [
+        "5GHz帯4ストリームと2.5Gbps WANポートの組み合わせにより、一般的なスマホやPCの同時接続時でも実測1.4Gbps超の高速通信を安定して引き出せる",
+        "MLOが初期状態で有効化されており、付属の3種類のQRコードを使い分けるだけで専門知識がなくても最適な接続方法をすぐ選べる",
+        "旧バッファロー機からの『スマート引っ越し』と紙の専用ガイドにより、家族のスマート家電やPCをすべて再設定する煩わしさから解放される",
+        "アンテナ内蔵のスリムな縦型ボディでリビングのテレビ横にも圧迫感なく置け、壁掛け設置で電波の通りやすい高所配置も容易"
+      ],
+      "cons": [
+        "6GHz帯には非対応のため、6GHz帯（320MHz幅）による干渉回避や理論値10Gbps超の通信を期待する最新ガジェット好きは上位トライバンド機を検討すべき",
+        "有線LAN側ポートが1Gbps×3までのため、有線接続のゲーミングPCやNASで2.5Gbps通信を行いたいユーザーは事前確認が必要",
+        "調査時点の価格（￥26,480）は発売初期の実売約1.9万円より割高な水準にあり、10Gポート搭載のTP-Link Archer BE450や約2万円のエレコム製競合機と価格を比較したうえで納得できるか確認すること",
+        "外出先からスマホでルーターを遠隔操作するリモート管理機能がないため、離れた家族宅のネットワークを遠隔サポートしたい用途には向かない"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70] (固定)\n[加点: +6] (5GHz帯4ストリーム最大5764MbpsのWi-Fi 7と2.5Gbps WANポートにより実測1.4Gbps超の高速通信を実現)\n[減点: -2] (6GHz帯非対応のデュアルバンド構成で有線LAN側ポートが1Gbpsまでに制限される)\n[減点: -4] (調査時点の価格26,480円は発売当初の実売約1.9万円や同クラス競合製品と比べて割高感がある)\n[加点: +2] (アンテナ内蔵のスリムな縦型筐体で置き場所を選ばず壁掛け設置にも対応)\n[加点: +5] (JC-STAR★1適合の高いセキュリティ性とスマート引っ越し機能による買い替えの容易さ)\n[加点: +3] (MLO標準オンに加え用途別3種のQRコード同梱など初心者にも配慮した接続設計)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "177mm",
+        "width": "60mm",
+        "depth": "165mm",
+        "weight": "500g"
+      },
+      "weight": "500g",
+      "connectivity": [
+        "Wi-Fi 7 (IEEE 802.11be / ax / ac / n / a / g / b)",
+        "5GHz帯 最大5764Mbps (4ストリーム / 160MHz幅)",
+        "2.4GHz帯 最大688Mbps (2ストリーム / 40MHz幅)",
+        "INTERNET (WAN) ポート: 2.5Gbps (2.5GBASE-T)×1",
+        "LANポート: 1Gbps (1000BASE-T)×3",
+        "MLO (Multi-Link Operation: 2バンド同時 / 2バンド切り替え)",
+        "Wi-Fi EasyMesh対応"
+      ],
+      "other": [
+        "セキュリティ規格: WPA3 / WPA2 / JC-STAR ★1適合 (登録番号: 2026020100001550)",
+        "IPv6対応: IPv6 IPoE (MAP-E / DS-Lite)",
+        "機能: スマート引っ越し、バンドステアリングLite、ビームフォーミング、MU-MIMO、AirStationアプリ対応",
+        "動作モード: ルーター (RT) / アクセスポイント (AP) / 中継機 (WB)",
+        "※6GHz帯非対応（デュアルバンド仕様）",
+        "※外出先からのリモート管理機能・USBポート非搭載",
+        "カラー: ブラック (Amazon.co.jp限定モデル)"
+      ]
+    }
+  }
+}
