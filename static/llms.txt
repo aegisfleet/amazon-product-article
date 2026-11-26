@@ -11,9 +11,10 @@
   - 全商品調査は [軽量商品サマリー (`products-summary.json`)](https://www.amazon-hikaku.com/products-summary.json)（約1.7MB、スコア降順）を参照してください。
   - 2,000円以下の買い合わせは [`bargain/index.json`](https://www.amazon-hikaku.com/bargain/index.json)、セール品は [`deals/index.json`](https://www.amazon-hikaku.com/deals/index.json) を優先参照してください。コード実行環境ではタイムアウト防止のためPython等での取得・解析を推奨します。
 
-### リモートMCP 全10ツール・3プロンプト一覧 (`https://mcp.amazon-hikaku.com/mcp`)
+### リモートMCP 全11ツール・3プロンプト一覧 (`https://mcp.amazon-hikaku.com/mcp`)
 - `search_products`: 条件・価格帯・スコア（既定80点以上）・調査鮮度（`updated_within_days`）・ブランド/カテゴリ（`exclude_brand` / `exclude_category` 除外可）・ギフトの相手（`recipient`）とシーン（`occasion`）・スペック条件（`spec_filters`、例: ストレージ256GB以上）・並び替え（`score` / `price_asc` / `price_desc` / `relevance` / `newest`）検索。全件数、絞り込み用 `facets`、少数時の緩和案 `suggestions` 付き。
 - `get_product`: ASIN詳細（要約・スペック・在庫・最終調査日・採点根拠 `score_rationale`・採点根拠から抽出した加点理由 `pros` / 減点理由 `cons`・セールバッジ `deal_badge`）を取得。
+- `get_price`: ASINまたはAmazon商品URLから価格を照会（調査済みは詳細付き、未調査は `price_as_of` 時点の参考価格で出典はカタログページ）。
 - `compare_products`: 2〜5件のASINを構造化比較。長所（`pros`）/短所（`cons`）と価格差・スコア差サマリー（`comparison_summary`）を返却。
 - `find_similar_products`: 指定ASINと同カテゴリの代替候補を、タイトルの製品タイプ（形態素）の一致で絞り込み、近接価格帯・スコア順で提案（在庫切れ・予算超過時の代替案用）。同タイプの候補が無い場合はカテゴリ候補をそのまま返し、応答の `match_basis` が `category_fallback` になる（タイプ一致の場合は `title_type`）。
 - `get_deals`: セール商品検索。おすすめ順（`recommended`＝スコアと割引率のバランス順）、最低スコア（既定70点）、セール種別（`sale_type`）、開催中バッジ集計（`available_badges`）に対応。
@@ -32,7 +33,7 @@
 5. **価格未取得の除外と推測禁止**: JSON直読みの価格上限フィルタ時は `price`（`price_value` / `priceRaw`）が `null` または `0` の価格未取得商品を必ず除外してください。データにない情報（原産国・発売日等）は推測で補わないでください。
 
 ## 3. 公開データエンドポイント (Data Endpoints)
-- [リモートMCPサーバー](https://mcp.amazon-hikaku.com/mcp): 全10ツール提供（Tier 1 推奨）。
+- [リモートMCPサーバー](https://mcp.amazon-hikaku.com/mcp): 全11ツール提供（Tier 1 推奨）。
 - [軽量商品サマリー (`products-summary.json`)](https://www.amazon-hikaku.com/products-summary.json): `asin`, `title`, `brand`, `category`, `price`, `score`, `description`, `image`, `url` をスコア降順収録（約1.7MB、gzip時約350KB）。
 - [セール対象商品 (`deals/index.json`)](https://www.amazon-hikaku.com/deals/index.json): 現在割引中の商品データ（`savingsPercentage`, `dealBadge` 等、約250KB）。
 - [あともう一品 (`bargain/index.json`)](https://www.amazon-hikaku.com/bargain/index.json): 2,000円以下・高スコア商品データ（約200KB）。
