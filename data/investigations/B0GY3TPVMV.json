@@ -1,0 +1,297 @@
+{
+  "analysis": {
+    "productName": "ASUS RT-BE3600J Pro",
+    "parentAsin": "B0HGL31MKV",
+    "productDescription": "Wi-Fi 7（MLO・4K-QAM）と2.5Gbps WAN/LAN兼用ポートを2基搭載しながら、1万円台後半に価格を抑えたASUSのデュアルバンド対応メッシュWi-Fiルーターです。",
+    "productUsage": [
+      "高速光回線（2.5Gbps/10Gbps等）を活かしたホームネットワーク構築",
+      "AiMesh機能を用いた戸建て・マンションの広範囲メッシュWi-Fi構築",
+      "Smart Home MasterによるIoT機器用・キッズ用・VPN用SSIDの分離管理",
+      "在宅ワーク向けのVPNサーバー/クライアント運用およびオンラインゲーム通信"
+    ],
+    "positivePoints": [
+      "WAN/LAN自動判別対応の2.5Gbps有線ポートを2基搭載し、有線バックホールや2.5Gbps環境に対応",
+      "Wi-Fi 7（IEEE 802.11be）の主要技術であるMLO（Multi-Link Operation）および4K-QAMに対応し、合計最大3,600Mbps（5GHz帯2,882Mbps＋2.4GHz帯688Mbps）を実現",
+      "Qualcomm IPQ5322（1.5GHzクアッドコアCPU）と512MB RAMを搭載し、最大40台の同時接続を想定した安定動作設計",
+      "商用グレードのセキュリティ機能「AiProtection」がサブスクリプション等の追加費用なしで利用可能",
+      "アンテナ4本（フロントエンドモジュール4基）を内蔵した140×70×140mm・約511gのコンパクトでシンプルな筐体",
+      "ASUS RouterアプリとWebブラウザ管理画面の両方に対応し、WireGuard・OpenVPN・IPSec等の各種VPNや詳細なネットワーク設定が可能"
+    ],
+    "negativePoints": [
+      "有線ポートが2.5G×2基のみであるため、WAN接続に1ポート使用するとLAN側で使える有線ポートが実質1基のみとなる",
+      "6GHz帯および320MHz幅には非対応のデュアルバンド仕様（5GHz/2.4GHz）",
+      "USBポートが非搭載のため、外付けHDD等を接続する簡易NAS機能やUSBモデム接続には非対応",
+      "標準では壁掛け設置に対応していない据え置き設計"
+    ],
+    "useCases": [
+      "一人暮らしやワンルーム・マンションで、有線LAN接続がメインPC1台＋残りはすべてWi-Fi接続というシンプル構成",
+      "将来的にASUS製ルーターを追加してAiMeshによるメッシュWi-Fi環境へ拡張したい戸建て住宅",
+      "スマート家電（IoT機器）や子どもの端末用にネットワーク（SSID）を分けて安全に管理したい家庭"
+    ],
+    "userStories": [
+      {
+        "userType": "デスクトップPC1台＋無線機器中心のユーザー",
+        "scenario": "1万円台で2.5Gbps対応のWi-Fi 7ルーターへ買い替えを検討し、NEC製品などと比較して本機を選択",
+        "experience": "従来機や国内メーカー製の上位機が高価格化するなか、1万円台でWAN/LANともに2.5Gbpsポートを備え、かつサブスク不要のAiProtectionが永続利用できる点が購入の決め手となった。実際に設置するとアンテナ内蔵で主張しすぎないシンプルなデザインのため部屋に馴染みやすく、メインのデスクトップPCを有線接続しつつスマホやタブレットはWi-Fi 7で途切れず安定して利用できている。一方、有線LANが実質1ポートしか使えないため、有線機器を増やす際は2.5G対応のスイッチングハブが別途必要になる点には注意が必要と感じている。",
+        "supportingSourceIds": [
+          "src-5"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "詳細なネットワーク設定・VPNを活用したいホームユーザー",
+        "scenario": "アプリだけでなくWeb管理画面からの細かな設定や、IoT・子ども用ネットワークの分離を目的に導入",
+        "experience": "普及価格帯のエントリー〜ミドルモデルでありながら、ASUS Routerアプリに加えてWebブラウザからの詳細設定にも対応しているため、ポート開放や高速なWireGuard VPNなどの細かな調整が行いやすい点が決め手となった。Smart Home MasterによってIoT機器や子ども用のSSIDを手軽に分けられるほか、2.5GbEポートがWAN/LAN自動判別であるため配線時に迷いにくい。USBポートがなくNAS用途には使えない制約はあるものの、通信の安定性と多機能さのバランスに優れている。",
+        "supportingSourceIds": [
+          "src-2",
+          "src-6"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "1万円台という普及価格帯で「Wi-Fi 7（MLO/4K-QAM）」「デュアル2.5GbEポート」「追加費用不要のAiProtection」「AiMesh対応」をすべて揃えた、非常にコストパフォーマンスの高いモデルとして高く評価されている。特にアンテナ内蔵の控えめな外観が、従来のゲーミング色の強いASUS製品を避けていた層にも好評。一方で、有線ポートが合計2基しかない点（LAN側は実質1基）やUSBポート非搭載という明確な割り切りがあるため、複数台のPCやNASを有線接続したいユーザーは2.5Gハブの併用を前提に検討する必要がある。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon.co.jp 商品公式ページ (B0GY3TPVMV)",
+        "url": "https://www.amazon.co.jp/dp/B0GY3TPVMV",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-08-27",
+        "author": "ASUS / Amazon.co.jp",
+        "conflictOfInterest": "possible",
+        "notes": "価格（￥16,838）、型番（RT-BE3600J PRO B/E）、主要機能（MLO、4K-QAM、AiMesh、Smart Home Master、AiProtection、デュアル2.5Gポート、1.5GHzクアッドコアCPU）を確認。"
+      },
+      {
+        "id": "src-2",
+        "name": "ASUS公式サイト RT-BE3600J Pro スペックページ",
+        "url": "https://www.asus.com/jp/networking-iot-servers/routers/wifi-7/rt-be3600j-pro/techspec/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-09-11",
+        "author": "ASUS Japan",
+        "conflictOfInterest": "possible",
+        "notes": "詳細仕様（5GHz 2882Mbps / 2.4GHz 688Mbps、1.5GHzクアッドコア、RAM 512MB / Flash 128MB、2.5G×2ポート、寸法140×70×140mm、VPN・AiProtection・AiMesh対応等）を確認。"
+      },
+      {
+        "id": "src-3",
+        "name": "ケータイ Watch「ASUS、Wi-Fi 7対応のデュアルバンドルーター『RT-BE3600J Pro』新発売」",
+        "url": "https://k-tai.watch.impress.co.jp/docs/news/2138376.html",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-09-04",
+        "author": "ケータイ Watch編集部",
+        "conflictOfInterest": "none",
+        "notes": "発売日（2026年9月11日）、メーカー希望小売価格（1万6920円）、SoC（Qualcomm IPQ5322）、重量（約511g）、最大同時接続数（40台）、USBポート非搭載を確認。"
+      },
+      {
+        "id": "src-4",
+        "name": "価格.com「ASUS RT-BE3600J PRO B/E [ブラック] 価格比較」",
+        "url": "https://kakaku.com/item/K0001809144/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-11-26",
+        "author": "価格.com",
+        "conflictOfInterest": "none",
+        "notes": "最安価格16,838円、推奨接続環境（3階建て戸建て / 4LDKマンション / 40台）、売れ筋ランキング状況を確認。"
+      },
+      {
+        "id": "src-5",
+        "name": "Takemi Blog「[レビュー] RT-BE3600J Pro」",
+        "url": "https://tips.takemi.blog/6c619592ec4644a3bf537dd1a51b26c9/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-11-22",
+        "author": "Takemi",
+        "conflictOfInterest": "possible",
+        "notes": "実機使用感（シンプルな外観、2.5Gbpsポート×2の希少性、AiProtection永続無料の評価、有線LANが実質1基・NAS機能なしのデメリット）を確認。"
+      },
+      {
+        "id": "src-6",
+        "name": "くにりきラウ「【ASUS RT-BE3600J Pro】Wi-Fi 7対応と2.5GbE搭載のメッシュルーターが1万円台で買える！」",
+        "url": "https://kuniriki-lau.com/entry/asus-rt-be3600j-pro-mesh-wifi-info",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-09-11",
+        "author": "くにりきラウ",
+        "conflictOfInterest": "possible",
+        "notes": "Qualcomm製プラットフォーム、Web管理画面の利便性、WireGuard VPN対応、Smart Home Masterの用途別SSID機能を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "1万円台の手頃な価格帯でありながら、デュアル2.5GbpsポートとWi-Fi 7・商用グレードセキュリティを追加費用なしで備える",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2",
+          "src-5"
+        ],
+        "crossChecked": true,
+        "notes": "ASUS公式スペックで2.5G×2ポートおよびAiProtection無料付帯を確認し、第三者メディア・実機レビューでも同価格帯での希少性と高コスパが一致して評価されている。"
+      },
+      {
+        "claim": "Qualcomm製1.5GHzクアッドコアCPUと4本内蔵アンテナにより、複数台同時接続時（最大40台）でも安定した通信を発揮する",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-2",
+          "src-3",
+          "src-5",
+          "src-6"
+        ],
+        "crossChecked": true,
+        "notes": "ケータイ WatchおよびASUS公式でQualcomm IPQ5322（1.5GHzクアッドコア）と最大40台接続の仕様を確認。実機レビューでも途切れのない安定動作が報告されている。"
+      }
+    ],
+    "lastInvestigated": "2026-11-26",
+    "investigatedPrice": "￥16,838",
+    "competitiveAnalysis": [
+      {
+        "name": "バッファロー WSR3600BE4P/NWH",
+        "asin": "B0F5B58YV8",
+        "priceComparison": "ほぼ同価格帯の直接的な競合機種。機能面で2.5Gbps有線ポートの有無やセキュリティ機能の充実度を含めて比較検討すべきモデル。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7（11be）デュアルバンド対応、最大通信速度2882+688Mbps、メッシュWi-Fi対応",
+          "相違点：ASUS RT-BE3600J Proは2.5Gbpsポート×2基・AiMesh・追加費用不要のAiProtectionを搭載するのに対し、WSR3600BE4P/NWHは日本メーカー製でJC-STAR適合やEasyMesh対応を特徴とする"
+        ],
+        "differentiators": [
+          "ASUS RT-BE3600J Proの利点：2.5Gbpsの有線環境を活かしたい場合や、追加費用なしの高度なセキュリティ（AiProtection）・VPN機能・Web詳細設定を重視するなら迷わずこちら",
+          "バッファロー WSR3600BE4P/NWHの利点：国内メーカーのサポートやJC-STAR適合、既存のEasyMesh機器との連携を優先する場合に適している"
+        ]
+      },
+      {
+        "name": "TP-Link Archer BE220",
+        "asin": "B0DJQMPKRH",
+        "priceComparison": "対象商品より安価なエントリークラスだが、有線ポート速度や独自機能の面で差別化されている。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7（BE3600：2882+688Mbps）デュアルバンド対応、メッシュ機能対応",
+          "相違点：ASUS RT-BE3600J ProはWAN/LANともに2.5Gbpsポートを備え商用グレードのAiProtectionを標準搭載する一方、Archer BE220は初期コストの安さと3年保証・EasyMesh対応を強みとする"
+        ],
+        "differentiators": [
+          "ASUS RT-BE3600J Proの利点：2.5Gbps有線通信の活用やAiMeshでの拡張、より充実したVPN・セキュリティ機能を求めるなら本機が優位",
+          "TP-Link Archer BE220の利点：2.5Gbps有線環境が不要で、とにかく初期費用を抑えてWi-Fi 7環境を導入したい場合に適している"
+        ]
+      },
+      {
+        "name": "HUAWEI WiFi BE3",
+        "asin": "B0H8CJGQMP",
+        "priceComparison": "対象商品より大幅に安価であり、低価格で2.5Gポート付きWi-Fi 7を試せる選択肢だが、メッシュ互換性やVPN・セキュリティ機能面で差がある。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7（BE3600：2882+688Mbps）、2.5Gイーサネットポート搭載、メッシュ対応",
+          "相違点：ASUS RT-BE3600J ProはWAN/LAN両対応のデュアル2.5GポートやAiProtection、多彩なVPNサーバー/クライアント機能を備える"
+        ],
+        "differentiators": [
+          "ASUS RT-BE3600J Proの利点：ASUS AiMesh環境との連携、高度なVPN・ペアレンタルコントロール、充実したWeb管理画面を重視するならこちら",
+          "HUAWEI WiFi BE3の利点：機能はシンプルで構わないので、1万円以下の予算で2.5G対応のWi-Fi 7ルーターを手軽に入手したい場合に向いている"
+        ]
+      },
+      {
+        "name": "エレコム WRC-BE36GS-BA",
+        "asin": "B0HFV84BG4",
+        "priceComparison": "対象商品より安価な国内メーカー製BE3600モデルだが、有線ポートの最大速度が1Gbpsに留まる。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7（2882+688Mbps）、戸建3階建・マンション4LDK・接続台数40台想定",
+          "相違点：ASUS RT-BE3600J Proは2.5Gbpsポート×2基を搭載するのに対し、WRC-BE36GS-BAは有線LANが1Gbps×3ポート構成となっている"
+        ],
+        "differentiators": [
+          "ASUS RT-BE3600J Proの利点：1Gbpsを超える光回線や2.5Gbps有線LANの速度を活かしたいなら迷わずこちら",
+          "エレコム WRC-BE36GS-BAの利点：1Gbps回線での利用を前提とし、有線LANポートを3基そのまま使いたい場合や国内メーカーの「らくらく引っ越し機能」を重視する場合に適している"
+        ]
+      },
+      {
+        "name": "TP-Link Archer BE400",
+        "asin": "B0DRHSSLFS",
+        "priceComparison": "対象商品よりやや高価な上位クラス（BE6500）であり、5GHz帯の最大無線速度を優先する場合に価格差の価値がある。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7デュアルバンド、2.5Gポート搭載、VPN対応",
+          "相違点：ASUS RT-BE3600J ProはBE3600（5GHz 2882Mbps）でより安価かつコンパクトな内蔵アンテナ設計であるのに対し、Archer BE400はBE6500（5GHz 5764Mbps）でより高速な無線帯域を持つ"
+        ],
+        "differentiators": [
+          "ASUS RT-BE3600J Proの利点：価格を抑えつつ、コンパクトな筐体と追加費用不要のAiProtection・AiMesh環境を手に入れたい場合に最適",
+          "TP-Link Archer BE400の利点：5GHz帯でのさらなる高速無線通信（最大5764Mbps）や3年保証を優先し、設置スペースに余裕がある場合に適している"
+        ]
+      },
+      {
+        "name": "エレコム WRC-BE64QS-BA",
+        "asin": "B0HPFHNWDX",
+        "priceComparison": "対象商品より数千円高価な上位帯モデル。5GHz帯の高速性を取るか、有線LAN側の2.5G対応とコスパを取るかの違いがある。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7デュアルバンド、内蔵アンテナ、推奨接続台数40台、メッシュ対応",
+          "相違点：ASUS RT-BE3600J ProはWAN/LANともに2.5Gbps対応（計2ポート）であるのに対し、WRC-BE64QS-BAは5GHz最大5764Mbpsと高速だがLAN側ポートは1Gbps×3となっている"
+        ],
+        "differentiators": [
+          "ASUS RT-BE3600J Proの利点：LAN側にも2.5Gbps有線接続（PCや2.5Gハブ、有線バックホール）を使いたいならこちら",
+          "エレコム WRC-BE64QS-BAの利点：無線（5GHz帯）の最大スループットと1Gbps×3ポートの標準構成、国内メーカーの引っ越し機能を優先する場合に適している"
+        ]
+      },
+      {
+        "name": "ZTE Sora BE3600 Pro (2ユニット)",
+        "asin": "B0H9RVFZ2J",
+        "priceComparison": "対象商品よりやや高価だが、最初から2台セット（ペアリング済み）であるため、単体導入か初期2台導入かで判断が分かれる。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7 BE3600（2882+688Mbps）、2.5Gbps対応、3階建・4LDK想定、メッシュ対応",
+          "相違点：ASUS RT-BE3600J Proは1台単体でAiMesh拡張や高機能なWeb管理・AiProtection・VPNを備えるのに対し、Sora BE3600 Proは2台ペアリング済みセットとして提供される"
+        ],
+        "differentiators": [
+          "ASUS RT-BE3600J Proの利点：まずは1台で十分な環境や、既存のASUSルーターとAiMesh連携したい場合、高度なセキュリティ・VPN設定を求めるならこちら",
+          "ZTE Sora BE3600 Pro (2ユニット)の利点：購入直後から設定不要で2拠点メッシュ（親機＋子機）を最小の手間で構築したい場合に適している"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "1万円台後半の予算で、安価なエントリーWi-Fi 7機（1Gbpsポート機）ではなく2.5Gbpsの高速有線環境とメッシュ拡張性を確保したい人",
+        "有線接続する機器はメインPC1台（または2.5Gハブ併用）のみで、スマホやスマート家電など無線機器中心のマンション・一人暮らし環境の人",
+        "月額課金なしのセキュリティ機能（AiProtection）やVPN・詳細設定を重視し、長く使えるASUS製ルーターを選びたい人"
+      ],
+      "pros": [
+        "WAN・LAN両対応の2.5Gbpsポートにより、高速光回線のポテンシャルを引き出しつつ、メインPCや有線バックホール接続でもボトルネックを感じにくい",
+        "追加費用不要でAiProtectionが使えるため、ランニングコストを抑えながら家族全員の端末やIoT機器を不正アクセスから保護できる",
+        "アンテナ内蔵のコンパクトでシンプルな筐体なので、リビングやデスク上に置いても圧迫感がなくインテリアに馴染みやすい"
+      ],
+      "cons": [
+        "有線LANポートが実質1基（WANで1基使用するため）しか空かないため、有線で繋ぎたいPCやゲーム機・NASが2台以上ある場合は別途2.5G対応スイッチングハブの準備が必要",
+        "6GHz帯（320MHz幅）には非対応のため、6GHz帯の広い帯域をフル活用したい最新のハイエンド端末ユーザーはトライバンド機を検討すること",
+        "USBポートが非搭載であり、外付けHDDをルーターに直結して簡易NASとして使う運用はできないため事前に確認すること"
+      ],
+      "score": 85,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (デュアル2.5GbEポートと1.5GHzクアッドコアCPUによる高い有線・処理性能)\n[加点: +3] (AiMesh・MLO・4K-QAM対応による安定したメッシュ拡張性と低遅延通信)\n[加点: +5] (1万円台後半でWi-Fi 7・デュアル2.5GbE・永久無料セキュリティを備えた高いコストパフォーマンス)\n[加点: +2] (アンテナ内蔵のコンパクトかつシンプルなデザイン)\n[加点: +3] (アプリとWeb管理画面の両対応とSmart Home Masterによる柔軟なネットワーク管理)\n[加点: +2] (追加費用不要の商用グレードセキュリティAiProtectionと多彩なVPN対応)\n[減点: -3] (有線LANが実質1ポートのみでUSBポートも非搭載のため、複数機器の有線接続にはハブが必要)\n[減点: -2] (6GHz帯および320MHz幅に非対応のデュアルバンド仕様)\n[合計: 85]"
+    },
+    "technicalSpecs": {
+      "cpu": "Qualcomm IPQ5322 (1.5GHz クアッドコア)",
+      "ram": "512MB",
+      "storage": "128MB Flash",
+      "dimensions": {
+        "height": "140mm",
+        "width": "140mm",
+        "depth": "70mm",
+        "weight": "約511g"
+      },
+      "weight": "約511g",
+      "connectivity": [
+        "Wi-Fi 7 (IEEE 802.11be)",
+        "Wi-Fi 6 / 5 / 4 (802.11ax / ac / n / a / g / b)",
+        "5GHz帯: 最大2882Mbps (2x2)",
+        "2.4GHz帯: 最大688Mbps (2x2)",
+        "2.5GBASE-T (WAN/LAN自動判別) × 2ポート",
+        "IPv6 (IPoE / IPv4 over IPv6)"
+      ],
+      "other": [
+        "MLO (Multi-Link Operation) / 4096-QAM / 160MHz帯域幅対応",
+        "内蔵アンテナ × 4 (フロントエンドモジュール × 4)",
+        "AiMesh対応 (プライマリルーター / ノード両対応)",
+        "AiProtection (商用グレードセキュリティ、追加費用なし)",
+        "Smart Home Master (IoT用・キッズ用・VPN用SSID分割)",
+        "VPN対応 (WireGuard / OpenVPN / IPSec / L2TP / PPTP)",
+        "セキュリティ規格: WPA / WPA2 / WPA3-Personal、WPA / WPA2-Enterprise",
+        "推奨環境: 戸建て3階建て / マンション4LDK / 最大同時接続40台",
+        "動作モード: ルーター / アクセスポイント / リピーター / メディアブリッジ / AiMeshノード",
+        "付属品: 本体、RJ45ケーブル、ACアダプター、保証書、クイックスタートガイド",
+        "※6GHz帯・320MHz幅非対応 (デュアルバンド仕様)",
+        "※USBポート非搭載 (簡易NAS機能・USBモデム非対応)"
+      ]
+    }
+  }
+}
