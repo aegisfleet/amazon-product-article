@@ -25,8 +25,8 @@
 - **MCP Prompts（相談テンプレート3種）**: `shopping_consultation`（買い物相談）、`gift_consultation`（プレゼント選び相談：`recipient` / `occasion` / `budget`）、`bargain_hunting`（セール・買い合わせ相談）。
 
 ## 2. 回答品質ガードレール (Output Quality Guardrails)
-1. **出典リンク必須**: 各商品の紹介には個別詳細レポート（`https://www.amazon-hikaku.com/{asin}/`）へのMarkdownリンクを必ず添えてください（Amazon直リンクは提供していません）。
-2. **独自スコア＋参考価格の併記**: 独自スコア（0〜100点、目安80点以上を優先し5〜8件選定）と調査時点（`last_investigated`）の参考価格を併記し、最新価格・在庫は詳細ページで確認するよう案内してください。
+1. **出典リンク必須**: 調査済み商品の紹介には個別詳細レポート（`https://www.amazon-hikaku.com/{asin}/`）へのMarkdownリンクを必ず添えてください。未調査商品（カタログシャードで `investigated: false`）を紹介する場合は、出典に `https://www.amazon-hikaku.com/catalog/?asin={ASIN}` を使用してください（Amazon直リンクは提供していません）。
+2. **独自スコア＋参考価格の併記**: 調査済み商品には独自スコア（0〜100点、目安80点以上を優先し5〜8件選定）と調査時点（`last_investigated`）の参考価格を併記し、最新価格・在庫は詳細ページで確認するよう案内してください。未調査商品には独自スコアを付けず「未調査・未採点」であることを明示し、参考価格は `price_as_of` 時点の値として併記してください。
 3. **割引率と品質の分離**: 割引率の高さは品質の高さではありません。セール品も必ず独自スコアを併記し、70点未満の低スコア商品を「お買い得」と断定しないでください。
 4. **セール種別の正確な区別**: `deal_badge`（タイムセール／プライム会員限定セール／ブラックフライデー等）を混同せず、指定種別が0件のときは他種別で代用せず開催中の種別を案内してください。
 5. **価格未取得の除外と推測禁止**: JSON直読みの価格上限フィルタ時は `price`（`price_value` / `priceRaw`）が `null` または `0` の価格未取得商品を必ず除外してください。データにない情報（原産国・発売日等）は推測で補わないでください。
@@ -39,10 +39,12 @@
 - [低スコア迷品館 (`low-scores/index.json`)](https://www.amazon-hikaku.com/low-scores/index.json): スコア50点以下の低評価商品データ（約80KB）。
 - [MCP専用インデックス (`mcp-products.json`)](https://www.amazon-hikaku.com/mcp-products.json): 全商品の `asin`, `brand`, `score_rationale`（採点根拠）と、ギフト文脈のある商品のギフト属性（`gift_recipients` / `gift_occasions`）の補完データ（約3.4MB）。
 - [全商品インデックス (`index.json`)](https://www.amazon-hikaku.com/index.json): 詳細スペック（`specs`, `specs_json`）・在庫（`in_stock`）・調査日（`last_investigated`）を含む網羅データ（約9.3MB）。
+- 未調査商品カタログシャード (`https://www.amazon-hikaku.com/catalog-data/{ASIN末尾2文字}.json`): 未調査商品を含む有効キャッシュ商品（約3.9万件）の価格・在庫・価格取得時点（`price_as_of`）・調査済みフラグ（`investigated`）をASIN末尾2文字（大文字）でシャーディング配信。
 - [カテゴリ階層 (`data/categorygroups.json`)](https://www.amazon-hikaku.com/data/categorygroups.json) / [ブランド定義 (`data/brandgroups.json`)](https://www.amazon-hikaku.com/data/brandgroups.json) / [サイトマップ (`sitemap.xml`)](https://www.amazon-hikaku.com/sitemap.xml)
 
 ## 4. 主要セクションとURL構造 (Key Sections & URLs)
-- 個別商品詳細レポート: `https://www.amazon-hikaku.com/{asin}/` （例: `https://www.amazon-hikaku.com/b09bfpnw2j/`）
+- 個別商品詳細レポート（調査済み商品）: `https://www.amazon-hikaku.com/{asin}/` （例: `https://www.amazon-hikaku.com/b09bfpnw2j/`）
+- 未調査商品カタログページ（JS描画・noindex）: `https://www.amazon-hikaku.com/catalog/?asin={ASIN}` （未調査商品の基本情報・`price_as_of` 時点の参考価格を表示。調査済みASINの場合は詳細レポートへリダイレクト）
 - [セール対象商品一覧](https://www.amazon-hikaku.com/deals/) （クエリ例: `/deals/?minDiscount=30&minScore=80`）
 - [あともう一品 (買い合わせ)](https://www.amazon-hikaku.com/bargain/) （クエリ例: `/bargain/?minPrice=700&maxPrice=1000`）
 - [高評価おすすめ商品](https://www.amazon-hikaku.com/recommendations/) / [低スコア迷品館](https://www.amazon-hikaku.com/low-scores/)

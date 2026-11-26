@@ -27,5 +27,7 @@
   {{- $indexable = false -}}
 {{- else if and (eq .Kind "section") (eq .Section "articles") -}}
   {{- $indexable = false -}}
+{{- else if eq .Section "catalog" -}}
+  {{- $indexable = false -}}
 {{- end -}}
 {{- return $indexable -}}
