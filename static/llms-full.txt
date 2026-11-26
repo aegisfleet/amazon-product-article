@@ -16,7 +16,7 @@ AIアシスタントや自律型エージェントがユーザーの商品選び
   - 採点根拠（加点・減点理由）が必要な場合は [`mcp-products.json`](https://www.amazon-hikaku.com/mcp-products.json)（約3.4MB）、詳細スペックや在庫状況・最終調査日が必要な場合は [`index.json`](https://www.amazon-hikaku.com/index.json)（約9.3MB）をASINで結合して利用できます。
   - ※ChatGPT等のコード実行機能を持つAIツールは、ブラウザ直接フェッチによる通信タイムアウトを防ぐため、Python環境（`urllib` / `pandas` 等）を用いてJSONをダウンロード・解析することを推奨します。
 
-### リモートMCPサーバー 提供ツール詳細（全10ツール）
+### リモートMCPサーバー 提供ツール詳細（全11ツール）
 エンドポイント: `https://mcp.amazon-hikaku.com/mcp` （ソースコード・セキュリティポリシー: [`https://github.com/aegisfleet/amazon-hikaku-mcp`](https://github.com/aegisfleet/amazon-hikaku-mcp)、全ツール `readOnlyHint=True`・ステートレス・64KBボディ上限・240 req/min レート制限）
 1. `search_products`:
    - 条件・価格帯・スコア・調査鮮度・並び替えによる商品検索。
@@ -24,21 +24,23 @@ AIアシスタントや自律型エージェントがユーザーの商品選び
    - 応答には `total_count`（全件数）、`facets`（全ヒット件数のブランド・カテゴリ・親カテゴリ・価格帯分布）、および結果が3件以下の場合の `suggestions`（どの条件を緩めると何件ヒットするか）が含まれます。
 2. `get_product`:
    - ASIN指定で1商品の詳細（要約、カテゴリ、構造化スペック `specs`、在庫有無 `in_stock`、割引率 `savings_percentage`、セールバッジ `deal_badge`、最終調査日 `last_investigated`、採点根拠 `score_rationale`、採点根拠から抽出した加点理由 `pros`・減点理由 `cons`）を取得。単品のメリット・デメリットへの質問はこのツールだけで回答できます。
-3. `compare_products`:
+3. `get_price`:
+   - ASINまたはAmazonの商品URLから価格を照会。調査済み商品は詳細（スコア・詳細ページへの出典付き）、未調査商品はカタログデータから取得日時 `price_as_of` つきの参考価格を返却（`investigated: false`、スコアなし、出典はカタログページ `/catalog/?asin=`）。「この商品いくら？」という価格のみの相談用。
+4. `compare_products`:
    - 2〜5件のASINを横並びで構造化比較。各商品のスペック、採点根拠から抽出した長所（`pros`）・短所（`cons`）、および `comparison_summary`（最安商品・最高スコア商品・価格差 `price_spread`・スコア差 `score_spread`）を返却。
-4. `find_similar_products`:
+5. `find_similar_products`:
    - 指定ASINと同カテゴリ・近接価格帯（`max_price` 未指定時は対象商品価格の0.5〜1.5倍を優先）の代替候補をスコア順で返却（`min_score` 指定可）。候補はタイトルの製品タイプ（形態素）の一致でも絞り込まれます（カテゴリには冷蔵庫・洗濯機・乾燥機のように異種が混在する場合があるため）。同タイプの候補が無い場合はカテゴリ候補をそのまま返し、応答の `match_basis` が `category_fallback` になります（タイプ一致時は `title_type`、母集団の件数は `category_pool_count`）。目的の商品が在庫切れ・予算超過の際の代替案提示に利用します。
-5. `get_deals`:
+6. `get_deals`:
    - 現在セール中の商品を検索。`sort` は `recommended`（既定：スコア主・割引率従のバランス順）/ `savings`（割引率順）/ `score`（スコア順）/ `price_asc`（価格順）。低評価の粗悪セール品を防ぐため既定で `min_score=70` に設定（全件確認は `min_score=0`）。`sale_type`（例: `プライム`, `ブラックフライデー`, `タイムセール`）での絞り込みと、現在開催中のバッジ集計 `available_badges` を返却。
-6. `get_bargain`:
+7. `get_bargain`:
    - 送料無料ライン等の買い合わせ向けに、`target_amount`（上限金額、既定2,000円）以下・`min_amount`（下限金額、例：「あと800円で送料無料」なら `min_amount=800`）以上の在庫あり商品をスコア順に返却。
-7. `get_recommendations`:
+8. `get_recommendations`:
    - 独自スコア90点以上の高評価おすすめ商品を返却（`category` やギフトの相手 `recipient` / シーン `occasion` での絞り込み可）。
-8. `list_categories`:
+9. `list_categories`:
    - 全27親カテゴリと子カテゴリの階層構造および各掲載商品数を返却。
-9. `list_brands`:
+10. `list_brands`:
    - 取扱いブランド・ブランドグループを検索（`query` 部分一致・日英表記ゆれ対応、各ブランドの掲載件数付き）。
-10. `list_spec_keys`:
+11. `list_spec_keys`:
    - スペック絞り込み（`search_products` の `spec_filters`）に使えるスペック項目の一覧を返却。`category` 指定時はその範囲で集計し、各キーを持つ商品数と値の例（頻出順）を返します。スペックキーは全商品共通の固定キー（`ストレージ` / `メモリ` / `画面` / `バッテリー` / `容量` / `重量` / `サイズ` / `OS` / `プロセッサ` / `素材` / `その他` 等）です。
 
 ### 相談プロンプト（MCP Prompts、全3種）
