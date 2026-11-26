@@ -1,0 +1,293 @@
+{
+  "analysis": {
+    "productName": "ASUS ProArt Router PRT-BE5000",
+    "parentAsin": "B0HGL31MKV",
+    "productDescription": "ASUSのクリエイター向けブランド「ProArt」から展開された、アンテナ内蔵型ミニマルデザインのデュアルバンドWi-Fi 7ルーター。最大5000Mbpsの高速無線通信と2.5G WAN/LANポートを備え、仕事の通信を優先するAdaptive QoEや商用レベルのセキュリティ機能を標準搭載する。",
+    "productUsage": [
+      "クリエイター・在宅ワーカーの高速・安定したインターネット接続",
+      "2.5G光回線やNAS・ワークステーションとの大容量データ転送",
+      "仕事用・プライベート用・IoT・VPNのネットワーク分離管理",
+      "AiMeshを活用した3階建・4LDK（最大204㎡）規模のメッシュWi-Fi構築"
+    ],
+    "positivePoints": [
+      "Wi-Fi 7（802.11be）デュアルバンド対応により、4096-QAMとMLO（マルチリンク動作）で5GHz最大4320Mbps＋2.4GHz最大688Mbps（合計最大約5000Mbps）の通信速度を実現",
+      "2.5G WANポート×1、2.5G LANポート×1、1G LANポート×3を搭載し、2.5G光回線とNASや有線ワークステーションの高速接続に対応",
+      "2.0GHzクアッドコアプロセッサ、1GB DDR4 RAM、128MBフラッシュメモリを搭載し、高負荷なトラフィック処理に対応",
+      "外部アンテナが張り出さない幅131×奥行37.5×高さ200mm・質量503.7gの省スペース設計で、卓上・壁掛けの両方に対応",
+      "仕事の通信を自動優先する「Adaptive QoE」、専用管理画面「ProArt Router Control Center」、用途別SSIDを簡単に作れる「Smart Home Master」を搭載",
+      "Trend Micro技術ベースの「AiProtection」や各種VPN（WireGuard、OpenVPN、IPSec等）を追加費用・サブスクリプションなしで利用可能",
+      "日本のIPv6（IPoE / IPv4 over IPv6）およびASUS独自のメッシュ機能「AiMesh」に対応"
+    ],
+    "negativePoints": [
+      "対応周波数は5GHzと2.4GHzのデュアルバンド構成であり、混雑の少ない6GHz帯には非対応",
+      "マルチギガビット有線ポートはWAN側1基・LAN側1基の計2基（2.5G）のみであり、10Gbpsポートは非搭載",
+      "実売価格25,350円は、同価格帯の競合Wi-Fi 7ルーター（BE6500〜BE7200クラスや10Gポート搭載機）と比較するとスペック単価がやや高め"
+    ],
+    "useCases": [
+      "デザインや映像制作を行うデスク周りに、外観を損なわずルーターを設置したいスタジオ・書斎",
+      "NASやクラウドストレージへ大容量の制作データを頻繁にアップロード・同期する在宅ワーク環境",
+      "Web会議やリモートワークの通信を家族の動画視聴・IoT機器から分離して安定させたい家庭",
+      "2.5Gbpsクラスの高速光回線を導入し、無線と有線の双方でボトルネックを減らしたいオフィス"
+    ],
+    "userStories": [
+      {
+        "userType": "映像・デザイン系クリエイター（自宅兼スタジオ）",
+        "scenario": "制作デスクの横にルーターを設置し、2.5G光回線とNASを運用したい",
+        "experience": "従来のゲーミングルーターは外部アンテナが大きく派手なLEDがデスクの雰囲気に合わないため、アンテナ内蔵でマットブラックのPRT-BE5000を選択。幅37.5mmの薄型筐体でProArtモニターの脇に置いても圧迫感がなく、2.5G WANと2.5G LANの双方を備えているため、光回線の速度を活かしつつNASへの大容量データ転送も有線で高速に行える点が実用的だと評価されている。",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2",
+          "src-3"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "在宅ワーカー（ファミリー世帯）",
+        "scenario": "家族のスマート家電や動画視聴と同時にWeb会議・クラウド作業を行う",
+        "experience": "業務中に家族の通信やIoT機器の影響でWeb会議が不安定になる課題に対し、仕事の通信を優先するAdaptive QoEと用途別SSIDを作れるSmart Home Masterが決めてとなって導入。ProArt Router Control Centerのダッシュボードでトラフィック状況を視覚的に把握でき、IoT機器を分離しつつ業務通信を安定維持できる点が支持されている。一方、6GHz帯は非対応のため、極端に5GHz帯が混雑する環境では導入前に設置場所の工夫が求められる。",
+        "supportingSourceIds": [
+          "src-2",
+          "src-3",
+          "src-5"
+        ],
+        "sentiment": "mixed"
+      }
+    ],
+    "userImpression": "海外メディアの製品解説や公式仕様からは、従来のゲーミングルーターとは一線を画す「アンテナ内蔵・マットブラックのミニマルデザイン」と「ProArt Router Control Centerによるクリエイター向けの通信優先制御（Adaptive QoE）」が高く評価されている。一方で、6GHz帯や10Gbpsポートには対応しないデュアルバンド（BE5000）仕様であるため、純粋な最大通信速度のコストパフォーマンスを重視する層よりも、デザイン性・安定性・追加費用なしのセキュリティやVPN機能を重視するクリエイターや在宅ワーカーに満足度が高い製品と位置付けられている。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "ProArt Router PRT-BE5000 製品ページ｜ASUS 日本",
+        "url": "https://www.asus.com/jp/networking-iot-servers/wifi-routers/all-series/proart-router-prt-be5000/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-10-02",
+        "author": "ASUSTeK Computer Inc.",
+        "conflictOfInterest": "none",
+        "notes": "製品概要、Adaptive QoE、Smart Home Master、ProArt Router Control Center、デュアル2.5Gポート等の公式機能説明を確認"
+      },
+      {
+        "id": "src-2",
+        "name": "ProArt Router PRT-BE5000 - スペック｜ASUS 日本",
+        "url": "https://www.asus.com/jp/networking-iot-servers/wifi-routers/all-series/proart-router-prt-be5000/techspec/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-10-02",
+        "author": "ASUSTeK Computer Inc.",
+        "conflictOfInterest": "none",
+        "notes": "最大速度（5GHz 4320Mbps / 2.4GHz 688Mbps）、内蔵アンテナ5本、2.0GHzクアッドコアCPU、1GB RAM、128MBフラッシュ、寸法131×37.5×200mm、質量503.7g、IPv6 IPoE対応、AiProtection、VPN対応を確認"
+      },
+      {
+        "id": "src-3",
+        "name": "Asus' New WiFi 7 router comes with hidden antennas | Notebookcheck",
+        "url": "https://www.notebookcheck.net/Asus-New-WiFi-7-router-comes-with-hidden-antennas.1268038.0.html",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-04-08",
+        "author": "Notebookcheck",
+        "conflictOfInterest": "none",
+        "notes": "6GHz帯非対応（2.4GHzと5GHzのみ）であること、内蔵アンテナ5本構成、2.5Gbpsポート2基とギガビットポート3基の仕様、ProArtのクリエイター向け位置付けを確認"
+      },
+      {
+        "id": "src-4",
+        "name": "ASUS ProArt Router PRT-BE5000 [ブラック] 価格比較 - 価格.com",
+        "url": "https://kakaku.com/item/K0001805416/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-11-26",
+        "author": "価格.com",
+        "conflictOfInterest": "none",
+        "notes": "国内流通モデル（ブラック）の掲載および市場価格帯を確認"
+      },
+      {
+        "id": "src-5",
+        "name": "Amazon.co.jp 商品公式情報（B0HJ83CNR5）",
+        "url": "https://www.amazon.co.jp/dp/B0HJ83CNR5",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2026-11-26",
+        "author": "Amazon / ASUS",
+        "conflictOfInterest": "none",
+        "notes": "価格￥25,350、発売日2026-10-02、最大204㎡カバー（3階建・4LDK）、卓上・壁掛け対応、追加費用なしの商用レベルセキュリティ機能を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "クリエイター・在宅ワーカー向けに、仕事の通信を自動優先し大容量データ転送やWeb会議を快適に維持できる",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-3",
+          "src-5"
+        ],
+        "crossChecked": true,
+        "notes": "ASUS公式、Notebookcheck、Amazon公式情報にて、ゲーミング向けではなくクリエイター・在宅ワークの通信を優先するAdaptive QoEおよびProArt Router Control Centerの搭載が確認されている"
+      },
+      {
+        "claim": "追加費用なしで商用レベルのネットワークセキュリティとVPN機能を利用できる",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-2",
+          "src-5"
+        ],
+        "crossChecked": true,
+        "notes": "ASUS公式スペックおよびAmazon公式情報にて、AiProtection（悪意のあるサイトブロック、セキュリティ診断）やWireGuard/OpenVPN/IPSec等のVPN機能がサブスクリプション不要で利用可能であることを確認"
+      },
+      {
+        "claim": "最大5000Mbpsの高速Wi-Fi 7通信とデュアル2.5G有線接続を実現",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-2",
+          "src-3"
+        ],
+        "crossChecked": true,
+        "notes": "ASUS公式スペックおよびNotebookcheckの仕様解説にて、5GHz最大4320Mbps＋2.4GHz最大688Mbps（4096-QAM・MLO対応）および2.5G WAN×1・2.5G LAN×1の搭載で一致。ただし6GHz帯は非対応"
+      }
+    ],
+    "lastInvestigated": "2026-11-26",
+    "investigatedPrice": "￥25,350",
+    "competitiveAnalysis": [
+      {
+        "name": "バッファロー WSR6500BE6P/NBK",
+        "asin": "B0FSCNXC6B",
+        "priceComparison": "本商品とほぼ同価格帯の競合機。純粋な無線スペック（6ストリーム・5GHz最大5764Mbps）ではバッファローが上回るが、有線2.5GポートはWAN側のみである点に留意が必要。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7（11be）デュアルバンド（5GHz＋2.4GHz）対応、アンテナ内蔵型の縦置きデザイン、MLO・メッシュWi-Fi対応",
+          "相違点：PRT-BE5000は最大5000Mbps（5GHz 3×3）かつ2.5G WAN＋2.5G LANのデュアル構成でAdaptive QoE・無償セキュリティを搭載。WSR6500BE6Pは最大5764＋688Mbps（6ストリーム）でJC-STAR適合だが、有線2.5GはINTERNET（WAN）ポートのみ"
+        ],
+        "differentiators": [
+          "ASUS ProArt PRT-BE5000の利点：2.5G光回線だけでなくNASやPCへも有線2.5Gで直結したい人や、追加費用なしの商用レベルセキュリティ・VPN・業務通信優先機能を重視するなら迷わずこちら",
+          "バッファロー WSR6500BE6P/NBKの利点：有線LANは1Gで十分であり、国内メーカーの簡単設定サポートや5GHz帯のより高い無線スループットを重視する一般家庭に適している"
+        ]
+      },
+      {
+        "name": "TP-Link Archer BE450",
+        "asin": "B0DG1JKNTQ",
+        "priceComparison": "本商品とほぼ同じ価格帯でありながら、10GbpsポートやBE7200クラスの無線速度を備えており、ハードウェアのスペック単価ではArcher BE450が優位。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7デュアルバンド対応、縦置き可能な省スペース設計、MLO・VPN・メッシュ対応",
+          "相違点：PRT-BE5000はBE5000・2.5Gポート×2構成でサブスク不要のAiProtectionとクリエイター向けUIを搭載。Archer BE450はBE7200（5764＋1376Mbps）・10G WAN/LANポート＋2.5Gポートを搭載するが、高度なセキュリティ機能（HomeShield Pro）は一部有料"
+        ],
+        "differentiators": [
+          "ASUS ProArt PRT-BE5000の利点：追加の月額課金なしで高度なセキュリティやVPN、仕事の通信優先制御を使い切りたい人や、ProArtシリーズの洗練された質感を求めるならこちら",
+          "TP-Link Archer BE450の利点：10Gbps光回線の導入予定がある場合や、同価格帯で無線・有線ともに最大限のハードウェアスペックを引き出したいパワーユーザーに適している"
+        ]
+      },
+      {
+        "name": "TP-Link Archer BE400",
+        "asin": "B0DRHSSLFS",
+        "priceComparison": "本商品より約3,500円安く、BE6500クラスの速度と2.5Gポートを備えるため、純粋なコスパ面ではArcher BE400に懸念はない。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7デュアルバンド対応、2.5G WAN/LANポート搭載、MLO・メッシュ・VPN対応",
+          "相違点：PRT-BE5000はアンテナ内蔵型の薄型ミニマルデザインとAdaptive QoE・無償AiProtectionを採用。Archer BE400は外付けアンテナ6本を備えるBE6500（5764＋688Mbps）仕様でメーカー保証3年"
+        ],
+        "differentiators": [
+          "ASUS ProArt PRT-BE5000の利点：外付けアンテナの張り出しをなくしてデスク周りをすっきりさせたい人や、クリエイティブ作業のトラフィック最適化・専用ダッシュボードを重視するならこちら",
+          "TP-Link Archer BE400の利点：見た目のシンプルさよりも価格の安さと無線電波の届きやすさ（外付けアンテナ）、3年間の長期保証を優先する場合に適している"
+        ]
+      },
+      {
+        "name": "ASUS RT-BE3600J PRO",
+        "asin": "B0GY3TPVMV",
+        "priceComparison": "同社の下位モデルにあたり本商品より約8,500円安価。無線速度がBE3600クラスに抑えられているための価格差であり、用途に応じた正当な棲み分け。",
+        "featureComparison": [
+          "共通点：ASUS製Wi-Fi 7デュアルバンド、デュアル2.5Gポート（WAN/LAN）搭載、AiMesh対応、追加費用なしのセキュリティ機能（AiProtection）・VPN対応",
+          "相違点：PRT-BE5000は5GHz 3×3アンテナで最大5000Mbps、ProArtデザインとAdaptive QoEを搭載。RT-BE3600J PROは5GHz 2×2で最大3600Mbps（2882＋688Mbps）の汎用ホームルーター"
+        ],
+        "differentiators": [
+          "ASUS ProArt PRT-BE5000の利点：3×3アンテナによる5GHz帯の余裕ある無線帯域（4320Mbps）と、ProArtのミニマル筐体・仕事優先QoEをスタジオに導入したいならこちら",
+          "ASUS RT-BE3600J PROの利点：2.5G有線ポートや無償セキュリティなどASUSの主要機能はそのままに、無線速度はBE3600で十分なため初期コストを約8,500円抑えたい人に適している"
+        ]
+      },
+      {
+        "name": "エレコム WRC-W702-B",
+        "asin": "B0G5N4FZ8H",
+        "priceComparison": "本商品より約5,500円安く、BE6500クラスの速度と2.5Gポートを備えており、価格競争力が高い。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7デュアルバンド対応、2.5Gポート搭載、アンテナ内蔵型の省スペース設計、EasyMesh/メッシュ対応",
+          "相違点：PRT-BE5000は2.5GポートをWAN・LAN各1基備え、無償のAiProtectionや高度なVPN機能を搭載。WRC-W702-BはBE6500（5764＋688Mbps）だが付属のセキュリティ（F-Secure SENSE）は1年ライセンス限定"
+        ],
+        "differentiators": [
+          "ASUS ProArt PRT-BE5000の利点：セキュリティ機能の更新費用を一切かけずに長期運用したい人や、NAS向けに2.5G LANポートが必須な人、詳細なVPN・トラフィック管理を求めるならこちら",
+          "エレコム WRC-W702-Bの利点：国内メーカーの簡単設定や「らくらく引っ越し機能」を活用し、初期費用を抑えてBE6500クラスのWi-Fi 7環境を手軽に構築したい人に適している"
+        ]
+      },
+      {
+        "name": "バッファロー WSR3600BE4P/NBK",
+        "asin": "B0F5B69SKC",
+        "priceComparison": "本商品より約8,900円安いエントリー帯のWi-Fi 7ルーター。有線ポートや無線速度を抑えた普及モデルであり、低価格ゆえの品質懸念はない。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7デュアルバンド対応、アンテナ内蔵型の縦置きデザイン、MLO・メッシュWi-Fi対応",
+          "相違点：PRT-BE5000は最大5000Mbps・2.5G WAN/LAN搭載・VPN/高度なQoE対応。WSR3600BE4Pは最大3600Mbps（4ストリーム）で有線ポートはすべて1G（ギガビット）止まり"
+        ],
+        "differentiators": [
+          "ASUS ProArt PRT-BE5000の利点：1G超の高速光回線（2.5G〜10G契約）の速度を活かしたい人や、NASとの高速有線接続・VPN・業務通信優先が必要なクリエイターなら迷わずこちら",
+          "バッファロー WSR3600BE4P/NBKの利点：1Gbpsまでの通常光回線を利用しており、まずは1万円台半ばで国内メーカー製のWi-Fi 7対応環境へ手軽に買い替えたい一般ユーザーに適している"
+        ]
+      },
+      {
+        "name": "バッファロー WXR9300BE6P/N",
+        "asin": "B0DG8WHVH3",
+        "priceComparison": "本商品より約5,650円高い上位モデル。6GHz帯対応のトライバンドおよび有線10Gbpsポートを備えているため、価格差に見合う明確な上位スペックを持つ。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7対応、MLO・メッシュWi-Fi対応、マルチギガビット有線ポート搭載",
+          "相違点：PRT-BE5000は2.4GHz/5GHzのデュアルバンド（アンテナ内蔵・2.5G×2）でコンパクト設計。WXR9300BE6Pは6GHz帯を含むトライバンド（最大5764＋2882＋688Mbps）かつ10Gbpsポート搭載だが、大型の外付け可動式アンテナを備える"
+        ],
+        "differentiators": [
+          "ASUS ProArt PRT-BE5000の利点：外付けアンテナのない洗練された省スペース筐体と、仕事向けQoE・無償の商用レベルセキュリティを2万円台半ばで導入したいならこちら",
+          "バッファロー WXR9300BE6P/Nの利点：電波干渉の少ない6GHz帯をフル活用したい人や、10Gbps光回線・10G対応NASの速度を極限まで引き出したいヘビーユーザーに適している"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "外付けアンテナが張り出すゲーミングルーターを避け、デスクやスタジオの景観に馴染むミニマルなWi-Fi 7ルーターを求めるクリエイター（TP-Link Archer BE400やバッファロー WXR9300BE6Pより省スペース・デザイン性を重視する人）",
+        "2.5G光回線の導入とNAS・PCの2.5G有線接続を両立し、サブスク費用なしで商用レベルのセキュリティとVPNを使いたい在宅ワーカー（TP-Link Archer BE450やエレコム WRC-W702-Bの有料セキュリティ更新を避けたい人）",
+        "同社の汎用機RT-BE3600J PROよりも余裕ある5GHz帯3×3（最大4320Mbps）の無線帯域と、仕事の通信を優先するAdaptive QoEを活用したいユーザー"
+      ],
+      "pros": [
+        "アンテナ内蔵の薄型マットブラック筐体（奥行37.5mm）により、制作デスクやリビングに置いても生活感や圧迫感を出さずに設置できる",
+        "2.5G WANと2.5G LANの両方を備えているため、高速光回線の恩恵を受けながらNASやワークステーションとの大容量データ転送もボトルネックなくこなせる",
+        "Adaptive QoEとSmart Home Masterにより、家族の動画視聴やIoT機器に邪魔されず、Web会議やクラウド同期などの仕事用通信を優先・分離できる",
+        "AiProtectionや各種VPN機能が追加費用なしで利用できるため、購入後のランニングコストを抑えつつ高いセキュリティ水準を維持できる"
+      ],
+      "cons": [
+        "6GHz帯には非対応のデュアルバンド仕様であるため、すでに6GHz対応端末を多数保有し電波混雑を完全に回避したいユーザーはトライバンド機（WXR9300BE6P等）を検討すべき",
+        "10Gbpsポートは非搭載で2.5GポートもWAN/LAN各1基ずつのため、10G光回線の理論値追求や複数の2.5G有線機器を接続したい場合は別途スイッチングハブの導入が必要",
+        "同価格帯の競合機（Archer BE450やWSR6500BE6P）と比べると最大無線スペック（BE5000）は控えめなため、純粋なカタログ速度のコスパ最優先なら競合も比較すること"
+      ],
+      "score": 86,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (Wi-Fi 7対応・4096-QAM・MLO・5GHz 3×3による最大5000Mbpsの高速安定通信)\n[加点: +3] (2.5G WAN×1＋2.5G LAN×1のデュアル2.5Gポートと2.0GHzクアッドコアCPU＋1GB RAMの堅実なハードウェア構成)\n[減点: -2] (6GHz帯に非対応のデュアルバンド仕様)\n[減点: -3] (25,350円の価格帯において、BE6500〜BE7200や10Gポートを備える同価格帯競合と比較するとスペック単価がやや割高)\n[加点: +2] (追加費用なしで商用レベルのAiProtectionおよび各種VPN機能が利用可能)\n[加点: +4] (アンテナ内蔵のミニマルデザイン・卓上/壁掛け対応の省スペース筐体)\n[加点: +2] (国内IPv6 IPoEおよびAiMesh対応による導入・拡張の安心感)\n[加点: +3] (Adaptive QoEとProArt Router Control Centerによるクリエイター特化の通信優先・管理体験)\n[加点: +2] (Smart Home Masterによる用途別SSID・IoT・VPNネットワーク分離の容易さ)\n[合計: 86]"
+    },
+    "technicalSpecs": {
+      "cpu": "2.0 GHz クアッドコアプロセッサ",
+      "ram": "1GB DDR4",
+      "storage": "128MB フラッシュ",
+      "dimensions": {
+        "height": "200mm",
+        "width": "131mm",
+        "depth": "37.5mm",
+        "weight": "503.7g"
+      },
+      "weight": "503.7g",
+      "connectivity": [
+        "Wi-Fi 7 (IEEE 802.11be) デュアルバンド (5GHz: 最大4320Mbps / 2.4GHz: 最大688Mbps)",
+        "Wi-Fi 6 (802.11ax) / Wi-Fi 5 (802.11ac) / Wi-Fi 4 (802.11n) / 802.11a/b/g",
+        "有線LAN: 2.5G WAN × 1, 2.5G LAN × 1, 1G LAN × 3",
+        "IPv6 (IPoE / IPv4 over IPv6) 対応",
+        "AiMesh (プライマリルーター / ノード) 対応"
+      ],
+      "other": [
+        "アンテナ: 内蔵アンテナ×5 (5GHz帯 3×3 / 2.4GHz帯 2×2)",
+        "Wi-Fi 7拡張技術: 4096-QAM, デュアルバンドMLO, OFDMA, 20/40/80/160MHz帯域幅, MU-MIMO",
+        "設置・カバー範囲: 卓上・壁掛け対応 / 最大204㎡ (3階建・4LDK目安)",
+        "セキュリティ・VPN: AiProtection (追加費用なし), WPA/WPA2/WPA3 Personal・Enterprise, WireGuard / OpenVPN / IPSec / Instant Guard / VPN Fusion対応",
+        "管理・独自機能: Adaptive QoE, ProArt Router Control Center, Smart Home Master (仕事用・IoT・VPN等の用途別SSID作成)",
+        "※6GHz帯非対応（5GHz / 2.4GHzのデュアルバンド仕様）"
+      ]
+    }
+  }
+}
