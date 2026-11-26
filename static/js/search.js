@@ -1108,6 +1108,9 @@ document.addEventListener('DOMContentLoaded', function () {
                         ignoreLocation: true,
                         useExtendedSearch: true
                     });
+                    if (searchInput.value.trim() && typeof handleSearch === 'function') {
+                        handleSearch(searchInput.value, true);
+                    }
                 } catch (err) {
                     console.error('Error loading search index fallback:', err);
                 }
@@ -1133,7 +1136,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 searchWorker = new Worker(searchWorkerUrl);
                 searchWorker.onmessage = (e) => {
                     const data = e.data || {};
-                    if (data.type === 'SEARCH_RESULTS') {
+                    if (data.type === 'READY') {
+                        if (searchInput.value.trim() && typeof handleSearch === 'function') {
+                            handleSearch(searchInput.value, true);
+                        }
+                    } else if (data.type === 'SEARCH_RESULTS') {
+                        if (data.notReady) {
+                            return;
+                        }
                         if (data.searchId === latestSearchId) {
                             displayResults(
                                 data.results,
@@ -2507,8 +2517,9 @@ document.addEventListener('DOMContentLoaded', function () {
         lastSearchState = getSearchState();
     }
 
+    const isHomePage = document.body?.dataset?.isHome === 'true';
     const urlQuery =
-        typeof URLSearchParams === 'function'
+        isHomePage && typeof URLSearchParams === 'function'
             ? new URLSearchParams(globalThis.location?.search || '').get('q')
             : null;
     if (urlQuery && urlQuery.trim() && typeof openSearchModal === 'function') {

@@ -19,14 +19,23 @@
         if (!isoString) return '';
         const date = new Date(isoString);
         if (Number.isNaN(date.getTime())) return '';
-        return `${date.getMonth() + 1}月${date.getDate()}日`;
+        return date.toLocaleString('ja-JP', {
+            month: 'numeric',
+            day: 'numeric',
+            timeZone: 'Asia/Tokyo',
+        });
     }
 
     function formatDateJa(isoString) {
         if (!isoString) return '';
         const date = new Date(isoString);
         if (Number.isNaN(date.getTime())) return isoString;
-        return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
+        return date.toLocaleString('ja-JP', {
+            year: 'numeric',
+            month: 'numeric',
+            day: 'numeric',
+            timeZone: 'Asia/Tokyo',
+        });
     }
 
     function isSafeHttpUrl(url) {
@@ -184,10 +193,25 @@
 
         const asin = rawAsin.toUpperCase();
         const shardKey = asin.slice(-2);
+        const articleUrl = `${homeUrl}${asin.toLowerCase()}/`;
+
+        async function tryRedirectIfArticleExists() {
+            try {
+                const headRes = await fetch(articleUrl, { method: 'HEAD' });
+                if (headRes.ok) {
+                    globalThis.location.replace(articleUrl);
+                    return true;
+                }
+            } catch {
+                // ignore network error and fall through to not-found message
+            }
+            return false;
+        }
 
         try {
             const response = await fetch(`${catalogBaseUrl}${shardKey}.json`);
             if (!response.ok) {
+                if (await tryRedirectIfArticleExists()) return;
                 showMessage(
                     loadingEl,
                     messageEl,
@@ -199,6 +223,7 @@
             const shardData = await response.json();
             const record = shardData?.[asin];
             if (!record) {
+                if (await tryRedirectIfArticleExists()) return;
                 showMessage(
                     loadingEl,
                     messageEl,
@@ -209,12 +234,13 @@
             }
 
             if (record.investigated === true) {
-                globalThis.location.replace(`${homeUrl}${asin.toLowerCase()}/`);
+                globalThis.location.replace(articleUrl);
                 return;
             }
 
             renderProduct(record, homeUrl, siteTitle);
         } catch {
+            if (await tryRedirectIfArticleExists()) return;
             showMessage(
                 loadingEl,
                 messageEl,

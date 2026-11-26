@@ -15,6 +15,7 @@ const logger = Logger.getInstance();
 
 const ASIN_REGEX = /^[A-Z0-9]{10}$/i;
 const ASIN_FILENAME_REGEX = /^([A-Z0-9]{10})\.json$/i;
+const ARTICLE_FILENAME_REGEX = /^([A-Z0-9]{10})\.md$/i;
 const READ_CHUNK_SIZE = 256;
 
 export interface CatalogProductRecord {
@@ -36,6 +37,7 @@ export interface CatalogProductRecord {
 export interface PaapiCacheEntry {
   status?: unknown;
   timestamp?: unknown;
+  priceTimestamp?: unknown;
   previousPrice?: unknown;
   priceChangedAt?: unknown;
   data?: {
@@ -58,6 +60,7 @@ export interface PaapiCacheEntry {
 export interface GenerateCatalogDataOptions {
   cacheDir?: string;
   investigationsDir?: string;
+  articlesDir?: string;
   outputDir?: string;
 }
 
@@ -97,7 +100,7 @@ export function convertCacheEntryToCatalogRecord(
   const rawAmount = data.price?.amount;
   const price = typeof rawAmount === 'number' && Number.isFinite(rawAmount) && rawAmount > 0 ? rawAmount : null;
 
-  const priceAsOf = toIsoStringOrNull(entry.timestamp);
+  const priceAsOf = toIsoStringOrNull(entry.priceTimestamp) ?? toIsoStringOrNull(entry.timestamp);
   if (!priceAsOf) return null;
 
   const detailPageUrl = toTrimmedString(data.detailPageUrl) || `https://www.amazon.co.jp/dp/${asin}`;
@@ -129,8 +132,23 @@ export function convertCacheEntryToCatalogRecord(
   return record;
 }
 
-export async function loadInvestigatedAsinSet(investigationsDir: string): Promise<Set<string>> {
+export async function loadInvestigatedAsinSet(investigationsDir: string, articlesDir?: string): Promise<Set<string>> {
   const set = new Set<string>();
+
+  // 本番ビルド（generate:articles 後）では実際に生成された記事ファイルを正本とする
+  if (articlesDir && fs.existsSync(articlesDir)) {
+    const articleFiles = await fs.promises.readdir(articlesDir);
+    for (const file of articleFiles) {
+      const match = ARTICLE_FILENAME_REGEX.exec(file);
+      if (match?.[1]) {
+        set.add(match[1].toUpperCase());
+      }
+    }
+    if (set.size > 0) {
+      return set;
+    }
+  }
+
   if (!fs.existsSync(investigationsDir)) {
     logger.warn(`Investigations directory not found: ${investigationsDir}`);
     return set;
@@ -162,6 +180,7 @@ export async function generateCatalogData(
 ): Promise<GenerateCatalogDataResult> {
   const cacheDir = options.cacheDir || path.join(process.cwd(), 'data/cache/paapi');
   const investigationsDir = options.investigationsDir || path.join(process.cwd(), 'data/investigations');
+  const articlesDir = options.articlesDir || path.join(process.cwd(), 'content/articles');
   const outputDir = options.outputDir || path.join(process.cwd(), 'static/catalog-data');
 
   if (!fs.existsSync(cacheDir)) {
@@ -169,7 +188,7 @@ export async function generateCatalogData(
     return { totalRecords: 0, investigatedCount: 0, uninvestigatedCount: 0, shardCount: 0 };
   }
 
-  const investigatedAsins = await loadInvestigatedAsinSet(investigationsDir);
+  const investigatedAsins = await loadInvestigatedAsinSet(investigationsDir, articlesDir);
   const shardFiles = (await fs.promises.readdir(cacheDir)).filter((file) => file.endsWith('.json'));
   const shards = new Map<string, Record<string, CatalogProductRecord>>();
 
@@ -202,8 +221,9 @@ export async function generateCatalogData(
           uninvestigatedCount += 1;
         }
       }
-    } catch {
-      logger.warn(`Failed to parse PAAPI cache shard: ${file}`);
+    } catch (err) {
+      logger.error(`Failed to parse PAAPI cache shard: ${file}`, err);
+      throw err;
     }
   });
 

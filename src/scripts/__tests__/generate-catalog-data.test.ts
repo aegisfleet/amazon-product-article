@@ -110,6 +110,21 @@ describe('generateCatalogData', () => {
       expect(missingPrice?.price_changed_at).toBeUndefined();
       expect(missingPrice?.investigated).toBe(true);
     });
+    it('priceTimestamp がある場合は timestamp より優先して price_as_of に使われること', () => {
+      const oldPriceTime = 1793496412702;
+      const newCacheTime = 1795657280855;
+      const record = convertCacheEntryToCatalogRecord(
+        'B006MB9700',
+        {
+          status: 'valid',
+          timestamp: newCacheTime,
+          priceTimestamp: oldPriceTime,
+          data: { title: 'x', price: { amount: 1064 } },
+        },
+        false,
+      );
+      expect(record?.price_as_of).toBe(new Date(oldPriceTime).toISOString());
+    });
   });
 
   describe('generateCatalogData', () => {
@@ -180,6 +195,41 @@ describe('generateCatalogData', () => {
         CatalogProductRecord
       >;
       expect(shard00.B000000100?.price).toBeNull();
+    });
+
+    it('articlesDir に記事が存在する場合は investigationsDir より優先して investigated を判定すること', async () => {
+      const articlesDir = path.join(tempDir, 'content', 'articles');
+      await fs.promises.mkdir(articlesDir, { recursive: true });
+      // investigations には両方あるが、記事は B07DY4XYND のみ生成済み
+      await fs.promises.writeFile(path.join(investigationsDir, 'B07DY4XYND.json'), '{}', 'utf-8');
+      await fs.promises.writeFile(path.join(investigationsDir, 'B0000001ND.json'), '{}', 'utf-8');
+      await fs.promises.writeFile(path.join(articlesDir, 'B07DY4XYND.md'), '---\n---\n', 'utf-8');
+
+      await fs.promises.writeFile(
+        path.join(cacheDir, 'ND.json'),
+        JSON.stringify({
+          B07DY4XYND: { status: 'valid', timestamp: 1795657280855, data: { title: '公開済み' } },
+          B0000001ND: { status: 'valid', timestamp: 1795657280855, data: { title: '記事未生成' } },
+        }),
+        'utf-8',
+      );
+
+      await generateCatalogData({ cacheDir, investigationsDir, articlesDir, outputDir });
+      const ndShard = JSON.parse(await fs.promises.readFile(path.join(outputDir, 'ND.json'), 'utf-8')) as Record<
+        string,
+        CatalogProductRecord
+      >;
+      expect(ndShard.B07DY4XYND?.investigated).toBe(true);
+      expect(ndShard.B0000001ND?.investigated).toBe(false);
+    });
+
+    it('キャッシュシャードの読み取り・パース失敗時はエラーを投げ、既存出力を削除しないこと', async () => {
+      await fs.promises.mkdir(outputDir, { recursive: true });
+      await fs.promises.writeFile(path.join(outputDir, 'KEEP.json'), '{}', 'utf-8');
+      await fs.promises.writeFile(path.join(cacheDir, 'BD.json'), '{broken json', 'utf-8');
+
+      await expect(generateCatalogData({ cacheDir, investigationsDir, outputDir })).rejects.toThrow();
+      expect(fs.existsSync(path.join(outputDir, 'KEEP.json'))).toBe(true);
     });
 
     it('キャッシュディレクトリが存在しない場合は0件を返すこと', async () => {
