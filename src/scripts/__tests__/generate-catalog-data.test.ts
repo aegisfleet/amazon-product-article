@@ -11,16 +11,15 @@ import {
 describe('generateCatalogData', () => {
   let tempDir: string;
   let cacheDir: string;
-  let investigationsDir: string;
+  let articlesDir: string;
   let outputDir: string;
 
   beforeEach(async () => {
     tempDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), 'catalog-data-test-'));
     cacheDir = path.join(tempDir, 'data', 'cache', 'paapi');
-    investigationsDir = path.join(tempDir, 'data', 'investigations');
+    articlesDir = path.join(tempDir, 'content', 'articles');
     outputDir = path.join(tempDir, 'static', 'catalog-data');
     await fs.promises.mkdir(cacheDir, { recursive: true });
-    await fs.promises.mkdir(investigationsDir, { recursive: true });
   });
 
   afterEach(async () => {
@@ -129,7 +128,9 @@ describe('generateCatalogData', () => {
 
   describe('generateCatalogData', () => {
     it('valid なキャッシュのみ抽出し、articlesDir に基づく investigated 判定とシャード振り分けを行うこと', async () => {
-      await fs.promises.writeFile(path.join(investigationsDir, 'B07DY4XYND.md'), '---\n---\n', 'utf-8');
+      await fs.promises.mkdir(articlesDir, { recursive: true });
+      await fs.promises.writeFile(path.join(articlesDir, 'B07DY4XYND.md'), '---\n---\n', 'utf-8');
+      await fs.promises.mkdir(path.join(articlesDir, 'B0000001ND.md'));
 
       await fs.promises.writeFile(
         path.join(cacheDir, 'ND.json'),
@@ -171,7 +172,7 @@ describe('generateCatalogData', () => {
       await fs.promises.mkdir(outputDir, { recursive: true });
       await fs.promises.writeFile(path.join(outputDir, 'ZZ.json'), '{}', 'utf-8');
 
-      const result = await generateCatalogData({ cacheDir, articlesDir: investigationsDir, outputDir });
+      const result = await generateCatalogData({ cacheDir, articlesDir, outputDir });
       expect(result).toEqual({
         totalRecords: 3,
         investigatedCount: 1,
@@ -197,28 +198,22 @@ describe('generateCatalogData', () => {
       expect(shard00.B000000100?.price).toBeNull();
     });
 
-    it('articlesDir が空または存在しない場合は全件 investigated: false になること', async () => {
+    it.each(['missing', 'empty'])('記事ディレクトリが %s の場合は調査JSONがあっても未調査になること', async (state) => {
+      const investigationsDir = path.join(tempDir, 'data', 'investigations');
+      await fs.promises.mkdir(investigationsDir, { recursive: true });
+      await fs.promises.writeFile(path.join(investigationsDir, 'B07DY4XYND.json'), '{}', 'utf-8');
+      if (state === 'empty') await fs.promises.mkdir(articlesDir, { recursive: true });
       await fs.promises.writeFile(
         path.join(cacheDir, 'ND.json'),
-        JSON.stringify({
-          B07DY4XYND: { status: 'valid', timestamp: 1795657280855, data: { title: '記事0件時' } },
-        }),
+        JSON.stringify({ B07DY4XYND: { status: 'valid', timestamp: 1795657280855, data: { title: '記事なし' } } }),
         'utf-8',
       );
 
-      // 空の articlesDir
-      const emptyResult = await generateCatalogData({ cacheDir, articlesDir: investigationsDir, outputDir });
-      expect(emptyResult.investigatedCount).toBe(0);
-      expect(emptyResult.uninvestigatedCount).toBe(1);
-
-      // 存在しない articlesDir
-      const missingResult = await generateCatalogData({
-        cacheDir,
-        articlesDir: path.join(tempDir, 'missing-articles'),
-        outputDir,
-      });
-      expect(missingResult.investigatedCount).toBe(0);
-      expect(missingResult.uninvestigatedCount).toBe(1);
+      const cwd = jest.spyOn(process, 'cwd').mockReturnValue(tempDir);
+      const result = await generateCatalogData().finally(() => cwd.mockRestore());
+      expect(result).toMatchObject({ investigatedCount: 0, uninvestigatedCount: 1 });
+      const shard = JSON.parse(await fs.promises.readFile(path.join(outputDir, 'ND.json'), 'utf-8'));
+      expect(shard.B07DY4XYND.investigated).toBe(false);
     });
 
     it('キャッシュシャードの読み取り・パース失敗時はエラーを投げ、既存出力を削除しないこと', async () => {
@@ -226,14 +221,14 @@ describe('generateCatalogData', () => {
       await fs.promises.writeFile(path.join(outputDir, 'KEEP.json'), '{}', 'utf-8');
       await fs.promises.writeFile(path.join(cacheDir, 'BD.json'), '{broken json', 'utf-8');
 
-      await expect(generateCatalogData({ cacheDir, articlesDir: investigationsDir, outputDir })).rejects.toThrow();
+      await expect(generateCatalogData({ cacheDir, articlesDir, outputDir })).rejects.toThrow();
       expect(fs.existsSync(path.join(outputDir, 'KEEP.json'))).toBe(true);
     });
 
     it('キャッシュディレクトリが存在しない場合は0件を返すこと', async () => {
       const result = await generateCatalogData({
         cacheDir: path.join(tempDir, 'nonexistent'),
-        articlesDir: investigationsDir,
+        articlesDir,
         outputDir,
       });
       expect(result.totalRecords).toBe(0);

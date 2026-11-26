@@ -1,7 +1,7 @@
 #!/usr/bin/env ts-node
 /**
  * Generate Catalog Data Script
- * data/cache/paapi/*.json（Creators API キャッシュ）と data/investigations/*.json（調査結果）を走査し、
+ * data/cache/paapi/*.json（Creators API キャッシュ）と content/articles/*.md（公開用記事）を走査し、
  * 未調査商品カタログページ（/catalog/?asin=）およびリモートMCPサーバー向けの
  * シャーディング済みカタログJSON（static/catalog-data/<ASIN末尾2文字>.json）を生成する。
  */
@@ -131,20 +131,24 @@ export function convertCacheEntryToCatalogRecord(
 }
 
 export async function loadInvestigatedAsinSet(articlesDir: string): Promise<Set<string>> {
-  const set = new Set<string>();
-  if (!fs.existsSync(articlesDir)) {
-    logger.warn(`Articles directory not found: ${articlesDir}`);
-    return set;
-  }
+  const asins = new Set<string>();
 
-  const articleFiles = await fs.promises.readdir(articlesDir);
-  for (const file of articleFiles) {
-    const match = ARTICLE_FILENAME_REGEX.exec(file);
+  // 公開用のビルドでは、記事生成後の Markdown ファイルを正本とする。
+  const entries = await fs.promises
+    .readdir(articlesDir, { withFileTypes: true })
+    .catch((err: NodeJS.ErrnoException) => {
+      if (err.code !== 'ENOENT') throw err;
+      logger.warn(`Articles directory not found: ${articlesDir}`);
+      return [];
+    });
+  for (const entry of entries) {
+    if (!entry.isFile()) continue;
+    const match = ARTICLE_FILENAME_REGEX.exec(entry.name);
     if (match?.[1]) {
-      set.add(match[1].toUpperCase());
+      asins.add(match[1].toUpperCase());
     }
   }
-  return set;
+  return asins;
 }
 
 async function cleanExistingShards(outputDir: string): Promise<void> {
