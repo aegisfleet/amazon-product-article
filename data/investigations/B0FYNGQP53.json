@@ -1,0 +1,295 @@
+{
+  "analysis": {
+    "productName": "バッファロー Wi-Fi 7対応デュアルバンドルーター WSR3600BE4P-BK",
+    "parentAsin": "B0FYNGQP53",
+    "productDescription": "5GHz帯（最大2882Mbps）と2.4GHz帯（最大688Mbps）のデュアルバンドに対応したバッファロー製のWi-Fi 7エントリー・スタンダードルーター。5GHz帯に3本のアンテナを内蔵し、1万円台前半の価格帯ながら遠距離通信の安定性とMLO・EasyMesh・IPv6（IPoE）対応を両立している。",
+    "productUsage": [
+      "1Gbpsクラス以下の光回線環境におけるメインWi-Fiルーター",
+      "Wi-Fi 5/Wi-Fi 6世代の古いルーターからの買い替え・リプレース",
+      "Wi-Fi EasyMeshを活用した戸建て・広いマンションのメッシュWi-Fi構築および中継機運用"
+    ],
+    "positivePoints": [
+      "Wi-Fi 7（IEEE 802.11be）のMLO・4096QAM・Multi-RUに対応し、5GHz最大2882Mbps・2.4GHz最大688Mbpsの規格速度を備える",
+      "デュアルバンド2ストリーム機でありながら5GHz帯用に3本のアンテナを内蔵し、遠距離（2階・3階）での通信速度と上りスループットの低下を抑制できる",
+      "外形寸法43×148×133mm、質量約280gのコンパクト筐体で、縦置きだけでなく付属台座を背面に付け替えて壁掛け設置にも対応する",
+      "国内の主要なIPv6（IPoE）サービスへの自動対応やスマート引っ越し+、ネット脅威ブロッカー2 ベーシック（1年無料）、8種類の紙ガイドおよびAirStationアプリを備える",
+      "IoT製品セキュリティ適合ラベリング制度「JC-STAR」レベル1（★1）を取得している"
+    ],
+    "negativePoints": [
+      "6GHz帯および320MHz幅通信には非対応のデュアルバンド仕様である",
+      "有線ポート（WAN×1・LAN×3）がすべて最大1Gbps止まりであり、2.5Gbpsや10Gbpsのマルチギガ回線の速度をフルに引き出せない",
+      "USBポート非搭載のため簡易NAS機能やUSB共有機能には対応せず、VPNサーバーやDDNS機能も省かれている",
+      "「2.4/5GHz共通」SSIDを利用すると遠距離で2.4GHz帯へ自動切り替えが発生し速度が大きく低下する場合がある"
+    ],
+    "useCases": [
+      "1Gbps光回線を契約しているマンション（～4LDK）や戸建て（～3階建て）での日常的なインターネット接続",
+      "Wi-Fi 7対応スマートフォンやノートPCを導入した際の低コストな通信環境アップデート",
+      "壁掛け設置やテレビ横の狭いスペースへの省スペース設置"
+    ],
+    "userStories": [
+      {
+        "userType": "旧世代ルーターから買い替えた一般家庭ユーザー",
+        "scenario": "長年使っていたWi-Fi 5対応機（WG1200HS）の速度不足を感じ、1万円台で国内メーカーの最新規格機を導入したいと考えて買い替えた",
+        "experience": "海外メーカーや上位機種とも比較したが、設定の安心感と1万円台前半でWi-Fi 7と5GHz 3本アンテナが手に入る点を決め手にWSR3600BE4P-BKを選択した。導入後に同一環境で速度計測を行ったところ、5GHz帯の下り平均が約428Mbpsとなり、旧機種の約2.7倍に改善した。有線ポートは1Gbpsまでだが1ギガ回線環境ではボトルネックにならず、コンパクトな筐体で置き場所にも困らなかった。",
+        "supportingSourceIds": [
+          "src-3"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "戸建てで2階・3階まで電波を届けたいユーザー",
+        "scenario": "1階のリビングにルーターを設置し、離れた部屋や別階でノートPCやスマホを快適に使えるか検証した",
+        "experience": "安価なエントリーモデルで6GHz帯は非対応だが、5GHz帯に3本アンテナを搭載している点に期待して導入した。2階では下り700Mbps超・上り600Mbps超と上り方向の落ち込みが少なく快適に通信できた。一方で、初期の「2.4/5GHz共通」SSIDでは3階窓際で2.4GHzに切り替わり速度が100Mbps以下に落ち込んだため、遠距離でも速度を出したい場面では「5GHz（通信速度重視）」のSSIDを明示的に選ぶことで下り255Mbpsを維持できた。",
+        "supportingSourceIds": [
+          "src-2"
+        ],
+        "sentiment": "mixed"
+      },
+      {
+        "userType": "ルーター設定と回線速度を見直した半年利用者",
+        "scenario": "通信速度の遅さに悩み、ルーターの買い替えと同時にIPv6（v6プラス）とファームウェア設定を見直した",
+        "experience": "国内主要IPv6サービスへの自動対応と分かりやすい管理画面を理由に本機を選び、半年以上継続利用している。購入直後は旧ルーターから引き継いだ設定のままだったため速度が伸び悩んだが、v6プラスの有効化とファームウェア更新を行ったことで1階リビングでの実測が30～50Mbpsから最大474Mbpsまで向上した。Wi-Fi 7の恩恵だけでなく、国内回線への親和性の高さと安定稼働が満足につながっている。",
+        "supportingSourceIds": [
+          "src-4"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "専門メディアの実機検証および購入者レビューを通じて、「1Gbps以下の一般的な光回線環境で、最も失敗しにくい高コスパなWi-Fi 7入門機」として高く評価されている。有線ポートが1Gbps止まりであることや6GHz帯非対応である点は購入前から割り切りポイントとして認識されており、10ギガ回線ユーザー以外からは「実用上十分な速度と高い安定性が得られる」と肯定的に受け止められている。一方で、2.4/5GHz共通SSID利用時の遠距離での帯域切り替えによる速度低下については、用途に応じて5GHz専用SSIDを使い分ける工夫で解決している声が見られる。結果として、手厚いガイドや国内メーカーの安心感を重視してWi-Fi 5/6から堅実に買い替えたい層が満足しやすく、10ギガ回線のフルスピード活用や6GHz帯での超高速通信を期待して購入した層には物足りなさが残る製品と言える。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "バッファロー公式製品情報 - WSR3600BE4P-BK",
+        "url": "https://www.buffalo.jp/product/detail/wsr3600be4p-bk.html",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-04-23",
+        "author": "株式会社バッファロー",
+        "conflictOfInterest": "possible",
+        "notes": "公式スペック（5GHz 2882Mbps / 2.4GHz 688Mbps、5GHz 3本アンテナ、有線1Gbps WAN×1/LAN×3、外形寸法43×148×133mm、質量約280g、最大消費電力14.1W、JC-STAR★1適合、JAN 4981254072752）を確認。"
+      },
+      {
+        "id": "src-2",
+        "name": "これぞバッファロー！ Wi-Fi 7デュアルバンドルーター「WSR3600BE4P」はエントリー向け“だからこそ”の手抜きがないモデル【イニシャルB】 - INTERNET Watch",
+        "url": "https://internet.watch.impress.co.jp/docs/column/shimizu/2012159.html",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2025-05-12",
+        "author": "清水 理史（インプレス）",
+        "conflictOfInterest": "none",
+        "notes": "1F～3Fでの実測ベンチマーク（1F下り945Mbps/2F下り739Mbps・上り673Mbps/3F窓際255Mbps）、2.4/5GHz共通SSIDと5GHz専用SSIDの挙動差、8種類の同梱ガイドや壁掛け対応台座の評価を確認。"
+      },
+      {
+        "id": "src-3",
+        "name": "WSR3600BE4P実機レビュー｜速度と注意点を検証した結果 - 家ネット再構築",
+        "url": "https://ienet-rebuild.com/wsr3600be4p-review/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-08-04",
+        "author": "家ネット再構築",
+        "conflictOfInterest": "none",
+        "notes": "WSR3600BE4P-BK購入者による実測比較。旧機種WG1200HSから約2.7倍の下り平均約428Mbpsを記録した実体験と、1Gbpsポート・6GHz非対応の注意点を報告。"
+      },
+      {
+        "id": "src-4",
+        "name": "Wi-Fi 7ルーターで速度約10倍。犯人は「設定したつもり」だった｜Buffalo WSR3600BE4P半年レビュー",
+        "url": "https://stand-alone-of-katsuo.com/buffalo-wsr3600be4p-review/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-10-04",
+        "author": "カツオのガジェット工房",
+        "conflictOfInterest": "none",
+        "notes": "半年使用レビュー。v6プラス設定とファームウェア更新により1階リビングで30～50Mbpsから最大474Mbpsへ改善した実体験を確認。"
+      },
+      {
+        "id": "src-5",
+        "name": "価格.com - バッファロー AirStation WSR3600BE4P-BK [ブラック]",
+        "url": "https://kakaku.com/item/K0001687211/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2025-04-23",
+        "author": "価格.com",
+        "conflictOfInterest": "none",
+        "notes": "製品仕様・カラーバリエーション（BK/WH）および国内市場での製品情報掲載を確認。"
+      },
+      {
+        "id": "src-6",
+        "name": "Amazon.co.jp 商品ページ - B0FYNGQP53",
+        "url": "https://www.amazon.co.jp/dp/B0FYNGQP53",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2026-11-26",
+        "author": "Amazon.co.jp",
+        "conflictOfInterest": "possible",
+        "notes": "調査時点の販売価格（￥13,480）、参考価格からの割引（23%OFF）、JANコードを確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "5GHz帯に3本のアンテナを搭載することで、遠距離の2アンテナ通信をより高速・安定化させる",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "メーカー公式主張に対し、INTERNET Watchの3階建て戸建て実測ベンチマークで2Fの上り速度低下が抑えられ（673Mbps）、3Fでも5GHz専用SSIDで255Mbpsを維持できることが検証されている。"
+      },
+      {
+        "claim": "エントリークラスでありながら、初期設定の分かりやすさとセキュリティ・引っ越し機能の充実により初心者でも安心して導入できる",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2",
+          "src-4"
+        ],
+        "crossChecked": true,
+        "notes": "公式の8種類ガイド同梱・AirStationアプリ・JC-STAR適合（★1）に加え、専門メディアおよび長期レビューでも導入のしやすさと安定稼働が高く評価されている。"
+      }
+    ],
+    "lastInvestigated": "2026-11-26",
+    "investigatedPrice": "￥13,480",
+    "competitiveAnalysis": [
+      {
+        "name": "TP-Link Archer BE220 (BE3600)",
+        "asin": "B0DJQMPKRH",
+        "priceComparison": "競合の方がやや安価だが、本商品は国内メーカーのサポート体制、壁掛け対応のスリム縦置き筐体、5GHz 3本アンテナ設計に付加価値がある。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7（BE3600クラス：2882+688Mbps）のデュアルバンド対応、有線ポートが1Gbps仕様、EasyMesh対応である点。",
+          "相違点：本商品はアンテナ内蔵のスリムな縦置き（壁掛け両用）筐体で5GHzに3本アンテナを搭載するのに対し、Archer BE220は外付けアンテナ4本を備えた平置き型でLANポートが4基ある点。"
+        ],
+        "differentiators": [
+          "WSR3600BE4P-BKの利点：テレビ横や壁掛けなど省スペースで設置したい場合や、国内メーカーの手厚い説明書・引っ越し機能を重視するなら迷わずこちらを選ぶべき。",
+          "TP-Link Archer BE220の利点：設置スペースに余裕があり、少しでも初期費用を抑えつつ有線LANポートを4つ確保したい場合に適している。"
+        ]
+      },
+      {
+        "name": "エレコム WRC-W701-B",
+        "asin": "B0DJ8KJVNF",
+        "priceComparison": "競合の方が数千円安く、さらに2.5Gbps有線ポートを備えているため純粋なハードウェアコスパでは競合が優位。本商品は5GHz 3本アンテナとEasyMesh対応・設定ガイドの充実度が強み。",
+        "featureComparison": [
+          "共通点：国内メーカー製のWi-Fi 7（2882+688Mbps）デュアルバンドルーターで、IPv6（IPoE）や引っ越し機能に対応している点。",
+          "相違点：WRC-W701-Bは2.5Gbps有線ポートを搭載する一方、本商品は有線1Gbpsながら5GHz帯に3本アンテナを搭載しWi-Fi EasyMeshにも対応している点。"
+        ],
+        "differentiators": [
+          "WSR3600BE4P-BKの利点：1Gbps以下の回線で、離れた部屋への無線到達性や将来のEasyMesh連携、バッファロー製ルーターからのスムーズな移行を重視するならこちら。",
+          "エレコム WRC-W701-Bの利点：1万円を切る予算で2.5Gbps対応の高速有線ポートを確保したい2.5G/10G回線ユーザーに適している。"
+        ]
+      },
+      {
+        "name": "エレコム WRC-BE36GS-BA",
+        "asin": "B0HFV84BG4",
+        "priceComparison": "競合の方がやや安価で仕様も近いが、本商品は5GHz専用3本目アンテナによる遠距離性能とカラーバリエーション展開・アプリ完成度に強みがある。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7（2882+688Mbps）デュアルバンド、有線1Gbps×3LANポート、EasyMesh対応、JC-STAR等セキュリティ機能を備えた国内メーカーエントリー機である点。",
+          "相違点：本商品は5GHz 3アンテナ構成とネット脅威ブロッカー2（1年無料）を備えるのに対し、WRC-BE36GS-BAは「離れ家モード2」や「こどもネットタイマー3」を搭載している点。"
+        ],
+        "differentiators": [
+          "WSR3600BE4P-BKの利点：遠距離での5GHzスループット維持や、従来のバッファロー製AirStationからのデータ引っ越しを重視するならこちら。",
+          "エレコム WRC-BE36GS-BAの利点：母屋と離れ家での運用（屋外5GHz帯規制への配慮機能）や購入価格をわずかにでも抑えたい場合に適している。"
+        ]
+      },
+      {
+        "name": "ASUS RT-BE3600J PRO",
+        "asin": "B0GY3TPVMV",
+        "priceComparison": "競合の方が数千円高価だが、デュアル2.5Gbpsポートや追加費用なしのセキュリティ・VPN機能を搭載するため、高度なネットワーク機能が必要な場合は価格差に見合う価値がある。",
+        "featureComparison": [
+          "共通点：最大3600MbpsクラスのWi-Fi 7デュアルバンド対応およびメッシュWi-Fi対応である点。",
+          "相違点：本商品は1Gbps有線ポートかつ家庭用向けシンプル設定であるのに対し、RT-BE3600J PROはデュアル2.5G有線ポート・VPN機能・永年無料のAiProtectionを搭載している点。"
+        ],
+        "differentiators": [
+          "WSR3600BE4P-BKの利点：VPNや2.5G有線接続は不要で、初期設定の迷わなさとコンパクトさ、数千円安い導入コストを優先するならこちら。",
+          "ASUS RT-BE3600J PROの利点：2.5Gbps回線の活用やVPNサーバー構築、在宅ワーク向けの高度なセキュリティ・管理機能を求めるパワーユーザーに適している。"
+        ]
+      },
+      {
+        "name": "バッファロー WSR6500BE6P/NBK",
+        "asin": "B0FSCNXC6B",
+        "priceComparison": "競合は本商品の約2倍の価格帯となる上位モデルであり、1Gbps回線しか使わないユーザーにとっては本商品の方がコストパフォーマンスに優れる。",
+        "featureComparison": [
+          "共通点：バッファロー製のデュアルバンドWi-Fi 7ルーターで、EasyMesh・IPv6（IPoE）・JC-STAR適合を備える点。",
+          "相違点：WSR6500BE6Pは5GHz帯4ストリーム（最大5764Mbps）かつ2.5Gbps有線ポートを搭載する上位機であるのに対し、本商品は5GHz帯2ストリーム（最大2882Mbps）かつ有線1Gbpsのエントリー機である点。"
+        ],
+        "differentiators": [
+          "WSR3600BE4P-BKの利点：自宅の回線が1Gbpsで、スマホやPCの接続台数も一般的な範囲（約20台まで）なら半額近い本商品で十分な性能が得られる。",
+          "バッファロー WSR6500BE6P/NBKの利点：2.5G/10G光回線を契約している場合や、多人数・多端末が同時に大容量通信を行う環境に適している。"
+        ]
+      },
+      {
+        "name": "バッファロー WSR-3000AX4L/N",
+        "asin": "B0H1FPJ53M",
+        "priceComparison": "競合はWi-Fi 6世代のため数千円安いが、今後の端末買い替えを見据えると本商品のWi-Fi 7（MLO）対応への価格差は十分妥当である。",
+        "featureComparison": [
+          "共通点：バッファロー製のスリム縦置きエントリーモデルで、EasyMeshや1Gbps有線ポートを採用している点。",
+          "相違点：本商品は最新のWi-Fi 7（2882+688Mbps / MLO対応）であるのに対し、WSR-3000AX4L/NはWi-Fi 6（2401+573Mbps）世代である点。"
+        ],
+        "differentiators": [
+          "WSR3600BE4P-BKの利点：iPhoneや最新Android・ノートPCなどWi-Fi 7対応端末を今後長く使う予定があり、MLOによる通信の安定性を得たいならこちら。",
+          "バッファロー WSR-3000AX4L/Nの利点：接続端末がすべてWi-Fi 6以前であり、1万円未満で最低限の買い替えを済ませたい場合に適している。"
+        ]
+      },
+      {
+        "name": "TP-Link Archer BE450",
+        "asin": "B0DG1JKNTQ",
+        "priceComparison": "競合は約2倍近い価格帯のミドルハイクラス機であり、10ギガ回線環境でなければ本商品の方が費用対効果が高い。",
+        "featureComparison": [
+          "共通点：6GHz帯を持たないデュアルバンドWi-Fi 7ルーターで、MLOおよびEasyMeshに対応する点。",
+          "相違点：Archer BE450はBE7200（5764+1376Mbps）かつ10Gbps有線ポートを備えるのに対し、本商品はBE3600クラス・1Gbpsポートで軽量コンパクトな点。"
+        ],
+        "differentiators": [
+          "WSR3600BE4P-BKの利点：1ギガ光回線ユーザーで、設置場所を選ばない小型サイズと1万円台前半の導入しやすさを重視するならこちら。",
+          "TP-Link Archer BE450の利点：10ギガ光回線を契約しており、有線10Gbpsや高速なWi-Fiスループットを妥協なく引き出したい場合に適している。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "1Gbps以下の一般的な光回線を利用しており、TP-Linkやエレコム等の海外・他社機よりも国内メーカーの丁寧な設定ガイドと安定したIPv6自動接続を重視してWi-Fi 7へ買い替えたい人",
+        "縦置きだけでなく壁掛け設置も可能なコンパクト筐体で、2階・3階など離れた部屋でも5GHz帯の安定した通信を確保したい戸建て・マンション居住者",
+        "将来的にEasyMeshの中継機やサテライト機へ流用できる手頃な価格のバッファロー製Wi-Fi 7ルーターを探している人"
+      ],
+      "pros": [
+        "5GHz帯に3本目のアンテナを内蔵しているため、ルーターから離れた2階や別室でも上り・下りともに速度が落ちにくく、Web会議や動画視聴が安定する",
+        "幅43mmのスリムボディと縦置き・壁掛け両用台座により、テレビ裏や棚の隙間など限られたスペースにもすっきり収まる",
+        "8種類の紙ガイドとAirStationアプリ、さらにスマート引っ越し+が用意されており、ネットワーク設定に不慣れなユーザーでも迷わず開通・乗り換えができる"
+      ],
+      "cons": [
+        "有線ポートがすべて最大1Gbpsまでの対応となるため、すでに2ギガ・10ギガ光回線を契約している人（または近々乗り換える予定の人）は上位機種や2.5Gポート搭載機を検討すること",
+        "6GHz帯・320MHz幅には非対応のため、周辺の5GHz帯が極端に混雑している環境で6GHz帯の空いた帯域を使いたい人はトライバンド機を選ぶこと",
+        "「2.4/5GHz共通」のSSIDでは遠距離で自動的に2.4GHzへ切り替わり速度が低下することがあるため、離れた部屋で高速通信したい場合は5GHz専用SSIDへ接続する運用を確認すること"
+      ],
+      "score": 87,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (5GHz帯3本アンテナ構成により、実測ベンチマークで2階・3階でも上り/下りの速度低下を抑えられる点)\n[加点: +5] (Wi-Fi 7のMLO・4096QAM、EasyMesh、国内主要IPv6 IPoEサービスへの幅広い対応)\n[加点: +5] (1万円台前半の実売価格でWi-Fi 7環境と安定した遠距離通信を導入でき、1Gbps回線環境での費用対効果が高い点)\n[減点: -3] (有線WAN/LANポートがすべて1Gbps止まりであり、同価格帯の一部競合が採用する2.5Gbpsマルチギガポートに非対応である点)\n[加点: +3] (幅43×高さ148×奥行133mm・約280gの省スペース筐体、壁掛け対応台座、2色展開、丁寧な同梱ガイドの作り込み)\n[加点: +4] (専門メディアおよび長期ユーザーレビューでの高評価と、JC-STARレベル1適合によるセキュリティ面の信頼性)\n[加点: +3] (ネット脅威ブロッカー2 ベーシック1年無料やスマート引っ越し+など、初心者・買い替え層向けの付加価値)\n[合計: 87]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "148mm",
+        "width": "43mm",
+        "depth": "133mm",
+        "weight": "280g"
+      },
+      "weight": "280g",
+      "connectivity": [
+        "Wi-Fi 7 (IEEE 802.11be)",
+        "Wi-Fi 6 (IEEE 802.11ax) / 11ac / 11n / 11a / 11g / 11b",
+        "デュアルバンド (5GHz最大2882Mbps + 2.4GHz最大688Mbps)",
+        "1Gbps WANポート × 1",
+        "1Gbps LANポート × 3"
+      ],
+      "other": [
+        "アンテナ: 内蔵3本（5GHz/2.4GHz共通×2、5GHz専用×1）",
+        "Wi-Fi 7機能: MLO (Multi-Link Operation)、4096QAM、Multi-RU、ワイドバンド5GHz (160MHz)対応（※6GHz帯・320MHz幅非対応）",
+        "メッシュ機能: Wi-Fi EasyMesh対応",
+        "セキュリティ: WPA3、JC-STAR★1（レベル1）適合、ネット脅威ブロッカー2 ベーシック（1年間無料ライセンス）",
+        "回線・設定機能: IPv6 (IPoE / MAP-E / DS-Lite)対応、バンドステアリングLite、スマート引っ越し+、無線引っ越し機能、AirStationアプリ対応",
+        "動作モード: ルーター (RT) / アクセスポイント (AP) / 中継機 (WB)",
+        "消費電力: 最大14.1W",
+        "動作保証環境: 温度 0～40℃、湿度 10～85％",
+        "保証期間: 1年間",
+        "JANコード: 4981254072752"
+      ]
+    }
+  }
+}
