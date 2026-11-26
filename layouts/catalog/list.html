@@ -1,8 +1,19 @@
 {{- define "main" -}}
+{{- $moshimo := .Site.Params.affiliate.moshimo -}}
 <div class="container catalog-page-container" style="padding-top: var(--spacing-xl); padding-bottom: var(--spacing-2xl);"
     data-catalog-base-url="{{ `catalog-data/` | relURL }}"
     data-home-url="{{ `` | relURL }}"
-    data-site-title="{{ .Site.Title }}">
+    data-site-title="{{ .Site.Title }}"
+    data-request-form-url="{{ .Site.Params.productRequestFormUrl }}"
+    data-request-entry-id="{{ .Site.Params.productRequestEntryId }}"
+    data-rakuten-a-id="{{ $moshimo.rakuten_a_id | default `5756223` }}"
+    data-rakuten-p-id="{{ $moshimo.rakuten_p_id | default `54` }}"
+    data-rakuten-pc-id="{{ $moshimo.rakuten_pc_id | default `54` }}"
+    data-rakuten-pl-id="{{ $moshimo.rakuten_pl_id | default `27059` }}"
+    data-yahoo-a-id="{{ $moshimo.yahoo_a_id | default `5756224` }}"
+    data-yahoo-p-id="{{ $moshimo.yahoo_p_id | default `1225` }}"
+    data-yahoo-pc-id="{{ $moshimo.yahoo_pc_id | default `1925` }}"
+    data-yahoo-pl-id="{{ $moshimo.yahoo_pl_id | default `27061` }}">
     {{- partial "breadcrumb.html" . -}}
 
     <div id="catalog-loading" class="catalog-status-card">
@@ -14,6 +25,11 @@
         <h1 id="catalog-message-title" class="catalog-message-title">商品データのお知らせ</h1>
         <p id="catalog-message-desc" class="catalog-message-desc"></p>
         <div class="catalog-message-actions">
+            <a id="catalog-message-request-link" href="#" target="_blank" rel="noopener noreferrer"
+                class="catalog-action-btn catalog-request-link" style="display: none;">
+                <span class="material-symbols-outlined" aria-hidden="true">rate_review</span>
+                <span>この商品の調査をリクエスト</span>
+            </a>
             <a href="{{ `` | relURL }}" class="btn-shop btn-shop-amazon btn-shop--hero" style="text-decoration: none;">
                 <span class="btn-shop-label">トップページで調査済み商品を探す</span>
             </a>
@@ -82,12 +98,34 @@
                     </div>
                 </dl>
 
-                <div class="catalog-actions">
+                <div class="product-shop-buttons product-shop-buttons--hero catalog-shop-buttons">
                     <a id="catalog-amazon-link" href="#" target="_blank" rel="noopener noreferrer"
-                        class="btn-shop btn-shop-amazon btn-shop--hero catalog-amazon-btn">
+                        class="btn-shop btn-shop-amazon btn-shop--hero">
                         <span class="btn-shop-label">Amazonで見る</span>
                     </a>
-                    <a id="catalog-search-link" href="{{ `` | relURL }}" class="catalog-search-link">
+                    <a id="catalog-rakuten-link" href="#" target="_blank" rel="noopener noreferrer"
+                        class="btn-shop btn-shop-rakuten btn-shop--hero">
+                        <span class="btn-shop-icon-wrapper">
+                            <span class="btn-shop-badge-icon">R</span>
+                        </span>
+                        <span class="btn-shop-label">楽天市場</span>
+                    </a>
+                    <a id="catalog-yahoo-link" href="#" target="_blank" rel="noopener noreferrer"
+                        class="btn-shop btn-shop-yahoo btn-shop--hero">
+                        <span class="btn-shop-icon-wrapper">
+                            <span class="btn-shop-badge-icon">Y!</span>
+                        </span>
+                        <span class="btn-shop-label">Yahoo!</span>
+                    </a>
+                </div>
+
+                <div class="catalog-secondary-actions">
+                    <a id="catalog-request-link" href="#" target="_blank" rel="noopener noreferrer"
+                        class="catalog-action-btn catalog-request-link" style="display: none;">
+                        <span class="material-symbols-outlined" aria-hidden="true">rate_review</span>
+                        <span>この商品の調査をリクエスト</span>
+                    </a>
+                    <a id="catalog-search-link" href="{{ `` | relURL }}" class="catalog-action-btn catalog-search-link">
                         <span class="material-symbols-outlined" aria-hidden="true">search</span>
                         <span id="catalog-search-link-label">サイト内で調査済み商品を検索</span>
                     </a>
@@ -128,7 +166,9 @@
     .catalog-message-actions {
         margin-top: var(--spacing-lg);
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
+        gap: var(--spacing-md);
     }
 
     .catalog-uninvestigated-banner {
@@ -248,7 +288,12 @@
         overflow-wrap: anywhere;
     }
 
-    .catalog-actions {
+    .catalog-shop-buttons {
+        justify-content: flex-start;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .catalog-secondary-actions {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -256,27 +301,22 @@
         gap: var(--spacing-md);
     }
 
-    .catalog-amazon-btn {
-        min-width: 180px;
-        padding: 0.75rem 1.5rem;
-    }
-
-    .catalog-search-link {
+    .catalog-action-btn {
         display: inline-flex;
         align-items: center;
         gap: 0.35rem;
-        padding: 0.75rem 1.25rem;
+        padding: 0.7rem 1.15rem;
         border-radius: 12px;
         border: 1px solid var(--color-border);
         background: var(--color-bg-card);
         color: var(--color-text-primary);
         text-decoration: none;
         font-weight: 600;
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         transition: background-color 0.2s ease;
     }
 
-    .catalog-search-link:hover {
+    .catalog-action-btn:hover {
         background: var(--color-bg-secondary);
     }
 </style>

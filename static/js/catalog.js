@@ -43,13 +43,35 @@
         return url.startsWith('https://') || url.startsWith('http://');
     }
 
-    function showMessage(loadingEl, messageEl, title, desc) {
+    function buildMoshimoUrl(aId, pId, pcId, plId, targetUrl) {
+        return `https://af.moshimo.com/af/c/click?a_id=${encodeURIComponent(aId)}&p_id=${encodeURIComponent(pId)}&pc_id=${encodeURIComponent(pcId)}&pl_id=${encodeURIComponent(plId)}&url=${encodeURIComponent(targetUrl)}`;
+    }
+
+    function buildRequestFormUrl(dataset, asin) {
+        const formUrl = dataset.requestFormUrl || '';
+        const entryId = dataset.requestEntryId || '';
+        if (!isSafeHttpUrl(formUrl) || !entryId || !ASIN_REGEX.test(asin)) return '';
+        const targetAmazonUrl = `https://www.amazon.co.jp/dp/${asin.toUpperCase()}`;
+        return `${formUrl}?usp=pp_url&${encodeURIComponent(entryId)}=${encodeURIComponent(targetAmazonUrl)}`;
+    }
+
+    function showMessage(loadingEl, messageEl, title, desc, requestUrl = '') {
         if (loadingEl) loadingEl.style.display = 'none';
         if (!messageEl) return;
         const titleEl = document.getElementById('catalog-message-title');
         const descEl = document.getElementById('catalog-message-desc');
         if (titleEl) titleEl.textContent = title;
         if (descEl) descEl.textContent = desc;
+
+        const reqLinkEl = document.getElementById('catalog-message-request-link');
+        if (reqLinkEl) {
+            if (requestUrl) {
+                reqLinkEl.href = requestUrl;
+                reqLinkEl.style.display = 'inline-flex';
+            } else {
+                reqLinkEl.style.display = 'none';
+            }
+        }
         messageEl.style.display = 'block';
     }
 
@@ -121,12 +143,52 @@
         }
     }
 
-    function renderActionLinks(record, homeUrl) {
+    function renderShopLinks(record, dataset) {
+        const title = record.title || record.asin;
+        const searchQuery = record.title || record.asin;
+
         const amazonLinkEl = document.getElementById('catalog-amazon-link');
         if (amazonLinkEl) {
             amazonLinkEl.href = isSafeHttpUrl(record.detail_page_url)
                 ? record.detail_page_url
                 : `https://www.amazon.co.jp/dp/${encodeURIComponent(record.asin)}`;
+            amazonLinkEl.setAttribute('aria-label', `${title}をAmazonで見る`);
+        }
+
+        const rakutenLinkEl = document.getElementById('catalog-rakuten-link');
+        if (rakutenLinkEl) {
+            const rakutenTargetUrl = `https://search.rakuten.co.jp/search/mall/${encodeURIComponent(searchQuery)}/`;
+            rakutenLinkEl.href = buildMoshimoUrl(
+                dataset.rakutenAId || '5756223',
+                dataset.rakutenPId || '54',
+                dataset.rakutenPcId || '54',
+                dataset.rakutenPlId || '27059',
+                rakutenTargetUrl,
+            );
+            rakutenLinkEl.setAttribute('aria-label', `${title}を楽天市場で見る`);
+        }
+
+        const yahooLinkEl = document.getElementById('catalog-yahoo-link');
+        if (yahooLinkEl) {
+            const yahooTargetUrl = `https://shopping.yahoo.co.jp/search?first=1&p=${encodeURIComponent(searchQuery)}`;
+            yahooLinkEl.href = buildMoshimoUrl(
+                dataset.yahooAId || '5756224',
+                dataset.yahooPId || '1225',
+                dataset.yahooPcId || '1925',
+                dataset.yahooPlId || '27061',
+                yahooTargetUrl,
+            );
+            yahooLinkEl.setAttribute('aria-label', `${title}をYahoo!ショッピングで見る`);
+        }
+    }
+
+    function renderSecondaryActions(record, homeUrl, dataset) {
+        const requestLinkEl = document.getElementById('catalog-request-link');
+        const requestUrl = buildRequestFormUrl(dataset, record.asin);
+        if (requestLinkEl && requestUrl) {
+            requestLinkEl.href = requestUrl;
+            requestLinkEl.setAttribute('aria-label', `${record.title || record.asin}の調査リクエストを送信（新しいタブで開く）`);
+            requestLinkEl.style.display = 'inline-flex';
         }
 
         const searchLinkEl = document.getElementById('catalog-search-link');
@@ -145,7 +207,7 @@
         }
     }
 
-    function renderProduct(record, homeUrl, siteTitle) {
+    function renderProduct(record, homeUrl, siteTitle, dataset) {
         const loadingEl = document.getElementById('catalog-loading');
         const productEl = document.getElementById('catalog-product');
         const title = record.title || record.asin;
@@ -174,7 +236,8 @@
         const asinEl = document.getElementById('catalog-asin');
         if (asinEl) asinEl.textContent = record.asin;
 
-        renderActionLinks(record, homeUrl);
+        renderShopLinks(record, dataset);
+        renderSecondaryActions(record, homeUrl, dataset);
 
         if (loadingEl) loadingEl.style.display = 'none';
         if (productEl) productEl.style.display = 'block';
@@ -197,9 +260,10 @@
         const container = document.querySelector('.catalog-page-container');
         if (!container) return;
 
-        const catalogBaseUrl = container.dataset.catalogBaseUrl || '/catalog-data/';
-        const homeUrl = container.dataset.homeUrl || '/';
-        const siteTitle = container.dataset.siteTitle || '';
+        const dataset = container.dataset;
+        const catalogBaseUrl = dataset.catalogBaseUrl || '/catalog-data/';
+        const homeUrl = dataset.homeUrl || '/';
+        const siteTitle = dataset.siteTitle || '';
         const loadingEl = document.getElementById('catalog-loading');
         const messageEl = document.getElementById('catalog-message');
 
@@ -218,6 +282,7 @@
         const asin = rawAsin.toUpperCase();
         const shardKey = asin.slice(-2);
         const articleUrl = `${homeUrl}${asin.toLowerCase()}/`;
+        const requestUrl = buildRequestFormUrl(dataset, asin);
 
         try {
             const response = await fetch(`${catalogBaseUrl}${shardKey}.json`);
@@ -230,6 +295,7 @@
                     messageEl,
                     'この商品のデータはありません（未調査・取り扱いなし）',
                     `指定された ASIN（${asin}）の商品情報は見つかりませんでした。`,
+                    requestUrl,
                 );
                 return;
             }
@@ -239,7 +305,7 @@
                 return;
             }
 
-            renderProduct(record, homeUrl, siteTitle);
+            renderProduct(record, homeUrl, siteTitle, dataset);
         } catch {
             if (await tryRedirectIfArticleExists(articleUrl)) return;
             showMessage(
@@ -247,6 +313,7 @@
                 messageEl,
                 'この商品のデータはありません（未調査・取り扱いなし）',
                 `指定された ASIN（${asin}）のデータ読み込みに失敗しました。`,
+                requestUrl,
             );
         }
     }
