@@ -1,0 +1,285 @@
+{{- define "main" -}}
+<div class="container catalog-page-container" style="padding-top: var(--spacing-xl); padding-bottom: var(--spacing-2xl);"
+    data-catalog-base-url="{{ `catalog-data/` | relURL }}"
+    data-home-url="{{ `` | relURL }}"
+    data-site-title="{{ .Site.Title }}">
+    {{- partial "breadcrumb.html" . -}}
+
+    <div id="catalog-loading" class="catalog-status-card">
+        <p class="catalog-status-text">商品データを読み込んでいます...</p>
+    </div>
+
+    <div id="catalog-message" class="catalog-status-card" style="display: none;" role="alert">
+        <span class="material-symbols-outlined catalog-status-icon" aria-hidden="true">info</span>
+        <h1 id="catalog-message-title" class="catalog-message-title"></h1>
+        <p id="catalog-message-desc" class="catalog-message-desc"></p>
+        <div class="catalog-message-actions">
+            <a href="{{ `` | relURL }}" class="btn-shop btn-shop-amazon btn-shop--hero" style="text-decoration: none;">
+                <span class="btn-shop-label">トップページで調査済み商品を探す</span>
+            </a>
+        </div>
+    </div>
+
+    <div id="catalog-product" style="display: none;">
+        <div class="catalog-uninvestigated-banner" role="note">
+            <span class="material-symbols-outlined" aria-hidden="true">info</span>
+            <span>この商品は未調査です。当サイトの調査・スコア付けは行われていません</span>
+        </div>
+
+        <div class="product-hero-card catalog-hero-card">
+            <div class="product-hero-image">
+                <div class="catalog-image-frame">
+                    <img id="catalog-image" src="" alt="" class="catalog-product-image" style="display: none;" decoding="async">
+                    <div id="catalog-no-image" class="catalog-no-image" style="display: none;">
+                        <span class="material-symbols-outlined" aria-hidden="true">image_not_supported</span>
+                        <span>画像なし</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-hero-info">
+                <div class="catalog-meta-badges">
+                    <span class="m3-badge m3-badge-secondary">未調査商品</span>
+                    <span id="catalog-brand-badge" class="m3-badge m3-badge-primary" style="display: none;"></span>
+                    <span id="catalog-availability-badge" class="m3-badge m3-badge-tertiary" style="display: none;"></span>
+                </div>
+
+                <h1 id="catalog-title" class="catalog-product-title"></h1>
+
+                <div class="catalog-price-bar">
+                    <div class="catalog-price-group">
+                        <div class="catalog-price-main">
+                            <span id="catalog-price" class="catalog-price-value"></span>
+                            <span id="catalog-price-tax" class="catalog-price-tax" style="display: none;">税込</span>
+                        </div>
+                        <div id="catalog-previous-price-row" class="catalog-previous-price-row" style="display: none;">
+                            <span id="catalog-previous-price-text"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-price-freshness-note catalog-freshness-note">
+                    <span class="material-symbols-outlined icon-freshness" aria-hidden="true">schedule</span>
+                    <span id="catalog-price-as-of-note"></span>
+                </div>
+
+                <dl class="catalog-detail-list">
+                    <div id="catalog-brand-row" class="catalog-detail-row" style="display: none;">
+                        <dt>ブランド</dt>
+                        <dd id="catalog-brand"></dd>
+                    </div>
+                    <div id="catalog-category-row" class="catalog-detail-row" style="display: none;">
+                        <dt>Amazonカテゴリ</dt>
+                        <dd id="catalog-category"></dd>
+                    </div>
+                    <div id="catalog-release-row" class="catalog-detail-row" style="display: none;">
+                        <dt>発売日</dt>
+                        <dd id="catalog-release-date"></dd>
+                    </div>
+                    <div class="catalog-detail-row">
+                        <dt>ASIN</dt>
+                        <dd id="catalog-asin"></dd>
+                    </div>
+                </dl>
+
+                <div class="catalog-actions">
+                    <a id="catalog-amazon-link" href="#" target="_blank" rel="noopener noreferrer"
+                        class="btn-shop btn-shop-amazon btn-shop--hero catalog-amazon-btn">
+                        <span class="btn-shop-label">Amazonで見る</span>
+                    </a>
+                    <a id="catalog-search-link" href="{{ `` | relURL }}" class="catalog-search-link">
+                        <span class="material-symbols-outlined" aria-hidden="true">search</span>
+                        <span id="catalog-search-link-label">サイト内で調査済み商品を検索</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .catalog-status-card {
+        background: var(--color-bg-card);
+        border: 1px solid var(--color-border);
+        border-radius: 16px;
+        padding: var(--spacing-2xl);
+        text-align: center;
+        margin-top: var(--spacing-md);
+    }
+
+    .catalog-status-icon {
+        font-size: 2.5rem;
+        color: var(--color-text-secondary);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .catalog-status-text,
+    .catalog-message-desc {
+        color: var(--color-text-secondary);
+        margin: 0;
+    }
+
+    .catalog-message-title {
+        font-size: 1.35rem;
+        margin: 0 0 var(--spacing-sm) 0;
+        color: var(--color-text-primary);
+    }
+
+    .catalog-message-actions {
+        margin-top: var(--spacing-lg);
+        display: flex;
+        justify-content: center;
+    }
+
+    .catalog-uninvestigated-banner {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-md) var(--spacing-lg);
+        margin-top: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+        border-radius: 12px;
+        background: var(--color-bg-secondary);
+        border: 1px solid var(--color-border);
+        color: var(--color-text-primary);
+        font-weight: 600;
+        font-size: 0.95rem;
+    }
+
+    .catalog-image-frame {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        border-radius: 12px;
+        padding: var(--spacing-md);
+        min-height: 240px;
+        border: 1px solid var(--color-border);
+    }
+
+    .catalog-product-image {
+        max-width: 100%;
+        max-height: 360px;
+        object-fit: contain;
+    }
+
+    .catalog-no-image {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-xs);
+        color: var(--color-text-secondary);
+    }
+
+    .catalog-meta-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-xs);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .catalog-product-title {
+        font-size: 1.35rem;
+        line-height: 1.45;
+        margin: 0 0 var(--spacing-md) 0;
+        color: var(--color-text-primary);
+    }
+
+    .catalog-price-bar {
+        padding: var(--spacing-md);
+        border-radius: 12px;
+        background: var(--color-bg-secondary);
+        border: 1px solid var(--color-border);
+    }
+
+    .catalog-price-main {
+        display: flex;
+        align-items: baseline;
+        gap: 0.4rem;
+    }
+
+    .catalog-price-value {
+        font-size: 1.75rem;
+        font-weight: 800;
+        color: var(--color-text-primary);
+    }
+
+    .catalog-price-tax {
+        font-size: 0.85rem;
+        color: var(--color-text-secondary);
+    }
+
+    .catalog-previous-price-row {
+        margin-top: 0.25rem;
+        font-size: 0.875rem;
+        color: var(--color-text-secondary);
+    }
+
+    .catalog-freshness-note {
+        margin-top: var(--spacing-sm);
+        margin-bottom: var(--spacing-md);
+        justify-content: flex-start;
+    }
+
+    .catalog-detail-list {
+        display: grid;
+        gap: var(--spacing-xs);
+        margin: 0 0 var(--spacing-lg) 0;
+        padding: var(--spacing-md);
+        background: var(--color-bg-secondary);
+        border-radius: 12px;
+    }
+
+    .catalog-detail-row {
+        display: flex;
+        gap: var(--spacing-md);
+        font-size: 0.9rem;
+    }
+
+    .catalog-detail-row dt {
+        min-width: 120px;
+        color: var(--color-text-secondary);
+        font-weight: 600;
+    }
+
+    .catalog-detail-row dd {
+        margin: 0;
+        color: var(--color-text-primary);
+        word-break: break-word;
+    }
+
+    .catalog-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: var(--spacing-md);
+    }
+
+    .catalog-amazon-btn {
+        min-width: 180px;
+        padding: 0.75rem 1.5rem;
+    }
+
+    .catalog-search-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.75rem 1.25rem;
+        border-radius: 12px;
+        border: 1px solid var(--color-border);
+        background: var(--color-bg-card);
+        color: var(--color-text-primary);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: background-color 0.2s ease;
+    }
+
+    .catalog-search-link:hover {
+        background: var(--color-bg-secondary);
+    }
+</style>
+
+<script src="{{ `js/catalog.js` | relURL }}" defer></script>
+{{- end -}}

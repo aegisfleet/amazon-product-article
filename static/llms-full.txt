@@ -72,12 +72,13 @@ MCP Prompts 対応クライアントでは、以下の相談テンプレート�
 - [セール対象商品 (`deals/index.json`)](https://www.amazon-hikaku.com/deals/index.json): 現在割引中のお買い得商品データ（約250KB）。
 - [あともう一品 (`bargain/index.json`)](https://www.amazon-hikaku.com/bargain/index.json): 買い合わせ・送料無料ライン調整用の2,000円以下・高スコア商品データ（約200KB）。
 - [低スコア迷品館 (`low-scores/index.json`)](https://www.amazon-hikaku.com/low-scores/index.json): 独自スコア50点以下の低評価・要注意商品データ（約80KB）。
+- 未調査商品カタログシャード (`https://www.amazon-hikaku.com/catalog-data/{ASIN末尾2文字}.json`): Creators API キャッシュのうち `status = valid` の全商品（調査済み＋未調査、約3.9万件）を ASIN 末尾2文字（大文字）でシャーディングした JSON マップ（`{ "<ASIN>": { ... } }`）。各レコードは `asin`, `title`, `brand`, `price`（`number | null`）, `previous_price`（任意）, `price_changed_at`（任意、ISO 8601）, `availability`, `image`, `amazon_category`, `release_date`（`string | null`）, `detail_page_url`, `price_as_of`（ISO 8601）, `investigated`（`boolean`）を収録。
 - [カテゴリ階層定義 (`data/categorygroups.json`)](https://www.amazon-hikaku.com/data/categorygroups.json): 親カテゴリと子カテゴリのマッピング定義。
 - [ブランドグループ定義 (`data/brandgroups.json`)](https://www.amazon-hikaku.com/data/brandgroups.json): 主要ブランドグループとスラッグ定義。
 - [サイトマップ (`sitemap.xml`)](https://www.amazon-hikaku.com/sitemap.xml): サイト全体のURL構造および最終更新日。
 
 ### 主要データフィールドの定義とエッジケース注意点
-JSONファイルを直接パースするエージェントは、以下のフィールド仕様とエッジケースに注意してください（注：`deals/index.json`, `bargain/index.json`, `low-scores/index.json` は camelCase、`index.json` と `mcp-products.json` は snake_case です）：
+JSONファイルを直接パースするエージェントは、以下のフィールド仕様とエッジケースに注意してください（注：`deals/index.json`, `bargain/index.json`, `low-scores/index.json` は camelCase、`index.json` と `mcp-products.json` と `catalog-data/*.json` は snake_case です）：
 - `asin` (string): Amazon標準識別番号（10桁英数字）。個別詳細レポートURLは小文字化した `https://www.amazon-hikaku.com/{asin}/` です。
 - `title` (string): 商品名。
 - `brand` (string): ブランド・メーカー名（注意：`index.json` 単体には `brand` が含まれないため、`products-summary.json` または `mcp-products.json` とASINで結合してください）。
@@ -99,7 +100,8 @@ JSONファイルを直接パースするエージェントは、以下のフィ�
 ## 4. URL構造規則とクエリパラメータ仕様 (URL Structure & Query Parameters)
 
 ### パーマリンク構造
-- 個別商品詳細ページ: `https://www.amazon-hikaku.com/{asin}/` （例: `https://www.amazon-hikaku.com/b09bfpnw2j/`）
+- 個別商品詳細ページ（調査済み商品）: `https://www.amazon-hikaku.com/{asin}/` （例: `https://www.amazon-hikaku.com/b09bfpnw2j/`）
+- 未調査商品カタログページ（JS描画・noindex）: `https://www.amazon-hikaku.com/catalog/?asin={ASIN}` （例: `https://www.amazon-hikaku.com/catalog/?asin=B006MB9700`。調査済み ASIN で開かれた場合は個別商品詳細ページへリダイレクト）
 - 子カテゴリ別一覧: `https://www.amazon-hikaku.com/categories/{カテゴリ名}/`
 - 親カテゴリ一覧: `https://www.amazon-hikaku.com/parent-category/{スラッグ}/`
 - ブランド別一覧: `https://www.amazon-hikaku.com/brand/{ブランドスラッグ}/`

@@ -2506,4 +2506,12 @@ document.addEventListener('DOMContentLoaded', function () {
         updateSearchResultsHeight();
         lastSearchState = getSearchState();
     }
+
+    const urlQuery =
+        typeof URLSearchParams === 'function'
+            ? new URLSearchParams(globalThis.location?.search || '').get('q')
+            : null;
+    if (urlQuery && urlQuery.trim() && typeof openSearchModal === 'function') {
+        openSearchModal(urlQuery.trim());
+    }
 });
