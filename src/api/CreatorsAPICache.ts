@@ -6,6 +6,7 @@ import { Logger } from '../utils/Logger';
 export interface CacheEntry {
   data: ProductDetail | null;
   timestamp: number;
+  priceTimestamp?: number;
   status: 'valid' | 'invalid' | 'permanent_invalid';
   previousPrice?: number;
   priceChangedAt?: number;
@@ -426,11 +427,14 @@ export class CreatorsAPICache {
     }
 
     // Check if new data has "価格情報なし" and existing cache has valid price
+    const now = Date.now();
+    let priceTimestamp: number | undefined = !this.isNoPriceData(sanitizedData) ? now : undefined;
     if (this.isNoPriceData(sanitizedData) && existingEntry?.data && !this.isNoPriceData(existingEntry.data)) {
       this.logger.info(
         `Preserving existing price for ASIN ${asin}: ${existingEntry.data.price.formatted} (new data has no price)`,
       );
       sanitizedData.price = existingEntry.data.price;
+      priceTimestamp = existingEntry.priceTimestamp ?? existingEntry.timestamp;
     }
 
     // Trim description and features to reduce file size
@@ -439,7 +443,8 @@ export class CreatorsAPICache {
 
     this.cache[asin] = {
       data: sanitizedData,
-      timestamp: Date.now(),
+      timestamp: now,
+      ...(priceTimestamp !== undefined && { priceTimestamp }),
       status: 'valid',
       ...(previousPrice !== undefined && { previousPrice }),
       ...(priceChangedAt !== undefined && { priceChangedAt }),
