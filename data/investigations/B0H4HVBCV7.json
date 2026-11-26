@@ -1,0 +1,300 @@
+{
+  "analysis": {
+    "productName": "エレコム Wi-Fi 7 ルーター WRC-BE65QSD-B",
+    "parentAsin": "B0H4HVBCV7",
+    "productDescription": "5GHz帯最大5,764Mbps・2.4GHz帯最大688MbpsのデュアルバンドWi-Fi 7と2.5Gbps WANポートを備えた無線LANルーター。F-Secure SENSEによるAIセキュリティ機能やWi-Fi EasyMesh、離れ家モード2を搭載し、高速回線と家庭内ネットワークの安全性を両立するミドルレンジモデルです。",
+    "productUsage": [
+      "1Gbps超～2.5Gbpsクラスの高速光回線環境での無線LAN親機",
+      "Wi-Fi 7対応スマートフォン・PCでの大容量データ通信や低遅延オンラインゲーム",
+      "F-Secure SENSEによるスマート家電・IoT機器を含む家庭内ネットワーク保護",
+      "Wi-Fi EasyMesh対応機器との連携による宅内・離れ家の無線エリア拡張"
+    ],
+    "positivePoints": [
+      "Wi-Fi 7（IEEE 802.11be）に対応し、5GHz帯最大5,764Mbps（5T5R/4SS）＋2.4GHz帯最大688Mbpsの高速通信を実現",
+      "MLO（Multi-Link Operation）、Multi-RU、Preamble Puncturingに対応し、混雑環境でも低遅延・安定通信が可能",
+      "INTERNET（WAN）ポートに2.5Gbpsを搭載し、マルチギガ光回線の速度を活かせる構成",
+      "F-Secure社のAIセキュリティ機能「SENSE」（1年ライセンス付属）を搭載し、スマート家電やゲーム機も保護",
+      "Wi-Fi EasyMesh互換および独自機能「離れ家モード2」に対応し、広い住環境でも柔軟にエリア構築が可能",
+      "約58×146×215mmのアンテナ内蔵スリム筐体に加え、上面・側面のメッシュ構造による放熱設計を採用"
+    ],
+    "negativePoints": [
+      "6GHz帯に非対応のデュアルバンド仕様（5GHz/2.4GHzのみ）であるため、320MHz幅通信は利用不可",
+      "有線LANポートは1Gbps×3基に留まり、2.5Gbps以上の有線LAN接続には非対応",
+      "AIセキュリティ機能「F-Secure SENSE」の無料利用期間は1年間のみ（2年目以降は継続契約が必要）",
+      "一部の古いIoT機器や家電をWPSで接続する際、一時的にSSIDの暗号化方式をWPA2へ変更する必要がある事例が報告されている",
+      "一部製品情報で「クアッドコアCPU」と誤表記されていたが、実機はデュアルコアCPU（Airoha AN7583ベース）であることがサポートより確認されている"
+    ],
+    "useCases": [
+      "2Gbps・2.5Gbps・10Gbps光回線（2.5G運用）を導入している戸建てやマンションでのメインルーター",
+      "アンテナが飛び出さないすっきりとしたデザインを好み、リビングやテレビ周りに設置したい環境",
+      "セキュリティソフトを入れられないスマートテレビやネットワークカメラを多数接続する家庭"
+    ],
+    "userStories": [
+      {
+        "userType": "Wi-Fi 5ルーターからの買い替えユーザー",
+        "scenario": "NEC Aterm WG2600HS2（Wi-Fi 5）からWi-Fi 7環境への刷新目的で導入",
+        "experience": "上面と側面がメッシュ構造になっており放熱性が良く、設定ページも見やすくて操作しやすい。SHARP製エアコンをWPS接続しようとした際は初期設定のWPA2/WPA3混在ではつながらず、5GHz・MLO側のSSIDを一時的にWPA2へ変更して接続後に戻す手間はあったものの、接続後はエレコム機の一部で懸念されがちな通信の寸断もなく安定して稼働している。セキュリティWi-Fi（別SSID）が使える点も実用上の決め手になった。",
+        "supportingSourceIds": [
+          "src-4"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "ハードウェア仕様を重視するネットワークユーザー",
+        "scenario": "内部プラットフォームや無線構成を精査した上での性能評価",
+        "experience": "製品情報にクアッドコアCPUとの誤表記があった点を確認するためサポートへ問い合わせたところ、実際はAiroha AN7583ベースのデュアルコアCPUであることが判明した。しかし5GHz帯が5T5R/4SS（最大5,764Mbps）かつMediaTek MT7992系の強力な無線部とハードウェアアクセラレータを備えており、上位のWRC-BE94XSD-B（5GHz 2T2R）より5GHz帯の無線構成ではむしろ優位であり、家庭用Wi-Fi 7ルーターとして効率よく性能を発揮している。",
+        "supportingSourceIds": [
+          "src-4"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "マルチギガ光回線・スマート家電ユーザー",
+        "scenario": "2.5Gbps光回線と多数のスマート家電を運用する家庭での導入",
+        "experience": "WANポートが2.5Gbpsに対応しているため1Gbps超の光回線の帯域を活かしつつ、F-Secure SENSE（1年ライセンス）によってセキュリティソフトを入れられないスマート家電やゲーム機も含めて一括で保護できる点が安心材料となっている。外付けアンテナがない縦型スリム筐体なのでリビングに置いても圧迫感がなく、離れ家モード2やEasyMeshで通信範囲を広げやすいのも魅力。",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2",
+          "src-3"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "価格.comのレビュー評価では満足度4.48（クチコミ10件）と概ね高評価を獲得しており、スリムで放熱性に優れたメッシュ筐体や見やすい管理画面、接続の安定性が支持されている。一部でSHARP製エアコン等のWPS接続時にSSIDの暗号化方式を一時変更する手間や、製品情報のCPUコア数誤記（実際はデュアルコア）が指摘されているものの、5GHz帯5T5R/4SSの強力な無線構成により実用上の満足度は高く、手頃な価格で2.5G対応のWi-Fi 7環境を整えたい層から満足を得ている。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon.co.jp 公式商品ページ (B0H4HVBCV7)",
+        "url": "https://www.amazon.co.jp/dp/B0H4HVBCV7",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-11-04",
+        "author": "エレコム(ELECOM) / Amazon.co.jp",
+        "conflictOfInterest": "possible",
+        "notes": "2026-11-26時点のAmazon価格￥18,511、Wi-Fi 7（5765+688Mbps）、有線2.5Gbps、F-Secure、EasyMesh、MLO、Multi-RU、Preamble Puncturing対応を確認。"
+      },
+      {
+        "id": "src-2",
+        "name": "エレコム、10G/2.5Gbps対応WANのWi-Fi 7ルーター2製品発売、「離れ家モード2」やAIセキュリティ機能搭載 - INTERNET Watch",
+        "url": "https://internet.watch.impress.co.jp/docs/news/2060347.html",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2025-11-04",
+        "author": "渡邊 悠太 (INTERNET Watch)",
+        "conflictOfInterest": "none",
+        "notes": "2025年11月上旬発売、市場想定価格18,800円。WAN 2.5Gbps×1、LAN 1Gbps×3、推奨接続台数40台、F-Secure SENSE（1年ライセンス）、Wi-Fi EasyMesh互換、離れ家モード2、各種IPv6 IPoE対応を確認。"
+      },
+      {
+        "id": "src-3",
+        "name": "エレコム、Wi-Fi 7対応ルーター2機種。10G対応モデルも - PC Watch",
+        "url": "https://pc.watch.impress.co.jp/docs/news/2060370.html",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2025-11-04",
+        "author": "稲津 定晃 (PC Watch)",
+        "conflictOfInterest": "none",
+        "notes": "本体サイズ58×146×215mm、重量約640g、5GHz帯最大5,764Mbps・2.4GHz帯最大688Mbps、WAN 2.5GbE・LAN 1GbE×3の公式発表スペックを確認。"
+      },
+      {
+        "id": "src-4",
+        "name": "エレコム WRC-BE65QSD-B [ブラック] 価格比較・レビュー評価 - 価格.com",
+        "url": "https://review.kakaku.com/review/K0001718275/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-11-26",
+        "author": "価格.com ユーザーレビュー",
+        "conflictOfInterest": "none",
+        "notes": "満足度4.48（2人）、最安価格16,800円（2026-11-26時点）。放熱メッシュ構造、WPS接続時のWPA2変更手順、CPUコア数誤記（デュアルコアAiroha AN7583+MediaTek MT7992系）に関する実機検証情報を確認。"
+      },
+      {
+        "id": "src-5",
+        "name": "エレコム WRC-BE65QSD-B [ブラック] スペック・新製品ニュース - 価格.com",
+        "url": "https://news.kakaku.com/prdnews/cd=pc/ctcd=0077/id=152666/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2025-11-05",
+        "author": "価格.com 新製品ニュース",
+        "conflictOfInterest": "none",
+        "notes": "内蔵アンテナ（5GHz：送信5×受信5、2.4GHz：送信2×受信2）、F-Secure SENSE（1年ライセンス）、サイズ・重量仕様のクロスチェック。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "Wi-Fi 7（MLO・Multi-RU・Preamble Puncturing）と2.5Gbps WANにより高速・低遅延で途切れない通信を実現する",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2",
+          "src-4"
+        ],
+        "crossChecked": true,
+        "notes": "5GHz帯5T5R/4SS（最大5,764Mbps）の無線構成とハードウェアアクセラレータにより、ユーザーレビューでも通信寸断のない安定稼働が確認されている。ただし最大性能の享受には子機側のWi-Fi 7対応が必要。"
+      },
+      {
+        "claim": "F-Secure SENSE搭載によりセキュリティソフト非対応の家電も含めて脅威から保護できる",
+        "category": "safety",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-2",
+          "src-5"
+        ],
+        "crossChecked": true,
+        "notes": "プレスリリースおよび報道でF-Secure SENSE搭載が確認されているが、標準付属ライセンスは1年間限定である点に留意が必要。"
+      },
+      {
+        "claim": "一部表記にあったクアッドコアCPUではなくデュアルコアCPUだが、家庭用Wi-Fiルーターとして十分な処理性能を持つ",
+        "category": "comparativeAdvantage",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-4"
+        ],
+        "crossChecked": false,
+        "notes": "価格.comレビュー内のサポート回答確認およびファームウェア解析報告に基づく。Airoha AN7583のネットワーク処理機能により実用性能は確保されているが、メーカー表記との齟齬は注意点。"
+      }
+    ],
+    "lastInvestigated": "2026-11-26",
+    "investigatedPrice": "￥18,511",
+    "competitiveAnalysis": [
+      {
+        "name": "バッファロー Wi-Fi 7 ルーター WSR6500BE6P/NBK",
+        "asin": "B0FSCNXC6B",
+        "priceComparison": "本商品の方が大幅に安価であり、同じ5GHz 5,764Mbps・2.5Gbps WANクラスのWi-Fi 7ルーターとしてコストパフォーマンスで明確に優位。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7デュアルバンド（5GHz 5,764Mbps＋2.4GHz 688Mbps）、有線2.5Gbps WAN、EasyMesh、MLO対応",
+          "相違点：本商品はF-Secure SENSE（1年）と離れ家モード2を搭載。バッファローはJC-STAR適合や国内最大手としての設定ノウハウ・ブランド実績が強み"
+        ],
+        "differentiators": [
+          "エレコム WRC-BE65QSD-Bの利点：同等の無線・2.5G仕様をより手頃な価格で導入でき、F-SecureによるAIセキュリティも試したいなら迷わずこちら",
+          "バッファロー WSR6500BE6P/NBKの利点：価格差を許容してでもバッファロー製ルーターの操作体系やJC-STAR適合の安心感を優先したい場合に適する"
+        ]
+      },
+      {
+        "name": "TP-Link Wi-Fi 7 ルーター Archer BE400 (BE6500)",
+        "asin": "B0DRHSSLFS",
+        "priceComparison": "本商品の方がやや安価で導入しやすく、日本メーカー製かつAIセキュリティ標準付属の点で付加価値が高い。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7デュアルバンド（5GHz 5,764Mbps＋2.4GHz 688Mbps）、2.5Gbpsポート搭載、IPv6 IPoE対応",
+          "相違点：本商品はアンテナ内蔵のスリム筐体でF-Secure SENSE（1年）を付属。Archer BE400は外付けアンテナ型で3年保証・VPN対応を訴求"
+        ],
+        "differentiators": [
+          "エレコム WRC-BE65QSD-Bの利点：外付けアンテナの圧迫感を避けたいインテリア重視派や、国内メーカーサポートを重視するならこちら",
+          "TP-Link Archer BE400の利点：メーカー3年保証や充実したVPN機能を重視し、外付けアンテナ型でも問題ない環境に適する"
+        ]
+      },
+      {
+        "name": "エレコム Wi-Fi 7 ルーター WRC-W702-B",
+        "asin": "B0G5N4FZ8H",
+        "priceComparison": "本商品の方がわずかに安価で、基本性能がほぼ同等であるため実質価格面で有利。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7デュアルバンド（5GHz 5,764Mbps＋2.4GHz 688Mbps）、2.5Gbps WAN、F-Secure SENSE（1年）、EasyMesh対応",
+          "相違点：販路・型番ラインナップの違いで、WRC-W702-Bはルーター/AP/中継器の3モードやこどもネットタイマー3を前面に訴求"
+        ],
+        "differentiators": [
+          "エレコム WRC-BE65QSD-Bの利点：同等スペックのエレコム製2.5G Wi-Fi 7モデルを少しでも安く購入したいならこちら",
+          "エレコム WRC-W702-Bの利点：購入時点のセール価格でWRC-W702-Bが逆転している場合や、3モード表記の分かりやすさを重視する場合に適する"
+        ]
+      },
+      {
+        "name": "エレコム Wi-Fi 7 ルーター WRC-BE64QS-BA",
+        "asin": "B0HPFHNWDX",
+        "priceComparison": "本商品の方が安価であり、2.4GHz帯の最大速度も688Mbps（WRC-BE64QS-BAは574Mbps）とスペック面でも上回る。",
+        "featureComparison": [
+          "共通点：エレコム製Wi-Fi 7デュアルバンド（5GHz 5,764Mbps）、2.5Gbps WAN、LAN 1Gbps×3、内蔵アンテナ、EasyMesh対応",
+          "相違点：本商品は2.4GHz帯がWi-Fi 7仕様の688MbpsかつF-Secure SENSE搭載。WRC-BE64QS-BAは2.4GHz帯が574Mbps仕様"
+        ],
+        "differentiators": [
+          "エレコム WRC-BE65QSD-Bの利点：2.4GHz帯の速度・F-Secure搭載・価格のすべてで優位なため、特段の理由がなければこちらを選ぶべき",
+          "エレコム WRC-BE64QS-BAの利点：タイムセール等で大幅に値下がりし、セキュリティ機能不要で安価に入手できるタイミングのみ選択肢となる"
+        ]
+      },
+      {
+        "name": "TP-Link Wi-Fi 7 ルーター Archer BE450 (BE7200)",
+        "asin": "B0DG1JKNTQ",
+        "priceComparison": "本商品より高価だが、10Gbpsポートを搭載しているため10ギガ光回線の活用度合いで棲み分けられる。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7デュアルバンド（5GHz 5,764Mbps）、MLO・EasyMesh対応",
+          "相違点：本商品はWAN 2.5Gbpsでスリム内蔵アンテナ。Archer BE450は10Gbpsポート搭載かつ2.4GHz帯1,376Mbps対応"
+        ],
+        "differentiators": [
+          "エレコム WRC-BE65QSD-Bの利点：1Gbps～2.5Gbpsクラスまでの光回線利用で、導入コストと設置スペースを抑えたいならこちら",
+          "TP-Link Archer BE450の利点：10ギガ光回線を契約しており、10Gbps有線ポートの帯域をフル活用したいヘビーユーザーに適する"
+        ]
+      },
+      {
+        "name": "エレコム Wi-Fi 7 ルーター WRC-W701-B",
+        "asin": "B0DJ8KJVNF",
+        "priceComparison": "WRC-W701-Bは1万円以下のエントリー価格で大幅に安いが、5GHz帯速度が半分の2,882Mbpsに抑えられている。",
+        "featureComparison": [
+          "共通点：エレコム製Wi-Fi 7デュアルバンド、有線2.5Gbps対応、推奨接続台数40台、MLO対応",
+          "相違点：本商品は5GHz帯5,764Mbps（5T5R/4SS）＋F-Secure SENSE搭載。WRC-W701-Bは5GHz帯2,882Mbpsのエントリー仕様"
+        ],
+        "differentiators": [
+          "エレコム WRC-BE65QSD-Bの利点：複数端末での同時動画視聴や大容量通信でも速度低下を抑えたいなら、5GHz帯が2倍速いこちら",
+          "エレコム WRC-W701-Bの利点：1万円以下で手軽にWi-Fi 7と2.5Gbpsを体験したい単身世帯やライトユーザーに適する"
+        ]
+      },
+      {
+        "name": "TP-Link Wi-Fi 7 トライバンドルーター Archer BE550/A (BE9300)",
+        "asin": "B0CWR5F88G",
+        "priceComparison": "本商品より1万円以上高価だが、6GHz帯対応のトライバンド機であるため用途と予算で明確に差別化される。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7対応、2.5Gbps有線ポート、EasyMesh対応、内蔵アンテナ型筐体",
+          "相違点：本商品は6GHz非対応のデュアルバンド（5GHz 5,764Mbps）。Archer BE550/Aは6GHz帯（5,760Mbps）対応トライバンドかつ全ポート2.5Gbps"
+        ],
+        "differentiators": [
+          "エレコム WRC-BE65QSD-Bの利点：6GHz対応端末が少なく、2万円未満で十分な5GHz高速通信と2.5G WANを確保したいならこちら",
+          "TP-Link Archer BE550/Aの利点：6GHz帯（320MHz幅）対応の最新PC・スマホや、有線LAN側も複数台2.5Gbpsで接続したい上級環境に適する"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "1Gbps超～2.5Gbpsクラスの光回線を利用しており、6GHz帯までは不要だが5GHz帯5,764Mbpsの高速Wi-Fi 7環境を2万円未満で整えたい家庭（3万円前後のトライバンド機よりコストを抑えたい人）",
+        "外付けアンテナのないスリムなデザインと、F-Secureによるスマート家電・IoT機器の保護機能を重視する国内メーカー志向のユーザー（外付けアンテナ型や海外メーカー製より設置性と安心感を優先する人）",
+        "将来的に離れ家や別室へEasyMeshで通信エリアを拡張する可能性がある戸建て世帯"
+      ],
+      "pros": [
+        "5GHz帯最大5,764Mbpsと2.5Gbps WANを￥18,511で導入できるため、高価なトライバンド機を買わずとも最新スマホやPCの高速通信を体感できる",
+        "外付けアンテナのない縦型スリム筐体かつ放熱メッシュ構造のため、リビングやテレビ横に置いても生活感を損ねず安定稼働しやすい",
+        "F-Secure SENSE（1年ライセンス）により、セキュリティソフトを入れられないスマートテレビやゲーム機もルーター側で一括保護できる"
+      ],
+      "cons": [
+        "6GHz帯には非対応のため、6GHz（320MHz幅）の超高速通信をフル活用したい最新ハイエンド端末ユーザーはトライバンド機を検討すること",
+        "有線LANポートはすべて1Gbps仕様のため、NASやゲーミングPCを2.5Gbps有線LANで接続したい場合は上位機や2.5Gハブの構成を事前確認すること",
+        "古いIoT家電をWPSで接続する際にSSID暗号化方式の一時変更が必要になる場合があるため、設定画面での調整を許容できるか確認すること"
+      ],
+      "score": 80,
+      "scoreRationale": "[基本点: 70] (固定)\n[加点: +5] (Wi-Fi 7の5GHz帯最大5,764Mbps・MLO・2.5Gbps WANポートなど充実した基本性能)\n[加点: +5] (同クラスの競合Wi-Fi 7ルーターと比較して￥18,511と手頃な価格設定による高いコストパフォーマンス)\n[加点: +3] (F-Secure SENSE 1年ライセンスや「離れ家モード2」など独自のセキュリティ・利便機能を搭載)\n[加点: +2] (アンテナ内蔵のスリム筐体と上面・側面メッシュによる放熱性を両立したデザイン)\n[減点: -3] (6GHz帯非対応のデュアルバンド仕様であり、有線LANポートも1Gbps×3に留まる点)\n[減点: -2] (一部IoT機器でのWPS接続における暗号化方式調整の手間や、製品情報におけるCPUコア数誤記への懸念)\n[合計: 80]"
+    },
+    "technicalSpecs": {
+      "cpu": "デュアルコアCPU (Airoha AN7583ベース)",
+      "dimensions": {
+        "height": "215mm",
+        "width": "58mm",
+        "depth": "146mm",
+        "weight": "640g"
+      },
+      "weight": "640g",
+      "material": "プラスチック（上面・側面メッシュ放熱構造）",
+      "connectivity": [
+        "Wi-Fi 7 (IEEE 802.11be)",
+        "Wi-Fi 6 / 5 / 4 (11ax/ac/n/a/g/b)",
+        "5GHz帯 最大5,764Mbps (5T5R / 4SS)",
+        "2.4GHz帯 最大688Mbps",
+        "WAN (INTERNET): 2.5Gbps × 1",
+        "LAN: 1Gbps × 3",
+        "IPv6 (IPoE) 対応 (v6プラス / IPv6オプション / OCNバーチャルコネクト / transix / クロスパス / v6コネクト / OCX光)"
+      ],
+      "other": [
+        "Wi-Fi 7技術: MLO / Multi-RU / Preamble Puncturing対応",
+        "メッシュ機能: Wi-Fi EasyMesh互換",
+        "セキュリティ: F-Secure SENSE（1年ライセンス付属）/ WPA3 Personal",
+        "独自機能: 離れ家モード2 / セキュリティWi-Fi",
+        "推奨接続台数: 約40台",
+        "※6GHz帯非対応（デュアルバンド仕様）",
+        "※有線LANポートは1Gbps仕様"
+      ]
+    }
+  }
+}
