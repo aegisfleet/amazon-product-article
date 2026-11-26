@@ -1,0 +1,286 @@
+{
+  "analysis": {
+    "productName": "TP-Link Archer BE260",
+    "parentAsin": "B0GCLLVCSS",
+    "productDescription": "5GHz帯最大4324Mbps・2.4GHz帯最大688MbpsのデュアルバンドWi-Fi 7と、WAN/LAN両対応の2.5Gbps有線ポートを備えた高コストパフォーマンスな無線LANルーター。",
+    "productUsage": [
+      "1Gbps超えの光回線（2G/10Gプラン等）を活かした高速インターネット接続",
+      "2.5Gbps有線LANを活用したNAS・ゲーミングPCへのマルチギガ接続",
+      "4K/8K動画視聴、クラウドゲーミング、在宅ワークのオンライン会議",
+      "EasyMeshを活用した多階層住宅でのシームレスなメッシュWi-Fi構築"
+    ],
+    "positivePoints": [
+      "WANポートとLANポートの両方に2.5Gbpsマルチギガビット対応ポートを各1基搭載（加えて1Gbps LAN×3）",
+      "Wi-Fi 7（BE5000：5GHz帯4324Mbps＋2.4GHz帯688Mbps）に対応し、実測ベンチマーク（INTERNET Watch）で1F下り1990Mbps・3F窓際でも440Mbpsの高速通信を記録",
+      "内蔵3本アンテナ＋ビームフォーミングを採用し、155×52.5×170mmのコンパクトな縦置き・壁掛け対応筐体を実現",
+      "専用スマホアプリ「Tether」により初期設定からLED消灯・リモート管理まで直感的に操作可能",
+      "デバイスごとに複数のVPN接続を使い分けられる新機能「VPNマージ」およびHomeShieldセキュリティを搭載",
+      "メーカー3年保証付きで、WAN/LAN 2.5Gbps対応のWi-Fi 7ルーターとして1万円台半ばの価格設定"
+    ],
+    "negativePoints": [
+      "6GHz帯非対応のデュアルバンド仕様（5GHz＋2.4GHzのみ）であり、価格.comの検証では5GHz/2.4GHz間のMLO有効化時に大幅な速度向上が見られず（約30MB/s）、出荷時設定でもMLO・MU-MIMO・OFDMAは無効化されている",
+      "5GHz帯が3ストリーム構成のため、一般的な2ストリーム端末を2台同時にMU-MIMO接続すると1ストリーム余剰が生じる設計",
+      "USBポート非搭載のため、簡易NAS（USBディスク共有）機能やプリンター共有機能には非対応",
+      "同門の上位4ストリームモデル（Archer BE400）や低価格エントリー機（Archer BE220）との価格帯が近く、ラインナップ内での選択が悩みやすい"
+    ],
+    "useCases": [
+      "2.5G対応光回線や1Gbps超のインターネット回線を契約している家庭のメインルーター",
+      "デスクトップPCやNASを2.5Gbps有線LANで接続しつつ、スマホやノートPCをWi-Fi 7で快適に使いたい環境",
+      "マンションや戸建て（2～3階建て）で安定した高速Wi-Fi環境を手頃に整えたいケース"
+    ],
+    "userStories": [
+      {
+        "userType": "マルチギガ回線・3階建て住宅のネットワーク検証ユーザー",
+        "scenario": "1階にルーターを設置し、2階・3階でのWi-Fi 7スループットと2.5Gbps有線環境の活用を検証",
+        "experience": "2.5GbpsのWAN/LAN両対応機として最安クラスである点に着目して導入。iPerf3による実測では1階で下り1990Mbps・上り1510Mbpsと2Gbpsに迫る速度を記録し、2階でも下り903Mbpsと1Gbps有線並みの快適さを維持できた。最も遠い3階窓際でも下り440Mbpsを確保しており、アンテナ内蔵のすっきりした筐体ながら長距離性能も優秀だった。前面LEDもアプリや背面ボタンからオフにでき、リビング設置でも邪魔にならない。",
+        "supportingSourceIds": [
+          "src-2"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "1Gbps光回線利用のオーディオ・ビジュアル評論家",
+        "scenario": "Tetherアプリでの初期設定のしやすさと、Wi-Fi 7子機を用いたローカル転送・MLOの挙動を確認",
+        "experience": "Wi-Fi 7対応で手頃な価格帯に惹かれてテスト。ケーブル類を接続するだけで自動的に回線種別が判別されてすぐ使え、Tetherアプリのグラフィックが見やすく設定が直感的な点は非常に好印象だった。1Gbps光回線環境では実効300～470Mbpsと安定して頭打ち近くまで速度が出ており、1m距離のローカルファイル転送も約110MB/sで安定。一方で、6GHz帯を持たないデュアルバンド機の特性上、5GHzと2.4GHzを組み合わせるMLOをオンにした際は約30MB/sと速度が伸び悩んだため、MLOによる劇的な高速化よりも堅実なWi-Fi 6/7基本性能とコスパを評価して運用している。",
+        "supportingSourceIds": [
+          "src-3"
+        ],
+        "sentiment": "mixed"
+      },
+      {
+        "userType": "動画視聴やオンライン会議が多い在宅ワーカー",
+        "scenario": "旧型ルーターからの買い替えで、複数端末同時接続時の安定性と有線接続の快適さを重視",
+        "experience": "家族が動画を見ているとオンライン会議やゲームが不安定になる悩みを解消するため、Multi-RUや4K-QAM、HomeShieldを備えた本機を選択。アンテナが外に出ないシンプルなデザインで部屋のインテリアに馴染み、初期設定もスマホアプリから数分で完了した。2.5GbpsのLANポートにメインPCを有線接続したことで大容量ファイルのやり取りが快適になり、有害サイトブロックなどのセキュリティ管理もアプリ上で手軽に行えている。",
+        "supportingSourceIds": [
+          "src-4"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "WAN/LANともに2.5Gbpsポートを備えつつ実売1万円台半ばに抑えた高いコストパフォーマンスと、1階で下り約2Gbps・3階でも400Mbps超を記録する優秀な実測スループットが高く評価されている。専用アプリ「Tether」によるセットアップの手軽さやIPv6 IPoE自動認識も好評。一方で、6GHz帯非対応のデュアルバンド機であるためMLOによる過度な高速化は期待しにくく、USBポートも非搭載である点は理解しておく必要がある。「6GHz帯は不要だが、有線2.5Gbps（WAN/LAN）と安定したWi-Fi 7通信をできるだけ安く手に入れたい」という実利重視のユーザーから高い満足度を得ている。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Archer BE260 | BE5000 デュアルバンドWi-Fi 7ルーター | TP-Link 日本",
+        "url": "https://www.tp-link.com/jp/home-networking/wifi-router/archer-be260/",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-11-19",
+        "author": "TP-Link Japan",
+        "conflictOfInterest": "possible",
+        "notes": "公式製品ページ。BE5000（4324+688Mbps）、2.5Gbps WAN×1＋2.5Gbps LAN×1＋1Gbps LAN×3、内蔵3本アンテナ、EasyMesh、HomeShield等の公式仕様を確認。"
+      },
+      {
+        "id": "src-2",
+        "name": "TP-Link「Archer BE260」、性能優秀！ 新機能もある！ が、中間モデルの“苦悩”も見えるWi-Fi 7ルーター【イニシャルB】 - INTERNET Watch",
+        "url": "https://internet.watch.impress.co.jp/docs/column/shimizu/2104062.html",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-04-27",
+        "author": "清水 理史（インプレス）",
+        "conflictOfInterest": "none",
+        "notes": "詳細な実機ベンチマーク（1F下り1990Mbps/2F下り903Mbps/3F入口566Mbps/3F窓際440Mbps）、寸法155×52.5×170mm、VPNマージ機能、3ストリーム構成の特性やArcher BE400との比較評価を確認。"
+      },
+      {
+        "id": "src-3",
+        "name": "価格.com - TP-Link Archer BE260 レビュー・評価",
+        "url": "https://review.kakaku.com/review/K0001720672/",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-01-01",
+        "author": "鴻池 賢三（価格.comプロフェッショナルレビュー）",
+        "conflictOfInterest": "possible",
+        "notes": "メーカー貸出機によるレビュー（満足度4/5）。1Gbps回線での実測300～470Mbps、ローカル転送約110MB/s、MLO有効時約30MB/sの結果、Tetherアプリの使いやすさと設定の簡単さを確認。"
+      },
+      {
+        "id": "src-4",
+        "name": "回線変えずに、動画も会議もサクサク。Wi-Fi 7ルーター「Archer BE260」で家のネットをコスパよく改善 | ライフハッカー・ジャパン",
+        "url": "https://www.lifehacker.jp/article/2512-tplink-archer-be260/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2025-12-04",
+        "author": "ライフハッカー・ジャパン",
+        "conflictOfInterest": "possible",
+        "notes": "4K-QAM、Multi-RU、2.5Gbps WAN/LANポート、HomeShield、内蔵アンテナのシンプルデザイン、Tetherアプリでの簡単設定を紹介。"
+      },
+      {
+        "id": "src-5",
+        "name": "Amazon.co.jp: TP-Link Archer BE260 (B0FTDX1GSK)",
+        "url": "https://www.amazon.co.jp/dp/B0FTDX1GSK",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-12-01",
+        "author": "Amazon.co.jp / TP-Link",
+        "conflictOfInterest": "possible",
+        "notes": "公式出品ページより価格（￥16,785）、型番（Archer BE260）、基本仕様・特徴を確認。"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "2.5Gbps WAN/LANポートとWi-Fi 7（BE5000）により、マルチギガ対応の高速通信が可能",
+        "category": "comparativeAdvantage",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2"
+        ],
+        "crossChecked": true,
+        "notes": "TP-Link公式仕様に加え、INTERNET WatchのiPerf3ベンチマークで1F下り1990Mbps・上り1510Mbpsを実測確認済み。"
+      },
+      {
+        "claim": "内蔵3本アンテナ＋ビームフォーミングにより広範囲かつ安定したWi-Fiを提供",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2",
+          "src-3"
+        ],
+        "crossChecked": true,
+        "notes": "3階建て住宅のテストで3F窓際でも下り440Mbpsを維持し、1Gbps回線下での安定性も確認されている。"
+      },
+      {
+        "claim": "MLOや4K-QAMなどのWi-Fi 7機能により従来規格より高速・低遅延で通信可能",
+        "category": "comparativeAdvantage",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2",
+          "src-3"
+        ],
+        "crossChecked": true,
+        "notes": "ハードウェア・ファームウェアとして対応しているものの、出荷時はMLO等が無効であり、価格.comの検証では5GHz/2.4GHzのMLO有効化で速度が約30MB/sに低下した報告もあり、環境依存が大きい。"
+      }
+    ],
+    "lastInvestigated": "2026-11-26",
+    "investigatedPrice": "￥16,785",
+    "competitiveAnalysis": [
+      {
+        "name": "TP-Link Archer BE220",
+        "asin": "B0DJQMPKRH",
+        "priceComparison": "Archer BE220は本製品より安価なエントリーモデルとして販売されている。無線はBE3600（2882+688Mbps）で有線ポートも1Gbps止まりのため、1Gbps回線までの環境であればコストを抑えられる。",
+        "featureComparison": [
+          "共通点：155×52.5×170mmの共通筐体（アンテナ内蔵・壁掛け対応）、EasyMesh対応、Tetherアプリ管理、デュアルバンドWi-Fi 7。",
+          "相違点：本製品は5GHz帯3ストリーム（4324Mbps）かつWAN/LANともに2.5Gbpsポートを搭載するのに対し、Archer BE220は5GHz帯2ストリーム（2882Mbps）で有線ポートはすべて1Gbps対応。"
+        ],
+        "differentiators": [
+          "TP-Link Archer BE260の利点：1Gbps超えの光回線を利用している場合や、NAS・PCを2.5Gbps有線で繋ぎたい場合は迷わずこちら。",
+          "TP-Link Archer BE220の利点：回線が1Gbps以下で有線2.5Gbpsも不要、とにかく初期費用を抑えてWi-Fi 7を導入したい人向け。"
+        ]
+      },
+      {
+        "name": "TP-Link Archer BE400",
+        "asin": "B0DRHSSLFS",
+        "priceComparison": "Archer BE400は本製品より数千円高い上位モデルに位置づけられる。5GHz帯のストリーム数が4本（5764Mbps）に強化されており、複数端末の同時接続が多い環境では価格差以上の余裕がある。",
+        "featureComparison": [
+          "共通点：デュアルバンドWi-Fi 7、WAN×1＋LAN×1の2.5Gbpsポート搭載、EasyMesh・HomeShield対応、Tetherアプリ管理。",
+          "相違点：本製品は5GHz帯3ストリーム（4324Mbps）でコンパクトな内蔵アンテナ筐体。Archer BE400は5GHz帯4ストリーム（5764Mbps）でUSB 3.0ポートも搭載する一方、外付けアンテナ型で設置スペースをとる。"
+        ],
+        "differentiators": [
+          "TP-Link Archer BE260の利点：アンテナ内蔵のコンパクトなデザインを優先したい人や、少しでも予算を抑えてWAN/LAN 2.5Gbps環境を作りたい人に最適。",
+          "TP-Link Archer BE400の利点：2ストリーム端末を複数同時に接続する家族利用や、USB簡易NAS機能・最大スループットの余裕を重視するならこちら。"
+        ]
+      },
+      {
+        "name": "バッファロー WSR3600BE4P-BK",
+        "asin": "B0FYNGQP53",
+        "priceComparison": "WSR3600BE4P-BKは本製品よりやや安価な価格帯で展開されている国内メーカー製エントリーモデル。有線2.5Gbpsポートを省くことで価格を抑えている。",
+        "featureComparison": [
+          "共通点：デュアルバンドWi-Fi 7（2.4GHz帯688Mbps）、EasyMesh対応、縦置き・壁掛け対応のコンパクト設計。",
+          "相違点：本製品は5GHz帯4324MbpsかつWAN/LAN 2.5Gbpsポートを搭載。WSR3600BE4P-BKは5GHz帯2882Mbps（2ストリーム）で有線は1Gbps対応のみだが、セキュリティ基準「JC-STAR」適合の日本メーカー製。"
+        ],
+        "differentiators": [
+          "TP-Link Archer BE260の利点：2.5Gbpsの有線環境や高い実測スループットを求めるなら本製品が圧倒的に有利。",
+          "バッファロー WSR3600BE4P-BKの利点：日本メーカーのサポートやJC-STAR適合の安心感、引っ越し機能の使いやすさを重視し、1Gbps回線で十分な人向け。"
+        ]
+      },
+      {
+        "name": "バッファロー WSR6500BE6P/NBK",
+        "asin": "B0FSCNXC6B",
+        "priceComparison": "WSR6500BE6P/NBKは本製品より約1万円ほど高価な国内メーカー製ミドルクラスモデル。無線6ストリーム（5GHz 4ストリーム）の性能を備えるが、有線LAN側の2.5Gbpsポートは非搭載。",
+        "featureComparison": [
+          "共通点：デュアルバンドWi-Fi 7、EasyMesh対応、最大2.5GbpsのWANポート搭載。",
+          "相違点：本製品はWANとLANの両方に2.5Gbpsポートを搭載。WSR6500BE6P/NBKは5GHz帯5764Mbps（4ストリーム）でJC-STAR適合だが、2.5GbpsポートはWAN側のみでLAN側は1Gbps×3。"
+        ],
+        "differentiators": [
+          "TP-Link Archer BE260の利点：LAN側にも2.5Gbps有線ポートが必要で、コストを抑えてマルチギガ環境を構築したいならこちら。",
+          "バッファロー WSR6500BE6P/NBKの利点：有線LANは1Gbpsで十分で、無線の4ストリーム同時接続性能と日本メーカー製（JC-STAR適合）の信頼性を優先したい人向け。"
+        ]
+      },
+      {
+        "name": "エレコム WRC-W701-B",
+        "asin": "B0DJ8KJVNF",
+        "priceComparison": "WRC-W701-Bは本製品より大幅に安価な1万円前後の低価格Wi-Fi 7ルーター。基本機能を絞ったエントリー機としてコスパが高い。",
+        "featureComparison": [
+          "共通点：デュアルバンドWi-Fi 7、2.5Gbps WANポート×1搭載、IPv6(IPoE)対応。",
+          "相違点：本製品は5GHz帯4324MbpsかつLAN側にも2.5Gbpsポート×1を搭載し、EasyMeshやVPNマージ機能を備える。WRC-W701-Bは5GHz帯2882MbpsでLAN側は1Gbps×3。"
+        ],
+        "differentiators": [
+          "TP-Link Archer BE260の利点：有線LAN機器（PCやNAS）も2.5Gbpsで繋ぎたい場合や、メッシュWi-Fi（EasyMesh）・高度なVPN機能を活用したい場合に最適。",
+          "エレコム WRC-W701-Bの利点：WAN側だけ2.5Gbpsあればよく、1万円前後で国内メーカーの手頃なWi-Fi 7ルーターを導入したい人向け。"
+        ]
+      },
+      {
+        "name": "HUAWEI WiFi BE3",
+        "asin": "B0H8CJGQMP",
+        "priceComparison": "HUAWEI WiFi BE3は1万円を切る非常に安価なエントリー機。2.5Gポートを1基備えつつ低価格を実現している反面、無線速度はBE3600クラスに留まる。",
+        "featureComparison": [
+          "共通点：デュアルバンドWi-Fi 7、2.5Gbpsポート搭載、専用アプリによる簡単設定とペアレンタルコントロール対応。",
+          "相違点：本製品は5GHz帯4324Mbpsかつ2.5Gbpsポートを2基（WAN/LAN）搭載し、EasyMeshや3年保証に対応。HUAWEI WiFi BE3は5GHz帯2882Mbpsで2.5Gbpsポートは1基のみ（外付けアンテナ型）。"
+        ],
+        "differentiators": [
+          "TP-Link Archer BE260の利点：WANとLANの両方を2.5Gbps化したい場合や、アンテナ内蔵のすっきりしたデザイン・EasyMesh互換性を求めるならこちら。",
+          "HUAWEI WiFi BE3の利点：とにかく1万円以下の予算で2.5Gポート付きのWi-Fi 7環境を試してみたい人向け。"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "1Gbps超えの光回線（2G/10G等）を利用しており、WAN・LANともに2.5Gbps有線環境を1万円台半ばで構築したい人（WANのみ2.5Gの競合機より有線LANの高速化に有利）",
+        "6GHz帯は不要だが、アンテナ内蔵のコンパクトなデザインで長距離でも安定したWi-Fi 7通信を求める人",
+        "専用アプリ「Tether」で迷わず初期設定やLED消灯・セキュリティ管理を完結させたい初心者～中級者"
+      ],
+      "pros": [
+        "WAN・LANの双方に2.5Gbpsポートを備えているため、マルチギガ回線の速度をボトルネックなくPCやNASへ引き出せる",
+        "実測で1F下り約2Gbps、3Fでも400Mbps超を出す高い無線性能と内蔵アンテナの省スペース設計により、設置場所を選ばず家中が快適になる",
+        "アプリ「Tether」の自動判別と直感的なUIにより、ルーターの買い替え設定でつまずきにくく、3年保証で長く安心して使える"
+      ],
+      "cons": [
+        "6GHz帯非対応のデュアルバンド機のため、6GHz帯の低干渉・超高速通信やMLOによる劇的な速度向上を期待するユーザーはトライバンド上位機を検討すること",
+        "USBポートが非搭載のため、ルーターに外付けHDDを接続して簡易NASとして運用したいユーザーは非対応である点に注意すること",
+        "家族で複数台の2ストリーム端末を同時にヘビー利用する場合は、数千円差で買える4ストリーム機（Archer BE400等）との比較検討をおすすめする"
+      ],
+      "score": 81,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (WAN/LAN両対応の2.5GbpsポートとWi-Fi 7を備え、実測下り最大1990Mbps・3階でも440Mbpsを記録する高い通信性能)\n[加点: +4] (WAN/LAN 2.5Gbps対応のWi-Fi 7ルーターとして16,785円前後の高いコストパフォーマンス)\n[加点: +2] (アンテナ内蔵のコンパクト筐体と壁掛け対応、LED消灯可能な実用的なデザイン)\n[加点: +3] (Tetherアプリによる簡単な初期設定・管理と、メーカー3年保証のサポート)\n[加点: +2] (デバイスごとにVPN経路を使い分けられる「VPNマージ」やHomeShieldの搭載)\n[減点: -3] (6GHz帯非対応のデュアルバンド仕様であり、MLOによる大幅な高速化が期待しにくい点)\n[減点: -2] (5GHz帯が3ストリーム構成かつUSBポート非搭載で、上位4ストリーム機BE400との価格差が小さい点)\n[合計: 81]"
+    },
+    "technicalSpecs": {
+      "dimensions": {
+        "height": "170mm",
+        "width": "155mm",
+        "depth": "52.5mm"
+      },
+      "material": "プラスチック（樹脂筐体）",
+      "connectivity": [
+        "Wi-Fi 7 (IEEE 802.11be/ax/ac/n/a/g/b)",
+        "5GHz帯 最大4324Mbps (3ストリーム)",
+        "2.4GHz帯 最大688Mbps (2ストリーム)",
+        "2.5Gbps WANポート × 1",
+        "2.5Gbps LANポート × 1",
+        "1Gbps LANポート × 3",
+        "IPv6 IPoE (MAP-E / DS-Lite等)"
+      ],
+      "other": [
+        "Wi-Fi 7機能: MLO / 4K-QAM / Multi-RU（※MLO・MU-MIMO・OFDMAは出荷時無効）",
+        "アンテナ: 内蔵アンテナ × 3（ビームフォーミング対応）",
+        "メッシュ機能: EasyMesh対応",
+        "セキュリティ: WPA3 / TP-Link HomeShield",
+        "VPN機能: VPNサーバー・クライアント / VPNマージ対応",
+        "管理アプリ: Tether（リモート管理・LEDオフ設定対応）",
+        "設置方式: 縦置き・壁掛け対応",
+        "保証期間: メーカー3年保証",
+        "※6GHz帯非対応（デュアルバンド）",
+        "※USBポート非搭載"
+      ]
+    }
+  }
+}
