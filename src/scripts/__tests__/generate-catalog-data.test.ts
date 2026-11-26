@@ -6,6 +6,7 @@ import {
   convertCacheEntryToCatalogRecord,
   generateCatalogData,
   getShardKey,
+  toCatalogIndexRecord,
 } from '../generate-catalog-data';
 
 describe('generateCatalogData', () => {
@@ -126,6 +127,38 @@ describe('generateCatalogData', () => {
     });
   });
 
+  describe('toCatalogIndexRecord', () => {
+    it('検索に必要なフィールドのみを残し、アフィリエイトリンクや価格変動履歴を含まないこと', () => {
+      const indexRecord = toCatalogIndexRecord({
+        asin: 'B006MB9700',
+        title: 'テスト商品',
+        brand: 'テストブランド',
+        price: 982,
+        previous_price: 1080,
+        price_changed_at: '2026-01-01T00:00:00.000Z',
+        availability: '在庫あり。',
+        image: 'https://example.com/i.jpg',
+        amazon_category: 'ウクレレ弦',
+        release_date: '2024-01-01T00:00:01Z',
+        detail_page_url: 'https://www.amazon.co.jp/dp/B006MB9700?tag=aegis-22',
+        price_as_of: '2026-11-26T00:00:00.000Z',
+        investigated: false,
+      });
+      expect(indexRecord).toEqual({
+        asin: 'B006MB9700',
+        title: 'テスト商品',
+        brand: 'テストブランド',
+        price: 982,
+        availability: '在庫あり。',
+        image: 'https://example.com/i.jpg',
+        amazon_category: 'ウクレレ弦',
+        price_as_of: '2026-11-26T00:00:00.000Z',
+        investigated: false,
+      });
+      expect(JSON.stringify(indexRecord)).not.toContain('amazon.co.jp');
+    });
+  });
+
   describe('generateCatalogData', () => {
     it('valid なキャッシュのみ抽出し、articlesDir に基づく investigated 判定とシャード振り分けを行うこと', async () => {
       await fs.promises.mkdir(articlesDir, { recursive: true });
@@ -223,6 +256,60 @@ describe('generateCatalogData', () => {
 
       await expect(generateCatalogData({ cacheDir, articlesDir, outputDir })).rejects.toThrow();
       expect(fs.existsSync(path.join(outputDir, 'KEEP.json'))).toBe(true);
+    });
+
+    it('検索用スリムインデックスがシャードと同じ母集団で出力されること', async () => {
+      await fs.promises.mkdir(articlesDir, { recursive: true });
+      await fs.promises.writeFile(path.join(articlesDir, 'B07DY4XYND.md'), '---\n---\n', 'utf-8');
+      await fs.promises.writeFile(
+        path.join(cacheDir, 'ND.json'),
+        JSON.stringify({
+          B07DY4XYND: {
+            status: 'valid',
+            timestamp: 1795657280855,
+            data: {
+              title: '調査済み商品',
+              brand: 'BrandA',
+              category: 'カテゴリA',
+              detailPageUrl: 'https://www.amazon.co.jp/dp/B07DY4XYND?tag=aegis-22',
+              availability: '在庫あり。',
+              price: { amount: 2500 },
+              images: { primary: 'https://example.com/a.jpg' },
+            },
+          },
+          B0000001ND: {
+            status: 'valid',
+            timestamp: 1795657280855,
+            data: { title: '未調査商品', brand: 'BrandB', price: { amount: 0 } },
+          },
+          B0000002ND: {
+            status: 'permanent_invalid',
+            timestamp: 1795657280855,
+            data: { title: '販売終了商品', price: { amount: 1000 } },
+          },
+        }),
+        'utf-8',
+      );
+
+      await generateCatalogData({ cacheDir, articlesDir, outputDir });
+
+      const indexPath = path.join(tempDir, 'static', 'catalog-index.json');
+      const index = JSON.parse(await fs.promises.readFile(indexPath, 'utf-8')) as Record<string, unknown>[];
+      // valid のみ・ASIN 昇順・スリムなフィールドのみ（アフィリエイトリンクや価格変動履歴を含まない）
+      expect(index.map((r) => r.asin)).toEqual(['B0000001ND', 'B07DY4XYND']);
+      expect(index[1]).toEqual({
+        asin: 'B07DY4XYND',
+        title: '調査済み商品',
+        brand: 'BrandA',
+        price: 2500,
+        availability: '在庫あり。',
+        image: 'https://example.com/a.jpg',
+        amazon_category: 'カテゴリA',
+        price_as_of: new Date(1795657280855).toISOString(),
+        investigated: true,
+      });
+      expect(index[0]?.price).toBeNull();
+      expect(index[0]?.investigated).toBe(false);
     });
 
     it('キャッシュディレクトリが存在しない場合は0件を返すこと', async () => {

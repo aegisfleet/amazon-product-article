@@ -56,10 +56,42 @@ export interface PaapiCacheEntry {
   };
 }
 
+/**
+ * 検索用スリムインデックスのレコード。
+ * シャード版から detail_page_url（アフィリエイトリンク）や価格変動履歴を除いた、
+ * 検索照合に必要な最小フィールドのみを保持する。
+ */
+export interface CatalogIndexRecord {
+  asin: string;
+  title: string;
+  brand: string;
+  price: number | null;
+  availability: string;
+  image: string;
+  amazon_category: string;
+  price_as_of: string;
+  investigated: boolean;
+}
+
+export function toCatalogIndexRecord(record: CatalogProductRecord): CatalogIndexRecord {
+  return {
+    asin: record.asin,
+    title: record.title,
+    brand: record.brand,
+    price: record.price,
+    availability: record.availability,
+    image: record.image,
+    amazon_category: record.amazon_category,
+    price_as_of: record.price_as_of,
+    investigated: record.investigated,
+  };
+}
+
 export interface GenerateCatalogDataOptions {
   cacheDir?: string;
   articlesDir?: string;
   outputDir?: string;
+  indexOutputPath?: string;
 }
 
 export interface GenerateCatalogDataResult {
@@ -168,6 +200,8 @@ export async function generateCatalogData(
   const cacheDir = options.cacheDir || path.join(process.cwd(), 'data/cache/paapi');
   const articlesDir = options.articlesDir || path.join(process.cwd(), 'content/articles');
   const outputDir = options.outputDir || path.join(process.cwd(), 'static/catalog-data');
+  // 既定ではシャード出力先の親（static/）に catalog-index.json を置く。
+  const indexOutputPath = options.indexOutputPath || path.join(path.dirname(outputDir), 'catalog-index.json');
 
   if (!fs.existsSync(cacheDir)) {
     logger.warn(`PAAPI cache directory not found: ${cacheDir}`);
@@ -177,6 +211,7 @@ export async function generateCatalogData(
   const investigatedAsins = await loadInvestigatedAsinSet(articlesDir);
   const shardFiles = (await fs.promises.readdir(cacheDir)).filter((file) => file.endsWith('.json'));
   const shards = new Map<string, Record<string, CatalogProductRecord>>();
+  const indexRecords: CatalogIndexRecord[] = [];
 
   let totalRecords = 0;
   let investigatedCount = 0;
@@ -199,6 +234,7 @@ export async function generateCatalogData(
           shards.set(shardKey, shardBucket);
         }
         shardBucket[record.asin] = record;
+        indexRecords.push(toCatalogIndexRecord(record));
 
         totalRecords += 1;
         if (record.investigated) {
@@ -228,6 +264,10 @@ export async function generateCatalogData(
       }, {});
     await fs.promises.writeFile(path.join(outputDir, `${shardKey}.json`), JSON.stringify(sortedEntries), 'utf-8');
   });
+
+  indexRecords.sort((a, b) => a.asin.localeCompare(b.asin));
+  await fs.promises.mkdir(path.dirname(indexOutputPath), { recursive: true });
+  await fs.promises.writeFile(indexOutputPath, JSON.stringify(indexRecords), 'utf-8');
 
   logger.info(
     `Generated catalog data: ${totalRecords} records (${investigatedCount} investigated, ${uninvestigatedCount} uninvestigated) across ${shardEntries.length} shards at ${outputDir}`,
