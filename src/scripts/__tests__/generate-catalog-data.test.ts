@@ -128,8 +128,8 @@ describe('generateCatalogData', () => {
   });
 
   describe('generateCatalogData', () => {
-    it('valid なキャッシュのみ抽出し、investigated 判定とシャード振り分けを行うこと', async () => {
-      await fs.promises.writeFile(path.join(investigationsDir, 'B07DY4XYND.json'), '{}', 'utf-8');
+    it('valid なキャッシュのみ抽出し、articlesDir に基づく investigated 判定とシャード振り分けを行うこと', async () => {
+      await fs.promises.writeFile(path.join(investigationsDir, 'B07DY4XYND.md'), '---\n---\n', 'utf-8');
 
       await fs.promises.writeFile(
         path.join(cacheDir, 'ND.json'),
@@ -171,7 +171,7 @@ describe('generateCatalogData', () => {
       await fs.promises.mkdir(outputDir, { recursive: true });
       await fs.promises.writeFile(path.join(outputDir, 'ZZ.json'), '{}', 'utf-8');
 
-      const result = await generateCatalogData({ cacheDir, investigationsDir, outputDir });
+      const result = await generateCatalogData({ cacheDir, articlesDir: investigationsDir, outputDir });
       expect(result).toEqual({
         totalRecords: 3,
         investigatedCount: 1,
@@ -197,30 +197,28 @@ describe('generateCatalogData', () => {
       expect(shard00.B000000100?.price).toBeNull();
     });
 
-    it('articlesDir に記事が存在する場合は investigationsDir より優先して investigated を判定すること', async () => {
-      const articlesDir = path.join(tempDir, 'content', 'articles');
-      await fs.promises.mkdir(articlesDir, { recursive: true });
-      // investigations には両方あるが、記事は B07DY4XYND のみ生成済み
-      await fs.promises.writeFile(path.join(investigationsDir, 'B07DY4XYND.json'), '{}', 'utf-8');
-      await fs.promises.writeFile(path.join(investigationsDir, 'B0000001ND.json'), '{}', 'utf-8');
-      await fs.promises.writeFile(path.join(articlesDir, 'B07DY4XYND.md'), '---\n---\n', 'utf-8');
-
+    it('articlesDir が空または存在しない場合は全件 investigated: false になること', async () => {
       await fs.promises.writeFile(
         path.join(cacheDir, 'ND.json'),
         JSON.stringify({
-          B07DY4XYND: { status: 'valid', timestamp: 1795657280855, data: { title: '公開済み' } },
-          B0000001ND: { status: 'valid', timestamp: 1795657280855, data: { title: '記事未生成' } },
+          B07DY4XYND: { status: 'valid', timestamp: 1795657280855, data: { title: '記事0件時' } },
         }),
         'utf-8',
       );
 
-      await generateCatalogData({ cacheDir, investigationsDir, articlesDir, outputDir });
-      const ndShard = JSON.parse(await fs.promises.readFile(path.join(outputDir, 'ND.json'), 'utf-8')) as Record<
-        string,
-        CatalogProductRecord
-      >;
-      expect(ndShard.B07DY4XYND?.investigated).toBe(true);
-      expect(ndShard.B0000001ND?.investigated).toBe(false);
+      // 空の articlesDir
+      const emptyResult = await generateCatalogData({ cacheDir, articlesDir: investigationsDir, outputDir });
+      expect(emptyResult.investigatedCount).toBe(0);
+      expect(emptyResult.uninvestigatedCount).toBe(1);
+
+      // 存在しない articlesDir
+      const missingResult = await generateCatalogData({
+        cacheDir,
+        articlesDir: path.join(tempDir, 'missing-articles'),
+        outputDir,
+      });
+      expect(missingResult.investigatedCount).toBe(0);
+      expect(missingResult.uninvestigatedCount).toBe(1);
     });
 
     it('キャッシュシャードの読み取り・パース失敗時はエラーを投げ、既存出力を削除しないこと', async () => {
@@ -228,14 +226,14 @@ describe('generateCatalogData', () => {
       await fs.promises.writeFile(path.join(outputDir, 'KEEP.json'), '{}', 'utf-8');
       await fs.promises.writeFile(path.join(cacheDir, 'BD.json'), '{broken json', 'utf-8');
 
-      await expect(generateCatalogData({ cacheDir, investigationsDir, outputDir })).rejects.toThrow();
+      await expect(generateCatalogData({ cacheDir, articlesDir: investigationsDir, outputDir })).rejects.toThrow();
       expect(fs.existsSync(path.join(outputDir, 'KEEP.json'))).toBe(true);
     });
 
     it('キャッシュディレクトリが存在しない場合は0件を返すこと', async () => {
       const result = await generateCatalogData({
         cacheDir: path.join(tempDir, 'nonexistent'),
-        investigationsDir,
+        articlesDir: investigationsDir,
         outputDir,
       });
       expect(result.totalRecords).toBe(0);

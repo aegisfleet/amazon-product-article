@@ -1057,41 +1057,47 @@ document.addEventListener('DOMContentLoaded', function () {
             isWorkerFailed = true;
             searchWorker = null;
 
+            const buildFallbackMaps = (data) => {
+                asinMapFallback.clear();
+                parentAsinMapFallback.clear();
+                for (const item of data) {
+                    if (item.asin) asinMapFallback.set(item.asin.toUpperCase(), item);
+                    if (item.parent_asin) {
+                        const p = item.parent_asin.toUpperCase();
+                        if (!parentAsinMapFallback.has(p)) parentAsinMapFallback.set(p, []);
+                        parentAsinMapFallback.get(p).push(item);
+                    }
+                }
+            };
+
+            const loadMorphIndexIfAvailable = async (searchIndex) => {
+                if (!globalThis.SearchCore?.prepareMorphIndex) return;
+                try {
+                    const [morphRes, vocabRes] = await Promise.all([
+                        fetch('/search-morphs.json'),
+                        fetch('/search-vocab.json')
+                    ]);
+                    if (morphRes.ok && vocabRes.ok) {
+                        globalThis.SearchCore.prepareMorphIndex(
+                            searchIndex,
+                            await morphRes.json(),
+                            await vocabRes.json()
+                        );
+                    }
+                } catch {
+                    // 形態素照合なしで継続
+                }
+            };
+
             const initFuse = async () => {
                 try {
                     await getAsinVariations();
                     const response = await fetch(searchIndexUrl);
                     const data = await response.json();
-                    asinMapFallback.clear();
-                    parentAsinMapFallback.clear();
-                    for (const item of data) {
-                        if (item.asin) asinMapFallback.set(item.asin.toUpperCase(), item);
-                        if (item.parent_asin) {
-                            const p = item.parent_asin.toUpperCase();
-                            if (!parentAsinMapFallback.has(p)) parentAsinMapFallback.set(p, []);
-                            parentAsinMapFallback.get(p).push(item);
-                        }
-                    }
+                    buildFallbackMaps(data);
                     const searchIndex = normalizeSearchItems(data);
                     searchIndexFallback = searchIndex;
-                    // 形態素データ（任意）: 取得できなくても部分一致で動く
-                    if (globalThis.SearchCore?.prepareMorphIndex) {
-                        try {
-                            const [morphRes, vocabRes] = await Promise.all([
-                                fetch('/search-morphs.json'),
-                                fetch('/search-vocab.json')
-                            ]);
-                            if (morphRes.ok && vocabRes.ok) {
-                                globalThis.SearchCore.prepareMorphIndex(
-                                    searchIndex,
-                                    await morphRes.json(),
-                                    await vocabRes.json()
-                                );
-                            }
-                        } catch {
-                            // 形態素照合なしで継続
-                        }
-                    }
+                    await loadMorphIndexIfAvailable(searchIndex);
                     fuse = new Fuse(searchIndex, {
                         keys: [
                             { name: "asin", weight: 1 },
@@ -1130,34 +1136,35 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
+        function handleWorkerMessage(data) {
+            if (data.type === 'READY') {
+                if (searchInput.value.trim() && typeof handleSearch === 'function') {
+                    handleSearch(searchInput.value, true);
+                }
+                return;
+            }
+            if (data.type === 'ERROR') {
+                console.warn('Search worker error, falling back to main thread:', data.error);
+                fallbackToMainThreadFuse();
+                return;
+            }
+            if (data.type !== 'SEARCH_RESULTS' || data.notReady || data.searchId !== latestSearchId) {
+                return;
+            }
+            displayResults(
+                data.results,
+                data.unfilteredScoreCount || 0,
+                data.unfilteredPriceCount || 0
+            );
+            searchInputWrapper?.classList.remove('is-loading');
+            searchResults?.classList.remove('is-searching');
+        }
+
         // Web Worker の初期化
         if (typeof Worker !== 'undefined') {
             try {
                 searchWorker = new Worker(searchWorkerUrl);
-                searchWorker.onmessage = (e) => {
-                    const data = e.data || {};
-                    if (data.type === 'READY') {
-                        if (searchInput.value.trim() && typeof handleSearch === 'function') {
-                            handleSearch(searchInput.value, true);
-                        }
-                    } else if (data.type === 'SEARCH_RESULTS') {
-                        if (data.notReady) {
-                            return;
-                        }
-                        if (data.searchId === latestSearchId) {
-                            displayResults(
-                                data.results,
-                                data.unfilteredScoreCount || 0,
-                                data.unfilteredPriceCount || 0
-                            );
-                            if (searchInputWrapper) searchInputWrapper.classList.remove('is-loading');
-                            if (searchResults) searchResults.classList.remove('is-searching');
-                        }
-                    } else if (data.type === 'ERROR') {
-                        console.warn('Search worker error, falling back to main thread:', data.error);
-                        fallbackToMainThreadFuse();
-                    }
-                };
+                searchWorker.onmessage = (e) => handleWorkerMessage(e.data || {});
                 searchWorker.onerror = (err) => {
                     console.warn('Search worker error event, falling back to main thread:', err);
                     fallbackToMainThreadFuse();
@@ -2517,12 +2524,14 @@ document.addEventListener('DOMContentLoaded', function () {
         lastSearchState = getSearchState();
     }
 
-    const isHomePage = document.body?.dataset?.isHome === 'true';
-    const urlQuery =
-        isHomePage && typeof URLSearchParams === 'function'
-            ? new URLSearchParams(globalThis.location?.search || '').get('q')
-            : null;
-    if (urlQuery && urlQuery.trim() && typeof openSearchModal === 'function') {
-        openSearchModal(urlQuery.trim());
+    function autoOpenSearchFromUrl() {
+        if (document.body?.dataset?.isHome !== 'true') return;
+        if (typeof URLSearchParams !== 'function') return;
+        const urlQuery = new URLSearchParams(globalThis.location?.search || '').get('q');
+        if (urlQuery?.trim() && typeof openSearchModal === 'function') {
+            openSearchModal(urlQuery.trim());
+        }
     }
+
+    autoOpenSearchFromUrl();
 });

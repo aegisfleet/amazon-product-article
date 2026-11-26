@@ -14,7 +14,6 @@ import { mapInChunks } from './generate-mcp-products';
 const logger = Logger.getInstance();
 
 const ASIN_REGEX = /^[A-Z0-9]{10}$/i;
-const ASIN_FILENAME_REGEX = /^([A-Z0-9]{10})\.json$/i;
 const ARTICLE_FILENAME_REGEX = /^([A-Z0-9]{10})\.md$/i;
 const READ_CHUNK_SIZE = 256;
 
@@ -59,7 +58,6 @@ export interface PaapiCacheEntry {
 
 export interface GenerateCatalogDataOptions {
   cacheDir?: string;
-  investigationsDir?: string;
   articlesDir?: string;
   outputDir?: string;
 }
@@ -132,31 +130,16 @@ export function convertCacheEntryToCatalogRecord(
   return record;
 }
 
-export async function loadInvestigatedAsinSet(investigationsDir: string, articlesDir?: string): Promise<Set<string>> {
+export async function loadInvestigatedAsinSet(articlesDir: string): Promise<Set<string>> {
   const set = new Set<string>();
-
-  // 本番ビルド（generate:articles 後）では実際に生成された記事ファイルを正本とする
-  if (articlesDir && fs.existsSync(articlesDir)) {
-    const articleFiles = await fs.promises.readdir(articlesDir);
-    for (const file of articleFiles) {
-      const match = ARTICLE_FILENAME_REGEX.exec(file);
-      if (match?.[1]) {
-        set.add(match[1].toUpperCase());
-      }
-    }
-    if (set.size > 0) {
-      return set;
-    }
-  }
-
-  if (!fs.existsSync(investigationsDir)) {
-    logger.warn(`Investigations directory not found: ${investigationsDir}`);
+  if (!fs.existsSync(articlesDir)) {
+    logger.warn(`Articles directory not found: ${articlesDir}`);
     return set;
   }
 
-  const files = await fs.promises.readdir(investigationsDir);
-  for (const file of files) {
-    const match = ASIN_FILENAME_REGEX.exec(file);
+  const articleFiles = await fs.promises.readdir(articlesDir);
+  for (const file of articleFiles) {
+    const match = ARTICLE_FILENAME_REGEX.exec(file);
     if (match?.[1]) {
       set.add(match[1].toUpperCase());
     }
@@ -179,7 +162,6 @@ export async function generateCatalogData(
   options: GenerateCatalogDataOptions = {},
 ): Promise<GenerateCatalogDataResult> {
   const cacheDir = options.cacheDir || path.join(process.cwd(), 'data/cache/paapi');
-  const investigationsDir = options.investigationsDir || path.join(process.cwd(), 'data/investigations');
   const articlesDir = options.articlesDir || path.join(process.cwd(), 'content/articles');
   const outputDir = options.outputDir || path.join(process.cwd(), 'static/catalog-data');
 
@@ -188,7 +170,7 @@ export async function generateCatalogData(
     return { totalRecords: 0, investigatedCount: 0, uninvestigatedCount: 0, shardCount: 0 };
   }
 
-  const investigatedAsins = await loadInvestigatedAsinSet(investigationsDir, articlesDir);
+  const investigatedAsins = await loadInvestigatedAsinSet(articlesDir);
   const shardFiles = (await fs.promises.readdir(cacheDir)).filter((file) => file.endsWith('.json'));
   const shards = new Map<string, Record<string, CatalogProductRecord>>();
 

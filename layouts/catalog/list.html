@@ -11,7 +11,7 @@
 
     <div id="catalog-message" class="catalog-status-card" style="display: none;" role="alert">
         <span class="material-symbols-outlined catalog-status-icon" aria-hidden="true">info</span>
-        <h1 id="catalog-message-title" class="catalog-message-title"></h1>
+        <h1 id="catalog-message-title" class="catalog-message-title">商品データのお知らせ</h1>
         <p id="catalog-message-desc" class="catalog-message-desc"></p>
         <div class="catalog-message-actions">
             <a href="{{ `` | relURL }}" class="btn-shop btn-shop-amazon btn-shop--hero" style="text-decoration: none;">
@@ -44,7 +44,7 @@
                     <span id="catalog-availability-badge" class="m3-badge m3-badge-tertiary" style="display: none;"></span>
                 </div>
 
-                <h1 id="catalog-title" class="catalog-product-title"></h1>
+                <h1 id="catalog-title" class="catalog-product-title">商品カタログ（未調査商品）</h1>
 
                 <div class="catalog-price-bar">
                     <div class="catalog-price-group">
@@ -245,7 +245,7 @@
     .catalog-detail-row dd {
         margin: 0;
         color: var(--color-text-primary);
-        word-break: break-word;
+        overflow-wrap: anywhere;
     }
 
     .catalog-actions {

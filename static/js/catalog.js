@@ -20,7 +20,7 @@
         const date = new Date(isoString);
         if (Number.isNaN(date.getTime())) return '';
         return date.toLocaleString('ja-JP', {
-            month: 'numeric',
+            month: 'long',
             day: 'numeric',
             timeZone: 'Asia/Tokyo',
         });
@@ -32,7 +32,7 @@
         if (Number.isNaN(date.getTime())) return isoString;
         return date.toLocaleString('ja-JP', {
             year: 'numeric',
-            month: 'numeric',
+            month: 'long',
             day: 'numeric',
             timeZone: 'Asia/Tokyo',
         });
@@ -53,70 +53,109 @@
         messageEl.style.display = 'block';
     }
 
-    function renderPriceBlock(record) {
+    function renderMainPrice(price) {
         const priceEl = document.getElementById('catalog-price');
         const taxEl = document.getElementById('catalog-price-tax');
-        if (priceEl) {
-            if (typeof record.price === 'number' && record.price > 0) {
-                priceEl.textContent = `¥${record.price.toLocaleString('ja-JP')}`;
-                if (taxEl) taxEl.style.display = 'inline';
-            } else {
-                priceEl.textContent = '価格データなし';
-                if (taxEl) taxEl.style.display = 'none';
-            }
-        }
+        if (!priceEl) return;
 
+        const hasValidPrice = typeof price === 'number' && price > 0;
+        priceEl.textContent = hasValidPrice ? `¥${price.toLocaleString('ja-JP')}` : '価格データなし';
+        if (taxEl) {
+            taxEl.style.display = hasValidPrice ? 'inline' : 'none';
+        }
+    }
+
+    function renderPreviousPrice(previousPrice, priceChangedAt) {
         const prevRowEl = document.getElementById('catalog-previous-price-row');
         const prevTextEl = document.getElementById('catalog-previous-price-text');
-        if (prevRowEl && prevTextEl && typeof record.previous_price === 'number' && record.previous_price > 0) {
-            const changedDate = formatMonthDayJa(record.price_changed_at);
-            const changedSuffix = changedDate ? `（${changedDate}に変動）` : '';
-            prevTextEl.textContent = `前回価格 ${record.previous_price.toLocaleString('ja-JP')}円${changedSuffix}`;
-            prevRowEl.style.display = 'flex';
-        }
+        if (!prevRowEl || !prevTextEl) return;
+        if (typeof previousPrice !== 'number' || previousPrice <= 0) return;
+
+        const changedDate = formatMonthDayJa(priceChangedAt);
+        const changedSuffix = changedDate ? `（${changedDate}に変動）` : '';
+        prevTextEl.textContent = `前回価格 ${previousPrice.toLocaleString('ja-JP')}円${changedSuffix}`;
+        prevRowEl.style.display = 'flex';
+    }
+
+    function renderPriceBlock(record) {
+        renderMainPrice(record.price);
+        renderPreviousPrice(record.previous_price, record.price_changed_at);
 
         const asOfEl = document.getElementById('catalog-price-as-of-note');
         if (asOfEl) {
-            const asOfLabel = formatDateTimeJa(record.price_as_of);
-            asOfEl.textContent = `価格は ${asOfLabel} 時点の参考値です。最新の価格は Amazon でご確認ください`;
+            asOfEl.textContent = `価格は ${formatDateTimeJa(record.price_as_of)} 時点の参考値です。最新の価格は Amazon でご確認ください`;
+        }
+    }
+
+    function renderImage(imageUrl, title) {
+        const imageEl = document.getElementById('catalog-image');
+        const noImageEl = document.getElementById('catalog-no-image');
+        if (imageEl && isSafeHttpUrl(imageUrl)) {
+            imageEl.src = imageUrl;
+            imageEl.alt = title;
+            imageEl.style.display = 'block';
+            return;
+        }
+        if (noImageEl) {
+            noImageEl.style.display = 'flex';
+        }
+    }
+
+    function renderBrand(brand) {
+        if (!brand) return;
+        const brandBadgeEl = document.getElementById('catalog-brand-badge');
+        if (brandBadgeEl) {
+            brandBadgeEl.textContent = brand;
+            brandBadgeEl.style.display = 'inline-flex';
+        }
+        renderOptionalDetailRow('catalog-brand-row', 'catalog-brand', brand);
+    }
+
+    function renderOptionalDetailRow(rowId, valueId, value) {
+        if (!value) return;
+        const rowEl = document.getElementById(rowId);
+        const valEl = document.getElementById(valueId);
+        if (rowEl && valEl) {
+            valEl.textContent = value;
+            rowEl.style.display = 'flex';
+        }
+    }
+
+    function renderActionLinks(record, homeUrl) {
+        const amazonLinkEl = document.getElementById('catalog-amazon-link');
+        if (amazonLinkEl) {
+            amazonLinkEl.href = isSafeHttpUrl(record.detail_page_url)
+                ? record.detail_page_url
+                : `https://www.amazon.co.jp/dp/${encodeURIComponent(record.asin)}`;
+        }
+
+        const searchLinkEl = document.getElementById('catalog-search-link');
+        if (!searchLinkEl) return;
+
+        const searchQuery = record.brand || record.amazon_category || '';
+        if (!searchQuery) {
+            searchLinkEl.href = homeUrl;
+            return;
+        }
+
+        searchLinkEl.href = `${homeUrl}?q=${encodeURIComponent(searchQuery)}`;
+        const searchLabelEl = document.getElementById('catalog-search-link-label');
+        if (searchLabelEl) {
+            searchLabelEl.textContent = `「${searchQuery}」の調査済み商品を検索`;
         }
     }
 
     function renderProduct(record, homeUrl, siteTitle) {
         const loadingEl = document.getElementById('catalog-loading');
         const productEl = document.getElementById('catalog-product');
-
         const title = record.title || record.asin;
+
         const titleEl = document.getElementById('catalog-title');
         if (titleEl) titleEl.textContent = title;
+        if (siteTitle) document.title = `${title}（未調査） | ${siteTitle}`;
 
-        if (siteTitle) {
-            document.title = `${title}（未調査） | ${siteTitle}`;
-        }
-
-        const imageEl = document.getElementById('catalog-image');
-        const noImageEl = document.getElementById('catalog-no-image');
-        if (imageEl && isSafeHttpUrl(record.image)) {
-            imageEl.src = record.image;
-            imageEl.alt = title;
-            imageEl.style.display = 'block';
-        } else if (noImageEl) {
-            noImageEl.style.display = 'flex';
-        }
-
-        const brandBadgeEl = document.getElementById('catalog-brand-badge');
-        const brandRowEl = document.getElementById('catalog-brand-row');
-        const brandValEl = document.getElementById('catalog-brand');
-        if (record.brand) {
-            if (brandBadgeEl) {
-                brandBadgeEl.textContent = record.brand;
-                brandBadgeEl.style.display = 'inline-flex';
-            }
-            if (brandRowEl && brandValEl) {
-                brandValEl.textContent = record.brand;
-                brandRowEl.style.display = 'flex';
-            }
-        }
+        renderImage(record.image, title);
+        renderBrand(record.brand);
 
         const availBadgeEl = document.getElementById('catalog-availability-badge');
         if (availBadgeEl && record.availability) {
@@ -125,48 +164,33 @@
         }
 
         renderPriceBlock(record);
-
-        const categoryRowEl = document.getElementById('catalog-category-row');
-        const categoryValEl = document.getElementById('catalog-category');
-        if (categoryRowEl && categoryValEl && record.amazon_category) {
-            categoryValEl.textContent = record.amazon_category;
-            categoryRowEl.style.display = 'flex';
-        }
-
-        const releaseRowEl = document.getElementById('catalog-release-row');
-        const releaseValEl = document.getElementById('catalog-release-date');
-        if (releaseRowEl && releaseValEl && record.release_date) {
-            releaseValEl.textContent = formatDateJa(record.release_date);
-            releaseRowEl.style.display = 'flex';
-        }
+        renderOptionalDetailRow('catalog-category-row', 'catalog-category', record.amazon_category);
+        renderOptionalDetailRow(
+            'catalog-release-row',
+            'catalog-release-date',
+            record.release_date ? formatDateJa(record.release_date) : '',
+        );
 
         const asinEl = document.getElementById('catalog-asin');
         if (asinEl) asinEl.textContent = record.asin;
 
-        const amazonLinkEl = document.getElementById('catalog-amazon-link');
-        if (amazonLinkEl) {
-            const safeAmazonUrl = isSafeHttpUrl(record.detail_page_url)
-                ? record.detail_page_url
-                : `https://www.amazon.co.jp/dp/${encodeURIComponent(record.asin)}`;
-            amazonLinkEl.href = safeAmazonUrl;
-        }
-
-        const searchLinkEl = document.getElementById('catalog-search-link');
-        const searchLabelEl = document.getElementById('catalog-search-link-label');
-        if (searchLinkEl) {
-            const searchQuery = record.brand || record.amazon_category || '';
-            if (searchQuery) {
-                searchLinkEl.href = `${homeUrl}?q=${encodeURIComponent(searchQuery)}`;
-                if (searchLabelEl) {
-                    searchLabelEl.textContent = `「${searchQuery}」の調査済み商品を検索`;
-                }
-            } else {
-                searchLinkEl.href = homeUrl;
-            }
-        }
+        renderActionLinks(record, homeUrl);
 
         if (loadingEl) loadingEl.style.display = 'none';
         if (productEl) productEl.style.display = 'block';
+    }
+
+    async function tryRedirectIfArticleExists(articleUrl) {
+        try {
+            const headRes = await fetch(articleUrl, { method: 'HEAD' });
+            if (headRes.ok) {
+                globalThis.location.replace(articleUrl);
+                return true;
+            }
+        } catch {
+            // ignore network error and fall through to not-found message
+        }
+        return false;
     }
 
     async function initCatalogPage() {
@@ -195,35 +219,12 @@
         const shardKey = asin.slice(-2);
         const articleUrl = `${homeUrl}${asin.toLowerCase()}/`;
 
-        async function tryRedirectIfArticleExists() {
-            try {
-                const headRes = await fetch(articleUrl, { method: 'HEAD' });
-                if (headRes.ok) {
-                    globalThis.location.replace(articleUrl);
-                    return true;
-                }
-            } catch {
-                // ignore network error and fall through to not-found message
-            }
-            return false;
-        }
-
         try {
             const response = await fetch(`${catalogBaseUrl}${shardKey}.json`);
-            if (!response.ok) {
-                if (await tryRedirectIfArticleExists()) return;
-                showMessage(
-                    loadingEl,
-                    messageEl,
-                    'この商品のデータはありません（未調査・取り扱いなし）',
-                    `指定された ASIN（${asin}）の商品情報は見つかりませんでした。`,
-                );
-                return;
-            }
-            const shardData = await response.json();
+            const shardData = response.ok ? await response.json() : null;
             const record = shardData?.[asin];
             if (!record) {
-                if (await tryRedirectIfArticleExists()) return;
+                if (await tryRedirectIfArticleExists(articleUrl)) return;
                 showMessage(
                     loadingEl,
                     messageEl,
@@ -240,7 +241,7 @@
 
             renderProduct(record, homeUrl, siteTitle);
         } catch {
-            if (await tryRedirectIfArticleExists()) return;
+            if (await tryRedirectIfArticleExists(articleUrl)) return;
             showMessage(
                 loadingEl,
                 messageEl,
