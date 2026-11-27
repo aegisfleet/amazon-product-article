@@ -339,4 +339,42 @@ describe('SearchCore', () => {
       expect(res.results.map((r: any) => r.item.asin)).toEqual(['B0CHG00002', 'B0CHG00001']);
     });
   });
+
+  describe('dealBadge フィルタリング', () => {
+    it('matchesDealBadge が完全一致・__ANY_DEAL__・event: 接頭辞を正しく判定すること', () => {
+      expect(SearchCore.matchesDealBadge({ deal_badge: '厳選目玉商品' }, '')).toBe(true);
+      expect(SearchCore.matchesDealBadge({ deal_badge: '厳選目玉商品' }, '__ANY_DEAL__')).toBe(true);
+      expect(SearchCore.matchesDealBadge({ deal_badge: '' }, '__ANY_DEAL__')).toBe(false);
+      expect(SearchCore.matchesDealBadge({ deal_badge: '厳選目玉商品' }, '厳選目玉商品')).toBe(true);
+      expect(SearchCore.matchesDealBadge({ deal_badge: 'タイムセール' }, '厳選目玉商品')).toBe(false);
+      expect(
+        SearchCore.matchesDealBadge({ deal_badge: 'ブラックフライデー先行セール' }, 'event:ブラックフライデー'),
+      ).toBe(true);
+      expect(
+        SearchCore.matchesDealBadge({ deal_badge: 'ブラックフライデープライムセール' }, 'event:ブラックフライデー'),
+      ).toBe(true);
+      expect(SearchCore.matchesDealBadge({ deal_badge: 'タイムセール' }, 'event:ブラックフライデー')).toBe(false);
+    });
+
+    it('空クエリでも dealBadge 指定時は一致商品を返すこと', () => {
+      const items = [
+        { asin: 'B0001', title: '商品A', score: 85, price: '￥1,000', price_value: 1000, deal_badge: '厳選目玉商品' },
+        { asin: 'B0002', title: '商品B', score: 90, price: '￥2,000', price_value: 2000, deal_badge: 'タイムセール' },
+        { asin: 'B0003', title: '商品C', score: 80, price: '￥3,000', price_value: 3000, deal_badge: '' },
+      ];
+      SearchCore.prepareSearchIndex(items);
+
+      const featured = SearchCore.searchWithCore(items, null, '', {
+        scoreMin: '70',
+        dealBadge: '厳選目玉商品',
+      });
+      expect(featured.results.map((r: any) => r.item.asin)).toEqual(['B0001']);
+
+      const anyDeal = SearchCore.searchWithCore(items, null, '', {
+        scoreMin: '70',
+        dealBadge: '__ANY_DEAL__',
+      });
+      expect(anyDeal.results.map((r: any) => r.item.asin).sort()).toEqual(['B0001', 'B0002']);
+    });
+  });
 });

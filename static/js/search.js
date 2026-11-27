@@ -535,8 +535,13 @@ document.addEventListener('DOMContentLoaded', function () {
             scoreMax: document.getElementById('filter-score-max')?.value || '',
             priceMin: document.getElementById('filter-price-min')?.value || '',
             priceMax: document.getElementById('filter-price-max')?.value || '',
+            dealBadge: document.getElementById('filter-deal-badge')?.value || '',
             sort: document.getElementById('search-sort-select')?.value || 'relevance'
         };
+    }
+
+    function hasActiveDealBadgeFilter() {
+        return Boolean(document.getElementById('filter-deal-badge')?.value);
     }
 
     if (!searchInput || !searchResults) return;
@@ -799,6 +804,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const scoreMaxEl = document.getElementById('filter-score-max');
         const priceMinEl = document.getElementById('filter-price-min');
         const priceMaxEl = document.getElementById('filter-price-max');
+        const dealBadgeEl = document.getElementById('filter-deal-badge');
 
         if (scoreMinEl && scoreMinEl.value !== '' && Number.parseFloat(scoreMinEl.value) > 0) {
             count++;
@@ -812,7 +818,17 @@ document.addEventListener('DOMContentLoaded', function () {
         if (priceMaxEl && priceMaxEl.value?.trim?.() !== '') {
             count++;
         }
+        if (dealBadgeEl && dealBadgeEl.value !== '') {
+            count++;
+        }
         return count;
+    }
+
+    function getSearchDealBadgeLabel(val) {
+        if (!val) return '';
+        if (val === '__ANY_DEAL__') return 'セール対象のみ';
+        if (val.startsWith('event:')) return `${val.slice('event:'.length)}（すべて）`;
+        return val;
     }
 
     function updateSearchActiveChips() {
@@ -823,18 +839,19 @@ document.addEventListener('DOMContentLoaded', function () {
         const scoreMaxEl = document.getElementById('filter-score-max');
         const priceMinEl = document.getElementById('filter-price-min');
         const priceMaxEl = document.getElementById('filter-price-max');
+        const dealBadgeEl = document.getElementById('filter-deal-badge');
 
         const scoreMin = scoreMinEl ? scoreMinEl.value.trim() : '';
         const scoreMax = scoreMaxEl ? scoreMaxEl.value.trim() : '';
         const priceMin = priceMinEl ? priceMinEl.value.trim() : '';
         const priceMax = priceMaxEl ? priceMaxEl.value.trim() : '';
+        const dealBadge = dealBadgeEl ? dealBadgeEl.value.trim() : '';
 
         const triggerSearch = () => {
             updateFilterBadge();
             const searchInput = document.getElementById('search-input');
-            if (searchInput) {
-                const event = new Event('input', { bubbles: true });
-                searchInput.dispatchEvent(event);
+            if (searchInput && typeof handleSearch === 'function') {
+                handleSearch(searchInput.value.replaceAll('　', ' '), true);
             }
         };
 
@@ -896,6 +913,20 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
 
+        if (dealBadge) {
+            chips.push({
+                id: 'dealBadge',
+                icon: 'sell',
+                label: getSearchDealBadgeLabel(dealBadge),
+                onRemove: () => {
+                    if (dealBadgeEl) dealBadgeEl.value = '';
+                    updateFilterBadge();
+                    updateSearchActiveChips();
+                    triggerSearch();
+                }
+            });
+        }
+
         const resetAll = () => {
             const filterResetBtn = document.getElementById('filter-reset-btn');
             if (filterResetBtn) filterResetBtn.click();
@@ -937,11 +968,13 @@ document.addEventListener('DOMContentLoaded', function () {
             const scoreMaxEl = document.getElementById('filter-score-max');
             const priceMinEl = document.getElementById('filter-price-min');
             const priceMaxEl = document.getElementById('filter-price-max');
+            const dealBadgeEl = document.getElementById('filter-deal-badge');
 
             if (scoreMinEl) scoreMinEl.value = '70';
             if (scoreMaxEl) scoreMaxEl.value = '';
             if (priceMinEl) priceMinEl.value = '';
             if (priceMaxEl) priceMaxEl.value = '';
+            if (dealBadgeEl) dealBadgeEl.value = '';
 
             updateFilterBadge();
             updateSearchActiveChips();
@@ -1044,8 +1077,43 @@ document.addEventListener('DOMContentLoaded', function () {
                 scoreMax: document.getElementById('filter-score-max')?.value || '',
                 priceMin: document.getElementById('filter-price-min')?.value || '',
                 priceMax: document.getElementById('filter-price-max')?.value || '',
+                dealBadge: document.getElementById('filter-deal-badge')?.value || '',
                 sort: document.getElementById('search-sort-select')?.value || 'relevance'
             };
+        }
+
+        function populateSearchDealBadgeOptions(dealBadges) {
+            const selectEl = document.getElementById('filter-deal-badge');
+            if (!selectEl || !Array.isArray(dealBadges) || dealBadges.length === 0) return;
+
+            const currentVal = selectEl.value;
+            selectEl.textContent = '';
+
+            const appendOpt = (value, label) => {
+                const opt = document.createElement('option');
+                opt.value = value;
+                opt.textContent = label;
+                selectEl.appendChild(opt);
+            };
+
+            appendOpt('', 'すべて');
+            appendOpt('__ANY_DEAL__', 'セール対象のみ');
+
+            const knownEvents = ['ブラックフライデー', 'プライム感謝祭', 'プライムデー', 'スマイル Sale', '新生活セール'];
+            for (const ev of knownEvents) {
+                const evCount = dealBadges.reduce((sum, b) => (b.badge.includes(ev) ? sum + b.count : sum), 0);
+                if (evCount > 0) {
+                    appendOpt(`event:${ev}`, `${ev}（すべて） (${evCount})`);
+                }
+            }
+
+            for (const { badge, count } of dealBadges) {
+                appendOpt(badge, `${badge} (${count})`);
+            }
+
+            if (currentVal && Array.from(selectEl.options).some(o => o.value === currentVal)) {
+                selectEl.value = currentVal;
+            }
         }
 
         // Fetch index.json / worker dynamically from data attribute
@@ -1138,7 +1206,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function handleWorkerMessage(data) {
             if (data.type === 'READY') {
-                if (searchInput.value.trim() && typeof handleSearch === 'function') {
+                if (Array.isArray(data.dealBadges)) {
+                    populateSearchDealBadgeOptions(data.dealBadges);
+                }
+                if ((searchInput.value.trim() || hasActiveDealBadgeFilter()) && typeof handleSearch === 'function') {
                     handleSearch(searchInput.value, true);
                 }
                 return;
@@ -1243,13 +1314,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const executeSearchCore = (query) => {
             const trimmedQuery = query.trim();
-            if (trimmedQuery.length === 0) {
+            const hasDealFilter = hasActiveDealBadgeFilter();
+            if (trimmedQuery.length === 0 && !hasDealFilter) {
                 displaySearchTips();
                 stopSearchLoading();
                 return;
             }
 
-            if (!isValidQuery(query)) {
+            if (trimmedQuery.length > 0 && !isValidQuery(query)) {
                 stopSearchLoading();
                 return;
             }
@@ -1415,7 +1487,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     updateFilterBadge();
                     updateSearchActiveChips();
                     const query = searchInput.value.replaceAll('　', ' ');
-                    if (isValidQuery(query)) {
+                    if (isValidQuery(query) || hasActiveDealBadgeFilter()) {
                         if (searchInputWrapper) searchInputWrapper.classList.add('is-loading');
                         handleSearch(query);
                     }
@@ -1423,11 +1495,27 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
+        const dealBadgeSelectEl = document.getElementById('filter-deal-badge');
+        if (dealBadgeSelectEl) {
+            dealBadgeSelectEl.addEventListener('change', () => {
+                updateFilterBadge();
+                updateSearchActiveChips();
+                const query = searchInput.value.replaceAll('　', ' ');
+                if (isValidQuery(query) || hasActiveDealBadgeFilter()) {
+                    if (searchInputWrapper) searchInputWrapper.classList.add('is-loading');
+                    handleSearch(query, true);
+                } else {
+                    displaySearchTips();
+                    stopSearchLoading();
+                }
+            });
+        }
+
         const sortSelectEl = document.getElementById('search-sort-select');
         if (sortSelectEl) {
             sortSelectEl.addEventListener('change', () => {
                 const query = searchInput.value.replaceAll('　', ' ');
-                if (isValidQuery(query)) {
+                if (isValidQuery(query) || hasActiveDealBadgeFilter()) {
                     if (searchInputWrapper) searchInputWrapper.classList.add('is-loading');
                     handleSearch(query, true);
                 }
@@ -1678,10 +1766,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const scoreMaxEl = document.getElementById('filter-score-max');
         const priceMinEl = document.getElementById('filter-price-min');
         const priceMaxEl = document.getElementById('filter-price-max');
+        const dealBadgeEl = document.getElementById('filter-deal-badge');
         const scoreMin = scoreMinEl ? Number.parseFloat(scoreMinEl.value) : 0;
         const scoreMax = scoreMaxEl && scoreMaxEl.value !== '' ? Number.parseFloat(scoreMaxEl.value) : null;
         const priceMin = priceMinEl && priceMinEl.value !== '' ? Number.parseFloat(priceMinEl.value) : null;
         const priceMax = priceMaxEl && priceMaxEl.value !== '' ? Number.parseFloat(priceMaxEl.value) : null;
+        const dealBadge = dealBadgeEl ? dealBadgeEl.value : '';
 
         // スコア下限（デフォルト70から変更されているか、または70以外が設定されている場合）
         if (Number.isFinite(scoreMin) && scoreMin > 0) {
@@ -1696,6 +1786,9 @@ document.addEventListener('DOMContentLoaded', function () {
         if (Number.isFinite(priceMax)) {
             filters.push({ label: `価格: 〜${priceMax.toLocaleString()}円`, type: 'price-max' });
         }
+        if (dealBadge) {
+            filters.push({ label: `セール: ${getSearchDealBadgeLabel(dealBadge)}`, type: 'deal-badge' });
+        }
         return filters;
     }
 
@@ -1705,6 +1798,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const scoreMaxEl = document.getElementById('filter-score-max');
         const priceMinEl = document.getElementById('filter-price-min');
         const priceMaxEl = document.getElementById('filter-price-max');
+        const dealBadgeEl = document.getElementById('filter-deal-badge');
         if (type === 'keyword') {
             searchInput.value = '';
         } else if (type === 'score-min' && scoreMinEl) {
@@ -1715,12 +1809,14 @@ document.addEventListener('DOMContentLoaded', function () {
             priceMinEl.value = '';
         } else if (type === 'price-max' && priceMaxEl) {
             priceMaxEl.value = '';
+        } else if (type === 'deal-badge' && dealBadgeEl) {
+            dealBadgeEl.value = '';
         }
         updateFilterBadge();
         updateSearchActiveChips();
         const query = searchInput.value.replaceAll('　', ' ');
-        if (isValidQuery(query)) {
-            handleSearch(query);
+        if (isValidQuery(query) || hasActiveDealBadgeFilter()) {
+            handleSearch(query, true);
         } else {
             displaySearchTips();
         }
@@ -1733,10 +1829,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const scoreMaxEl = document.getElementById('filter-score-max');
         const priceMinEl = document.getElementById('filter-price-min');
         const priceMaxEl = document.getElementById('filter-price-max');
+        const dealBadgeEl = document.getElementById('filter-deal-badge');
         if (scoreMinEl) scoreMinEl.value = '70';
         if (scoreMaxEl) scoreMaxEl.value = '';
         if (priceMinEl) priceMinEl.value = '';
         if (priceMaxEl) priceMaxEl.value = '';
+        if (dealBadgeEl) dealBadgeEl.value = '';
         const sortEl = document.getElementById('search-sort-select');
         if (sortEl) sortEl.value = 'relevance';
         updateFilterBadge();
@@ -2053,7 +2151,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 updateFilterBadge();
                 updateSearchActiveChips();
                 const q = searchInput.value.replaceAll('　', ' ');
-                if (isValidQuery(q)) handleSearch(q, true);
+                if (isValidQuery(q) || hasActiveDealBadgeFilter()) handleSearch(q, true);
             });
             emptyState.appendChild(priceRelaxBox);
         }
@@ -2065,10 +2163,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 updateFilterBadge();
                 updateSearchActiveChips();
                 const q = searchInput.value.replaceAll('　', ' ');
-                if (isValidQuery(q)) handleSearch(q, true);
+                if (isValidQuery(q) || hasActiveDealBadgeFilter()) handleSearch(q, true);
             });
             emptyState.appendChild(relaxBox);
         }
+
+        // 未調査のセール商品から探す導線（ユーザー操作で遅延ロード）
+        appendUninvestigatedDealsSection(emptyState);
 
         // 商品調査リクエスト案内（未調査商品への導線）
         const requestFormUrl =
@@ -2359,6 +2460,19 @@ document.addEventListener('DOMContentLoaded', function () {
             catTag.textContent = cat;
             categoriesDiv.appendChild(catTag);
         });
+        if (item.deal_badge) {
+            const dealSpan = document.createElement('span');
+            const isPrime = item.deal_access_type === 'PRIME_EXCLUSIVE' || item.deal_access_type === 'PRIME_EARLY_ACCESS';
+            dealSpan.className = `badge-deal m3-badge m3-badge-deal ${isPrime ? 'deal-prime' : 'deal-standard'}`;
+            dealSpan.textContent = item.deal_badge;
+            categoriesDiv.prepend(dealSpan);
+        }
+        if (typeof item.savings_percentage === 'number' && item.savings_percentage > 0) {
+            const savingsSpan = document.createElement('span');
+            savingsSpan.className = 'badge-savings m3-badge m3-badge-sale';
+            savingsSpan.textContent = `${item.savings_percentage}% OFF`;
+            categoriesDiv.prepend(savingsSpan);
+        }
         footerDiv.appendChild(categoriesDiv);
 
         if (item.asin) {
@@ -2369,6 +2483,259 @@ document.addEventListener('DOMContentLoaded', function () {
         mainRow.appendChild(contentDiv);
         resultItem.appendChild(mainRow);
         return resultItem;
+    }
+
+    let cachedCatalogDeals = null;
+    let catalogDealsPromise = null;
+
+    async function loadCatalogDealsIndex() {
+        if (cachedCatalogDeals) return cachedCatalogDeals;
+        if (catalogDealsPromise) return catalogDealsPromise;
+
+        const catalogDealsUrl = searchInput.dataset.catalogDealsUrl || '/catalog-deals-index.json';
+        catalogDealsPromise = (async () => {
+            try {
+                const res = await fetch(catalogDealsUrl);
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const data = await res.json();
+                cachedCatalogDeals = Array.isArray(data) ? data : [];
+                return cachedCatalogDeals;
+            } finally {
+                catalogDealsPromise = null;
+            }
+        })();
+        return catalogDealsPromise;
+    }
+
+    function filterCatalogDeals(records, queryText, dealBadgeFilter, priceMin, priceMax) {
+        const normQuery = normalizeSearchText(queryText);
+        const terms = normQuery.split(/\s+/).filter(Boolean);
+
+        const matched = [];
+        for (const rec of records) {
+            const badge = String(rec.deal_badge || '').trim();
+            if (!badge) continue;
+            if (dealBadgeFilter && dealBadgeFilter !== '__ANY_DEAL__') {
+                if (dealBadgeFilter.startsWith('event:')) {
+                    if (!badge.includes(dealBadgeFilter.slice('event:'.length))) continue;
+                } else if (badge !== dealBadgeFilter) {
+                    continue;
+                }
+            }
+            const price = typeof rec.price === 'number' && rec.price > 0 ? rec.price : null;
+            if (priceMin !== null && (price === null || price < priceMin)) continue;
+            if (priceMax !== null && (price === null || price > priceMax)) continue;
+
+            if (terms.length > 0) {
+                const haystack = normalizeSearchText(
+                    `${rec.title || ''} ${rec.brand || ''} ${rec.amazon_category || ''} ${rec.asin || ''}`
+                );
+                let allMatch = true;
+                for (const t of terms) {
+                    if (!haystack.includes(t)) {
+                        allMatch = false;
+                        break;
+                    }
+                }
+                if (!allMatch) continue;
+            }
+            matched.push(rec);
+        }
+
+        matched.sort((a, b) => {
+            const savA = typeof a.savings_percentage === 'number' ? a.savings_percentage : 0;
+            const savB = typeof b.savings_percentage === 'number' ? b.savings_percentage : 0;
+            if (savB !== savA) return savB - savA;
+            const pA = typeof a.price === 'number' && a.price > 0 ? a.price : Number.MAX_SAFE_INTEGER;
+            const pB = typeof b.price === 'number' && b.price > 0 ? b.price : Number.MAX_SAFE_INTEGER;
+            return pA - pB;
+        });
+
+        return matched;
+    }
+
+    function renderUninvestigatedDealItem(rec) {
+        const asin = String(rec.asin || '').toUpperCase();
+        const catalogUrl = `/catalog/?asin=${encodeURIComponent(asin)}`;
+        const titleText = rec.title || asin;
+        const priceText = typeof rec.price === 'number' && rec.price > 0 ? `¥${rec.price.toLocaleString('ja-JP')}` : '';
+
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'search-result-item search-result-item--uninvestigated';
+        itemDiv.addEventListener('click', (e) => {
+            if (e.target.closest('a')) return;
+            globalThis.location.href = catalogUrl;
+        });
+
+        const mainRow = document.createElement('div');
+        mainRow.className = 'result-main-row';
+        mainRow.appendChild(createThumbnailElement(rec.image || '', titleText, catalogUrl));
+
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'result-content';
+
+        const headerDiv = document.createElement('div');
+        headerDiv.className = 'result-header';
+
+        const titleLink = document.createElement('a');
+        titleLink.href = catalogUrl;
+        titleLink.className = 'result-title-link';
+        const titleSpan = document.createElement('span');
+        titleSpan.className = 'result-title';
+        titleSpan.textContent = titleText;
+        titleLink.appendChild(titleSpan);
+        headerDiv.appendChild(titleLink);
+
+        const metricsDiv = document.createElement('div');
+        metricsDiv.className = 'result-metrics';
+        if (priceText) {
+            const priceSpan = document.createElement('span');
+            priceSpan.className = 'result-price';
+            priceSpan.textContent = priceText;
+            metricsDiv.appendChild(priceSpan);
+        }
+        const uninvBadge = document.createElement('span');
+        uninvBadge.className = 'm3-badge m3-badge-secondary';
+        uninvBadge.textContent = '未調査・参考価格';
+        metricsDiv.appendChild(uninvBadge);
+
+        headerDiv.appendChild(metricsDiv);
+        contentDiv.appendChild(headerDiv);
+
+        const footerDiv = document.createElement('div');
+        footerDiv.className = 'result-footer';
+        const badgesDiv = document.createElement('div');
+        badgesDiv.className = 'result-categories';
+
+        if (rec.deal_badge) {
+            const dealSpan = document.createElement('span');
+            dealSpan.className = 'badge-deal m3-badge m3-badge-deal deal-standard';
+            dealSpan.textContent = rec.deal_badge;
+            badgesDiv.appendChild(dealSpan);
+        }
+        if (typeof rec.savings_percentage === 'number' && rec.savings_percentage > 0) {
+            const savSpan = document.createElement('span');
+            savSpan.className = 'badge-savings m3-badge m3-badge-sale';
+            savSpan.textContent = `${rec.savings_percentage}% OFF`;
+            badgesDiv.appendChild(savSpan);
+        }
+        if (rec.amazon_category) {
+            const catSpan = document.createElement('span');
+            catSpan.className = 'category-tag';
+            catSpan.textContent = rec.amazon_category;
+            badgesDiv.appendChild(catSpan);
+        }
+
+        footerDiv.appendChild(badgesDiv);
+        contentDiv.appendChild(footerDiv);
+        mainRow.appendChild(contentDiv);
+        itemDiv.appendChild(mainRow);
+        return itemDiv;
+    }
+
+    function buildDealsPageUrl(queryText, dealBadgeFilter) {
+        const base = searchInput.dataset.dealsPageUrl || '/deals/';
+        const params = new URLSearchParams();
+        params.set('includeUninvestigated', '1');
+        if (queryText.trim()) params.set('q', queryText.trim());
+        if (dealBadgeFilter && dealBadgeFilter !== '__ANY_DEAL__') {
+            if (dealBadgeFilter.startsWith('event:')) {
+                params.set('dealType', dealBadgeFilter);
+            } else {
+                params.set('dealType', `badge:${dealBadgeFilter}`);
+            }
+        }
+        return `${base}?${params.toString()}`;
+    }
+
+    function appendUninvestigatedDealsSection(container) {
+        const queryText = searchInput.value.replaceAll('　', ' ').trim();
+        const filterParams = getSearchState();
+        const dealBadgeFilter = filterParams.dealBadge || '';
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'search-uninvestigated-deals-box';
+
+        const headerRow = document.createElement('div');
+        headerRow.className = 'search-uninvestigated-deals-header';
+
+        const titleEl = document.createElement('span');
+        titleEl.className = 'search-uninvestigated-deals-title';
+        titleEl.textContent = '未調査のセール商品も探す（スコアなし・参考価格）';
+        headerRow.appendChild(titleEl);
+
+        const actionsRow = document.createElement('div');
+        actionsRow.className = 'search-uninvestigated-deals-actions';
+
+        const loadBtn = document.createElement('button');
+        loadBtn.type = 'button';
+        loadBtn.className = 'search-uninvestigated-deals-btn';
+        loadBtn.textContent = '未調査のセール商品を検索';
+
+        const dealsLink = document.createElement('a');
+        dealsLink.href = buildDealsPageUrl(queryText, dealBadgeFilter);
+        dealsLink.className = 'search-uninvestigated-deals-link';
+        dealsLink.textContent = 'セール一覧ページで詳しく絞る →';
+
+        actionsRow.appendChild(loadBtn);
+        actionsRow.appendChild(dealsLink);
+        headerRow.appendChild(actionsRow);
+        wrapper.appendChild(headerRow);
+
+        const resultsArea = document.createElement('div');
+        resultsArea.className = 'search-uninvestigated-deals-results';
+        wrapper.appendChild(resultsArea);
+
+        loadBtn.addEventListener('click', async (e) => {
+            e.stopPropagation();
+            loadBtn.disabled = true;
+            loadBtn.textContent = '読み込み中...';
+            resultsArea.textContent = '';
+
+            try {
+                const startMs = performance.now();
+                const records = await loadCatalogDealsIndex();
+                const priceMin = filterParams.priceMin !== '' ? Number.parseFloat(filterParams.priceMin) : null;
+                const priceMax = filterParams.priceMax !== '' ? Number.parseFloat(filterParams.priceMax) : null;
+                const matched = filterCatalogDeals(
+                    records,
+                    queryText,
+                    dealBadgeFilter,
+                    Number.isFinite(priceMin) ? priceMin : null,
+                    Number.isFinite(priceMax) ? priceMax : null
+                );
+                const elapsedMs = Math.round(performance.now() - startMs);
+
+                const statusEl = document.createElement('div');
+                statusEl.className = 'search-uninvestigated-deals-status';
+                statusEl.textContent = `未調査セール該当: ${matched.length.toLocaleString()}件（上位20件表示・処理 ${elapsedMs}ms）`;
+                resultsArea.appendChild(statusEl);
+
+                if (matched.length === 0) {
+                    const emptyNote = document.createElement('p');
+                    emptyNote.className = 'search-uninvestigated-deals-empty';
+                    emptyNote.textContent = '現在の条件に一致する未調査のセール商品は見つかりませんでした。';
+                    resultsArea.appendChild(emptyNote);
+                } else {
+                    for (const rec of matched.slice(0, 20)) {
+                        resultsArea.appendChild(renderUninvestigatedDealItem(rec));
+                    }
+                }
+                loadBtn.textContent = '再検索';
+            } catch (err) {
+                console.error('Failed to search uninvestigated deals:', err);
+                const errEl = document.createElement('p');
+                errEl.className = 'search-uninvestigated-deals-empty';
+                errEl.textContent = '未調査セールデータの読み込みに失敗しました。';
+                resultsArea.appendChild(errEl);
+                loadBtn.textContent = '再試行';
+            } finally {
+                loadBtn.disabled = false;
+                updateSearchResultsHeight();
+            }
+        });
+
+        container.appendChild(wrapper);
     }
 
     function displayResults(results, unfilteredScoreCount = 0, unfilteredPriceCount = 0) {
@@ -2402,6 +2769,8 @@ document.addEventListener('DOMContentLoaded', function () {
         uniqueResults.slice(0, 20).forEach(result => {
             searchResults.appendChild(renderSearchResultItem(result.item));
         });
+
+        appendUninvestigatedDealsSection(searchResults);
 
         if (typeof globalThis.Compare?.sync === 'function') {
             globalThis.Compare.sync();

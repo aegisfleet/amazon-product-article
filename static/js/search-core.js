@@ -557,10 +557,16 @@
             };
         });
 
+        const dealBadgeFilter = typeof filters.dealBadge === 'string' ? filters.dealBadge.trim() : '';
+
         const filtered = scored.filter(result => {
             const item = result.item || {};
             const score = Number.parseFloat(item.score) || 0;
             const validPrice = getValidPrice(item);
+
+            if (!matchesDealBadge(item, dealBadgeFilter)) {
+                return false;
+            }
 
             // スコア条件判定（ASIN検索時はバイパス）
             const passesScore = score >= scoreMin && score <= scoreMax;
@@ -638,10 +644,28 @@
         };
     }
 
+    function matchesDealBadge(item, dealBadgeFilter) {
+        if (!dealBadgeFilter) return true;
+        const badge = String(item?.deal_badge || '').trim();
+        if (!badge) return false;
+        if (dealBadgeFilter === '__ANY_DEAL__') return true;
+        if (dealBadgeFilter.startsWith('event:')) {
+            return badge.includes(dealBadgeFilter.slice('event:'.length));
+        }
+        return badge === dealBadgeFilter;
+    }
+
     function searchWithCore(items, fuseInstance, query, filters = {}) {
         const normalizedQuery = normalizeSearchText(query);
+        const dealBadgeFilter = typeof filters.dealBadge === 'string' ? filters.dealBadge.trim() : '';
         if (!normalizedQuery) {
-            return { results: [], unfilteredScoreCount: 0, unfilteredPriceCount: 0 };
+            if (!dealBadgeFilter) {
+                return { results: [], unfilteredScoreCount: 0, unfilteredPriceCount: 0 };
+            }
+            const badgeMatched = (items || [])
+                .filter(item => matchesDealBadge(item, dealBadgeFilter))
+                .map(item => ({ item, score: 0, isPrimaryMatch: true }));
+            return rerankResults(badgeMatched, '', filters);
         }
 
         const { results: expandedResults, tokenGroups, hasExpandedTerm } = searchExpanded(items, query);
@@ -664,6 +688,7 @@
         searchExpanded,
         mergeSearchResults,
         rerankResults,
+        matchesDealBadge,
         searchWithCore,
         getTermVariants,
         getValidPrice

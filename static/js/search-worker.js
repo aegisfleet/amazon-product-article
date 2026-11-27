@@ -85,7 +85,18 @@ async function handleInit(searchIndexUrl) {
         const fuseIndex = Fuse.createIndex(FUSE_OPTIONS.keys, searchIndex);
         fuse = new Fuse(searchIndex, FUSE_OPTIONS, fuseIndex);
 
-        self.postMessage({ type: 'READY' });
+        const badgeCounts = new Map();
+        for (const item of searchIndex) {
+            const badge = typeof item.deal_badge === 'string' ? item.deal_badge.trim() : '';
+            if (badge) {
+                badgeCounts.set(badge, (badgeCounts.get(badge) || 0) + 1);
+            }
+        }
+        const dealBadges = Array.from(badgeCounts.entries())
+            .sort((a, b) => b[1] - a[1])
+            .map(([badge, count]) => ({ badge, count }));
+
+        self.postMessage({ type: 'READY', dealBadges });
     } catch (err) {
         self.postMessage({ type: 'ERROR', error: String(err) });
     }

@@ -78,6 +78,7 @@ MCP Prompts 対応クライアントでは、以下の相談テンプレート�
 - [あともう一品 (`bargain/index.json`)](https://www.amazon-hikaku.com/bargain/index.json): 買い合わせ・送料無料ライン調整用の2,000円以下・高スコア商品データ（約200KB）。
 - [低スコア迷品館 (`low-scores/index.json`)](https://www.amazon-hikaku.com/low-scores/index.json): 独自スコア50点以下の低評価・要注意商品データ（約80KB）。
 - 未調査商品カタログシャード (`https://www.amazon-hikaku.com/catalog-data/{ASIN末尾2文字}.json`): Creators API キャッシュのうち `status = valid` の全商品（調査済み＋未調査、約3.9万件）を ASIN 末尾2文字（大文字）でシャーディングした JSON マップ（`{ "<ASIN>": { ... } }`）。各レコードは `asin`, `title`, `brand`, `price`（`number | null`）, `previous_price`（任意）, `price_changed_at`（任意、ISO 8601）, `availability`, `image`, `amazon_category`, `release_date`（`string | null`）, `detail_page_url`, `price_as_of`（ISO 8601）, `investigated`（`boolean`）を収録。
+- 未調査セール商品インデックス (`https://www.amazon-hikaku.com/catalog-deals-index.json`): 未調査商品かつ `deal_badge` を持つ商品のみを抽出した軽量検索インデックス（検索モーダル・`/deals/` の未調査セール表示機能から遅延ロードで利用）。
 - [カテゴリ階層定義 (`data/categorygroups.json`)](https://www.amazon-hikaku.com/data/categorygroups.json): 親カテゴリと子カテゴリのマッピング定義。
 - [ブランドグループ定義 (`data/brandgroups.json`)](https://www.amazon-hikaku.com/data/brandgroups.json): 主要ブランドグループとスラッグ定義。
 - [サイトマップ (`sitemap.xml`)](https://www.amazon-hikaku.com/sitemap.xml): サイト全体のURL構造および最終更新日。
@@ -114,7 +115,7 @@ JSONファイルを直接パースするエージェントは、以下のフィ�
 ### 主要セクションとURLクエリパラメータ
 特設ページではURLクエリパラメータによる初期フィルタ・ソート指定に対応しており、ユーザーの条件に合致する一覧ページへの誘導リンクとして活用できます：
 - [セール対象商品一覧 (Deals)](https://www.amazon-hikaku.com/deals/):
-  - クエリパラメータ: `minScore`（最低スコア）、`minDiscount`（最低割引率%）、`minPrice` / `maxPrice`（価格帯）、`dealType`（`prime` / `limited` / `standard`）、`inStock=1`（在庫ありのみ）、`category`（カテゴリ名）、`q`（キーワード）、`sort`（`date` / `discount` / `score` / `price-asc` / `price-desc` / `points-rate`）
+  - クエリパラメータ: `minScore`（最低スコア）、`minDiscount`（最低割引率%）、`minPrice` / `maxPrice`（価格帯）、`dealType`（`prime` / `limited` / `standard` / `event:{イベント名}` / `badge:{バッジ名}`）、`inStock=1`（在庫ありのみ）、`includeUninvestigated=1`（未調査のセール品も含める）、`category`（カテゴリ名）、`q`（キーワード）、`sort`（`date` / `discount` / `score` / `price-asc` / `price-desc` / `points-rate`）
   - 例: `https://www.amazon-hikaku.com/deals/?minDiscount=30&minScore=80&sort=discount`
 - [あともう一品 (Bargain)](https://www.amazon-hikaku.com/bargain/):
   - クエリパラメータ: `minPrice` / `maxPrice`（金額範囲）、`minScore`（最低スコア）、`inStock=1`（在庫あり）、`category`、`q`、`sort`（`date` / `score` / `price-asc` / `price-desc` / `discount` / `points-rate`）

@@ -3,34 +3,95 @@
  * セール対象商品特設ページのフィルタリング・ソート・表示を管理する。
  */
 
+const KNOWN_SALE_EVENTS = [
+  'ブラックフライデー',
+  'プライム感謝祭',
+  'プライムデー',
+  'スマイル Sale',
+  '新生活セール',
+  'ゴールデンウィーク',
+];
+
 function matchesDealType(p, dealType) {
   if (!dealType) return true;
+  const badge = p.dealBadge || '';
   const isPrime = p.dealAccessType === 'PRIME_EXCLUSIVE' || p.dealAccessType === 'PRIME_EARLY_ACCESS';
-  const isLimited = p.dealBadge === '限定タイムセール';
+  const isLimited = badge === '限定タイムセール';
   if (dealType === 'prime') return isPrime;
   if (dealType === 'limited') return isLimited;
   if (dealType === 'standard') return !isPrime && !isLimited;
-  return true;
+  if (dealType.startsWith('event:')) {
+    const eventName = dealType.slice('event:'.length);
+    return badge.includes(eventName);
+  }
+  if (dealType.startsWith('badge:')) {
+    const exactBadge = dealType.slice('badge:'.length);
+    return badge === exactBadge;
+  }
+  return badge.includes(dealType);
+}
+
+function getDealTypeLabel(dealType) {
+  if (!dealType) return '';
+  if (dealType === 'prime') return 'プライム会員限定';
+  if (dealType === 'limited') return '限定タイムセール';
+  if (dealType === 'standard') return 'タイムセール';
+  if (dealType.startsWith('event:')) return `${dealType.slice('event:'.length)}（すべて）`;
+  if (dealType.startsWith('badge:')) return dealType.slice('badge:'.length);
+  return dealType;
+}
+
+function mapCatalogRecordToDealProduct(rec) {
+  const priceRaw = typeof rec.price === 'number' && rec.price > 0 ? rec.price : 0;
+  const price = priceRaw > 0 ? `￥${priceRaw.toLocaleString('ja-JP')}` : '';
+  const asin = String(rec.asin || '').toUpperCase();
+  const avail = rec.availability || '';
+  const inStock = !avail.includes('在庫切れ') && !avail.includes('取り扱いできません');
+  return {
+    title: rec.title || asin,
+    url: `/catalog/?asin=${encodeURIComponent(asin)}`,
+    score: 0,
+    price,
+    priceRaw,
+    asin,
+    category: rec.amazon_category || '',
+    brand: rec.brand || '',
+    image: rec.image || '',
+    affiliateUrl: '',
+    lastInvestigated: rec.price_as_of || '',
+    priceAsOf: rec.price_as_of || '',
+    isAmazonDirect: false,
+    isAmazonHaul: false,
+    loyaltyPoints: 0,
+    pointsRate: 0,
+    savingsPercentage: typeof rec.savings_percentage === 'number' ? rec.savings_percentage : 0,
+    dealBadge: rec.deal_badge || '',
+    dealAccessType: '',
+    availability: avail,
+    inStock,
+    isUninvestigated: true,
+  };
 }
 
 // --- Sort Helper ---
 function sortFilteredProducts(filtered, sortType) {
+  const invOrder = (a, b) => Number(Boolean(a.isUninvestigated)) - Number(Boolean(b.isUninvestigated));
   if (sortType === 'date') {
     filtered.sort((a, b) => {
-      const da = a.lastInvestigated || '';
-      const db = b.lastInvestigated || '';
-      return db.localeCompare(da) || b.score - a.score;
+      const da = a.lastInvestigated || a.priceAsOf || '';
+      const db = b.lastInvestigated || b.priceAsOf || '';
+      return db.localeCompare(da) || invOrder(a, b) || b.score - a.score;
     });
   } else if (sortType === 'discount') {
-    filtered.sort((a, b) => b.savingsPercentage - a.savingsPercentage || b.score - a.score);
+    filtered.sort((a, b) => b.savingsPercentage - a.savingsPercentage || invOrder(a, b) || b.score - a.score);
   } else if (sortType === 'score') {
-    filtered.sort((a, b) => b.score - a.score || b.savingsPercentage - a.savingsPercentage);
+    filtered.sort((a, b) => invOrder(a, b) || b.score - a.score || b.savingsPercentage - a.savingsPercentage);
   } else if (sortType === 'price-asc') {
-    filtered.sort((a, b) => a.priceRaw - b.priceRaw || b.score - a.score);
+    filtered.sort((a, b) => a.priceRaw - b.priceRaw || invOrder(a, b) || b.score - a.score);
   } else if (sortType === 'price-desc') {
-    filtered.sort((a, b) => b.priceRaw - a.priceRaw || b.score - a.score);
+    filtered.sort((a, b) => b.priceRaw - a.priceRaw || invOrder(a, b) || b.score - a.score);
   } else if (sortType === 'points-rate') {
-    filtered.sort((a, b) => (b.pointsRate || 0) - (a.pointsRate || 0) || b.score - a.score);
+    filtered.sort((a, b) => (b.pointsRate || 0) - (a.pointsRate || 0) || invOrder(a, b) || b.score - a.score);
   }
 }
 
@@ -39,8 +100,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (!dataEl) return;
 
   /** @type {Array<{title:string, url:string, score:number, price:string, priceRaw:number, asin:string, category:string, image:string, affiliateUrl:string, lastInvestigated:string, isAmazonDirect:boolean, isAmazonHaul:boolean, loyaltyPoints:number, savingsPercentage:number, dealBadge:string, dealAccessType:string}>} */
-  const allProducts = await loadProductDataset(dataEl, 'deals-no-results');
-  if (!allProducts) return;
+  const investigatedProducts = await loadProductDataset(dataEl, 'deals-no-results');
+  if (!investigatedProducts) return;
+  const investigatedAsinSet = new Set(investigatedProducts.map((p) => String(p.asin || '').toUpperCase()).filter(Boolean));
+  let uninvestigatedProducts = [];
+  let uninvestigatedLoaded = false;
+  let uninvestigatedLoadingPromise = null;
 
   // DOM refs
   const scoreSlider = document.getElementById('deals-score-slider');
@@ -49,6 +114,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   const discountSlider = document.getElementById('deals-discount-slider');
   const dealTypeSelect = document.getElementById('deals-type-select');
   const inStockFilter = document.getElementById('deals-in-stock-filter');
+  const includeUninvestigatedFilter = document.getElementById('deals-include-uninvestigated');
+  const uninvestigatedStatusEl = document.getElementById('deals-uninvestigated-status');
   const categorySelect = document.getElementById('deals-category-select');
   const sortButtons = document.getElementById('deals-sort-buttons');
   const gridEl = document.getElementById('deals-grid');
@@ -71,10 +138,136 @@ document.addEventListener('DOMContentLoaded', async () => {
   const heroHitCountEl = document.getElementById('deals-hero-hit-count');
   const heroMaxDiscountEl = document.getElementById('deals-hero-max-discount');
   const heroPresetsContainer = document.getElementById('deals-hero-presets');
+  const featuredPresetBtn = document.getElementById('deals-preset-featured');
+  const eventPresetBtn = document.getElementById('deals-preset-event');
+  const eventPresetLabelEl = document.getElementById('deals-preset-event-label');
 
-  if (heroTotalCountEl) {
-    heroTotalCountEl.textContent = allProducts.length.toLocaleString();
+  let activeMajorEvent = '';
+
+  function getActiveProducts() {
+    if (includeUninvestigatedFilter?.checked && uninvestigatedLoaded) {
+      return [...investigatedProducts, ...uninvestigatedProducts];
+    }
+    return investigatedProducts;
   }
+
+  function updateHeroTotalCount() {
+    if (heroTotalCountEl) {
+      heroTotalCountEl.textContent = getActiveProducts().length.toLocaleString();
+    }
+  }
+
+  async function ensureUninvestigatedDealsLoaded() {
+    if (uninvestigatedLoaded) return true;
+    if (uninvestigatedLoadingPromise) return uninvestigatedLoadingPromise;
+
+    const catalogDealsSrc = dataEl.dataset.catalogDealsSrc || '/catalog-deals-index.json';
+    if (uninvestigatedStatusEl) {
+      uninvestigatedStatusEl.textContent = '未調査セール商品を読み込み中...';
+      uninvestigatedStatusEl.style.display = 'inline';
+    }
+
+    uninvestigatedLoadingPromise = (async () => {
+      try {
+        const res = await fetch(catalogDealsSrc);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const rawRecords = await res.json();
+        const mapped = [];
+        for (const rec of Array.isArray(rawRecords) ? rawRecords : []) {
+          const asin = String(rec?.asin || '').toUpperCase();
+          if (!asin || investigatedAsinSet.has(asin)) continue;
+          mapped.push(mapCatalogRecordToDealProduct(rec));
+        }
+        uninvestigatedProducts = mapped;
+        uninvestigatedLoaded = true;
+        if (uninvestigatedStatusEl) {
+          uninvestigatedStatusEl.textContent = `未調査セール ${mapped.length.toLocaleString()}件を追加`;
+        }
+        return true;
+      } catch (err) {
+        console.error('Failed to load catalog-deals-index.json:', err);
+        if (uninvestigatedStatusEl) {
+          uninvestigatedStatusEl.textContent = '未調査データの読み込みに失敗しました';
+        }
+        return false;
+      } finally {
+        uninvestigatedLoadingPromise = null;
+      }
+    })();
+
+    return uninvestigatedLoadingPromise;
+  }
+
+  function updateDealTypeOptions(products) {
+    if (!dealTypeSelect) return;
+    const currentVal = dealTypeSelect.value || dealTypeSelect.dataset.pendingValue || '';
+    delete dealTypeSelect.dataset.pendingValue;
+
+    const badgeCounts = new Map();
+    let primeCount = 0;
+    for (const p of products) {
+      if (p.dealBadge) {
+        badgeCounts.set(p.dealBadge, (badgeCounts.get(p.dealBadge) || 0) + 1);
+      }
+      if (p.dealAccessType === 'PRIME_EXCLUSIVE' || p.dealAccessType === 'PRIME_EARLY_ACCESS') {
+        primeCount += 1;
+      }
+    }
+
+    const eventGroups = [];
+    for (const ev of KNOWN_SALE_EVENTS) {
+      let evCount = 0;
+      for (const [badge, cnt] of badgeCounts.entries()) {
+        if (badge.includes(ev)) evCount += cnt;
+      }
+      if (evCount > 0) {
+        eventGroups.push({ name: ev, count: evCount });
+      }
+    }
+    eventGroups.sort((a, b) => b.count - a.count);
+    activeMajorEvent = eventGroups[0]?.name || '';
+
+    dealTypeSelect.innerHTML = '<option value="">すべてのセール</option>';
+    const appendOption = (value, label) => {
+      const opt = document.createElement('option');
+      opt.value = value;
+      opt.textContent = label;
+      dealTypeSelect.appendChild(opt);
+    };
+
+    for (const ev of eventGroups) {
+      appendOption(`event:${ev.name}`, `${ev.name}（すべて） (${ev.count.toLocaleString()})`);
+    }
+    if (primeCount > 0) {
+      appendOption('prime', `プライム会員限定 (${primeCount.toLocaleString()})`);
+    }
+    const sortedBadges = [...badgeCounts.entries()].sort((a, b) => b[1] - a[1]);
+    for (const [badge, count] of sortedBadges) {
+      appendOption(`badge:${badge}`, `${badge} (${count.toLocaleString()})`);
+    }
+
+    if (currentVal && Array.from(dealTypeSelect.options).some((o) => o.value === currentVal)) {
+      dealTypeSelect.value = currentVal;
+    } else if (currentVal === 'limited' || currentVal === 'standard') {
+      appendOption(currentVal, getDealTypeLabel(currentVal));
+      dealTypeSelect.value = currentVal;
+    } else {
+      dealTypeSelect.value = '';
+    }
+
+    if (featuredPresetBtn) {
+      featuredPresetBtn.hidden = !badgeCounts.has('厳選目玉商品');
+    }
+    if (eventPresetBtn && eventPresetLabelEl) {
+      eventPresetBtn.hidden = !activeMajorEvent;
+      if (activeMajorEvent) {
+        eventPresetLabelEl.textContent = activeMajorEvent;
+      }
+    }
+  }
+
+  updateHeroTotalCount();
+  updateDealTypeOptions(investigatedProducts);
 
   if (!scoreSlider || !priceSlider || !gridEl) return;
 
@@ -100,10 +293,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     setSliderFromParam(params, 'minDiscount', discountSlider, null, 0, 100);
 
     if (dealTypeSelect && params.has('dealType')) {
-      dealTypeSelect.value = params.get('dealType');
+      const requestedType = params.get('dealType');
+      dealTypeSelect.dataset.pendingValue = requestedType;
+      updateDealTypeOptions(getActiveProducts());
     }
     if (inStockFilter && params.get('inStock') === '1') {
       inStockFilter.checked = true;
+    }
+    if (includeUninvestigatedFilter && params.get('includeUninvestigated') === '1') {
+      includeUninvestigatedFilter.checked = true;
     }
     if (categorySelect && params.has('category')) {
       categorySelect.dataset.pendingValue = params.get('category');
@@ -133,6 +331,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (minDiscount !== 0) params.set('minDiscount', String(minDiscount));
     if (dealType) params.set('dealType', dealType);
     if (inStockFilter?.checked) params.set('inStock', '1');
+    if (includeUninvestigatedFilter?.checked) params.set('includeUninvestigated', '1');
     if (category) params.set('category', category);
     if (currentSort !== 'date') params.set('sort', currentSort);
     const q = keywordInput ? keywordInput.value.trim() : '';
@@ -242,10 +441,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     const keywords = normalizedQ.split(/\s+/).filter(Boolean);
 
     const showOnlyInStock = inStockFilter ? inStockFilter.checked : false;
+    const activeProducts = getActiveProducts();
 
     // Step 1: Filter by Score, Price, Discount, Deal Type, and Keyword
-    let preFiltered = allProducts.filter(p => {
-      if (p.score < minScore) return false;
+    let preFiltered = activeProducts.filter(p => {
+      if (!p.isUninvestigated && p.score < minScore) return false;
       if (p.priceRaw < minPrice) return false;
       if (maxPrice < 200000 && p.priceRaw > maxPrice) return false;
       if (p.savingsPercentage < minDiscount) return false;
@@ -379,15 +579,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     if (dealType) {
-      const dealTypeLabels = {
-        prime: 'プライム会員限定',
-        limited: '限定タイムセール',
-        standard: 'タイムセール'
-      };
       chips.push({
         id: 'dealType',
         icon: '🏷️',
-        label: dealTypeLabels[dealType] || dealType,
+        label: getDealTypeLabel(dealType),
         onRemove: () => {
           dealTypeSelect.value = '';
           applyFilters();
@@ -402,6 +597,21 @@ document.addEventListener('DOMContentLoaded', async () => {
         label: '在庫ありのみ',
         onRemove: () => {
           inStockFilter.checked = false;
+          applyFilters();
+        }
+      });
+    }
+
+    if (includeUninvestigatedFilter?.checked) {
+      chips.push({
+        id: 'includeUninvestigated',
+        icon: 'manage_search',
+        label: '未調査のセール品を含む',
+        onRemove: () => {
+          includeUninvestigatedFilter.checked = false;
+          if (uninvestigatedStatusEl) uninvestigatedStatusEl.style.display = 'none';
+          updateHeroTotalCount();
+          updateDealTypeOptions(getActiveProducts());
           applyFilters();
         }
       });
@@ -446,6 +656,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     discountSlider.value = '0';
     if (dealTypeSelect) dealTypeSelect.value = '';
     if (inStockFilter) inStockFilter.checked = false;
+    if (includeUninvestigatedFilter) includeUninvestigatedFilter.checked = false;
+    if (uninvestigatedStatusEl) uninvestigatedStatusEl.style.display = 'none';
     if (categorySelect) categorySelect.value = '';
     if (keywordInput) keywordInput.value = '';
     if (keywordClearBtn) keywordClearBtn.style.display = 'none';
@@ -453,6 +665,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (badgeEl) badgeEl.style.display = 'none';
     currentSort = 'date';
     updateSortButtons();
+    updateHeroTotalCount();
+    updateDealTypeOptions(getActiveProducts());
     applyFilters();
   }
 
@@ -494,6 +708,19 @@ document.addEventListener('DOMContentLoaded', async () => {
   setupSliderTouchPrevention(discountSlider);
   if (dealTypeSelect) dealTypeSelect.addEventListener('change', applyFilters);
   if (inStockFilter) inStockFilter.addEventListener('change', applyFilters);
+  if (includeUninvestigatedFilter) {
+    includeUninvestigatedFilter.addEventListener('change', async () => {
+      if (includeUninvestigatedFilter.checked) {
+        showSkeleton();
+        await ensureUninvestigatedDealsLoaded();
+      } else if (uninvestigatedStatusEl) {
+        uninvestigatedStatusEl.style.display = 'none';
+      }
+      updateHeroTotalCount();
+      updateDealTypeOptions(getActiveProducts());
+      applyFilters();
+    });
+  }
   if (categorySelect) categorySelect.addEventListener('change', applyFilters);
   if (resetBtn) resetBtn.addEventListener('click', resetFilters);
   if (categoryResetBtn) {
@@ -540,12 +767,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     const minDiscount = Number.parseInt(discountSlider.value, 10);
     const maxPrice = valueToPrice(Number.parseInt(priceSlider.value, 10));
     const inStock = Boolean(inStockFilter?.checked);
+    const dealType = dealTypeSelect ? dealTypeSelect.value : '';
 
     const activeMap = {
       score80: minScore >= 80,
       discount30: minDiscount >= 30,
       under5000: maxPrice <= 5000,
-      instock: inStock
+      instock: inStock,
+      featured: dealType === 'badge:厳選目玉商品',
+      event: Boolean(activeMajorEvent) && dealType === `event:${activeMajorEvent}`,
     };
 
     for (const btn of heroPresetsContainer.querySelectorAll('.showcase-preset-btn')) {
@@ -572,6 +802,11 @@ document.addEventListener('DOMContentLoaded', async () => {
       priceSlider.value = curPrice <= 5000 ? '1000' : String(Math.round(priceToValue(5000)));
     } else if (presetKey === 'instock' && inStockFilter) {
       inStockFilter.checked = !inStockFilter.checked;
+    } else if (presetKey === 'featured' && dealTypeSelect) {
+      dealTypeSelect.value = dealTypeSelect.value === 'badge:厳選目玉商品' ? '' : 'badge:厳選目玉商品';
+    } else if (presetKey === 'event' && dealTypeSelect && activeMajorEvent) {
+      const targetVal = `event:${activeMajorEvent}`;
+      dealTypeSelect.value = dealTypeSelect.value === targetVal ? '' : targetVal;
     }
     applyFilters();
   }
@@ -586,6 +821,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // --- Init ---
   readUrlParams();
+  if (includeUninvestigatedFilter?.checked) {
+    await ensureUninvestigatedDealsLoaded();
+    updateHeroTotalCount();
+    updateDealTypeOptions(getActiveProducts());
+  }
   updateSortButtons();
   syncHeroPresetsState();
   applyFilters();
