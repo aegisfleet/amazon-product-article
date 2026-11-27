@@ -1,0 +1,282 @@
+{
+  "analysis": {
+    "productName": "ASUS Wi-Fi 7 ルーター RT-BE92U(A)/E",
+    "parentAsin": "B0HGL31MKV",
+    "productDescription": "最大9,700Mbps（6GHz/5GHz/2.4GHzトライバンド）のWi-Fi 7通信と10Gbps WAN/LANポートおよび4基の2.5Gbpsポートを備えたミドルハイクラスの無線LANルーター（Amazon限定3年保証モデル）。",
+    "productUsage": [
+      "10ギガ光回線（10G光クロス等）を活かした高速ホームネットワーク構築",
+      "6GHz帯・MLO対応スマホやPCでの低遅延・大容量通信",
+      "スマート家電やIoTデバイスを分離管理する安全なスマートホーム環境",
+      "AiMeshを活用した戸建て・広域住宅でのメッシュWi-Fi構築"
+    ],
+    "positivePoints": [
+      "6GHz帯（最大5,764Mbps・320MHz幅）・5GHz帯（最大2,882Mbps）・2.4GHz帯（最大1,032Mbps）のトライバンドWi-Fi 7（合計最大9,700Mbps）に対応している",
+      "10Gbps WAN/LANポート×1に加え、2.5Gbpsポート×4（うち1基はWAN/LAN兼用）の全5ポートマルチギガ対応構成を備えている",
+      "2.0GHzクアッドコアCPUと1GB DDR4メモリを搭載し、多台数接続や高負荷処理でも安定した動作が確認されている",
+      "月額追加費用なしのセキュリティ機能「AiProtection」やIoTネットワークを分離できる「スマートホームマスター」、メッシュ機能「Smart AiMesh」を搭載している",
+      "Amazon.co.jp限定モデルとして通常より1年長い3年保証が付帯している"
+    ],
+    "negativePoints": [
+      "5GHz帯が2×2ストリーム仕様であるため、遠距離や壁・床を隔てた環境では4×4ストリームの上位機に比べて速度減衰が生じやすい",
+      "10Gbpsポートは1基のみのため、10G光回線のWAN入力に使用すると有線LAN側の最大速度は2.5Gbpsとなる",
+      "10G光クロス等のIPv6 IPoE環境で利用する場合、事前にファームウェアのアップデートが必要となる",
+      "本体サイズが幅247.18mm×高さ287.47mm×奥行101.59mm、重量790gと比較的大きく、設置スペースの確保が必要である"
+    ],
+    "useCases": [
+      "10ギガ光回線導入済みのマンション・戸建てでのメインルーター運用",
+      "2.5Gbps対応NASやゲーミングPCを複数台有線接続するデスク・ホームラボ環境",
+      "スマート家電をメインPC・スマホと別SSIDへ隔離したいファミリー・スマートホーム環境"
+    ],
+    "userStories": [
+      {
+        "userType": "10G光回線とWi-Fi 7対応端末を利用する自宅ユーザー",
+        "scenario": "10G光回線への乗り換えとWi-Fi 7対応スマートフォン・PCの性能を引き出すため、予算を抑えつつ10Gポートとトライバンドを備えたルーターを選定",
+        "experience": "競合の2.5Gポート止まりの機種や5万円超のフラッグシップ機と比較し、10G WANポートと複数の2.5G LANポート、さらに3年保証が決め手となって導入した。初期設定時に10G光クロス接続のためファームウェアアップデートを実施する必要はあったが、適用後は6GHz帯（320MHz幅）での近距離通信が非常に高速かつ安定している。一方で本体は高さ約287mmと存在感があるため、棚の空きスペースを事前に測って設置する必要があった。",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2",
+          "src-4"
+        ],
+        "sentiment": "positive"
+      },
+      {
+        "userType": "多数のIoT家電と既存ASUSルーターを運用するファミリー層",
+        "scenario": "増え続けるスマート家電のセキュリティ管理と、2階建て住宅の電波改善を目的に既存のASUS製ルーターからメイン機を刷新",
+        "experience": "従来機からの設定移行やAiMeshノードとしての連携がスムーズな点が決め手となった。「スマートホームマスター」機能により、スマート家電用のIoTネットワークと子ども用のキッズネットワークをメインのSSIDから簡単に分離でき、月額無料のAiProtectionと合わせて安心して運用できている。ただし、1階から離れた2階の部屋では5GHz帯（2×2）の速度がやや落ちるため、既存ルーターをAiMeshの子機として併用することで家全体をカバーできた。",
+        "supportingSourceIds": [
+          "src-2",
+          "src-3",
+          "src-4"
+        ],
+        "sentiment": "positive"
+      }
+    ],
+    "userImpression": "価格.comや海外テスト機関（RTINGS）のレビューを通じ、10G/2.5Gマルチギガ有線ポートと6GHz対応トライバンドWi-Fi 7をミドルハイ価格帯にまとめたバランスの良さが極めて高く評価されている。特に「月額無料のAiProtection」「スマートホームマスター」「AiMeshによる拡張性」は他社機に対する明確な強みとして支持されている。一方で、5GHz帯が2×2構成であることによる遠距離時の減衰や、10G光クロス環境での初回ファームウェア更新・IPv4 over IPv6設定の手間については一部で注意点が挙げられており、単体で広大な3階建てをカバーするよりも、高速な近距離通信＋2.5G有線LAN活用やAiMesh併用を前提とするユーザーが特に高い満足度を得ている。",
+    "sources": [
+      {
+        "id": "src-1",
+        "name": "Amazon.co.jp 公式商品ページ (B0DM8PTZS1)",
+        "url": "https://www.amazon.co.jp/dp/B0DM8PTZS1",
+        "tier": "medium",
+        "evidenceType": "primary",
+        "publishedAt": "2024-12-04",
+        "author": "ASUS",
+        "conflictOfInterest": "disclosed",
+        "notes": "Amazon.co.jp限定モデル(RT-BE92U(A)/E)の3年保証、10G光クロス時のFWアップデート要件、最大9,700Mbps・10Gbps WAN/LANポート・AiProtection・AiMesh仕様を確認"
+      },
+      {
+        "id": "src-2",
+        "name": "INTERNET Watch: Wi-Fi 7が本格普及！ASUSの第二世代ルーター「RT-BE92U」登場、その実力は？",
+        "url": "https://internet.watch.impress.co.jp/docs/topic/special/1640117.html",
+        "tier": "high",
+        "evidenceType": "secondary",
+        "publishedAt": "2024-11-29",
+        "author": "INTERNET Watch (株式会社インプレス)",
+        "conflictOfInterest": "disclosed",
+        "notes": "タイアップ特集記事。6GHz(5,764Mbps)/5GHz(2,882Mbps)/2.4GHz(1,032Mbps)の帯域構成、10G×1＋2.5G×4の有線ポート構成、スマートホームマスター機能の詳細を確認"
+      },
+      {
+        "id": "src-3",
+        "name": "RTINGS.com: ASUS RT-BE92U Review",
+        "url": "https://www.rtings.com/router/reviews/asus/rt-be92u-wifi-7",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2025-01-15",
+        "author": "RTINGS.com",
+        "conflictOfInterest": "none",
+        "notes": "独立検証ラボによる実機ベンチマーク。トライバンドの帯域分離性能や近距離での高速通信を評価しつつ、5GHz帯が2×2構成である点や遠距離特性の傾向を確認"
+      },
+      {
+        "id": "src-4",
+        "name": "価格.com: ASUS RT-BE92U 製品情報・クチコミ・レビュー",
+        "url": "https://kakaku.com/item/K0001665230/",
+        "tier": "medium",
+        "evidenceType": "secondary",
+        "publishedAt": "2026-11-27",
+        "author": "価格.com ユーザーレビュー",
+        "conflictOfInterest": "none",
+        "notes": "実売価格帯、総合評価約4.2のユーザー傾向、寸法(247.18×287.47×101.59mm)・重量(790g)、AiMesh移行のしやすさや一部環境での初期設定・IPv6接続に関する口コミを確認"
+      },
+      {
+        "id": "src-5",
+        "name": "ASUS eShop USA: ASUS RT-BE92U 公式製品仕様",
+        "url": "https://eshop.asus.com/us/90ig0950-ma1a0v-asus-rt-be92u.html",
+        "tier": "high",
+        "evidenceType": "primary",
+        "publishedAt": "2024-12-04",
+        "author": "ASUS",
+        "conflictOfInterest": "disclosed",
+        "notes": "RT-BE92Uのハードウェア仕様（MLO、320MHz幅、4096-QAM、クアッドコアCPU・1GB RAM等）を確認"
+      }
+    ],
+    "claims": [
+      {
+        "claim": "10G光回線と6GHz帯Wi-Fi 7端末を活かした高速かつ安定した無線・有線ネットワークを構築できる",
+        "category": "quality",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-2",
+          "src-3",
+          "src-4"
+        ],
+        "crossChecked": true,
+        "notes": "RTINGSのベンチマークおよび価格.comの実利用レビューの双方で、6GHz帯（320MHz幅）と10G/2.5Gポートによる高い実効速度が確認されている"
+      },
+      {
+        "claim": "月額無料のセキュリティ（AiProtection）とスマートホームマスターにより安全なIoT・家族向けネットワークを簡単に管理できる",
+        "category": "safety",
+        "confidence": "high",
+        "supportingSourceIds": [
+          "src-1",
+          "src-2",
+          "src-4"
+        ],
+        "crossChecked": true,
+        "notes": "ASUS公式仕様・専門メディア解説・ユーザーレビューの複数ソースで、追加課金なしでのセキュリティ運用とIoT/キッズネットワーク分離の利便性が一致して確認されている"
+      },
+      {
+        "claim": "クアッドコアCPUと充実したマルチギガポート構成により高負荷時や多台数接続でも安定稼働する",
+        "category": "durability",
+        "confidence": "medium",
+        "supportingSourceIds": [
+          "src-1",
+          "src-3",
+          "src-5"
+        ],
+        "crossChecked": true,
+        "notes": "2.0GHzクアッドコアCPU・1GB RAM搭載により高負荷時の安定性はおおむね良好だが、一部回線環境では初期FW更新や設定調整が必要との報告もある"
+      }
+    ],
+    "lastInvestigated": "2026-11-27",
+    "investigatedPrice": "￥30,480",
+    "competitiveAnalysis": [
+      {
+        "name": "バッファロー WXR9300BE6P/N",
+        "asin": "B0DG8WHVH3",
+        "priceComparison": "ほぼ同価格帯の直接的な競合モデル。国内メーカーのサポートや設定のしやすさを重視するか、ASUSの多機能な管理画面・全ポートマルチギガ・3年保証を取るかの選択となる。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7トライバンド（6GHz 5,764Mbps＋5GHz 2,882Mbps＋2.4GHz 688Mbps前後）および10Gbps対応WAN/LANポートを搭載している点",
+          "相違点：WXR9300BE6P/Nは可動式外付けアンテナと国内サポート（JC-STAR適合）を備える一方、RT-BE92U(A)/Eは全5ポートが2.5Gbps以上のマルチギガ対応であり、月額無料のAiProtectionとAmazon限定3年保証が付帯する点"
+        ],
+        "differentiators": [
+          "RT-BE92U(A)/Eの利点：有線LAN側もすべて2.5Gbpsで統一してNASや複数PCを高速接続したい場合や、追加費用なしのセキュリティ・3年保証を重視するなら迷わずこちら",
+          "バッファロー WXR9300BE6P/Nの利点：国内メーカーならではの日本語サポート体制や、設置環境に合わせて外付けアンテナの向きを細かく調整したい場合"
+        ]
+      },
+      {
+        "name": "TP-Link Archer BE550/A",
+        "asin": "B0CWR5F88G",
+        "priceComparison": "対象商品よりやや安価に購入できるトライバンドWi-Fi 7ルーター。コストを抑えやすい反面、10Gbpsポートの有無が明確な分かれ目となる。",
+        "featureComparison": [
+          "共通点：BE9300～BE9700クラスのトライバンドWi-Fi 7（6GHz 320MHz幅対応）と2.5Gbpsポートを複数備え、3年保証に対応している点",
+          "相違点：Archer BE550/Aは有線ポートがすべて2.5Gbps（10Gbpsポート非搭載）でセキュリティの上位機能は有料サブスク（HomeShield Pro）が必要となるのに対し、RT-BE92U(A)/Eは10Gbpsポートを備えAiProtectionが月額無料で使える点"
+        ],
+        "differentiators": [
+          "RT-BE92U(A)/Eの利点：10ギガ光回線の帯域を活かしたい場合や、ランニングコストゼロでセキュリティ機能・柔軟なAiMesh拡張を利用したいならこちら",
+          "TP-Link Archer BE550/Aの利点：契約回線が1Gbps～2.5Gbpsクラスであり、10Gポートが不要で少しでも初期費用を抑えてトライバンドWi-Fi 7を導入したい場合"
+        ]
+      },
+      {
+        "name": "TP-Link Archer BE700",
+        "asin": "B0DNMMCBVH",
+        "priceComparison": "対象商品より数千円高い上位クラス。6GHz帯の最大速度を優先して追加投資するか、RT-BE92U(A)/Eの有線ポート数と価格バランスを取るかが判断基準となる。",
+        "featureComparison": [
+          "共通点：トライバンドWi-Fi 7（320MHz幅・MLO対応）および10Gbps有線ポートを備えている点",
+          "相違点：Archer BE700はBE15000規格（6GHz帯最大11,528Mbps）と無線スペックがさらに高い一方、RT-BE92U(A)/Eは価格がより手頃で2.5Gbps LANポートを4基備え、月額無料のAiProtectionを搭載している点"
+        ],
+        "differentiators": [
+          "RT-BE92U(A)/Eの利点：3万円前後の予算に収めつつ、10G WAN＋複数の2.5G有線LANや無料セキュリティ、3年保証のバランスを重視するならこちら",
+          "TP-Link Archer BE700の利点：6GHz帯で4ストリーム（最大11Gbps超）の理論速度を追求し、最新の超高速Wi-Fi 7クライアントとの無線スループットを最優先する場合"
+        ]
+      },
+      {
+        "name": "ASUS RT-BE14000",
+        "asin": "B0DNYPX8YY",
+        "priceComparison": "対象商品より数千円高い同社の上位トライバンドモデル。予算を上げて5GHz帯のストリーム数を増やす価値があるかで比較される。",
+        "featureComparison": [
+          "共通点：ASUS製のトライバンドWi-Fi 7ルーターであり、AiProtection・ペアレンタルコントロール・AiMeshに対応する点",
+          "相違点：RT-BE14000は6GHz（8,643Mbps）＋5GHz（4,323Mbps）と上位の無線帯域幅を持つのに対し、RT-BE92U(A)/Eは有線ポートの10G/2.5G構成と手頃な価格（3万円前後）でコスパに優れる点"
+        ],
+        "differentiators": [
+          "RT-BE92U(A)/Eの利点：約3万円の価格帯で10G/2.5G有線ポートとトライバンドWi-Fi 7を効率良く手に入れたい場合や、Amazon限定3年保証を重視するならこちら",
+          "ASUS RT-BE14000の利点：3階建て・4LDKなどの広い住居で、5GHz帯を含めた無線カバー範囲と高負荷時のさらなる帯域余裕を求める場合"
+        ]
+      },
+      {
+        "name": "NEC Aterm AM-7200D8BE",
+        "asin": "B0DWMPZ1MQ",
+        "priceComparison": "対象商品とほぼ同等の価格帯。6GHz帯を備えたトライバンド構成を取るか、NECの5GHz帯強化・デュアルバンド構成を取るかの選択となる。",
+        "featureComparison": [
+          "共通点：有線10Gbpsポートを搭載し、Wi-Fi 7（MLO対応）で実売3万円前後の価格帯に位置する点",
+          "相違点：Aterm AM-7200D8BEは6GHz帯非搭載のデュアルバンド（5GHz 5,764Mbps＋2.4GHz 1,376Mbps）であるのに対し、RT-BE92U(A)/Eは6GHz帯（320MHz幅）対応のトライバンド構成である点"
+        ],
+        "differentiators": [
+          "RT-BE92U(A)/Eの利点：電波干渉の少ない6GHz帯（320MHz幅）を使って最新スマホ・PCでWi-Fi 7の真価を発揮させたいなら迷わずこちら",
+          "NEC Aterm AM-7200D8BEの利点：6GHz対応端末を持たず、5GHz帯の高速化（4ストリーム相当）と国内Atermブランドのシンプル・安定した運用を好む場合"
+        ]
+      },
+      {
+        "name": "TP-Link Archer BE450",
+        "asin": "B0DG1JKNTQ",
+        "priceComparison": "対象商品より1万円以上安いエントリー寄りの10Gポート搭載モデル。6GHz帯と2.5G LANポート数を削ってコストを下げるかどうかの比較となる。",
+        "featureComparison": [
+          "共通点：Wi-Fi 7対応および10Gbps有線ポートを備えている点",
+          "相違点：Archer BE450は6GHz帯非対応のデュアルバンド（BE7200）で2.5Gポートも少ないのに対し、RT-BE92U(A)/Eは6GHz帯対応のトライバンド（BE9700）かつ全5ポートがマルチギガ対応である点"
+        ],
+        "differentiators": [
+          "RT-BE92U(A)/Eの利点：将来的なWi-Fi 7/6E端末の増加を見据えて6GHz帯（320MHz幅）を確保し、2.5G有線LANも複数活用したいならこちら",
+          "TP-Link Archer BE450の利点：6GHz帯は不要で、とにかく2万円未満で10Gbps有線ポート付きのWi-Fi 7ルーターを安く導入したい場合"
+        ]
+      }
+    ],
+    "recommendation": {
+      "targetUsers": [
+        "10G光回線を契約しており、同価格帯のデュアルバンド機（NEC AM-7200D8BE等）や10G非搭載トライバンド機（TP-Link BE550等）よりもバランスの良い6GHz対応ルーターを求める人",
+        "NASやデスクトップPCなど複数台を有線LANで接続するため、全5ポートが2.5Gbps以上のマルチギガ対応である点を活かしたい人",
+        "月額課金なしでセキュリティ機能（AiProtection）やIoTネットワーク分離（スマートホームマスター）を使い、3年保証で長く安心して運用したい人"
+      ],
+      "pros": [
+        "10G WAN/LAN×1と2.5G×4の全ポートマルチギガ構成により、10ギガ光回線から2.5G対応NAS・PCまで有線ネットワークのボトルネックを一掃できる",
+        "混雑の少ない6GHz帯（320MHz幅）を含むトライバンド対応のため、古いIoT家電や家族の端末が増えても最新デバイスの高速通信が邪魔されにくい",
+        "スマートホームマスターと月額無料のAiProtectionにより、追加コストゼロでスマート家電を隔離した安全な家庭内ネットワークを構築できる",
+        "Amazon限定モデルの3年長期保証により、長期間にわたり常時稼働させるルーターでも安心して導入できる"
+      ],
+      "cons": [
+        "5GHz帯が2×2ストリーム仕様のため、ルーターから離れた部屋や2～3階での5GHz接続を重視する場合は、単体運用ではなくAiMesh子機の併用を検討すること",
+        "10Gbpsポートは1基のみのため、10G光回線のWANに接続した場合は有線LAN側の最大速度が2.5Gbpsになる点に留意すること",
+        "10G光クロス（IPv6 IPoE）環境で使用する場合は、接続安定のため購入直後にファームウェアアップデートを実施すること",
+        "本体サイズが高さ約287mm×幅247mmと大きめのため、テレビ台や棚に設置予定の場合は事前に設置スペースを確認すること"
+      ],
+      "score": 84,
+      "scoreRationale": "[基本点: 70]\n[加点: +5] (6GHz帯320MHz幅・MLO対応のトライバンドWi-Fi 7とクアッドコアCPUによる高い無線性能)\n[加点: +4] (10Gbps WAN/LAN×1と2.5Gbps×4の全ポートマルチギガ対応による優れた有線拡張性)\n[加点: +4] (3万円前後の実売価格帯で10Gポート・トライバンド・3年保証を備える優れたコストパフォーマンス)\n[加点: +3] (月額無料の「AiProtection」や「スマートホームマスター」「AiMesh」など充実した独自機能)\n[加点: +2] (Amazon限定モデルならではの3年長期保証による安心感)\n[減点: -2] (5GHz帯が2×2ストリーム仕様のため、遠距離・遮蔽物環境では上位機比で速度減衰しやすい)\n[減点: -2] (10Gポートが1基のみのため10G光クロス接続時は有線LAN側が最大2.5Gbpsに制限される点と、10G光クロス利用時にFWアップデートが必要な点)\n[合計: 84]"
+    },
+    "technicalSpecs": {
+      "cpu": "2.0GHz クアッドコアプロセッサ",
+      "ram": "1GB DDR4",
+      "dimensions": {
+        "height": "287.47mm",
+        "width": "247.18mm",
+        "depth": "101.59mm",
+        "weight": "790g"
+      },
+      "weight": "790g",
+      "connectivity": [
+        "Wi-Fi 7 (IEEE 802.11be) トライバンド 最大9,700Mbps",
+        "6GHz帯: 最大5,764Mbps (320MHz幅・4096-QAM対応)",
+        "5GHz帯: 最大2,882Mbps (2×2ストリーム)",
+        "2.4GHz帯: 最大1,032Mbps",
+        "MLO (Multi-Link Operation) 対応",
+        "10Gbps WAN/LANポート × 1",
+        "2.5Gbps WAN/LANポート × 1",
+        "2.5Gbps LANポート × 3"
+      ],
+      "other": [
+        "IPv6 IPoE (IPv4 over IPv6 / OCNバーチャルコネクト等) 対応（※10G光クロス接続時はFWアップデートが必要）",
+        "月額無料セキュリティ: AiProtection / ペアレンタルコントロール / ASUSセーフブラウジング",
+        "スマートホームマスター (IoTネットワーク・キッズネットワーク分離管理)",
+        "メッシュWi-Fi: Smart AiMesh対応",
+        "保証期間: 3年 (Amazon.co.jp限定モデル)"
+      ]
+    }
+  }
+}
