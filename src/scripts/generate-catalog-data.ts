@@ -33,6 +33,8 @@ export interface CatalogProductRecord {
   investigated: boolean;
   /** Creators API が返したセールバッジ（例: 厳選目玉商品）。取得時点の情報。 */
   deal_badge?: string;
+  /** Creators API が返したセールアクセス種別（例: PRIME_EXCLUSIVE）。取得時点の情報。 */
+  deal_access_type?: string;
   /** Creators API が返した割引率（%）。取得時点の情報。 */
   savings_percentage?: number;
 }
@@ -58,6 +60,7 @@ export interface PaapiCacheEntry {
       primary?: unknown;
     };
     dealBadge?: unknown;
+    dealAccessType?: unknown;
     savingsPercentage?: unknown;
   };
 }
@@ -78,6 +81,7 @@ export interface CatalogIndexRecord {
   price_as_of: string;
   investigated: boolean;
   deal_badge?: string;
+  deal_access_type?: string;
   savings_percentage?: number;
 }
 
@@ -96,6 +100,9 @@ export function toCatalogIndexRecord(record: CatalogProductRecord): CatalogIndex
   if (record.deal_badge) {
     indexRecord.deal_badge = record.deal_badge;
   }
+  if (record.deal_access_type) {
+    indexRecord.deal_access_type = record.deal_access_type;
+  }
   if (typeof record.savings_percentage === 'number') {
     indexRecord.savings_percentage = record.savings_percentage;
   }
@@ -107,12 +114,18 @@ export interface GenerateCatalogDataOptions {
   articlesDir?: string;
   outputDir?: string;
   indexOutputPath?: string;
+  dealsIndexOutputPath?: string;
+  /** セール専用インデックスに含めるキャッシュ有効期間（ミリ秒、既定 24時間） */
+  dealsTtlMs?: number;
+  /** 有効期限判定の基準時刻（テスト用） */
+  nowMs?: number;
 }
 
 export interface GenerateCatalogDataResult {
   totalRecords: number;
   investigatedCount: number;
   uninvestigatedCount: number;
+  dealsIndexCount: number;
   shardCount: number;
 }
 
@@ -179,6 +192,11 @@ export function convertCacheEntryToCatalogRecord(
     record.deal_badge = dealBadge;
   }
 
+  const dealAccessType = toTrimmedString(data.dealAccessType);
+  if (dealAccessType) {
+    record.deal_access_type = dealAccessType;
+  }
+
   if (
     typeof data.savingsPercentage === 'number' &&
     Number.isFinite(data.savingsPercentage) &&
@@ -188,6 +206,21 @@ export function convertCacheEntryToCatalogRecord(
   }
 
   return record;
+}
+
+const DEFAULT_DEALS_CACHE_TTL_MS = 24 * 60 * 60 * 1000;
+
+export function isDealCacheFresh(
+  entry: PaapiCacheEntry | undefined,
+  nowMs: number,
+  ttlMs: number = DEFAULT_DEALS_CACHE_TTL_MS,
+): boolean {
+  if (!entry) return false;
+  const rawTs = entry.timestamp;
+  if (typeof rawTs !== 'number' || !Number.isFinite(rawTs) || rawTs <= 0) {
+    return false;
+  }
+  return nowMs - rawTs <= ttlMs;
 }
 
 export async function loadInvestigatedAsinSet(articlesDir: string): Promise<Set<string>> {
@@ -230,16 +263,21 @@ export async function generateCatalogData(
   const outputDir = options.outputDir || path.join(process.cwd(), 'static/catalog-data');
   // 既定ではシャード出力先の親（static/）に catalog-index.json を置く。
   const indexOutputPath = options.indexOutputPath || path.join(path.dirname(outputDir), 'catalog-index.json');
+  const dealsIndexOutputPath =
+    options.dealsIndexOutputPath || path.join(path.dirname(outputDir), 'catalog-deals-index.json');
+  const dealsTtlMs = options.dealsTtlMs ?? DEFAULT_DEALS_CACHE_TTL_MS;
+  const nowMs = options.nowMs ?? Date.now();
 
   if (!fs.existsSync(cacheDir)) {
     logger.warn(`PAAPI cache directory not found: ${cacheDir}`);
-    return { totalRecords: 0, investigatedCount: 0, uninvestigatedCount: 0, shardCount: 0 };
+    return { totalRecords: 0, investigatedCount: 0, uninvestigatedCount: 0, dealsIndexCount: 0, shardCount: 0 };
   }
 
   const investigatedAsins = await loadInvestigatedAsinSet(articlesDir);
   const shardFiles = (await fs.promises.readdir(cacheDir)).filter((file) => file.endsWith('.json'));
   const shards = new Map<string, Record<string, CatalogProductRecord>>();
   const indexRecords: CatalogIndexRecord[] = [];
+  const dealsIndexRecords: CatalogIndexRecord[] = [];
 
   let totalRecords = 0;
   let investigatedCount = 0;
@@ -262,7 +300,11 @@ export async function generateCatalogData(
           shards.set(shardKey, shardBucket);
         }
         shardBucket[record.asin] = record;
-        indexRecords.push(toCatalogIndexRecord(record));
+        const indexRecord = toCatalogIndexRecord(record);
+        indexRecords.push(indexRecord);
+        if (!record.investigated && record.deal_badge && isDealCacheFresh(entry, nowMs, dealsTtlMs)) {
+          dealsIndexRecords.push(indexRecord);
+        }
 
         totalRecords += 1;
         if (record.investigated) {
@@ -297,14 +339,19 @@ export async function generateCatalogData(
   await fs.promises.mkdir(path.dirname(indexOutputPath), { recursive: true });
   await fs.promises.writeFile(indexOutputPath, JSON.stringify(indexRecords), 'utf-8');
 
+  dealsIndexRecords.sort((a, b) => a.asin.localeCompare(b.asin));
+  await fs.promises.mkdir(path.dirname(dealsIndexOutputPath), { recursive: true });
+  await fs.promises.writeFile(dealsIndexOutputPath, JSON.stringify(dealsIndexRecords), 'utf-8');
+
   logger.info(
-    `Generated catalog data: ${totalRecords} records (${investigatedCount} investigated, ${uninvestigatedCount} uninvestigated) across ${shardEntries.length} shards at ${outputDir}`,
+    `Generated catalog data: ${totalRecords} records (${investigatedCount} investigated, ${uninvestigatedCount} uninvestigated, ${dealsIndexRecords.length} uninvestigated deals) across ${shardEntries.length} shards at ${outputDir}`,
   );
 
   return {
     totalRecords,
     investigatedCount,
     uninvestigatedCount,
+    dealsIndexCount: dealsIndexRecords.length,
     shardCount: shardEntries.length,
   };
 }

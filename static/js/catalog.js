@@ -219,6 +219,18 @@
         renderImage(record.image, title);
         renderBrand(record.brand);
 
+        const dealBadgeEl = document.getElementById('catalog-deal-badge');
+        if (dealBadgeEl && record.deal_badge) {
+            dealBadgeEl.textContent = record.deal_badge;
+            dealBadgeEl.style.display = 'inline-flex';
+        }
+
+        const savingsBadgeEl = document.getElementById('catalog-savings-badge');
+        if (savingsBadgeEl && typeof record.savings_percentage === 'number' && record.savings_percentage > 0) {
+            savingsBadgeEl.textContent = `${record.savings_percentage}% OFF`;
+            savingsBadgeEl.style.display = 'inline-flex';
+        }
+
         const availBadgeEl = document.getElementById('catalog-availability-badge');
         if (availBadgeEl && record.availability) {
             availBadgeEl.textContent = record.availability;

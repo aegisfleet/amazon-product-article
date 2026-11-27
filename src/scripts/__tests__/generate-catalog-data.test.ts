@@ -210,6 +210,7 @@ describe('generateCatalogData', () => {
         totalRecords: 3,
         investigatedCount: 1,
         uninvestigatedCount: 2,
+        dealsIndexCount: 0,
         shardCount: 2,
       });
 
@@ -370,5 +371,95 @@ describe('セールバッジ・割引率の伝搬', () => {
     );
     expect(record?.deal_badge).toBeUndefined();
     expect(record?.savings_percentage).toBeUndefined();
+  });
+
+  it('generateCatalogData が未調査かつ deal_badge 付きのみを catalog-deals-index.json に出力すること', async () => {
+    const tmpRoot = fs.mkdtempSync(path.join(require('node:os').tmpdir(), 'catalog-deals-test-'));
+    const cacheDir = path.join(tmpRoot, 'cache');
+    const articlesDir = path.join(tmpRoot, 'articles');
+    const outputDir = path.join(tmpRoot, 'out/catalog-data');
+    const indexOutputPath = path.join(tmpRoot, 'out/catalog-index.json');
+    const dealsIndexOutputPath = path.join(tmpRoot, 'out/catalog-deals-index.json');
+    fs.mkdirSync(cacheDir, { recursive: true });
+    fs.mkdirSync(articlesDir, { recursive: true });
+    fs.writeFileSync(path.join(articlesDir, 'B000000001.md'), '---\ntitle: test\n---\n', 'utf-8');
+
+    const baseTs = 1795657280855;
+    const expiredTs = baseTs - 25 * 60 * 60 * 1000;
+
+    fs.writeFileSync(
+      path.join(cacheDir, '01.json'),
+      JSON.stringify({
+        B000000001: {
+          status: 'valid',
+          timestamp: baseTs,
+          data: { asin: 'B000000001', title: '調査済みセール', price: { amount: 1000 }, dealBadge: '厳選目玉商品' },
+        },
+        B000000002: {
+          status: 'valid',
+          timestamp: baseTs,
+          data: {
+            asin: 'B000000002',
+            title: '未調査セール',
+            price: { amount: 2000 },
+            dealBadge: 'ブラックフライデー先行セール',
+            dealAccessType: 'PRIME_EXCLUSIVE',
+            savingsPercentage: 25,
+          },
+        },
+        B000000003: {
+          status: 'valid',
+          timestamp: baseTs,
+          data: { asin: 'B000000003', title: '未調査通常', price: { amount: 3000 } },
+        },
+        B000000004: {
+          status: 'valid',
+          timestamp: expiredTs,
+          data: {
+            asin: 'B000000004',
+            title: '期限切れセール',
+            price: { amount: 4000 },
+            dealBadge: 'ブラックフライデー先行セール',
+          },
+        },
+        B000000005: {
+          status: 'valid',
+          timestamp: baseTs,
+          priceTimestamp: expiredTs,
+          data: {
+            asin: 'B000000005',
+            title: '価格時刻は古いがバッジ更新あり',
+            price: { amount: 5000 },
+            dealBadge: '厳選目玉商品',
+          },
+        },
+      }),
+      'utf-8',
+    );
+
+    try {
+      const result = await generateCatalogData({
+        cacheDir,
+        articlesDir,
+        outputDir,
+        indexOutputPath,
+        dealsIndexOutputPath,
+        nowMs: baseTs,
+      });
+      expect(result.totalRecords).toBe(5);
+      expect(result.dealsIndexCount).toBe(2);
+      const dealsIndex = JSON.parse(fs.readFileSync(dealsIndexOutputPath, 'utf-8'));
+      expect(dealsIndex).toHaveLength(2);
+      expect(dealsIndex[0].asin).toBe('B000000002');
+      expect(dealsIndex[0].deal_badge).toBe('ブラックフライデー先行セール');
+      expect(dealsIndex[0].deal_access_type).toBe('PRIME_EXCLUSIVE');
+      expect(dealsIndex[1].asin).toBe('B000000005');
+      expect(dealsIndex[1].deal_badge).toBe('厳選目玉商品');
+
+      const fullIndex = JSON.parse(fs.readFileSync(indexOutputPath, 'utf-8'));
+      expect(fullIndex).toHaveLength(5);
+    } finally {
+      fs.rmSync(tmpRoot, { recursive: true, force: true });
+    }
   });
 });

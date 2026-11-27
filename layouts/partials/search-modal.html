@@ -26,6 +26,8 @@
                 <input type="text" id="search-input" class="search-input" placeholder="キーワード・スペック・Amazon URLで探す" autocomplete="off"
                     aria-label="キーワード・Amazon URLで検索" data-search-index-url="{{ `index.json` | relURL }}"
                     data-search-worker-url="{{ `js/search-worker.js` | relURL }}"
+                    data-catalog-deals-url="{{ `catalog-deals-index.json` | relURL }}"
+                    data-deals-page-url="{{ `deals/` | relURL }}"
                     {{ with .Site.Params.productRequestFormUrl }}data-request-form-url="{{ . }}"{{ end }}>
                 <button type="button" class="search-clear-btn" id="search-clear-btn" aria-label="検索キーワードをクリア" tabindex="-1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -88,6 +90,18 @@
                             <label for="filter-price-max" class="sr-only">価格上限 (円)</label>
                             <input type="number" id="filter-price-max" class="filter-input-medium" min="0" step="1000"
                                 placeholder="上限なし" aria-label="価格上限 (円)">
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-deal-badge" class="filter-label">
+                            <span class="material-symbols-outlined filter-icon" aria-hidden="true">sell</span> セール
+                        </label>
+                        <div class="filter-inputs">
+                            <select id="filter-deal-badge" class="filter-select" aria-label="セール・バッジで絞り込み">
+                                <option value="">すべて</option>
+                                <option value="__ANY_DEAL__">セール対象のみ</option>
+                                <option value="厳選目玉商品">厳選目玉商品</option>
+                            </select>
                         </div>
                     </div>
                     <div class="filter-actions">

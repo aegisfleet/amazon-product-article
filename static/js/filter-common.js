@@ -321,9 +321,16 @@ function getCategoryUrlFromName(name) {
 }
 
 function bindCardHeader(article, p) {
+  const tagsRow = article.querySelector('[data-slot="tags-row"]');
+  if (tagsRow && p.isUninvestigated) {
+    const uninvBadge = document.createElement('span');
+    uninvBadge.className = 'm3-badge m3-badge-secondary';
+    uninvBadge.textContent = '未調査（参考価格）';
+    tagsRow.prepend(uninvBadge);
+  }
   const tagCat = article.querySelector('[data-slot="tag-category"]');
   if (tagCat) {
-    if (p.category) {
+    if (p.category && !p.isUninvestigated) {
       tagCat.textContent = String(p.category);
       tagCat.setAttribute('aria-label', `${p.category}カテゴリを見る`);
       tagCat.classList.add('bargain-card-category');
@@ -336,6 +343,11 @@ function bindCardHeader(article, p) {
         spanTag.textContent = tagCat.textContent;
         tagCat.replaceWith(spanTag);
       }
+    } else if (p.category && p.isUninvestigated) {
+      const spanTag = document.createElement('span');
+      spanTag.className = 'card-tag';
+      spanTag.textContent = String(p.category);
+      tagCat.replaceWith(spanTag);
     } else {
       tagCat.remove();
     }
@@ -344,7 +356,7 @@ function bindCardHeader(article, p) {
   if (titleLink) {
     titleLink.href = safeUrl(p.url);
     titleLink.textContent = String(p.title || '');
-    titleLink.setAttribute('aria-label', `${p.title || ''}の詳細を見る`);
+    titleLink.setAttribute('aria-label', p.isUninvestigated ? `${p.title || ''}（未調査カタログ）を見る` : `${p.title || ''}の詳細を見る`);
   }
 }
 
@@ -524,6 +536,9 @@ function bindCardActionLink(article, p) {
     if (btnAmazon) btnAmazon.remove();
     if (linkReadMore) {
       linkReadMore.href = safeUrl(p.url);
+      if (p.isUninvestigated) {
+        linkReadMore.textContent = '価格・詳細を見る →';
+      }
       linkReadMore.style.display = '';
     }
   }
@@ -563,13 +578,23 @@ function bindCardShopButtons(article, p) {
 
 function bindCardFooter(article, p) {
   const compareBtn = article.querySelector('[data-slot="btn-compare"]');
-  if (compareBtn) setupCompareButton(compareBtn, p);
-
   const favBtn = article.querySelector('[data-slot="btn-favorite"]');
-  if (favBtn) setupFavoriteButton(favBtn, p);
+  if (p.isUninvestigated) {
+    article.querySelector('.card-footer-row-sub')?.remove();
+  } else {
+    if (compareBtn) setupCompareButton(compareBtn, p);
+    if (favBtn) setupFavoriteButton(favBtn, p);
+  }
 
   const dateText = article.querySelector('[data-slot="date-text"]');
-  if (dateText) dateText.textContent = formatInvestigatedDate(p.lastInvestigated);
+  if (dateText) {
+    if (p.isUninvestigated && p.priceAsOf) {
+      const dateStr = String(p.priceAsOf).slice(0, 10).replaceAll('-', '/');
+      dateText.textContent = `取得: ${dateStr}`;
+    } else {
+      dateText.textContent = formatInvestigatedDate(p.lastInvestigated);
+    }
+  }
 
   bindCardActionLink(article, p);
   bindCardShopButtons(article, p);

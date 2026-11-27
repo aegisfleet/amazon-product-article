@@ -58,6 +58,8 @@
       "parent_asin" (.Params.parent_asin | default "")
       "affiliate_url" .Params.affiliate_url
       "savings_percentage" .Params.savings_percentage
+      "deal_badge" (.Params.deal_badge | default "")
+      "deal_access_type" (.Params.deal_access_type | default "")
       "specs_json" $specsJson
       "specs_html" $specsHtml
       "availability" (.Params.availability | default "")

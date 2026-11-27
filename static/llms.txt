@@ -41,12 +41,13 @@
 - [MCP専用インデックス (`mcp-products.json`)](https://www.amazon-hikaku.com/mcp-products.json): 全商品の `asin`, `brand`, `score_rationale`（採点根拠）と、ギフト文脈のある商品のギフト属性（`gift_recipients` / `gift_occasions`）の補完データ（約3.4MB）。
 - [全商品インデックス (`index.json`)](https://www.amazon-hikaku.com/index.json): 詳細スペック（`specs`, `specs_json`）・在庫（`in_stock`）・調査日（`last_investigated`）を含む網羅データ（約9.3MB）。
 - 未調査商品カタログシャード (`https://www.amazon-hikaku.com/catalog-data/{ASIN末尾2文字}.json`): 未調査商品を含む有効キャッシュ商品（約3.9万件）の価格・在庫・価格取得時点（`price_as_of`）・調査済みフラグ（`investigated`）をASIN末尾2文字（大文字）でシャーディング配信。セール中の商品には取得時点のセールバッジ（`deal_badge`、例: 厳選目玉商品）と割引率（`savings_percentage`）も含まれます。
+- 未調査セール商品インデックス (`https://www.amazon-hikaku.com/catalog-deals-index.json`): 未調査商品かつ `deal_badge` を持つ商品のみを抽出した軽量検索インデックス（検索モーダル・`/deals/` の未調査セール表示から遅延ロードで利用）。
 - [カテゴリ階層 (`data/categorygroups.json`)](https://www.amazon-hikaku.com/data/categorygroups.json) / [ブランド定義 (`data/brandgroups.json`)](https://www.amazon-hikaku.com/data/brandgroups.json) / [サイトマップ (`sitemap.xml`)](https://www.amazon-hikaku.com/sitemap.xml)
 
 ## 4. 主要セクションとURL構造 (Key Sections & URLs)
 - 個別商品詳細レポート（調査済み商品）: `https://www.amazon-hikaku.com/{asin}/` （例: `https://www.amazon-hikaku.com/b09bfpnw2j/`）
 - 未調査商品カタログページ（JS描画・noindex）: `https://www.amazon-hikaku.com/catalog/?asin={ASIN}` （未調査商品の基本情報・`price_as_of` 時点の参考価格を表示。調査済みASINの場合は詳細レポートへリダイレクト）
-- [セール対象商品一覧](https://www.amazon-hikaku.com/deals/) （クエリ例: `/deals/?minDiscount=30&minScore=80`）
+- [セール対象商品一覧](https://www.amazon-hikaku.com/deals/) （`includeUninvestigated=1` で未調査セール品も含められます。クエリ例: `/deals/?minDiscount=30&minScore=80`）
 - [あともう一品 (買い合わせ)](https://www.amazon-hikaku.com/bargain/) （クエリ例: `/bargain/?minPrice=700&maxPrice=1000`）
 - [高評価おすすめ商品](https://www.amazon-hikaku.com/recommendations/) / [低スコア迷品館](https://www.amazon-hikaku.com/low-scores/)
 - [カテゴリ一覧](https://www.amazon-hikaku.com/categories/)（`/categories/{カテゴリ名}/`・`/parent-category/{スラッグ}/`） / [ブランド一覧](https://www.amazon-hikaku.com/brand/)（`/brand/{スラッグ}/`）
