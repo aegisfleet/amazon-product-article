@@ -2843,6 +2843,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function displaySearchTips() {
+        latestSearchId = ++searchIdSequence;
         searchResults.textContent = '';
 
         const container = document.createElement('div');
