@@ -322,3 +322,53 @@ describe('generateCatalogData', () => {
     });
   });
 });
+
+describe('セールバッジ・割引率の伝搬', () => {
+  it('キャッシュの dealBadge / savingsPercentage がレコードと検索インデックスに載ること', () => {
+    const record = convertCacheEntryToCatalogRecord(
+      'B006MB9700',
+      {
+        status: 'valid',
+        timestamp: 1795657280855,
+        data: {
+          asin: 'B006MB9700',
+          title: 'バッジ付き商品',
+          brand: 'テストブランド',
+          category: 'テスト',
+          availability: '在庫あり。',
+          price: { amount: 800 },
+          images: { primary: 'https://m.media-amazon.com/images/I/test.jpg' },
+          dealBadge: ' 厳選目玉商品 ',
+          savingsPercentage: 20,
+        },
+      },
+      false,
+    );
+    expect(record?.deal_badge).toBe('厳選目玉商品');
+    expect(record?.savings_percentage).toBe(20);
+    if (!record) throw new Error('record is null');
+    const indexRecord = toCatalogIndexRecord(record);
+    expect(indexRecord.deal_badge).toBe('厳選目玉商品');
+    expect(indexRecord.savings_percentage).toBe(20);
+  });
+
+  it('バッジが空・割引率が0以下の場合はフィールド自体を付けないこと', () => {
+    const record = convertCacheEntryToCatalogRecord(
+      'B006MB9700',
+      {
+        status: 'valid',
+        timestamp: 1795657280855,
+        data: {
+          asin: 'B006MB9700',
+          title: '通常商品',
+          price: { amount: 800 },
+          dealBadge: ' ',
+          savingsPercentage: 0,
+        },
+      },
+      false,
+    );
+    expect(record?.deal_badge).toBeUndefined();
+    expect(record?.savings_percentage).toBeUndefined();
+  });
+});

@@ -31,6 +31,10 @@ export interface CatalogProductRecord {
   detail_page_url: string;
   price_as_of: string;
   investigated: boolean;
+  /** Creators API が返したセールバッジ（例: 厳選目玉商品）。取得時点の情報。 */
+  deal_badge?: string;
+  /** Creators API が返した割引率（%）。取得時点の情報。 */
+  savings_percentage?: number;
 }
 
 export interface PaapiCacheEntry {
@@ -53,6 +57,8 @@ export interface PaapiCacheEntry {
     images?: {
       primary?: unknown;
     };
+    dealBadge?: unknown;
+    savingsPercentage?: unknown;
   };
 }
 
@@ -71,10 +77,12 @@ export interface CatalogIndexRecord {
   amazon_category: string;
   price_as_of: string;
   investigated: boolean;
+  deal_badge?: string;
+  savings_percentage?: number;
 }
 
 export function toCatalogIndexRecord(record: CatalogProductRecord): CatalogIndexRecord {
-  return {
+  const indexRecord: CatalogIndexRecord = {
     asin: record.asin,
     title: record.title,
     brand: record.brand,
@@ -85,6 +93,13 @@ export function toCatalogIndexRecord(record: CatalogProductRecord): CatalogIndex
     price_as_of: record.price_as_of,
     investigated: record.investigated,
   };
+  if (record.deal_badge) {
+    indexRecord.deal_badge = record.deal_badge;
+  }
+  if (typeof record.savings_percentage === 'number') {
+    indexRecord.savings_percentage = record.savings_percentage;
+  }
+  return indexRecord;
 }
 
 export interface GenerateCatalogDataOptions {
@@ -157,6 +172,19 @@ export function convertCacheEntryToCatalogRecord(
   const priceChangedAt = toIsoStringOrNull(entry.priceChangedAt);
   if (priceChangedAt) {
     record.price_changed_at = priceChangedAt;
+  }
+
+  const dealBadge = toTrimmedString(data.dealBadge);
+  if (dealBadge) {
+    record.deal_badge = dealBadge;
+  }
+
+  if (
+    typeof data.savingsPercentage === 'number' &&
+    Number.isFinite(data.savingsPercentage) &&
+    data.savingsPercentage > 0
+  ) {
+    record.savings_percentage = data.savingsPercentage;
   }
 
   return record;
