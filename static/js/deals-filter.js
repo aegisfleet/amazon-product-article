@@ -795,6 +795,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       discount30: minDiscount >= 30,
       under5000: maxPrice <= 5000,
       instock: inStock,
+      uninvestigated: Boolean(includeUninvestigatedFilter?.checked),
       featured: dealType === 'badge:厳選目玉商品',
       event: Boolean(activeMajorEvent) && dealType === `event:${activeMajorEvent}`,
     };
@@ -812,6 +813,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   function handleHeroPresetClick(presetKey) {
+    if (presetKey === 'uninvestigated' && includeUninvestigatedFilter) {
+      includeUninvestigatedFilter.checked = !includeUninvestigatedFilter.checked;
+      includeUninvestigatedFilter.dispatchEvent(new Event('change'));
+      return;
+    }
     if (presetKey === 'score80') {
       const cur = Number.parseInt(scoreSlider.value, 10);
       scoreSlider.value = cur >= 80 ? '0' : '80';
