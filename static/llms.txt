@@ -17,7 +17,7 @@
 - `get_price`: ASINまたはAmazon商品URLから価格を照会（調査済みは詳細付き、未調査は `price_as_of` 時点の参考価格で出典はカタログページ。価格スナップショットが30日以上前の場合は `price_stale: true` が付きます。未調査でも取得時点でセール中だった場合は `deal_badge` と `savings_percentage` が付きます）。
 - `compare_products`: 2〜5件のASINを構造化比較。長所（`pros`）/短所（`cons`）と価格差・スコア差サマリー（`comparison_summary`）を返却。
 - `find_similar_products`: 指定ASINと同カテゴリの代替候補を、タイトルの製品タイプ（形態素）の一致で絞り込み、近接価格帯・スコア順で提案（在庫切れ・予算超過時の代替案用）。同タイプの候補が無い場合はカテゴリ候補をそのまま返し、応答の `match_basis` が `category_fallback` になる（タイプ一致の場合は `title_type`）。
-- `get_deals`: セール商品検索。おすすめ順（`recommended`＝スコアと割引率のバランス順）、最低スコア（既定70点）、セール種別（`sale_type`）、開催中バッジ集計（`available_badges`）に対応。
+- `get_deals`: セール商品検索。おすすめ順（`recommended`＝スコアと割引率のバランス順）、最低スコア（既定70点）、セール種別（`sale_type`）、開催中バッジ集計（`available_badges`）に対応。未調査のセール商品（バッジは取得から24時間以内のものだけ）も別枠 `uninvestigated_results` で返します。
 - `get_bargain`: 送料無料ライン等の買い合わせ検索。上限金額（`target_amount`、既定2,000円）と下限金額（`min_amount`）を指定可能。
 - `get_recommendations`: 独自スコア90点以上の高評価おすすめ商品を取得（`category`・ギフト属性 `recipient` / `occasion` 絞り込み可）。
 - `list_categories`: 全27親カテゴリと子カテゴリの階層および掲載件数を取得。
