@@ -274,6 +274,7 @@ function readUiFilterValues() {
         scoreMax: document.getElementById('filter-score-max')?.value || '',
         priceMin: document.getElementById('filter-price-min')?.value || '',
         priceMax: document.getElementById('filter-price-max')?.value || '',
+        dealBadge: document.getElementById('filter-deal-badge')?.value || '',
         sort: document.getElementById('search-sort-select')?.value || 'relevance'
     };
 }
@@ -459,31 +460,46 @@ let searchIndexFallback = [];
 function searchWithRerank(fuseInstance, query) {
     if (!fuseInstance) return { results: [], unfilteredScoreCount: 0, unfilteredPriceCount: 0 };
     const trimmed = query.trim().toUpperCase();
+    const uiFilters = readUiFilterValues();
+    const dealBadgeFilter = typeof uiFilters.dealBadge === 'string' ? uiFilters.dealBadge.trim() : '';
+    const matchesDeal = (item) => {
+        if (!dealBadgeFilter) return true;
+        if (globalThis.SearchCore?.matchesDealBadge) {
+            return globalThis.SearchCore.matchesDealBadge(item, dealBadgeFilter);
+        }
+        const badge = String(item?.deal_badge || '').trim();
+        if (!badge) return false;
+        if (dealBadgeFilter === '__ANY_DEAL__') return true;
+        if (dealBadgeFilter.startsWith('event:')) return badge.includes(dealBadgeFilter.slice('event:'.length));
+        return badge === dealBadgeFilter;
+    };
 
     // クエリがASIN形式の場合、O(1) 直接引き
     if (isAsin(trimmed)) {
         const targetAsin = asinVariationsCache?.[trimmed] || trimmed;
         const directItem = asinMapFallback.get(targetAsin) || asinMapFallback.get(trimmed);
         if (directItem) {
+            const ok = matchesDeal(directItem);
             return {
-                results: [{ item: directItem, score: 0, rerankScore: 1 }],
-                unfilteredScoreCount: 1,
-                unfilteredPriceCount: 1
+                results: ok ? [{ item: directItem, score: 0, rerankScore: 1 }] : [],
+                unfilteredScoreCount: ok ? 1 : 0,
+                unfilteredPriceCount: ok ? 1 : 0
             };
         }
         const parentItems = parentAsinMapFallback.get(targetAsin) || parentAsinMapFallback.get(trimmed);
         if (parentItems && parentItems.length > 0) {
+            const matchedParents = dealBadgeFilter ? parentItems.filter(matchesDeal) : parentItems;
             return {
-                results: parentItems.map(item => ({ item, score: 0, rerankScore: 1 })),
-                unfilteredScoreCount: parentItems.length,
-                unfilteredPriceCount: parentItems.length
+                results: matchedParents.map(item => ({ item, score: 0, rerankScore: 1 })),
+                unfilteredScoreCount: matchedParents.length,
+                unfilteredPriceCount: matchedParents.length
             };
         }
         return { results: [], unfilteredScoreCount: 0, unfilteredPriceCount: 0 };
     }
 
     if (globalThis.SearchCore?.searchWithCore) {
-        return globalThis.SearchCore.searchWithCore(searchIndexFallback, fuseInstance, query, readUiFilterValues());
+        return globalThis.SearchCore.searchWithCore(searchIndexFallback, fuseInstance, query, uiFilters);
     }
 
     const normalizedQuery = normalizeSearchText(query);
@@ -1191,7 +1207,16 @@ document.addEventListener('DOMContentLoaded', function () {
                         ignoreLocation: true,
                         useExtendedSearch: true
                     });
-                    if (searchInput.value.trim() && typeof handleSearch === 'function') {
+                    const badgeCounts = new Map();
+                    for (const item of searchIndex) {
+                        const badge = typeof item.deal_badge === 'string' ? item.deal_badge.trim() : '';
+                        if (badge) badgeCounts.set(badge, (badgeCounts.get(badge) || 0) + 1);
+                    }
+                    const fallbackBadges = Array.from(badgeCounts.entries())
+                        .sort((a, b) => b[1] - a[1])
+                        .map(([badge, count]) => ({ badge, count }));
+                    populateSearchDealBadgeOptions(fallbackBadges);
+                    if ((searchInput.value.trim() || hasActiveDealBadgeFilter()) && typeof handleSearch === 'function') {
                         handleSearch(searchInput.value, true);
                     }
                 } catch (err) {

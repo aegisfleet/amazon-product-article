@@ -121,15 +121,17 @@ function handleSearch(query, filters, searchId) {
 
         // クエリがASIN形式の場合、O(1) ハッシュマップ直接ルックアップで即時返却（Fuse.js全文走査をバイパス）
         if (SearchCore.isAsin(trimmed)) {
+            const dealBadgeFilter = typeof filters?.dealBadge === 'string' ? filters.dealBadge.trim() : '';
             const targetAsin = asinVariations[trimmed] || trimmed;
             const directItem = asinMap.get(targetAsin) || asinMap.get(trimmed);
 
             if (directItem) {
+                const matchedDirect = !dealBadgeFilter || SearchCore.matchesDealBadge(directItem, dealBadgeFilter);
                 self.postMessage({
                     type: 'SEARCH_RESULTS',
-                    results: [{ item: directItem, score: 0, rerankScore: 1 }],
-                    unfilteredScoreCount: 1,
-                    unfilteredPriceCount: 1,
+                    results: matchedDirect ? [{ item: directItem, score: 0, rerankScore: 1 }] : [],
+                    unfilteredScoreCount: matchedDirect ? 1 : 0,
+                    unfilteredPriceCount: matchedDirect ? 1 : 0,
                     query,
                     searchId
                 });
@@ -139,7 +141,10 @@ function handleSearch(query, filters, searchId) {
             // 親ASINマップでの照合
             const parentItems = parentAsinMap.get(targetAsin) || parentAsinMap.get(trimmed);
             if (parentItems && parentItems.length > 0) {
-                const results = parentItems.map(item => ({ item, score: 0, rerankScore: 1 }));
+                const matchedParents = dealBadgeFilter
+                    ? parentItems.filter(item => SearchCore.matchesDealBadge(item, dealBadgeFilter))
+                    : parentItems;
+                const results = matchedParents.map(item => ({ item, score: 0, rerankScore: 1 }));
                 self.postMessage({
                     type: 'SEARCH_RESULTS',
                     results,

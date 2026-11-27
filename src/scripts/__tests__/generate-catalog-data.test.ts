@@ -384,29 +384,43 @@ describe('セールバッジ・割引率の伝搬', () => {
     fs.mkdirSync(articlesDir, { recursive: true });
     fs.writeFileSync(path.join(articlesDir, 'B000000001.md'), '---\ntitle: test\n---\n', 'utf-8');
 
+    const baseTs = 1795657280855;
+    const expiredTs = baseTs - 25 * 60 * 60 * 1000;
+
     fs.writeFileSync(
       path.join(cacheDir, '01.json'),
       JSON.stringify({
         B000000001: {
           status: 'valid',
-          timestamp: 1795657280855,
+          timestamp: baseTs,
           data: { asin: 'B000000001', title: '調査済みセール', price: { amount: 1000 }, dealBadge: '厳選目玉商品' },
         },
         B000000002: {
           status: 'valid',
-          timestamp: 1795657280855,
+          timestamp: baseTs,
           data: {
             asin: 'B000000002',
             title: '未調査セール',
             price: { amount: 2000 },
             dealBadge: 'ブラックフライデー先行セール',
+            dealAccessType: 'PRIME_EXCLUSIVE',
             savingsPercentage: 25,
           },
         },
         B000000003: {
           status: 'valid',
-          timestamp: 1795657280855,
+          timestamp: baseTs,
           data: { asin: 'B000000003', title: '未調査通常', price: { amount: 3000 } },
+        },
+        B000000004: {
+          status: 'valid',
+          timestamp: expiredTs,
+          data: {
+            asin: 'B000000004',
+            title: '期限切れセール',
+            price: { amount: 4000 },
+            dealBadge: 'ブラックフライデー先行セール',
+          },
         },
       }),
       'utf-8',
@@ -419,12 +433,18 @@ describe('セールバッジ・割引率の伝搬', () => {
         outputDir,
         indexOutputPath,
         dealsIndexOutputPath,
+        nowMs: baseTs,
       });
+      expect(result.totalRecords).toBe(4);
       expect(result.dealsIndexCount).toBe(1);
       const dealsIndex = JSON.parse(fs.readFileSync(dealsIndexOutputPath, 'utf-8'));
       expect(dealsIndex).toHaveLength(1);
       expect(dealsIndex[0].asin).toBe('B000000002');
       expect(dealsIndex[0].deal_badge).toBe('ブラックフライデー先行セール');
+      expect(dealsIndex[0].deal_access_type).toBe('PRIME_EXCLUSIVE');
+
+      const fullIndex = JSON.parse(fs.readFileSync(indexOutputPath, 'utf-8'));
+      expect(fullIndex).toHaveLength(4);
     } finally {
       fs.rmSync(tmpRoot, { recursive: true, force: true });
     }

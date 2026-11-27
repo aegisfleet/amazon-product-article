@@ -90,7 +90,7 @@ function mapCatalogRecordToDealProduct(rec) {
     pointsRate: 0,
     savingsPercentage: typeof rec.savings_percentage === 'number' ? rec.savings_percentage : 0,
     dealBadge: rec.deal_badge || '',
-    dealAccessType: '',
+    dealAccessType: rec.deal_access_type || '',
     availability: avail,
     inStock,
     isUninvestigated: true,
@@ -316,9 +316,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     setSliderFromParam(params, 'minDiscount', discountSlider, null, 0, 100);
 
     if (dealTypeSelect && params.has('dealType')) {
-      const requestedType = params.get('dealType');
-      dealTypeSelect.dataset.pendingValue = requestedType;
-      updateDealTypeOptions(getActiveProducts());
+      dealTypeSelect.dataset.pendingValue = params.get('dealType');
     }
     if (inStockFilter && params.get('inStock') === '1') {
       inStockFilter.checked = true;
@@ -847,8 +845,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (includeUninvestigatedFilter?.checked) {
     await ensureUninvestigatedDealsLoaded();
     updateHeroTotalCount();
-    updateDealTypeOptions(getActiveProducts());
   }
+  updateDealTypeOptions(getActiveProducts());
   updateSortButtons();
   syncHeroPresetsState();
   applyFilters();

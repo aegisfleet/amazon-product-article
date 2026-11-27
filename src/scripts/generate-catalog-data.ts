@@ -33,6 +33,8 @@ export interface CatalogProductRecord {
   investigated: boolean;
   /** Creators API が返したセールバッジ（例: 厳選目玉商品）。取得時点の情報。 */
   deal_badge?: string;
+  /** Creators API が返したセールアクセス種別（例: PRIME_EXCLUSIVE）。取得時点の情報。 */
+  deal_access_type?: string;
   /** Creators API が返した割引率（%）。取得時点の情報。 */
   savings_percentage?: number;
 }
@@ -58,6 +60,7 @@ export interface PaapiCacheEntry {
       primary?: unknown;
     };
     dealBadge?: unknown;
+    dealAccessType?: unknown;
     savingsPercentage?: unknown;
   };
 }
@@ -78,6 +81,7 @@ export interface CatalogIndexRecord {
   price_as_of: string;
   investigated: boolean;
   deal_badge?: string;
+  deal_access_type?: string;
   savings_percentage?: number;
 }
 
@@ -96,6 +100,9 @@ export function toCatalogIndexRecord(record: CatalogProductRecord): CatalogIndex
   if (record.deal_badge) {
     indexRecord.deal_badge = record.deal_badge;
   }
+  if (record.deal_access_type) {
+    indexRecord.deal_access_type = record.deal_access_type;
+  }
   if (typeof record.savings_percentage === 'number') {
     indexRecord.savings_percentage = record.savings_percentage;
   }
@@ -108,6 +115,10 @@ export interface GenerateCatalogDataOptions {
   outputDir?: string;
   indexOutputPath?: string;
   dealsIndexOutputPath?: string;
+  /** セール専用インデックスに含めるキャッシュ有効期間（ミリ秒、既定 24時間） */
+  dealsTtlMs?: number;
+  /** 有効期限判定の基準時刻（テスト用） */
+  nowMs?: number;
 }
 
 export interface GenerateCatalogDataResult {
@@ -181,6 +192,11 @@ export function convertCacheEntryToCatalogRecord(
     record.deal_badge = dealBadge;
   }
 
+  const dealAccessType = toTrimmedString(data.dealAccessType);
+  if (dealAccessType) {
+    record.deal_access_type = dealAccessType;
+  }
+
   if (
     typeof data.savingsPercentage === 'number' &&
     Number.isFinite(data.savingsPercentage) &&
@@ -190,6 +206,24 @@ export function convertCacheEntryToCatalogRecord(
   }
 
   return record;
+}
+
+const DEFAULT_DEALS_CACHE_TTL_MS = 24 * 60 * 60 * 1000;
+
+export function isDealCacheFresh(
+  entry: PaapiCacheEntry | undefined,
+  nowMs: number,
+  ttlMs: number = DEFAULT_DEALS_CACHE_TTL_MS,
+): boolean {
+  if (!entry) return false;
+  const rawTs =
+    typeof entry.priceTimestamp === 'number' && Number.isFinite(entry.priceTimestamp) && entry.priceTimestamp > 0
+      ? entry.priceTimestamp
+      : entry.timestamp;
+  if (typeof rawTs !== 'number' || !Number.isFinite(rawTs) || rawTs <= 0) {
+    return false;
+  }
+  return nowMs - rawTs <= ttlMs;
 }
 
 export async function loadInvestigatedAsinSet(articlesDir: string): Promise<Set<string>> {
@@ -234,6 +268,8 @@ export async function generateCatalogData(
   const indexOutputPath = options.indexOutputPath || path.join(path.dirname(outputDir), 'catalog-index.json');
   const dealsIndexOutputPath =
     options.dealsIndexOutputPath || path.join(path.dirname(outputDir), 'catalog-deals-index.json');
+  const dealsTtlMs = options.dealsTtlMs ?? DEFAULT_DEALS_CACHE_TTL_MS;
+  const nowMs = options.nowMs ?? Date.now();
 
   if (!fs.existsSync(cacheDir)) {
     logger.warn(`PAAPI cache directory not found: ${cacheDir}`);
@@ -269,7 +305,7 @@ export async function generateCatalogData(
         shardBucket[record.asin] = record;
         const indexRecord = toCatalogIndexRecord(record);
         indexRecords.push(indexRecord);
-        if (!record.investigated && record.deal_badge) {
+        if (!record.investigated && record.deal_badge && isDealCacheFresh(entry, nowMs, dealsTtlMs)) {
           dealsIndexRecords.push(indexRecord);
         }
 
