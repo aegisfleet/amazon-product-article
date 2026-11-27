@@ -325,7 +325,7 @@ function bindCardHeader(article, p) {
   if (tagsRow && p.isUninvestigated) {
     const uninvBadge = document.createElement('span');
     uninvBadge.className = 'm3-badge m3-badge-secondary';
-    uninvBadge.textContent = '未調査（参考価格）';
+    uninvBadge.textContent = '未調査';
     tagsRow.prepend(uninvBadge);
   }
   const tagCat = article.querySelector('[data-slot="tag-category"]');

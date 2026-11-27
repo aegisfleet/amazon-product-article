@@ -81,7 +81,7 @@ function mapCatalogRecordToDealProduct(rec) {
     category: rec.amazon_category || '',
     brand: rec.brand || '',
     image: rec.image || '',
-    affiliateUrl: '',
+    affiliateUrl: asin ? `https://www.amazon.co.jp/dp/${encodeURIComponent(asin)}?tag=aegis-22&linkCode=ogi&th=1&psc=1` : '',
     lastInvestigated: rec.price_as_of || '',
     priceAsOf: rec.price_as_of || '',
     isAmazonDirect: false,

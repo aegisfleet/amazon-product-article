@@ -2657,7 +2657,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         const uninvBadge = document.createElement('span');
         uninvBadge.className = 'm3-badge m3-badge-secondary';
-        uninvBadge.textContent = '未調査・参考価格';
+        uninvBadge.textContent = '未調査';
         metricsDiv.appendChild(uninvBadge);
 
         headerDiv.appendChild(metricsDiv);
@@ -2688,6 +2688,18 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         footerDiv.appendChild(badgesDiv);
+        if (asin) {
+            const actionsDiv = document.createElement('div');
+            actionsDiv.className = 'result-actions';
+            const amazonLink = document.createElement('a');
+            amazonLink.href = `https://www.amazon.co.jp/dp/${encodeURIComponent(asin)}?tag=aegis-22&linkCode=ogi&th=1&psc=1`;
+            amazonLink.target = '_blank';
+            amazonLink.rel = 'noopener noreferrer';
+            amazonLink.className = 'btn-amazon-small';
+            amazonLink.textContent = 'Amazonで見る';
+            actionsDiv.appendChild(amazonLink);
+            footerDiv.appendChild(actionsDiv);
+        }
         contentDiv.appendChild(footerDiv);
         mainRow.appendChild(contentDiv);
         itemDiv.appendChild(mainRow);
@@ -2722,7 +2734,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const titleEl = document.createElement('span');
         titleEl.className = 'search-uninvestigated-deals-title';
-        titleEl.textContent = '未調査のセール商品も探す（スコアなし・参考価格）';
+        titleEl.textContent = '未調査のセール商品も探す';
         headerRow.appendChild(titleEl);
 
         const actionsRow = document.createElement('div');
