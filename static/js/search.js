@@ -1099,12 +1099,21 @@ document.addEventListener('DOMContentLoaded', function () {
             appendOpt('', 'すべて');
             appendOpt('__ANY_DEAL__', 'セール対象のみ');
 
-            const knownEvents = ['ブラックフライデー', 'プライム感謝祭', 'プライムデー', 'スマイル Sale', '新生活セール'];
-            for (const ev of knownEvents) {
-                const evCount = dealBadges.reduce((sum, b) => (b.badge.includes(ev) ? sum + b.count : sum), 0);
-                if (evCount > 0) {
-                    appendOpt(`event:${ev}`, `${ev}（すべて） (${evCount})`);
+            const knownEvents = ['ブラックフライデー', 'プライム感謝祭', 'プライムデー', 'スマイル Sale', '新生活セール', 'ゴールデンウィーク', '初売り'];
+            const standardBadges = new Set(['タイムセール', '限定タイムセール', '特選タイムセール', 'プライム会員限定セール', '限定プライムセール', '厳選目玉商品', 'リユースセール', 'セール']);
+            const eventCountMap = new Map();
+            for (const { badge, count } of dealBadges) {
+                let evName = knownEvents.find(ev => badge.includes(ev)) || '';
+                if (!evName && !standardBadges.has(badge)) {
+                    evName = badge.replace(/(先行セール|プライムセール)$/, '').trim() || badge;
                 }
+                if (evName) {
+                    eventCountMap.set(evName, (eventCountMap.get(evName) || 0) + count);
+                }
+            }
+            const sortedEvents = Array.from(eventCountMap.entries()).sort((a, b) => b[1] - a[1]);
+            for (const [ev, evCount] of sortedEvents) {
+                appendOpt(`event:${ev}`, `${ev}（すべて） (${evCount})`);
             }
 
             for (const { badge, count } of dealBadges) {

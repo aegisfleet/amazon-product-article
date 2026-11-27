@@ -10,7 +10,31 @@ const KNOWN_SALE_EVENTS = [
   'スマイル Sale',
   '新生活セール',
   'ゴールデンウィーク',
+  '初売り',
 ];
+
+const STANDARD_DEAL_BADGES = new Set([
+  'タイムセール',
+  '限定タイムセール',
+  '特選タイムセール',
+  'プライム会員限定セール',
+  '限定プライムセール',
+  '厳選目玉商品',
+  'リユースセール',
+  'セール',
+]);
+
+function extractSaleEventName(badge) {
+  const trimmed = String(badge || '').trim();
+  if (!trimmed) return '';
+  for (const ev of KNOWN_SALE_EVENTS) {
+    if (trimmed.includes(ev)) return ev;
+  }
+  if (STANDARD_DEAL_BADGES.has(trimmed)) return '';
+  // 未知のイベントバッジは「先行セール」「プライムセール」等の接尾辞を除いてグルーピング
+  const stripped = trimmed.replace(/(先行セール|プライムセール)$/, '').trim();
+  return stripped || trimmed;
+}
 
 function matchesDealType(p, dealType) {
   if (!dealType) return true;
@@ -214,17 +238,16 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
     }
 
-    const eventGroups = [];
-    for (const ev of KNOWN_SALE_EVENTS) {
-      let evCount = 0;
-      for (const [badge, cnt] of badgeCounts.entries()) {
-        if (badge.includes(ev)) evCount += cnt;
-      }
-      if (evCount > 0) {
-        eventGroups.push({ name: ev, count: evCount });
+    const eventCountMap = new Map();
+    for (const [badge, cnt] of badgeCounts.entries()) {
+      const evName = extractSaleEventName(badge);
+      if (evName) {
+        eventCountMap.set(evName, (eventCountMap.get(evName) || 0) + cnt);
       }
     }
-    eventGroups.sort((a, b) => b.count - a.count);
+    const eventGroups = [...eventCountMap.entries()]
+      .map(([name, count]) => ({ name, count }))
+      .sort((a, b) => b.count - a.count);
     activeMajorEvent = eventGroups[0]?.name || '';
 
     dealTypeSelect.innerHTML = '<option value="">すべてのセール</option>';
