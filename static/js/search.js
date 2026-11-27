@@ -483,7 +483,8 @@ function searchWithRerank(fuseInstance, query) {
             return {
                 results: ok ? [{ item: directItem, score: 0, rerankScore: 1 }] : [],
                 unfilteredScoreCount: ok ? 1 : 0,
-                unfilteredPriceCount: ok ? 1 : 0
+                unfilteredPriceCount: ok ? 1 : 0,
+                excludedByDealFilter: !ok
             };
         }
         const parentItems = parentAsinMapFallback.get(targetAsin) || parentAsinMapFallback.get(trimmed);
@@ -492,7 +493,8 @@ function searchWithRerank(fuseInstance, query) {
             return {
                 results: matchedParents.map(item => ({ item, score: 0, rerankScore: 1 })),
                 unfilteredScoreCount: matchedParents.length,
-                unfilteredPriceCount: matchedParents.length
+                unfilteredPriceCount: matchedParents.length,
+                excludedByDealFilter: matchedParents.length === 0
             };
         }
         return { results: [], unfilteredScoreCount: 0, unfilteredPriceCount: 0 };
@@ -1259,7 +1261,8 @@ document.addEventListener('DOMContentLoaded', function () {
             displayResults(
                 data.results,
                 data.unfilteredScoreCount || 0,
-                data.unfilteredPriceCount || 0
+                data.unfilteredPriceCount || 0,
+                Boolean(data.excludedByDealFilter)
             );
             searchInputWrapper?.classList.remove('is-loading');
             searchResults?.classList.remove('is-searching');
@@ -1341,8 +1344,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function executeFallbackSearch(query) {
             if (!fuse) return;
-            const { results, unfilteredScoreCount, unfilteredPriceCount } = searchWithRerank(fuse, query);
-            displayResults(results, unfilteredScoreCount, unfilteredPriceCount);
+            const { results, unfilteredScoreCount, unfilteredPriceCount, excludedByDealFilter } = searchWithRerank(fuse, query);
+            displayResults(results, unfilteredScoreCount, unfilteredPriceCount, Boolean(excludedByDealFilter));
             stopSearchLoading();
         }
 
@@ -2136,7 +2139,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return relaxBox;
     }
 
-    function renderEmptyState(unfilteredScoreCount = 0, unfilteredPriceCount = 0) {
+    function renderEmptyState(unfilteredScoreCount = 0, unfilteredPriceCount = 0, excludedByDealFilter = false) {
         const query = searchInput ? searchInput.value.replaceAll('　', ' ').trim() : '';
         const emptyState = document.createElement('div');
         emptyState.className = 'search-empty-state';
@@ -2147,6 +2150,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const scoreMinEl = document.getElementById('filter-score-min');
         const priceMinEl = document.getElementById('filter-price-min');
         const priceMaxEl = document.getElementById('filter-price-max');
+        const dealBadgeEl = document.getElementById('filter-deal-badge');
         const isScoreFiltered = scoreMinEl && Number.parseFloat(scoreMinEl.value) > 0;
         const isPriceFiltered = Boolean(priceMinEl?.value?.trim() || priceMaxEl?.value?.trim());
         const isAsinOrUrl = isAsin(query) || Boolean(extractAsinFromUrl(query)) || isShortAmazonUrl(query);
@@ -2157,7 +2161,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const title = document.createElement('span');
         title.className = 'empty-title';
-        if (hasPriceRelaxationCandidates) {
+        if (excludedByDealFilter) {
+            title.textContent = '現在のセール条件に一致しませんでした';
+        } else if (hasPriceRelaxationCandidates) {
             title.textContent = '価格条件に合う商品は見つかりませんでした';
         } else if (hasScoreRelaxationCandidates) {
             title.textContent = 'スコア条件に合う商品は見つかりませんでした';
@@ -2168,7 +2174,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const desc = document.createElement('span');
         desc.className = 'empty-desc';
-        if (hasPriceRelaxationCandidates) {
+        if (excludedByDealFilter) {
+            desc.textContent = 'この商品は調査済みですが、選択中のセール条件に該当しません。';
+        } else if (hasPriceRelaxationCandidates) {
             desc.textContent = `価格条件を外すと ${unfilteredPriceCount}件 の商品があります。`;
         } else if (hasScoreRelaxationCandidates) {
             desc.textContent = `全スコア（70点未満を含む）対象では ${unfilteredScoreCount}件 の商品があります。`;
@@ -2176,6 +2184,25 @@ document.addEventListener('DOMContentLoaded', function () {
             desc.textContent = '条件を変えて再度お試しください。';
         }
         emptyState.appendChild(desc);
+
+        if (excludedByDealFilter && dealBadgeEl) {
+            const dealRelaxBox = document.createElement('div');
+            dealRelaxBox.className = 'empty-score-relax-box';
+            const dealRelaxBtn = document.createElement('button');
+            dealRelaxBtn.type = 'button';
+            dealRelaxBtn.className = 'empty-score-relax-btn';
+            dealRelaxBtn.textContent = 'セール条件を解除して表示';
+            dealRelaxBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dealBadgeEl.value = '';
+                updateFilterBadge();
+                updateSearchActiveChips();
+                const q = searchInput.value.replaceAll('　', ' ');
+                if (isValidQuery(q)) handleSearch(q, true);
+            });
+            dealRelaxBox.appendChild(dealRelaxBtn);
+            emptyState.appendChild(dealRelaxBox);
+        }
 
         // 価格緩和提案ボックス（価格条件を外せば該当商品がある場合）
         if (hasPriceRelaxationCandidates) {
@@ -2205,13 +2232,13 @@ document.addEventListener('DOMContentLoaded', function () {
         // 未調査のセール商品から探す導線（ユーザー操作で遅延ロード）
         appendUninvestigatedDealsSection(emptyState);
 
-        // 商品調査リクエスト案内（未調査商品への導線）
+        // 商品調査リクエスト案内（調査済みASINがセール条件で除外された場合は出さない）
         const requestFormUrl =
             searchInput.dataset.requestFormUrl ||
             document.getElementById('request-link')?.getAttribute('href') ||
             document.querySelector('.request-link')?.getAttribute('href');
 
-        if (requestFormUrl) {
+        if (requestFormUrl && !excludedByDealFilter) {
             emptyState.appendChild(createProductRequestBox(isAsinOrUrl, requestFormUrl));
         }
 
@@ -2772,12 +2799,12 @@ document.addEventListener('DOMContentLoaded', function () {
         container.appendChild(wrapper);
     }
 
-    function displayResults(results, unfilteredScoreCount = 0, unfilteredPriceCount = 0) {
+    function displayResults(results, unfilteredScoreCount = 0, unfilteredPriceCount = 0, excludedByDealFilter = false) {
         selectedResultIndex = -1;
         searchResults.textContent = '';
 
         if (results.length === 0) {
-            renderEmptyState(unfilteredScoreCount, unfilteredPriceCount);
+            renderEmptyState(unfilteredScoreCount, unfilteredPriceCount, excludedByDealFilter);
             return;
         }
 

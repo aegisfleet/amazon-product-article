@@ -132,6 +132,7 @@ function handleSearch(query, filters, searchId) {
                     results: matchedDirect ? [{ item: directItem, score: 0, rerankScore: 1 }] : [],
                     unfilteredScoreCount: matchedDirect ? 1 : 0,
                     unfilteredPriceCount: matchedDirect ? 1 : 0,
+                    excludedByDealFilter: !matchedDirect,
                     query,
                     searchId
                 });
@@ -150,6 +151,7 @@ function handleSearch(query, filters, searchId) {
                     results,
                     unfilteredScoreCount: results.length,
                     unfilteredPriceCount: results.length,
+                    excludedByDealFilter: results.length === 0,
                     query,
                     searchId
                 });

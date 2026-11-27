@@ -422,6 +422,17 @@ describe('セールバッジ・割引率の伝搬', () => {
             dealBadge: 'ブラックフライデー先行セール',
           },
         },
+        B000000005: {
+          status: 'valid',
+          timestamp: baseTs,
+          priceTimestamp: expiredTs,
+          data: {
+            asin: 'B000000005',
+            title: '価格時刻は古いがバッジ更新あり',
+            price: { amount: 5000 },
+            dealBadge: '厳選目玉商品',
+          },
+        },
       }),
       'utf-8',
     );
@@ -435,16 +446,18 @@ describe('セールバッジ・割引率の伝搬', () => {
         dealsIndexOutputPath,
         nowMs: baseTs,
       });
-      expect(result.totalRecords).toBe(4);
-      expect(result.dealsIndexCount).toBe(1);
+      expect(result.totalRecords).toBe(5);
+      expect(result.dealsIndexCount).toBe(2);
       const dealsIndex = JSON.parse(fs.readFileSync(dealsIndexOutputPath, 'utf-8'));
-      expect(dealsIndex).toHaveLength(1);
+      expect(dealsIndex).toHaveLength(2);
       expect(dealsIndex[0].asin).toBe('B000000002');
       expect(dealsIndex[0].deal_badge).toBe('ブラックフライデー先行セール');
       expect(dealsIndex[0].deal_access_type).toBe('PRIME_EXCLUSIVE');
+      expect(dealsIndex[1].asin).toBe('B000000005');
+      expect(dealsIndex[1].deal_badge).toBe('厳選目玉商品');
 
       const fullIndex = JSON.parse(fs.readFileSync(indexOutputPath, 'utf-8'));
-      expect(fullIndex).toHaveLength(4);
+      expect(fullIndex).toHaveLength(5);
     } finally {
       fs.rmSync(tmpRoot, { recursive: true, force: true });
     }

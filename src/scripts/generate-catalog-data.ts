@@ -216,10 +216,7 @@ export function isDealCacheFresh(
   ttlMs: number = DEFAULT_DEALS_CACHE_TTL_MS,
 ): boolean {
   if (!entry) return false;
-  const rawTs =
-    typeof entry.priceTimestamp === 'number' && Number.isFinite(entry.priceTimestamp) && entry.priceTimestamp > 0
-      ? entry.priceTimestamp
-      : entry.timestamp;
+  const rawTs = entry.timestamp;
   if (typeof rawTs !== 'number' || !Number.isFinite(rawTs) || rawTs <= 0) {
     return false;
   }

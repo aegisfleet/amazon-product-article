@@ -291,7 +291,7 @@
 
     <!-- Product Data: 外部 JSON（/deals/index.json）から JS が fetch する。HTML 肥大化対策として埋め込みは廃止 -->
     <script id="deals-data" type="application/json"
-        data-src="{{ with .OutputFormats.Get "JSON" }}{{ .RelPermalink }}{{ end }}"
+        data-src='{{ with .OutputFormats.Get "JSON" }}{{ .RelPermalink }}{{ end }}'
         data-catalog-deals-src="{{ `catalog-deals-index.json` | relURL }}"></script>
 </div>
 <script src="{{ `js/deals-filter.js` | relURL }}" defer></script>
