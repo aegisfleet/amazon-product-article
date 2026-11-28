@@ -7592,11 +7592,15 @@ body.is-scrolling-down .nav-menu-floating-toggle:focus-visible {
   display: flex;
   gap: var(--spacing-xs);
   align-items: stretch;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .bargain-category-wrapper .bargain-select {
   flex: 1;
   min-width: 0;
+  width: 100%;
+  max-width: 100%;
 }
 
 .bargain-category-reset-btn {
