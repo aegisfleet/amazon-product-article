@@ -62,7 +62,7 @@ function buildTaxonomyIndex(taxonomy: TaxonomyV2): TaxonomyIndex {
     if (!parent?.slug || !parent?.name) continue;
 
     const children = Array.isArray(parent.children) ? parent.children : [];
-    const zzChild = children.find((c) => c.slug.startsWith('zz-')) ?? children.at(-1);
+    const zzChild = children.find((c) => c.slug.startsWith('zz-'));
     parentsBySlug.set(parent.slug, {
       slug: parent.slug,
       name: parent.name,

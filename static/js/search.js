@@ -475,28 +475,32 @@ function searchWithRerank(fuseInstance, query) {
         if (dealBadgeFilter.startsWith('event:')) return badge.includes(dealBadgeFilter.slice('event:'.length));
         return badge === dealBadgeFilter;
     };
+    const matchesLookup = (item) =>
+        matchesDeal(item) &&
+        (globalThis.SearchCore?.matchesCategory?.(item, uiFilters.categoryParent, uiFilters.categoryChild) ?? true);
+    const excludedReasonOf = (items) => (items.some(matchesDeal) ? 'category' : 'deal');
 
     // クエリがASIN形式の場合、O(1) 直接引き
     if (isAsin(trimmed)) {
         const targetAsin = asinVariationsCache?.[trimmed] || trimmed;
         const directItem = asinMapFallback.get(targetAsin) || asinMapFallback.get(trimmed);
         if (directItem) {
-            const ok = matchesDeal(directItem);
+            const ok = matchesLookup(directItem);
             return {
                 results: ok ? [{ item: directItem, score: 0, rerankScore: 1 }] : [],
                 unfilteredScoreCount: ok ? 1 : 0,
                 unfilteredPriceCount: ok ? 1 : 0,
-                excludedByDealFilter: !ok
+                excludedReason: ok ? '' : excludedReasonOf([directItem])
             };
         }
         const parentItems = parentAsinMapFallback.get(targetAsin) || parentAsinMapFallback.get(trimmed);
         if (parentItems && parentItems.length > 0) {
-            const matchedParents = dealBadgeFilter ? parentItems.filter(matchesDeal) : parentItems;
+            const matchedParents = parentItems.filter(matchesLookup);
             return {
                 results: matchedParents.map(item => ({ item, score: 0, rerankScore: 1 })),
                 unfilteredScoreCount: matchedParents.length,
                 unfilteredPriceCount: matchedParents.length,
-                excludedByDealFilter: matchedParents.length === 0
+                excludedReason: matchedParents.length === 0 ? excludedReasonOf(parentItems) : ''
             };
         }
         return { results: [], unfilteredScoreCount: 0, unfilteredPriceCount: 0 };
@@ -1423,7 +1427,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 data.results,
                 data.unfilteredScoreCount || 0,
                 data.unfilteredPriceCount || 0,
-                Boolean(data.excludedByDealFilter)
+                data.excludedReason || ''
             );
             searchInputWrapper?.classList.remove('is-loading');
             searchResults?.classList.remove('is-searching');
@@ -1505,8 +1509,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function executeFallbackSearch(query) {
             if (!fuse) return;
-            const { results, unfilteredScoreCount, unfilteredPriceCount, excludedByDealFilter } = searchWithRerank(fuse, query);
-            displayResults(results, unfilteredScoreCount, unfilteredPriceCount, Boolean(excludedByDealFilter));
+            const { results, unfilteredScoreCount, unfilteredPriceCount, excludedReason } = searchWithRerank(fuse, query);
+            displayResults(results, unfilteredScoreCount, unfilteredPriceCount, excludedReason || '');
             stopSearchLoading();
         }
 
@@ -2136,7 +2140,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 updateFilterBadge();
                 updateSearchActiveChips();
                 const q = searchInput.value.replaceAll('　', ' ');
-                if (isValidQuery(q)) {
+                if (isValidQuery(q) || hasActiveDealBadgeFilter()) {
                     const searchInputWrapper = document.querySelector('.search-input-wrapper');
                     if (searchInputWrapper) searchInputWrapper.classList.add('is-loading');
                     handleSearch(q);
@@ -2355,7 +2359,9 @@ document.addEventListener('DOMContentLoaded', function () {
         return relaxBox;
     }
 
-    function renderEmptyState(unfilteredScoreCount = 0, unfilteredPriceCount = 0, excludedByDealFilter = false) {
+    function renderEmptyState(unfilteredScoreCount = 0, unfilteredPriceCount = 0, excludedReason = '') {
+        const excludedByDealFilter = excludedReason === 'deal';
+        const excludedByCategoryFilter = excludedReason === 'category';
         const query = searchInput ? searchInput.value.replaceAll('　', ' ').trim() : '';
         const emptyState = document.createElement('div');
         emptyState.className = 'search-empty-state';
@@ -2379,6 +2385,8 @@ document.addEventListener('DOMContentLoaded', function () {
         title.className = 'empty-title';
         if (excludedByDealFilter) {
             title.textContent = '現在のセール条件に一致しませんでした';
+        } else if (excludedByCategoryFilter) {
+            title.textContent = '現在のカテゴリー条件に一致しませんでした';
         } else if (hasPriceRelaxationCandidates) {
             title.textContent = '価格条件に合う商品は見つかりませんでした';
         } else if (hasScoreRelaxationCandidates) {
@@ -2392,6 +2400,8 @@ document.addEventListener('DOMContentLoaded', function () {
         desc.className = 'empty-desc';
         if (excludedByDealFilter) {
             desc.textContent = 'この商品は調査済みですが、選択中のセール条件に該当しません。';
+        } else if (excludedByCategoryFilter) {
+            desc.textContent = 'この商品は調査済みですが、選択中のカテゴリー条件に該当しません。';
         } else if (hasPriceRelaxationCandidates) {
             desc.textContent = `価格条件を外すと ${unfilteredPriceCount}件 の商品があります。`;
         } else if (hasScoreRelaxationCandidates) {
@@ -2418,6 +2428,29 @@ document.addEventListener('DOMContentLoaded', function () {
             });
             dealRelaxBox.appendChild(dealRelaxBtn);
             emptyState.appendChild(dealRelaxBox);
+        }
+
+        if (excludedByCategoryFilter) {
+            const catRelaxBox = document.createElement('div');
+            catRelaxBox.className = 'empty-score-relax-box';
+            const catRelaxBtn = document.createElement('button');
+            catRelaxBtn.type = 'button';
+            catRelaxBtn.className = 'empty-score-relax-btn';
+            catRelaxBtn.textContent = 'カテゴリー条件を解除して表示';
+            catRelaxBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const parentEl = document.getElementById('filter-category-parent');
+                const childEl = document.getElementById('filter-category-child');
+                if (parentEl) parentEl.value = '';
+                if (childEl) childEl.value = '';
+                updateSearchChildCategoryOptions();
+                updateFilterBadge();
+                updateSearchActiveChips();
+                const q = searchInput.value.replaceAll('　', ' ');
+                if (isValidQuery(q)) handleSearch(q, true);
+            });
+            catRelaxBox.appendChild(catRelaxBtn);
+            emptyState.appendChild(catRelaxBox);
         }
 
         // 価格緩和提案ボックス（価格条件を外せば該当商品がある場合）
@@ -2454,7 +2487,7 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('request-link')?.getAttribute('href') ||
             document.querySelector('.request-link')?.getAttribute('href');
 
-        if (requestFormUrl && !excludedByDealFilter) {
+        if (requestFormUrl && !excludedByDealFilter && !excludedByCategoryFilter) {
             emptyState.appendChild(createProductRequestBox(isAsinOrUrl, requestFormUrl));
         }
 
@@ -3041,12 +3074,12 @@ document.addEventListener('DOMContentLoaded', function () {
         container.appendChild(wrapper);
     }
 
-    function displayResults(results, unfilteredScoreCount = 0, unfilteredPriceCount = 0, excludedByDealFilter = false) {
+    function displayResults(results, unfilteredScoreCount = 0, unfilteredPriceCount = 0, excludedReason = '') {
         selectedResultIndex = -1;
         searchResults.textContent = '';
 
         if (results.length === 0) {
-            renderEmptyState(unfilteredScoreCount, unfilteredPriceCount, excludedByDealFilter);
+            renderEmptyState(unfilteredScoreCount, unfilteredPriceCount, excludedReason);
             return;
         }
 

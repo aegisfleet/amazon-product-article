@@ -414,6 +414,11 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
     }
 
+    // 他の絞り込みで0件でも、現行分類上有効な選択中の親カテゴリは0件の選択肢として保持する
+    if (currentVal && !parents.has(currentVal) && new Set(childToParentMap.values()).has(currentVal)) {
+      parents.set(currentVal, 0);
+    }
+
     parentCategorySelect.innerHTML = '<option value="">すべての親カテゴリ</option>';
     const sorted = [...parents.entries()].sort((a, b) => b[1] - a[1]);
 

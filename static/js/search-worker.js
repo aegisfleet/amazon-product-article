@@ -124,9 +124,12 @@ function handleSearch(query, filters, searchId) {
             const dealBadgeFilter = typeof filters?.dealBadge === 'string' ? filters.dealBadge.trim() : '';
             const categoryParentFilter = typeof filters?.categoryParent === 'string' ? filters.categoryParent.trim() : '';
             const categoryChildFilter = typeof filters?.categoryChild === 'string' ? filters.categoryChild.trim() : '';
+            const matchesBadge = (item) => !dealBadgeFilter || SearchCore.matchesDealBadge(item, dealBadgeFilter);
             const matchesLookupFilters = (item) =>
-                (!dealBadgeFilter || SearchCore.matchesDealBadge(item, dealBadgeFilter)) &&
+                matchesBadge(item) &&
                 SearchCore.matchesCategory(item, categoryParentFilter, categoryChildFilter);
+            // 除外理由: セール条件が不一致なら 'deal'、セール条件は満たすがカテゴリ不一致なら 'category'
+            const excludedReasonOf = (items) => (items.some(matchesBadge) ? 'category' : 'deal');
 
             const targetAsin = asinVariations[trimmed] || trimmed;
             const directItem = asinMap.get(targetAsin) || asinMap.get(trimmed);
@@ -138,7 +141,7 @@ function handleSearch(query, filters, searchId) {
                     results: matchedDirect ? [{ item: directItem, score: 0, rerankScore: 1 }] : [],
                     unfilteredScoreCount: matchedDirect ? 1 : 0,
                     unfilteredPriceCount: matchedDirect ? 1 : 0,
-                    excludedByDealFilter: !matchedDirect,
+                    excludedReason: matchedDirect ? '' : excludedReasonOf([directItem]),
                     query,
                     searchId
                 });
@@ -155,7 +158,7 @@ function handleSearch(query, filters, searchId) {
                     results,
                     unfilteredScoreCount: results.length,
                     unfilteredPriceCount: results.length,
-                    excludedByDealFilter: results.length === 0,
+                    excludedReason: results.length === 0 ? excludedReasonOf(parentItems) : '',
                     query,
                     searchId
                 });

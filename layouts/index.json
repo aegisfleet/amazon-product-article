@@ -55,11 +55,13 @@
   {{- $firstCat := "" -}}
   {{- if .Params.categories -}}{{- $firstCat = index .Params.categories 0 -}}{{- else if .Params.category -}}{{- $firstCat = .Params.category -}}{{- end -}}
   {{- $categoryParent := "" -}}
-  {{- with .Params.category_parent -}}
-    {{- $categoryParent = index $parentNamesBySlug . | default "" -}}
-  {{- end -}}
-  {{- if and (not $categoryParent) $firstCat -}}
+  {{- if $firstCat -}}
     {{- $categoryParent = index $parentNamesByChild $firstCat | default "" -}}
+  {{- end -}}
+  {{- if not $categoryParent -}}
+    {{- with .Params.category_parent -}}
+      {{- $categoryParent = index $parentNamesBySlug . | default "" -}}
+    {{- end -}}
   {{- end -}}
   {{- $dict := dict
       "title" $product_name
