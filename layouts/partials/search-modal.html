@@ -27,6 +27,7 @@
                     aria-label="キーワード・Amazon URLで検索" data-search-index-url="{{ `index.json` | relURL }}"
                     data-search-worker-url="{{ `js/search-worker.js` | relURL }}"
                     data-catalog-deals-url="{{ `catalog-deals-index.json` | relURL }}"
+                    data-category-groups-url="{{ `data/categorygroups.json` | relURL }}"
                     data-deals-page-url="{{ `deals/` | relURL }}"
                     {{ with .Site.Params.productRequestFormUrl }}data-request-form-url="{{ . }}"{{ end }}>
                 <button type="button" class="search-clear-btn" id="search-clear-btn" aria-label="検索キーワードをクリア" tabindex="-1">
@@ -101,6 +102,19 @@
                                 <option value="">すべて</option>
                                 <option value="__ANY_DEAL__">セール対象のみ</option>
                                 <option value="厳選目玉商品">厳選目玉商品</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-category-parent" class="filter-label">
+                            <span class="material-symbols-outlined filter-icon" aria-hidden="true">folder</span> カテゴリ
+                        </label>
+                        <div class="filter-inputs" style="flex-wrap: wrap; gap: 0.4rem;">
+                            <select id="filter-category-parent" class="filter-select" aria-label="親カテゴリで絞り込み" style="width: auto; min-width: 0; max-width: 100%;">
+                                <option value="">すべての親カテゴリ</option>
+                            </select>
+                            <select id="filter-category-child" class="filter-select" aria-label="子カテゴリで絞り込み" style="width: auto; min-width: 0; max-width: 100%;">
+                                <option value="">すべての子カテゴリ</option>
                             </select>
                         </div>
                     </div>

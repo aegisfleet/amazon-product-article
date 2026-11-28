@@ -122,17 +122,26 @@ function handleSearch(query, filters, searchId) {
         // クエリがASIN形式の場合、O(1) ハッシュマップ直接ルックアップで即時返却（Fuse.js全文走査をバイパス）
         if (SearchCore.isAsin(trimmed)) {
             const dealBadgeFilter = typeof filters?.dealBadge === 'string' ? filters.dealBadge.trim() : '';
+            const categoryParentFilter = typeof filters?.categoryParent === 'string' ? filters.categoryParent.trim() : '';
+            const categoryChildFilter = typeof filters?.categoryChild === 'string' ? filters.categoryChild.trim() : '';
+            const matchesBadge = (item) => !dealBadgeFilter || SearchCore.matchesDealBadge(item, dealBadgeFilter);
+            const matchesLookupFilters = (item) =>
+                matchesBadge(item) &&
+                SearchCore.matchesCategory(item, categoryParentFilter, categoryChildFilter);
+            // 除外理由: セール条件が不一致なら 'deal'、セール条件は満たすがカテゴリ不一致なら 'category'
+            const excludedReasonOf = (items) => (items.some(matchesBadge) ? 'category' : 'deal');
+
             const targetAsin = asinVariations[trimmed] || trimmed;
             const directItem = asinMap.get(targetAsin) || asinMap.get(trimmed);
 
             if (directItem) {
-                const matchedDirect = !dealBadgeFilter || SearchCore.matchesDealBadge(directItem, dealBadgeFilter);
+                const matchedDirect = matchesLookupFilters(directItem);
                 self.postMessage({
                     type: 'SEARCH_RESULTS',
                     results: matchedDirect ? [{ item: directItem, score: 0, rerankScore: 1 }] : [],
                     unfilteredScoreCount: matchedDirect ? 1 : 0,
                     unfilteredPriceCount: matchedDirect ? 1 : 0,
-                    excludedByDealFilter: !matchedDirect,
+                    excludedReason: matchedDirect ? '' : excludedReasonOf([directItem]),
                     query,
                     searchId
                 });
@@ -142,16 +151,14 @@ function handleSearch(query, filters, searchId) {
             // 親ASINマップでの照合
             const parentItems = parentAsinMap.get(targetAsin) || parentAsinMap.get(trimmed);
             if (parentItems && parentItems.length > 0) {
-                const matchedParents = dealBadgeFilter
-                    ? parentItems.filter(item => SearchCore.matchesDealBadge(item, dealBadgeFilter))
-                    : parentItems;
+                const matchedParents = parentItems.filter(matchesLookupFilters);
                 const results = matchedParents.map(item => ({ item, score: 0, rerankScore: 1 }));
                 self.postMessage({
                     type: 'SEARCH_RESULTS',
                     results,
                     unfilteredScoreCount: results.length,
                     unfilteredPriceCount: results.length,
-                    excludedByDealFilter: results.length === 0,
+                    excludedReason: results.length === 0 ? excludedReasonOf(parentItems) : '',
                     query,
                     searchId
                 });

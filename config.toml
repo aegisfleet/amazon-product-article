@@ -115,6 +115,9 @@ enableGitInfo = false
     source = "data/brandgroups.json"
     target = "data/brandgroups.json"
   [[module.mounts]]
+    source = "data/taxonomy-v2.json"
+    target = "data/taxonomy-v2.json"
+  [[module.mounts]]
     source = "data/categories.yml"
     target = "data/categories.yml"
   [[module.mounts]]

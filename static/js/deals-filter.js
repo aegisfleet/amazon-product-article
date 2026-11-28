@@ -78,7 +78,9 @@ function mapCatalogRecordToDealProduct(rec) {
     price,
     priceRaw,
     asin,
-    category: rec.amazon_category || '',
+    categoryParent: rec.category_parent || 'その他／全般',
+    category: rec.category_child || rec.amazon_category || '',
+    amazonCategory: rec.amazon_category || '',
     brand: rec.brand || '',
     image: rec.image || '',
     affiliateUrl: asin ? `https://www.amazon.co.jp/dp/${encodeURIComponent(asin)}?tag=aegis-22&linkCode=ogi&th=1&psc=1` : '',
@@ -140,6 +142,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const inStockFilter = document.getElementById('deals-in-stock-filter');
   const includeUninvestigatedFilter = document.getElementById('deals-include-uninvestigated');
   const uninvestigatedStatusEl = document.getElementById('deals-uninvestigated-status');
+  const parentCategorySelect = document.getElementById('deals-parent-category-select');
   const categorySelect = document.getElementById('deals-category-select');
   const sortButtons = document.getElementById('deals-sort-buttons');
   const gridEl = document.getElementById('deals-grid');
@@ -167,6 +170,28 @@ document.addEventListener('DOMContentLoaded', async () => {
   const eventPresetLabelEl = document.getElementById('deals-preset-event-label');
 
   let activeMajorEvent = '';
+  const childToParentMap = new Map();
+
+  async function loadCategoryGroupsFallback() {
+    const src = dataEl.dataset.categoryGroupsSrc || '/data/categorygroups.json';
+    try {
+      const res = await fetch(src);
+      if (!res.ok) return;
+      const groups = await res.json();
+      if (!groups || typeof groups !== 'object') return;
+      for (const [parentName, info] of Object.entries(groups)) {
+        const children = Array.isArray(info?.categories) ? info.categories : [];
+        for (const childName of children) {
+          if (childName && !childToParentMap.has(childName)) {
+            childToParentMap.set(childName, parentName);
+          }
+        }
+      }
+    } catch {
+      // categorygroups.json が取得できない場合は product-dataset / catalog-deals の categoryParent のみ使用
+    }
+  }
+  await loadCategoryGroupsFallback();
 
   function getActiveProducts() {
     if (includeUninvestigatedFilter?.checked && uninvestigatedLoaded) {
@@ -324,6 +349,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (includeUninvestigatedFilter && params.get('includeUninvestigated') === '1') {
       includeUninvestigatedFilter.checked = true;
     }
+    if (parentCategorySelect && params.has('parentCategory')) {
+      parentCategorySelect.dataset.pendingValue = params.get('parentCategory');
+    }
     if (categorySelect && params.has('category')) {
       categorySelect.dataset.pendingValue = params.get('category');
     }
@@ -344,6 +372,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const maxPrice = valueToPrice(Number.parseInt(priceSlider.value, 10));
     const minDiscount = Number.parseInt(discountSlider.value, 10);
     const dealType = dealTypeSelect ? dealTypeSelect.value : '';
+    const parentCategory = parentCategorySelect ? parentCategorySelect.value : '';
     const category = categorySelect ? categorySelect.value : '';
 
     if (minScore !== 80) params.set('minScore', String(minScore));
@@ -353,6 +382,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (dealType) params.set('dealType', dealType);
     if (inStockFilter?.checked) params.set('inStock', '1');
     if (includeUninvestigatedFilter?.checked) params.set('includeUninvestigated', '1');
+    if (parentCategory) params.set('parentCategory', parentCategory);
     if (category) params.set('category', category);
     if (currentSort !== 'date') params.set('sort', currentSort);
     const q = keywordInput ? keywordInput.value.trim() : '';
@@ -361,6 +391,47 @@ document.addEventListener('DOMContentLoaded', async () => {
     const qs = params.toString();
     const newUrl = globalThis.location.pathname + (qs ? '?' + qs : '');
     globalThis.history.replaceState(null, '', newUrl);
+  }
+
+  function resolveProductParentCategory(p) {
+    if (p.categoryParent) return p.categoryParent;
+    if (p.category && childToParentMap.has(p.category)) {
+      return childToParentMap.get(p.category);
+    }
+    return 'その他／全般';
+  }
+
+  function updateParentCategoryOptions(availableProducts) {
+    if (!parentCategorySelect) return;
+    const currentVal = parentCategorySelect.value || parentCategorySelect.dataset.pendingValue || '';
+    delete parentCategorySelect.dataset.pendingValue;
+
+    const parents = new Map();
+    for (const p of availableProducts) {
+      const parentName = resolveProductParentCategory(p);
+      if (parentName) {
+        parents.set(parentName, (parents.get(parentName) || 0) + 1);
+      }
+    }
+
+    // 他の絞り込みで0件でも、現行分類上有効な選択中の親カテゴリは0件の選択肢として保持する
+    if (currentVal && !parents.has(currentVal) && new Set(childToParentMap.values()).has(currentVal)) {
+      parents.set(currentVal, 0);
+    }
+
+    parentCategorySelect.innerHTML = '<option value="">すべての親カテゴリ</option>';
+    const sorted = [...parents.entries()].sort((a, b) => b[1] - a[1]);
+
+    let exists = false;
+    for (const [parentName, count] of sorted) {
+      const opt = document.createElement('option');
+      opt.value = parentName;
+      opt.textContent = `${parentName} (${count})`;
+      parentCategorySelect.appendChild(opt);
+      if (parentName === currentVal) exists = true;
+    }
+
+    parentCategorySelect.value = exists ? currentVal : '';
   }
 
   // --- Dynamic Category Update ---
@@ -377,7 +448,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     // Clear and rebuild
-    categorySelect.innerHTML = '<option value="">すべてのカテゴリ</option>';
+    categorySelect.innerHTML = '<option value="">すべての子カテゴリ</option>';
     const sorted = [...cats.entries()].sort((a, b) => b[1] - a[1]);
 
     let exists = false;
@@ -389,11 +460,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (cat === currentVal) exists = true;
     }
 
-    if (exists) {
-      categorySelect.value = currentVal;
-    } else {
-      categorySelect.value = '';
-    }
+    categorySelect.value = exists ? currentVal : '';
   }
 
   // --- Keyword Badge Helper ---
@@ -476,12 +543,18 @@ document.addEventListener('DOMContentLoaded', async () => {
       return true;
     });
 
-    // Step 2: Update Category options
-    updateCategoryOptions(preFiltered);
+    // Step 2: Update Parent Category options and filter by parentCategory
+    updateParentCategoryOptions(preFiltered);
+    const parentCategory = parentCategorySelect ? parentCategorySelect.value : '';
+    const parentFiltered = parentCategory
+      ? preFiltered.filter(p => resolveProductParentCategory(p) === parentCategory)
+      : preFiltered;
 
-    // Step 3: Filter by selected category
+    // Step 3: Update Child Category options and filter by selected child category
+    updateCategoryOptions(parentFiltered);
+
     const category = categorySelect ? categorySelect.value : '';
-    let filtered = preFiltered.filter(p => {
+    let filtered = parentFiltered.filter(p => {
       return !category || p.category === category;
     });
 
@@ -548,6 +621,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const maxPrice = valueToPrice(Number.parseInt(priceSlider.value, 10));
     const minDiscount = Number.parseInt(discountSlider.value, 10);
     const dealType = dealTypeSelect ? dealTypeSelect.value : '';
+    const parentCategory = parentCategorySelect ? parentCategorySelect.value : '';
     const category = categorySelect ? categorySelect.value : '';
     const rawQ = keywordInput ? keywordInput.value.trim() : '';
 
@@ -638,11 +712,23 @@ document.addEventListener('DOMContentLoaded', async () => {
       });
     }
 
+    if (parentCategory) {
+      chips.push({
+        id: 'parentCategory',
+        icon: '📁',
+        label: `親カテゴリ: ${parentCategory}`,
+        onRemove: () => {
+          parentCategorySelect.value = '';
+          applyFilters();
+        }
+      });
+    }
+
     if (category) {
       chips.push({
         id: 'category',
         icon: '📂',
-        label: `カテゴリ: ${category}`,
+        label: `子カテゴリ: ${category}`,
         onRemove: () => {
           categorySelect.value = '';
           applyFilters();
@@ -679,6 +765,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (inStockFilter) inStockFilter.checked = false;
     if (includeUninvestigatedFilter) includeUninvestigatedFilter.checked = false;
     if (uninvestigatedStatusEl) uninvestigatedStatusEl.style.display = 'none';
+    if (parentCategorySelect) parentCategorySelect.value = '';
     if (categorySelect) categorySelect.value = '';
     if (keywordInput) keywordInput.value = '';
     if (keywordClearBtn) keywordClearBtn.style.display = 'none';
@@ -742,6 +829,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       applyFilters();
     });
   }
+  if (parentCategorySelect) parentCategorySelect.addEventListener('change', applyFilters);
   if (categorySelect) categorySelect.addEventListener('change', applyFilters);
   if (resetBtn) resetBtn.addEventListener('click', resetFilters);
   if (categoryResetBtn) {
@@ -774,7 +862,11 @@ document.addEventListener('DOMContentLoaded', async () => {
           if (categorySelect.value === catText) {
             categorySelect.value = '';
           } else {
+            if (parentCategorySelect && !Array.from(categorySelect.options).some(o => o.value === catText)) {
+              parentCategorySelect.value = '';
+            }
             categorySelect.value = catText;
+            categorySelect.dataset.pendingValue = catText;
           }
           applyFilters();
         }

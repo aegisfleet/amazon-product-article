@@ -377,4 +377,60 @@ describe('SearchCore', () => {
       expect(anyDeal.results.map((r: any) => r.item.asin).sort()).toEqual(['B0001', 'B0002']);
     });
   });
+
+  describe('カテゴリー絞り込み', () => {
+    it('matchesCategory が親カテゴリ・子カテゴリを正しく判定すること', () => {
+      const item = {
+        asin: 'B0010',
+        category_parent: 'オーディオ／イヤホン',
+        categories: ['ワイヤレスイヤホン'],
+      };
+      expect(SearchCore.matchesCategory(item, '', '')).toBe(true);
+      expect(SearchCore.matchesCategory(item, 'オーディオ／イヤホン', '')).toBe(true);
+      expect(SearchCore.matchesCategory(item, 'オーディオ／イヤホン', 'ワイヤレスイヤホン')).toBe(true);
+      expect(SearchCore.matchesCategory(item, '', 'ワイヤレスイヤホン')).toBe(true);
+      expect(SearchCore.matchesCategory(item, '家電', '')).toBe(false);
+      expect(SearchCore.matchesCategory(item, 'オーディオ／イヤホン', '有線イヤホン')).toBe(false);
+    });
+
+    it('空クエリでも categoryParent / categoryChild 指定時は一致商品を返すこと', () => {
+      const items = [
+        {
+          asin: 'B0001',
+          title: 'イヤホンA',
+          score: 85,
+          category_parent: 'オーディオ／イヤホン',
+          categories: ['ワイヤレスイヤホン'],
+        },
+        {
+          asin: 'B0002',
+          title: 'イヤホンB',
+          score: 80,
+          category_parent: 'オーディオ／イヤホン',
+          categories: ['有線イヤホン'],
+        },
+        {
+          asin: 'B0003',
+          title: '本C',
+          score: 90,
+          category_parent: '本／音楽／エンタメ',
+          categories: ['コミック・ラノベ'],
+        },
+      ];
+      SearchCore.prepareSearchIndex(items);
+
+      const parentMatched = SearchCore.searchWithCore(items, null, '', {
+        scoreMin: '70',
+        categoryParent: 'オーディオ／イヤホン',
+      });
+      expect(parentMatched.results.map((r: any) => r.item.asin).sort()).toEqual(['B0001', 'B0002']);
+
+      const childMatched = SearchCore.searchWithCore(items, null, '', {
+        scoreMin: '70',
+        categoryParent: 'オーディオ／イヤホン',
+        categoryChild: 'ワイヤレスイヤホン',
+      });
+      expect(childMatched.results.map((r: any) => r.item.asin)).toEqual(['B0001']);
+    });
+  });
 });

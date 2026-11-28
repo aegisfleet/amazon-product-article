@@ -8,6 +8,9 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { loadProductCategories } from '../category/store/ProductCategoryStore';
+import { buildAmazonCategoryMapping, type MappedCategoryInfo } from '../category/taxonomy/AmazonCategoryMapper';
+import type { TaxonomyV2 } from '../category/taxonomy/types';
 import { Logger } from '../utils/Logger';
 import { mapInChunks } from './generate-mcp-products';
 
@@ -27,6 +30,8 @@ export interface CatalogProductRecord {
   availability: string;
   image: string;
   amazon_category: string;
+  category_parent?: string;
+  category_child?: string;
   release_date: string | null;
   detail_page_url: string;
   price_as_of: string;
@@ -78,6 +83,8 @@ export interface CatalogIndexRecord {
   availability: string;
   image: string;
   amazon_category: string;
+  category_parent?: string;
+  category_child?: string;
   price_as_of: string;
   investigated: boolean;
   deal_badge?: string;
@@ -97,6 +104,12 @@ export function toCatalogIndexRecord(record: CatalogProductRecord): CatalogIndex
     price_as_of: record.price_as_of,
     investigated: record.investigated,
   };
+  if (record.category_parent) {
+    indexRecord.category_parent = record.category_parent;
+  }
+  if (record.category_child) {
+    indexRecord.category_child = record.category_child;
+  }
   if (record.deal_badge) {
     indexRecord.deal_badge = record.deal_badge;
   }
@@ -115,6 +128,8 @@ export interface GenerateCatalogDataOptions {
   outputDir?: string;
   indexOutputPath?: string;
   dealsIndexOutputPath?: string;
+  taxonomyPath?: string;
+  productCategoriesPath?: string;
   /** セール専用インデックスに含めるキャッシュ有効期間（ミリ秒、既定 24時間） */
   dealsTtlMs?: number;
   /** 有効期限判定の基準時刻（テスト用） */
@@ -273,6 +288,26 @@ export async function generateCatalogData(
     return { totalRecords: 0, investigatedCount: 0, uninvestigatedCount: 0, dealsIndexCount: 0, shardCount: 0 };
   }
 
+  const taxonomyPath = options.taxonomyPath || path.join(process.cwd(), 'data/taxonomy-v2.json');
+  const productCategoriesPath =
+    options.productCategoriesPath || path.join(process.cwd(), 'data/product-categories.json');
+
+  let amazonCategoryMap = new Map<string, MappedCategoryInfo>();
+  if (fs.existsSync(taxonomyPath) && fs.existsSync(productCategoriesPath)) {
+    try {
+      const taxonomy = JSON.parse(await fs.promises.readFile(taxonomyPath, 'utf-8')) as TaxonomyV2;
+      const productCategories = loadProductCategories(productCategoriesPath);
+      const mappingResult = buildAmazonCategoryMapping(taxonomy, productCategories);
+      amazonCategoryMap = mappingResult.map;
+      const { stats } = mappingResult;
+      logger.info(
+        `Built Amazon category mapping: ${amazonCategoryMap.size}/${stats.distinctAmazonCategories} mapped (exact=${stats.mappedExactChildCount}, parentFallback=${stats.mappedParentFallbackCount}, ambiguous=${stats.ambiguousCount}, unresolved=${stats.unresolvedEntries})`,
+      );
+    } catch (err) {
+      logger.warn(`Failed to build Amazon category mapping: ${String(err)}`);
+    }
+  }
+
   const investigatedAsins = await loadInvestigatedAsinSet(articlesDir);
   const shardFiles = (await fs.promises.readdir(cacheDir)).filter((file) => file.endsWith('.json'));
   const shards = new Map<string, Record<string, CatalogProductRecord>>();
@@ -292,6 +327,16 @@ export async function generateCatalogData(
         const investigated = investigatedAsins.has(asin);
         const record = convertCacheEntryToCatalogRecord(asin, entry, investigated);
         if (!record) continue;
+
+        if (record.amazon_category) {
+          const mapped = amazonCategoryMap.get(record.amazon_category);
+          if (mapped) {
+            record.category_parent = mapped.parentName;
+            if (mapped.childName) {
+              record.category_child = mapped.childName;
+            }
+          }
+        }
 
         const shardKey = getShardKey(record.asin);
         let shardBucket = shards.get(shardKey);
