@@ -1584,7 +1584,11 @@ dialog.search-modal::backdrop {
     flex-direction: column;
     flex: 1 1 auto;
     min-height: 0;
-    overflow-y: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
     position: relative;
     box-sizing: border-box;
 }
@@ -1838,6 +1842,15 @@ body.search-modal-open {
 }
 
 @media (max-width: 640px) {
+    #search-modal .search-input-wrapper,
+    #search-modal .search-filter-toggle-wrapper,
+    #search-modal .search-filters-wrapper,
+    #search-modal #search-active-chips {
+        flex-shrink: 0;
+    }
+    #search-modal .search-filters-wrapper.is-open {
+        max-height: none;
+    }
     #search-modal .search-filters {
         min-width: 0;
         padding: 0.875rem;
