@@ -13,12 +13,14 @@
 {{- $taxonomy := index site.Data "taxonomy-v2" -}}
 {{- $parentNamesBySlug := dict -}}
 {{- $parentNamesByChild := dict -}}
+{{- $parentNamesByChildSlug := dict -}}
 {{- with $taxonomy -}}
   {{- range .parents -}}
     {{- $parentNamesBySlug = merge $parentNamesBySlug (dict .slug .name) -}}
     {{- $pName := .name -}}
     {{- range .children -}}
       {{- $parentNamesByChild = merge $parentNamesByChild (dict .name $pName) -}}
+      {{- $parentNamesByChildSlug = merge $parentNamesByChildSlug (dict .slug $pName) -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}
@@ -42,11 +44,16 @@
 {{- $category := "" -}}
 {{- if .Params.categories -}}{{- $category = index .Params.categories 0 -}}{{- else if .Params.category -}}{{- $category = .Params.category -}}{{- end -}}
 {{- $categoryParent := "" -}}
-{{- with .Params.category_parent -}}
-  {{- $categoryParent = index $parentNamesBySlug . | default "" -}}
+{{- with .Params.category_child -}}
+  {{- $categoryParent = index $parentNamesByChildSlug . | default "" -}}
 {{- end -}}
 {{- if and (not $categoryParent) $category -}}
   {{- $categoryParent = index $parentNamesByChild $category | default "" -}}
+{{- end -}}
+{{- if not $categoryParent -}}
+  {{- with .Params.category_parent -}}
+    {{- $categoryParent = index $parentNamesBySlug . | default "" -}}
+  {{- end -}}
 {{- end -}}
 {{- $categoryUrl := "" -}}
 {{- $categoriesTerms := .GetTerms "categories" -}}

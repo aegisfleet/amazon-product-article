@@ -2,12 +2,14 @@
 {{- $taxonomy := index site.Data "taxonomy-v2" -}}
 {{- $parentNamesBySlug := dict -}}
 {{- $parentNamesByChild := dict -}}
+{{- $parentNamesByChildSlug := dict -}}
 {{- with $taxonomy -}}
   {{- range .parents -}}
     {{- $parentNamesBySlug = merge $parentNamesBySlug (dict .slug .name) -}}
     {{- $pName := .name -}}
     {{- range .children -}}
       {{- $parentNamesByChild = merge $parentNamesByChild (dict .name $pName) -}}
+      {{- $parentNamesByChildSlug = merge $parentNamesByChildSlug (dict .slug $pName) -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}
@@ -55,7 +57,10 @@
   {{- $firstCat := "" -}}
   {{- if .Params.categories -}}{{- $firstCat = index .Params.categories 0 -}}{{- else if .Params.category -}}{{- $firstCat = .Params.category -}}{{- end -}}
   {{- $categoryParent := "" -}}
-  {{- if $firstCat -}}
+  {{- with .Params.category_child -}}
+    {{- $categoryParent = index $parentNamesByChildSlug . | default "" -}}
+  {{- end -}}
+  {{- if and (not $categoryParent) $firstCat -}}
     {{- $categoryParent = index $parentNamesByChild $firstCat | default "" -}}
   {{- end -}}
   {{- if not $categoryParent -}}
