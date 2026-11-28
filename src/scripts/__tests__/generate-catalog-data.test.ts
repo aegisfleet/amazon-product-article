@@ -462,4 +462,86 @@ describe('セールバッジ・割引率の伝搬', () => {
       fs.rmSync(tmpRoot, { recursive: true, force: true });
     }
   });
+
+  it('taxonomyPath と productCategoriesPath を指定すると未調査レコードに category_parent / category_child が付与されること', async () => {
+    const tmpRoot = fs.mkdtempSync(path.join(require('node:os').tmpdir(), 'catalog-cat-map-test-'));
+    const cacheDir = path.join(tmpRoot, 'cache');
+    const articlesDir = path.join(tmpRoot, 'articles');
+    const outputDir = path.join(tmpRoot, 'out/catalog-data');
+    const indexOutputPath = path.join(tmpRoot, 'out/catalog-index.json');
+    const dealsIndexOutputPath = path.join(tmpRoot, 'out/catalog-deals-index.json');
+    const taxonomyPath = path.join(tmpRoot, 'taxonomy-v2.json');
+    const productCategoriesPath = path.join(tmpRoot, 'product-categories.json');
+    fs.mkdirSync(cacheDir, { recursive: true });
+    fs.mkdirSync(articlesDir, { recursive: true });
+
+    const baseTs = 1795657280855;
+    fs.writeFileSync(
+      taxonomyPath,
+      JSON.stringify({
+        version: 2,
+        updated_at: '2026-11-27',
+        parents: [
+          {
+            slug: 'audio-equipment',
+            name: 'オーディオ／イヤホン',
+            icon: '🎧',
+            priority: 5,
+            criteria: '',
+            children: [{ slug: 'wireless-earphones', name: 'ワイヤレスイヤホン', criteria: '' }],
+          },
+        ],
+      }),
+      'utf-8',
+    );
+    fs.writeFileSync(
+      productCategoriesPath,
+      JSON.stringify({
+        B000000099: {
+          taxonomy_version: 2,
+          category_parent: 'audio-equipment',
+          category_child: 'wireless-earphones',
+          amazon_category: 'イヤホン',
+        },
+      }),
+      'utf-8',
+    );
+    fs.writeFileSync(
+      path.join(cacheDir, '10.json'),
+      JSON.stringify({
+        B000000010: {
+          status: 'valid',
+          timestamp: baseTs,
+          data: {
+            asin: 'B000000010',
+            title: '未調査イヤホン',
+            category: 'イヤホン',
+            price: { amount: 2500 },
+            dealBadge: 'タイムセール',
+          },
+        },
+      }),
+      'utf-8',
+    );
+
+    try {
+      await generateCatalogData({
+        cacheDir,
+        articlesDir,
+        outputDir,
+        indexOutputPath,
+        dealsIndexOutputPath,
+        taxonomyPath,
+        productCategoriesPath,
+        nowMs: baseTs,
+      });
+
+      const dealsIndex = JSON.parse(fs.readFileSync(dealsIndexOutputPath, 'utf-8'));
+      expect(dealsIndex).toHaveLength(1);
+      expect(dealsIndex[0].category_parent).toBe('オーディオ／イヤホン');
+      expect(dealsIndex[0].category_child).toBe('ワイヤレスイヤホン');
+    } finally {
+      fs.rmSync(tmpRoot, { recursive: true, force: true });
+    }
+  });
 });

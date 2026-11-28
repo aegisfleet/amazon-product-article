@@ -216,17 +216,25 @@
         <!-- Row 3: Category & Sort -->
         <div class="bargain-filter-row bargain-filter-row-bottom">
             <div class="bargain-filter-group">
-                <label for="deals-category-select" class="bargain-filter-label">
+                <label for="deals-parent-category-select" class="bargain-filter-label">
                     <span class="material-symbols-outlined bargain-filter-icon" aria-hidden="true">folder</span>
-                    カテゴリ
+                    カテゴリ（親／子）
                 </label>
-                <div class="bargain-category-wrapper">
-                    <select id="deals-category-select" class="bargain-select"
-                        style="width: 100%; max-width: 100%; min-width: 0;">
-                        <option value="">すべてのカテゴリ</option>
-                    </select>
-                    <button type="button" id="deals-category-reset-btn" class="bargain-category-reset-btn"
-                        title="カテゴリ選択を解除" aria-label="カテゴリ選択を解除" disabled hidden>✕</button>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: var(--spacing-xs); width: 100%; min-width: 0;">
+                    <div class="bargain-category-wrapper" style="min-width: 0;">
+                        <select id="deals-parent-category-select" class="bargain-select" aria-label="親カテゴリで絞り込み"
+                            style="width: 100%; max-width: 100%; min-width: 0;">
+                            <option value="">すべての親カテゴリ</option>
+                        </select>
+                    </div>
+                    <div class="bargain-category-wrapper" style="min-width: 0;">
+                        <select id="deals-category-select" class="bargain-select" aria-label="子カテゴリで絞り込み"
+                            style="width: 100%; max-width: 100%; min-width: 0;">
+                            <option value="">すべての子カテゴリ</option>
+                        </select>
+                        <button type="button" id="deals-category-reset-btn" class="bargain-category-reset-btn"
+                            title="カテゴリ選択を解除" aria-label="カテゴリ選択を解除" disabled hidden>✕</button>
+                    </div>
                 </div>
             </div>
 
@@ -302,7 +310,8 @@
     <!-- Product Data: 外部 JSON（/deals/index.json）から JS が fetch する。HTML 肥大化対策として埋め込みは廃止 -->
     <script id="deals-data" type="application/json"
         data-src='{{ with .OutputFormats.Get "JSON" }}{{ .RelPermalink }}{{ end }}'
-        data-catalog-deals-src="{{ `catalog-deals-index.json` | relURL }}"></script>
+        data-catalog-deals-src="{{ `catalog-deals-index.json` | relURL }}"
+        data-category-groups-src="{{ `data/categorygroups.json` | relURL }}"></script>
 </div>
 <script src="{{ `js/deals-filter.js` | relURL }}" defer></script>
 {{- end -}}

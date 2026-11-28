@@ -275,6 +275,8 @@ function readUiFilterValues() {
         priceMin: document.getElementById('filter-price-min')?.value || '',
         priceMax: document.getElementById('filter-price-max')?.value || '',
         dealBadge: document.getElementById('filter-deal-badge')?.value || '',
+        categoryParent: document.getElementById('filter-category-parent')?.value || '',
+        categoryChild: document.getElementById('filter-category-child')?.value || '',
         sort: document.getElementById('search-sort-select')?.value || 'relevance'
     };
 }
@@ -554,13 +556,124 @@ document.addEventListener('DOMContentLoaded', function () {
             priceMin: document.getElementById('filter-price-min')?.value || '',
             priceMax: document.getElementById('filter-price-max')?.value || '',
             dealBadge: document.getElementById('filter-deal-badge')?.value || '',
+            categoryParent: document.getElementById('filter-category-parent')?.value || '',
+            categoryChild: document.getElementById('filter-category-child')?.value || '',
             sort: document.getElementById('search-sort-select')?.value || 'relevance'
         };
     }
 
     function hasActiveDealBadgeFilter() {
-        return Boolean(document.getElementById('filter-deal-badge')?.value);
+        return Boolean(
+            document.getElementById('filter-deal-badge')?.value ||
+            document.getElementById('filter-category-parent')?.value ||
+            document.getElementById('filter-category-child')?.value
+        );
     }
+
+    let searchCategoryGroups = null;
+    let searchCategoryGroupsPromise = null;
+
+    function updateSearchChildCategoryOptions() {
+        const parentEl = document.getElementById('filter-category-parent');
+        const childEl = document.getElementById('filter-category-child');
+        if (!childEl || !searchCategoryGroups) return;
+
+        const parentVal = parentEl ? parentEl.value : '';
+        const currentChild = childEl.value;
+        childEl.textContent = '';
+
+        const defaultOpt = document.createElement('option');
+        defaultOpt.value = '';
+        defaultOpt.textContent = 'すべての子カテゴリ';
+        childEl.appendChild(defaultOpt);
+
+        const childNames = [];
+        const seen = new Set();
+        if (parentVal && searchCategoryGroups[parentVal]) {
+            const cats = Array.isArray(searchCategoryGroups[parentVal].categories)
+                ? searchCategoryGroups[parentVal].categories
+                : [];
+            for (const c of cats) {
+                if (c && !seen.has(c)) {
+                    seen.add(c);
+                    childNames.push(c);
+                }
+            }
+        } else {
+            for (const info of Object.values(searchCategoryGroups)) {
+                const cats = Array.isArray(info?.categories) ? info.categories : [];
+                for (const c of cats) {
+                    if (c && !seen.has(c)) {
+                        seen.add(c);
+                        childNames.push(c);
+                    }
+                }
+            }
+        }
+
+        for (const name of childNames) {
+            const opt = document.createElement('option');
+            opt.value = name;
+            opt.textContent = name;
+            childEl.appendChild(opt);
+        }
+
+        if (currentChild && seen.has(currentChild)) {
+            childEl.value = currentChild;
+        } else {
+            childEl.value = '';
+        }
+    }
+
+    async function loadSearchCategoryGroups() {
+        if (searchCategoryGroups) return searchCategoryGroups;
+        if (searchCategoryGroupsPromise) return searchCategoryGroupsPromise;
+
+        const url = searchInput.dataset.categoryGroupsUrl || '/data/categorygroups.json';
+        searchCategoryGroupsPromise = (async () => {
+            try {
+                const res = await fetch(url);
+                if (!res.ok) return null;
+                const data = await res.json();
+                if (!data || typeof data !== 'object') return null;
+                searchCategoryGroups = data;
+
+                const parentEl = document.getElementById('filter-category-parent');
+                if (parentEl) {
+                    const currentParent = parentEl.value;
+                    parentEl.textContent = '';
+                    const defaultOpt = document.createElement('option');
+                    defaultOpt.value = '';
+                    defaultOpt.textContent = 'すべての親カテゴリ';
+                    parentEl.appendChild(defaultOpt);
+
+                    const entries = Object.entries(data).sort((a, b) => {
+                        const pa = typeof a[1]?.priority === 'number' ? a[1].priority : 999;
+                        const pb = typeof b[1]?.priority === 'number' ? b[1].priority : 999;
+                        return pa - pb;
+                    });
+                    for (const [parentName] of entries) {
+                        const opt = document.createElement('option');
+                        opt.value = parentName;
+                        opt.textContent = parentName;
+                        parentEl.appendChild(opt);
+                    }
+                    if (currentParent && data[currentParent]) {
+                        parentEl.value = currentParent;
+                    }
+                }
+                updateSearchChildCategoryOptions();
+                return searchCategoryGroups;
+            } catch {
+                return null;
+            } finally {
+                searchCategoryGroupsPromise = null;
+            }
+        })();
+        return searchCategoryGroupsPromise;
+    }
+
+    void loadSearchCategoryGroups();
 
     if (!searchInput || !searchResults) return;
 
@@ -823,6 +936,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const priceMinEl = document.getElementById('filter-price-min');
         const priceMaxEl = document.getElementById('filter-price-max');
         const dealBadgeEl = document.getElementById('filter-deal-badge');
+        const catParentEl = document.getElementById('filter-category-parent');
+        const catChildEl = document.getElementById('filter-category-child');
 
         if (scoreMinEl && scoreMinEl.value !== '' && Number.parseFloat(scoreMinEl.value) > 0) {
             count++;
@@ -837,6 +952,12 @@ document.addEventListener('DOMContentLoaded', function () {
             count++;
         }
         if (dealBadgeEl && dealBadgeEl.value !== '') {
+            count++;
+        }
+        if (catParentEl && catParentEl.value !== '') {
+            count++;
+        }
+        if (catChildEl && catChildEl.value !== '') {
             count++;
         }
         return count;
@@ -858,12 +979,16 @@ document.addEventListener('DOMContentLoaded', function () {
         const priceMinEl = document.getElementById('filter-price-min');
         const priceMaxEl = document.getElementById('filter-price-max');
         const dealBadgeEl = document.getElementById('filter-deal-badge');
+        const catParentEl = document.getElementById('filter-category-parent');
+        const catChildEl = document.getElementById('filter-category-child');
 
         const scoreMin = scoreMinEl ? scoreMinEl.value.trim() : '';
         const scoreMax = scoreMaxEl ? scoreMaxEl.value.trim() : '';
         const priceMin = priceMinEl ? priceMinEl.value.trim() : '';
         const priceMax = priceMaxEl ? priceMaxEl.value.trim() : '';
         const dealBadge = dealBadgeEl ? dealBadgeEl.value.trim() : '';
+        const catParent = catParentEl ? catParentEl.value.trim() : '';
+        const catChild = catChildEl ? catChildEl.value.trim() : '';
 
         const triggerSearch = () => {
             updateFilterBadge();
@@ -945,6 +1070,35 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
 
+        if (catParent) {
+            chips.push({
+                id: 'categoryParent',
+                icon: 'folder',
+                label: `親カテゴリ: ${catParent}`,
+                onRemove: () => {
+                    if (catParentEl) catParentEl.value = '';
+                    updateSearchChildCategoryOptions();
+                    updateFilterBadge();
+                    updateSearchActiveChips();
+                    triggerSearch();
+                }
+            });
+        }
+
+        if (catChild) {
+            chips.push({
+                id: 'categoryChild',
+                icon: 'folder',
+                label: `子カテゴリ: ${catChild}`,
+                onRemove: () => {
+                    if (catChildEl) catChildEl.value = '';
+                    updateFilterBadge();
+                    updateSearchActiveChips();
+                    triggerSearch();
+                }
+            });
+        }
+
         const resetAll = () => {
             const filterResetBtn = document.getElementById('filter-reset-btn');
             if (filterResetBtn) filterResetBtn.click();
@@ -987,12 +1141,17 @@ document.addEventListener('DOMContentLoaded', function () {
             const priceMinEl = document.getElementById('filter-price-min');
             const priceMaxEl = document.getElementById('filter-price-max');
             const dealBadgeEl = document.getElementById('filter-deal-badge');
+            const catParentEl = document.getElementById('filter-category-parent');
+            const catChildEl = document.getElementById('filter-category-child');
 
             if (scoreMinEl) scoreMinEl.value = '70';
             if (scoreMaxEl) scoreMaxEl.value = '';
             if (priceMinEl) priceMinEl.value = '';
             if (priceMaxEl) priceMaxEl.value = '';
             if (dealBadgeEl) dealBadgeEl.value = '';
+            if (catParentEl) catParentEl.value = '';
+            updateSearchChildCategoryOptions();
+            if (catChildEl) catChildEl.value = '';
 
             updateFilterBadge();
             updateSearchActiveChips();
@@ -1096,6 +1255,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 priceMin: document.getElementById('filter-price-min')?.value || '',
                 priceMax: document.getElementById('filter-price-max')?.value || '',
                 dealBadge: document.getElementById('filter-deal-badge')?.value || '',
+                categoryParent: document.getElementById('filter-category-parent')?.value || '',
+                categoryChild: document.getElementById('filter-category-child')?.value || '',
                 sort: document.getElementById('search-sort-select')?.value || 'relevance'
             };
         }
@@ -1548,6 +1709,39 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
 
+        const catParentSelectEl = document.getElementById('filter-category-parent');
+        if (catParentSelectEl) {
+            catParentSelectEl.addEventListener('change', () => {
+                updateSearchChildCategoryOptions();
+                updateFilterBadge();
+                updateSearchActiveChips();
+                const query = searchInput.value.replaceAll('　', ' ');
+                if (isValidQuery(query) || hasActiveDealBadgeFilter()) {
+                    if (searchInputWrapper) searchInputWrapper.classList.add('is-loading');
+                    handleSearch(query, true);
+                } else {
+                    displaySearchTips();
+                    stopSearchLoading();
+                }
+            });
+        }
+
+        const catChildSelectEl = document.getElementById('filter-category-child');
+        if (catChildSelectEl) {
+            catChildSelectEl.addEventListener('change', () => {
+                updateFilterBadge();
+                updateSearchActiveChips();
+                const query = searchInput.value.replaceAll('　', ' ');
+                if (isValidQuery(query) || hasActiveDealBadgeFilter()) {
+                    if (searchInputWrapper) searchInputWrapper.classList.add('is-loading');
+                    handleSearch(query, true);
+                } else {
+                    displaySearchTips();
+                    stopSearchLoading();
+                }
+            });
+        }
+
         const sortSelectEl = document.getElementById('search-sort-select');
         if (sortSelectEl) {
             sortSelectEl.addEventListener('change', () => {
@@ -1804,11 +1998,15 @@ document.addEventListener('DOMContentLoaded', function () {
         const priceMinEl = document.getElementById('filter-price-min');
         const priceMaxEl = document.getElementById('filter-price-max');
         const dealBadgeEl = document.getElementById('filter-deal-badge');
+        const catParentEl = document.getElementById('filter-category-parent');
+        const catChildEl = document.getElementById('filter-category-child');
         const scoreMin = scoreMinEl ? Number.parseFloat(scoreMinEl.value) : 0;
         const scoreMax = scoreMaxEl && scoreMaxEl.value !== '' ? Number.parseFloat(scoreMaxEl.value) : null;
         const priceMin = priceMinEl && priceMinEl.value !== '' ? Number.parseFloat(priceMinEl.value) : null;
         const priceMax = priceMaxEl && priceMaxEl.value !== '' ? Number.parseFloat(priceMaxEl.value) : null;
         const dealBadge = dealBadgeEl ? dealBadgeEl.value : '';
+        const catParent = catParentEl ? catParentEl.value : '';
+        const catChild = catChildEl ? catChildEl.value : '';
 
         // スコア下限（デフォルト70から変更されているか、または70以外が設定されている場合）
         if (Number.isFinite(scoreMin) && scoreMin > 0) {
@@ -1826,6 +2024,12 @@ document.addEventListener('DOMContentLoaded', function () {
         if (dealBadge) {
             filters.push({ label: `セール: ${getSearchDealBadgeLabel(dealBadge)}`, type: 'deal-badge' });
         }
+        if (catParent) {
+            filters.push({ label: `親カテゴリ: ${catParent}`, type: 'category-parent' });
+        }
+        if (catChild) {
+            filters.push({ label: `子カテゴリ: ${catChild}`, type: 'category-child' });
+        }
         return filters;
     }
 
@@ -1836,6 +2040,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const priceMinEl = document.getElementById('filter-price-min');
         const priceMaxEl = document.getElementById('filter-price-max');
         const dealBadgeEl = document.getElementById('filter-deal-badge');
+        const catParentEl = document.getElementById('filter-category-parent');
+        const catChildEl = document.getElementById('filter-category-child');
         if (type === 'keyword') {
             searchInput.value = '';
         } else if (type === 'score-min' && scoreMinEl) {
@@ -1848,6 +2054,11 @@ document.addEventListener('DOMContentLoaded', function () {
             priceMaxEl.value = '';
         } else if (type === 'deal-badge' && dealBadgeEl) {
             dealBadgeEl.value = '';
+        } else if (type === 'category-parent' && catParentEl) {
+            catParentEl.value = '';
+            updateSearchChildCategoryOptions();
+        } else if (type === 'category-child' && catChildEl) {
+            catChildEl.value = '';
         }
         updateFilterBadge();
         updateSearchActiveChips();
@@ -1867,11 +2078,16 @@ document.addEventListener('DOMContentLoaded', function () {
         const priceMinEl = document.getElementById('filter-price-min');
         const priceMaxEl = document.getElementById('filter-price-max');
         const dealBadgeEl = document.getElementById('filter-deal-badge');
+        const catParentEl = document.getElementById('filter-category-parent');
+        const catChildEl = document.getElementById('filter-category-child');
         if (scoreMinEl) scoreMinEl.value = '70';
         if (scoreMaxEl) scoreMaxEl.value = '';
         if (priceMinEl) priceMinEl.value = '';
         if (priceMaxEl) priceMaxEl.value = '';
         if (dealBadgeEl) dealBadgeEl.value = '';
+        if (catParentEl) catParentEl.value = '';
+        updateSearchChildCategoryOptions();
+        if (catChildEl) catChildEl.value = '';
         const sortEl = document.getElementById('search-sort-select');
         if (sortEl) sortEl.value = 'relevance';
         updateFilterBadge();
@@ -2568,7 +2784,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return catalogDealsPromise;
     }
 
-    function filterCatalogDeals(records, queryText, dealBadgeFilter, priceMin, priceMax) {
+    function filterCatalogDeals(records, queryText, dealBadgeFilter, priceMin, priceMax, categoryParent = '', categoryChild = '') {
         const normQuery = normalizeSearchText(queryText);
         const terms = normQuery.split(/\s+/).filter(Boolean);
 
@@ -2583,13 +2799,21 @@ document.addEventListener('DOMContentLoaded', function () {
                     continue;
                 }
             }
+            if (categoryParent) {
+                const recParent = rec.category_parent || 'その他／全般';
+                if (recParent !== categoryParent) continue;
+            }
+            if (categoryChild) {
+                const recChild = rec.category_child || rec.amazon_category || '';
+                if (recChild !== categoryChild) continue;
+            }
             const price = typeof rec.price === 'number' && rec.price > 0 ? rec.price : null;
             if (priceMin !== null && (price === null || price < priceMin)) continue;
             if (priceMax !== null && (price === null || price > priceMax)) continue;
 
             if (terms.length > 0) {
                 const haystack = normalizeSearchText(
-                    `${rec.title || ''} ${rec.brand || ''} ${rec.amazon_category || ''} ${rec.asin || ''}`
+                    `${rec.title || ''} ${rec.brand || ''} ${rec.category_parent || ''} ${rec.category_child || ''} ${rec.amazon_category || ''} ${rec.asin || ''}`
                 );
                 let allMatch = true;
                 for (const t of terms) {
@@ -2706,7 +2930,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return itemDiv;
     }
 
-    function buildDealsPageUrl(queryText, dealBadgeFilter) {
+    function buildDealsPageUrl(queryText, dealBadgeFilter, categoryParent = '', categoryChild = '') {
         const base = searchInput.dataset.dealsPageUrl || '/deals/';
         const params = new URLSearchParams();
         params.set('includeUninvestigated', '1');
@@ -2718,6 +2942,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 params.set('dealType', `badge:${dealBadgeFilter}`);
             }
         }
+        if (categoryParent) params.set('parentCategory', categoryParent);
+        if (categoryChild) params.set('category', categoryChild);
         return `${base}?${params.toString()}`;
     }
 
@@ -2725,6 +2951,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const queryText = searchInput.value.replaceAll('　', ' ').trim();
         const filterParams = getSearchState();
         const dealBadgeFilter = filterParams.dealBadge || '';
+        const categoryParentFilter = filterParams.categoryParent || '';
+        const categoryChildFilter = filterParams.categoryChild || '';
 
         const wrapper = document.createElement('div');
         wrapper.className = 'search-uninvestigated-deals-box';
@@ -2746,7 +2974,7 @@ document.addEventListener('DOMContentLoaded', function () {
         loadBtn.textContent = '未調査のセール商品を検索';
 
         const dealsLink = document.createElement('a');
-        dealsLink.href = buildDealsPageUrl(queryText, dealBadgeFilter);
+        dealsLink.href = buildDealsPageUrl(queryText, dealBadgeFilter, categoryParentFilter, categoryChildFilter);
         dealsLink.className = 'search-uninvestigated-deals-link';
         dealsLink.textContent = 'セール一覧ページで詳しく絞る →';
 
@@ -2775,7 +3003,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     queryText,
                     dealBadgeFilter,
                     Number.isFinite(priceMin) ? priceMin : null,
-                    Number.isFinite(priceMax) ? priceMax : null
+                    Number.isFinite(priceMax) ? priceMax : null,
+                    categoryParentFilter,
+                    categoryChildFilter
                 );
                 const elapsedMs = Math.round(performance.now() - startMs);
 
