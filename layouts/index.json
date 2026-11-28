@@ -1,4 +1,18 @@
 {{- $.Scratch.Add "index" slice -}}
+{{- $taxonomy := index site.Data "taxonomy-v2" -}}
+{{- $parentNamesBySlug := dict -}}
+{{- $parentNamesByChild := dict -}}
+{{- $parentNamesByChildSlug := dict -}}
+{{- with $taxonomy -}}
+  {{- range .parents -}}
+    {{- $parentNamesBySlug = merge $parentNamesBySlug (dict .slug .name) -}}
+    {{- $pName := .name -}}
+    {{- range .children -}}
+      {{- $parentNamesByChild = merge $parentNamesByChild (dict .name $pName) -}}
+      {{- $parentNamesByChildSlug = merge $parentNamesByChildSlug (dict .slug $pName) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
 {{- range where .Site.RegularPages "Section" "articles" -}}
   {{- $image := "" -}}
   {{- with .Params.images -}}
@@ -40,9 +54,24 @@
       {{- $categoryUrl = .RelPermalink -}}
     {{- end -}}
   {{- end -}}
+  {{- $firstCat := "" -}}
+  {{- if .Params.categories -}}{{- $firstCat = index .Params.categories 0 -}}{{- else if .Params.category -}}{{- $firstCat = .Params.category -}}{{- end -}}
+  {{- $categoryParent := "" -}}
+  {{- with .Params.category_child -}}
+    {{- $categoryParent = index $parentNamesByChildSlug . | default "" -}}
+  {{- end -}}
+  {{- if and (not $categoryParent) $firstCat -}}
+    {{- $categoryParent = index $parentNamesByChild $firstCat | default "" -}}
+  {{- end -}}
+  {{- if not $categoryParent -}}
+    {{- with .Params.category_parent -}}
+      {{- $categoryParent = index $parentNamesBySlug . | default "" -}}
+    {{- end -}}
+  {{- end -}}
   {{- $dict := dict
       "title" $product_name
       "permalink" .RelPermalink
+      "category_parent" $categoryParent
       "categories" .Params.categories
       "amazon_category" (.Params.amazon_category | default "")
       "category_url" $categoryUrl

@@ -10,6 +10,20 @@
 
   引数: dict "pages" (対象ページの slice)
 */ -}}
+{{- $taxonomy := index site.Data "taxonomy-v2" -}}
+{{- $parentNamesBySlug := dict -}}
+{{- $parentNamesByChild := dict -}}
+{{- $parentNamesByChildSlug := dict -}}
+{{- with $taxonomy -}}
+  {{- range .parents -}}
+    {{- $parentNamesBySlug = merge $parentNamesBySlug (dict .slug .name) -}}
+    {{- $pName := .name -}}
+    {{- range .children -}}
+      {{- $parentNamesByChild = merge $parentNamesByChild (dict .name $pName) -}}
+      {{- $parentNamesByChildSlug = merge $parentNamesByChildSlug (dict .slug $pName) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
 {{- $data := slice -}}
 {{- range .pages -}}
 {{- $score := .Params.score | default 0 -}}
@@ -29,6 +43,18 @@
 {{- end -}}
 {{- $category := "" -}}
 {{- if .Params.categories -}}{{- $category = index .Params.categories 0 -}}{{- else if .Params.category -}}{{- $category = .Params.category -}}{{- end -}}
+{{- $categoryParent := "" -}}
+{{- with .Params.category_child -}}
+  {{- $categoryParent = index $parentNamesByChildSlug . | default "" -}}
+{{- end -}}
+{{- if and (not $categoryParent) $category -}}
+  {{- $categoryParent = index $parentNamesByChild $category | default "" -}}
+{{- end -}}
+{{- if not $categoryParent -}}
+  {{- with .Params.category_parent -}}
+    {{- $categoryParent = index $parentNamesBySlug . | default "" -}}
+  {{- end -}}
+{{- end -}}
 {{- $categoryUrl := "" -}}
 {{- $categoriesTerms := .GetTerms "categories" -}}
 {{- if $categoriesTerms -}}
@@ -49,6 +75,7 @@
   "investigatedPrice" (.Params.investigated_price | default "")
   "investigatedPriceRaw" $investigatedPriceRaw
   "asin" (.Params.asin | default "")
+  "categoryParent" $categoryParent
   "category" $category
   "categoryUrl" $categoryUrl
   "subcategory" (.Params.subcategory | default "")

@@ -558,6 +558,8 @@
         });
 
         const dealBadgeFilter = typeof filters.dealBadge === 'string' ? filters.dealBadge.trim() : '';
+        const categoryParentFilter = typeof filters.categoryParent === 'string' ? filters.categoryParent.trim() : '';
+        const categoryChildFilter = typeof filters.categoryChild === 'string' ? filters.categoryChild.trim() : '';
 
         const filtered = scored.filter(result => {
             const item = result.item || {};
@@ -565,6 +567,9 @@
             const validPrice = getValidPrice(item);
 
             if (!matchesDealBadge(item, dealBadgeFilter)) {
+                return false;
+            }
+            if (!matchesCategory(item, categoryParentFilter, categoryChildFilter)) {
                 return false;
             }
 
@@ -655,17 +660,38 @@
         return badge === dealBadgeFilter;
     }
 
+    function matchesCategory(item, categoryParent, categoryChild) {
+        const targetParent = typeof categoryParent === 'string' ? categoryParent.trim() : '';
+        const targetChild = typeof categoryChild === 'string' ? categoryChild.trim() : '';
+        if (!targetParent && !targetChild) return true;
+
+        if (targetParent) {
+            const itemParent = typeof item?.category_parent === 'string' ? item.category_parent.trim() : '';
+            if (itemParent !== targetParent) return false;
+        }
+        if (targetChild) {
+            const itemCats = Array.isArray(item?.categories) ? item.categories : [];
+            if (!itemCats.includes(targetChild)) return false;
+        }
+        return true;
+    }
+
     function searchWithCore(items, fuseInstance, query, filters = {}) {
         const normalizedQuery = normalizeSearchText(query);
         const dealBadgeFilter = typeof filters.dealBadge === 'string' ? filters.dealBadge.trim() : '';
+        const categoryParentFilter = typeof filters.categoryParent === 'string' ? filters.categoryParent.trim() : '';
+        const categoryChildFilter = typeof filters.categoryChild === 'string' ? filters.categoryChild.trim() : '';
         if (!normalizedQuery) {
-            if (!dealBadgeFilter) {
+            if (!dealBadgeFilter && !categoryParentFilter && !categoryChildFilter) {
                 return { results: [], unfilteredScoreCount: 0, unfilteredPriceCount: 0 };
             }
-            const badgeMatched = (items || [])
-                .filter(item => matchesDealBadge(item, dealBadgeFilter))
+            const browseMatched = (items || [])
+                .filter(item =>
+                    matchesDealBadge(item, dealBadgeFilter) &&
+                    matchesCategory(item, categoryParentFilter, categoryChildFilter)
+                )
                 .map(item => ({ item, score: 0, isPrimaryMatch: true }));
-            return rerankResults(badgeMatched, '', filters);
+            return rerankResults(browseMatched, '', filters);
         }
 
         const { results: expandedResults, tokenGroups, hasExpandedTerm } = searchExpanded(items, query);
@@ -689,6 +715,7 @@
         mergeSearchResults,
         rerankResults,
         matchesDealBadge,
+        matchesCategory,
         searchWithCore,
         getTermVariants,
         getValidPrice
