@@ -27,7 +27,9 @@
         "userType": "寝室用プロジェクターを探している人",
         "scenario": "ベッドで寝転びながら映画を見たい",
         "experience": "スタンドと本体が一体化しており、レンズを上に向けるだけで簡単に天井に投影できるため、別途三脚を用意する手間が省けて便利。Android TV内蔵なのでFire TV Stick等を別途繋がずに動画配信サービスが見られるのも良い。ただし、部屋を暗くしないと映像は薄く、日中の視聴には向いていない。",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "sentiment": "positive"
       }
     ],
@@ -50,7 +52,9 @@
         "claim": "1500 ANSIルーメンの高輝度",
         "category": "quality",
         "confidence": "low",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "1万円以下の小型プロジェクターで1500 ANSIルーメンを実現することは物理的・コスト的に不可能であり、典型的なスペック誇張（見せかけの数値）であると考えられる。"
       },
@@ -58,7 +62,9 @@
         "claim": "8K対応",
         "category": "quality",
         "confidence": "medium",
-        "supportingSourceIds": ["src-1"],
+        "supportingSourceIds": [
+          "src-1"
+        ],
         "crossChecked": false,
         "notes": "実際のネイティブ解像度は1080Pであり、8K映像の『入力・デコード』が可能というだけであり、8K画質で投影できるわけではない。"
       }
@@ -77,19 +83,6 @@
         "differentiators": [
           "対象商品の利点：Wi-Fi接続とAndroid TV内蔵により、本体単独でNetflixやYouTubeなどの動画配信サービスを楽しめる",
           "sainyerの利点：無線接続を必要とせず、PCやゲーム機などをHDMIで有線接続するだけの用途であれば価格を抑えられる"
-        ]
-      },
-      {
-        "name": "FALIYORS プロジェクター B0GD12KTVG",
-        "asin": "B0GD12KTVG",
-        "priceComparison": "対象商品よりも安価だが、不当な大幅値引きを装う二重価格表示の疑いが強い点に注意が必要。",
-        "featureComparison": [
-          "共通点：Android TVを内蔵し、天井投影に対応",
-          "相違点：対象商品が1500ANSIルーメンと表記する一方、本製品は33000LMという異なる単位で誇大表記を行っている"
-        ],
-        "differentiators": [
-          "対象商品の利点：スペック表記に誇張は見られるものの、見せ金による二重価格表示（定価偽装）を行っていない",
-          "FALIYORSの利点：実売価格がわずかに安い"
         ]
       },
       {
