@@ -344,10 +344,13 @@ function bindCardHeader(article, p) {
         tagCat.replaceWith(spanTag);
       }
     } else if (p.category && p.isUninvestigated) {
-      const spanTag = document.createElement('span');
-      spanTag.className = 'card-tag';
-      spanTag.textContent = String(p.category);
-      tagCat.replaceWith(spanTag);
+      // 未調査商品はカテゴリページを持たないため、クリックで一覧内フィルターとして機能するボタンにする
+      const btnTag = document.createElement('button');
+      btnTag.type = 'button';
+      btnTag.className = 'card-tag bargain-card-category';
+      btnTag.textContent = String(p.category);
+      btnTag.setAttribute('aria-label', `${p.category}で絞り込む`);
+      tagCat.replaceWith(btnTag);
     } else {
       tagCat.remove();
     }
